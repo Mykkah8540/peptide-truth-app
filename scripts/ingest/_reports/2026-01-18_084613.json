@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-01-18_084613",
+  "dry_run": false,
+  "overwrite": false,
+  "only": [],
+  "created": [],
+  "updated": [],
+  "skipped": [
+    "aod-9604"
+  ],
+  "warnings": [],
+  "queue_path": "/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/_queue.csv",
+  "template_path": "/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/scripts/ingest/peptide_template.json",
+  "index_path": "/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/_index.json"
+}

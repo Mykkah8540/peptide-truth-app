@@ -1,0 +1,35 @@
+{
+  "schema_version": "peptide_index_v1",
+  "rules": {
+    "alphabetical": true,
+    "sort_key": "canonical_name",
+    "slug_rule": "lowercase hyphen-separated",
+    "source_of_truth": "content/peptides/<slug>.json"
+  },
+  "peptides": [
+    {
+      "slug": "acetyl-hexapeptide-8",
+      "canonical_name": "Acetyl Hexapeptide-8"
+    },
+    {
+      "slug": "aod-9604",
+      "canonical_name": "AOD-9604"
+    },
+    {
+      "slug": "bpc-157",
+      "canonical_name": "BPC-157"
+    },
+    {
+      "slug": "cjc-1295",
+      "canonical_name": "CJC-1295"
+    },
+    {
+      "slug": "ghk-cu",
+      "canonical_name": "Copper Tripeptide-1"
+    },
+    {
+      "slug": "tb-500",
+      "canonical_name": "TB-500"
+    }
+  ]
+}
