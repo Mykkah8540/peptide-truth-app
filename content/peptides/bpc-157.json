@@ -27,7 +27,7 @@
     },
     "risk": {
       "current_score": 7,
-      "likelihood": "uncertain",
+      "likelihood": "possible",
       "evidence_grade": "human_observational",
       "developmental_risk": true,
       "unknowns_penalty": true,
