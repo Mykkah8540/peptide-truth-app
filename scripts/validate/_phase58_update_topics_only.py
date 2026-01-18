@@ -15,7 +15,6 @@ injury_page   = Path("content/topics/pages/injury-healing.json")
 cjc = load(Path("content/peptides/cjc-1295.json"))
 tb  = load(Path("content/peptides/tb-500.json"))
 
-# --- Update mapping (dedupe + sort) ---
 m = load(map_path)
 new = [
     {
