@@ -1,2 +1,2 @@
 canonical_name,slug,status_category,needs_prescription,priority,notes,aliases,primary_topics,adolescent_flag,developmental_systems
-"AOD-9604",aod-9604,investigational_human,false,normal,,,,,
+AOD-9604,aod-9604,investigational_human,false,normal,,,topic_fat_loss_metabolism,true,gh_igf|metabolic|puberty

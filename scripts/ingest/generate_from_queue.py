@@ -433,6 +433,51 @@ def run_validator(paths: List[Path]) -> int:
     return rc
 
 
+
+def enforce_developmental_risk(doc: dict, slug: str, systems: List[str]) -> bool:
+    """
+    Ensures developmental risk flags + an adolescent developmental risk block exists.
+    Returns True if doc was modified.
+    Descriptive-only: no protocols, no dosing, no regimens.
+    """
+    changed = False
+    pep = doc.setdefault("peptide", {})
+    risk = pep.setdefault("risk", {})
+    sections = pep.setdefault("sections", {})
+
+    # Set developmental risk true
+    if risk.get("developmental_risk") is not True:
+        risk["developmental_risk"] = True
+        changed = True
+
+    # Ensure developmental risk block exists with at least one entry
+    block = sections.get("developmental_risk_block")
+    if not isinstance(block, list) or len(block) == 0:
+        block = []
+        sections["developmental_risk_block"] = block
+        changed = True
+
+    # If empty, add a canonical placeholder warning entry
+    if len(block) == 0:
+        systems_txt = ""
+        if systems:
+            systems_txt = " Systems of concern (descriptive labels): " + ", ".join(systems) + "."
+        block.append({
+            "claim_type": "risk",
+            "population_group": "adolescent",
+            "confidence": "unknown",
+            "evidence_grade": "mechanistic_only",
+            "text": (
+                "Developmental exposure may carry higher and less predictable risk than adult exposure. "
+                "Long-term effects on growth, endocrine signaling, and neurodevelopment are not well studied "
+                "and may be irreversible." + systems_txt
+            ),
+            "evidence_refs": []
+        })
+        changed = True
+
+    return changed
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="No file writes")
@@ -474,6 +519,19 @@ def main() -> int:
         validate_topic_ids(row.primary_topics)
         if row.primary_topics:
             upsert_topic_map(topic_map_doc, row.slug, row.primary_topics)
+
+        # Queue-driven developmental risk enforcement (safety-first; descriptive-only)
+        # If adolescent_flag is true OR developmental_systems provided, enforce risk flag + warning block.
+        enforce_dev = (row.adolescent_flag is True) or (len(row.developmental_systems) > 0)
+        dev_modified = False
+        if enforce_dev:
+            peptide_path = CONTENT_PEPTIDES_DIR / f"{row.slug}.json"
+            if peptide_path.exists():
+                doc_existing = load_json(peptide_path)
+                dev_modified = enforce_developmental_risk(doc_existing, row.slug, row.developmental_systems)
+                if dev_modified and args.apply:
+                    save_json(peptide_path, doc_existing)
+            # If file does not exist, template generation path will include flags later.
 
         out_path = CONTENT_PEPTIDES_DIR / f"{row.slug}.json"
         exists = out_path.exists()

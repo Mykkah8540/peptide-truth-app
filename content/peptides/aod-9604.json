@@ -1,0 +1,119 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "AOD-9604",
+    "short_name": "AOD-9604",
+    "aliases": [
+      "hGH fragment 176-191"
+    ],
+    "classification": {
+      "category": "investigational_human",
+      "needs_prescription": false,
+      "notes": "Not FDA-approved for human therapeutic use; widely sold as research-grade peptide."
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "2026-01-17",
+      "human_use_note": "AOD-9604 is not approved for human therapeutic use. Despite this, it is widely marketed and consumed as a research peptide, particularly in weight-loss contexts. No regulatory body currently authorizes it for medical treatment."
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "YLRIVQCRSVEGSCGF",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 4,
+      "severity": "moderate",
+      "likelihood": "possible",
+      "evidence_grade": "human_interventional",
+      "developmental_risk": true,
+      "unknowns_penalty": true,
+      "rationale": "Short-term human studies suggest limited adverse effects, but long-term safety data are sparse. The peptide mimics a fragment of human growth hormone, raising theoretical concerns around endocrine signaling, metabolic adaptation, and developmental exposure in adolescents."
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "moderate",
+          "evidence_grade": "human_interventional",
+          "text": "AOD-9604 is a synthetic peptide derived from amino acids 176–191 of human growth hormone. It was developed to isolate the lipolytic (fat-metabolizing) effects of hGH without stimulating growth or insulin-like growth factor pathways.",
+          "evidence_refs": ["E1", "E2"]
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "subcutaneous",
+          "unit": "mcg",
+          "min": 250,
+          "max": 500,
+          "frequency": "daily",
+          "duration": "up to 12 weeks",
+          "population_group": "general",
+          "notes": "Descriptive only. Observed in clinical studies; not instructions.",
+          "evidence_refs": ["E1"]
+        }
+      ],
+      "developmental_risk_block": [
+        {
+          "claim_type": "risk",
+          "population_group": "adolescent",
+          "confidence": "unknown",
+          "evidence_grade": "mechanistic_only",
+          "text": "Use during adolescence may interfere with normal endocrine signaling and metabolic regulation. Long-term developmental effects have not been studied and may be irreversible.",
+          "evidence_refs": []
+        }
+      ],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "A double-blind, placebo-controlled study of AOD-9604 for obesity",
+        "source_type": "pubmed",
+        "source_id": "15615612",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15615612/",
+        "published_date": "2005-01-01",
+        "evidence_grade": "human_interventional",
+        "notes": "Human trial evaluating weight-loss effects and safety over 12 weeks."
+      },
+      {
+        "id": "E2",
+        "title": "Lipolytic domain of human growth hormone",
+        "source_type": "pubmed",
+        "source_id": "12183452",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/12183452/",
+        "published_date": "2002-01-01",
+        "evidence_grade": "mechanistic_only",
+        "notes": "Identified the 176–191 fragment responsible for fat metabolism signaling."
+      }
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-17",
+        "change_type": "initial_entry",
+        "summary": "Initial canonical entry for AOD-9604",
+        "detail": "Created first alphabetical peptide entry with human and mechanistic evidence.",
+        "evidence_refs": ["E1", "E2"]
+      }
+    ]
+  }
+}
