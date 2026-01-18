@@ -17,8 +17,8 @@ Assumptions (repo-validated):
 """
 
 from __future__ import annotations
-
 import argparse
+import sys
 import csv
 import json
 import re
@@ -494,15 +494,39 @@ def enforce_developmental_risk(doc: dict, slug: str, systems: List[str]) -> bool
 
     return changed
 
+
+def rebuild_search_index() -> None:
+    """
+    Rebuild content/peptides/_search_index.json and write scripts/index/_reports/<timestamp>.json.
+    Metadata-only: does not change peptide JSON content.
+    """
+    cmd = [
+        sys.executable,
+        str(REPO_ROOT / "scripts" / "index" / "build_search_index.py"),
+        "--write",
+        "--report",
+    ]
+    r = subprocess.run(cmd)
+    if r.returncode != 0:
+        raise SystemExit(f"ERROR: build_search_index.py failed with exit code {r.returncode}")
+
 def main() -> int:
     ap = argparse.ArgumentParser()
+
     ap.add_argument("--dry-run", action="store_true", help="No file writes")
     ap.add_argument("--apply", action="store_true", help="Actually write files (safety latch)")
     ap.add_argument("--overwrite", action="store_true", help="Overwrite existing peptide JSON files")
     ap.add_argument("--validate", action="store_true", help="Run validator after generation")
     ap.add_argument("--verbose", action="store_true", help="Print created / skipped / updated")
-    ap.add_argument("--only", type=str, default="", help="Comma-separated slugs to run (optional)")
+    ap.add_argument("--only", help="Comma-separated slugs to run (optional)")
+    ap.add_argument(
+        "--rebuild-search-index",
+        action="store_true",
+        help="Rebuild content/peptides/_search_index.json (metadata only)"
+    )
+
     args = ap.parse_args()
+
 
 
     # SAFETY_LATCH_APPLY: prevent accidental writes
@@ -520,7 +544,7 @@ def main() -> int:
     topic_map_doc = ensure_topic_map_exists()
 
     only: Set[str] = set()
-    if args.only.strip():
+    if args.only and args.only.strip():
         only = {s.strip() for s in args.only.split(",") if s.strip()}
         rows = [r for r in rows if r.slug in only]
 
@@ -612,6 +636,10 @@ def main() -> int:
 
     if args.validate and written_paths:
         return run_validator(written_paths)
+    # AUTO_REBUILD_SEARCH_INDEX
+    if args.apply or getattr(args, "rebuild_search_index", False):
+        rebuild_search_index()
+
 
     return 0
 
