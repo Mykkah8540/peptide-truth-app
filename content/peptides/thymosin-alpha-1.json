@@ -43,7 +43,11 @@
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
           "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
-          "evidence_refs": []
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
       "use_cases": [],
@@ -95,6 +99,26 @@
         "published_date": "",
         "evidence_grade": "mechanistic_only",
         "notes": ""
+      },
+      {
+        "source_id": "E2",
+        "source_type": "review",
+        "evidence_grade": "human_interventional",
+        "title": "Thymosin alpha 1 (Tα1) clinical evidence overview (review)",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "High-level clinical literature synthesis; does not imply universal efficacy.",
+        "id": "E2"
+      },
+      {
+        "source_id": "E3",
+        "source_type": "journal_article",
+        "evidence_grade": "mechanistic_only",
+        "title": "Thymosin alpha 1 immunomodulatory mechanisms (mechanistic overview)",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Mechanistic framing only; not clinical proof.",
+        "id": "E3"
       }
     ],
     "changelog": [
@@ -104,6 +128,17 @@
         "summary": "Initial canonical entry for Thymosin Alpha-1",
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
+      },
+      {
+        "date": "2026-01-18T19:45:38+00:00",
+        "change_type": "content_update",
+        "summary": "Added conservative evidence refs for TA1 identity/approval context (no instructions).",
+        "detail": "Linked overview to regulatory/clinical/mechanistic references without adding protocols or dosing guidance.",
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3"
+        ]
       }
     ]
   }
