@@ -1,0 +1,41 @@
+{
+  "schema_version": "safety_index_v1",
+  "rules": {
+    "safety_pages_are_neutral": true,
+    "safety_pages_are_prominent": true,
+    "no_procedural_instructions": true,
+    "adolescent_safety_is_priority": true
+  },
+  "pages": [
+    {
+      "safety_id": "safety_adolescents_development",
+      "title": "Adolescents & Development",
+      "icon": "alert-triangle",
+      "order": 10
+    },
+    {
+      "safety_id": "safety_endocrine_axes",
+      "title": "Hormones, Puberty, and Endocrine Axes",
+      "icon": "activity",
+      "order": 20
+    },
+    {
+      "safety_id": "safety_interactions",
+      "title": "Interactions: Drugs, Supplements, and Peptides",
+      "icon": "shuffle",
+      "order": 30
+    },
+    {
+      "safety_id": "safety_evidence_grades",
+      "title": "How Evidence Works Here",
+      "icon": "book-open",
+      "order": 40
+    },
+    {
+      "safety_id": "safety_risk_scoring",
+      "title": "How Risk Scores Are Calculated",
+      "icon": "gauge",
+      "order": 50
+    }
+  ]
+}
