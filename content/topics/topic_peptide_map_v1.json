@@ -47,6 +47,13 @@
       "rationale": "Widely searched topical cosmetic peptide complex discussed for skin appearance and barrier-related goals; association reflects user interest, not endorsement.",
       "confidence": "moderate",
       "evidence_grade": "human_interventional"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "aod-9604",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
     }
   ]
 }

@@ -99,37 +99,59 @@ class QueueRow:
     developmental_systems: List[str]
 
 
-def read_queue(path: Path) -> List[QueueRow]:
-    if not path.exists():
-        raise FileNotFoundError(f"Queue not found: {path}")
+def read_queue(queue_path: Path) -> List[QueueRow]:
+    """
+    Read canonical queue CSV and return normalized QueueRow objects.
+    This function MUST remain side-effect free (no topic mapping, no writes).
+    """
+    import csv
 
-    with path.open("r", encoding="utf-8", newline="") as f:
+    def split_pipes(s: str) -> List[str]:
+        s = (s or "").strip()
+        if not s:
+            return []
+        return [x.strip() for x in s.split("|") if x.strip()]
+
+    def parse_bool_optional(s: str) -> Optional[bool]:
+        s = (s or "").strip().lower()
+        if not s:
+            return None
+        if s in ("true", "1", "yes", "y"):
+            return True
+        if s in ("false", "0", "no", "n"):
+            return False
+        raise ValueError(f"Invalid boolean value in queue: {s!r} (expected true/false)")
+
+    rows: List[QueueRow] = []
+    seen_slug: set[str] = set()
+
+    with queue_path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        rows: List[QueueRow] = []
-
-        for line_no, r in enumerate(reader, start=2):
-            canonical_name = (r.get("canonical_name") or "").strip().strip('"')
+        for r in reader:
+            canonical_name = (r.get("canonical_name") or "").strip()
             slug = (r.get("slug") or "").strip()
             status_category = (r.get("status_category") or "").strip()
-            needs_prescription = parse_bool(r.get("needs_prescription") or "false")
-            priority = (r.get("priority") or "normal").strip()
+            needs_prescription_raw = (r.get("needs_prescription") or "").strip().lower()
+            priority = (r.get("priority") or "").strip()
             notes = (r.get("notes") or "").strip()
 
-            if not canonical_name:
-                raise ValueError(f"{path}:{line_no} missing canonical_name")
             if not slug:
-                raise ValueError(f"{path}:{line_no} missing slug")
-            assert_slug(slug)
-            if not status_category:
-                raise ValueError(f"{path}:{line_no} missing status_category")
+                continue
+            if slug in seen_slug:
+                raise ValueError(f"Duplicate slug in queue: {slug}")
+            seen_slug.add(slug)
 
-            aliases = split_pipes((r.get("aliases") or "").strip())
-            primary_topics = split_pipes((r.get("primary_topics") or "").strip())
-            developmental_systems = split_pipes((r.get("developmental_systems") or "").strip())
-            adolescent_flag_raw = (r.get("adolescent_flag") or "").strip()
-            adolescent_flag = None
-            if adolescent_flag_raw:
-                adolescent_flag = parse_bool(adolescent_flag_raw)
+            if needs_prescription_raw in ("true", "1", "yes", "y"):
+                needs_prescription = True
+            elif needs_prescription_raw in ("false", "0", "no", "n", ""):
+                needs_prescription = False
+            else:
+                raise ValueError(f"Invalid needs_prescription in queue for {slug}: {needs_prescription_raw!r}")
+
+            aliases = split_pipes((r.get("aliases") or ""))
+            primary_topics = split_pipes((r.get("primary_topics") or ""))
+            adolescent_flag = parse_bool_optional((r.get("adolescent_flag") or ""))
+            developmental_systems = split_pipes((r.get("developmental_systems") or ""))
 
             rows.append(
                 QueueRow(
@@ -146,20 +168,7 @@ def read_queue(path: Path) -> List[QueueRow]:
                 )
             )
 
-    # Uniqueness checks
-    seen_slug: Set[str] = set()
-    seen_name: Set[str] = set()
-    for row in rows:
-        if row.slug in seen_slug:
-            raise ValueError(f"Duplicate slug in queue: {row.slug}")
-        name_key = row.canonical_name.lower()
-        if name_key in seen_name:
-            raise ValueError(f"Duplicate canonical_name in queue: {row.canonical_name}")
-        seen_slug.add(row.slug)
-        seen_name.add(name_key)
-
     return rows
-
 
 def ensure_observed_exposure_ranges(pep: Dict[str, Any]) -> None:
     # Must exist and be explicitly non-instructional
@@ -461,6 +470,11 @@ def main() -> int:
     written_paths: List[Path] = []
 
     for row in rows:
+        # Queue-driven topic mapping (navigation only; placeholder stubs only)
+        validate_topic_ids(row.primary_topics)
+        if row.primary_topics:
+            upsert_topic_map(topic_map_doc, row.slug, row.primary_topics)
+
         out_path = CONTENT_PEPTIDES_DIR / f"{row.slug}.json"
         exists = out_path.exists()
 

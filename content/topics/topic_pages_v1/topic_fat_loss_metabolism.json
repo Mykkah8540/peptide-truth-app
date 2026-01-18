@@ -1,0 +1,11 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_fat_loss_metabolism",
+  "peptides": [
+    {
+      "slug": "aod-9604",
+      "canonical_name": "AOD-9604"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}
