@@ -37,6 +37,18 @@
               "best_available_grade": "human_interventional",
               "human_evidence_exists": true
             }
+          },
+          {
+            "canonical_name": "Copper Tripeptide-1",
+            "slug": "ghk-cu",
+            "why_people_look_it_up": "Popular topical 'copper peptide' discussed for skin appearance; effects depend heavily on formulation and delivery.",
+            "status_category": "investigational_human",
+            "risk_score": 2,
+            "developmental_risk": false,
+            "evidence_snapshot": {
+              "best_available_grade": "human_interventional",
+              "human_evidence_exists": true
+            }
           }
         ]
       }

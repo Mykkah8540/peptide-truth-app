@@ -1,0 +1,123 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "Copper Tripeptide-1",
+    "short_name": "GHK-Cu",
+    "aliases": [
+      "GHK-Cu",
+      "Copper peptide GHK-Cu",
+      "Glycyl-L-histidyl-L-lysine copper complex",
+      "GHK copper complex"
+    ],
+    "classification": {
+      "category": "investigational_human",
+      "needs_prescription": false,
+      "notes": "Primarily used as a topical cosmetic ingredient. Not an FDA-approved therapeutic drug; outcomes depend heavily on formulation and delivery."
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "2026-01-17",
+      "human_use_note": "Copper Tripeptide-1 (GHK-Cu) is widely used topically in skincare. Human evidence is mixed and formulation-dependent. It is not an FDA-approved therapeutic drug."
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "Gly-His-Lys (copper complex)",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 2,
+      "severity": "mild",
+      "likelihood": "unlikely",
+      "evidence_grade": "human_interventional",
+      "developmental_risk": false,
+      "unknowns_penalty": true,
+      "rationale": "Topical cosmetic use generally presents low systemic risk. Main uncertainty comes from variable formulations, inconsistent objective outcomes across small human studies, and limited standardized long-term safety characterization across product types."
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "moderate",
+          "evidence_grade": "human_interventional",
+          "text": "Copper Tripeptide-1 (GHK-Cu) is a copper-binding peptide complex used in topical products for skin appearance and barrier-related goals. Evidence includes small human studies and broader reviews; results may depend on formulation and delivery to target layers.",
+          "evidence_refs": ["E1", "E2", "E3"]
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "topical",
+          "unit": "formulation-dependent",
+          "min": null,
+          "max": null,
+          "frequency": "varies",
+          "duration": "varies",
+          "population_group": "general",
+          "notes": "Descriptive only. Products vary widely by formulation and concentration. Not instructions.",
+          "evidence_refs": ["E1", "E2", "E3"]
+        }
+      ],
+      "developmental_risk_block": [],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Skin",
+        "source_type": "pmc",
+        "source_id": "PMC6073405",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6073405/",
+        "published_date": "2018-01-01",
+        "evidence_grade": "human_observational",
+        "notes": "Review covering skin-related evidence and mechanisms; mixes human, preclinical, and mechanistic data."
+      },
+      {
+        "id": "E2",
+        "title": "Human skin penetration of a copper tripeptide in vitro as a function of skin layer and delivery conditions",
+        "source_type": "pmc",
+        "source_id": "PMC3016279",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3016279/",
+        "published_date": "2010-01-01",
+        "evidence_grade": "in_vitro",
+        "notes": "Penetration/delivery study relevant to topical delivery variability."
+      },
+      {
+        "id": "E3",
+        "title": "Effects of topical copper tripeptide complex on photoaged skin (clinical cosmetic study)",
+        "source_type": "doi",
+        "source_id": "10.1001/archfaci.8.4.252",
+        "url": "https://www.liebertpub.com/abs/doi/10.1001/archfaci.8.4.252",
+        "published_date": "2006-01-01",
+        "evidence_grade": "human_interventional",
+        "notes": "Clinical cosmetic study; objective wrinkle/skin-quality outcomes may be mixed; patient-reported satisfaction may differ from measured changes."
+      }
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-17",
+        "change_type": "initial_entry",
+        "summary": "Initial canonical entry for Copper Tripeptide-1 (GHK-Cu)",
+        "detail": "Added topical cosmetic peptide entry with review + delivery evidence + clinical cosmetic study reference; low-risk topical profile with uncertainty penalty due to formulation variability.",
+        "evidence_refs": ["E1", "E2", "E3"]
+      }
+    ]
+  }
+}

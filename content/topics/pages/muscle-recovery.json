@@ -37,6 +37,18 @@
               "best_available_grade": "human_interventional",
               "human_evidence_exists": true
             }
+          },
+          {
+            "canonical_name": "BPC-157",
+            "slug": "bpc-157",
+            "why_people_look_it_up": "Often searched for tendon/ligament/muscle recovery; human evidence is limited and regulatory status is unapproved.",
+            "status_category": "investigational_human",
+            "risk_score": 7,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "human_observational",
+              "human_evidence_exists": true
+            }
           }
         ]
       }

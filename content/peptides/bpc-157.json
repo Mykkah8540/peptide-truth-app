@@ -1,0 +1,140 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "BPC-157",
+    "short_name": "BPC-157",
+    "aliases": [
+      "Body Protection Compound-157",
+      "Pentadecapeptide BPC 157"
+    ],
+    "classification": {
+      "category": "investigational_human",
+      "needs_prescription": false,
+      "notes": "Not approved for human therapeutic use by major regulators. Frequently sold as 'research use only' and used off-label in wellness/athletic contexts."
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "2026-01-17",
+      "human_use_note": "BPC-157 is not an approved human drug. Human evidence is limited and heterogeneous. Regulatory bodies and anti-doping organizations flag it as an unapproved substance with meaningful uncertainty and potential safety concerns."
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "Pentadecapeptide (15 amino acids)",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 7,
+      "severity": "serious",
+      "likelihood": "uncertain",
+      "evidence_grade": "human_observational",
+      "developmental_risk": true,
+      "unknowns_penalty": true,
+      "rationale": "High uncertainty and unapproved status combined with common non-medical injectable use patterns increases consequence risk. FDA compounding safety concerns cite limited safety information for proposed routes and potential immunogenicity/impurity characterization issues. Human clinical evidence is limited and not definitive."
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "low",
+          "evidence_grade": "human_observational",
+          "text": "BPC-157 is a synthetic pentadecapeptide discussed in injury recovery and GI contexts. Most supportive evidence is preclinical (animal models). Human evidence is limited, not definitive, and quality varies. The largest real-world risk driver is unregulated sourcing and non-medical administration practices.",
+          "evidence_refs": ["E1", "E2", "E3"]
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "varies",
+          "unit": "study-dependent",
+          "min": null,
+          "max": null,
+          "frequency": "varies",
+          "duration": "varies",
+          "population_group": "general",
+          "notes": "Descriptive only. This app does not provide protocols. Not instructions.",
+          "evidence_refs": ["E1", "E2", "E4"]
+        }
+      ],
+      "developmental_risk_block": [
+        {
+          "title": "Developmental / Adolescent risk",
+          "population_group": "adolescent",
+          "confidence": "moderate",
+          "evidence_grade": "mechanistic_only",
+          "text": "Adolescents are still calibrating long-term repair, endocrine, and neurodevelopmental setpoints. For BPC-157, high uncertainty plus unregulated real-world use patterns increase consequence risk. Treat 'unknown' as part of risk in under-18 athletes.",
+          "evidence_refs": ["E2", "E3"]
+        }
+      ],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "Emerging Use of BPC-157 in Orthopaedic Sports Medicine",
+        "source_type": "pmc",
+        "source_id": "PMC12313605",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12313605/",
+        "published_date": "2025-01-01",
+        "evidence_grade": "human_observational",
+        "notes": "Sports medicine review summarizing preclinical evidence and limited human reports; highlights evidence gaps."
+      },
+      {
+        "id": "E2",
+        "title": "FDA: Certain Bulk Drug Substances for Use in Compounding May Present Significant Safety Risks (BPC-157 entry)",
+        "source_type": "fda",
+        "source_id": "fda_compounding_category2_bpc157",
+        "url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
+        "published_date": "",
+        "evidence_grade": "regulatory_label",
+        "notes": "FDA compounding safety note: limited safety-related information for proposed routes; immunogenicity and impurity characterization concerns."
+      },
+      {
+        "id": "E3",
+        "title": "USADA: BPC-157 is prohibited and unapproved",
+        "source_type": "usada",
+        "source_id": "usada_bpc157",
+        "url": "https://www.usada.org/spirit-of-sport/bpc-157-peptide-prohibited/",
+        "published_date": "",
+        "evidence_grade": "human_observational",
+        "notes": "Anti-doping perspective noting unapproved status and uncertainty for athlete use."
+      },
+      {
+        "id": "E4",
+        "title": "ClinicalTrials.gov: Safety and pharmacokinetics trial for BPC-157 (registered; results not posted)",
+        "source_type": "clinicaltrials",
+        "source_id": "NCT02637284",
+        "url": "https://clinicaltrials.gov/study/NCT02637284",
+        "published_date": "2015-12-22",
+        "evidence_grade": "human_interventional",
+        "notes": "Registered Phase I safety/PK study; publicly available outcomes may be limited."
+      }
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-17",
+        "change_type": "initial_entry",
+        "summary": "Initial canonical entry for BPC-157",
+        "detail": "Added unapproved peptide entry with strong uncertainty framing; included FDA compounding safety note + sports medicine review + anti-doping context; flagged developmental risk due to high uncertainty and common youth athlete interest.",
+        "evidence_refs": ["E1", "E2", "E3", "E4"]
+      }
+    ]
+  }
+}
