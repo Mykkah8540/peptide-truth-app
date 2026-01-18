@@ -1,0 +1,45 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_page": {
+    "topic_id": "topic_skin_cosmetic",
+    "title": "Skin & Cosmetic Health",
+    "intro": {
+      "what_this_topic_means": "This topic covers skin appearance and barrier function: wrinkles, hydration, texture, elasticity, and the difference between cosmetic effects and therapeutic claims.",
+      "common_misconceptions": [
+        "Topical cosmetic ingredients are not the same as prescription dermatology treatments.",
+        "A plausible mechanism does not guarantee penetration to the target in real skin.",
+        "A short-term cosmetic effect does not prove long-term benefit or safety."
+      ],
+      "who_should_be_extra_cautious": [
+        "People with severe dermatitis/eczema or compromised skin barrier",
+        "People with a history of allergic contact reactions",
+        "Pregnancy/lactation (formulation ingredients matter even if the peptide is low-risk)"
+      ]
+    },
+    "how_to_use_this_page": [
+      "Topics help you browse; they do not recommend peptides.",
+      "Always check status and risk score first.",
+      "Human evidence and preclinical evidence are separated."
+    ],
+    "peptide_groups": [
+      {
+        "group_title": "Commonly searched",
+        "display_rule": "Alphabetical within group",
+        "peptides": []
+      }
+    ],
+    "safety_callouts": [
+      {
+        "title": "Cosmetic vs therapeutic",
+        "body": "Many skin peptides are used in cosmetics. This does not mean they are approved drugs. Effectiveness depends heavily on formulation, delivery, concentration, and skin biology."
+      }
+    ],
+    "evidence_notes": [
+      {
+        "title": "Formulation matters",
+        "body": "For topical peptides, delivery to relevant layers of skin is a major variable. Evidence often varies by product formulation and study design."
+      }
+    ],
+    "last_reviewed": "2026-01-17"
+  }
+}
