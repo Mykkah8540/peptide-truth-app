@@ -1,0 +1,58 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_page": {
+    "topic_id": "topic_muscle_recovery",
+    "title": "Muscle & Recovery",
+    "intro": {
+      "what_this_topic_means": "This topic covers recovery-related physiology: soreness, repair signaling, adaptation to training, sleep-driven recovery, and the difference between perceived recovery and actual tissue remodeling.",
+      "common_misconceptions": [
+        "More soreness does not always mean more growth.",
+        "Faster recovery is not always better if it masks overload.",
+        "Animal or mechanistic evidence is not the same as proven human benefit."
+      ],
+      "who_should_be_extra_cautious": [
+        "Adolescents and young athletes (developmental setpoints are still calibrating)",
+        "People with endocrine disorders or unexplained fatigue",
+        "People with significant psychiatric vulnerability if a compound affects sleep/mood"
+      ]
+    },
+    "how_to_use_this_page": [
+      "Topics help you browse; they do not recommend peptides.",
+      "Always check status and risk score first.",
+      "Human evidence and preclinical evidence are separated."
+    ],
+    "peptide_groups": [
+      {
+        "group_title": "Commonly searched",
+        "display_rule": "Alphabetical within group",
+        "peptides": [
+          {
+            "canonical_name": "AOD-9604",
+            "slug": "aod-9604",
+            "why_people_look_it_up": "Frequently discussed in fitness contexts related to body composition and recovery interest; association reflects user interest, not endorsement.",
+            "status_category": "investigational_human",
+            "risk_score": 4,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "human_interventional",
+              "human_evidence_exists": true
+            }
+          }
+        ]
+      }
+    ],
+    "safety_callouts": [
+      {
+        "title": "Adolescents and development",
+        "body": "If you are under 18, assume uncertainty is part of the risk. Many compounds have little to no adolescent data, and endocrine/metabolic effects may have long-lived consequences."
+      }
+    ],
+    "evidence_notes": [
+      {
+        "title": "Why evidence changes",
+        "body": "Status and evidence can change quickly as trials publish or regulators update labeling. This app logs updates and ties key claims to specific sources."
+      }
+    ],
+    "last_reviewed": "2026-01-17"
+  }
+}
