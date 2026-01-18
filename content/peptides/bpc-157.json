@@ -27,7 +27,7 @@
     },
     "risk": {
       "current_score": 7,
-      "severity": "serious",
+      "severity": "severe",
       "likelihood": "uncertain",
       "evidence_grade": "human_observational",
       "developmental_risk": true,
@@ -43,7 +43,11 @@
           "confidence": "low",
           "evidence_grade": "human_observational",
           "text": "BPC-157 is a synthetic pentadecapeptide discussed in injury recovery and GI contexts. Most supportive evidence is preclinical (animal models). Human evidence is limited, not definitive, and quality varies. The largest real-world risk driver is unregulated sourcing and non-medical administration practices.",
-          "evidence_refs": ["E1", "E2", "E3"]
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
       "use_cases": [],
@@ -65,7 +69,11 @@
           "duration": "varies",
           "population_group": "general",
           "notes": "Descriptive only. This app does not provide protocols. Not instructions.",
-          "evidence_refs": ["E1", "E2", "E4"]
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E4"
+          ]
         }
       ],
       "developmental_risk_block": [
@@ -75,7 +83,10 @@
           "confidence": "moderate",
           "evidence_grade": "mechanistic_only",
           "text": "Adolescents are still calibrating long-term repair, endocrine, and neurodevelopmental setpoints. For BPC-157, high uncertainty plus unregulated real-world use patterns increase consequence risk. Treat 'unknown' as part of risk in under-18 athletes.",
-          "evidence_refs": ["E2", "E3"]
+          "evidence_refs": [
+            "E2",
+            "E3"
+          ]
         }
       ],
       "interaction_summary": []
@@ -133,7 +144,12 @@
         "change_type": "initial_entry",
         "summary": "Initial canonical entry for BPC-157",
         "detail": "Added unapproved peptide entry with strong uncertainty framing; included FDA compounding safety note + sports medicine review + anti-doping context; flagged developmental risk due to high uncertainty and common youth athlete interest.",
-        "evidence_refs": ["E1", "E2", "E3", "E4"]
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3",
+          "E4"
+        ]
       }
     ]
   }
