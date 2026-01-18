@@ -6,4 +6,6 @@ __pycache__/
 .DS_Store
 
 # Local drafts / queues
-content/peptides/_queue.csv
+
+# Local drafts / queues (canonical queue must be tracked)
+content/peptides/_queue.local.csv
