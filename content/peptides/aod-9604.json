@@ -114,7 +114,8 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/12183452/",
         "published_date": "2002-01-01",
         "evidence_grade": "mechanistic_only",
-        "notes": "Identified the 176–191 fragment responsible for fat metabolism signaling."
+        "notes": "Identified the 176–191 fragment responsible for fat metabolism signaling.",
+        "year": 2002
       }
     ],
     "changelog": [

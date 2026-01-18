@@ -115,7 +115,8 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3016279/",
         "published_date": "2010-01-01",
         "evidence_grade": "in_vitro",
-        "notes": "Penetration/delivery study relevant to topical delivery variability."
+        "notes": "Penetration/delivery study relevant to topical delivery variability.",
+        "year": 2010
       },
       {
         "id": "E3",
