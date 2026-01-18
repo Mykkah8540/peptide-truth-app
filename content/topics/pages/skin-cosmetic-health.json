@@ -25,7 +25,20 @@
       {
         "group_title": "Commonly searched",
         "display_rule": "Alphabetical within group",
-        "peptides": []
+        "peptides": [
+          {
+            "canonical_name": "Acetyl Hexapeptide-8",
+            "slug": "acetyl-hexapeptide-8",
+            "why_people_look_it_up": "Common topical cosmetic peptide discussed for expression-line appearance and 'Botox-like' marketing; outcomes depend heavily on formulation and delivery.",
+            "status_category": "investigational_human",
+            "risk_score": 2,
+            "developmental_risk": false,
+            "evidence_snapshot": {
+              "best_available_grade": "human_interventional",
+              "human_evidence_exists": true
+            }
+          }
+        ]
       }
     ],
     "safety_callouts": [

@@ -12,6 +12,13 @@
       "rationale": "Often searched in performance/weight contexts; topic association reflects user interest, not recommendation.",
       "confidence": "low",
       "evidence_grade": "human_interventional"
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "peptide_slug": "acetyl-hexapeptide-8",
+      "rationale": "Commonly searched topical cosmetic peptide for appearance-related claims; association reflects user interest and topical domain relevance, not endorsement.",
+      "confidence": "moderate",
+      "evidence_grade": "human_interventional"
     }
   ]
 }

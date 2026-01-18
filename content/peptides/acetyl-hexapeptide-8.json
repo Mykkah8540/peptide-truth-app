@@ -10,13 +10,13 @@
     "classification": {
       "category": "investigational_human",
       "needs_prescription": false,
-      "notes": "Primarily used as a cosmetic ingredient. Not an FDA-approved therapeutic drug; typically regulated under cosmetics rather than prescription medications."
+      "notes": "Primarily used as a cosmetic ingredient (topical). Not an FDA-approved therapeutic drug; product quality and formulation vary by manufacturer."
     },
     "status": {
       "category": "investigational_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-17",
-      "human_use_note": "Acetyl Hexapeptide-8 (Argireline) is widely used topically in cosmetic products for wrinkle/appearance claims. It is not an FDA-approved therapeutic drug, and product quality, concentration, and formulation vary by manufacturer."
+      "human_use_note": "Acetyl Hexapeptide-8 (Argireline) is widely used topically in cosmetic products for appearance-related claims (e.g., reducing the appearance of expression lines). It is not an FDA-approved therapeutic drug, and effectiveness/safety depend heavily on formulation, concentration, and delivery."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -32,7 +32,7 @@
       "evidence_grade": "human_interventional",
       "developmental_risk": false,
       "unknowns_penalty": true,
-      "rationale": "Topical cosmetic use is generally associated with low systemic risk, and small human studies report few significant adverse events. However, evidence quality varies, formulation-dependent effectiveness is a major confounder, and long-term/high-exposure systemic safety is not well characterized."
+      "rationale": "Topical cosmetic use is generally low systemic risk and small human studies report few significant adverse events. Major uncertainty comes from formulation variability (delivery/penetration), heterogeneous evidence quality, and limited long-term data at high exposure."
     },
     "sections": {
       "overview": [
@@ -42,7 +42,7 @@
           "population_group": "general",
           "confidence": "moderate",
           "evidence_grade": "human_interventional",
-          "text": "Acetyl Hexapeptide-8 (Argireline) is a synthetic cosmetic peptide commonly used topically in anti-aging skincare products. It is marketed for reducing the appearance of expression lines, with proposed effects related to neurotransmitter-mediated muscle contraction signaling in the skin.",
+          "text": "Acetyl Hexapeptide-8 (Argireline) is a synthetic cosmetic peptide used topically in anti-aging skincare. It is marketed for reducing the appearance of expression lines. Proposed effects relate to modulation of neurotransmitter-mediated muscle contraction signaling, but clinical outcomes depend strongly on formulation and delivery to target layers.",
           "evidence_refs": ["E1", "E2"]
         }
       ],
@@ -65,7 +65,7 @@
           "duration": "varies",
           "population_group": "general",
           "notes": "Descriptive only. Cosmetic formulations vary widely by manufacturer; this entry does not provide usage instructions.",
-          "evidence_refs": ["E1", "E2"]
+          "evidence_refs": ["E1", "E2", "E3"]
         }
       ],
       "developmental_risk_block": [],
@@ -99,13 +99,13 @@
       },
       {
         "id": "E3",
-        "title": "Argireline in Treatment of Periorbital Wrinkles (ClinicalTrials.gov record)",
+        "title": "Argireline in Treatment of Periorbital Wrinkles (ClinicalTrials.gov)",
         "source_type": "clinicaltrials",
         "source_id": "NCT01381484",
         "url": "https://clinicaltrials.gov/study/NCT01381484",
         "published_date": "",
         "evidence_grade": "human_interventional",
-        "notes": "Registry entry documenting a human study context for Argireline and periorbital wrinkles."
+        "notes": "ClinicalTrials.gov registry entry documenting a human study context for Argireline and periorbital wrinkles."
       }
     ],
     "changelog": [
@@ -113,7 +113,7 @@
         "date": "2026-01-17",
         "change_type": "initial_entry",
         "summary": "Initial canonical entry for Acetyl Hexapeptide-8 (Argireline)",
-        "detail": "Added cosmetic peptide entry with human study and review references; low-risk topical profile with uncertainty penalty due to formulation variability and limited long-term systemic characterization.",
+        "detail": "Added cosmetic peptide entry with human study, review, and clinical trial registry references; low-risk topical profile with uncertainty penalty due to formulation variability and limited long-term systemic characterization.",
         "evidence_refs": ["E1", "E2", "E3"]
       }
     ]
