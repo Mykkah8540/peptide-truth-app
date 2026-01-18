@@ -1,0 +1,8 @@
+{
+  "schema_version": "sources_index_v1",
+  "rules": {
+    "deduplicate_by": ["source_type", "source_id"],
+    "canonical_source_of_truth": "content/sources/_sources_index.json"
+  },
+  "sources": []
+}
