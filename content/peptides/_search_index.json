@@ -1,6 +1,6 @@
 {
   "schema_version": "peptide_search_index_v1",
-  "generated_at": "2026-01-18_124556",
+  "generated_at": "2026-01-18_125007",
   "rules": {
     "source_of_truth": "content/peptides/<slug>.json",
     "topics_source": "content/topics/topic_peptide_map_v1.json (mappings[])",
