@@ -35,6 +35,10 @@ CONTENT_PEPTIDES_DIR = REPO_ROOT / "content" / "peptides"
 TEMPLATE_PATH = REPO_ROOT / "scripts" / "ingest" / "peptide_template.json"
 QUEUE_PATH = CONTENT_PEPTIDES_DIR / "_queue.csv"
 PEPTIDE_INDEX_PATH = CONTENT_PEPTIDES_DIR / "_index.json"
+TOPICS_DIR = REPO_ROOT / "content" / "topics"
+TOPICS_INDEX_PATH = TOPICS_DIR / "_topics_index.json"
+TOPIC_MAP_PATH = TOPICS_DIR / "topic_peptide_map_v1.json"
+TOPIC_PAGES_DIR = TOPICS_DIR / "topic_pages_v1"
 VALIDATOR_PATH = REPO_ROOT / "scripts" / "validate" / "validate_peptide_json.py"
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -91,6 +95,8 @@ class QueueRow:
     notes: str
     aliases: List[str]
     adolescent_flag: Optional[bool]  # Optional override
+    primary_topics: List[str]
+    developmental_systems: List[str]
 
 
 def read_queue(path: Path) -> List[QueueRow]:
@@ -118,6 +124,8 @@ def read_queue(path: Path) -> List[QueueRow]:
                 raise ValueError(f"{path}:{line_no} missing status_category")
 
             aliases = split_pipes((r.get("aliases") or "").strip())
+            primary_topics = split_pipes((r.get("primary_topics") or "").strip())
+            developmental_systems = split_pipes((r.get("developmental_systems") or "").strip())
             adolescent_flag_raw = (r.get("adolescent_flag") or "").strip()
             adolescent_flag = None
             if adolescent_flag_raw:
@@ -133,6 +141,8 @@ def read_queue(path: Path) -> List[QueueRow]:
                     notes=notes,
                     aliases=aliases,
                     adolescent_flag=adolescent_flag,
+                    primary_topics=primary_topics,
+                    developmental_systems=developmental_systems,
                 )
             )
 
@@ -193,6 +203,74 @@ def ensure_developmental_risk_block(pep: Dict[str, Any]) -> None:
             }
         ]
 
+
+
+def load_topics_index() -> List[str]:
+    if not TOPICS_INDEX_PATH.exists():
+        raise FileNotFoundError(f"Topics index not found: {TOPICS_INDEX_PATH}")
+    data = load_json(TOPICS_INDEX_PATH)
+    topics = data.get("topics", [])
+    ids = [t.get("topic_id", "") for t in topics if t.get("topic_id")]
+    return ids
+
+def validate_topic_ids(topic_ids: List[str]) -> None:
+    if not topic_ids:
+        return
+    allowed = set(load_topics_index())
+    bad = [t for t in topic_ids if t not in allowed]
+    if bad:
+        raise ValueError(f"Invalid topic_id(s) in queue: {bad}. Allowed: {sorted(allowed)}")
+
+def ensure_topic_map_exists() -> dict:
+    if TOPIC_MAP_PATH.exists():
+        return load_json(TOPIC_MAP_PATH)
+    return {
+        "schema_version": "topic_peptide_map_v1",
+        "rules": {
+            "topics_are_navigation": True,
+            "topics_are_not_recommendations": True,
+            "mapping_is_descriptive_only": True,
+            "source_of_truth": "content/peptides/<slug>.json"
+        },
+        "map": {}
+    }
+
+def upsert_topic_map(map_doc: dict, slug: str, topic_ids: List[str]) -> None:
+    # Store as simple list for each peptide slug
+    # This is descriptive navigation only.
+    m = map_doc.setdefault("map", {})
+    m[slug] = sorted(set(topic_ids))
+
+def rebuild_topic_pages(map_doc: dict) -> None:
+    # Builds content/topics/topic_pages_v1/<topic_id>.json deterministically.
+    TOPIC_PAGES_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Invert map: topic_id -> [slug...]
+    inv = {}
+    for slug, topic_ids in map_doc.get("map", {}).items():
+        for tid in topic_ids:
+            inv.setdefault(tid, []).append(slug)
+
+    # Load peptides canonical names (for stable display order)
+    peptide_meta = {}
+    for p in sorted(CONTENT_PEPTIDES_DIR.glob("*.json")):
+        if p.name.startswith("_"):
+            continue
+        doc = load_json(p)
+        pep = doc.get("peptide", {})
+        peptide_meta[p.stem] = pep.get("canonical_name", p.stem)
+
+    # Write each topic page
+    for tid, slugs in inv.items():
+        items = [{"slug": s, "canonical_name": peptide_meta.get(s, s)} for s in slugs]
+        items.sort(key=lambda x: (x["canonical_name"].lower(), x["slug"]))
+        out = {
+            "schema_version": "topic_page_v1",
+            "topic_id": tid,
+            "peptides": items,
+            "note": "Navigation only. Not a recommendation or endorsement."
+        }
+        save_json(TOPIC_PAGES_DIR / f"{tid}.json", out)
 
 def make_doc_from_template(template: Dict[str, Any], row: QueueRow) -> Dict[str, Any]:
     doc = deepcopy(template)
@@ -348,6 +426,9 @@ def main() -> int:
 
     rows = read_queue(QUEUE_PATH)
 
+    # Topic mapping (navigation only)
+    topic_map_doc = ensure_topic_map_exists()
+
     only: Set[str] = set()
     if args.only.strip():
         only = {s.strip() for s in args.only.split(",") if s.strip()}
@@ -386,6 +467,9 @@ def main() -> int:
     new_index = rebuild_index(CONTENT_PEPTIDES_DIR)
     if not args.dry_run:
         save_json(PEPTIDE_INDEX_PATH, new_index)
+        # Write topic map + topic pages deterministically
+        save_json(TOPIC_MAP_PATH, topic_map_doc)
+        rebuild_topic_pages(topic_map_doc)
 
     # Report
     report = {
