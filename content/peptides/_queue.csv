@@ -1,2 +1,7 @@
 canonical_name,slug,status_category,needs_prescription,priority,notes,aliases,primary_topics,adolescent_flag,developmental_systems
 AOD-9604,aod-9604,investigational_human,false,normal,,,topic_fat_loss_metabolism,true,gh_igf|metabolic|puberty
+BPC-157,bpc-157,investigational_human,false,normal,,,,true,
+Thymosin Alpha-1,thymosin-alpha-1,approved_human,true,normal,Thymalfasin is a branded form in some markets; keep claims strictly label-anchored.,thymalfasin|ta1,,true,
+TB-500,tb-500,investigational_human,false,normal,Commonly sold as “TB-500”; often conflated with thymosin beta-4. Be explicit about identity uncertainty.,thymosin-beta-4-fragment|tb500,,true,
+GHK-Cu,ghk-cu,investigational_human,false,normal,Copper complex; common cosmetic use claims require careful evidence grading.,ghk|copper-tripeptide-1,,true,
+MOTS-c,mots-c,investigational_human,false,normal,Often discussed for metabolism; keep mechanisms separate from human outcome claims.,motsc,,true,

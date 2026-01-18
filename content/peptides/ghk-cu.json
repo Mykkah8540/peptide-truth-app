@@ -32,7 +32,7 @@
       "severity": "mild",
       "likelihood": "unlikely",
       "evidence_grade": "human_interventional",
-      "developmental_risk": false,
+      "developmental_risk": true,
       "unknowns_penalty": true,
       "rationale": "Topical cosmetic use generally presents low systemic risk. Main uncertainty comes from variable formulations, inconsistent objective outcomes across small human studies, and limited standardized long-term safety characterization across product types."
     },
@@ -45,7 +45,11 @@
           "confidence": "moderate",
           "evidence_grade": "human_interventional",
           "text": "Copper Tripeptide-1 (GHK-Cu) is a copper-binding peptide complex used in topical products for skin appearance and barrier-related goals. Evidence includes small human studies and broader reviews; results may depend on formulation and delivery to target layers.",
-          "evidence_refs": ["E1", "E2", "E3"]
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
       "use_cases": [],
@@ -67,10 +71,23 @@
           "duration": "varies",
           "population_group": "general",
           "notes": "Descriptive only. Products vary widely by formulation and concentration. Not instructions.",
-          "evidence_refs": ["E1", "E2", "E3"]
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
-      "developmental_risk_block": [],
+      "developmental_risk_block": [
+        {
+          "claim_type": "risk",
+          "population_group": "adolescent",
+          "confidence": "unknown",
+          "evidence_grade": "mechanistic_only",
+          "text": "Developmental exposure may carry higher and less predictable risk than adult exposure. Long-term effects on growth, endocrine signaling, and neurodevelopment are not well studied and may be irreversible.",
+          "evidence_refs": []
+        }
+      ],
       "interaction_summary": []
     },
     "interactions": {
@@ -116,7 +133,11 @@
         "change_type": "initial_entry",
         "summary": "Initial canonical entry for Copper Tripeptide-1 (GHK-Cu)",
         "detail": "Added topical cosmetic peptide entry with review + delivery evidence + clinical cosmetic study reference; low-risk topical profile with uncertainty penalty due to formulation variability.",
-        "evidence_refs": ["E1", "E2", "E3"]
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3"
+        ]
       }
     ]
   }

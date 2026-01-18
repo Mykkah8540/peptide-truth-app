@@ -28,8 +28,16 @@
       "canonical_name": "Copper Tripeptide-1"
     },
     {
+      "slug": "mots-c",
+      "canonical_name": "MOTS-c"
+    },
+    {
       "slug": "tb-500",
       "canonical_name": "TB-500"
+    },
+    {
+      "slug": "thymosin-alpha-1",
+      "canonical_name": "Thymosin Alpha-1"
     }
   ]
 }
