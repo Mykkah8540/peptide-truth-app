@@ -641,6 +641,10 @@ def main() -> int:
         rebuild_search_index()
 
 
+    # Dry-run observability: always print a summary even without --verbose
+    if args.dry_run and not args.verbose:
+        print("Dry-run OK: created=%d updated=%d skipped=%d warnings=%d" % (len(created), len(updated), len(skipped), len(warnings)))
+
     return 0
 
 
