@@ -1,0 +1,58 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_page": {
+    "topic_id": "topic_injury_healing",
+    "title": "Injury & Healing",
+    "intro": {
+      "what_this_topic_means": "This topic covers peptides discussed in injury recovery contexts: tendon/ligament, muscle strains, wound healing, and inflammation modulation.",
+      "common_misconceptions": [
+        "Animal healing results do not guarantee human healing outcomes.",
+        "Faster pain reduction is not the same as better tissue healing.",
+        "Unregulated sourcing and non-medical administration can dominate real-world risk."
+      ],
+      "who_should_be_extra_cautious": [
+        "Adolescents (growth and repair setpoints still calibrating)",
+        "People with clotting disorders or on anticoagulants (context-dependent)",
+        "People with autoimmune disease or chronic inflammatory conditions"
+      ]
+    },
+    "how_to_use_this_page": [
+      "This page is educational, not prescriptive.",
+      "Approval status and evidence grade matter more than popularity.",
+      "If risk is high and evidence is weak, uncertainty is part of the hazard."
+    ],
+    "peptide_groups": [
+      {
+        "group_title": "Commonly searched",
+        "display_rule": "Alphabetical within group",
+        "peptides": [
+          {
+            "canonical_name": "TB-500",
+            "slug": "tb-500",
+            "why_people_look_it_up": "Often searched for injury recovery; evidence is largely preclinical and product identity may vary.",
+            "status_category": "investigational_human",
+            "risk_score": 6,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "animal",
+              "human_evidence_exists": false
+            }
+          }
+        ]
+      }
+    ],
+    "safety_callouts": [
+      {
+        "title": "Route and sourcing drive risk",
+        "body": "For recovery peptides, many real-world harms relate to contamination, dosing uncertainty, and non-medical injection practices—not only the molecule."
+      }
+    ],
+    "evidence_notes": [
+      {
+        "title": "Healing outcomes are hard to measure",
+        "body": "High-quality studies require imaging, validated function scores, and long follow-up. Be cautious with claims based only on anecdotes."
+      }
+    ],
+    "last_reviewed": "2026-01-17"
+  }
+}

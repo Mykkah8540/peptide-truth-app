@@ -1,0 +1,111 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "CJC-1295",
+    "short_name": "CJC-1295",
+    "aliases": [
+      "CJC-1295 DAC",
+      "CJC-1295 (no DAC)",
+      "GHRH analog"
+    ],
+    "classification": {
+      "category": "investigational_human",
+      "needs_prescription": false,
+      "notes": "Investigational peptide discussed as a GHRH analog affecting GH/IGF signaling. Not an FDA-approved therapeutic drug."
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "2026-01-17",
+      "human_use_note": "CJC-1295 is not an approved therapeutic drug. Human evidence exists for GH/IGF changes in controlled settings, but long-term safety and outcome evidence for enhancement use is limited."
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 7,
+      "severity": "high",
+      "likelihood": "possible",
+      "evidence_grade": "human_interventional",
+      "developmental_risk": true,
+      "unknowns_penalty": true,
+      "rationale": "Manipulating GH/IGF axis has systemic downstream effects (glucose handling, edema, blood pressure, sleep). Human studies show endocrine effects; however, long-term outcomes and safety in non-medical enhancement contexts are uncertain. Adolescents are higher consequence risk due to developing endocrine setpoints."
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "moderate",
+          "evidence_grade": "human_interventional",
+          "text": "CJC-1295 is a growth hormone releasing hormone (GHRH) analog discussed for increasing growth hormone and IGF-1 signaling. Controlled human research has reported endocrine changes, but long-term clinical outcomes and safety for enhancement use remain uncertain.",
+          "evidence_refs": ["E1"]
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "varies",
+          "unit": "study-dependent",
+          "min": null,
+          "max": null,
+          "frequency": "varies",
+          "duration": "varies",
+          "population_group": "general",
+          "notes": "Descriptive only. This app does not provide protocols. Not instructions.",
+          "evidence_refs": ["E1"]
+        }
+      ],
+      "developmental_risk_block": [
+        {
+          "title": "Developmental / Adolescent risk",
+          "population_group": "adolescent",
+          "confidence": "moderate",
+          "evidence_grade": "mechanistic_only",
+          "text": "Because CJC-1295 targets GH/IGF signaling, adolescents and still-developing endocrine systems should treat uncertainty as a meaningful risk. Long-term setpoint changes are not well characterized.",
+          "evidence_refs": ["E1"]
+        }
+      ],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "CJC-1295 increases growth hormone and IGF-1 in healthy adults (human interventional study)",
+        "source_type": "pubmed",
+        "source_id": "16352683",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
+        "published_date": "2006-01-01",
+        "evidence_grade": "human_interventional",
+        "notes": "Interventional human research reporting GH/IGF-1 changes. Does not establish long-term enhancement outcomes or safety in non-medical use contexts."
+      }
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-17",
+        "change_type": "initial_entry",
+        "summary": "Initial canonical entry for CJC-1295",
+        "detail": "Added GHRH analog entry with human endocrine evidence and strong uncertainty framing; flagged developmental risk due to endocrine setpoint concerns.",
+        "evidence_refs": ["E1"]
+      }
+    ]
+  }
+}

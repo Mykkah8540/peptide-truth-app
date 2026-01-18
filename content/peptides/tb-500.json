@@ -1,0 +1,118 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "TB-500",
+    "short_name": "TB-500",
+    "aliases": [
+      "Thymosin Beta-4 fragment",
+      "TB500"
+    ],
+    "classification": {
+      "category": "investigational_human",
+      "needs_prescription": false,
+      "notes": "Unapproved peptide commonly discussed in recovery contexts. Often conflated with Thymosin Beta-4 (Tβ4) biology; products vary and claims frequently exceed evidence."
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "2026-01-17",
+      "human_use_note": "TB-500 is not an approved therapeutic drug. Evidence for many recovery claims is primarily preclinical; human evidence for TB-500 specifically is limited."
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 6,
+      "severity": "moderate",
+      "likelihood": "possible",
+      "evidence_grade": "animal",
+      "developmental_risk": true,
+      "unknowns_penalty": true,
+      "rationale": "Key uncertainty is that many benefits are inferred from broader thymosin beta-4 biology and animal work, while real-world risk includes sourcing purity and unregulated administration. Developmental risk flagged due to common youth-athlete interest and limited safety characterization."
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "low",
+          "evidence_grade": "animal",
+          "text": "TB-500 is a peptide product marketed in recovery contexts, often linked to thymosin beta-4 biology. Many claims rely on preclinical data; human outcome evidence for TB-500 as sold is limited.",
+          "evidence_refs": [
+            "E1"
+          ]
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "varies",
+          "unit": "study-dependent",
+          "min": null,
+          "max": null,
+          "frequency": "varies",
+          "duration": "varies",
+          "population_group": "general",
+          "notes": "Descriptive only. This app does not provide protocols. Not instructions.",
+          "evidence_refs": [
+            "E1"
+          ]
+        }
+      ],
+      "developmental_risk_block": [
+        {
+          "title": "Developmental / Adolescent risk",
+          "population_group": "adolescent",
+          "confidence": "low",
+          "evidence_grade": "mechanistic_only",
+          "text": "Because TB-500 claims are often preclinical and safety is not well characterized, adolescents should treat uncertainty as meaningful risk, especially given real-world sourcing variability.",
+          "evidence_refs": [
+            "E1"
+          ]
+        }
+      ],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "Thymosin beta-4 biology and tissue repair (review; context for claims)",
+        "source_type": "pmc",
+        "source_id": "PMC4007404",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4007404/",
+        "published_date": "2014-01-01",
+        "evidence_grade": "animal",
+        "notes": "Broad review of thymosin beta-4 biology; supports mechanistic plausibility in animals but does not establish TB-500 outcomes in humans."
+      }
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-17",
+        "change_type": "initial_entry",
+        "summary": "Initial canonical entry for TB-500",
+        "detail": "Added recovery-context peptide entry with strong preclinical framing; flagged developmental risk and sourcing uncertainty.",
+        "evidence_refs": [
+          "E1"
+        ]
+      }
+    ]
+  }
+}

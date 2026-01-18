@@ -7,6 +7,20 @@
   },
   "mappings": [
     {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "cjc-1295",
+      "rationale": "Often searched as a GHRH analog affecting GH/IGF signaling; mapping reflects popularity, not endorsement.",
+      "confidence": "moderate",
+      "evidence_grade": "human_interventional"
+    },
+    {
+      "topic_id": "topic_injury_healing",
+      "peptide_slug": "tb-500",
+      "rationale": "Commonly searched recovery peptide product; mapping reflects interest and preclinical plausibility, not proven human outcomes.",
+      "confidence": "low",
+      "evidence_grade": "animal"
+    },
+    {
       "topic_id": "topic_muscle_recovery",
       "peptide_slug": "aod-9604",
       "rationale": "Often searched in performance/weight contexts; topic association reflects user interest, not recommendation.",

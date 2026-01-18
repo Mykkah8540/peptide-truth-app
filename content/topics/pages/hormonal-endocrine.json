@@ -1,0 +1,58 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_page": {
+    "topic_id": "topic_hormonal_endocrine",
+    "title": "Hormonal & Endocrine",
+    "intro": {
+      "what_this_topic_means": "This topic covers peptides and related agents discussed in endocrine pathways: growth hormone signaling, IGF axis, thyroid, appetite hormones, and broader hormone regulation.",
+      "common_misconceptions": [
+        "Feeling effects quickly is not the same as long-term safety.",
+        "Hormone axes are regulated systems; pushing one lever can shift others.",
+        "Lack of side effects in the short term does not mean low risk."
+      ],
+      "who_should_be_extra_cautious": [
+        "Adolescents and young adults (developing endocrine setpoints)",
+        "History of cancer or strong family risk (growth signaling uncertainty)",
+        "Uncontrolled diabetes, thyroid disease, or pituitary disorders"
+      ]
+    },
+    "how_to_use_this_page": [
+      "Topics help you browse; they do not recommend peptides.",
+      "Always check approval status and risk score first.",
+      "Evidence grade is shown to separate strong vs weak claims."
+    ],
+    "peptide_groups": [
+      {
+        "group_title": "Commonly searched",
+        "display_rule": "Alphabetical within group",
+        "peptides": [
+          {
+            "canonical_name": "CJC-1295",
+            "slug": "cjc-1295",
+            "why_people_look_it_up": "Often searched for GH/IGF signaling changes; human endocrine evidence exists but long-term outcomes are uncertain.",
+            "status_category": "investigational_human",
+            "risk_score": 7,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "human_interventional",
+              "human_evidence_exists": true
+            }
+          }
+        ]
+      }
+    ],
+    "safety_callouts": [
+      {
+        "title": "Endocrine systems are interlocked",
+        "body": "Changing GH/IGF or appetite signaling can influence glucose handling, blood pressure, sleep, mood, and downstream hormone regulation. Treat uncertainty as part of risk."
+      }
+    ],
+    "evidence_notes": [
+      {
+        "title": "Evidence separation",
+        "body": "Preclinical signals can be interesting but do not guarantee human benefit. Look for human interventional evidence and clear safety reporting."
+      }
+    ],
+    "last_reviewed": "2026-01-17"
+  }
+}
