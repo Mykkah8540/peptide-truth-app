@@ -1,234 +1,212 @@
 #!/usr/bin/env python3
+"""
+Deterministic peptide search index builder (metadata only).
+- --write: writes content/peptides/_search_index.json
+- --check: does NOT write; exits 2 if generated output differs from file
+- --report: writes a build report to scripts/index/_reports/<timestamp>.json
+"""
+
 from __future__ import annotations
 
 import argparse
 import json
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Dict, Tuple, Optional
+from typing import Any, Dict, List, Optional
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = REPO_ROOT / "content" / "peptides"
-TOPICS_DIR = REPO_ROOT / "content" / "topics"
-
-TOPICS_INDEX_PATH = TOPICS_DIR / "_topics_index.json"
-TOPIC_MAP_PATH = TOPICS_DIR / "topic_peptide_map_v1.json"
-
 SEARCH_INDEX_PATH = PEPTIDES_DIR / "_search_index.json"
 REPORTS_DIR = REPO_ROOT / "scripts" / "index" / "_reports"
 
 
-def load_json(path: Path) -> dict:
+@dataclass(frozen=True)
+class IndexItem:
+    slug: str
+    canonical_name: str
+    short_name: str
+    aliases: List[str]
+    status_category: str
+    needs_prescription: bool
+    risk_severity: str
+    risk_likelihood: str
+    evidence_grade: str
+    developmental_risk: bool
+    primary_topics: List[str]
+
+
+def _load_json(path: Path) -> Dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def save_json(path: Path, doc: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+def _safe_bool(v: Any, default: bool = False) -> bool:
+    if isinstance(v, bool):
+        return v
+    if isinstance(v, str):
+        if v.strip().lower() in ("true", "1", "yes", "y"):
+            return True
+        if v.strip().lower() in ("false", "0", "no", "n"):
+            return False
+    return default
 
 
-def now_stamp() -> str:
-    return datetime.now().strftime("%Y-%m-%d_%H%M%S")
-
-
-@dataclass
-class TopicMeta:
-    topic_id: str
-    title: str
-    short_description: str
-    icon: str
-    order: int
-
-
-def load_topics_index() -> Dict[str, TopicMeta]:
-    if not TOPICS_INDEX_PATH.exists():
-        raise FileNotFoundError(f"Missing topics index: {TOPICS_INDEX_PATH}")
-    data = load_json(TOPICS_INDEX_PATH)
-    out: Dict[str, TopicMeta] = {}
-    for t in data.get("topics", []):
-        tid = t.get("topic_id")
-        if not tid:
+def _list_peptide_files() -> List[Path]:
+    files: List[Path] = []
+    for p in PEPTIDES_DIR.glob("*.json"):
+        if p.name.startswith("_"):
             continue
-        out[tid] = TopicMeta(
-            topic_id=tid,
-            title=t.get("title", tid),
-            short_description=t.get("short_description", ""),
-            icon=t.get("icon", ""),
-            order=int(t.get("order", 9999)),
-        )
-    return out
+        files.append(p)
+    return sorted(files, key=lambda x: x.name)
 
 
-def load_topic_map() -> List[dict]:
-    if not TOPIC_MAP_PATH.exists():
+def _extract_primary_topics(doc: Dict[str, Any]) -> List[str]:
+    pep = doc.get("peptide", {}) or {}
+    meta = pep.get("meta", {}) or {}
+    topics = meta.get("primary_topics", []) or []
+    if isinstance(topics, str):
+        topics = [t.strip() for t in topics.split("|") if t.strip()]
+    if not isinstance(topics, list):
         return []
-    data = load_json(TOPIC_MAP_PATH)
-    return data.get("mappings", [])
+    out = []
+    for t in topics:
+        if isinstance(t, str) and t.strip():
+            out.append(t.strip())
+    return sorted(set(out))
 
 
-def topics_for_peptide(slug: str, topics_meta: Dict[str, TopicMeta], mappings: List[dict]) -> List[dict]:
-    rows: List[dict] = []
-    for m in mappings:
-        if m.get("peptide_slug") != slug:
-            continue
-        tid = m.get("topic_id")
-        if not tid:
-            continue
-        tm = topics_meta.get(tid)
-        rows.append({
-            "topic_id": tid,
-            "title": (tm.title if tm else tid),
-            "order": (tm.order if tm else 9999),
-            "icon": (tm.icon if tm else ""),
-            "confidence": m.get("confidence", "unknown"),
-            "evidence_grade": m.get("evidence_grade", "mechanistic_only"),
-            "rationale": m.get("rationale", ""),
-            "is_placeholder": str(m.get("rationale", "")).startswith("PLACEHOLDER:"),
-        })
-
-    rows.sort(key=lambda x: (x["order"], (x["title"] or "").lower(), x["topic_id"]))
-    for r in rows:
-        r.pop("order", None)
-    return rows
-
-
-def coverage_flags(peptide_doc: dict) -> dict:
-    pep = peptide_doc.get("peptide", {})
-    risk = pep.get("risk", {})
-    sections = pep.get("sections", {})
-
-    dev_risk = bool(risk.get("developmental_risk") is True)
-    dev_block = sections.get("developmental_risk_block", [])
-    has_dev_block = isinstance(dev_block, list) and len(dev_block) > 0
-
-    obs_ranges = sections.get("observed_exposure_ranges", [])
-    has_obs_ranges = isinstance(obs_ranges, list) and len(obs_ranges) > 0
-
-    evidence = pep.get("evidence", [])
-    has_evidence = isinstance(evidence, list) and len(evidence) > 0
-
-    has_any_refs = False
-    if isinstance(sections, dict):
-        for _, v in sections.items():
-            if isinstance(v, list):
-                for item in v:
-                    if isinstance(item, dict) and item.get("evidence_refs"):
-                        has_any_refs = True
-                        break
-            if has_any_refs:
-                break
-
-    return {
-        "has_evidence_items": has_evidence,
-        "has_any_evidence_refs_in_sections": has_any_refs,
-        "has_observed_exposure_ranges": has_obs_ranges,
-        "developmental_risk_true": dev_risk,
-        "has_developmental_risk_block": has_dev_block,
-        "dev_risk_block_missing_when_flagged": (dev_risk and not has_dev_block),
-    }
-
-
-def build_index() -> Tuple[dict, dict]:
-    topics_meta = load_topics_index()
-    mappings = load_topic_map()
-
-    peptides: List[dict] = []
+def build_index() -> Dict[str, Any]:
+    items: List[IndexItem] = []
     warnings: List[str] = []
 
-    for path in sorted(PEPTIDES_DIR.glob("*.json")):
-        if path.name.startswith("_"):
+    for path in _list_peptide_files():
+        try:
+            doc = _load_json(path)
+        except Exception as e:
+            warnings.append(f"Failed to parse {path.name}: {e}")
             continue
 
-        doc = load_json(path)
-        pep = doc.get("peptide", {})
-        canonical_name = pep.get("canonical_name", path.stem)
-        aliases = pep.get("aliases", []) or []
+        pep = doc.get("peptide", {}) or {}
+        canonical = (pep.get("canonical_name") or "").strip()
+        slug = path.stem.strip()
+        if not canonical or not slug:
+            warnings.append(f"Missing canonical_name or slug for {path.name}")
+            continue
 
-        status = pep.get("status", {})
-        classification = pep.get("classification", {})
-        risk = pep.get("risk", {})
+        short = (pep.get("short_name") or canonical).strip()
+        aliases = pep.get("aliases") or []
+        if isinstance(aliases, str):
+            aliases = [a.strip() for a in aliases.split("|") if a.strip()]
+        if not isinstance(aliases, list):
+            aliases = []
+        aliases = [a.strip() for a in aliases if isinstance(a, str) and a.strip()]
+        aliases = sorted(set(aliases))
 
-        entry = {
-            "slug": path.stem,
-            "canonical_name": canonical_name,
-            "aliases": aliases,
-            "classification": {
-                "category": classification.get("category", ""),
-                "needs_prescription": classification.get("needs_prescription", False),
-            },
-            "status": {
-                "category": status.get("category", ""),
-                "jurisdiction": status.get("jurisdiction", ""),
-                "last_reviewed": status.get("last_reviewed", ""),
-            },
-            "risk": {
-                "severity": risk.get("severity", ""),
-                "likelihood": risk.get("likelihood", ""),
-                "evidence_grade": risk.get("evidence_grade", ""),
-                "developmental_risk": bool(risk.get("developmental_risk") is True),
-                "developmental_systems_of_concern": risk.get("developmental_systems_of_concern", []) or [],
-                "unknowns_penalty": bool(risk.get("unknowns_penalty") is True),
-                "current_score": risk.get("current_score", None),
-            },
-            "topics": topics_for_peptide(path.stem, topics_meta, mappings),
-            "coverage": coverage_flags(doc),
-        }
+        classification = pep.get("classification", {}) or {}
+        status = pep.get("status", {}) or {}
+        risk = pep.get("risk", {}) or {}
 
-        if entry["coverage"]["dev_risk_block_missing_when_flagged"]:
-            warnings.append(f"{path.stem}: developmental_risk true but developmental_risk_block missing/empty")
+        status_category = (status.get("category") or classification.get("category") or "").strip()
+        needs_rx = _safe_bool(classification.get("needs_prescription"), default=False)
 
-        peptides.append(entry)
+        risk_sev = (risk.get("severity") or "unknown").strip()
+        risk_like = (risk.get("likelihood") or "unknown").strip()
+        ev_grade = (risk.get("evidence_grade") or "unknown").strip()
+        dev_risk = _safe_bool(risk.get("developmental_risk"), default=False)
 
-    peptides.sort(key=lambda x: (str(x.get("canonical_name", "")).casefold(), x.get("slug", "")))
+        primary_topics = _extract_primary_topics(doc)
 
-    out = {
+        items.append(IndexItem(
+            slug=slug,
+            canonical_name=canonical,
+            short_name=short,
+            aliases=aliases,
+            status_category=status_category or "unknown",
+            needs_prescription=needs_rx,
+            risk_severity=risk_sev,
+            risk_likelihood=risk_like,
+            evidence_grade=ev_grade,
+            developmental_risk=dev_risk,
+            primary_topics=primary_topics,
+        ))
+
+    # Deterministic sort: canonical_name, then slug
+    items_sorted = sorted(items, key=lambda x: (x.canonical_name.lower(), x.slug))
+
+    out_doc: Dict[str, Any] = {
         "schema_version": "peptide_search_index_v1",
-        "generated_at": now_stamp(),
-        "rules": {
+"rules": {
+            "metadata_only": True,
             "source_of_truth": "content/peptides/<slug>.json",
-            "topics_source": "content/topics/topic_peptide_map_v1.json (mappings[])",
-            "deterministic_sort": "canonical_name, then slug",
-            "navigation_only_topics": True,
+            "no_protocols_no_regimens": True,
+            "topics_are_navigation_not_recommendation": True,
         },
-        "peptides": peptides,
-    }
-
-    report = {
-        "timestamp": out["generated_at"],
-        "peptides_count": len(peptides),
-        "warnings_count": len(warnings),
+        "peptides": [
+            {
+                "slug": it.slug,
+                "canonical_name": it.canonical_name,
+                "short_name": it.short_name,
+                "aliases": it.aliases,
+                "status_category": it.status_category,
+                "needs_prescription": it.needs_prescription,
+                "risk": {
+                    "severity": it.risk_severity,
+                    "likelihood": it.risk_likelihood,
+                    "evidence_grade": it.evidence_grade,
+                    "developmental_risk": it.developmental_risk,
+                },
+                "topics": {
+                    "primary": it.primary_topics
+                }
+            }
+            for it in items_sorted
+        ],
         "warnings": warnings,
-        "output_path": str(SEARCH_INDEX_PATH),
+        "counts": {
+            "peptides": len(items_sorted),
+            "warnings": len(warnings),
+        }
     }
-
-    return out, report
+    return out_doc
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--write", action="store_true")
-    ap.add_argument("--report", action="store_true")
+    ap.add_argument("--write", action="store_true", help="Write content/peptides/_search_index.json")
+    ap.add_argument("--check", action="store_true", help="Do not write; exit 2 if file differs from generated output")
+    ap.add_argument("--report", action="store_true", help="Write scripts/index/_reports/<timestamp>.json")
     args = ap.parse_args()
 
-    index_doc, report = build_index()
+    if args.write and args.check:
+        print("ERROR: Use only one of --write or --check")
+        return 2
 
+    doc = build_index()
+    generated = json.dumps(doc, indent=2) + "\n"
+
+    # --check mode (non-mutating)
+    if args.check:
+        existing = SEARCH_INDEX_PATH.read_text(encoding="utf-8") if SEARCH_INDEX_PATH.exists() else ""
+        if existing != generated:
+            print("Search index check FAILED: content/peptides/_search_index.json differs from generated output.")
+            print("Run: python3 scripts/index/build_search_index.py --write --report")
+            return 2
+        print("Search index check OK: no changes needed.")
+        return 0
+
+    # --write mode
     if args.write:
-        save_json(SEARCH_INDEX_PATH, index_doc)
+        SEARCH_INDEX_PATH.write_text(generated, encoding="utf-8")
 
+    # report (allowed in either mode; but in check mode we returned already)
     if args.report:
         REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-        rp = REPORTS_DIR / f"{report['timestamp']}.json"
-        save_json(rp, report)
+        ts = datetime.now().strftime("%Y-%m-%d_%H%M%S")
+        report_path = REPORTS_DIR / f"{ts}.json"
+        report_path.write_text(generated, encoding="utf-8")
 
-    print(f"Built peptide_search_index_v1 with {report['peptides_count']} peptide(s). Warnings: {report['warnings_count']}")
-    if report["warnings_count"] > 0:
-        for w in report["warnings"][:25]:
-            print(" -", w)
-        if report["warnings_count"] > 25:
-            print(f" - (and {report['warnings_count']-25} more...)")
-
+    print(f"Built peptide_search_index_v1 with {doc['counts']['peptides']} peptide(s). Warnings: {doc['counts']['warnings']}")
     return 0
 
 
