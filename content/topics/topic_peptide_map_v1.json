@@ -1,0 +1,17 @@
+{
+  "schema_version": "topic_peptide_map_v1",
+  "rules": {
+    "topic_tags_are_not_endorsements": true,
+    "each_mapping_requires_rationale": true,
+    "mappings_should_reference_claim_types_not_protocols": true
+  },
+  "mappings": [
+    {
+      "topic_id": "topic_muscle_recovery",
+      "peptide_slug": "aod-9604",
+      "rationale": "Often searched in performance/weight contexts; topic association reflects user interest, not recommendation.",
+      "confidence": "low",
+      "evidence_grade": "human_interventional"
+    }
+  ]
+}

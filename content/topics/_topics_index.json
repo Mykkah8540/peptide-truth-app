@@ -1,0 +1,82 @@
+{
+  "schema_version": "topics_index_v1",
+  "rules": {
+    "topics_are_navigation": true,
+    "topics_are_not_recommendations": true,
+    "topics_are_labels_not_folders": true,
+    "topic_pages_must_show_risk_and_status_badges": true,
+    "topic_pages_must_distinguish_human_vs_preclinical": true
+  },
+  "topics": [
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "title": "Fat Loss & Metabolism",
+      "short_description": "Energy balance, appetite, glucose, insulin sensitivity, metabolic rate",
+      "icon": "flame",
+      "order": 10
+    },
+    {
+      "topic_id": "topic_muscle_recovery",
+      "title": "Muscle & Recovery",
+      "short_description": "Training recovery, soreness, performance, repair signaling",
+      "icon": "dumbbell",
+      "order": 20
+    },
+    {
+      "topic_id": "topic_injury_healing",
+      "title": "Injury & Healing",
+      "short_description": "Tendon/ligament healing, wound repair, tissue remodeling",
+      "icon": "bandage",
+      "order": 30
+    },
+    {
+      "topic_id": "topic_gut_inflammation",
+      "title": "Gut & Inflammation",
+      "short_description": "Gut barrier, inflammatory signaling, GI symptoms, mucosal repair",
+      "icon": "stomach",
+      "order": 40
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "title": "Skin & Cosmetic Health",
+      "short_description": "Wrinkles, texture, hydration, barrier function, cosmetic peptides",
+      "icon": "sparkles",
+      "order": 50
+    },
+    {
+      "topic_id": "topic_sleep_circadian",
+      "title": "Sleep & Circadian",
+      "short_description": "Sleep quality, rhythm regulation, nighttime recovery",
+      "icon": "moon",
+      "order": 60
+    },
+    {
+      "topic_id": "topic_cognition_mood",
+      "title": "Cognition & Mood",
+      "short_description": "Focus, mood, anxiety, cognition, neurochemical modulation",
+      "icon": "brain",
+      "order": 70
+    },
+    {
+      "topic_id": "topic_longevity_aging",
+      "title": "Longevity & Aging",
+      "short_description": "Mitochondria, cellular stress, resilience, aging pathways",
+      "icon": "infinity",
+      "order": 80
+    },
+    {
+      "topic_id": "topic_immune_modulation",
+      "title": "Immune Modulation",
+      "short_description": "Immune signaling, autoimmunity considerations, inflammatory balance",
+      "icon": "shield",
+      "order": 90
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "title": "Hormonal & Endocrine",
+      "short_description": "GH/IGF, thyroid, gonadal axis, puberty/developmental considerations",
+      "icon": "activity",
+      "order": 100
+    }
+  ]
+}

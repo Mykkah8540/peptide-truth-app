@@ -1,0 +1,50 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_page": {
+    "topic_id": "",
+    "title": "",
+    "intro": {
+      "what_this_topic_means": "",
+      "common_misconceptions": [],
+      "who_should_be_extra_cautious": []
+    },
+    "how_to_use_this_page": [
+      "Topics do not recommend peptides. They help you browse.",
+      "Always check status and risk score first.",
+      "Human evidence and preclinical evidence are separated."
+    ],
+    "peptide_groups": [
+      {
+        "group_title": "Commonly searched",
+        "display_rule": "Alphabetical within group",
+        "peptides": [
+          {
+            "canonical_name": "",
+            "slug": "",
+            "why_people_look_it_up": "",
+            "status_category": "",
+            "risk_score": null,
+            "developmental_risk": false,
+            "evidence_snapshot": {
+              "best_available_grade": "",
+              "human_evidence_exists": false
+            }
+          }
+        ]
+      }
+    ],
+    "safety_callouts": [
+      {
+        "title": "Adolescents and development",
+        "body": ""
+      }
+    ],
+    "evidence_notes": [
+      {
+        "title": "Why evidence changes",
+        "body": ""
+      }
+    ],
+    "last_reviewed": ""
+  }
+}
