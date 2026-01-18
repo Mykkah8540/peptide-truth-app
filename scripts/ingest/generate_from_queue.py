@@ -450,6 +450,22 @@ def enforce_developmental_risk(doc: dict, slug: str, systems: List[str]) -> bool
         risk["developmental_risk"] = True
         changed = True
 
+    # Store structured systems-of-concern (descriptive labels only; no protocols)
+    if systems:
+        current = risk.get("developmental_systems_of_concern")
+        # Normalize: unique, stable order
+        norm = []
+        seen = set()
+        for x in systems:
+            x = str(x).strip()
+            if not x or x in seen:
+                continue
+            seen.add(x)
+            norm.append(x)
+        if current != norm:
+            risk["developmental_systems_of_concern"] = norm
+            changed = True
+
     # Ensure developmental risk block exists with at least one entry
     block = sections.get("developmental_risk_block")
     if not isinstance(block, list) or len(block) == 0:

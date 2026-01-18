@@ -31,7 +31,12 @@
       "evidence_grade": "human_interventional",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "Short-term human studies suggest limited adverse effects, but long-term safety data are sparse. The peptide mimics a fragment of human growth hormone, raising theoretical concerns around endocrine signaling, metabolic adaptation, and developmental exposure in adolescents."
+      "rationale": "Short-term human studies suggest limited adverse effects, but long-term safety data are sparse. The peptide mimics a fragment of human growth hormone, raising theoretical concerns around endocrine signaling, metabolic adaptation, and developmental exposure in adolescents.",
+      "developmental_systems_of_concern": [
+        "gh_igf",
+        "metabolic",
+        "puberty"
+      ]
     },
     "sections": {
       "overview": [
@@ -42,7 +47,10 @@
           "confidence": "moderate",
           "evidence_grade": "human_interventional",
           "text": "AOD-9604 is a synthetic peptide derived from amino acids 176–191 of human growth hormone. It was developed to isolate the lipolytic (fat-metabolizing) effects of hGH without stimulating growth or insulin-like growth factor pathways.",
-          "evidence_refs": ["E1", "E2"]
+          "evidence_refs": [
+            "E1",
+            "E2"
+          ]
         }
       ],
       "use_cases": [],
@@ -64,7 +72,9 @@
           "duration": "up to 12 weeks",
           "population_group": "general",
           "notes": "Descriptive only. Observed in clinical studies; not instructions.",
-          "evidence_refs": ["E1"]
+          "evidence_refs": [
+            "E1"
+          ]
         }
       ],
       "developmental_risk_block": [
@@ -112,7 +122,10 @@
         "change_type": "initial_entry",
         "summary": "Initial canonical entry for AOD-9604",
         "detail": "Created first alphabetical peptide entry with human and mechanistic evidence.",
-        "evidence_refs": ["E1", "E2"]
+        "evidence_refs": [
+          "E1",
+          "E2"
+        ]
       }
     ]
   }
