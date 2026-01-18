@@ -1,0 +1,98 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "",
+    "short_name": "",
+    "aliases": [],
+    "classification": {
+      "category": "approved_human",
+      "needs_prescription": false,
+      "notes": ""
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "",
+      "human_use_note": ""
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 5,
+      "severity": "moderate",
+      "likelihood": "possible",
+      "evidence_grade": "mechanistic_only",
+      "developmental_risk": false,
+      "unknowns_penalty": true,
+      "rationale": ""
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "unknown",
+          "evidence_grade": "mechanistic_only",
+          "text": "",
+          "evidence_refs": []
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "",
+          "unit": "",
+          "min": null,
+          "max": null,
+          "frequency": "",
+          "duration": "",
+          "population_group": "general",
+          "notes": "Descriptive only. Observed in studies; not instructions.",
+          "evidence_refs": []
+        }
+      ],
+      "developmental_risk_block": [],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "",
+        "source_type": "pubmed",
+        "source_id": "",
+        "url": "",
+        "published_date": "",
+        "evidence_grade": "mechanistic_only",
+        "notes": ""
+      }
+    ],
+    "changelog": [
+      {
+        "date": "",
+        "change_type": "initial_entry",
+        "summary": "",
+        "detail": "",
+        "evidence_refs": []
+      }
+    ]
+  }
+}

@@ -9,3 +9,10 @@ __pycache__/
 
 # Local drafts / queues (canonical queue must be tracked)
 content/peptides/_queue.local.csv
+# Local backups / drafts
+content/peptides/_queue.backup_*.csv
+# Derived reports (rebuild anytime)
+scripts/ingest/_reports/
+scripts/index/_reports/
+# One-off patch scripts (temporary)
+scripts/validate/_phase*.py

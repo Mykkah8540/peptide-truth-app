@@ -1,6 +1,6 @@
 {
   "schema_version": "peptide_search_index_v1",
-  "generated_at": "2026-01-18_121732",
+  "generated_at": "2026-01-18_122548",
   "rules": {
     "source_of_truth": "content/peptides/<slug>.json",
     "topics_source": "content/topics/topic_peptide_map_v1.json (mappings[])",
@@ -245,38 +245,6 @@
         "has_observed_exposure_ranges": true,
         "developmental_risk_true": false,
         "has_developmental_risk_block": false,
-        "dev_risk_block_missing_when_flagged": false
-      }
-    },
-    {
-      "slug": "kpv",
-      "canonical_name": "KPV",
-      "aliases": [],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-18"
-      },
-      "risk": {
-        "severity": "moderate",
-        "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
-        "developmental_risk": true,
-        "developmental_systems_of_concern": [],
-        "unknowns_penalty": true,
-        "current_score": 5
-      },
-      "topics": [],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": false,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": true,
-        "has_developmental_risk_block": true,
         "dev_risk_block_missing_when_flagged": false
       }
     },
