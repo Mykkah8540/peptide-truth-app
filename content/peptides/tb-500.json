@@ -100,7 +100,8 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4007404/",
         "published_date": "2014-01-01",
         "evidence_grade": "animal",
-        "notes": "Broad review of thymosin beta-4 biology; supports mechanistic plausibility in animals but does not establish TB-500 outcomes in humans."
+        "notes": "Broad review of thymosin beta-4 biology; supports mechanistic plausibility in animals but does not establish TB-500 outcomes in humans.",
+        "year": 2014
       }
     ],
     "changelog": [

@@ -105,7 +105,8 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12313605/",
         "published_date": "2025-01-01",
         "evidence_grade": "human_observational",
-        "notes": "Sports medicine review summarizing preclinical evidence and limited human reports; highlights evidence gaps."
+        "notes": "Sports medicine review summarizing preclinical evidence and limited human reports; highlights evidence gaps.",
+        "year": 2025
       },
       {
         "id": "E2",
@@ -135,7 +136,8 @@
         "url": "https://clinicaltrials.gov/study/NCT02637284",
         "published_date": "2015-12-22",
         "evidence_grade": "human_interventional",
-        "notes": "Registered Phase I safety/PK study; publicly available outcomes may be limited."
+        "notes": "Registered Phase I safety/PK study; publicly available outcomes may be limited.",
+        "year": 2015
       }
     ],
     "changelog": [

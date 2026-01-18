@@ -44,7 +44,9 @@
           "confidence": "moderate",
           "evidence_grade": "human_interventional",
           "text": "CJC-1295 is a growth hormone releasing hormone (GHRH) analog discussed for increasing growth hormone and IGF-1 signaling. Controlled human research has reported endocrine changes, but long-term clinical outcomes and safety for enhancement use remain uncertain.",
-          "evidence_refs": ["E1"]
+          "evidence_refs": [
+            "E1"
+          ]
         }
       ],
       "use_cases": [],
@@ -66,7 +68,9 @@
           "duration": "varies",
           "population_group": "general",
           "notes": "Descriptive only. This app does not provide protocols. Not instructions.",
-          "evidence_refs": ["E1"]
+          "evidence_refs": [
+            "E1"
+          ]
         }
       ],
       "developmental_risk_block": [
@@ -76,7 +80,9 @@
           "confidence": "moderate",
           "evidence_grade": "mechanistic_only",
           "text": "Because CJC-1295 targets GH/IGF signaling, adolescents and still-developing endocrine systems should treat uncertainty as a meaningful risk. Long-term setpoint changes are not well characterized.",
-          "evidence_refs": ["E1"]
+          "evidence_refs": [
+            "E1"
+          ]
         }
       ],
       "interaction_summary": []
@@ -95,7 +101,8 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/16352683/",
         "published_date": "2006-01-01",
         "evidence_grade": "human_interventional",
-        "notes": "Interventional human research reporting GH/IGF-1 changes. Does not establish long-term enhancement outcomes or safety in non-medical use contexts."
+        "notes": "Interventional human research reporting GH/IGF-1 changes. Does not establish long-term enhancement outcomes or safety in non-medical use contexts.",
+        "year": 2006
       }
     ],
     "changelog": [
@@ -104,7 +111,9 @@
         "change_type": "initial_entry",
         "summary": "Initial canonical entry for CJC-1295",
         "detail": "Added GHRH analog entry with human endocrine evidence and strong uncertainty framing; flagged developmental risk due to endocrine setpoint concerns.",
-        "evidence_refs": ["E1"]
+        "evidence_refs": [
+          "E1"
+        ]
       }
     ]
   }

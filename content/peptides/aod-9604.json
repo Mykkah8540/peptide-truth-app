@@ -103,7 +103,8 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/15615612/",
         "published_date": "2005-01-01",
         "evidence_grade": "human_interventional",
-        "notes": "Human trial evaluating weight-loss effects and safety over 12 weeks."
+        "notes": "Human trial evaluating weight-loss effects and safety over 12 weeks.",
+        "year": 2004
       },
       {
         "id": "E2",

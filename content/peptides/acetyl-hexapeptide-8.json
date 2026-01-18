@@ -92,7 +92,8 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10665711/",
         "published_date": "2023-01-01",
         "evidence_grade": "human_interventional",
-        "notes": "Small human study evaluating wrinkle score changes after several weeks of serum application; reports limited significant adverse events."
+        "notes": "Small human study evaluating wrinkle score changes after several weeks of serum application; reports limited significant adverse events.",
+        "year": 2023
       },
       {
         "id": "E2",
@@ -102,7 +103,8 @@
         "url": "https://pubmed.ncbi.nlm.nih.gov/40565185/",
         "published_date": "2025-01-01",
         "evidence_grade": "human_interventional",
-        "notes": "Review summarizing preclinical/clinical evidence, formulation strategies, and uncertainties about penetration to targets."
+        "notes": "Review summarizing preclinical/clinical evidence, formulation strategies, and uncertainties about penetration to targets.",
+        "year": 2025
       },
       {
         "id": "E3",
@@ -112,7 +114,8 @@
         "url": "https://clinicaltrials.gov/study/NCT01381484",
         "published_date": "",
         "evidence_grade": "human_interventional",
-        "notes": "ClinicalTrials.gov registry entry documenting a human study context for Argireline and periorbital wrinkles."
+        "notes": "ClinicalTrials.gov registry entry documenting a human study context for Argireline and periorbital wrinkles.",
+        "year": 2011
       }
     ],
     "changelog": [
