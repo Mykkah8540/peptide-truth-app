@@ -31,7 +31,8 @@
       "evidence_grade": "human_observational",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "High uncertainty and unapproved status combined with common non-medical injectable use patterns increases consequence risk. FDA compounding safety concerns cite limited safety information for proposed routes and potential immunogenicity/impurity characterization issues. Human clinical evidence is limited and not definitive."
+      "rationale": "High uncertainty and unapproved status combined with common non-medical injectable use patterns increases consequence risk. FDA compounding safety concerns cite limited safety information for proposed routes and potential immunogenicity/impurity characterization issues. Human clinical evidence is limited and not definitive.",
+      "severity": "high"
     },
     "sections": {
       "overview": [
