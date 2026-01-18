@@ -1,0 +1,11 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_hormonal_endocrine",
+  "peptides": [
+    {
+      "slug": "cjc-1295",
+      "canonical_name": "CJC-1295"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}

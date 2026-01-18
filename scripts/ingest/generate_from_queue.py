@@ -222,45 +222,65 @@ def validate_topic_ids(topic_ids: List[str]) -> None:
         raise ValueError(f"Invalid topic_id(s) in queue: {bad}. Allowed: {sorted(allowed)}")
 
 def ensure_topic_map_exists() -> dict:
+    # Canonical format: mappings[]
     if TOPIC_MAP_PATH.exists():
         return load_json(TOPIC_MAP_PATH)
     return {
         "schema_version": "topic_peptide_map_v1",
         "rules": {
-            "topics_are_navigation": True,
-            "topics_are_not_recommendations": True,
-            "mapping_is_descriptive_only": True,
-            "source_of_truth": "content/peptides/<slug>.json"
+            "topic_tags_are_not_endorsements": True,
+            "each_mapping_requires_rationale": True,
+            "mappings_should_reference_claim_types_not_protocols": True
         },
-        "map": {}
+        "mappings": []
     }
 
 def upsert_topic_map(map_doc: dict, slug: str, topic_ids: List[str]) -> None:
-    # Store as simple list for each peptide slug
-    # This is descriptive navigation only.
-    m = map_doc.setdefault("map", {})
-    m[slug] = sorted(set(topic_ids))
+    """
+    Navigation-only mapping. Do not invent claims or protocols.
+    If queue includes primary_topics, create placeholder mapping stubs that require human rationale.
+    """
+    if not topic_ids:
+        return
+
+    mappings = map_doc.setdefault("mappings", [])
+    existing = {(m.get("topic_id"), m.get("peptide_slug")) for m in mappings}
+
+    for tid in sorted(set(topic_ids)):
+        key = (tid, slug)
+        if key in existing:
+            continue
+        mappings.append({
+            "topic_id": tid,
+            "peptide_slug": slug,
+            "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "confidence": "unknown",
+            "evidence_grade": "mechanistic_only"
+        })
 
 def rebuild_topic_pages(map_doc: dict) -> None:
-    # Builds content/topics/topic_pages_v1/<topic_id>.json deterministically.
+    # Builds content/topics/topic_pages_v1/<topic_id>.json deterministically from mappings[]
     TOPIC_PAGES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Invert map: topic_id -> [slug...]
-    inv = {}
-    for slug, topic_ids in map_doc.get("map", {}).items():
-        for tid in topic_ids:
-            inv.setdefault(tid, []).append(slug)
+    mappings = map_doc.get("mappings", [])
+
+    inv: Dict[str, List[str]] = {}
+    for m in mappings:
+        tid = m.get("topic_id")
+        slug = m.get("peptide_slug")
+        if not tid or not slug:
+            continue
+        inv.setdefault(tid, []).append(slug)
 
     # Load peptides canonical names (for stable display order)
-    peptide_meta = {}
-    for p in sorted(CONTENT_PEPTIDES_DIR.glob("*.json")):
-        if p.name.startswith("_"):
+    peptide_meta: Dict[str, str] = {}
+    for pj in sorted(CONTENT_PEPTIDES_DIR.glob("*.json")):
+        if pj.name.startswith("_"):
             continue
-        doc = load_json(p)
+        doc = load_json(pj)
         pep = doc.get("peptide", {})
-        peptide_meta[p.stem] = pep.get("canonical_name", p.stem)
+        peptide_meta[pj.stem] = pep.get("canonical_name", pj.stem)
 
-    # Write each topic page
     for tid, slugs in inv.items():
         items = [{"slug": s, "canonical_name": peptide_meta.get(s, s)} for s in slugs]
         items.sort(key=lambda x: (x["canonical_name"].lower(), x["slug"]))

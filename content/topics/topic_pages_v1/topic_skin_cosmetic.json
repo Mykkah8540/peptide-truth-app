@@ -1,0 +1,15 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_skin_cosmetic",
+  "peptides": [
+    {
+      "slug": "acetyl-hexapeptide-8",
+      "canonical_name": "Acetyl Hexapeptide-8"
+    },
+    {
+      "slug": "ghk-cu",
+      "canonical_name": "Copper Tripeptide-1"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}

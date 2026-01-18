@@ -1,0 +1,11 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_injury_healing",
+  "peptides": [
+    {
+      "slug": "tb-500",
+      "canonical_name": "TB-500"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}
