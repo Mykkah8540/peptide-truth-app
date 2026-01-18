@@ -1,297 +1,139 @@
 {
   "schema_version": "peptide_search_index_v1",
-  "generated_at": "2026-01-18_125007",
+  "generated_at": "2026-01-18T18:26:35Z",
   "rules": {
+    "metadata_only": true,
     "source_of_truth": "content/peptides/<slug>.json",
-    "topics_source": "content/topics/topic_peptide_map_v1.json (mappings[])",
-    "deterministic_sort": "canonical_name, then slug",
-    "navigation_only_topics": true
+    "no_protocols_no_regimens": true,
+    "topics_are_navigation_not_recommendation": true
   },
   "peptides": [
     {
       "slug": "acetyl-hexapeptide-8",
       "canonical_name": "Acetyl Hexapeptide-8",
+      "short_name": "Argireline",
       "aliases": [
-        "Argireline",
-        "Acetyl hexapeptide-3"
+        "Acetyl hexapeptide-3",
+        "Argireline"
       ],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-17"
-      },
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "mild",
         "likelihood": "unlikely",
         "evidence_grade": "human_interventional",
-        "developmental_risk": false,
-        "developmental_systems_of_concern": [],
-        "unknowns_penalty": true,
-        "current_score": 2
+        "developmental_risk": false
       },
-      "topics": [
-        {
-          "topic_id": "topic_skin_cosmetic",
-          "title": "Skin & Cosmetic Health",
-          "icon": "sparkles",
-          "confidence": "moderate",
-          "evidence_grade": "human_interventional",
-          "rationale": "Commonly searched topical cosmetic peptide for appearance-related claims; association reflects user interest and topical domain relevance, not endorsement.",
-          "is_placeholder": false
-        }
-      ],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": true,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": false,
-        "has_developmental_risk_block": false,
-        "dev_risk_block_missing_when_flagged": false
+      "topics": {
+        "primary": []
       }
     },
     {
       "slug": "aod-9604",
       "canonical_name": "AOD-9604",
+      "short_name": "AOD-9604",
       "aliases": [
         "hGH fragment 176-191"
       ],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-17"
-      },
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "human_interventional",
-        "developmental_risk": true,
-        "developmental_systems_of_concern": [
-          "gh_igf",
-          "metabolic",
-          "puberty"
-        ],
-        "unknowns_penalty": true,
-        "current_score": 4
+        "developmental_risk": true
       },
-      "topics": [
-        {
-          "topic_id": "topic_fat_loss_metabolism",
-          "title": "Fat Loss & Metabolism",
-          "icon": "flame",
-          "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
-          "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
-          "is_placeholder": true
-        },
-        {
-          "topic_id": "topic_muscle_recovery",
-          "title": "Muscle & Recovery",
-          "icon": "dumbbell",
-          "confidence": "low",
-          "evidence_grade": "human_interventional",
-          "rationale": "Often searched in performance/weight contexts; topic association reflects user interest, not recommendation.",
-          "is_placeholder": false
-        }
-      ],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": true,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": true,
-        "has_developmental_risk_block": true,
-        "dev_risk_block_missing_when_flagged": false
+      "topics": {
+        "primary": []
       }
     },
     {
       "slug": "bpc-157",
       "canonical_name": "BPC-157",
+      "short_name": "BPC-157",
       "aliases": [
         "Body Protection Compound-157",
         "Pentadecapeptide BPC 157"
       ],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-17"
-      },
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "human_observational",
-        "developmental_risk": true,
-        "developmental_systems_of_concern": [],
-        "unknowns_penalty": true,
-        "current_score": 7
+        "developmental_risk": true
       },
-      "topics": [
-        {
-          "topic_id": "topic_muscle_recovery",
-          "title": "Muscle & Recovery",
-          "icon": "dumbbell",
-          "confidence": "low",
-          "evidence_grade": "human_observational",
-          "rationale": "Frequently searched in injury and recovery contexts; mapping reflects popularity and preclinical interest, not proven human benefit.",
-          "is_placeholder": false
-        }
-      ],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": true,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": true,
-        "has_developmental_risk_block": true,
-        "dev_risk_block_missing_when_flagged": false
+      "topics": {
+        "primary": []
       }
     },
     {
       "slug": "cjc-1295",
       "canonical_name": "CJC-1295",
+      "short_name": "CJC-1295",
       "aliases": [
-        "CJC-1295 DAC",
         "CJC-1295 (no DAC)",
+        "CJC-1295 DAC",
         "GHRH analog"
       ],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-17"
-      },
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "human_interventional",
-        "developmental_risk": true,
-        "developmental_systems_of_concern": [],
-        "unknowns_penalty": true,
-        "current_score": 7
+        "developmental_risk": true
       },
-      "topics": [
-        {
-          "topic_id": "topic_hormonal_endocrine",
-          "title": "Hormonal & Endocrine",
-          "icon": "activity",
-          "confidence": "moderate",
-          "evidence_grade": "human_interventional",
-          "rationale": "Often searched as a GHRH analog affecting GH/IGF signaling; mapping reflects popularity, not endorsement.",
-          "is_placeholder": false
-        }
-      ],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": true,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": true,
-        "has_developmental_risk_block": true,
-        "dev_risk_block_missing_when_flagged": false
+      "topics": {
+        "primary": []
       }
     },
     {
       "slug": "ghk-cu",
       "canonical_name": "Copper Tripeptide-1",
+      "short_name": "GHK-Cu",
       "aliases": [
-        "GHK-Cu",
         "Copper peptide GHK-Cu",
-        "Glycyl-L-histidyl-L-lysine copper complex",
-        "GHK copper complex"
+        "GHK copper complex",
+        "GHK-Cu",
+        "Glycyl-L-histidyl-L-lysine copper complex"
       ],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-17"
-      },
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "mild",
         "likelihood": "unlikely",
         "evidence_grade": "human_interventional",
-        "developmental_risk": false,
-        "developmental_systems_of_concern": [],
-        "unknowns_penalty": true,
-        "current_score": 2
+        "developmental_risk": false
       },
-      "topics": [
-        {
-          "topic_id": "topic_skin_cosmetic",
-          "title": "Skin & Cosmetic Health",
-          "icon": "sparkles",
-          "confidence": "moderate",
-          "evidence_grade": "human_interventional",
-          "rationale": "Widely searched topical cosmetic peptide complex discussed for skin appearance and barrier-related goals; association reflects user interest, not endorsement.",
-          "is_placeholder": false
-        }
-      ],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": true,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": false,
-        "has_developmental_risk_block": false,
-        "dev_risk_block_missing_when_flagged": false
+      "topics": {
+        "primary": []
       }
     },
     {
       "slug": "tb-500",
       "canonical_name": "TB-500",
+      "short_name": "TB-500",
       "aliases": [
-        "Thymosin Beta-4 fragment",
-        "TB500"
+        "TB500",
+        "Thymosin Beta-4 fragment"
       ],
-      "classification": {
-        "category": "investigational_human",
-        "needs_prescription": false
-      },
-      "status": {
-        "category": "investigational_human",
-        "jurisdiction": "GLOBAL",
-        "last_reviewed": "2026-01-17"
-      },
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "animal",
-        "developmental_risk": true,
-        "developmental_systems_of_concern": [],
-        "unknowns_penalty": true,
-        "current_score": 6
+        "developmental_risk": true
       },
-      "topics": [
-        {
-          "topic_id": "topic_injury_healing",
-          "title": "Injury & Healing",
-          "icon": "bandage",
-          "confidence": "low",
-          "evidence_grade": "animal",
-          "rationale": "Commonly searched recovery peptide product; mapping reflects interest and preclinical plausibility, not proven human outcomes.",
-          "is_placeholder": false
-        }
-      ],
-      "coverage": {
-        "has_evidence_items": true,
-        "has_any_evidence_refs_in_sections": true,
-        "has_observed_exposure_ranges": true,
-        "developmental_risk_true": true,
-        "has_developmental_risk_block": true,
-        "dev_risk_block_missing_when_flagged": false
+      "topics": {
+        "primary": []
       }
     }
-  ]
+  ],
+  "warnings": [],
+  "counts": {
+    "peptides": 6,
+    "warnings": 0
+  }
 }
