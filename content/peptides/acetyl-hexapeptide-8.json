@@ -43,7 +43,10 @@
           "confidence": "moderate",
           "evidence_grade": "human_interventional",
           "text": "Acetyl Hexapeptide-8 (Argireline) is a synthetic cosmetic peptide used topically in anti-aging skincare. It is marketed for reducing the appearance of expression lines. Proposed effects relate to modulation of neurotransmitter-mediated muscle contraction signaling, but clinical outcomes depend strongly on formulation and delivery to target layers.",
-          "evidence_refs": ["E1", "E2"]
+          "evidence_refs": [
+            "E1",
+            "E2"
+          ]
         }
       ],
       "use_cases": [],
@@ -64,8 +67,12 @@
           "frequency": "varies",
           "duration": "varies",
           "population_group": "general",
-          "notes": "Descriptive only. Cosmetic formulations vary widely by manufacturer; this entry does not provide usage instructions.",
-          "evidence_refs": ["E1", "E2", "E3"]
+          "notes": "Descriptive only. Cosmetic formulations vary widely by manufacturer; this entry does not provide usage instructions. Not instructions.",
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
       "developmental_risk_block": [],
@@ -114,7 +121,11 @@
         "change_type": "initial_entry",
         "summary": "Initial canonical entry for Acetyl Hexapeptide-8 (Argireline)",
         "detail": "Added cosmetic peptide entry with human study, review, and clinical trial registry references; low-risk topical profile with uncertainty penalty due to formulation variability and limited long-term systemic characterization.",
-        "evidence_refs": ["E1", "E2", "E3"]
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3"
+        ]
       }
     ]
   }
