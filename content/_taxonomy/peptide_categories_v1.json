@@ -1,0 +1,83 @@
+{
+  "version": "v1",
+  "updated_at": "2026-01-19",
+  "notes": "Canonical taxonomy keys for Peptide Truth. Peptide and blend content should reference these keys (no free-text drift).",
+  "peptide_classes": [
+    {
+      "key": "regenerative_repair",
+      "label": "Regenerative / Repair"
+    },
+    {
+      "key": "metabolic_weight",
+      "label": "Metabolic / Weight"
+    },
+    {
+      "key": "neurocognitive_mood",
+      "label": "Neurocognitive / Mood"
+    },
+    {
+      "key": "sleep_circadian",
+      "label": "Sleep / Circadian"
+    },
+    {
+      "key": "immunomodulatory_inflammation",
+      "label": "Immune / Inflammation"
+    },
+    {
+      "key": "endocrine_hormonal",
+      "label": "Endocrine / Hormonal"
+    },
+    {
+      "key": "sexual_health_reproduction",
+      "label": "Sexual Health / Reproduction"
+    },
+    {
+      "key": "antimicrobial_innate",
+      "label": "Antimicrobial / Innate Defense"
+    },
+    {
+      "key": "mitochondrial_longevity",
+      "label": "Mitochondrial / Longevity"
+    },
+    {
+      "key": "cosmetic_topical",
+      "label": "Cosmetic / Topical"
+    },
+    {
+      "key": "muscle_performance",
+      "label": "Muscle / Performance"
+    }
+  ],
+  "entity_kinds": [
+    {
+      "key": "peptide",
+      "label": "Peptide"
+    },
+    {
+      "key": "hormone_peptide_complex",
+      "label": "Hormone / Peptide Complex"
+    },
+    {
+      "key": "bioactive_non_peptide",
+      "label": "Bioactive (Non-Peptide)"
+    }
+  ],
+  "delivery_contexts": [
+    {
+      "key": "systemic",
+      "label": "Systemic"
+    },
+    {
+      "key": "local",
+      "label": "Local"
+    },
+    {
+      "key": "topical",
+      "label": "Topical"
+    },
+    {
+      "key": "cns",
+      "label": "Central Nervous System"
+    }
+  ]
+}
