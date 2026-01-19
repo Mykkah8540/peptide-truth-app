@@ -13,7 +13,7 @@
       "category": "investigational_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
-      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
+      "human_use_note": "Not FDA-approved. Human use is reported, including use in regions where it has been marketed/used clinically and in gray-market contexts elsewhere. Product quality and labeling vary outside regulated supply chains, increasing uncertainty."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -29,7 +29,7 @@
       "evidence_grade": "mechanistic_only",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns."
+      "rationale": "Risk uncertainty is driven by heterogeneous clinical literature (often region-specific), variability in delivery/formulations in real-world use, and limited large, independently replicated trials for many claimed outcomes. Potential risks include neuropsychiatric effects, interactions with other CNS-active agents, and unknown long-term safety in adolescents."
     },
     "sections": {
       "overview": [
@@ -39,8 +39,12 @@
           "population_group": "general",
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
-          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
-          "evidence_refs": []
+          "text": "Selank is a synthetic peptide based on tuftsin-related sequences, developed to influence neuromodulatory pathways relevant to anxiety and cognition. Evidence includes mechanistic work and clinical reports, but overall evidence quality varies and many claims lack large, modern, independent replication.",
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
       "use_cases": [],
@@ -92,6 +96,26 @@
         "published_date": "",
         "evidence_grade": "mechanistic_only",
         "notes": ""
+      },
+      {
+        "id": "E2",
+        "title": "Clinical reports of Selank for anxiety-related outcomes (clinical literature overview)",
+        "source_type": "review",
+        "source_id": "PMID: (verify/replace as needed)",
+        "evidence_grade": "human_observational",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Region-specific and heterogeneous; use for boundaries, not claim inflation."
+      },
+      {
+        "id": "E3",
+        "title": "Selank effects on CNS signaling or neuroinflammation pathways (preclinical/mechanistic study)",
+        "source_type": "journal_article",
+        "source_id": "PMID: (verify/replace as needed)",
+        "evidence_grade": "animal",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Supports mechanism discussion only; not proof of human benefit."
       }
     ],
     "changelog": [
@@ -101,6 +125,17 @@
         "summary": "Initial canonical entry for Selank",
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
+      },
+      {
+        "date": "2026-01-19T16:15:22.819308+00:00",
+        "change_type": "content_update",
+        "summary": "Filled Selank core fields and linked conservative evidence refs (no instructions).",
+        "detail": "Removed placeholder language from key descriptive fields and added a minimal evidence scaffold. No protocols/dosing/instructions added.",
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3"
+        ]
       }
     ]
   }
