@@ -2,6 +2,206 @@
   "version": "v1",
   "updated_at": "2026-01-19",
   "notes": "Authoritative coverage checklist. This is NOT the ingest queue. It tracks scope and completion status.",
-  "peptides": [],
-  "blends": []
+  "peptides": [
+    {
+      "slug": "5-amino-1mq",
+      "status": "ingested"
+    },
+    {
+      "slug": "acetyl-hexapeptide-8",
+      "status": "ingested"
+    },
+    {
+      "slug": "adipotide",
+      "status": "ingested"
+    },
+    {
+      "slug": "afamelanotide",
+      "status": "ingested"
+    },
+    {
+      "slug": "aod-9604",
+      "status": "ingested"
+    },
+    {
+      "slug": "ara-290",
+      "status": "ingested"
+    },
+    {
+      "slug": "bpc-157",
+      "status": "ingested"
+    },
+    {
+      "slug": "bremelanotide",
+      "status": "ingested"
+    },
+    {
+      "slug": "cagrilintide",
+      "status": "ingested"
+    },
+    {
+      "slug": "cjc-1295",
+      "status": "ingested"
+    },
+    {
+      "slug": "dsip",
+      "status": "ingested"
+    },
+    {
+      "slug": "epitalon",
+      "status": "ingested"
+    },
+    {
+      "slug": "ghk-cu",
+      "status": "ingested"
+    },
+    {
+      "slug": "glutathione",
+      "status": "ingested"
+    },
+    {
+      "slug": "hcg",
+      "status": "ingested"
+    },
+    {
+      "slug": "hexarelin",
+      "status": "ingested"
+    },
+    {
+      "slug": "ipamorelin",
+      "status": "ingested"
+    },
+    {
+      "slug": "kpv",
+      "status": "ingested"
+    },
+    {
+      "slug": "ll-37",
+      "status": "ingested"
+    },
+    {
+      "slug": "mazdutide",
+      "status": "ingested"
+    },
+    {
+      "slug": "melanotan-i",
+      "status": "ingested"
+    },
+    {
+      "slug": "melanotan-ii",
+      "status": "ingested"
+    },
+    {
+      "slug": "mk-677",
+      "status": "ingested"
+    },
+    {
+      "slug": "mots-c",
+      "status": "ingested"
+    },
+    {
+      "slug": "nad-plus",
+      "status": "ingested"
+    },
+    {
+      "slug": "oxytocin",
+      "status": "ingested"
+    },
+    {
+      "slug": "pramlintide",
+      "status": "ingested"
+    },
+    {
+      "slug": "selank",
+      "status": "ingested"
+    },
+    {
+      "slug": "semax",
+      "status": "ingested"
+    },
+    {
+      "slug": "sermorelin",
+      "status": "ingested"
+    },
+    {
+      "slug": "snap-8",
+      "status": "ingested"
+    },
+    {
+      "slug": "survodutide",
+      "status": "ingested"
+    },
+    {
+      "slug": "tb-500",
+      "status": "ingested"
+    },
+    {
+      "slug": "tesamorelin",
+      "status": "ingested"
+    },
+    {
+      "slug": "thymosin-alpha-1",
+      "status": "ingested"
+    },
+    {
+      "slug": "thymosin-beta-4",
+      "status": "ingested"
+    },
+    {
+      "slug": "vip",
+      "status": "ingested"
+    }
+  ],
+  "blends": [
+    {
+      "slug": "glow",
+      "display_name": "GLOW",
+      "status": "parked"
+    },
+    {
+      "slug": "klow",
+      "display_name": "KLOW",
+      "status": "parked"
+    },
+    {
+      "slug": "bpc-157_tb-500",
+      "display_name": "BPC-157 / TB-500",
+      "status": "parked"
+    },
+    {
+      "slug": "cjc-1295_ipamorelin",
+      "display_name": "CJC-1295 + Ipamorelin",
+      "status": "parked"
+    },
+    {
+      "slug": "cagrilintide_semaglutide",
+      "display_name": "CAGRI / SEMA",
+      "status": "parked"
+    },
+    {
+      "slug": "glp3-reta",
+      "display_name": "GLP3-RETA",
+      "status": "parked"
+    },
+    {
+      "slug": "glp2-trz",
+      "display_name": "GLP2-TRZ",
+      "status": "parked"
+    },
+    {
+      "slug": "glp1-sma",
+      "display_name": "GLP1-SMA",
+      "status": "parked"
+    },
+    {
+      "slug": "mazdutide",
+      "display_name": "MAZDUTIDE",
+      "status": "parked"
+    },
+    {
+      "slug": "survodutide",
+      "display_name": "SURVODUTIDE",
+      "status": "parked"
+    }
+  ]
 }
