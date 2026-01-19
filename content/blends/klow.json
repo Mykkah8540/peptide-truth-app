@@ -1,0 +1,53 @@
+{
+  "schema_version": "blend_json_v1",
+  "blend": {
+    "slug": "klow",
+    "display_name": "KLOW",
+    "status": "parked",
+    "taxonomy_keys": [
+      "regenerative_blend"
+    ],
+    "components": [
+      "bpc-157",
+      "tb-500",
+      "ghk-cu",
+      "kpv"
+    ],
+    "components_unresolved": [],
+    "sections": {
+      "overview": [
+        {
+          "text": "",
+          "evidence_refs": [
+            "E1"
+          ]
+        }
+      ],
+      "claims": [],
+      "safety": [
+        {
+          "text": "",
+          "evidence_refs": []
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "KLOW — reference index",
+        "source_type": "website",
+        "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=KLOW",
+        "evidence_grade": "mechanistic_only",
+        "notes": "Index link for literature discovery. This file intentionally contains no protocol instructions."
+      }
+    ],
+    "disclaimer": {
+      "text": "This blend page is informational. It does not provide protocols or instructions. Claims must be supported by cited evidence.",
+      "updated_at": "2026-01-19"
+    },
+    "meta": {
+      "generated_from": "content/blends/_index.json",
+      "generated_at": "2026-01-19"
+    }
+  }
+}
