@@ -10,13 +10,13 @@
     "classification": {
       "category": "approved_human",
       "needs_prescription": true,
-      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
+      "notes": "Melanocortin receptor agonist–class peptide (MC system). Discussed here for mechanism, evidence, and safety context only; not a use guide."
     },
     "status": {
       "category": "approved_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
-      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
+      "human_use_note": "Exists as an approved prescription drug for a defined indication (region- and label-dependent). Also discussed outside clinical settings; this app describes evidence and risk without providing instructions."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -32,7 +32,7 @@
       "evidence_grade": "mechanistic_only",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns.",
+      "rationale": "Primary safety understanding comes from regulated clinical trials in specific endpoints and populations. Generalization beyond labeled contexts increases uncertainty. Mechanistic risks cluster around melanocortin signaling and cardiovascular/autonomic effects in susceptible individuals.",
       "developmental_systems_of_concern": [
         "melanocortin",
         "hormonal",
@@ -47,8 +47,11 @@
           "population_group": "general",
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
-          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
-          "evidence_refs": []
+          "text": "Bremelanotide is a melanocortin-system agonist studied for effects on sexual desire and related behavioral physiology. Human clinical evidence exists in defined indications and trial populations. This entry summarizes mechanisms, evidence quality, and safety considerations without providing dosing, preparation, or administration instructions.",
+          "evidence_refs": [
+            "fda_bremelanotide_label",
+            "pubmed_bremelanotide_hsdd"
+          ]
         }
       ],
       "use_cases": [],
@@ -95,11 +98,34 @@
         "id": "E1",
         "title": "",
         "source_type": "pubmed",
-        "source_id": "",
+        "source_id": "E1",
         "url": "",
         "published_date": "",
         "evidence_grade": "mechanistic_only",
         "notes": ""
+      },
+      {
+        "id": "pubmed_bremelanotide_hsdd",
+        "type": "pubmed",
+        "title": "Bremelanotide for hypoactive sexual desire disorder (human clinical literature)",
+        "year": null,
+        "pmid": null,
+        "url": null,
+        "notes": "Anchor for human clinical evidence base; PMID/year can be finalized in evidence pass.",
+        "source_type": "pubmed",
+        "source_id": "pubmed_bremelanotide_hsdd",
+        "evidence_grade": "human_interventional"
+      },
+      {
+        "id": "fda_bremelanotide_label",
+        "type": "regulatory",
+        "title": "FDA label / prescribing information for bremelanotide (Vyleesi)",
+        "year": null,
+        "url": null,
+        "notes": "Regulatory context anchor; finalize exact label URL/year in later pass.",
+        "source_type": "regulatory",
+        "source_id": "fda_bremelanotide_label",
+        "evidence_grade": "regulatory_label"
       }
     ],
     "changelog": [
@@ -111,5 +137,119 @@
         "evidence_refs": []
       }
     ]
+  },
+  "aliases": [
+    "vyleesi",
+    "pt-141"
+  ],
+  "classification": {
+    "category": "approved_human",
+    "needs_prescription": true,
+    "notes": "Melanocortin receptor agonist–class peptide (MC system). Discussed here for mechanism, evidence, and safety context only; not a use guide."
+  },
+  "status": {
+    "category": "approved_human",
+    "jurisdiction": "GLOBAL",
+    "last_reviewed": "2026-01-19",
+    "human_use_note": "Exists as an approved prescription drug for a defined indication (region- and label-dependent). Also discussed outside clinical settings; this app describes evidence and risk without providing instructions."
+  },
+  "risk": {
+    "current_score": 5,
+    "severity": "moderate",
+    "likelihood": "possible",
+    "evidence_grade": "mechanistic_only",
+    "developmental_risk": true,
+    "unknowns_penalty": true,
+    "rationale": "Primary safety understanding comes from regulated clinical trials in specific endpoints and populations. Generalization beyond labeled contexts increases uncertainty. Mechanistic risks cluster around melanocortin signaling and cardiovascular/autonomic effects in susceptible individuals.",
+    "developmental_systems_of_concern": [
+      "melanocortin",
+      "hormonal",
+      "puberty"
+    ]
+  },
+  "sections": {
+    "overview": [
+      {
+        "claim_type": "overview",
+        "title": "What it is",
+        "population_group": "general",
+        "confidence": "unknown",
+        "evidence_grade": "mechanistic_only",
+        "text": "Bremelanotide is a melanocortin-system agonist studied for effects on sexual desire and related behavioral physiology. Human clinical evidence exists in defined indications and trial populations. This entry summarizes mechanisms, evidence quality, and safety considerations without providing dosing, preparation, or administration instructions.",
+        "evidence_refs": [
+          "fda_bremelanotide_label",
+          "pubmed_bremelanotide_hsdd"
+        ]
+      }
+    ],
+    "use_cases": [],
+    "mechanism": [],
+    "human_effects": [],
+    "preclinical_effects": [],
+    "hypothesized_effects": [],
+    "time_dynamics": [],
+    "risks": [],
+    "contraindications": [],
+    "monitoring": [],
+    "observed_exposure_ranges": [
+      {
+        "route": "",
+        "unit": "",
+        "min": null,
+        "max": null,
+        "frequency": "",
+        "duration": "",
+        "population_group": "general",
+        "notes": "Descriptive only. Observed in studies; not instructions.",
+        "evidence_refs": []
+      }
+    ],
+    "developmental_risk_block": [
+      {
+        "claim_type": "risk",
+        "population_group": "adolescent",
+        "confidence": "unknown",
+        "evidence_grade": "mechanistic_only",
+        "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
+        "evidence_refs": []
+      }
+    ],
+    "interaction_summary": []
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "title": "",
+      "source_type": "pubmed",
+      "source_id": "E1",
+      "url": "",
+      "published_date": "",
+      "evidence_grade": "mechanistic_only",
+      "notes": ""
+    },
+    {
+      "id": "pubmed_bremelanotide_hsdd",
+      "type": "pubmed",
+      "title": "Bremelanotide for hypoactive sexual desire disorder (human clinical literature)",
+      "year": null,
+      "pmid": null,
+      "url": null,
+      "notes": "Anchor for human clinical evidence base; PMID/year can be finalized in evidence pass.",
+      "source_type": "pubmed",
+      "source_id": "pubmed_bremelanotide_hsdd"
+    },
+    {
+      "id": "fda_bremelanotide_label",
+      "type": "regulatory",
+      "title": "FDA label / prescribing information for bremelanotide (Vyleesi)",
+      "year": null,
+      "url": null,
+      "notes": "Regulatory context anchor; finalize exact label URL/year in later pass.",
+      "source_type": "regulatory",
+      "source_id": "fda_bremelanotide_label"
+    }
+  ],
+  "meta": {
+    "updated_at": "2026-01-19T19:02:46Z"
   }
 }
