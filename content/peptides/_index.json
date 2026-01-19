@@ -16,8 +16,16 @@
       "canonical_name": "AOD-9604"
     },
     {
+      "slug": "ara-290",
+      "canonical_name": "ARA-290"
+    },
+    {
       "slug": "bpc-157",
       "canonical_name": "BPC-157"
+    },
+    {
+      "slug": "bremelanotide",
+      "canonical_name": "Bremelanotide"
     },
     {
       "slug": "cjc-1295",
@@ -28,12 +36,24 @@
       "canonical_name": "Copper Tripeptide-1"
     },
     {
+      "slug": "dsip",
+      "canonical_name": "DSIP"
+    },
+    {
+      "slug": "epitalon",
+      "canonical_name": "Epitalon"
+    },
+    {
       "slug": "hexarelin",
       "canonical_name": "Hexarelin"
     },
     {
       "slug": "ipamorelin",
       "canonical_name": "Ipamorelin"
+    },
+    {
+      "slug": "kpv",
+      "canonical_name": "KPV"
     },
     {
       "slug": "melanotan-ii",
@@ -52,12 +72,24 @@
       "canonical_name": "Semax"
     },
     {
+      "slug": "sermorelin",
+      "canonical_name": "Sermorelin"
+    },
+    {
       "slug": "tb-500",
       "canonical_name": "TB-500"
     },
     {
+      "slug": "tesamorelin",
+      "canonical_name": "Tesamorelin"
+    },
+    {
       "slug": "thymosin-alpha-1",
       "canonical_name": "Thymosin Alpha-1"
+    },
+    {
+      "slug": "thymosin-beta-4",
+      "canonical_name": "Thymosin Beta-4"
     }
   ]
 }
