@@ -1,0 +1,109 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "Glutathione",
+    "short_name": "Glutathione",
+    "aliases": [],
+    "classification": {
+      "category": "",
+      "needs_prescription": false,
+      "notes": "Classification describes what Glutathione is and the general domain where it appears."
+    },
+    "status": {
+      "category": "investigational_human",
+      "jurisdiction": "GLOBAL",
+      "last_reviewed": "2026-01-19",
+      "human_use_note": "Status reflects how Glutathione appears in clinical literature and/or real-world contexts. This is descriptive only."
+    },
+    "structure": {
+      "sequence_oneletter": "",
+      "amino_acid_seq": "",
+      "molecular_formula": "",
+      "molecular_weight": null,
+      "structure_image_url": ""
+    },
+    "risk": {
+      "current_score": 5,
+      "severity": "moderate",
+      "likelihood": "possible",
+      "evidence_grade": "mechanistic_only",
+      "developmental_risk": true,
+      "unknowns_penalty": true,
+      "rationale": "Risk scoring reflects evidence quality, adverse-signal plausibility, and uncertainty. Limited data increases uncertainty."
+    },
+    "sections": {
+      "overview": [
+        {
+          "claim_type": "overview",
+          "title": "What it is",
+          "population_group": "general",
+          "confidence": "unknown",
+          "evidence_grade": "mechanistic_only",
+          "text": "Glutathione is a bioactive compound discussed in research and/or clinical contexts. This entry summarizes what it is, what it is studied for, and key evidence limitations without providing protocols.",
+          "evidence_refs": [
+            "E1"
+          ]
+        }
+      ],
+      "use_cases": [],
+      "mechanism": [],
+      "human_effects": [],
+      "preclinical_effects": [],
+      "hypothesized_effects": [],
+      "time_dynamics": [],
+      "risks": [],
+      "contraindications": [],
+      "monitoring": [],
+      "observed_exposure_ranges": [
+        {
+          "route": "",
+          "unit": "",
+          "min": null,
+          "max": null,
+          "frequency": "",
+          "duration": "",
+          "population_group": "general",
+          "notes": "Descriptive only. Observed in studies; not instructions.",
+          "evidence_refs": []
+        }
+      ],
+      "developmental_risk_block": [
+        {
+          "claim_type": "risk",
+          "population_group": "adolescent",
+          "confidence": "unknown",
+          "evidence_grade": "mechanistic_only",
+          "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
+          "evidence_refs": []
+        }
+      ],
+      "interaction_summary": []
+    },
+    "interactions": {
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "",
+        "source_type": "pubmed",
+        "source_id": "E1",
+        "url": "",
+        "published_date": "",
+        "evidence_grade": "mechanistic_only",
+        "notes": ""
+      }
+    ],
+    "changelog": [
+      {
+        "date": "2026-01-19",
+        "change_type": "initial_entry",
+        "summary": "Initial canonical entry for Glutathione",
+        "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
+        "evidence_refs": []
+      }
+    ]
+  }
+}

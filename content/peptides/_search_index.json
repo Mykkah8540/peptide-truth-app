@@ -8,6 +8,23 @@
   },
   "peptides": [
     {
+      "slug": "5-amino-1mq",
+      "canonical_name": "5-Amino-1MQ",
+      "short_name": "5-Amino-1MQ",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "acetyl-hexapeptide-8",
       "canonical_name": "Acetyl Hexapeptide-8",
       "short_name": "Argireline",
@@ -22,6 +39,40 @@
         "likelihood": "unlikely",
         "evidence_grade": "human_interventional",
         "developmental_risk": false
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "adipotide",
+      "canonical_name": "Adipotide",
+      "short_name": "Adipotide",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "afamelanotide",
+      "canonical_name": "Afamelanotide",
+      "short_name": "Afamelanotide",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
       },
       "topics": {
         "primary": []
@@ -95,6 +146,23 @@
       ],
       "status_category": "approved_human",
       "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "cagrilintide",
+      "canonical_name": "Cagrilintide",
+      "short_name": "Cagrilintide",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
@@ -188,6 +256,40 @@
       }
     },
     {
+      "slug": "glutathione",
+      "canonical_name": "Glutathione",
+      "short_name": "Glutathione",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "hcg",
+      "canonical_name": "hCG",
+      "short_name": "hCG",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "hexarelin",
       "canonical_name": "Hexarelin",
       "short_name": "Hexarelin",
@@ -243,6 +345,57 @@
       }
     },
     {
+      "slug": "ll-37",
+      "canonical_name": "LL-37",
+      "short_name": "LL-37",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "mazdutide",
+      "canonical_name": "Mazdutide",
+      "short_name": "Mazdutide",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "melanotan-i",
+      "canonical_name": "Melanotan I",
+      "short_name": "Melanotan I",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "melanotan-ii",
       "canonical_name": "Melanotan II",
       "short_name": "Melanotan II",
@@ -262,12 +415,80 @@
       }
     },
     {
+      "slug": "mk-677",
+      "canonical_name": "MK-677",
+      "short_name": "MK-677",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "mots-c",
       "canonical_name": "MOTS-c",
       "short_name": "MOTS-c",
       "aliases": [
         "motsc"
       ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "nad-plus",
+      "canonical_name": "NAD+",
+      "short_name": "NAD+",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "oxytocin",
+      "canonical_name": "Oxytocin",
+      "short_name": "Oxytocin",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "pramlintide",
+      "canonical_name": "Pramlintide",
+      "short_name": "Pramlintide",
+      "aliases": [],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -321,6 +542,40 @@
       "aliases": [],
       "status_category": "investigational_human",
       "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "snap-8",
+      "canonical_name": "SNAP-8",
+      "short_name": "SNAP-8",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "survodutide",
+      "canonical_name": "Survodutide",
+      "short_name": "Survodutide",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
@@ -409,11 +664,28 @@
       "topics": {
         "primary": []
       }
+    },
+    {
+      "slug": "vip",
+      "canonical_name": "VIP",
+      "short_name": "VIP",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
     }
   ],
   "warnings": [],
   "counts": {
-    "peptides": 21,
+    "peptides": 37,
     "warnings": 0
   }
 }
