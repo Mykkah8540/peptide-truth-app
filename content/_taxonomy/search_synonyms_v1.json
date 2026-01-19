@@ -1,0 +1,104 @@
+{
+  "version": "v1",
+  "updated_at": "2026-01-19",
+  "notes": "Internal search synonym map. Additive only; never overrides exact entity matches.",
+  "entity_synonyms": [
+    { "term": "pt141", "slugs": ["bremelanotide"] },
+    { "term": "pt-141", "slugs": ["bremelanotide"] },
+    { "term": "pt 141", "slugs": ["bremelanotide"] },
+
+    { "term": "bpc157", "slugs": ["bpc-157"] },
+    { "term": "bpc 157", "slugs": ["bpc-157"] },
+
+    { "term": "tb500", "slugs": ["tb-500"] },
+    { "term": "tb 500", "slugs": ["tb-500"] },
+
+    { "term": "ghkcu", "slugs": ["ghk-cu"] },
+    { "term": "ghk cu", "slugs": ["ghk-cu"] },
+
+    { "term": "ta1", "slugs": ["thymosin-alpha-1"] },
+    { "term": "thymosin a1", "slugs": ["thymosin-alpha-1"] },
+
+    { "term": "tβ4", "slugs": ["thymosin-beta-4"] },
+    { "term": "tb4", "slugs": ["thymosin-beta-4"] },
+    { "term": "thymosin b4", "slugs": ["thymosin-beta-4"] },
+
+    { "term": "dsip peptide", "slugs": ["dsip"] },
+
+    { "term": "nad+", "slugs": ["nad-plus"] },
+    { "term": "nad plus", "slugs": ["nad-plus"] },
+
+    { "term": "5 amino 1mq", "slugs": ["5-amino-1mq"] },
+    { "term": "5-amino-1mq", "slugs": ["5-amino-1mq"] },
+
+    { "term": "mk677", "slugs": ["mk-677"] },
+    { "term": "mk 677", "slugs": ["mk-677"] },
+
+    { "term": "melanotan 2", "slugs": ["melanotan-ii"] },
+    { "term": "melanotan ii", "slugs": ["melanotan-ii"] },
+
+    { "term": "melanotan 1", "slugs": ["melanotan-i"] },
+    { "term": "melanotan i", "slugs": ["melanotan-i"] },
+
+    { "term": "ss-31", "slugs": ["ss-31"] },
+    { "term": "elamipretide", "slugs": ["ss-31"] }
+  ],
+  "category_synonyms": [
+    { "term": "weight loss", "taxonomy_keys": ["metabolic_weight"] },
+    { "term": "fat loss", "taxonomy_keys": ["metabolic_weight"] },
+    { "term": "metabolic", "taxonomy_keys": ["metabolic_weight"] },
+
+    { "term": "recovery", "taxonomy_keys": ["regenerative_repair"] },
+    { "term": "healing", "taxonomy_keys": ["regenerative_repair"] },
+    { "term": "injury", "taxonomy_keys": ["regenerative_repair"] },
+    { "term": "repair", "taxonomy_keys": ["regenerative_repair"] },
+
+    { "term": "immune", "taxonomy_keys": ["immunomodulatory_inflammation"] },
+    { "term": "immunity", "taxonomy_keys": ["immunomodulatory_inflammation"] },
+    { "term": "inflammation", "taxonomy_keys": ["immunomodulatory_inflammation"] },
+
+    { "term": "sleep", "taxonomy_keys": ["sleep_recovery"] },
+    { "term": "sleeping", "taxonomy_keys": ["sleep_recovery"] },
+
+    { "term": "longevity", "taxonomy_keys": ["mitochondrial_longevity"] },
+    { "term": "mitochondria", "taxonomy_keys": ["mitochondrial_longevity"] },
+    { "term": "aging", "taxonomy_keys": ["mitochondrial_longevity"] },
+
+    { "term": "skin", "taxonomy_keys": ["cosmetic_topical"] },
+    { "term": "cosmetic", "taxonomy_keys": ["cosmetic_topical"] },
+    { "term": "wrinkles", "taxonomy_keys": ["cosmetic_topical"] },
+
+    { "term": "libido", "taxonomy_keys": ["sexual_health_reproduction"] },
+    { "term": "sexual", "taxonomy_keys": ["sexual_health_reproduction"] },
+    { "term": "erectile", "taxonomy_keys": ["sexual_health_reproduction"] },
+
+    { "term": "performance", "taxonomy_keys": ["muscle_performance"] },
+    { "term": "muscle", "taxonomy_keys": ["muscle_performance"] },
+    { "term": "training", "taxonomy_keys": ["muscle_performance"] }
+  ],
+  "blend_synonyms": [
+    { "term": "glow", "blend_slugs": ["glow"] },
+    { "term": "klow", "blend_slugs": ["klow"] },
+
+    { "term": "bpc/tb", "blend_slugs": ["bpc-157-tb-500"] },
+    { "term": "bpc+tb", "blend_slugs": ["bpc-157-tb-500"] },
+    { "term": "bpc tb", "blend_slugs": ["bpc-157-tb-500"] },
+
+    { "term": "cjc/ipa", "blend_slugs": ["cjc-ipamorelin"] },
+    { "term": "cjc+ipa", "blend_slugs": ["cjc-ipamorelin"] },
+    { "term": "cjc ipa", "blend_slugs": ["cjc-ipamorelin"] },
+
+    { "term": "cagri/sema", "blend_slugs": ["cagri-sema"] },
+    { "term": "cagri+sema", "blend_slugs": ["cagri-sema"] },
+    { "term": "cagri sema", "blend_slugs": ["cagri-sema"] },
+
+    { "term": "glp3 reta", "blend_slugs": ["glp3-reta"] },
+    { "term": "glp-3 reta", "blend_slugs": ["glp3-reta"] },
+
+    { "term": "glp2 trz", "blend_slugs": ["glp2-trz"] },
+    { "term": "glp-2 trz", "blend_slugs": ["glp2-trz"] },
+
+    { "term": "glp1 sma", "blend_slugs": ["glp1-sma"] },
+    { "term": "glp-1 sma", "blend_slugs": ["glp1-sma"] }
+  ]
+}
