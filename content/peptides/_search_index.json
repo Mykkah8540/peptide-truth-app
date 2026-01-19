@@ -47,6 +47,25 @@
       }
     },
     {
+      "slug": "ara-290",
+      "canonical_name": "ARA-290",
+      "short_name": "ARA-290",
+      "aliases": [
+        "cibinetide"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "bpc-157",
       "canonical_name": "BPC-157",
       "short_name": "BPC-157",
@@ -60,6 +79,26 @@
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "human_observational",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "bremelanotide",
+      "canonical_name": "Bremelanotide",
+      "short_name": "Bremelanotide",
+      "aliases": [
+        "pt-141",
+        "vyleesi"
+      ],
+      "status_category": "approved_human",
+      "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
         "developmental_risk": true
       },
       "topics": {
@@ -103,7 +142,190 @@
         "severity": "mild",
         "likelihood": "unlikely",
         "evidence_grade": "human_interventional",
-        "developmental_risk": false
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "dsip",
+      "canonical_name": "DSIP",
+      "short_name": "DSIP",
+      "aliases": [
+        "delta-sleep-inducing-peptide"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "epitalon",
+      "canonical_name": "Epitalon",
+      "short_name": "Epitalon",
+      "aliases": [
+        "epithalamin",
+        "epithalon"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "hexarelin",
+      "canonical_name": "Hexarelin",
+      "short_name": "Hexarelin",
+      "aliases": [
+        "HEX"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "ipamorelin",
+      "canonical_name": "Ipamorelin",
+      "short_name": "Ipamorelin",
+      "aliases": [
+        "IPA"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "kpv",
+      "canonical_name": "KPV",
+      "short_name": "KPV",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "melanotan-ii",
+      "canonical_name": "Melanotan II",
+      "short_name": "Melanotan II",
+      "aliases": [
+        "MT2"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "mots-c",
+      "canonical_name": "MOTS-c",
+      "short_name": "MOTS-c",
+      "aliases": [
+        "motsc"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "selank",
+      "canonical_name": "Selank",
+      "short_name": "Selank",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "semax",
+      "canonical_name": "Semax",
+      "short_name": "Semax",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "sermorelin",
+      "canonical_name": "Sermorelin",
+      "short_name": "Sermorelin",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
       },
       "topics": {
         "primary": []
@@ -128,11 +350,70 @@
       "topics": {
         "primary": []
       }
+    },
+    {
+      "slug": "tesamorelin",
+      "canonical_name": "Tesamorelin",
+      "short_name": "Tesamorelin",
+      "aliases": [
+        "egrifta"
+      ],
+      "status_category": "approved_human",
+      "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "thymosin-alpha-1",
+      "canonical_name": "Thymosin Alpha-1",
+      "short_name": "Thymosin Alpha-1",
+      "aliases": [
+        "ta1",
+        "thymalfasin"
+      ],
+      "status_category": "approved_human",
+      "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "thymosin-beta-4",
+      "canonical_name": "Thymosin Beta-4",
+      "short_name": "Thymosin Beta-4",
+      "aliases": [
+        "tb4",
+        "t\u03b24"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
     }
   ],
   "warnings": [],
   "counts": {
-    "peptides": 6,
+    "peptides": 21,
     "warnings": 0
   }
 }
