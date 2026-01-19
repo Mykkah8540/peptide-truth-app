@@ -54,42 +54,47 @@
       "slug": "cagri-sema",
       "display_name": "Cagrilintide / Semaglutide",
       "components": [
-        "cagrilintide",
-        "semaglutide"
+        "cagrilintide"
       ],
       "taxonomy_keys": [
         "metabolic_weight_blend"
+      ],
+      "components_unresolved": [
+        "semaglutide"
       ]
     },
     {
       "slug": "glp3-reta",
       "display_name": "GLP-3 RETA (Quad Agonist Class)",
-      "components": [
-        "retatrutide"
-      ],
+      "components": [],
       "taxonomy_keys": [
         "metabolic_weight_blend"
+      ],
+      "components_unresolved": [
+        "retatrutide"
       ]
     },
     {
       "slug": "glp2-trz",
       "display_name": "GLP-2 TRZ",
-      "components": [
-        "tirzepatide"
-      ],
+      "components": [],
       "taxonomy_keys": [
         "metabolic_weight_blend"
+      ],
+      "components_unresolved": [
+        "tirzepatide"
       ]
     },
     {
       "slug": "glp1-sma",
       "display_name": "GLP-1 SMA",
-      "components": [
-        "semaglutide",
-        "amylin"
-      ],
+      "components": [],
       "taxonomy_keys": [
         "metabolic_weight_blend"
+      ],
+      "components_unresolved": [
+        "amylin",
+        "semaglutide"
       ]
     }
   ]

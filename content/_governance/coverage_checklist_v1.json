@@ -473,7 +473,9 @@
         "metabolic_weight_blend"
       ],
       "components": [
-        "cagrilintide",
+        "cagrilintide"
+      ],
+      "components_unresolved": [
         "semaglutide"
       ]
     }
