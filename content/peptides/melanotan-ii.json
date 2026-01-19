@@ -42,7 +42,12 @@
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
           "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
-          "evidence_refs": []
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3",
+            "E4"
+          ]
         }
       ],
       "use_cases": [],
@@ -94,6 +99,36 @@
         "published_date": "",
         "evidence_grade": "mechanistic_only",
         "notes": ""
+      },
+      {
+        "id": "E2",
+        "source_id": "E2",
+        "source_type": "review",
+        "evidence_grade": "human_observational",
+        "title": "Melanotan misuse/adverse events and real-world exposure patterns (review/observational synthesis)",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Use to bound harms and uncertainty; not endorsement."
+      },
+      {
+        "id": "E3",
+        "source_id": "E3",
+        "source_type": "journal_article",
+        "evidence_grade": "human_observational",
+        "title": "Case reports/series: melanotan-associated adverse events (e.g., pigmentary changes, systemic symptoms)",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Adverse-event context only; case-level evidence."
+      },
+      {
+        "id": "E4",
+        "source_id": "E4",
+        "source_type": "regulatory",
+        "evidence_grade": "mechanistic_only",
+        "title": "Regulatory/health advisory on unapproved melanotan products (public safety communication)",
+        "year": 0,
+        "url": "",
+        "notes": "High-level safety framing; not a clinical study."
       }
     ],
     "changelog": [
@@ -103,6 +138,18 @@
         "summary": "Initial canonical entry for Melanotan II",
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
+      },
+      {
+        "date": "2026-01-19T13:32:56.641931+00:00",
+        "change_type": "content_update",
+        "summary": "Added conservative evidence scaffold and linked overview refs (no instructions).",
+        "detail": "Inserted mechanistic + observational + adverse-event + regulatory placeholders to bound uncertainty and harms. No dosing/protocol language added.",
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3",
+          "E4"
+        ]
       }
     ]
   }
