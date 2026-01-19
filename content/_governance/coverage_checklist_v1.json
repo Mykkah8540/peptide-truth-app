@@ -9,7 +9,9 @@
       "display_name": "5-Amino-1MQ",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "acetyl-hexapeptide-8",
@@ -17,7 +19,9 @@
       "display_name": "Acetyl Hexapeptide-8",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "cosmetic_topical"
+      ]
     },
     {
       "slug": "adipotide",
@@ -25,7 +29,9 @@
       "display_name": "Adipotide",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "afamelanotide",
@@ -33,7 +39,9 @@
       "display_name": "Afamelanotide",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "cosmetic_topical"
+      ]
     },
     {
       "slug": "aod-9604",
@@ -41,7 +49,9 @@
       "display_name": "AOD-9604",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "ara-290",
@@ -49,7 +59,10 @@
       "display_name": "ARA-290",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "regenerative_repair",
+        "immunomodulatory_inflammation"
+      ]
     },
     {
       "slug": "bpc-157",
@@ -57,7 +70,9 @@
       "display_name": "BPC-157",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "regenerative_repair"
+      ]
     },
     {
       "slug": "bremelanotide",
@@ -65,7 +80,9 @@
       "display_name": "Bremelanotide",
       "status_category": "approved_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "sexual_health_reproduction"
+      ]
     },
     {
       "slug": "cagrilintide",
@@ -73,7 +90,9 @@
       "display_name": "Cagrilintide",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "cjc-1295",
@@ -81,7 +100,10 @@
       "display_name": "CJC-1295",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "endocrine_hormonal",
+        "muscle_performance"
+      ]
     },
     {
       "slug": "dsip",
@@ -89,7 +111,9 @@
       "display_name": "DSIP",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "sleep_circadian"
+      ]
     },
     {
       "slug": "epitalon",
@@ -97,7 +121,10 @@
       "display_name": "Epitalon",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "mitochondrial_longevity",
+        "sleep_circadian"
+      ]
     },
     {
       "slug": "ghk-cu",
@@ -105,7 +132,10 @@
       "display_name": "Copper Tripeptide-1",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "regenerative_repair",
+        "cosmetic_topical"
+      ]
     },
     {
       "slug": "glutathione",
@@ -113,7 +143,10 @@
       "display_name": "Glutathione",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "mitochondrial_longevity",
+        "immunomodulatory_inflammation"
+      ]
     },
     {
       "slug": "hcg",
@@ -121,7 +154,10 @@
       "display_name": "hCG",
       "status_category": "investigational_human",
       "entity_kind": "hormone_peptide_complex",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "sexual_health_reproduction",
+        "endocrine_hormonal"
+      ]
     },
     {
       "slug": "hexarelin",
@@ -129,7 +165,10 @@
       "display_name": "Hexarelin",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "endocrine_hormonal",
+        "muscle_performance"
+      ]
     },
     {
       "slug": "ipamorelin",
@@ -137,7 +176,10 @@
       "display_name": "Ipamorelin",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "endocrine_hormonal",
+        "muscle_performance"
+      ]
     },
     {
       "slug": "kpv",
@@ -145,7 +187,10 @@
       "display_name": "KPV",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "immunomodulatory_inflammation",
+        "regenerative_repair"
+      ]
     },
     {
       "slug": "ll-37",
@@ -153,7 +198,10 @@
       "display_name": "LL-37",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "antimicrobial_innate",
+        "immunomodulatory_inflammation"
+      ]
     },
     {
       "slug": "mazdutide",
@@ -161,7 +209,9 @@
       "display_name": "Mazdutide",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "melanotan-i",
@@ -169,7 +219,9 @@
       "display_name": "Melanotan I",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "cosmetic_topical"
+      ]
     },
     {
       "slug": "melanotan-ii",
@@ -177,7 +229,10 @@
       "display_name": "Melanotan II",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "cosmetic_topical",
+        "sexual_health_reproduction"
+      ]
     },
     {
       "slug": "mk-677",
@@ -185,7 +240,10 @@
       "display_name": "MK-677",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "endocrine_hormonal",
+        "muscle_performance"
+      ]
     },
     {
       "slug": "mots-c",
@@ -193,7 +251,10 @@
       "display_name": "MOTS-c",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "mitochondrial_longevity",
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "nad-plus",
@@ -201,7 +262,9 @@
       "display_name": "NAD+",
       "status_category": "investigational_human",
       "entity_kind": "bioactive_non_peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "mitochondrial_longevity"
+      ]
     },
     {
       "slug": "oxytocin",
@@ -209,7 +272,10 @@
       "display_name": "Oxytocin",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "sexual_health_reproduction",
+        "neurocognitive_mood"
+      ]
     },
     {
       "slug": "pramlintide",
@@ -217,7 +283,9 @@
       "display_name": "Pramlintide",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "selank",
@@ -225,7 +293,9 @@
       "display_name": "Selank",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "neurocognitive_mood"
+      ]
     },
     {
       "slug": "semax",
@@ -233,7 +303,9 @@
       "display_name": "Semax",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "neurocognitive_mood"
+      ]
     },
     {
       "slug": "sermorelin",
@@ -241,7 +313,10 @@
       "display_name": "Sermorelin",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "endocrine_hormonal",
+        "muscle_performance"
+      ]
     },
     {
       "slug": "snap-8",
@@ -249,7 +324,9 @@
       "display_name": "SNAP-8",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "cosmetic_topical"
+      ]
     },
     {
       "slug": "survodutide",
@@ -257,7 +334,9 @@
       "display_name": "Survodutide",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "tb-500",
@@ -265,7 +344,9 @@
       "display_name": "TB-500",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "regenerative_repair"
+      ]
     },
     {
       "slug": "tesamorelin",
@@ -273,7 +354,10 @@
       "display_name": "Tesamorelin",
       "status_category": "approved_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "endocrine_hormonal",
+        "metabolic_weight"
+      ]
     },
     {
       "slug": "thymosin-alpha-1",
@@ -281,7 +365,9 @@
       "display_name": "Thymosin Alpha-1",
       "status_category": "approved_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "immunomodulatory_inflammation"
+      ]
     },
     {
       "slug": "thymosin-beta-4",
@@ -289,7 +375,9 @@
       "display_name": "Thymosin Beta-4",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "regenerative_repair"
+      ]
     },
     {
       "slug": "vip",
@@ -297,7 +385,9 @@
       "display_name": "VIP",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
-      "taxonomy_keys": []
+      "taxonomy_keys": [
+        "immunomodulatory_inflammation"
+      ]
     }
   ],
   "blends": [
