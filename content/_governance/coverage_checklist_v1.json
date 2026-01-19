@@ -5,151 +5,299 @@
   "peptides": [
     {
       "slug": "5-amino-1mq",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "5-Amino-1MQ",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "acetyl-hexapeptide-8",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Acetyl Hexapeptide-8",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "adipotide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Adipotide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "afamelanotide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Afamelanotide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "aod-9604",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "AOD-9604",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "ara-290",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "ARA-290",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "bpc-157",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "BPC-157",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "bremelanotide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Bremelanotide",
+      "status_category": "approved_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "cagrilintide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Cagrilintide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "cjc-1295",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "CJC-1295",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "dsip",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "DSIP",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "epitalon",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Epitalon",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "ghk-cu",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Copper Tripeptide-1",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "glutathione",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Glutathione",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "hcg",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "hCG",
+      "status_category": "investigational_human",
+      "entity_kind": "hormone_peptide_complex",
+      "taxonomy_keys": []
     },
     {
       "slug": "hexarelin",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Hexarelin",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "ipamorelin",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Ipamorelin",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "kpv",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "KPV",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "ll-37",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "LL-37",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "mazdutide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Mazdutide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "melanotan-i",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Melanotan I",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "melanotan-ii",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Melanotan II",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "mk-677",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "MK-677",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "mots-c",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "MOTS-c",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "nad-plus",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "NAD+",
+      "status_category": "investigational_human",
+      "entity_kind": "bioactive_non_peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "oxytocin",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Oxytocin",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "pramlintide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Pramlintide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "selank",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Selank",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "semax",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Semax",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "sermorelin",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Sermorelin",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "snap-8",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "SNAP-8",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "survodutide",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Survodutide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "tb-500",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "TB-500",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "tesamorelin",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Tesamorelin",
+      "status_category": "approved_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "thymosin-alpha-1",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Thymosin Alpha-1",
+      "status_category": "approved_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "thymosin-beta-4",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "Thymosin Beta-4",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     },
     {
       "slug": "vip",
-      "status": "ingested"
+      "status": "ingested",
+      "display_name": "VIP",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": []
     }
   ],
   "blends": [
