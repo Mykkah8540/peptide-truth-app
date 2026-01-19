@@ -5,3 +5,8 @@ Thymosin Alpha-1,thymosin-alpha-1,approved_human,true,normal,Thymalfasin is a br
 TB-500,tb-500,investigational_human,false,normal,Commonly sold as “TB-500”; often conflated with thymosin beta-4. Be explicit about identity uncertainty.,thymosin-beta-4-fragment|tb500,,true,
 GHK-Cu,ghk-cu,investigational_human,false,normal,Copper complex; common cosmetic use claims require careful evidence grading.,ghk|copper-tripeptide-1,,true,
 MOTS-c,mots-c,investigational_human,false,normal,Often discussed for metabolism; keep mechanisms separate from human outcome claims.,motsc,,true,
+Ipamorelin,ipamorelin,investigational_human,false,normal,,IPA,topic_hormonal_endocrine|topic_muscle_recovery,true,gh_igf|metabolic|puberty
+Hexarelin,hexarelin,investigational_human,false,normal,,HEX,topic_hormonal_endocrine|topic_muscle_recovery,true,gh_igf|metabolic|puberty
+Semax,semax,investigational_human,false,normal,,,topic_cognition_mood,true,cns|neurodevelopment|puberty
+Selank,selank,investigational_human,false,normal,,,topic_cognition_mood,true,cns|neurodevelopment|puberty
+Melanotan II,melanotan-ii,investigational_human,false,normal,High misuse prevalence for cosmetic tanning; risk surface includes melanocortin signaling and endocrine effects.,MT2,topic_skin_cosmetic|topic_hormonal_endocrine,true,melanocortin|hormonal|puberty

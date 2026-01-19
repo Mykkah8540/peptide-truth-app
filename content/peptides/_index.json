@@ -28,8 +28,28 @@
       "canonical_name": "Copper Tripeptide-1"
     },
     {
+      "slug": "hexarelin",
+      "canonical_name": "Hexarelin"
+    },
+    {
+      "slug": "ipamorelin",
+      "canonical_name": "Ipamorelin"
+    },
+    {
+      "slug": "melanotan-ii",
+      "canonical_name": "Melanotan II"
+    },
+    {
       "slug": "mots-c",
       "canonical_name": "MOTS-c"
+    },
+    {
+      "slug": "selank",
+      "canonical_name": "Selank"
+    },
+    {
+      "slug": "semax",
+      "canonical_name": "Semax"
     },
     {
       "slug": "tb-500",
