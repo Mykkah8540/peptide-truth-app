@@ -8,8 +8,20 @@
   },
   "peptides": [
     {
+      "slug": "5-amino-1mq",
+      "canonical_name": "5-Amino-1MQ"
+    },
+    {
       "slug": "acetyl-hexapeptide-8",
       "canonical_name": "Acetyl Hexapeptide-8"
+    },
+    {
+      "slug": "adipotide",
+      "canonical_name": "Adipotide"
+    },
+    {
+      "slug": "afamelanotide",
+      "canonical_name": "Afamelanotide"
     },
     {
       "slug": "aod-9604",
@@ -28,6 +40,10 @@
       "canonical_name": "Bremelanotide"
     },
     {
+      "slug": "cagrilintide",
+      "canonical_name": "Cagrilintide"
+    },
+    {
       "slug": "cjc-1295",
       "canonical_name": "CJC-1295"
     },
@@ -44,6 +60,14 @@
       "canonical_name": "Epitalon"
     },
     {
+      "slug": "glutathione",
+      "canonical_name": "Glutathione"
+    },
+    {
+      "slug": "hcg",
+      "canonical_name": "hCG"
+    },
+    {
       "slug": "hexarelin",
       "canonical_name": "Hexarelin"
     },
@@ -56,12 +80,40 @@
       "canonical_name": "KPV"
     },
     {
+      "slug": "ll-37",
+      "canonical_name": "LL-37"
+    },
+    {
+      "slug": "mazdutide",
+      "canonical_name": "Mazdutide"
+    },
+    {
+      "slug": "melanotan-i",
+      "canonical_name": "Melanotan I"
+    },
+    {
       "slug": "melanotan-ii",
       "canonical_name": "Melanotan II"
     },
     {
+      "slug": "mk-677",
+      "canonical_name": "MK-677"
+    },
+    {
       "slug": "mots-c",
       "canonical_name": "MOTS-c"
+    },
+    {
+      "slug": "nad-plus",
+      "canonical_name": "NAD+"
+    },
+    {
+      "slug": "oxytocin",
+      "canonical_name": "Oxytocin"
+    },
+    {
+      "slug": "pramlintide",
+      "canonical_name": "Pramlintide"
     },
     {
       "slug": "selank",
@@ -74,6 +126,14 @@
     {
       "slug": "sermorelin",
       "canonical_name": "Sermorelin"
+    },
+    {
+      "slug": "snap-8",
+      "canonical_name": "SNAP-8"
+    },
+    {
+      "slug": "survodutide",
+      "canonical_name": "Survodutide"
     },
     {
       "slug": "tb-500",
@@ -90,6 +150,10 @@
     {
       "slug": "thymosin-beta-4",
       "canonical_name": "Thymosin Beta-4"
+    },
+    {
+      "slug": "vip",
+      "canonical_name": "VIP"
     }
   ]
 }
