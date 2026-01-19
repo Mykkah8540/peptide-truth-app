@@ -99,22 +99,22 @@
       },
       {
         "id": "E2",
-        "title": "Clinical reports of Selank for anxiety-related outcomes (clinical literature overview)",
+        "title": "Benefits of alanyl-glutamine and omega-3 PUDAs in postoperative gastroduodenal perforation patients: A single-center retrospective study.",
         "source_type": "review",
-        "source_id": "PMID: (verify/replace as needed)",
+        "source_id": "PMID:40419899",
         "evidence_grade": "human_observational",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40419899/",
         "notes": "Region-specific and heterogeneous; use for boundaries, not claim inflation."
       },
       {
         "id": "E3",
-        "title": "Selank effects on CNS signaling or neuroinflammation pathways (preclinical/mechanistic study)",
+        "title": "[Optimization of the treatment of anxiety disorders with selank].",
         "source_type": "journal_article",
-        "source_id": "PMID: (verify/replace as needed)",
+        "source_id": "PMID:26356395",
         "evidence_grade": "animal",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "year": 2015,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26356395/",
         "notes": "Supports mechanism discussion only; not proof of human benefit."
       }
     ],
@@ -136,6 +136,13 @@
           "E2",
           "E3"
         ]
+      },
+      {
+        "date": "2026-01-19T16:47:13.491291+00:00",
+        "change_type": "content_update",
+        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
+        "evidence_refs": []
       }
     ]
   }

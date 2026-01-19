@@ -103,22 +103,22 @@
       },
       {
         "id": "E2",
-        "source_id": "E2",
+        "source_id": "PMID:16412534",
         "source_type": "review",
         "evidence_grade": "human_observational",
-        "title": "Melanotan misuse/adverse events and real-world exposure patterns (review/observational synthesis)",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "title": "Melanocortin peptide therapeutics: historical milestones, clinical studies and commercialization.",
+        "year": 2006,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16412534/",
         "notes": "Use to bound harms and uncertainty; not endorsement."
       },
       {
         "id": "E3",
-        "source_id": "E3",
+        "source_id": "PMID:40210573",
         "source_type": "journal_article",
         "evidence_grade": "human_observational",
-        "title": "Case reports/series: melanotan-associated adverse events (e.g., pigmentary changes, systemic symptoms)",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "title": "Melanotan II nasal spray: a possible risk factor for oral mucosal malignant melanoma?",
+        "year": 2025,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/40210573/",
         "notes": "Adverse-event context only; case-level evidence."
       },
       {
@@ -187,6 +187,13 @@
           "E4",
           "E5"
         ]
+      },
+      {
+        "date": "2026-01-19T16:47:16.401818+00:00",
+        "change_type": "content_update",
+        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
+        "evidence_refs": []
       }
     ]
   }

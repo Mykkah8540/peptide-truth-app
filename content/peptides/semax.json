@@ -99,22 +99,22 @@
       },
       {
         "id": "E2",
-        "title": "Semax in ischemic stroke / neurologic recovery contexts (clinical literature review)",
+        "title": "[The study of chronic partial denervation and quality of life in patients with motor neuron disease treated with semax].",
         "source_type": "review",
-        "source_id": "PMID: (verify/replace as needed)",
+        "source_id": "PMID:18379501",
         "evidence_grade": "human_observational",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "year": 2007,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/18379501/",
         "notes": "Clinical literature is region-specific and heterogeneous; use for boundaries, not claims inflation."
       },
       {
         "id": "E3",
-        "title": "Semax effects on BDNF-related or neurotrophin signaling pathways (preclinical/mechanistic study)",
+        "title": "[The efficacy of semax in the tretament of patients at different stages of ischemic stroke].",
         "source_type": "journal_article",
-        "source_id": "PMID: (verify/replace as needed)",
+        "source_id": "PMID:29798983",
         "evidence_grade": "animal",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "year": 2018,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/29798983/",
         "notes": "Supports mechanism discussion only; not proof of human benefit."
       }
     ],
@@ -136,6 +136,13 @@
           "E2",
           "E3"
         ]
+      },
+      {
+        "date": "2026-01-19T16:47:10.573738+00:00",
+        "change_type": "content_update",
+        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
+        "evidence_refs": []
       }
     ]
   }

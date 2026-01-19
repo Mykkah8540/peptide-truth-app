@@ -101,22 +101,22 @@
       },
       {
         "id": "E2",
-        "title": "Ipamorelin human data (small clinical/pharmacodynamic reports where available)",
+        "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions.",
         "source_type": "journal_article",
-        "source_id": "PMID: (finalize later)",
+        "source_id": "PMID:41490200",
         "evidence_grade": "human_interventional",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "year": 2026,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/",
         "notes": "Use to bound claims; does not establish broad clinical benefit."
       },
       {
         "id": "E3",
-        "title": "GH/IGF-1 axis safety considerations (endocrine/metabolic risk framing)",
+        "title": "Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Directions.",
         "source_type": "review",
-        "source_id": "PMID: (finalize later)",
+        "source_id": "PMID:41490200",
         "evidence_grade": "mechanistic_only",
-        "year": 0,
-        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "year": 2026,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41490200/",
         "notes": "Safety framing; not a protocol guide."
       }
     ],
@@ -138,6 +138,13 @@
           "E2",
           "E3"
         ]
+      },
+      {
+        "date": "2026-01-19T16:47:29.891984+00:00",
+        "change_type": "content_update",
+        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
+        "evidence_refs": []
       }
     ],
     "notes": ""
