@@ -1,0 +1,96 @@
+{
+  "version": "v1",
+  "updated_at": "2026-01-19",
+  "notes": "Authoritative blend registry. Each blend references component peptides by slug.",
+  "blends": [
+    {
+      "slug": "glow",
+      "display_name": "GLOW",
+      "components": [
+        "bpc-157",
+        "tb-500",
+        "ghk-cu"
+      ],
+      "taxonomy_keys": [
+        "regenerative_blend"
+      ]
+    },
+    {
+      "slug": "klow",
+      "display_name": "KLOW",
+      "components": [
+        "bpc-157",
+        "tb-500",
+        "ghk-cu",
+        "kpv"
+      ],
+      "taxonomy_keys": [
+        "regenerative_blend"
+      ]
+    },
+    {
+      "slug": "bpc-157-tb-500",
+      "display_name": "BPC-157 / TB-500",
+      "components": [
+        "bpc-157",
+        "tb-500"
+      ],
+      "taxonomy_keys": [
+        "regenerative_blend"
+      ]
+    },
+    {
+      "slug": "cjc-ipamorelin",
+      "display_name": "CJC-1295 / Ipamorelin",
+      "components": [
+        "cjc-1295",
+        "ipamorelin"
+      ],
+      "taxonomy_keys": [
+        "gh_axis_blend"
+      ]
+    },
+    {
+      "slug": "cagri-sema",
+      "display_name": "Cagrilintide / Semaglutide",
+      "components": [
+        "cagrilintide",
+        "semaglutide"
+      ],
+      "taxonomy_keys": [
+        "metabolic_weight_blend"
+      ]
+    },
+    {
+      "slug": "glp3-reta",
+      "display_name": "GLP-3 RETA (Quad Agonist Class)",
+      "components": [
+        "retatrutide"
+      ],
+      "taxonomy_keys": [
+        "metabolic_weight_blend"
+      ]
+    },
+    {
+      "slug": "glp2-trz",
+      "display_name": "GLP-2 TRZ",
+      "components": [
+        "tirzepatide"
+      ],
+      "taxonomy_keys": [
+        "metabolic_weight_blend"
+      ]
+    },
+    {
+      "slug": "glp1-sma",
+      "display_name": "GLP-1 SMA",
+      "components": [
+        "semaglutide",
+        "amylin"
+      ],
+      "taxonomy_keys": [
+        "metabolic_weight_blend"
+      ]
+    }
+  ]
+}

@@ -440,6 +440,42 @@
       "slug": "survodutide",
       "display_name": "SURVODUTIDE",
       "status": "parked"
+    },
+    {
+      "slug": "bpc-157-tb-500",
+      "display_name": "BPC-157 / TB-500",
+      "status": "parked",
+      "taxonomy_keys": [
+        "regenerative_blend"
+      ],
+      "components": [
+        "bpc-157",
+        "tb-500"
+      ]
+    },
+    {
+      "slug": "cjc-ipamorelin",
+      "display_name": "CJC-1295 / Ipamorelin",
+      "status": "parked",
+      "taxonomy_keys": [
+        "gh_axis_blend"
+      ],
+      "components": [
+        "cjc-1295",
+        "ipamorelin"
+      ]
+    },
+    {
+      "slug": "cagri-sema",
+      "display_name": "Cagrilintide / Semaglutide",
+      "status": "parked",
+      "taxonomy_keys": [
+        "metabolic_weight_blend"
+      ],
+      "components": [
+        "cagrilintide",
+        "semaglutide"
+      ]
     }
   ]
 }

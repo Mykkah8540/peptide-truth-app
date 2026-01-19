@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "updated_at": "2026-01-19",
+  "notes": "Taxonomy for multi-component peptide blends. No dosing or protocol semantics.",
+  "blend_classes": [
+    { "key": "regenerative_blend", "label": "Regenerative / Repair" },
+    { "key": "metabolic_weight_blend", "label": "Metabolic / Weight Loss" },
+    { "key": "sexual_health_blend", "label": "Sexual Health" },
+    { "key": "gh_axis_blend", "label": "GH Axis / Growth Signaling" },
+    { "key": "cosmetic_blend", "label": "Cosmetic / Aesthetic" },
+    { "key": "neurocognitive_blend", "label": "Neurocognitive / Mood" }
+  ]
+}
