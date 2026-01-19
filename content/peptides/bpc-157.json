@@ -153,6 +153,13 @@
           "E4"
         ]
       }
-    ]
+    ],
+    "meta": {
+      "appears_in_blends": [
+        "bpc-157-tb-500",
+        "glow",
+        "klow"
+      ]
+    }
   }
 }

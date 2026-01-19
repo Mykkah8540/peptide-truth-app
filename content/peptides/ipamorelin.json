@@ -152,6 +152,11 @@
         "evidence_refs": []
       }
     ],
-    "notes": ""
+    "notes": "",
+    "meta": {
+      "appears_in_blends": [
+        "cjc-ipamorelin"
+      ]
+    }
   }
 }

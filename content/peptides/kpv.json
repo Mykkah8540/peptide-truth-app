@@ -104,6 +104,11 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "meta": {
+      "appears_in_blends": [
+        "klow"
+      ]
+    }
   }
 }

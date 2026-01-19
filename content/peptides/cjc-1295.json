@@ -115,6 +115,11 @@
           "E1"
         ]
       }
-    ]
+    ],
+    "meta": {
+      "appears_in_blends": [
+        "cjc-ipamorelin"
+      ]
+    }
   }
 }

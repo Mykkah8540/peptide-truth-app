@@ -141,6 +141,12 @@
           "E3"
         ]
       }
-    ]
+    ],
+    "meta": {
+      "appears_in_blends": [
+        "glow",
+        "klow"
+      ]
+    }
   }
 }
