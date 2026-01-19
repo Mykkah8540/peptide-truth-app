@@ -3,9 +3,9 @@
   "updated_at": "2026-01-19",
   "notes": "Unified entity index generated from peptide JSONs + blends registry + blend stubs.",
   "counts": {
-    "peptides": 37,
+    "peptides": 38,
     "blends": 8,
-    "total": 45
+    "total": 46
   },
   "peptides": [
     {
@@ -332,6 +332,16 @@
       "taxonomy_keys": [],
       "appears_in_blends": [],
       "source_path": "content/peptides/snap-8.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "ss-31",
+      "display_name": "SS-31 (Elamipretide)",
+      "status_category": "approved_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/ss-31.json"
     },
     {
       "kind": "peptide",

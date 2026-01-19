@@ -570,6 +570,23 @@
       }
     },
     {
+      "slug": "ss-31",
+      "canonical_name": "SS-31 (Elamipretide)",
+      "short_name": "SS-31 (Elamipretide)",
+      "aliases": [],
+      "status_category": "approved_human",
+      "needs_prescription": true,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "regulatory_label",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "survodutide",
       "canonical_name": "Survodutide",
       "short_name": "Survodutide",
@@ -685,7 +702,7 @@
   ],
   "warnings": [],
   "counts": {
-    "peptides": 37,
+    "peptides": 38,
     "warnings": 0
   }
 }

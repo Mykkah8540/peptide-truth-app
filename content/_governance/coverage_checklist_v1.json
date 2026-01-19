@@ -388,6 +388,16 @@
       "taxonomy_keys": [
         "immunomodulatory_inflammation"
       ]
+    },
+    {
+      "slug": "ss-31",
+      "status": "planned",
+      "display_name": "SS-31 (Elamipretide)",
+      "status_category": "approved_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [
+        "mitochondrial_longevity"
+      ]
     }
   ],
   "blends": [

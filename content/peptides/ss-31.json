@@ -1,0 +1,43 @@
+{
+  "schema_version": "pdp_json_v1",
+  "peptide": {
+    "canonical_name": "SS-31 (Elamipretide)",
+    "classification": {
+      "category": "approved_human",
+      "needs_prescription": true,
+      "notes": "SS-31 (elamipretide) is a mitochondria-targeting peptide studied clinically for mitochondrial dysfunction-related conditions."
+    },
+    "status": {
+      "category": "approved_human",
+      "human_use_note": "Prescription drug in certain jurisdictions; this app provides educational information only."
+    },
+    "risk": {
+      "current_score": 6,
+      "severity": "moderate",
+      "likelihood": "possible",
+      "evidence_grade": "regulatory_label",
+      "rationale": "Human clinical exposure exists; risks depend on indication, dosing, and patient factors.",
+      "unknowns_penalty": true,
+      "developmental_risk": true
+    },
+    "sections": {
+      "overview": [
+        {
+          "text": "SS-31 (elamipretide) is a mitochondria-targeting peptide that binds cardiolipin and is studied for improving mitochondrial function. This is an educational summary; see evidence links.",
+          "evidence_refs": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "id": "E1",
+        "title": "SS-31 (Elamipretide) — PubMed search (reference index)",
+        "source_type": "website",
+        "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=elamipretide%20SS-31",
+        "evidence_grade": "human_interventional"
+      }
+    ]
+  }
+}
