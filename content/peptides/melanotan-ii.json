@@ -15,7 +15,7 @@
       "category": "investigational_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
-      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
+      "human_use_note": "Not FDA-approved. Despite lack of regulatory approval, Melanotan II is widely sold as a research chemical and is used by humans for cosmetic tanning and related melanocortin effects. Product purity, dose labeling, and formulation consistency vary substantially in the gray/illicit market, which increases uncertainty and risk."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -31,7 +31,7 @@
       "evidence_grade": "mechanistic_only",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns."
+      "rationale": "Key risks are driven by: (1) unapproved/non-standardized products in real-world use, (2) melanocortin receptor agonism producing systemic effects (e.g., nausea, flushing, blood pressure changes), (3) reported severe adverse events in case literature (e.g., priapism), and (4) concern signals around changing nevi/pigmentation and possible melanoma association in reports. Evidence includes human interventional pharmacology plus observational and case reports; uncertainty remains high."
     },
     "sections": {
       "overview": [
@@ -41,12 +41,13 @@
           "population_group": "general",
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
-          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
+          "text": "Melanotan II is a synthetic melanocortin peptide designed to activate melanocortin receptors (notably MC1R) to increase melanin production, and it can also affect other melanocortin pathways linked to sexual function and appetite. Human clinical work exists for specific effects, but most real-world tanning use occurs outside regulated medical products, increasing variability and safety uncertainty.",
           "evidence_refs": [
             "E1",
             "E2",
             "E3",
-            "E4"
+            "E4",
+            "E5"
           ]
         }
       ],
@@ -129,6 +130,16 @@
         "year": 0,
         "url": "",
         "notes": "High-level safety framing; not a clinical study."
+      },
+      {
+        "id": "E5",
+        "title": "Melanoma in-situ associated with Melanotan II use (case report PDF)",
+        "source_type": "case_report",
+        "source_id": "scientificliterature.org:Casereports-20-147",
+        "evidence_grade": "human_observational",
+        "year": 2019,
+        "url": "https://scientificliterature.org/Casereports/Casereports-20-147.pdf",
+        "notes": "Association signal only (case report); cannot establish causality; useful for uncertainty/risk disclosure."
       }
     ],
     "changelog": [
@@ -149,6 +160,19 @@
           "E2",
           "E3",
           "E4"
+        ]
+      },
+      {
+        "date": "2026-01-19T15:43:16.140262+00:00",
+        "change_type": "content_update",
+        "summary": "Filled Melanotan II core identity + risk notes and linked conservative evidence refs (no instructions).",
+        "detail": "Removed placeholder language from required fields and added a minimal, conservative evidence set (human interventional + observational/case + regulator warning). No protocol or dosing guidance added.",
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3",
+          "E4",
+          "E5"
         ]
       }
     ]
