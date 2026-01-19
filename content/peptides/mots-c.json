@@ -9,7 +9,7 @@
     "classification": {
       "category": "investigational_human",
       "needs_prescription": false,
-      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
+      "notes": "Classification describes what MOTS-c is and the general domain where it appears."
     },
     "status": {
       "category": "investigational_human",

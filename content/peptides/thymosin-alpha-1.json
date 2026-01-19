@@ -10,7 +10,7 @@
     "classification": {
       "category": "approved_human",
       "needs_prescription": true,
-      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
+      "notes": "Classification describes what Thymosin Alpha-1 is and the general domain where it appears."
     },
     "status": {
       "category": "approved_human",

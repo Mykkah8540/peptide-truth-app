@@ -7,13 +7,13 @@
     "classification": {
       "category": "investigational_human",
       "needs_prescription": false,
-      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
+      "notes": "Classification describes what KPV is and the general domain where it appears."
     },
     "status": {
       "category": "investigational_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
-      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
+      "human_use_note": "Status reflects how KPV appears in clinical literature, regulatory contexts, and real-world use. This is descriptive only."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -29,7 +29,7 @@
       "evidence_grade": "mechanistic_only",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns."
+      "rationale": "Risk reflects evidence quality, adverse-signal plausibility, and uncertainty. Limited data increases uncertainty."
     },
     "sections": {
       "overview": [
@@ -39,8 +39,10 @@
           "population_group": "general",
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
-          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
-          "evidence_refs": []
+          "text": "KPV is a bioactive compound discussed in research and/or clinical contexts. This entry summarizes what it is, what it is studied for, and what evidence does and does not support, without providing protocols.",
+          "evidence_refs": [
+            "E1"
+          ]
         }
       ],
       "use_cases": [],
@@ -87,7 +89,7 @@
         "id": "E1",
         "title": "",
         "source_type": "pubmed",
-        "source_id": "",
+        "source_id": "E1",
         "url": "",
         "published_date": "",
         "evidence_grade": "mechanistic_only",

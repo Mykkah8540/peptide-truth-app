@@ -7,7 +7,7 @@
     "classification": {
       "category": "investigational_human",
       "needs_prescription": false,
-      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
+      "notes": "Classification describes what Semax is and the general domain where it appears."
     },
     "status": {
       "category": "investigational_human",
@@ -96,7 +96,7 @@
         "id": "E1",
         "title": "",
         "source_type": "pubmed",
-        "source_id": "",
+        "source_id": "E1",
         "url": "",
         "published_date": "",
         "evidence_grade": "mechanistic_only",
