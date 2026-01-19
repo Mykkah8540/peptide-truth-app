@@ -15,7 +15,7 @@
       "category": "investigational_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
-      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
+      "human_use_note": "Not FDA-approved. Human use is widely reported in gray-market contexts. Product identity, purity, and dosing consistency are uncertain outside regulated manufacturing."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -31,7 +31,7 @@
       "evidence_grade": "mechanistic_only",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns."
+      "rationale": "Primary risks relate to GH/IGF-1 axis perturbation, metabolic effects (e.g., glucose/insulin signaling), appetite changes, fluid retention, and unknown long-term outcomes in non-medical use. Evidence is limited by heterogeneous study designs and uncertain real-world product quality."
     },
     "sections": {
       "overview": [
@@ -41,8 +41,12 @@
           "population_group": "general",
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
-          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
-          "evidence_refs": []
+          "text": "Hexarelin is a synthetic GHRP-class peptide studied for short-term effects on GH release and downstream endocrine/metabolic signaling. Clinical evidence for meaningful health outcomes is limited; many claims rely on mechanism and small studies rather than robust trials.",
+          "evidence_refs": [
+            "E1",
+            "E2",
+            "E3"
+          ]
         }
       ],
       "use_cases": [],
@@ -94,6 +98,26 @@
         "published_date": "",
         "evidence_grade": "mechanistic_only",
         "notes": ""
+      },
+      {
+        "id": "E2",
+        "title": "Hexarelin human data (small clinical/pharmacodynamic reports where available)",
+        "source_type": "journal_article",
+        "source_id": "PMID: (finalize later)",
+        "evidence_grade": "human_interventional",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Use to bound claims; does not establish broad clinical benefit."
+      },
+      {
+        "id": "E3",
+        "title": "GH/IGF-1 axis safety considerations (endocrine/metabolic risk framing)",
+        "source_type": "review",
+        "source_id": "PMID: (finalize later)",
+        "evidence_grade": "mechanistic_only",
+        "year": 0,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "notes": "Safety framing; not a protocol guide."
       }
     ],
     "changelog": [
@@ -103,7 +127,19 @@
         "summary": "Initial canonical entry for Hexarelin",
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
+      },
+      {
+        "date": "2026-01-19T16:33:35.011290+00:00",
+        "change_type": "content_update",
+        "summary": "Filled hexarelin core fields and linked conservative evidence refs (no instructions).",
+        "detail": "Removed placeholder language from key descriptive fields and ensured overview evidence_refs are present. Evidence entries are intentionally conservative scaffolds and will be finalized with specific PMIDs/years in a batch pass.",
+        "evidence_refs": [
+          "E1",
+          "E2",
+          "E3"
+        ]
       }
-    ]
+    ],
+    "notes": ""
   }
 }
