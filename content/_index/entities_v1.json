@@ -36,7 +36,7 @@
       "kind": "peptide",
       "slug": "adipotide",
       "display_name": "Adipotide",
-      "status_category": "investigational_human",
+      "status_category": "preclinical",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "metabolic_weight"
@@ -48,7 +48,7 @@
       "kind": "peptide",
       "slug": "afamelanotide",
       "display_name": "Afamelanotide",
-      "status_category": "investigational_human",
+      "status_category": "approved_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "cosmetic_topical"
@@ -328,7 +328,7 @@
       "kind": "peptide",
       "slug": "nad-plus",
       "display_name": "NAD+",
-      "status_category": "investigational_human",
+      "status_category": "otc_supplement",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "mitochondrial_longevity"

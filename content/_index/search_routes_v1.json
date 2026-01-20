@@ -3,7 +3,7 @@
   "updated_at": "2026-01-19",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 188,
+    "terms": 199,
     "peptides": 39,
     "blends": 8,
     "categories": 11
@@ -20,6 +20,7 @@
         }
       ],
       "sources": [
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
       ]
     },
@@ -37,7 +38,22 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name",
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "5amino1mq",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "5-amino-1mq",
+          "route": "peptide:5-amino-1mq"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -113,6 +129,20 @@
       ]
     },
     {
+      "term": "adipotide peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "adipotide",
+          "route": "peptide:adipotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "afamelanotide",
       "routes": [
         {
@@ -126,6 +156,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "afamelanotide implant",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "afamelanotide",
+          "route": "peptide:afamelanotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -810,6 +854,20 @@
       ]
     },
     {
+      "term": "fat targeting peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "adipotide",
+          "route": "peptide:adipotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "ghk copper complex",
       "routes": [
         {
@@ -1240,6 +1298,20 @@
       ]
     },
     {
+      "term": "ibutamoren",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mk-677",
+          "route": "peptide:mk-677"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "immune",
       "routes": [
         {
@@ -1516,6 +1588,20 @@
       ]
     },
     {
+      "term": "melanocortin analog",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "afamelanotide",
+          "route": "peptide:afamelanotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "melanotan 1",
       "routes": [
         {
@@ -1526,6 +1612,7 @@
         }
       ],
       "sources": [
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
       ]
     },
@@ -1556,6 +1643,7 @@
       "sources": [
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name",
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
       ]
     },
@@ -1698,6 +1786,7 @@
         }
       ],
       "sources": [
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
       ]
     },
@@ -1728,6 +1817,7 @@
         }
       ],
       "sources": [
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
       ]
     },
@@ -1755,6 +1845,34 @@
           "kind": "peptide",
           "slug": "mots-c",
           "route": "peptide:mots-c"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "mt-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-i",
+          "route": "peptide:melanotan-i"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "mt1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-i",
+          "route": "peptide:melanotan-i"
         }
       ],
       "sources": [
@@ -1830,7 +1948,22 @@
       "sources": [
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name",
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "nad infusion",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "nad-plus",
+          "route": "peptide:nad-plus"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -1844,6 +1977,7 @@
         }
       ],
       "sources": [
+        "peptide_search_index:aliases",
         "synonyms:entity_synonyms"
       ]
     },
@@ -1887,6 +2021,20 @@
       ],
       "sources": [
         "category:key"
+      ]
+    },
+    {
+      "term": "nicotinamide adenine dinucleotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "nad-plus",
+          "route": "peptide:nad-plus"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -2118,6 +2266,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "scenesse",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "afamelanotide",
+          "route": "peptide:afamelanotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {

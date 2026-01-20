@@ -194,15 +194,6 @@
           },
           {
             "kind": "peptide",
-            "slug": "adipotide",
-            "display_name": "Adipotide",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
-              "metabolic_weight"
-            ]
-          },
-          {
-            "kind": "peptide",
             "slug": "aod-9604",
             "display_name": "AOD-9604",
             "status_category": "investigational_human",
@@ -243,6 +234,15 @@
             "slug": "survodutide",
             "display_name": "Survodutide",
             "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "adipotide",
+            "display_name": "Adipotide",
+            "status_category": "preclinical",
             "taxonomy_keys": [
               "metabolic_weight"
             ]
@@ -679,21 +679,21 @@
           },
           {
             "kind": "peptide",
-            "slug": "nad-plus",
-            "display_name": "NAD+",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
-              "mitochondrial_longevity"
-            ]
-          },
-          {
-            "kind": "peptide",
             "slug": "glutathione",
             "display_name": "Glutathione",
             "status_category": "otc_supplement",
             "taxonomy_keys": [
               "mitochondrial_longevity",
               "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "nad-plus",
+            "display_name": "NAD+",
+            "status_category": "otc_supplement",
+            "taxonomy_keys": [
+              "mitochondrial_longevity"
             ]
           }
         ],
@@ -715,17 +715,17 @@
         "peptides": [
           {
             "kind": "peptide",
-            "slug": "acetyl-hexapeptide-8",
-            "display_name": "Acetyl Hexapeptide-8",
-            "status_category": "investigational_human",
+            "slug": "afamelanotide",
+            "display_name": "Afamelanotide",
+            "status_category": "approved_human",
             "taxonomy_keys": [
               "cosmetic_topical"
             ]
           },
           {
             "kind": "peptide",
-            "slug": "afamelanotide",
-            "display_name": "Afamelanotide",
+            "slug": "acetyl-hexapeptide-8",
+            "display_name": "Acetyl Hexapeptide-8",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "cosmetic_topical"

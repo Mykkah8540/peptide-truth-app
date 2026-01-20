@@ -11,7 +11,11 @@
       "slug": "5-amino-1mq",
       "canonical_name": "5-Amino-1MQ",
       "short_name": "5-Amino-1MQ",
-      "aliases": [],
+      "aliases": [
+        "5 amino 1mq",
+        "5-amino-1mq",
+        "5amino1mq"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -48,8 +52,11 @@
       "slug": "adipotide",
       "canonical_name": "Adipotide",
       "short_name": "Adipotide",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "adipotide peptide",
+        "fat targeting peptide"
+      ],
+      "status_category": "preclinical",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -65,8 +72,12 @@
       "slug": "afamelanotide",
       "canonical_name": "Afamelanotide",
       "short_name": "Afamelanotide",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "afamelanotide implant",
+        "melanocortin analog",
+        "scenesse"
+      ],
+      "status_category": "approved_human",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -403,7 +414,12 @@
       "slug": "melanotan-i",
       "canonical_name": "Melanotan I",
       "short_name": "Melanotan I",
-      "aliases": [],
+      "aliases": [
+        "melanotan 1",
+        "melanotan i",
+        "mt-1",
+        "mt1"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -439,7 +455,11 @@
       "slug": "mk-677",
       "canonical_name": "MK-677",
       "short_name": "MK-677",
-      "aliases": [],
+      "aliases": [
+        "ibutamoren",
+        "mk 677",
+        "mk677"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -475,8 +495,14 @@
       "slug": "nad-plus",
       "canonical_name": "NAD+",
       "short_name": "NAD+",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "nad",
+        "nad plus",
+        "nad+",
+        "nad+ infusion",
+        "nicotinamide adenine dinucleotide"
+      ],
+      "status_category": "otc_supplement",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
