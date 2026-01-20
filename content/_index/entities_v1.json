@@ -1,11 +1,11 @@
 {
   "version": "v1",
-  "updated_at": "2026-01-19",
+  "updated_at": "2026-01-20",
   "notes": "Unified entity index generated from peptide JSONs + blends registry + blend stubs.",
   "counts": {
-    "peptides": 39,
+    "peptides": 92,
     "blends": 8,
-    "total": 47
+    "total": 100
   },
   "peptides": [
     {
@@ -19,6 +19,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/5-amino-1mq.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "abaloparatide",
+      "display_name": "Abaloparatide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/abaloparatide.json"
     },
     {
       "kind": "peptide",
@@ -58,8 +68,28 @@
     },
     {
       "kind": "peptide",
+      "slug": "amylin",
+      "display_name": "Amylin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/amylin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "angiotensin-ii",
+      "display_name": "Angiotensin II",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/angiotensin-ii.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "aod-9604",
-      "display_name": "AOD-9604",
+      "display_name": "Aod-9604",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -71,7 +101,7 @@
     {
       "kind": "peptide",
       "slug": "ara-290",
-      "display_name": "ARA-290",
+      "display_name": "Ara-290",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -83,8 +113,28 @@
     },
     {
       "kind": "peptide",
+      "slug": "atrial-natriuretic-peptide",
+      "display_name": "Atrial Natriuretic Peptide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/atrial-natriuretic-peptide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "bivalirudin",
+      "display_name": "Bivalirudin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/bivalirudin.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "bpc-157",
-      "display_name": "BPC-157",
+      "display_name": "Bpc-157",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -96,6 +146,36 @@
         "klow"
       ],
       "source_path": "content/peptides/bpc-157.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "bpc-157-arginate",
+      "display_name": "BPC-157 Arginate",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/bpc-157-arginate.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "bradykinin",
+      "display_name": "Bradykinin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/bradykinin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "brain-natriuretic-peptide",
+      "display_name": "Brain Natriuretic Peptide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/brain-natriuretic-peptide.json"
     },
     {
       "kind": "peptide",
@@ -125,8 +205,38 @@
     },
     {
       "kind": "peptide",
+      "slug": "calcitonin",
+      "display_name": "Calcitonin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/calcitonin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "carbetocin",
+      "display_name": "Carbetocin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/carbetocin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "cgrp",
+      "display_name": "CGRP",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/cgrp.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "cjc-1295",
-      "display_name": "CJC-1295",
+      "display_name": "Cjc-1295",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -140,8 +250,28 @@
     },
     {
       "kind": "peptide",
+      "slug": "cjc-1295-dac",
+      "display_name": "CJC-1295 DAC",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/cjc-1295-dac.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "desmopressin",
+      "display_name": "Desmopressin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/desmopressin.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "dsip",
-      "display_name": "DSIP",
+      "display_name": "Dsip",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -149,6 +279,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/dsip.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "endothelin-1",
+      "display_name": "Endothelin-1",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/endothelin-1.json"
     },
     {
       "kind": "peptide",
@@ -165,8 +305,38 @@
     },
     {
       "kind": "peptide",
+      "slug": "eptifibatide",
+      "display_name": "Eptifibatide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/eptifibatide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "exenatide",
+      "display_name": "Exenatide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/exenatide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "follistatin-344",
+      "display_name": "Follistatin-344",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/follistatin-344.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "ghk-cu",
-      "display_name": "Copper Tripeptide-1",
+      "display_name": "Ghk Cu",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -181,6 +351,36 @@
     },
     {
       "kind": "peptide",
+      "slug": "ghrp-2",
+      "display_name": "GHRP-2",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/ghrp-2.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "ghrp-6",
+      "display_name": "GHRP-6",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/ghrp-6.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "glucagon",
+      "display_name": "Glucagon",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/glucagon.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "glutathione",
       "display_name": "Glutathione",
       "status_category": "otc_supplement",
@@ -191,6 +391,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/glutathione.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "gonadorelin",
+      "display_name": "Gonadorelin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/gonadorelin.json"
     },
     {
       "kind": "peptide",
@@ -220,6 +430,36 @@
     },
     {
       "kind": "peptide",
+      "slug": "humanin",
+      "display_name": "Humanin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/humanin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "igf-1",
+      "display_name": "IGF-1",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/igf-1.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "igf-1-lr3",
+      "display_name": "IGF-1 LR3",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/igf-1-lr3.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "ipamorelin",
       "display_name": "Ipamorelin",
       "status_category": "investigational_human",
@@ -235,8 +475,18 @@
     },
     {
       "kind": "peptide",
+      "slug": "kisspeptin",
+      "display_name": "Kisspeptin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/kisspeptin.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "kpv",
-      "display_name": "KPV",
+      "display_name": "Kpv",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -247,6 +497,46 @@
         "klow"
       ],
       "source_path": "content/peptides/kpv.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "lanreotide",
+      "display_name": "Lanreotide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/lanreotide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "leuprolide",
+      "display_name": "Leuprolide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/leuprolide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "linaclotide",
+      "display_name": "Linaclotide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/linaclotide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "liraglutide",
+      "display_name": "Liraglutide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/liraglutide.json"
     },
     {
       "kind": "peptide",
@@ -288,7 +578,7 @@
     {
       "kind": "peptide",
       "slug": "melanotan-ii",
-      "display_name": "Melanotan II",
+      "display_name": "Melanotan Ii",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -313,8 +603,18 @@
     },
     {
       "kind": "peptide",
+      "slug": "motilin",
+      "display_name": "Motilin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/motilin.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "mots-c",
-      "display_name": "MOTS-c",
+      "display_name": "Mots C",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -338,6 +638,56 @@
     },
     {
       "kind": "peptide",
+      "slug": "nesiritide",
+      "display_name": "Nesiritide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/nesiritide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "neuropeptide-s",
+      "display_name": "Neuropeptide S",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/neuropeptide-s.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "neuropeptide-y",
+      "display_name": "Neuropeptide Y",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/neuropeptide-y.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "octreotide",
+      "display_name": "Octreotide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/octreotide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "orexin-a",
+      "display_name": "Orexin-A",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/orexin-a.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "oxytocin",
       "display_name": "Oxytocin",
       "status_category": "approved_human",
@@ -348,6 +698,56 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/oxytocin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "palmitoyl-pentapeptide-4",
+      "display_name": "Palmitoyl Pentapeptide-4",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/palmitoyl-pentapeptide-4.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "palmitoyl-tripeptide-1",
+      "display_name": "Palmitoyl Tripeptide-1",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/palmitoyl-tripeptide-1.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "peg-mgf",
+      "display_name": "PEG-MGF",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/peg-mgf.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "pentagastrin",
+      "display_name": "Pentagastrin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/pentagastrin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "plecanatide",
+      "display_name": "Plecanatide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/plecanatide.json"
     },
     {
       "kind": "peptide",
@@ -363,6 +763,16 @@
     },
     {
       "kind": "peptide",
+      "slug": "prolactin-releasing-peptide",
+      "display_name": "Prolactin Releasing Peptide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/prolactin-releasing-peptide.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "retatrutide",
       "display_name": "Retatrutide",
       "status_category": "investigational_human",
@@ -370,6 +780,16 @@
       "taxonomy_keys": [],
       "appears_in_blends": [],
       "source_path": "content/peptides/retatrutide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "secretin",
+      "display_name": "Secretin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/secretin.json"
     },
     {
       "kind": "peptide",
@@ -382,6 +802,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/selank.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "semaglutide",
+      "display_name": "Semaglutide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/semaglutide.json"
     },
     {
       "kind": "peptide",
@@ -410,6 +840,16 @@
     },
     {
       "kind": "peptide",
+      "slug": "shlp-2",
+      "display_name": "SHLP-2",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/shlp-2.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "snap-8",
       "display_name": "SNAP-8",
       "status_category": "cosmetic_topical",
@@ -422,8 +862,18 @@
     },
     {
       "kind": "peptide",
+      "slug": "somatostatin",
+      "display_name": "Somatostatin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/somatostatin.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "ss-31",
-      "display_name": "SS-31 (Elamipretide)",
+      "display_name": "Ss-31",
       "status_category": "approved_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -431,6 +881,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/ss-31.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "substance-p",
+      "display_name": "Substance P",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/substance-p.json"
     },
     {
       "kind": "peptide",
@@ -447,7 +907,7 @@
     {
       "kind": "peptide",
       "slug": "tb-500",
-      "display_name": "TB-500",
+      "display_name": "Tb-500",
       "status_category": "investigational_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
@@ -459,6 +919,16 @@
         "klow"
       ],
       "source_path": "content/peptides/tb-500.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "teriparatide",
+      "display_name": "PTH 1-34 (Teriparatide)",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/teriparatide.json"
     },
     {
       "kind": "peptide",
@@ -499,6 +969,56 @@
     },
     {
       "kind": "peptide",
+      "slug": "thymosin-beta-4-full",
+      "display_name": "Thymosin Beta-4 (full length)",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/thymosin-beta-4-full.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "thymulin",
+      "display_name": "Thymulin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/thymulin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "tirzepatide",
+      "display_name": "Tirzepatide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/tirzepatide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "triptorelin",
+      "display_name": "Triptorelin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/triptorelin.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "vasopressin",
+      "display_name": "Vasopressin",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/vasopressin.json"
+    },
+    {
+      "kind": "peptide",
       "slug": "vip",
       "display_name": "VIP",
       "status_category": "investigational_human",
@@ -508,6 +1028,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/vip.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "ziconotide",
+      "display_name": "Ziconotide",
+      "status_category": "",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/ziconotide.json"
     }
   ],
   "blends": [

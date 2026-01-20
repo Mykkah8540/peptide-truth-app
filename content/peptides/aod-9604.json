@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "AOD-9604",
+    "canonical_name": "Aod-9604",
     "short_name": "AOD-9604",
     "aliases": [
       "hGH fragment 176-191"
@@ -129,7 +129,8 @@
           "E2"
         ]
       }
-    ]
+    ],
+    "meta": {}
   },
   "canonical_name": "Aod-9604"
 }

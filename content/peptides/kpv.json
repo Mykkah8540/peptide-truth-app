@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "KPV",
+    "canonical_name": "Kpv",
     "short_name": "KPV",
     "aliases": [],
     "classification": {

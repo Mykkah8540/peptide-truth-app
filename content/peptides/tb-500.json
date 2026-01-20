@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "TB-500",
+    "canonical_name": "Tb-500",
     "short_name": "TB-500",
     "aliases": [
       "Thymosin Beta-4 fragment",

@@ -29,6 +29,23 @@
       }
     },
     {
+      "slug": "abaloparatide",
+      "canonical_name": "Abaloparatide",
+      "short_name": "Abaloparatide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "acetyl-hexapeptide-8",
       "canonical_name": "Acetyl Hexapeptide-8",
       "short_name": "Argireline",
@@ -90,8 +107,42 @@
       }
     },
     {
+      "slug": "amylin",
+      "canonical_name": "Amylin",
+      "short_name": "Amylin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "angiotensin-ii",
+      "canonical_name": "Angiotensin II",
+      "short_name": "Angiotensin II",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "aod-9604",
-      "canonical_name": "AOD-9604",
+      "canonical_name": "Aod-9604",
       "short_name": "AOD-9604",
       "aliases": [
         "hGH fragment 176-191"
@@ -110,7 +161,7 @@
     },
     {
       "slug": "ara-290",
-      "canonical_name": "ARA-290",
+      "canonical_name": "Ara-290",
       "short_name": "ARA-290",
       "aliases": [
         "cibinetide"
@@ -128,8 +179,42 @@
       }
     },
     {
+      "slug": "atrial-natriuretic-peptide",
+      "canonical_name": "Atrial Natriuretic Peptide",
+      "short_name": "Atrial Natriuretic Peptide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "bivalirudin",
+      "canonical_name": "Bivalirudin",
+      "short_name": "Bivalirudin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "bpc-157",
-      "canonical_name": "BPC-157",
+      "canonical_name": "Bpc-157",
       "short_name": "BPC-157",
       "aliases": [
         "Body Protection Compound-157",
@@ -141,6 +226,61 @@
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "human_observational",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "bpc-157-arginate",
+      "canonical_name": "BPC-157 Arginate",
+      "short_name": "BPC-157 Arginate",
+      "aliases": [
+        "bpc arginate",
+        "bpc-157 arginate",
+        "bpc157 arginate"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "bradykinin",
+      "canonical_name": "Bradykinin",
+      "short_name": "Bradykinin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "brain-natriuretic-peptide",
+      "canonical_name": "Brain Natriuretic Peptide",
+      "short_name": "Brain Natriuretic Peptide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
         "developmental_risk": true
       },
       "topics": {
@@ -189,8 +329,59 @@
       }
     },
     {
+      "slug": "calcitonin",
+      "canonical_name": "Calcitonin",
+      "short_name": "Calcitonin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "carbetocin",
+      "canonical_name": "Carbetocin",
+      "short_name": "Carbetocin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "cgrp",
+      "canonical_name": "CGRP",
+      "short_name": "CGRP",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "cjc-1295",
-      "canonical_name": "CJC-1295",
+      "canonical_name": "Cjc-1295",
       "short_name": "CJC-1295",
       "aliases": [
         "CJC-1295 (no DAC)",
@@ -210,21 +401,33 @@
       }
     },
     {
-      "slug": "ghk-cu",
-      "canonical_name": "Copper Tripeptide-1",
-      "short_name": "GHK-Cu",
-      "aliases": [
-        "Copper peptide GHK-Cu",
-        "GHK copper complex",
-        "GHK-Cu",
-        "Glycyl-L-histidyl-L-lysine copper complex"
-      ],
-      "status_category": "investigational_human",
+      "slug": "cjc-1295-dac",
+      "canonical_name": "CJC-1295 DAC",
+      "short_name": "CJC-1295 DAC",
+      "aliases": [],
+      "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
-        "severity": "mild",
-        "likelihood": "unlikely",
-        "evidence_grade": "human_interventional",
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "desmopressin",
+      "canonical_name": "Desmopressin",
+      "short_name": "Desmopressin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
         "developmental_risk": true
       },
       "topics": {
@@ -233,12 +436,29 @@
     },
     {
       "slug": "dsip",
-      "canonical_name": "DSIP",
+      "canonical_name": "Dsip",
       "short_name": "DSIP",
       "aliases": [
         "delta-sleep-inducing-peptide"
       ],
       "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "endothelin-1",
+      "canonical_name": "Endothelin-1",
+      "short_name": "Endothelin-1",
+      "aliases": [],
+      "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -271,6 +491,130 @@
       }
     },
     {
+      "slug": "eptifibatide",
+      "canonical_name": "Eptifibatide",
+      "short_name": "Eptifibatide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "exenatide",
+      "canonical_name": "Exenatide",
+      "short_name": "Exenatide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "follistatin-344",
+      "canonical_name": "Follistatin-344",
+      "short_name": "Follistatin-344",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "ghk-cu",
+      "canonical_name": "Ghk Cu",
+      "short_name": "GHK-Cu",
+      "aliases": [
+        "Copper peptide GHK-Cu",
+        "GHK copper complex",
+        "GHK-Cu",
+        "Glycyl-L-histidyl-L-lysine copper complex"
+      ],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "mild",
+        "likelihood": "unlikely",
+        "evidence_grade": "human_interventional",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "ghrp-2",
+      "canonical_name": "GHRP-2",
+      "short_name": "GHRP-2",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "ghrp-6",
+      "canonical_name": "GHRP-6",
+      "short_name": "GHRP-6",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "glucagon",
+      "canonical_name": "Glucagon",
+      "short_name": "Glucagon",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "glutathione",
       "canonical_name": "Glutathione",
       "short_name": "Glutathione",
@@ -281,6 +625,23 @@
         "reduced glutathione"
       ],
       "status_category": "otc_supplement",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "gonadorelin",
+      "canonical_name": "Gonadorelin",
+      "short_name": "Gonadorelin",
+      "aliases": [],
+      "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -333,6 +694,57 @@
       }
     },
     {
+      "slug": "humanin",
+      "canonical_name": "Humanin",
+      "short_name": "Humanin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "igf-1",
+      "canonical_name": "IGF-1",
+      "short_name": "IGF-1",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "igf-1-lr3",
+      "canonical_name": "IGF-1 LR3",
+      "short_name": "IGF-1 LR3",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "ipamorelin",
       "canonical_name": "Ipamorelin",
       "short_name": "Ipamorelin",
@@ -352,11 +764,96 @@
       }
     },
     {
+      "slug": "kisspeptin",
+      "canonical_name": "Kisspeptin",
+      "short_name": "Kisspeptin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "kpv",
-      "canonical_name": "KPV",
+      "canonical_name": "Kpv",
       "short_name": "KPV",
       "aliases": [],
       "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "lanreotide",
+      "canonical_name": "Lanreotide",
+      "short_name": "Lanreotide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "leuprolide",
+      "canonical_name": "Leuprolide",
+      "short_name": "Leuprolide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "linaclotide",
+      "canonical_name": "Linaclotide",
+      "short_name": "Linaclotide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "liraglutide",
+      "canonical_name": "Liraglutide",
+      "short_name": "Liraglutide",
+      "aliases": [],
+      "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -434,7 +931,7 @@
     },
     {
       "slug": "melanotan-ii",
-      "canonical_name": "Melanotan II",
+      "canonical_name": "Melanotan Ii",
       "short_name": "Melanotan II",
       "aliases": [
         "MT2"
@@ -473,8 +970,25 @@
       }
     },
     {
+      "slug": "motilin",
+      "canonical_name": "Motilin",
+      "short_name": "Motilin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "mots-c",
-      "canonical_name": "MOTS-c",
+      "canonical_name": "Mots C",
       "short_name": "MOTS-c",
       "aliases": [
         "motsc"
@@ -515,6 +1029,91 @@
       }
     },
     {
+      "slug": "nesiritide",
+      "canonical_name": "Nesiritide",
+      "short_name": "Nesiritide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "neuropeptide-s",
+      "canonical_name": "Neuropeptide S",
+      "short_name": "Neuropeptide S",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "neuropeptide-y",
+      "canonical_name": "Neuropeptide Y",
+      "short_name": "Neuropeptide Y",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "octreotide",
+      "canonical_name": "Octreotide",
+      "short_name": "Octreotide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "orexin-a",
+      "canonical_name": "Orexin-A",
+      "short_name": "Orexin-A",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "oxytocin",
       "canonical_name": "Oxytocin",
       "short_name": "Oxytocin",
@@ -523,6 +1122,91 @@
         "pitocin"
       ],
       "status_category": "approved_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "palmitoyl-pentapeptide-4",
+      "canonical_name": "Palmitoyl Pentapeptide-4",
+      "short_name": "Palmitoyl Pentapeptide-4",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "palmitoyl-tripeptide-1",
+      "canonical_name": "Palmitoyl Tripeptide-1",
+      "short_name": "Palmitoyl Tripeptide-1",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "peg-mgf",
+      "canonical_name": "PEG-MGF",
+      "short_name": "PEG-MGF",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "pentagastrin",
+      "canonical_name": "Pentagastrin",
+      "short_name": "Pentagastrin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "plecanatide",
+      "canonical_name": "Plecanatide",
+      "short_name": "Plecanatide",
+      "aliases": [],
+      "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -556,6 +1240,40 @@
       }
     },
     {
+      "slug": "prolactin-releasing-peptide",
+      "canonical_name": "Prolactin Releasing Peptide",
+      "short_name": "Prolactin Releasing Peptide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "teriparatide",
+      "canonical_name": "PTH 1-34 (Teriparatide)",
+      "short_name": "PTH 1-34 (Teriparatide)",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "retatrutide",
       "canonical_name": "Retatrutide",
       "short_name": "Retatrutide",
@@ -576,11 +1294,45 @@
       }
     },
     {
+      "slug": "secretin",
+      "canonical_name": "Secretin",
+      "short_name": "Secretin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "selank",
       "canonical_name": "Selank",
       "short_name": "Selank",
       "aliases": [],
       "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "semaglutide",
+      "canonical_name": "Semaglutide",
+      "short_name": "Semaglutide",
+      "aliases": [],
+      "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -627,6 +1379,23 @@
       }
     },
     {
+      "slug": "shlp-2",
+      "canonical_name": "SHLP-2",
+      "short_name": "SHLP-2",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "snap-8",
       "canonical_name": "SNAP-8",
       "short_name": "SNAP-8",
@@ -648,9 +1417,26 @@
       }
     },
     {
+      "slug": "somatostatin",
+      "canonical_name": "Somatostatin",
+      "short_name": "Somatostatin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "ss-31",
-      "canonical_name": "SS-31 (Elamipretide)",
-      "short_name": "SS-31 (Elamipretide)",
+      "canonical_name": "Ss-31",
+      "short_name": "Ss-31",
       "aliases": [],
       "status_category": "approved_human",
       "needs_prescription": true,
@@ -658,6 +1444,23 @@
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "regulatory_label",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "substance-p",
+      "canonical_name": "Substance P",
+      "short_name": "Substance P",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
         "developmental_risk": true
       },
       "topics": {
@@ -687,7 +1490,7 @@
     },
     {
       "slug": "tb-500",
-      "canonical_name": "TB-500",
+      "canonical_name": "Tb-500",
       "short_name": "TB-500",
       "aliases": [
         "TB500",
@@ -765,6 +1568,91 @@
       }
     },
     {
+      "slug": "thymosin-beta-4-full",
+      "canonical_name": "Thymosin Beta-4 (full length)",
+      "short_name": "Thymosin Beta-4 (full length)",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "thymulin",
+      "canonical_name": "Thymulin",
+      "short_name": "Thymulin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "tirzepatide",
+      "canonical_name": "Tirzepatide",
+      "short_name": "Tirzepatide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "triptorelin",
+      "canonical_name": "Triptorelin",
+      "short_name": "Triptorelin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
+      "slug": "vasopressin",
+      "canonical_name": "Vasopressin",
+      "short_name": "Vasopressin",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "vip",
       "canonical_name": "VIP",
       "short_name": "VIP",
@@ -784,11 +1672,28 @@
       "topics": {
         "primary": []
       }
+    },
+    {
+      "slug": "ziconotide",
+      "canonical_name": "Ziconotide",
+      "short_name": "Ziconotide",
+      "aliases": [],
+      "status_category": "unknown",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
     }
   ],
   "warnings": [],
   "counts": {
-    "peptides": 39,
+    "peptides": 92,
     "warnings": 0
   }
 }

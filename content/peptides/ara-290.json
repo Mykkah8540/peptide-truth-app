@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "ARA-290",
+    "canonical_name": "Ara-290",
     "short_name": "ARA-290",
     "aliases": [
       "cibinetide"
@@ -106,7 +106,8 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "meta": {}
   },
   "canonical_name": "Ara-290"
 }

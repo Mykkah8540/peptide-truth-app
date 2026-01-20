@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "BPC-157",
+    "canonical_name": "Bpc-157",
     "short_name": "BPC-157",
     "aliases": [
       "Body Protection Compound-157",

@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "SS-31 (Elamipretide)",
+    "canonical_name": "Ss-31",
     "classification": {
       "category": "approved_human",
       "needs_prescription": true,
@@ -38,7 +38,8 @@
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=elamipretide%20SS-31",
         "evidence_grade": "human_interventional"
       }
-    ]
+    ],
+    "meta": {}
   },
   "canonical_name": "Ss-31"
 }

@@ -12,6 +12,10 @@
       "canonical_name": "5-Amino-1MQ"
     },
     {
+      "slug": "abaloparatide",
+      "canonical_name": "Abaloparatide"
+    },
+    {
       "slug": "acetyl-hexapeptide-8",
       "canonical_name": "Acetyl Hexapeptide-8"
     },
@@ -24,16 +28,44 @@
       "canonical_name": "Afamelanotide"
     },
     {
+      "slug": "amylin",
+      "canonical_name": "Amylin"
+    },
+    {
+      "slug": "angiotensin-ii",
+      "canonical_name": "Angiotensin II"
+    },
+    {
       "slug": "aod-9604",
-      "canonical_name": "AOD-9604"
+      "canonical_name": "Aod-9604"
     },
     {
       "slug": "ara-290",
-      "canonical_name": "ARA-290"
+      "canonical_name": "Ara-290"
+    },
+    {
+      "slug": "atrial-natriuretic-peptide",
+      "canonical_name": "Atrial Natriuretic Peptide"
+    },
+    {
+      "slug": "bivalirudin",
+      "canonical_name": "Bivalirudin"
     },
     {
       "slug": "bpc-157",
-      "canonical_name": "BPC-157"
+      "canonical_name": "Bpc-157"
+    },
+    {
+      "slug": "bpc-157-arginate",
+      "canonical_name": "BPC-157 Arginate"
+    },
+    {
+      "slug": "bradykinin",
+      "canonical_name": "Bradykinin"
+    },
+    {
+      "slug": "brain-natriuretic-peptide",
+      "canonical_name": "Brain Natriuretic Peptide"
     },
     {
       "slug": "bremelanotide",
@@ -44,24 +76,76 @@
       "canonical_name": "Cagrilintide"
     },
     {
-      "slug": "cjc-1295",
-      "canonical_name": "CJC-1295"
+      "slug": "calcitonin",
+      "canonical_name": "Calcitonin"
     },
     {
-      "slug": "ghk-cu",
-      "canonical_name": "Copper Tripeptide-1"
+      "slug": "carbetocin",
+      "canonical_name": "Carbetocin"
+    },
+    {
+      "slug": "cgrp",
+      "canonical_name": "CGRP"
+    },
+    {
+      "slug": "cjc-1295",
+      "canonical_name": "Cjc-1295"
+    },
+    {
+      "slug": "cjc-1295-dac",
+      "canonical_name": "CJC-1295 DAC"
+    },
+    {
+      "slug": "desmopressin",
+      "canonical_name": "Desmopressin"
     },
     {
       "slug": "dsip",
-      "canonical_name": "DSIP"
+      "canonical_name": "Dsip"
+    },
+    {
+      "slug": "endothelin-1",
+      "canonical_name": "Endothelin-1"
     },
     {
       "slug": "epitalon",
       "canonical_name": "Epitalon"
     },
     {
+      "slug": "eptifibatide",
+      "canonical_name": "Eptifibatide"
+    },
+    {
+      "slug": "exenatide",
+      "canonical_name": "Exenatide"
+    },
+    {
+      "slug": "follistatin-344",
+      "canonical_name": "Follistatin-344"
+    },
+    {
+      "slug": "ghk-cu",
+      "canonical_name": "Ghk Cu"
+    },
+    {
+      "slug": "ghrp-2",
+      "canonical_name": "GHRP-2"
+    },
+    {
+      "slug": "ghrp-6",
+      "canonical_name": "GHRP-6"
+    },
+    {
+      "slug": "glucagon",
+      "canonical_name": "Glucagon"
+    },
+    {
       "slug": "glutathione",
       "canonical_name": "Glutathione"
+    },
+    {
+      "slug": "gonadorelin",
+      "canonical_name": "Gonadorelin"
     },
     {
       "slug": "hcg",
@@ -72,12 +156,44 @@
       "canonical_name": "Hexarelin"
     },
     {
+      "slug": "humanin",
+      "canonical_name": "Humanin"
+    },
+    {
+      "slug": "igf-1",
+      "canonical_name": "IGF-1"
+    },
+    {
+      "slug": "igf-1-lr3",
+      "canonical_name": "IGF-1 LR3"
+    },
+    {
       "slug": "ipamorelin",
       "canonical_name": "Ipamorelin"
     },
     {
+      "slug": "kisspeptin",
+      "canonical_name": "Kisspeptin"
+    },
+    {
       "slug": "kpv",
-      "canonical_name": "KPV"
+      "canonical_name": "Kpv"
+    },
+    {
+      "slug": "lanreotide",
+      "canonical_name": "Lanreotide"
+    },
+    {
+      "slug": "leuprolide",
+      "canonical_name": "Leuprolide"
+    },
+    {
+      "slug": "linaclotide",
+      "canonical_name": "Linaclotide"
+    },
+    {
+      "slug": "liraglutide",
+      "canonical_name": "Liraglutide"
     },
     {
       "slug": "ll-37",
@@ -93,35 +209,95 @@
     },
     {
       "slug": "melanotan-ii",
-      "canonical_name": "Melanotan II"
+      "canonical_name": "Melanotan Ii"
     },
     {
       "slug": "mk-677",
       "canonical_name": "MK-677"
     },
     {
+      "slug": "motilin",
+      "canonical_name": "Motilin"
+    },
+    {
       "slug": "mots-c",
-      "canonical_name": "MOTS-c"
+      "canonical_name": "Mots C"
     },
     {
       "slug": "nad-plus",
       "canonical_name": "NAD+"
     },
     {
+      "slug": "nesiritide",
+      "canonical_name": "Nesiritide"
+    },
+    {
+      "slug": "neuropeptide-s",
+      "canonical_name": "Neuropeptide S"
+    },
+    {
+      "slug": "neuropeptide-y",
+      "canonical_name": "Neuropeptide Y"
+    },
+    {
+      "slug": "octreotide",
+      "canonical_name": "Octreotide"
+    },
+    {
+      "slug": "orexin-a",
+      "canonical_name": "Orexin-A"
+    },
+    {
       "slug": "oxytocin",
       "canonical_name": "Oxytocin"
+    },
+    {
+      "slug": "palmitoyl-pentapeptide-4",
+      "canonical_name": "Palmitoyl Pentapeptide-4"
+    },
+    {
+      "slug": "palmitoyl-tripeptide-1",
+      "canonical_name": "Palmitoyl Tripeptide-1"
+    },
+    {
+      "slug": "peg-mgf",
+      "canonical_name": "PEG-MGF"
+    },
+    {
+      "slug": "pentagastrin",
+      "canonical_name": "Pentagastrin"
+    },
+    {
+      "slug": "plecanatide",
+      "canonical_name": "Plecanatide"
     },
     {
       "slug": "pramlintide",
       "canonical_name": "Pramlintide"
     },
     {
+      "slug": "prolactin-releasing-peptide",
+      "canonical_name": "Prolactin Releasing Peptide"
+    },
+    {
+      "slug": "teriparatide",
+      "canonical_name": "PTH 1-34 (Teriparatide)"
+    },
+    {
       "slug": "retatrutide",
       "canonical_name": "Retatrutide"
     },
     {
+      "slug": "secretin",
+      "canonical_name": "Secretin"
+    },
+    {
       "slug": "selank",
       "canonical_name": "Selank"
+    },
+    {
+      "slug": "semaglutide",
+      "canonical_name": "Semaglutide"
     },
     {
       "slug": "semax",
@@ -132,12 +308,24 @@
       "canonical_name": "Sermorelin"
     },
     {
+      "slug": "shlp-2",
+      "canonical_name": "SHLP-2"
+    },
+    {
       "slug": "snap-8",
       "canonical_name": "SNAP-8"
     },
     {
+      "slug": "somatostatin",
+      "canonical_name": "Somatostatin"
+    },
+    {
       "slug": "ss-31",
-      "canonical_name": "SS-31 (Elamipretide)"
+      "canonical_name": "Ss-31"
+    },
+    {
+      "slug": "substance-p",
+      "canonical_name": "Substance P"
     },
     {
       "slug": "survodutide",
@@ -145,7 +333,7 @@
     },
     {
       "slug": "tb-500",
-      "canonical_name": "TB-500"
+      "canonical_name": "Tb-500"
     },
     {
       "slug": "tesamorelin",
@@ -160,8 +348,32 @@
       "canonical_name": "Thymosin Beta-4"
     },
     {
+      "slug": "thymosin-beta-4-full",
+      "canonical_name": "Thymosin Beta-4 (full length)"
+    },
+    {
+      "slug": "thymulin",
+      "canonical_name": "Thymulin"
+    },
+    {
+      "slug": "tirzepatide",
+      "canonical_name": "Tirzepatide"
+    },
+    {
+      "slug": "triptorelin",
+      "canonical_name": "Triptorelin"
+    },
+    {
+      "slug": "vasopressin",
+      "canonical_name": "Vasopressin"
+    },
+    {
       "slug": "vip",
       "canonical_name": "VIP"
+    },
+    {
+      "slug": "ziconotide",
+      "canonical_name": "Ziconotide"
     }
   ]
 }

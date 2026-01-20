@@ -1,21 +1,19 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "Dsip",
-    "short_name": "DSIP",
-    "aliases": [
-      "delta-sleep-inducing-peptide"
-    ],
+    "canonical_name": "Endothelin-1",
+    "short_name": "Endothelin-1",
+    "aliases": [],
     "classification": {
-      "category": "investigational_human",
+      "category": "",
       "needs_prescription": false,
-      "notes": "Classification describes what DSIP is and the general domain where it appears."
+      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "",
       "jurisdiction": "GLOBAL",
-      "last_reviewed": "2026-01-19",
-      "human_use_note": "Status reflects how DSIP appears in clinical literature, regulatory contexts, and real-world use. This is descriptive only."
+      "last_reviewed": "2026-01-20",
+      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
     },
     "structure": {
       "sequence_oneletter": "",
@@ -31,12 +29,7 @@
       "evidence_grade": "mechanistic_only",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "Risk reflects evidence quality, adverse-signal plausibility, and uncertainty. Limited data increases uncertainty.",
-      "developmental_systems_of_concern": [
-        "cns",
-        "neurodevelopment",
-        "puberty"
-      ]
+      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns."
     },
     "sections": {
       "overview": [
@@ -46,10 +39,8 @@
           "population_group": "general",
           "confidence": "unknown",
           "evidence_grade": "mechanistic_only",
-          "text": "DSIP is a bioactive compound discussed in research and/or clinical contexts. This entry summarizes what it is, what it is studied for, and what evidence does and does not support, without providing protocols.",
-          "evidence_refs": [
-            "E1"
-          ]
+          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
+          "evidence_refs": []
         }
       ],
       "use_cases": [],
@@ -96,7 +87,7 @@
         "id": "E1",
         "title": "",
         "source_type": "pubmed",
-        "source_id": "E1",
+        "source_id": "",
         "url": "",
         "published_date": "",
         "evidence_grade": "mechanistic_only",
@@ -105,14 +96,12 @@
     ],
     "changelog": [
       {
-        "date": "2026-01-19",
+        "date": "2026-01-20",
         "change_type": "initial_entry",
-        "summary": "Initial canonical entry for DSIP",
+        "summary": "Initial canonical entry for Endothelin-1",
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ],
-    "meta": {}
-  },
-  "canonical_name": "Dsip"
+    ]
+  }
 }

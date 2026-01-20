@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "updated_at": "2026-01-19",
+  "updated_at": "2026-01-20",
   "notes": "Deterministic Explore-by-Category index built from taxonomy + governance + entities + blends registry.",
   "mapping": {
     "peptide_key_to_blend_keys": {
@@ -50,7 +50,7 @@
           {
             "kind": "peptide",
             "slug": "ara-290",
-            "display_name": "ARA-290",
+            "display_name": "Ara-290",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "regenerative_repair",
@@ -60,7 +60,7 @@
           {
             "kind": "peptide",
             "slug": "bpc-157",
-            "display_name": "BPC-157",
+            "display_name": "Bpc-157",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "regenerative_repair"
@@ -69,7 +69,7 @@
           {
             "kind": "peptide",
             "slug": "ghk-cu",
-            "display_name": "Copper Tripeptide-1",
+            "display_name": "Ghk Cu",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "regenerative_repair",
@@ -79,7 +79,7 @@
           {
             "kind": "peptide",
             "slug": "kpv",
-            "display_name": "KPV",
+            "display_name": "Kpv",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "immunomodulatory_inflammation",
@@ -89,7 +89,7 @@
           {
             "kind": "peptide",
             "slug": "tb-500",
-            "display_name": "TB-500",
+            "display_name": "Tb-500",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "regenerative_repair"
@@ -195,7 +195,7 @@
           {
             "kind": "peptide",
             "slug": "aod-9604",
-            "display_name": "AOD-9604",
+            "display_name": "Aod-9604",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "metabolic_weight"
@@ -222,7 +222,7 @@
           {
             "kind": "peptide",
             "slug": "mots-c",
-            "display_name": "MOTS-c",
+            "display_name": "Mots C",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "mitochondrial_longevity",
@@ -362,7 +362,7 @@
           {
             "kind": "peptide",
             "slug": "dsip",
-            "display_name": "DSIP",
+            "display_name": "Dsip",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "sleep_circadian"
@@ -405,7 +405,7 @@
           {
             "kind": "peptide",
             "slug": "ara-290",
-            "display_name": "ARA-290",
+            "display_name": "Ara-290",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "regenerative_repair",
@@ -415,7 +415,7 @@
           {
             "kind": "peptide",
             "slug": "kpv",
-            "display_name": "KPV",
+            "display_name": "Kpv",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "immunomodulatory_inflammation",
@@ -491,7 +491,7 @@
           {
             "kind": "peptide",
             "slug": "cjc-1295",
-            "display_name": "CJC-1295",
+            "display_name": "Cjc-1295",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "endocrine_hormonal",
@@ -601,7 +601,7 @@
           {
             "kind": "peptide",
             "slug": "melanotan-ii",
-            "display_name": "Melanotan II",
+            "display_name": "Melanotan Ii",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "cosmetic_topical",
@@ -651,7 +651,7 @@
           {
             "kind": "peptide",
             "slug": "ss-31",
-            "display_name": "SS-31 (Elamipretide)",
+            "display_name": "Ss-31",
             "status_category": "approved_human",
             "taxonomy_keys": [
               "mitochondrial_longevity"
@@ -670,7 +670,7 @@
           {
             "kind": "peptide",
             "slug": "mots-c",
-            "display_name": "MOTS-c",
+            "display_name": "Mots C",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "mitochondrial_longevity",
@@ -734,7 +734,7 @@
           {
             "kind": "peptide",
             "slug": "ghk-cu",
-            "display_name": "Copper Tripeptide-1",
+            "display_name": "Ghk Cu",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "regenerative_repair",
@@ -753,7 +753,7 @@
           {
             "kind": "peptide",
             "slug": "melanotan-ii",
-            "display_name": "Melanotan II",
+            "display_name": "Melanotan Ii",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "cosmetic_topical",
@@ -787,7 +787,7 @@
           {
             "kind": "peptide",
             "slug": "cjc-1295",
-            "display_name": "CJC-1295",
+            "display_name": "Cjc-1295",
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "endocrine_hormonal",

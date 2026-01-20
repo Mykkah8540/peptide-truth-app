@@ -1,10 +1,10 @@
 {
   "version": "v1",
-  "updated_at": "2026-01-19",
+  "updated_at": "2026-01-20",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 199,
-    "peptides": 39,
+    "terms": 266,
+    "peptides": 92,
     "blends": 8,
     "categories": 11
   },
@@ -54,6 +54,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "abaloparatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "abaloparatide",
+          "route": "peptide:abaloparatide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -201,6 +217,22 @@
       ]
     },
     {
+      "term": "amylin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "amylin",
+          "route": "peptide:amylin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "amylin analog",
       "routes": [
         {
@@ -218,6 +250,35 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "angiotensin ii",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "angiotensin-ii",
+          "route": "peptide:angiotensin-ii"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "angiotensin-ii",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "angiotensin-ii",
+          "route": "peptide:angiotensin-ii"
+        }
+      ],
+      "sources": [
+        "slug"
       ]
     },
     {
@@ -296,6 +357,35 @@
       ]
     },
     {
+      "term": "atrial natriuretic peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "atrial-natriuretic-peptide",
+          "route": "peptide:atrial-natriuretic-peptide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "atrial-natriuretic-peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "atrial-natriuretic-peptide",
+          "route": "peptide:atrial-natriuretic-peptide"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
       "term": "bi456906",
       "routes": [
         {
@@ -307,6 +397,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "bivalirudin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bivalirudin",
+          "route": "peptide:bivalirudin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -335,6 +441,20 @@
       ],
       "sources": [
         "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "bpc arginate",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157-arginate",
+          "route": "peptide:bpc-157-arginate"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -368,6 +488,22 @@
       ]
     },
     {
+      "term": "bpc-157 arginate",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157-arginate",
+          "route": "peptide:bpc-157-arginate"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name",
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "bpc-157 tb-500",
       "routes": [
         {
@@ -379,6 +515,20 @@
       ],
       "sources": [
         "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "bpc-157-arginate",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157-arginate",
+          "route": "peptide:bpc-157-arginate"
+        }
+      ],
+      "sources": [
+        "slug"
       ]
     },
     {
@@ -407,6 +557,65 @@
       ],
       "sources": [
         "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "bpc157 arginate",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157-arginate",
+          "route": "peptide:bpc-157-arginate"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "bradykinin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bradykinin",
+          "route": "peptide:bradykinin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "brain natriuretic peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "brain-natriuretic-peptide",
+          "route": "peptide:brain-natriuretic-peptide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "brain-natriuretic-peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "brain-natriuretic-peptide",
+          "route": "peptide:brain-natriuretic-peptide"
+        }
+      ],
+      "sources": [
+        "slug"
       ]
     },
     {
@@ -484,6 +693,38 @@
       ]
     },
     {
+      "term": "calcitonin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "calcitonin",
+          "route": "peptide:calcitonin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "carbetocin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "carbetocin",
+          "route": "peptide:carbetocin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "cathelicidin",
       "routes": [
         {
@@ -495,6 +736,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "cgrp",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cgrp",
+          "route": "peptide:cgrp"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -563,10 +820,18 @@
           "kind": "peptide",
           "slug": "cjc-1295",
           "route": "peptide:cjc-1295"
+        },
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cjc-1295-dac",
+          "route": "peptide:cjc-1295-dac"
         }
       ],
       "sources": [
-        "peptide_search_index:aliases"
+        "peptide_search_index:aliases",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -598,6 +863,20 @@
       ]
     },
     {
+      "term": "cjc-1295-dac",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cjc-1295-dac",
+          "route": "peptide:cjc-1295-dac"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
       "term": "cjc-ipamorelin",
       "routes": [
         {
@@ -623,20 +902,6 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
-      ]
-    },
-    {
-      "term": "copper tripeptide-1",
-      "routes": [
-        {
-          "type": "entity",
-          "kind": "peptide",
-          "slug": "ghk-cu",
-          "route": "peptide:ghk-cu"
-        }
-      ],
-      "sources": [
-        "peptide_search_index:canonical_name"
       ]
     },
     {
@@ -693,6 +958,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "desmopressin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "desmopressin",
+          "route": "peptide:desmopressin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -782,6 +1063,22 @@
       ]
     },
     {
+      "term": "endothelin-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "endothelin-1",
+          "route": "peptide:endothelin-1"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "epitalon",
       "routes": [
         {
@@ -826,6 +1123,22 @@
       ]
     },
     {
+      "term": "eptifibatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "eptifibatide",
+          "route": "peptide:eptifibatide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "erectile",
       "routes": [
         {
@@ -837,6 +1150,22 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "exenatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "exenatide",
+          "route": "peptide:exenatide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -868,6 +1197,22 @@
       ]
     },
     {
+      "term": "follistatin-344",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "follistatin-344",
+          "route": "peptide:follistatin-344"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "ghk copper complex",
       "routes": [
         {
@@ -892,6 +1237,7 @@
         }
       ],
       "sources": [
+        "peptide_search_index:canonical_name",
         "synonyms:entity_synonyms"
       ]
     },
@@ -937,6 +1283,38 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "ghrp-2",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghrp-2",
+          "route": "peptide:ghrp-2"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "ghrp-6",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghrp-6",
+          "route": "peptide:ghrp-6"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -1138,6 +1516,22 @@
       ]
     },
     {
+      "term": "glucagon",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "glucagon",
+          "route": "peptide:glucagon"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "glutathione",
       "routes": [
         {
@@ -1165,6 +1559,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "gonadorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "gonadorelin",
+          "route": "peptide:gonadorelin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -1284,6 +1694,22 @@
       ]
     },
     {
+      "term": "humanin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "humanin",
+          "route": "peptide:humanin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "ibic",
       "routes": [
         {
@@ -1309,6 +1735,51 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "igf-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "igf-1",
+          "route": "peptide:igf-1"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "igf-1 lr3",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "igf-1-lr3",
+          "route": "peptide:igf-1-lr3"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "igf-1-lr3",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "igf-1-lr3",
+          "route": "peptide:igf-1-lr3"
+        }
+      ],
+      "sources": [
+        "slug"
       ]
     },
     {
@@ -1426,6 +1897,22 @@
       ]
     },
     {
+      "term": "kisspeptin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "kisspeptin",
+          "route": "peptide:kisspeptin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "klow",
       "routes": [
         {
@@ -1486,6 +1973,38 @@
       ]
     },
     {
+      "term": "lanreotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "lanreotide",
+          "route": "peptide:lanreotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "leuprolide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "leuprolide",
+          "route": "peptide:leuprolide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "libido",
       "routes": [
         {
@@ -1497,6 +2016,38 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "linaclotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "linaclotide",
+          "route": "peptide:linaclotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "liraglutide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "liraglutide",
+          "route": "peptide:liraglutide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -1822,6 +2373,36 @@
       ]
     },
     {
+      "term": "motilin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "motilin",
+          "route": "peptide:motilin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "mots c",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mots-c",
+          "route": "peptide:mots-c"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name"
+      ]
+    },
+    {
       "term": "mots-c",
       "routes": [
         {
@@ -1833,7 +2414,6 @@
       ],
       "sources": [
         "slug",
-        "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
       ]
     },
@@ -1996,6 +2576,22 @@
       ]
     },
     {
+      "term": "nesiritide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "nesiritide",
+          "route": "peptide:nesiritide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "neurocognitive mood",
       "routes": [
         {
@@ -2024,6 +2620,64 @@
       ]
     },
     {
+      "term": "neuropeptide s",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "neuropeptide-s",
+          "route": "peptide:neuropeptide-s"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "neuropeptide y",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "neuropeptide-y",
+          "route": "peptide:neuropeptide-y"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "neuropeptide-s",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "neuropeptide-s",
+          "route": "peptide:neuropeptide-s"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "neuropeptide-y",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "neuropeptide-y",
+          "route": "peptide:neuropeptide-y"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
       "term": "nicotinamide adenine dinucleotide",
       "routes": [
         {
@@ -2035,6 +2689,38 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "octreotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "octreotide",
+          "route": "peptide:octreotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "orexin-a",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "orexin-a",
+          "route": "peptide:orexin-a"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -2068,6 +2754,80 @@
       ]
     },
     {
+      "term": "palmitoyl pentapeptide-4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "palmitoyl-pentapeptide-4",
+          "route": "peptide:palmitoyl-pentapeptide-4"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "palmitoyl tripeptide-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "palmitoyl-tripeptide-1",
+          "route": "peptide:palmitoyl-tripeptide-1"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "palmitoyl-pentapeptide-4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "palmitoyl-pentapeptide-4",
+          "route": "peptide:palmitoyl-pentapeptide-4"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "palmitoyl-tripeptide-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "palmitoyl-tripeptide-1",
+          "route": "peptide:palmitoyl-tripeptide-1"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "peg-mgf",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "peg-mgf",
+          "route": "peptide:peg-mgf"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "pentadecapeptide bpc 157",
       "routes": [
         {
@@ -2079,6 +2839,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "pentagastrin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "pentagastrin",
+          "route": "peptide:pentagastrin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -2110,6 +2886,22 @@
       ]
     },
     {
+      "term": "plecanatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "plecanatide",
+          "route": "peptide:plecanatide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "pramlintide",
       "routes": [
         {
@@ -2137,6 +2929,35 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "prolactin releasing peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "prolactin-releasing-peptide",
+          "route": "peptide:prolactin-releasing-peptide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "prolactin-releasing-peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "prolactin-releasing-peptide",
+          "route": "peptide:prolactin-releasing-peptide"
+        }
+      ],
+      "sources": [
+        "slug"
       ]
     },
     {
@@ -2180,6 +3001,21 @@
       ],
       "sources": [
         "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "pth 1-34 teriparatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "teriparatide",
+          "route": "peptide:teriparatide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -2283,6 +3119,22 @@
       ]
     },
     {
+      "term": "secretin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "secretin",
+          "route": "peptide:secretin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "selank",
       "routes": [
         {
@@ -2290,6 +3142,22 @@
           "kind": "peptide",
           "slug": "selank",
           "route": "peptide:selank"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "semaglutide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "semaglutide",
+          "route": "peptide:semaglutide"
         }
       ],
       "sources": [
@@ -2370,6 +3238,22 @@
       ],
       "sources": [
         "category:key"
+      ]
+    },
+    {
+      "term": "shlp-2",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "shlp-2",
+          "route": "peptide:shlp-2"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -2487,6 +3371,22 @@
       ]
     },
     {
+      "term": "somatostatin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "somatostatin",
+          "route": "peptide:somatostatin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "ss-31",
       "routes": [
         {
@@ -2498,22 +3398,38 @@
       ],
       "sources": [
         "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name",
         "synonyms:entity_synonyms"
       ]
     },
     {
-      "term": "ss-31 elamipretide",
+      "term": "substance p",
       "routes": [
         {
           "type": "entity",
           "kind": "peptide",
-          "slug": "ss-31",
-          "route": "peptide:ss-31"
+          "slug": "substance-p",
+          "route": "peptide:substance-p"
         }
       ],
       "sources": [
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "substance-p",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "substance-p",
+          "route": "peptide:substance-p"
+        }
+      ],
+      "sources": [
+        "slug"
       ]
     },
     {
@@ -2636,6 +3552,20 @@
       ]
     },
     {
+      "term": "teriparatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "teriparatide",
+          "route": "peptide:teriparatide"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
       "term": "tesamorelin",
       "routes": [
         {
@@ -2738,6 +3668,21 @@
       ]
     },
     {
+      "term": "thymosin beta-4 full length",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4-full",
+          "route": "peptide:thymosin-beta-4-full"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "thymosin-alpha-1",
       "routes": [
         {
@@ -2766,6 +3711,52 @@
       ]
     },
     {
+      "term": "thymosin-beta-4-full",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4-full",
+          "route": "peptide:thymosin-beta-4-full"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "thymulin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymulin",
+          "route": "peptide:thymulin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "tirzepatide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tirzepatide",
+          "route": "peptide:tirzepatide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
       "term": "training",
       "routes": [
         {
@@ -2791,6 +3782,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "triptorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "triptorelin",
+          "route": "peptide:triptorelin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -2834,6 +3841,22 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "vasopressin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "vasopressin",
+          "route": "peptide:vasopressin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
@@ -2906,6 +3929,22 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "ziconotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ziconotide",
+          "route": "peptide:ziconotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     }
   ]

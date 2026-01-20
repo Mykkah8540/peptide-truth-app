@@ -1,7 +1,7 @@
 {
   "schema_version": "pdp_json_v1",
   "peptide": {
-    "canonical_name": "MOTS-c",
+    "canonical_name": "Mots C",
     "short_name": "MOTS-c",
     "aliases": [
       "motsc"
@@ -163,7 +163,8 @@
           "E5"
         ]
       }
-    ]
+    ],
+    "meta": {}
   },
   "canonical_name": "Mots C"
 }
