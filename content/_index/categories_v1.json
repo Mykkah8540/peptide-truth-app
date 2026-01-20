@@ -166,6 +166,15 @@
         "peptides": [
           {
             "kind": "peptide",
+            "slug": "pramlintide",
+            "display_name": "Pramlintide",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
             "slug": "tesamorelin",
             "display_name": "Tesamorelin",
             "status_category": "approved_human",
@@ -226,15 +235,6 @@
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "mitochondrial_longevity",
-              "metabolic_weight"
-            ]
-          },
-          {
-            "kind": "peptide",
-            "slug": "pramlintide",
-            "display_name": "Pramlintide",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
               "metabolic_weight"
             ]
           },
@@ -320,7 +320,7 @@
             "kind": "peptide",
             "slug": "oxytocin",
             "display_name": "Oxytocin",
-            "status_category": "investigational_human",
+            "status_category": "approved_human",
             "taxonomy_keys": [
               "sexual_health_reproduction",
               "neurocognitive_mood"
@@ -470,6 +470,16 @@
         "peptides": [
           {
             "kind": "peptide",
+            "slug": "hcg",
+            "display_name": "hCG",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction",
+              "endocrine_hormonal"
+            ]
+          },
+          {
+            "kind": "peptide",
             "slug": "tesamorelin",
             "display_name": "Tesamorelin",
             "status_category": "approved_human",
@@ -486,16 +496,6 @@
             "taxonomy_keys": [
               "endocrine_hormonal",
               "muscle_performance"
-            ]
-          },
-          {
-            "kind": "peptide",
-            "slug": "hcg",
-            "display_name": "hCG",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
-              "sexual_health_reproduction",
-              "endocrine_hormonal"
             ]
           },
           {
@@ -582,10 +582,20 @@
             "kind": "peptide",
             "slug": "hcg",
             "display_name": "hCG",
-            "status_category": "investigational_human",
+            "status_category": "approved_human",
             "taxonomy_keys": [
               "sexual_health_reproduction",
               "endocrine_hormonal"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "oxytocin",
+            "display_name": "Oxytocin",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction",
+              "neurocognitive_mood"
             ]
           },
           {
@@ -596,16 +606,6 @@
             "taxonomy_keys": [
               "cosmetic_topical",
               "sexual_health_reproduction"
-            ]
-          },
-          {
-            "kind": "peptide",
-            "slug": "oxytocin",
-            "display_name": "Oxytocin",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
-              "sexual_health_reproduction",
-              "neurocognitive_mood"
             ]
           }
         ],

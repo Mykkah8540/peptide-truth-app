@@ -353,7 +353,7 @@
       "kind": "peptide",
       "slug": "pramlintide",
       "display_name": "Pramlintide",
-      "status_category": "investigational_human",
+      "status_category": "approved_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "metabolic_weight"

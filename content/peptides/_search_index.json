@@ -160,7 +160,11 @@
       "slug": "cagrilintide",
       "canonical_name": "Cagrilintide",
       "short_name": "Cagrilintide",
-      "aliases": [],
+      "aliases": [
+        "am833",
+        "amylin analog",
+        "long acting amylin"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -369,7 +373,11 @@
       "slug": "mazdutide",
       "canonical_name": "Mazdutide",
       "short_name": "Mazdutide",
-      "aliases": [],
+      "aliases": [
+        "glp-1 glucagon dual agonist",
+        "glp1 glucagon",
+        "ibic"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -495,8 +503,12 @@
       "slug": "pramlintide",
       "canonical_name": "Pramlintide",
       "short_name": "Pramlintide",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "amylin analog",
+        "symlin",
+        "symlinpen"
+      ],
+      "status_category": "approved_human",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -617,7 +629,11 @@
       "slug": "survodutide",
       "canonical_name": "Survodutide",
       "short_name": "Survodutide",
-      "aliases": [],
+      "aliases": [
+        "bi456906",
+        "glp-1 glucagon dual agonist",
+        "glp1 glucagon"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {

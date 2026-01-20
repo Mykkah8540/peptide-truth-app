@@ -3,7 +3,7 @@
   "updated_at": "2026-01-19",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 166,
+    "terms": 175,
     "peptides": 39,
     "blends": 8,
     "categories": 11
@@ -129,6 +129,40 @@
       ]
     },
     {
+      "term": "am833",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cagrilintide",
+          "route": "peptide:cagrilintide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "amylin analog",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cagrilintide",
+          "route": "peptide:cagrilintide"
+        },
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "pramlintide",
+          "route": "peptide:pramlintide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "antimicrobial innate defense",
       "routes": [
         {
@@ -200,6 +234,20 @@
       ],
       "sources": [
         "peptide_search_index:short_name",
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "bi456906",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "survodutide",
+          "route": "peptide:survodutide"
+        }
+      ],
+      "sources": [
         "peptide_search_index:aliases"
       ]
     },
@@ -822,6 +870,26 @@
       ]
     },
     {
+      "term": "glp-1 glucagon dual agonist",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mazdutide",
+          "route": "peptide:mazdutide"
+        },
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "survodutide",
+          "route": "peptide:survodutide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "glp-1 sma",
       "routes": [
         {
@@ -877,6 +945,26 @@
       ],
       "sources": [
         "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "glp1 glucagon",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mazdutide",
+          "route": "peptide:mazdutide"
+        },
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "survodutide",
+          "route": "peptide:survodutide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -1082,6 +1170,20 @@
       ]
     },
     {
+      "term": "ibic",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mazdutide",
+          "route": "peptide:mazdutide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "immune",
       "routes": [
         {
@@ -1255,6 +1357,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "long acting amylin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cagrilintide",
+          "route": "peptide:cagrilintide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -2112,6 +2228,34 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "symlin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "pramlintide",
+          "route": "peptide:pramlintide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "symlinpen",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "pramlintide",
+          "route": "peptide:pramlintide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
