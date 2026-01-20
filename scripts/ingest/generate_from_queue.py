@@ -525,6 +525,11 @@ def main() -> int:
         help="Rebuild content/peptides/_search_index.json (metadata only)"
     )
 
+    ap.add_argument(
+        "--update-topics",
+        action="store_true",
+        help="Update deprecated topic artifacts (topic_peptide_map_v1 + topic_pages_v1). Not part of daily rebuild.",
+    )
     args = ap.parse_args()
 
 
@@ -558,7 +563,8 @@ def main() -> int:
         # Queue-driven topic mapping (navigation only; placeholder stubs only)
         validate_topic_ids(row.primary_topics)
         if row.primary_topics:
-            upsert_topic_map(topic_map_doc, row.slug, row.primary_topics)
+            if args.update_topics:
+                upsert_topic_map(topic_map_doc, row.slug, row.primary_topics)
 
         # Queue-driven developmental risk enforcement (safety-first; descriptive-only)
         # If adolescent_flag is true OR developmental_systems provided, enforce risk flag + warning block.
@@ -600,8 +606,9 @@ def main() -> int:
     if not args.dry_run:
         save_json(PEPTIDE_INDEX_PATH, new_index)
         # Write topic map + topic pages deterministically
-        save_json(TOPIC_MAP_PATH, topic_map_doc)
-        rebuild_topic_pages(topic_map_doc)
+        if args.update_topics:
+            save_json(TOPIC_MAP_PATH, topic_map_doc)
+            rebuild_topic_pages(topic_map_doc)
 
     # Report
     report = {
