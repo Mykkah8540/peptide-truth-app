@@ -3,7 +3,11 @@
   "peptide": {
     "canonical_name": "Cagrilintide",
     "short_name": "Cagrilintide",
-    "aliases": [],
+    "aliases": [
+      "am833",
+      "amylin analog",
+      "long acting amylin"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -108,7 +112,17 @@
     "meta": {
       "appears_in_blends": [
         "cagri-sema"
+      ],
+      "priority": "high",
+      "notes_seed": "Investigational long-acting amylin analog studied for weight management; avoid protocol claims and do not present as approved."
+    },
+    "needs_prescription": false,
+    "topics": {
+      "primary": [
+        "topic_fat_loss_metabolism",
+        "topic_hormonal_endocrine"
       ]
     }
-  }
+  },
+  "canonical_name": "Cagrilintide"
 }

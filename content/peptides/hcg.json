@@ -116,8 +116,9 @@
     },
     "topics": {
       "primary": [
-        "sexual_health_reproduction"
+        "topic_hormonal_endocrine"
       ]
     }
-  }
+  },
+  "canonical_name": "Hcg"
 }

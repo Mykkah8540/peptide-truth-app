@@ -3,14 +3,17 @@
   "peptide": {
     "canonical_name": "Adipotide",
     "short_name": "Adipotide",
-    "aliases": [],
+    "aliases": [
+      "fat targeting peptide",
+      "adipotide peptide"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what Adipotide is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "preclinical",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how Adipotide appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +107,17 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Experimental ‘fat-targeting’ research peptide from preclinical work; no established human clinical use; avoid protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_fat_loss_metabolism"
+      ]
+    }
+  },
+  "canonical_name": "Adipotide"
 }

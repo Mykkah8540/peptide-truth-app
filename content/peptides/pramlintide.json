@@ -3,14 +3,18 @@
   "peptide": {
     "canonical_name": "Pramlintide",
     "short_name": "Pramlintide",
-    "aliases": [],
+    "aliases": [
+      "symlin",
+      "symlinpen",
+      "amylin analog"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what Pramlintide is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "approved_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how Pramlintide appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +108,18 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": true,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "FDA-approved pramlintide (Symlin) amylin analog (Rx) for glycemic control adjunct in diabetes; include only label-level indications; no protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_fat_loss_metabolism",
+        "topic_hormonal_endocrine"
+      ]
+    }
+  },
+  "canonical_name": "Pramlintide"
 }

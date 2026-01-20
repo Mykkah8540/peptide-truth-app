@@ -3,14 +3,18 @@
   "peptide": {
     "canonical_name": "SNAP-8",
     "short_name": "SNAP-8",
-    "aliases": [],
+    "aliases": [
+      "acetyl octapeptide-3",
+      "snap 8",
+      "snap-8 peptide"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what SNAP-8 is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "cosmetic_topical",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how SNAP-8 appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +108,17 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Cosmetic peptide (topical) marketed for wrinkle appearance; cosmetic-use evidence; avoid medical claims."
+    },
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic"
+      ]
+    }
+  },
+  "canonical_name": "Snap-8"
 }

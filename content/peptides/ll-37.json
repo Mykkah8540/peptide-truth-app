@@ -3,7 +3,11 @@
   "peptide": {
     "canonical_name": "LL-37",
     "short_name": "LL-37",
-    "aliases": [],
+    "aliases": [
+      "cathelicidin",
+      "hcap18",
+      "ll37"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -104,6 +108,18 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Human antimicrobial peptide (cathelicidin); studied in immune/skin contexts; avoid protocol claims and do not present as approved."
+    },
+    "topics": {
+      "primary": [
+        "topic_immune_modulation",
+        "topic_skin_cosmetic"
+      ]
+    }
+  },
+  "canonical_name": "Ll-37"
 }

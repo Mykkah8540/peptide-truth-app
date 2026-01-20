@@ -3,7 +3,11 @@
   "peptide": {
     "canonical_name": "MK-677",
     "short_name": "MK-677",
-    "aliases": [],
+    "aliases": [
+      "ibutamoren",
+      "mk677",
+      "mk 677"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -104,6 +108,19 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Ibutamoren (MK-677) is a small-molecule ghrelin receptor agonist / GH secretagogue (not a peptide); investigational/controlled contexts; avoid protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_hormonal_endocrine",
+        "topic_muscle_recovery",
+        "topic_sleep_circadian"
+      ]
+    }
+  },
+  "canonical_name": "Mk-677"
 }

@@ -3,7 +3,11 @@
   "peptide": {
     "canonical_name": "Survodutide",
     "short_name": "Survodutide",
-    "aliases": [],
+    "aliases": [
+      "bi456906",
+      "glp-1 glucagon dual agonist",
+      "glp1 glucagon"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -104,6 +108,18 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "high",
+      "notes_seed": "Investigational dual agonist (GLP-1 receptor + glucagon receptor) studied for metabolic and liver-related endpoints; avoid protocol claims and do not present as approved."
+    },
+    "topics": {
+      "primary": [
+        "topic_fat_loss_metabolism",
+        "topic_hormonal_endocrine"
+      ]
+    }
+  },
+  "canonical_name": "Survodutide"
 }

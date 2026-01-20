@@ -3,7 +3,11 @@
   "peptide": {
     "canonical_name": "5-Amino-1MQ",
     "short_name": "5-Amino-1MQ",
-    "aliases": [],
+    "aliases": [
+      "5 amino 1mq",
+      "5-amino-1mq",
+      "5amino1mq"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -104,6 +108,18 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "5-Amino-1MQ is an investigational small molecule discussed in metabolic contexts; limited human evidence; avoid protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_fat_loss_metabolism",
+        "topic_longevity_aging"
+      ]
+    }
+  },
+  "canonical_name": "5 Amino 1mq"
 }

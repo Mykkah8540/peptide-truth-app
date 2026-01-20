@@ -3,14 +3,20 @@
   "peptide": {
     "canonical_name": "NAD+",
     "short_name": "NAD+",
-    "aliases": [],
+    "aliases": [
+      "nad",
+      "nad+",
+      "nicotinamide adenine dinucleotide",
+      "nad plus",
+      "nad+ infusion"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what NAD+ is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "otc_supplement",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how NAD+ appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +110,18 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Nicotinamide adenine dinucleotide; common ‘NAD+’ supplement/infusion topic (not a peptide). Claims vary by formulation/route; avoid protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_longevity_aging",
+        "topic_cognition_mood"
+      ]
+    }
+  },
+  "canonical_name": "Nad Plus"
 }

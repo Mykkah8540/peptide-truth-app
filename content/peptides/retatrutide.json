@@ -113,8 +113,9 @@
     },
     "topics": {
       "primary": [
-        "metabolic_weight"
+        "topic_fat_loss_metabolism"
       ]
     }
-  }
+  },
+  "canonical_name": "Retatrutide"
 }

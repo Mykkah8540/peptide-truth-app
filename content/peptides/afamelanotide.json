@@ -3,14 +3,18 @@
   "peptide": {
     "canonical_name": "Afamelanotide",
     "short_name": "Afamelanotide",
-    "aliases": [],
+    "aliases": [
+      "scenesse",
+      "afamelanotide implant",
+      "melanocortin analog"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what Afamelanotide is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "approved_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how Afamelanotide appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +108,17 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": true,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Afamelanotide is an approved melanocortin analog in specific indications; include only label-level indications; avoid protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic"
+      ]
+    }
+  },
+  "canonical_name": "Afamelanotide"
 }

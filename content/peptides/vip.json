@@ -3,7 +3,11 @@
   "peptide": {
     "canonical_name": "VIP",
     "short_name": "VIP",
-    "aliases": [],
+    "aliases": [
+      "vasoactive intestinal peptide",
+      "vasoactive intestinal polypeptide",
+      "vip peptide"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -104,6 +108,19 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Endogenous neuropeptide; clinical use is specialized; avoid protocol claims and do not present as approved for general indications."
+    },
+    "topics": {
+      "primary": [
+        "topic_immune_modulation",
+        "topic_gut_inflammation",
+        "topic_cognition_mood"
+      ]
+    }
+  },
+  "canonical_name": "Vip"
 }

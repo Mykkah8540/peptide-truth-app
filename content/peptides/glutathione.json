@@ -3,14 +3,19 @@
   "peptide": {
     "canonical_name": "Glutathione",
     "short_name": "Glutathione",
-    "aliases": [],
+    "aliases": [
+      "gsh",
+      "reduced glutathione",
+      "l-glutathione",
+      "l glutathione"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what Glutathione is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "otc_supplement",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how Glutathione appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +109,18 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Antioxidant tripeptide (GSH) widely used as supplement/adjunct; evidence varies by route/formulation; avoid protocol claims."
+    },
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic",
+        "topic_longevity_aging"
+      ]
+    }
+  },
+  "canonical_name": "Glutathione"
 }

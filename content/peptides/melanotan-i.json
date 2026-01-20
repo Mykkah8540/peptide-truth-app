@@ -3,7 +3,12 @@
   "peptide": {
     "canonical_name": "Melanotan I",
     "short_name": "Melanotan I",
-    "aliases": [],
+    "aliases": [
+      "melanotan 1",
+      "melanotan i",
+      "mt1",
+      "mt-1"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
@@ -104,6 +109,17 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
-  }
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Melanotan I is an α-MSH analog; closely related to afamelanotide (drug). Keep claims conservative; avoid protocols."
+    },
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic"
+      ]
+    }
+  },
+  "canonical_name": "Melanotan I"
 }
