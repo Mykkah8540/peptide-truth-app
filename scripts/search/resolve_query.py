@@ -108,14 +108,16 @@ class Candidate:
 
 
 def prefer_route_order(c: Candidate) -> tuple[int, str]:
-    # Entity > category; peptide > blend; then route string for determinism
+    # Entity > category; peptide > blend > topic; then route string for determinism
     if c.type == "entity":
         if c.kind == "peptide":
             return (0, c.route)
         if c.kind == "blend":
             return (1, c.route)
-        return (2, c.route)
-    return (3, c.route)
+        if c.kind == "topic":
+            return (2, c.route)
+        return (3, c.route)
+    return (4, c.route)
 
 
 def build_term_map(routes_data: dict) -> dict[str, dict]:
@@ -159,6 +161,19 @@ def candidates_from_term(term_entry: dict) -> list[Candidate]:
                     route=route,
                     type="entity",
                     kind=r.get("kind") if isinstance(r.get("kind"), str) else None,
+                    slug=r.get("slug") if isinstance(r.get("slug"), str) else None,
+                    taxonomy_key=None,
+                    source_term=term,
+                    source_sources=[s for s in sources if isinstance(s, str)],
+                )
+            )
+        elif rtype == "topic":
+            # Topic routes are first-class deep links; treat as entity-kind 'topic'
+            out.append(
+                Candidate(
+                    route=route,
+                    type="entity",
+                    kind="topic",
                     slug=r.get("slug") if isinstance(r.get("slug"), str) else None,
                     taxonomy_key=None,
                     source_term=term,
