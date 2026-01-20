@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TOPICS_INDEX = ROOT / "content" / "topics" / "_topics_index.json"
 TOPIC_PAGES_DIR = ROOT / "content" / "topics" / "pages"
-TOPIC_MAP = ROOT / "content" / "topics" / "topic_peptide_map_v1.json"
+TOPIC_MAP = ROOT / "content" / "_deprecated" / "topics" / "topic_peptide_map_v1.json"
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 
 ALLOWED_CONFIDENCE = {"high", "moderate", "low", "hypothesis", "unknown"}
@@ -46,7 +46,13 @@ def main():
     if not TOPICS_INDEX.exists():
         fail(f"Missing topics index: {TOPICS_INDEX}")
     if not TOPIC_MAP.exists():
-        fail(f"Missing topic map: {TOPIC_MAP}")
+        warn(f"Missing deprecated topic map: {TOPIC_MAP} (OK under option 2.2). Skipping mapping validation.")
+        mappings = []
+    else:
+        mapping_doc = load_json(TOPIC_MAP)
+        mappings = mapping_doc.get("mappings", [])
+        if not isinstance(mappings, list):
+            fail("topic_peptide_map_v1.json: mappings must be a list")
 
     topics_index = load_json(TOPICS_INDEX)
     topic_ids = {t["topic_id"] for t in topics_index.get("topics", [])}

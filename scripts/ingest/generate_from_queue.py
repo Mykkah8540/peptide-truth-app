@@ -31,14 +31,15 @@ from typing import Any, Dict, List, Optional, Set
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+DEPRECATED_TOPICS_DIR = REPO_ROOT / "content" / "_deprecated" / "topics"
 CONTENT_PEPTIDES_DIR = REPO_ROOT / "content" / "peptides"
 TEMPLATE_PATH = REPO_ROOT / "scripts" / "ingest" / "peptide_template.json"
 QUEUE_PATH = CONTENT_PEPTIDES_DIR / "_queue.csv"
 PEPTIDE_INDEX_PATH = CONTENT_PEPTIDES_DIR / "_index.json"
 TOPICS_DIR = REPO_ROOT / "content" / "topics"
 TOPICS_INDEX_PATH = TOPICS_DIR / "_topics_index.json"
-TOPIC_MAP_PATH = TOPICS_DIR / "topic_peptide_map_v1.json"
-TOPIC_PAGES_DIR = TOPICS_DIR / "topic_pages_v1"
+TOPIC_MAP_PATH = DEPRECATED_TOPICS_DIR / "topic_peptide_map_v1.json"
+TOPIC_PAGES_DIR = DEPRECATED_TOPICS_DIR / "topic_pages_v1"
 VALIDATOR_PATH = REPO_ROOT / "scripts" / "validate" / "validate_peptide_json.py"
 
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
