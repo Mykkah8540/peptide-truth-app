@@ -28,6 +28,10 @@ def run(cmd: list[str]) -> None:
 
 
 def main() -> int:
+    # 0) Rebuild + validate topic pages (content/topics/pages)
+    run(["python3", "scripts/topics/rebuild_topic_pages.py"])
+    run(["python3", "scripts/validate/validate_topics_v1.py"])
+
     # 1) Rebuild peptide search index (do not apply queue; just rebuild index)
     # If your generate_from_queue.py supports --rebuild-search-index without queue changes,
     # it's the canonical hook. It currently rebuilds the index even when queue is empty.
