@@ -152,7 +152,14 @@
         "evidence_refs": []
       }
     ],
-    "notes": ""
+    "notes": "",
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_muscle_recovery",
+        "topic_hormonal_endocrine"
+      ]
+    }
   },
   "canonical_name": "Hexarelin"
 }

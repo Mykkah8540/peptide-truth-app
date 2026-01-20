@@ -201,7 +201,12 @@
         "evidence_refs": []
       }
     ],
-    "meta": {}
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic"
+      ]
+    }
   },
   "canonical_name": "Melanotan Ii"
 }

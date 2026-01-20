@@ -106,6 +106,16 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "Salt form/variant of BPC-157 discussed online; treat as investigational; avoid protocols and claims beyond conservative research context."
+    },
+    "topics": {
+      "primary": [
+        "topic_injury_healing"
+      ]
+    }
   }
 }

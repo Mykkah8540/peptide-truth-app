@@ -147,6 +147,11 @@
         "glow",
         "klow"
       ]
+    },
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic"
+      ]
     }
   },
   "canonical_name": "Ghk Cu"

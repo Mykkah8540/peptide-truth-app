@@ -39,7 +39,12 @@
         "evidence_grade": "human_interventional"
       }
     ],
-    "meta": {}
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_longevity_aging"
+      ]
+    }
   },
   "canonical_name": "Ss-31"
 }

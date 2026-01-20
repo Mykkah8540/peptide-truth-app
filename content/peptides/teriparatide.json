@@ -102,6 +102,12 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_hormonal_endocrine"
+      ]
+    }
   }
 }

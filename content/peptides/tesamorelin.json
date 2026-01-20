@@ -135,7 +135,14 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_fat_loss_metabolism",
+        "topic_hormonal_endocrine"
+      ]
+    }
   },
   "aliases": [
     "egrifta"

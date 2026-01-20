@@ -151,7 +151,13 @@
           "E3"
         ]
       }
-    ]
+    ],
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_immune_modulation"
+      ]
+    }
   },
   "canonical_name": "Thymosin Alpha-1"
 }

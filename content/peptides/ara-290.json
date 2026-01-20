@@ -107,7 +107,13 @@
         "evidence_refs": []
       }
     ],
-    "meta": {}
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_injury_healing",
+        "topic_immune_modulation"
+      ]
+    }
   },
   "canonical_name": "Ara-290"
 }

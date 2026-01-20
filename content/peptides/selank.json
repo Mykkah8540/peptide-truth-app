@@ -149,7 +149,13 @@
         "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_cognition_mood"
+      ]
+    }
   },
   "canonical_name": "Selank"
 }

@@ -238,6 +238,12 @@
         {
           "type": "entity",
           "kind": "peptide",
+          "slug": "amylin",
+          "route": "peptide:amylin"
+        },
+        {
+          "type": "entity",
+          "kind": "peptide",
           "slug": "cagrilintide",
           "route": "peptide:cagrilintide"
         },
@@ -249,7 +255,8 @@
         }
       ],
       "sources": [
-        "peptide_search_index:aliases"
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
       ]
     },
     {
@@ -831,7 +838,8 @@
       "sources": [
         "peptide_search_index:aliases",
         "peptide_search_index:canonical_name",
-        "peptide_search_index:short_name"
+        "peptide_search_index:short_name",
+        "synonyms:entity_synonyms"
       ]
     },
     {
@@ -1350,7 +1358,8 @@
         }
       ],
       "sources": [
-        "peptide_search_index:aliases"
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
       ]
     },
     {
@@ -1428,7 +1437,8 @@
         }
       ],
       "sources": [
-        "peptide_search_index:aliases"
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
       ]
     },
     {

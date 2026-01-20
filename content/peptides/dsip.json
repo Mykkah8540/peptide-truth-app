@@ -112,7 +112,12 @@
         "evidence_refs": []
       }
     ],
-    "meta": {}
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_sleep_circadian"
+      ]
+    }
   },
   "canonical_name": "Dsip"
 }

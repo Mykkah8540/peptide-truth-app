@@ -121,6 +121,12 @@
         "glow",
         "klow"
       ]
+    },
+    "topics": {
+      "primary": [
+        "topic_injury_healing",
+        "topic_muscle_recovery"
+      ]
     }
   },
   "canonical_name": "Tb-500"

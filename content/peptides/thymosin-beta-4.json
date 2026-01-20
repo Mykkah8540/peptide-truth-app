@@ -107,7 +107,14 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_injury_healing",
+        "topic_muscle_recovery"
+      ]
+    }
   },
   "canonical_name": "Thymosin Beta-4"
 }

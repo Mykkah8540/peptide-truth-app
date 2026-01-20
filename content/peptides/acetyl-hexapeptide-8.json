@@ -130,7 +130,13 @@
           "E3"
         ]
       }
-    ]
+    ],
+    "meta": {},
+    "topics": {
+      "primary": [
+        "topic_skin_cosmetic"
+      ]
+    }
   },
   "canonical_name": "Acetyl Hexapeptide-8"
 }

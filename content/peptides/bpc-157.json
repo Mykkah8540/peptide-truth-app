@@ -160,6 +160,11 @@
         "glow",
         "klow"
       ]
+    },
+    "topics": {
+      "primary": [
+        "topic_injury_healing"
+      ]
     }
   },
   "canonical_name": "Bpc-157"
