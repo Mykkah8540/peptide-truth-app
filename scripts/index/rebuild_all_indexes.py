@@ -36,6 +36,9 @@ def main() -> int:
     # 2) Taxonomy validation (peptides + blends + governance)
     run(["python3", "scripts/validate/validate_taxonomy_keys.py"])
 
+    # 2b) Validate queue CSV (topic ids, structure)
+    run(["python3", "scripts/validate/validate_queue_csv.py"])
+
     # 3) Validate blend JSON stubs
     # Validate every blend json file (excluding _index.json + README)
     blends_dir = ROOT / "content" / "blends"
@@ -64,6 +67,9 @@ def main() -> int:
 
     # 10) Validate Search Routes index
     run(["python3", "scripts/validate/validate_search_routes_index.py"])
+
+    # 11) Validate deterministic query resolver behavior
+    run(["python3", "scripts/validate/validate_query_resolver.py"])
 
     print("\nOK: rebuild_all_indexes completed successfully.")
     return 0
