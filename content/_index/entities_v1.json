@@ -3,9 +3,9 @@
   "updated_at": "2026-01-19",
   "notes": "Unified entity index generated from peptide JSONs + blends registry + blend stubs.",
   "counts": {
-    "peptides": 38,
+    "peptides": 39,
     "blends": 8,
-    "total": 46
+    "total": 47
   },
   "peptides": [
     {
@@ -360,6 +360,16 @@
       ],
       "appears_in_blends": [],
       "source_path": "content/peptides/pramlintide.json"
+    },
+    {
+      "kind": "peptide",
+      "slug": "retatrutide",
+      "display_name": "Retatrutide",
+      "status_category": "investigational_human",
+      "entity_kind": "peptide",
+      "taxonomy_keys": [],
+      "appears_in_blends": [],
+      "source_path": "content/peptides/retatrutide.json"
     },
     {
       "kind": "peptide",

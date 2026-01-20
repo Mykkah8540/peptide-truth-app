@@ -502,6 +502,23 @@
       }
     },
     {
+      "slug": "retatrutide",
+      "canonical_name": "Retatrutide",
+      "short_name": "Retatrutide",
+      "aliases": [],
+      "status_category": "investigational_human",
+      "needs_prescription": false,
+      "risk": {
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true
+      },
+      "topics": {
+        "primary": []
+      }
+    },
+    {
       "slug": "selank",
       "canonical_name": "Selank",
       "short_name": "Selank",
@@ -702,7 +719,7 @@
   ],
   "warnings": [],
   "counts": {
-    "peptides": 38,
+    "peptides": 39,
     "warnings": 0
   }
 }

@@ -3,8 +3,8 @@
   "updated_at": "2026-01-19",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 158,
-    "peptides": 38,
+    "terms": 159,
+    "peptides": 39,
     "blends": 8,
     "categories": 11
   },
@@ -1790,6 +1790,22 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "retatrutide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "retatrutide",
+          "route": "peptide:retatrutide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
       ]
     },
     {
