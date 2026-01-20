@@ -167,12 +167,12 @@
     },
     {
       "term": "amylin analog",
-      "route": "peptide:amylin",
+      "route": "peptide:cagrilintide",
       "sources": [
         "qa_fix"
       ],
       "slugs": [
-        "amylin"
+        "cagrilintide"
       ]
     },
     {

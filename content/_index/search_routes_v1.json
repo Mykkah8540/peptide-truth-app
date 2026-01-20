@@ -238,12 +238,6 @@
         {
           "type": "entity",
           "kind": "peptide",
-          "slug": "amylin",
-          "route": "peptide:amylin"
-        },
-        {
-          "type": "entity",
-          "kind": "peptide",
           "slug": "cagrilintide",
           "route": "peptide:cagrilintide"
         },

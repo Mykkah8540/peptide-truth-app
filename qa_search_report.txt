@@ -1,15 +1,9 @@
 === QA SEARCH COVERAGE REPORT ===
 Total queries tested: 243
-Direct entity OK:     239
-Not direct:           4
+Direct entity OK:     243
+Not direct:           0
 Route mismatch:       0
 Resolver errors:      0
-
-=== NOT DIRECT ENTITY (intent/route/did_you_mean) ===
-- 'amylin analog': intent=search_results route=None dym=[]
-- 'CJC-1295 DAC': intent=search_results route=None dym=[]
-- 'glp-1 glucagon dual agonist': intent=search_results route=None dym=[]
-- 'glp1 glucagon': intent=search_results route=None dym=[]
 
 === QUEUE GOVERNANCE GAPS ===
 Peptides missing primary_topics: 0

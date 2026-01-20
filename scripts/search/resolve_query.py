@@ -31,6 +31,41 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 ROUTES_PATH = ROOT / "content" / "_index" / "search_routes_v1.json"
 
+SYNONYMS_PATH = ROOT / "content" / "_taxonomy" / "search_synonyms_v1.json"
+
+_ENTITY_SYNONYMS_CACHE = None
+
+def load_entity_synonyms_strict():
+    """
+    Returns dict: term_norm -> route
+    STRICT: only include rows with a non-empty route and slugs[] length == 1.
+    This is used to force direct routing for exact synonym terms.
+    """
+    global _ENTITY_SYNONYMS_CACHE
+    if _ENTITY_SYNONYMS_CACHE is not None:
+        return _ENTITY_SYNONYMS_CACHE
+
+    if not SYNONYMS_PATH.exists():
+        _ENTITY_SYNONYMS_CACHE = {}
+        return _ENTITY_SYNONYMS_CACHE
+
+    data = json.loads(SYNONYMS_PATH.read_text(encoding="utf-8"))
+    rows = data.get("entity_synonyms", [])
+    out = {}
+    if isinstance(rows, list):
+        for r in rows:
+            term = (r.get("term") or "").strip().lower()
+            route = (r.get("route") or "").strip()
+            slugs = r.get("slugs")
+            if not term or not route:
+                continue
+            if isinstance(slugs, list) and len(slugs) == 1 and (slugs[0] or "").strip():
+                out[term] = route
+
+    _ENTITY_SYNONYMS_CACHE = out
+    return out
+
+
 
 def die(msg: str, code: int = 1) -> None:
     print(f"ERROR: {msg}", file=sys.stderr)
@@ -146,6 +181,38 @@ def candidates_from_term(term_entry: dict) -> list[Candidate]:
 
 
 def resolve_query(query_raw: str) -> dict[str, Any]:
+
+    # === FAST-PATH: EXACT ENTITY SYNONYM TERM -> DIRECT ENTITY ===
+    # If normalized query exactly matches a *strict* entity_synonyms term (single slug),
+    # resolve immediately to that canonical route (even if alias matching yields multiples).
+    try:
+        _q_norm = normalize_query(query_raw)
+        _syn_map = load_entity_synonyms_strict()  # term_norm -> route
+        _direct_route = _syn_map.get((_q_norm or "").strip().lower())
+        if _direct_route:
+            _kind = "blend" if _direct_route.startswith("blend:") else "peptide"
+            _slug = _direct_route.split(":", 1)[1] if ":" in _direct_route else None
+            return {
+                "version": "v1",
+                "query_raw": query_raw,
+                "query_norm": _q_norm,
+                "intent": "direct_entity",
+                "route": _direct_route,
+                "candidates": [{
+                    "route": _direct_route,
+                    "type": "entity",
+                    "kind": _kind,
+                    "slug": _slug,
+                    "taxonomy_key": None,
+                    "source_term": query_raw,
+                    "source_sources": ["entity_synonyms:exact_strict"]
+                }],
+                "did_you_mean": []
+            }
+    except Exception:
+        pass
+
+
     if not ROUTES_PATH.exists():
         die(f"Missing search routes index: {ROUTES_PATH} (run rebuild_all_indexes)")
 
