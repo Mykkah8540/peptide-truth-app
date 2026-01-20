@@ -1,10 +1,10 @@
 {
   "schema_version": "topic_page_v1",
   "topic_page": {
-    "topic_id": "topic_muscle_recovery",
-    "title": "Muscle & Recovery",
+    "topic_id": "topic_sleep_circadian",
+    "title": "Sleep & Circadian",
     "intro": {
-      "what_this_topic_means": "This topic helps you browse peptides commonly associated with: Training recovery, soreness, performance, repair signaling. Associations reflect search interest and categorization—not recommendations.",
+      "what_this_topic_means": "This topic helps you browse peptides commonly associated with: Sleep quality, rhythm regulation, nighttime recovery. Associations reflect search interest and categorization—not recommendations.",
       "common_misconceptions": [
         "Association with a topic is not proof of benefit.",
         "Preclinical or mechanistic evidence is not the same as proven human outcomes.",
@@ -26,30 +26,6 @@
         "group_title": "Mapped peptides",
         "display_rule": "Alphabetical within group",
         "peptides": [
-          {
-            "canonical_name": "Aod-9604",
-            "slug": "aod-9604",
-            "why_people_look_it_up": "Often searched in performance/weight contexts; topic association reflects user interest, not recommendation.",
-            "status_category": "investigational_human",
-            "risk_score": 4,
-            "developmental_risk": true,
-            "evidence_snapshot": {
-              "best_available_grade": "human_interventional",
-              "human_evidence_exists": true
-            }
-          },
-          {
-            "canonical_name": "Bpc-157",
-            "slug": "bpc-157",
-            "why_people_look_it_up": "Frequently searched in injury and recovery contexts; mapping reflects popularity and preclinical interest, not proven human benefit.",
-            "status_category": "investigational_human",
-            "risk_score": 7,
-            "developmental_risk": true,
-            "evidence_snapshot": {
-              "best_available_grade": "regulatory_label",
-              "human_evidence_exists": true
-            }
-          },
           {
             "canonical_name": "MK-677",
             "slug": "mk-677",

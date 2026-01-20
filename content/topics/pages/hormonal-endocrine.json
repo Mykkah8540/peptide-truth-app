@@ -4,32 +4,44 @@
     "topic_id": "topic_hormonal_endocrine",
     "title": "Hormonal & Endocrine",
     "intro": {
-      "what_this_topic_means": "This topic covers peptides and related agents discussed in endocrine pathways: growth hormone signaling, IGF axis, thyroid, appetite hormones, and broader hormone regulation.",
+      "what_this_topic_means": "This topic helps you browse peptides commonly associated with: GH/IGF, thyroid, gonadal axis, puberty/developmental considerations. Associations reflect search interest and categorization—not recommendations.",
       "common_misconceptions": [
-        "Feeling effects quickly is not the same as long-term safety.",
-        "Hormone axes are regulated systems; pushing one lever can shift others.",
-        "Lack of side effects in the short term does not mean low risk."
+        "Association with a topic is not proof of benefit.",
+        "Preclinical or mechanistic evidence is not the same as proven human outcomes.",
+        "Short-term biomarker changes do not guarantee long-term safety or effectiveness."
       ],
       "who_should_be_extra_cautious": [
-        "Adolescents and young adults (developing endocrine setpoints)",
-        "History of cancer or strong family risk (growth signaling uncertainty)",
-        "Uncontrolled diabetes, thyroid disease, or pituitary disorders"
+        "Adolescents and young adults (developmental setpoints may still be calibrating)",
+        "People with complex endocrine/metabolic conditions",
+        "Anyone on multiple medications or with significant medical comorbidity"
       ]
     },
     "how_to_use_this_page": [
       "Topics help you browse; they do not recommend peptides.",
-      "Always check approval status and risk score first.",
-      "Evidence grade is shown to separate strong vs weak claims."
+      "Always check status and risk score first.",
+      "Human evidence and preclinical evidence are separated."
     ],
     "peptide_groups": [
       {
-        "group_title": "Commonly searched",
+        "group_title": "Mapped peptides",
         "display_rule": "Alphabetical within group",
         "peptides": [
           {
+            "canonical_name": "Cagrilintide",
+            "slug": "cagrilintide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
             "canonical_name": "Cjc-1295",
             "slug": "cjc-1295",
-            "why_people_look_it_up": "Often searched for GH/IGF signaling changes; human endocrine evidence exists but long-term outcomes are uncertain.",
+            "why_people_look_it_up": "Often searched as a GHRH analog affecting GH/IGF signaling; mapping reflects popularity, not endorsement.",
             "status_category": "investigational_human",
             "risk_score": 7,
             "developmental_risk": true,
@@ -37,22 +49,98 @@
               "best_available_grade": "human_interventional",
               "human_evidence_exists": true
             }
+          },
+          {
+            "canonical_name": "hCG",
+            "slug": "hcg",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "approved_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Mazdutide",
+            "slug": "mazdutide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "MK-677",
+            "slug": "mk-677",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Oxytocin",
+            "slug": "oxytocin",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "approved_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Pramlintide",
+            "slug": "pramlintide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "approved_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Survodutide",
+            "slug": "survodutide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
           }
         ]
       }
     ],
     "safety_callouts": [
       {
-        "title": "Endocrine systems are interlocked",
-        "body": "Changing GH/IGF or appetite signaling can influence glucose handling, blood pressure, sleep, mood, and downstream hormone regulation. Treat uncertainty as part of risk."
+        "title": "Adolescents and development",
+        "body": "If you are under 18, treat uncertainty as part of the risk. Many compounds have little to no adolescent data, and endocrine/metabolic effects may have long-lived consequences."
       }
     ],
     "evidence_notes": [
       {
-        "title": "Evidence separation",
-        "body": "Preclinical signals can be interesting but do not guarantee human benefit. Look for human interventional evidence and clear safety reporting."
+        "title": "Why evidence changes",
+        "body": "Status and evidence can change as trials publish or regulators update labeling. This app aims to track updates and tie key claims to specific sources."
+      },
+      {
+        "title": "Absence of evidence is not evidence of safety",
+        "body": "Many compounds have limited human exposure data, short study durations, or outcomes that don’t capture rare or delayed harms. When uncertainty is high, the risk score reflects that explicitly."
       }
     ],
-    "last_reviewed": "2026-01-17"
+    "last_reviewed": "2026-01-20"
   }
 }

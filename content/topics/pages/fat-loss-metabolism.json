@@ -1,10 +1,10 @@
 {
   "schema_version": "topic_page_v1",
   "topic_page": {
-    "topic_id": "topic_skin_cosmetic",
-    "title": "Skin & Cosmetic Health",
+    "topic_id": "topic_fat_loss_metabolism",
+    "title": "Fat Loss & Metabolism",
     "intro": {
-      "what_this_topic_means": "This topic helps you browse peptides commonly associated with: Wrinkles, texture, hydration, barrier function, cosmetic peptides. Associations reflect search interest and categorization—not recommendations.",
+      "what_this_topic_means": "This topic helps you browse peptides commonly associated with: Energy balance, appetite, glucose, insulin sensitivity, metabolic rate. Associations reflect search interest and categorization—not recommendations.",
       "common_misconceptions": [
         "Association with a topic is not proof of benefit.",
         "Preclinical or mechanistic evidence is not the same as proven human outcomes.",
@@ -27,20 +27,68 @@
         "display_rule": "Alphabetical within group",
         "peptides": [
           {
-            "canonical_name": "Acetyl Hexapeptide-8",
-            "slug": "acetyl-hexapeptide-8",
-            "why_people_look_it_up": "Commonly searched topical cosmetic peptide for appearance-related claims; association reflects user interest and topical domain relevance, not endorsement.",
+            "canonical_name": "5-Amino-1MQ",
+            "slug": "5-amino-1mq",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
             "status_category": "investigational_human",
-            "risk_score": 2,
-            "developmental_risk": false,
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Adipotide",
+            "slug": "adipotide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "preclinical",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Aod-9604",
+            "slug": "aod-9604",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 4,
+            "developmental_risk": true,
             "evidence_snapshot": {
               "best_available_grade": "human_interventional",
               "human_evidence_exists": true
             }
           },
           {
-            "canonical_name": "Afamelanotide",
-            "slug": "afamelanotide",
+            "canonical_name": "Cagrilintide",
+            "slug": "cagrilintide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Mazdutide",
+            "slug": "mazdutide",
+            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+            "status_category": "investigational_human",
+            "risk_score": 5,
+            "developmental_risk": true,
+            "evidence_snapshot": {
+              "best_available_grade": "mechanistic_only",
+              "human_evidence_exists": false
+            }
+          },
+          {
+            "canonical_name": "Pramlintide",
+            "slug": "pramlintide",
             "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
             "status_category": "approved_human",
             "risk_score": 5,
@@ -51,32 +99,8 @@
             }
           },
           {
-            "canonical_name": "Ghk Cu",
-            "slug": "ghk-cu",
-            "why_people_look_it_up": "Widely searched topical cosmetic peptide complex discussed for skin appearance and barrier-related goals; association reflects user interest, not endorsement.",
-            "status_category": "investigational_human",
-            "risk_score": 2,
-            "developmental_risk": true,
-            "evidence_snapshot": {
-              "best_available_grade": "human_interventional",
-              "human_evidence_exists": true
-            }
-          },
-          {
-            "canonical_name": "Glutathione",
-            "slug": "glutathione",
-            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
-            "status_category": "otc_supplement",
-            "risk_score": 5,
-            "developmental_risk": true,
-            "evidence_snapshot": {
-              "best_available_grade": "mechanistic_only",
-              "human_evidence_exists": false
-            }
-          },
-          {
-            "canonical_name": "LL-37",
-            "slug": "ll-37",
+            "canonical_name": "Retatrutide",
+            "slug": "retatrutide",
             "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
             "status_category": "investigational_human",
             "risk_score": 5,
@@ -87,22 +111,10 @@
             }
           },
           {
-            "canonical_name": "Melanotan I",
-            "slug": "melanotan-i",
+            "canonical_name": "Survodutide",
+            "slug": "survodutide",
             "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
             "status_category": "investigational_human",
-            "risk_score": 5,
-            "developmental_risk": true,
-            "evidence_snapshot": {
-              "best_available_grade": "mechanistic_only",
-              "human_evidence_exists": false
-            }
-          },
-          {
-            "canonical_name": "SNAP-8",
-            "slug": "snap-8",
-            "why_people_look_it_up": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
-            "status_category": "cosmetic_topical",
             "risk_score": 5,
             "developmental_risk": true,
             "evidence_snapshot": {
