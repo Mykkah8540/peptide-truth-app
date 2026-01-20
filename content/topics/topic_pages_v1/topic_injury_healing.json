@@ -3,8 +3,12 @@
   "topic_id": "topic_injury_healing",
   "peptides": [
     {
+      "slug": "bpc-157-arginate",
+      "canonical_name": "BPC-157 Arginate"
+    },
+    {
       "slug": "tb-500",
-      "canonical_name": "TB-500"
+      "canonical_name": "Tb-500"
     }
   ],
   "note": "Navigation only. Not a recommendation or endorsement."
