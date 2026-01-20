@@ -10,26 +10,24 @@ Phase 4 – Search & Routing
 - [x] Entities index includes topics
 - [x] Search routes include topic routes
 - [x] Index rebuild pipeline passes
+- [x] Deterministic search resolver routes topics
 
 ## 3. What Is PARTIALLY COMPLETE
-- [ ] Deterministic search resolver does not yet route topics
+- [ ] Search UX decision when both Topic and Category match (e.g., sleep circadian)
 
 ## 4. What Is NOT STARTED
 - Safety page surfacing in search
 - App UI integration (mobile / desktop)
 
 ## 5. CURRENT BLOCKER (ONLY ONE)
-Topics exist in content/_index/search_routes_v1.json as type:"topic",
-but scripts/search/resolve_query.py only handles entity and category
-routes, so topics do not deep-link.
+None.
 
 ## 6. NEXT SINGLE ACTION
-Update resolve_query.py to treat topic routes as entity candidates
-(kind:"topic"), then add a resolver validation test.
+Decide and implement search UX behavior when both a Topic and a Category match (ranking/selection rules), then implement in UI layer.
 
 ## 7. Files Expected to Change Next
-- scripts/search/resolve_query.py
-- scripts/validate/validate_query_resolver.py
+- app search UI layer (wherever routing is consumed)
+- scripts/search/resolve_query.py (only if UX rules require resolver changes)
 
 ## 8. Hard Constraints
 - Constitution v1 is authoritative
