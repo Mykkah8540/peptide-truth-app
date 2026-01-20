@@ -27,7 +27,7 @@
         "display_rule": "Alphabetical within group",
         "peptides": [
           {
-            "canonical_name": "CJC-1295",
+            "canonical_name": "Cjc-1295",
             "slug": "cjc-1295",
             "why_people_look_it_up": "Often searched for GH/IGF signaling changes; human endocrine evidence exists but long-term outcomes are uncertain.",
             "status_category": "investigational_human",

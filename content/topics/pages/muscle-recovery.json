@@ -27,7 +27,7 @@
         "display_rule": "Alphabetical within group",
         "peptides": [
           {
-            "canonical_name": "AOD-9604",
+            "canonical_name": "Aod-9604",
             "slug": "aod-9604",
             "why_people_look_it_up": "Frequently discussed in fitness contexts related to body composition and recovery interest; association reflects user interest, not endorsement.",
             "status_category": "investigational_human",
@@ -39,7 +39,7 @@
             }
           },
           {
-            "canonical_name": "BPC-157",
+            "canonical_name": "Bpc-157",
             "slug": "bpc-157",
             "why_people_look_it_up": "Often searched for tendon/ligament/muscle recovery; human evidence is limited and regulatory status is unapproved.",
             "status_category": "investigational_human",

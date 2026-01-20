@@ -9,6 +9,13 @@
   },
   "topics": [
     {
+      "topic_id": "topic_safety_quality_testing",
+      "title": "Safety & Quality",
+      "short_description": "Risk literacy, third-party testing, uncertainty, and why quality controls matter in research-only markets",
+      "icon": "shield",
+      "order": 5
+    },
+    {
       "topic_id": "topic_fat_loss_metabolism",
       "title": "Fat Loss & Metabolism",
       "short_description": "Energy balance, appetite, glucose, insulin sensitivity, metabolic rate",

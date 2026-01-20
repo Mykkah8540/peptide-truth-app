@@ -27,7 +27,7 @@
         "display_rule": "Alphabetical within group",
         "peptides": [
           {
-            "canonical_name": "TB-500",
+            "canonical_name": "Tb-500",
             "slug": "tb-500",
             "why_people_look_it_up": "Often searched for injury recovery; evidence is largely preclinical and product identity may vary.",
             "status_category": "investigational_human",
@@ -44,7 +44,7 @@
     "safety_callouts": [
       {
         "title": "Route and sourcing drive risk",
-        "body": "For recovery peptides, many real-world harms relate to contamination, dosing uncertainty, and non-medical injection practices—not only the molecule."
+        "body": "For recovery peptides, many real-world harms relate to contamination, dosing uncertainty, and non-medical injection practices\u2014not only the molecule."
       }
     ],
     "evidence_notes": [
