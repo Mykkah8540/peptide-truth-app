@@ -257,6 +257,13 @@
       "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
       "confidence": "unknown",
       "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_injury_healing",
+      "peptide_slug": "bpc-157-arginate",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
     }
   ]
 }
