@@ -10,25 +10,27 @@ Phase 4 – Search & Routing
 - [x] Entities index includes topics
 - [x] Search routes include topic routes
 - [x] Index rebuild pipeline passes
-- [x] Deterministic search resolver routes topics (topic:<slug>)
+- [x] Resolver parses topic routes from search routes index
+- [x] Deterministic Topic > Category precedence for concept phrase queries
+- [x] Deterministic exact-term variants for "and" phrase normalization (safe, alphabetic-only)
+- [x] Token-assisted category hit de-dupe (prevents duplicate category candidates)
 
 ## 3. What Is PARTIALLY COMPLETE
-- [ ] De-dupe candidate list for the "sleep and circadian" path (currently returns duplicate category route)
-- [ ] Decide UX when both a Topic and a Category match (ranking/selection rules)
+- [ ] Decide how UI should display candidates when resolver returns search_results (no single route)
 
 ## 4. What Is NOT STARTED
-- Safety page surfacing in search
-- App UI integration (mobile / desktop)
+- [ ] Safety page surfacing in search
+- [ ] App UI integration (mobile / desktop)
 
 ## 5. CURRENT BLOCKER (ONLY ONE)
 None.
 
 ## 6. NEXT SINGLE ACTION
-Fix the duplicate category candidate for "sleep and circadian", then decide the Topic vs Category precedence rule and implement it.
+Implement search UI behavior for search_results (candidate list presentation + navigation), then wire it into the app.
 
 ## 7. Files Expected to Change Next
-- scripts/search/resolve_query.py
-- app search UI layer
+- app search UI layer (where routing is consumed)
+- navigation/deep-link handling
 
 ## 8. Hard Constraints
 - Constitution v1 is authoritative
