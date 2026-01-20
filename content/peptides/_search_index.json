@@ -276,8 +276,12 @@
       "slug": "hcg",
       "canonical_name": "hCG",
       "short_name": "hCG",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "chorionic gonadotropin",
+        "human chorionic gonadotropin",
+        "pregnyl"
+      ],
+      "status_category": "approved_human",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -471,8 +475,11 @@
       "slug": "oxytocin",
       "canonical_name": "Oxytocin",
       "short_name": "Oxytocin",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "oxytocin injection",
+        "pitocin"
+      ],
+      "status_category": "approved_human",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -505,7 +512,10 @@
       "slug": "retatrutide",
       "canonical_name": "Retatrutide",
       "short_name": "Retatrutide",
-      "aliases": [],
+      "aliases": [
+        "ly3437943",
+        "triple g"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {

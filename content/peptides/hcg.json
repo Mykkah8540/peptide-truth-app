@@ -3,14 +3,18 @@
   "peptide": {
     "canonical_name": "hCG",
     "short_name": "hCG",
-    "aliases": [],
+    "aliases": [
+      "human chorionic gonadotropin",
+      "chorionic gonadotropin",
+      "pregnyl"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what hCG is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "approved_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how hCG appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +108,16 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "needs_prescription": true,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "FDA-approved chorionic gonadotropin hormone (Rx); include only label-level indications; no protocols."
+    },
+    "topics": {
+      "primary": [
+        "sexual_health_reproduction"
+      ]
+    }
   }
 }

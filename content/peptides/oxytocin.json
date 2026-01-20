@@ -3,14 +3,17 @@
   "peptide": {
     "canonical_name": "Oxytocin",
     "short_name": "Oxytocin",
-    "aliases": [],
+    "aliases": [
+      "pitocin",
+      "oxytocin injection"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
       "notes": "Classification describes what Oxytocin is and the general domain where it appears."
     },
     "status": {
-      "category": "investigational_human",
+      "category": "approved_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
       "human_use_note": "Status reflects how Oxytocin appears in clinical literature and/or real-world contexts. This is descriptive only."
@@ -104,6 +107,16 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "needs_prescription": true,
+    "meta": {
+      "priority": "normal",
+      "notes_seed": "FDA-approved oxytocin (Rx) uterotonic; include only label-level indications; no protocols."
+    },
+    "topics": {
+      "primary": [
+        "sexual_health_reproduction"
+      ]
+    }
   }
 }

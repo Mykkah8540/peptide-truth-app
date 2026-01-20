@@ -196,7 +196,7 @@
       "kind": "peptide",
       "slug": "hcg",
       "display_name": "hCG",
-      "status_category": "investigational_human",
+      "status_category": "approved_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "sexual_health_reproduction",
@@ -340,7 +340,7 @@
       "kind": "peptide",
       "slug": "oxytocin",
       "display_name": "Oxytocin",
-      "status_category": "investigational_human",
+      "status_category": "approved_human",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "sexual_health_reproduction",

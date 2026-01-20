@@ -3,7 +3,10 @@
   "peptide": {
     "canonical_name": "Retatrutide",
     "short_name": "Retatrutide",
-    "aliases": [],
+    "aliases": [
+      "ly3437943",
+      "triple g"
+    ],
     "classification": {
       "category": "investigational_human",
       "needs_prescription": false,
@@ -102,6 +105,16 @@
         "detail": "Generated from queue ingestion (Phase 6). Requires human-authored, evidence-bounded content.",
         "evidence_refs": []
       }
-    ]
+    ],
+    "needs_prescription": false,
+    "meta": {
+      "priority": "high",
+      "notes_seed": "GLP-1/GIP/GCGR tri-agonist; investigational; avoid protocol claims"
+    },
+    "topics": {
+      "primary": [
+        "metabolic_weight"
+      ]
+    }
   }
 }

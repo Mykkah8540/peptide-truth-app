@@ -3,7 +3,7 @@
   "updated_at": "2026-01-19",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 159,
+    "terms": 166,
     "peptides": 39,
     "blends": 8,
     "categories": 11
@@ -375,6 +375,20 @@
       ],
       "sources": [
         "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "chorionic gonadotropin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "hcg",
+          "route": "peptide:hcg"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -1054,6 +1068,20 @@
       ]
     },
     {
+      "term": "human chorionic gonadotropin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "hcg",
+          "route": "peptide:hcg"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "immune",
       "routes": [
         {
@@ -1241,6 +1269,20 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "ly3437943",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "retatrutide",
+          "route": "peptide:retatrutide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -1650,6 +1692,20 @@
       ]
     },
     {
+      "term": "oxytocin injection",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "oxytocin",
+          "route": "peptide:oxytocin"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "pentadecapeptide bpc 157",
       "routes": [
         {
@@ -1678,6 +1734,20 @@
       ]
     },
     {
+      "term": "pitocin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "oxytocin",
+          "route": "peptide:oxytocin"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "pramlintide",
       "routes": [
         {
@@ -1691,6 +1761,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "pregnyl",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "hcg",
+          "route": "peptide:hcg"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -2247,6 +2331,20 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "triple g",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "retatrutide",
+          "route": "peptide:retatrutide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
