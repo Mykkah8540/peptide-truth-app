@@ -1,0 +1,842 @@
+{
+  "version": "v1",
+  "updated_at": "2026-01-19",
+  "notes": "Deterministic Explore-by-Category index built from taxonomy + governance + entities + blends registry.",
+  "mapping": {
+    "peptide_key_to_blend_keys": {
+      "regenerative_repair": [
+        "regenerative_blend"
+      ],
+      "metabolic_weight": [
+        "metabolic_weight_blend"
+      ],
+      "endocrine_hormonal": [
+        "gh_axis_blend"
+      ],
+      "sexual_health_reproduction": [
+        "sexual_health_blend"
+      ],
+      "neurocognitive_mood": [
+        "neurocognitive_blend"
+      ],
+      "cosmetic_topical": [
+        "cosmetic_blend"
+      ],
+      "sleep_circadian": [],
+      "immunomodulatory_inflammation": [],
+      "antimicrobial_innate": [],
+      "mitochondrial_longevity": [],
+      "muscle_performance": []
+    }
+  },
+  "counts": {
+    "categories": 11,
+    "peptide_classes": 11
+  },
+  "categories": [
+    {
+      "key": "regenerative_repair",
+      "label": "Regenerative / Repair",
+      "mapped_blend_taxonomy_keys": [
+        "regenerative_blend"
+      ],
+      "counts": {
+        "peptides": 6,
+        "blends": 3,
+        "total": 9
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "ara-290",
+            "display_name": "ARA-290",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair",
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "bpc-157",
+            "display_name": "BPC-157",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "ghk-cu",
+            "display_name": "Copper Tripeptide-1",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair",
+              "cosmetic_topical"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "kpv",
+            "display_name": "KPV",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "immunomodulatory_inflammation",
+              "regenerative_repair"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "tb-500",
+            "display_name": "TB-500",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "thymosin-beta-4",
+            "display_name": "Thymosin Beta-4",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair"
+            ]
+          }
+        ],
+        "blends": [
+          {
+            "kind": "blend",
+            "slug": "bpc-157-tb-500",
+            "display_name": "BPC-157 / TB-500",
+            "taxonomy_keys": [
+              "regenerative_blend"
+            ],
+            "components": [
+              "bpc-157",
+              "tb-500"
+            ],
+            "components_unresolved": []
+          },
+          {
+            "kind": "blend",
+            "slug": "glow",
+            "display_name": "GLOW",
+            "taxonomy_keys": [
+              "regenerative_blend"
+            ],
+            "components": [
+              "bpc-157",
+              "tb-500",
+              "ghk-cu"
+            ],
+            "components_unresolved": []
+          },
+          {
+            "kind": "blend",
+            "slug": "klow",
+            "display_name": "KLOW",
+            "taxonomy_keys": [
+              "regenerative_blend"
+            ],
+            "components": [
+              "bpc-157",
+              "tb-500",
+              "ghk-cu",
+              "kpv"
+            ],
+            "components_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "metabolic_weight",
+      "label": "Metabolic / Weight",
+      "mapped_blend_taxonomy_keys": [
+        "metabolic_weight_blend"
+      ],
+      "counts": {
+        "peptides": 9,
+        "blends": 4,
+        "total": 13
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "tesamorelin",
+            "display_name": "Tesamorelin",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "5-amino-1mq",
+            "display_name": "5-Amino-1MQ",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "adipotide",
+            "display_name": "Adipotide",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "aod-9604",
+            "display_name": "AOD-9604",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "cagrilintide",
+            "display_name": "Cagrilintide",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "mazdutide",
+            "display_name": "Mazdutide",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "mots-c",
+            "display_name": "MOTS-c",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "pramlintide",
+            "display_name": "Pramlintide",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "survodutide",
+            "display_name": "Survodutide",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "metabolic_weight"
+            ]
+          }
+        ],
+        "blends": [
+          {
+            "kind": "blend",
+            "slug": "cagri-sema",
+            "display_name": "Cagrilintide / Semaglutide",
+            "taxonomy_keys": [
+              "metabolic_weight_blend"
+            ],
+            "components": [
+              "cagrilintide"
+            ],
+            "components_unresolved": [
+              "semaglutide"
+            ]
+          },
+          {
+            "kind": "blend",
+            "slug": "glp1-sma",
+            "display_name": "GLP-1 SMA",
+            "taxonomy_keys": [
+              "metabolic_weight_blend"
+            ],
+            "components": [],
+            "components_unresolved": [
+              "amylin",
+              "semaglutide"
+            ]
+          },
+          {
+            "kind": "blend",
+            "slug": "glp2-trz",
+            "display_name": "GLP-2 TRZ",
+            "taxonomy_keys": [
+              "metabolic_weight_blend"
+            ],
+            "components": [],
+            "components_unresolved": [
+              "tirzepatide"
+            ]
+          },
+          {
+            "kind": "blend",
+            "slug": "glp3-reta",
+            "display_name": "GLP-3 RETA (Quad Agonist Class)",
+            "taxonomy_keys": [
+              "metabolic_weight_blend"
+            ],
+            "components": [],
+            "components_unresolved": [
+              "retatrutide"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "key": "neurocognitive_mood",
+      "label": "Neurocognitive / Mood",
+      "mapped_blend_taxonomy_keys": [
+        "neurocognitive_blend"
+      ],
+      "counts": {
+        "peptides": 3,
+        "blends": 0,
+        "total": 3
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "oxytocin",
+            "display_name": "Oxytocin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction",
+              "neurocognitive_mood"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "selank",
+            "display_name": "Selank",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "neurocognitive_mood"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "semax",
+            "display_name": "Semax",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "neurocognitive_mood"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "sleep_circadian",
+      "label": "Sleep / Circadian",
+      "mapped_blend_taxonomy_keys": [],
+      "counts": {
+        "peptides": 2,
+        "blends": 0,
+        "total": 2
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "dsip",
+            "display_name": "DSIP",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "sleep_circadian"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "epitalon",
+            "display_name": "Epitalon",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "sleep_circadian"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "immunomodulatory_inflammation",
+      "label": "Immune / Inflammation",
+      "mapped_blend_taxonomy_keys": [],
+      "counts": {
+        "peptides": 6,
+        "blends": 0,
+        "total": 6
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "thymosin-alpha-1",
+            "display_name": "Thymosin Alpha-1",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "ara-290",
+            "display_name": "ARA-290",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair",
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "glutathione",
+            "display_name": "Glutathione",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "kpv",
+            "display_name": "KPV",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "immunomodulatory_inflammation",
+              "regenerative_repair"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "ll-37",
+            "display_name": "LL-37",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "antimicrobial_innate",
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "vip",
+            "display_name": "VIP",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "immunomodulatory_inflammation"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "endocrine_hormonal",
+      "label": "Endocrine / Hormonal",
+      "mapped_blend_taxonomy_keys": [
+        "gh_axis_blend"
+      ],
+      "counts": {
+        "peptides": 7,
+        "blends": 1,
+        "total": 8
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "tesamorelin",
+            "display_name": "Tesamorelin",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "cjc-1295",
+            "display_name": "CJC-1295",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "hcg",
+            "display_name": "hCG",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction",
+              "endocrine_hormonal"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "hexarelin",
+            "display_name": "Hexarelin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "ipamorelin",
+            "display_name": "Ipamorelin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "mk-677",
+            "display_name": "MK-677",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "sermorelin",
+            "display_name": "Sermorelin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          }
+        ],
+        "blends": [
+          {
+            "kind": "blend",
+            "slug": "cjc-ipamorelin",
+            "display_name": "CJC-1295 / Ipamorelin",
+            "taxonomy_keys": [
+              "gh_axis_blend"
+            ],
+            "components": [
+              "cjc-1295",
+              "ipamorelin"
+            ],
+            "components_unresolved": []
+          }
+        ]
+      }
+    },
+    {
+      "key": "sexual_health_reproduction",
+      "label": "Sexual Health / Reproduction",
+      "mapped_blend_taxonomy_keys": [
+        "sexual_health_blend"
+      ],
+      "counts": {
+        "peptides": 4,
+        "blends": 0,
+        "total": 4
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "bremelanotide",
+            "display_name": "Bremelanotide",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "hcg",
+            "display_name": "hCG",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction",
+              "endocrine_hormonal"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "melanotan-ii",
+            "display_name": "Melanotan II",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "cosmetic_topical",
+              "sexual_health_reproduction"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "oxytocin",
+            "display_name": "Oxytocin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "sexual_health_reproduction",
+              "neurocognitive_mood"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "antimicrobial_innate",
+      "label": "Antimicrobial / Innate Defense",
+      "mapped_blend_taxonomy_keys": [],
+      "counts": {
+        "peptides": 1,
+        "blends": 0,
+        "total": 1
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "ll-37",
+            "display_name": "LL-37",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "antimicrobial_innate",
+              "immunomodulatory_inflammation"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "mitochondrial_longevity",
+      "label": "Mitochondrial / Longevity",
+      "mapped_blend_taxonomy_keys": [],
+      "counts": {
+        "peptides": 5,
+        "blends": 0,
+        "total": 5
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "ss-31",
+            "display_name": "SS-31 (Elamipretide)",
+            "status_category": "approved_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "epitalon",
+            "display_name": "Epitalon",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "sleep_circadian"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "glutathione",
+            "display_name": "Glutathione",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "mots-c",
+            "display_name": "MOTS-c",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "metabolic_weight"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "nad-plus",
+            "display_name": "NAD+",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "mitochondrial_longevity"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "cosmetic_topical",
+      "label": "Cosmetic / Topical",
+      "mapped_blend_taxonomy_keys": [
+        "cosmetic_blend"
+      ],
+      "counts": {
+        "peptides": 6,
+        "blends": 0,
+        "total": 6
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "acetyl-hexapeptide-8",
+            "display_name": "Acetyl Hexapeptide-8",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "cosmetic_topical"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "afamelanotide",
+            "display_name": "Afamelanotide",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "cosmetic_topical"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "ghk-cu",
+            "display_name": "Copper Tripeptide-1",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "regenerative_repair",
+              "cosmetic_topical"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "melanotan-i",
+            "display_name": "Melanotan I",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "cosmetic_topical"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "melanotan-ii",
+            "display_name": "Melanotan II",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "cosmetic_topical",
+              "sexual_health_reproduction"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "snap-8",
+            "display_name": "SNAP-8",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "cosmetic_topical"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    },
+    {
+      "key": "muscle_performance",
+      "label": "Muscle / Performance",
+      "mapped_blend_taxonomy_keys": [],
+      "counts": {
+        "peptides": 5,
+        "blends": 0,
+        "total": 5
+      },
+      "items": {
+        "peptides": [
+          {
+            "kind": "peptide",
+            "slug": "cjc-1295",
+            "display_name": "CJC-1295",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "hexarelin",
+            "display_name": "Hexarelin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "ipamorelin",
+            "display_name": "Ipamorelin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "mk-677",
+            "display_name": "MK-677",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "sermorelin",
+            "display_name": "Sermorelin",
+            "status_category": "investigational_human",
+            "taxonomy_keys": [
+              "endocrine_hormonal",
+              "muscle_performance"
+            ]
+          }
+        ],
+        "blends": []
+      }
+    }
+  ]
+}

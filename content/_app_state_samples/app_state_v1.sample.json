@@ -1,0 +1,46 @@
+{
+  "version": "app_state_v1",
+  "updated_at": "2026-01-19T00:00:00Z",
+  "device": {
+    "install_id": "00000000-0000-0000-0000-000000000000",
+    "platform": "unknown"
+  },
+  "favorites": {
+    "items": [
+      { "entity_key": "peptide:ss-31", "created_at": "2026-01-19T00:00:00Z" },
+      { "entity_key": "blend:glow", "created_at": "2026-01-19T00:00:00Z" }
+    ]
+  },
+  "recents": {
+    "items": [
+      { "entity_key": "peptide:bpc-157", "viewed_at": "2026-01-19T00:00:00Z" }
+    ],
+    "max_items": 50
+  },
+  "stacks": {
+    "items": [
+      {
+        "id": "11111111-1111-1111-1111-111111111111",
+        "name": "Example Stack",
+        "goal_tags": ["recovery"],
+        "constraints": {
+          "avoid_taxonomy_keys": [],
+          "avoid_entity_kinds": [],
+          "avoid_delivery_contexts": []
+        },
+        "items": [
+          { "entity_key": "peptide:bpc-157", "added_at": "2026-01-19T00:00:00Z", "notes": "" },
+          { "entity_key": "blend:glow", "added_at": "2026-01-19T00:00:00Z", "notes": "" }
+        ],
+        "notes": "",
+        "created_at": "2026-01-19T00:00:00Z",
+        "updated_at": "2026-01-19T00:00:00Z",
+        "origin": {
+          "type": "manual",
+          "generator_version": null,
+          "explanations": []
+        }
+      }
+    ]
+  }
+}

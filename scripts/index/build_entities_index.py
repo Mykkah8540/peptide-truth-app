@@ -29,12 +29,34 @@ def main():
     blends_registry = blends_dir / "_index.json"
     out_path = root / "content" / "_index" / "entities_v1.json"
 
+    governance_path = root / "content" / "_governance" / "coverage_checklist_v1.json"
+
     if not peptides_dir.exists():
         die(f"Missing peptides dir: {peptides_dir}")
     if not blends_dir.exists():
         die(f"Missing blends dir: {blends_dir}")
     if not blends_registry.exists():
         die(f"Missing blends registry: {blends_registry}")
+
+    if not governance_path.exists():
+        die(f"Missing governance file: {governance_path}")
+
+    gov = load_json(governance_path)
+    gov_peptides = gov.get("peptides")
+    if not isinstance(gov_peptides, list):
+        die("content/_governance/coverage_checklist_v1.json must contain top-level 'peptides' list")
+    gov_tax_map = {}
+    for gp in gov_peptides:
+        if not isinstance(gp, dict):
+            continue
+        s = gp.get("slug")
+        if not isinstance(s, str) or not s.strip():
+            continue
+        tks = gp.get("taxonomy_keys") or []
+        if not isinstance(tks, list):
+            die(f"Invalid taxonomy_keys for governance peptide '{s}'")
+        # Keep only non-empty strings
+        gov_tax_map[s.strip()] = [k for k in tks if isinstance(k, str) and k.strip()]
 
     peptide_files = sorted([p for p in peptides_dir.glob("*.json") if not p.name.startswith("_")])
     blend_files = sorted([p for p in blends_dir.glob("*.json") if p.suffix == ".json" and not p.name.startswith("_") and p.name != "README.md"])
@@ -58,6 +80,9 @@ def main():
             entity_kind = ek.strip()
 
         taxonomy_keys = norm_list(pep.get("taxonomy_keys") or pep.get("meta", {}).get("taxonomy_keys"))
+        # Deterministic fallback: if peptide JSON doesn't carry taxonomy_keys, use governance mapping.
+        if not taxonomy_keys:
+            taxonomy_keys = norm_list(gov_tax_map.get(slug))
         appears_in_blends = norm_list(pep.get("meta", {}).get("appears_in_blends"))
 
         peptides.append({

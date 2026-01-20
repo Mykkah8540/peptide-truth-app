@@ -1,0 +1,2310 @@
+{
+  "version": "v1",
+  "updated_at": "2026-01-19",
+  "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
+  "counts": {
+    "terms": 158,
+    "peptides": 38,
+    "blends": 8,
+    "categories": 11
+  },
+  "terms": [
+    {
+      "term": "5 amino 1mq",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "5-amino-1mq",
+          "route": "peptide:5-amino-1mq"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "5-amino-1mq",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "5-amino-1mq",
+          "route": "peptide:5-amino-1mq"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "acetyl hexapeptide-3",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "acetyl-hexapeptide-8",
+          "route": "peptide:acetyl-hexapeptide-8"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "acetyl hexapeptide-8",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "acetyl-hexapeptide-8",
+          "route": "peptide:acetyl-hexapeptide-8"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name"
+      ]
+    },
+    {
+      "term": "acetyl-hexapeptide-8",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "acetyl-hexapeptide-8",
+          "route": "peptide:acetyl-hexapeptide-8"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "adipotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "adipotide",
+          "route": "peptide:adipotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "afamelanotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "afamelanotide",
+          "route": "peptide:afamelanotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "aging",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "mitochondrial_longevity",
+          "label": "Mitochondrial / Longevity",
+          "route": "category:mitochondrial_longevity"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "antimicrobial innate defense",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "antimicrobial_innate",
+          "label": "Antimicrobial / Innate Defense",
+          "route": "category:antimicrobial_innate"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "antimicrobial_innate",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "antimicrobial_innate",
+          "label": "Antimicrobial / Innate Defense",
+          "route": "category:antimicrobial_innate"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "aod-9604",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "aod-9604",
+          "route": "peptide:aod-9604"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "ara-290",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ara-290",
+          "route": "peptide:ara-290"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "argireline",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "acetyl-hexapeptide-8",
+          "route": "peptide:acetyl-hexapeptide-8"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:short_name",
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "body protection compound-157",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157",
+          "route": "peptide:bpc-157"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "bpc 157",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157",
+          "route": "peptide:bpc-157"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "bpc tb",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "bpc-157-tb-500",
+          "route": "blend:bpc-157-tb-500"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "bpc-157",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157",
+          "route": "peptide:bpc-157"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "bpc-157 tb-500",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "bpc-157-tb-500",
+          "route": "blend:bpc-157-tb-500"
+        }
+      ],
+      "sources": [
+        "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "bpc-157-tb-500",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "bpc-157-tb-500",
+          "route": "blend:bpc-157-tb-500"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "bpc157",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157",
+          "route": "peptide:bpc-157"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "bremelanotide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bremelanotide",
+          "route": "peptide:bremelanotide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "cagri sema",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "cagri-sema",
+          "route": "blend:cagri-sema"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "cagri-sema",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "cagri-sema",
+          "route": "blend:cagri-sema"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "cagrilintide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cagrilintide",
+          "route": "peptide:cagrilintide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "cagrilintide semaglutide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "cagri-sema",
+          "route": "blend:cagri-sema"
+        }
+      ],
+      "sources": [
+        "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "cibinetide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ara-290",
+          "route": "peptide:ara-290"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "cjc ipa",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "cjc-ipamorelin",
+          "route": "blend:cjc-ipamorelin"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "cjc-1295",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cjc-1295",
+          "route": "peptide:cjc-1295"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "cjc-1295 dac",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cjc-1295",
+          "route": "peptide:cjc-1295"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "cjc-1295 ipamorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "cjc-ipamorelin",
+          "route": "blend:cjc-ipamorelin"
+        }
+      ],
+      "sources": [
+        "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "cjc-1295 no dac",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cjc-1295",
+          "route": "peptide:cjc-1295"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "cjc-ipamorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "cjc-ipamorelin",
+          "route": "blend:cjc-ipamorelin"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "copper peptide ghk-cu",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "copper tripeptide-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name"
+      ]
+    },
+    {
+      "term": "cosmetic",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "cosmetic_topical",
+          "label": "Cosmetic / Topical",
+          "route": "category:cosmetic_topical"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "cosmetic topical",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "cosmetic_topical",
+          "label": "Cosmetic / Topical",
+          "route": "category:cosmetic_topical"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "cosmetic_topical",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "cosmetic_topical",
+          "label": "Cosmetic / Topical",
+          "route": "category:cosmetic_topical"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "delta-sleep-inducing-peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "dsip",
+          "route": "peptide:dsip"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "dsip",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "dsip",
+          "route": "peptide:dsip"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "dsip peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "dsip",
+          "route": "peptide:dsip"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "egrifta",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tesamorelin",
+          "route": "peptide:tesamorelin"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "elamipretide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ss-31",
+          "route": "peptide:ss-31"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "endocrine hormonal",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "endocrine_hormonal",
+          "label": "Endocrine / Hormonal",
+          "route": "category:endocrine_hormonal"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "endocrine_hormonal",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "endocrine_hormonal",
+          "label": "Endocrine / Hormonal",
+          "route": "category:endocrine_hormonal"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "epitalon",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "epitalon",
+          "route": "peptide:epitalon"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "epithalamin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "epitalon",
+          "route": "peptide:epitalon"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "epithalon",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "epitalon",
+          "route": "peptide:epitalon"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "erectile",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sexual_health_reproduction",
+          "label": "Sexual Health / Reproduction",
+          "route": "category:sexual_health_reproduction"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "fat loss",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "metabolic_weight",
+          "label": "Metabolic / Weight",
+          "route": "category:metabolic_weight"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "ghk copper complex",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "ghk cu",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "ghk-cu",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:short_name",
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "ghkcu",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "ghrh analog",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "cjc-1295",
+          "route": "peptide:cjc-1295"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "glow",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glow",
+          "route": "blend:glow"
+        }
+      ],
+      "sources": [
+        "slug",
+        "blend_registry:display_name",
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp-1 sma",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp1-sma",
+          "route": "blend:glp1-sma"
+        }
+      ],
+      "sources": [
+        "blend_registry:display_name",
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp-2 trz",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp2-trz",
+          "route": "blend:glp2-trz"
+        }
+      ],
+      "sources": [
+        "blend_registry:display_name",
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp-3 reta",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp3-reta",
+          "route": "blend:glp3-reta"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp-3 reta quad agonist class",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp3-reta",
+          "route": "blend:glp3-reta"
+        }
+      ],
+      "sources": [
+        "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "glp1 sma",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp1-sma",
+          "route": "blend:glp1-sma"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp1-sma",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp1-sma",
+          "route": "blend:glp1-sma"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "glp2 trz",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp2-trz",
+          "route": "blend:glp2-trz"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp2-trz",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp2-trz",
+          "route": "blend:glp2-trz"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "glp3 reta",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp3-reta",
+          "route": "blend:glp3-reta"
+        }
+      ],
+      "sources": [
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "glp3-reta",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "glp3-reta",
+          "route": "blend:glp3-reta"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "glutathione",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "glutathione",
+          "route": "peptide:glutathione"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "glycyl-l-histidyl-l-lysine copper complex",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ghk-cu",
+          "route": "peptide:ghk-cu"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "hcg",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "hcg",
+          "route": "peptide:hcg"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "healing",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "regenerative_repair",
+          "label": "Regenerative / Repair",
+          "route": "category:regenerative_repair"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "hex",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "hexarelin",
+          "route": "peptide:hexarelin"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "hexarelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "hexarelin",
+          "route": "peptide:hexarelin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "hgh fragment 176-191",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "aod-9604",
+          "route": "peptide:aod-9604"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "immune",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "immunomodulatory_inflammation",
+          "label": "Immune / Inflammation",
+          "route": "category:immunomodulatory_inflammation"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "immune inflammation",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "immunomodulatory_inflammation",
+          "label": "Immune / Inflammation",
+          "route": "category:immunomodulatory_inflammation"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "immunity",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "immunomodulatory_inflammation",
+          "label": "Immune / Inflammation",
+          "route": "category:immunomodulatory_inflammation"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "immunomodulatory_inflammation",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "immunomodulatory_inflammation",
+          "label": "Immune / Inflammation",
+          "route": "category:immunomodulatory_inflammation"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "inflammation",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "immunomodulatory_inflammation",
+          "label": "Immune / Inflammation",
+          "route": "category:immunomodulatory_inflammation"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "injury",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "regenerative_repair",
+          "label": "Regenerative / Repair",
+          "route": "category:regenerative_repair"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "ipa",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ipamorelin",
+          "route": "peptide:ipamorelin"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "ipamorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ipamorelin",
+          "route": "peptide:ipamorelin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "klow",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "blend",
+          "slug": "klow",
+          "route": "blend:klow"
+        }
+      ],
+      "sources": [
+        "slug",
+        "blend_registry:display_name",
+        "synonyms:blend_synonyms"
+      ]
+    },
+    {
+      "term": "kpv",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "kpv",
+          "route": "peptide:kpv"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "libido",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sexual_health_reproduction",
+          "label": "Sexual Health / Reproduction",
+          "route": "category:sexual_health_reproduction"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "ll-37",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ll-37",
+          "route": "peptide:ll-37"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "longevity",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "mitochondrial_longevity",
+          "label": "Mitochondrial / Longevity",
+          "route": "category:mitochondrial_longevity"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "mazdutide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mazdutide",
+          "route": "peptide:mazdutide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "melanotan 1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-i",
+          "route": "peptide:melanotan-i"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "melanotan 2",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-ii",
+          "route": "peptide:melanotan-ii"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "melanotan i",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-i",
+          "route": "peptide:melanotan-i"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "melanotan ii",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-ii",
+          "route": "peptide:melanotan-ii"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "melanotan-i",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-i",
+          "route": "peptide:melanotan-i"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "melanotan-ii",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-ii",
+          "route": "peptide:melanotan-ii"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "metabolic",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "metabolic_weight",
+          "label": "Metabolic / Weight",
+          "route": "category:metabolic_weight"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "metabolic weight",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "metabolic_weight",
+          "label": "Metabolic / Weight",
+          "route": "category:metabolic_weight"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "metabolic_weight",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "metabolic_weight",
+          "label": "Metabolic / Weight",
+          "route": "category:metabolic_weight"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "mitochondria",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "mitochondrial_longevity",
+          "label": "Mitochondrial / Longevity",
+          "route": "category:mitochondrial_longevity"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "mitochondrial longevity",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "mitochondrial_longevity",
+          "label": "Mitochondrial / Longevity",
+          "route": "category:mitochondrial_longevity"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "mitochondrial_longevity",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "mitochondrial_longevity",
+          "label": "Mitochondrial / Longevity",
+          "route": "category:mitochondrial_longevity"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "mk 677",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mk-677",
+          "route": "peptide:mk-677"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "mk-677",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mk-677",
+          "route": "peptide:mk-677"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "mk677",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mk-677",
+          "route": "peptide:mk-677"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "mots-c",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mots-c",
+          "route": "peptide:mots-c"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "motsc",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "mots-c",
+          "route": "peptide:mots-c"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "mt2",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "melanotan-ii",
+          "route": "peptide:melanotan-ii"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "muscle",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "muscle_performance",
+          "label": "Muscle / Performance",
+          "route": "category:muscle_performance"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "muscle performance",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "muscle_performance",
+          "label": "Muscle / Performance",
+          "route": "category:muscle_performance"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "muscle_performance",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "muscle_performance",
+          "label": "Muscle / Performance",
+          "route": "category:muscle_performance"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "nad",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "nad-plus",
+          "route": "peptide:nad-plus"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "nad plus",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "nad-plus",
+          "route": "peptide:nad-plus"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "nad-plus",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "nad-plus",
+          "route": "peptide:nad-plus"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "neurocognitive mood",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "neurocognitive_mood",
+          "label": "Neurocognitive / Mood",
+          "route": "category:neurocognitive_mood"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "neurocognitive_mood",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "neurocognitive_mood",
+          "label": "Neurocognitive / Mood",
+          "route": "category:neurocognitive_mood"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "oxytocin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "oxytocin",
+          "route": "peptide:oxytocin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "pentadecapeptide bpc 157",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bpc-157",
+          "route": "peptide:bpc-157"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "performance",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "muscle_performance",
+          "label": "Muscle / Performance",
+          "route": "category:muscle_performance"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "pramlintide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "pramlintide",
+          "route": "peptide:pramlintide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "pt 141",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bremelanotide",
+          "route": "peptide:bremelanotide"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "pt-141",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bremelanotide",
+          "route": "peptide:bremelanotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "pt141",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bremelanotide",
+          "route": "peptide:bremelanotide"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "recovery",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "regenerative_repair",
+          "label": "Regenerative / Repair",
+          "route": "category:regenerative_repair"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "regenerative repair",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "regenerative_repair",
+          "label": "Regenerative / Repair",
+          "route": "category:regenerative_repair"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "regenerative_repair",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "regenerative_repair",
+          "label": "Regenerative / Repair",
+          "route": "category:regenerative_repair"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "repair",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "regenerative_repair",
+          "label": "Regenerative / Repair",
+          "route": "category:regenerative_repair"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "selank",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "selank",
+          "route": "peptide:selank"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "semax",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "semax",
+          "route": "peptide:semax"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "sermorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "sermorelin",
+          "route": "peptide:sermorelin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "sexual",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sexual_health_reproduction",
+          "label": "Sexual Health / Reproduction",
+          "route": "category:sexual_health_reproduction"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "sexual health reproduction",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sexual_health_reproduction",
+          "label": "Sexual Health / Reproduction",
+          "route": "category:sexual_health_reproduction"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "sexual_health_reproduction",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sexual_health_reproduction",
+          "label": "Sexual Health / Reproduction",
+          "route": "category:sexual_health_reproduction"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "skin",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "cosmetic_topical",
+          "label": "Cosmetic / Topical",
+          "route": "category:cosmetic_topical"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "sleep",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sleep_circadian",
+          "label": "Sleep / Circadian",
+          "route": "category:sleep_circadian"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "sleep circadian",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sleep_circadian",
+          "label": "Sleep / Circadian",
+          "route": "category:sleep_circadian"
+        }
+      ],
+      "sources": [
+        "category:label"
+      ]
+    },
+    {
+      "term": "sleep_circadian",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sleep_circadian",
+          "label": "Sleep / Circadian",
+          "route": "category:sleep_circadian"
+        }
+      ],
+      "sources": [
+        "category:key"
+      ]
+    },
+    {
+      "term": "sleeping",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "sleep_circadian",
+          "label": "Sleep / Circadian",
+          "route": "category:sleep_circadian"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "snap-8",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "snap-8",
+          "route": "peptide:snap-8"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "ss-31",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ss-31",
+          "route": "peptide:ss-31"
+        }
+      ],
+      "sources": [
+        "slug",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "ss-31 elamipretide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ss-31",
+          "route": "peptide:ss-31"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "survodutide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "survodutide",
+          "route": "peptide:survodutide"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "ta1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-alpha-1",
+          "route": "peptide:thymosin-alpha-1"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "tb 500",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tb-500",
+          "route": "peptide:tb-500"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "tb-500",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tb-500",
+          "route": "peptide:tb-500"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "tb4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4",
+          "route": "peptide:thymosin-beta-4"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "tb500",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tb-500",
+          "route": "peptide:tb-500"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "tesamorelin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tesamorelin",
+          "route": "peptide:tesamorelin"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "thymalfasin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-alpha-1",
+          "route": "peptide:thymosin-alpha-1"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "thymosin a1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-alpha-1",
+          "route": "peptide:thymosin-alpha-1"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "thymosin alpha-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-alpha-1",
+          "route": "peptide:thymosin-alpha-1"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "thymosin b4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4",
+          "route": "peptide:thymosin-beta-4"
+        }
+      ],
+      "sources": [
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "thymosin beta-4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4",
+          "route": "peptide:thymosin-beta-4"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "thymosin beta-4 fragment",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "tb-500",
+          "route": "peptide:tb-500"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "thymosin-alpha-1",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-alpha-1",
+          "route": "peptide:thymosin-alpha-1"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "thymosin-beta-4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4",
+          "route": "peptide:thymosin-beta-4"
+        }
+      ],
+      "sources": [
+        "slug"
+      ]
+    },
+    {
+      "term": "training",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "muscle_performance",
+          "label": "Muscle / Performance",
+          "route": "category:muscle_performance"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "tβ4",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "thymosin-beta-4",
+          "route": "peptide:thymosin-beta-4"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases",
+        "synonyms:entity_synonyms"
+      ]
+    },
+    {
+      "term": "vip",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "vip",
+          "route": "peptide:vip"
+        }
+      ],
+      "sources": [
+        "slug",
+        "peptide_search_index:canonical_name",
+        "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "vyleesi",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "bremelanotide",
+          "route": "peptide:bremelanotide"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "weight loss",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "metabolic_weight",
+          "label": "Metabolic / Weight",
+          "route": "category:metabolic_weight"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "wrinkles",
+      "routes": [
+        {
+          "type": "category",
+          "taxonomy_key": "cosmetic_topical",
+          "label": "Cosmetic / Topical",
+          "route": "category:cosmetic_topical"
+        }
+      ],
+      "sources": [
+        "synonyms:category_synonyms"
+      ]
+    }
+  ]
+}

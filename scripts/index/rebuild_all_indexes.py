@@ -53,6 +53,18 @@ def main() -> int:
     # 6) Validate unified entities index
     run(["python3", "scripts/validate/validate_entities_index.py"])
 
+    # 7) Build Explore-by-Category index
+    run(["python3", "scripts/index/build_category_index.py"])
+
+    # 8) Validate Explore-by-Category index
+    run(["python3", "scripts/validate/validate_category_index.py"])
+
+    # 9) Build Search Routes index (routing-smart search layer)
+    run(["python3", "scripts/index/build_search_routes_index.py"])
+
+    # 10) Validate Search Routes index
+    run(["python3", "scripts/validate/validate_search_routes_index.py"])
+
     print("\nOK: rebuild_all_indexes completed successfully.")
     return 0
 
