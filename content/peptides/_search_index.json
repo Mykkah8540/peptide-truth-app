@@ -263,8 +263,13 @@
       "slug": "glutathione",
       "canonical_name": "Glutathione",
       "short_name": "Glutathione",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "gsh",
+        "l glutathione",
+        "l-glutathione",
+        "reduced glutathione"
+      ],
+      "status_category": "otc_supplement",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -356,7 +361,11 @@
       "slug": "ll-37",
       "canonical_name": "LL-37",
       "short_name": "LL-37",
-      "aliases": [],
+      "aliases": [
+        "cathelicidin",
+        "hcap18",
+        "ll37"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {
@@ -595,8 +604,12 @@
       "slug": "snap-8",
       "canonical_name": "SNAP-8",
       "short_name": "SNAP-8",
-      "aliases": [],
-      "status_category": "investigational_human",
+      "aliases": [
+        "acetyl octapeptide-3",
+        "snap 8",
+        "snap-8 peptide"
+      ],
+      "status_category": "cosmetic_topical",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
@@ -729,7 +742,11 @@
       "slug": "vip",
       "canonical_name": "VIP",
       "short_name": "VIP",
-      "aliases": [],
+      "aliases": [
+        "vasoactive intestinal peptide",
+        "vasoactive intestinal polypeptide",
+        "vip peptide"
+      ],
       "status_category": "investigational_human",
       "needs_prescription": false,
       "risk": {

@@ -414,16 +414,6 @@
           },
           {
             "kind": "peptide",
-            "slug": "glutathione",
-            "display_name": "Glutathione",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
-              "mitochondrial_longevity",
-              "immunomodulatory_inflammation"
-            ]
-          },
-          {
-            "kind": "peptide",
             "slug": "kpv",
             "display_name": "KPV",
             "status_category": "investigational_human",
@@ -448,6 +438,16 @@
             "display_name": "VIP",
             "status_category": "investigational_human",
             "taxonomy_keys": [
+              "immunomodulatory_inflammation"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "glutathione",
+            "display_name": "Glutathione",
+            "status_category": "otc_supplement",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
               "immunomodulatory_inflammation"
             ]
           }
@@ -669,16 +669,6 @@
           },
           {
             "kind": "peptide",
-            "slug": "glutathione",
-            "display_name": "Glutathione",
-            "status_category": "investigational_human",
-            "taxonomy_keys": [
-              "mitochondrial_longevity",
-              "immunomodulatory_inflammation"
-            ]
-          },
-          {
-            "kind": "peptide",
             "slug": "mots-c",
             "display_name": "MOTS-c",
             "status_category": "investigational_human",
@@ -694,6 +684,16 @@
             "status_category": "investigational_human",
             "taxonomy_keys": [
               "mitochondrial_longevity"
+            ]
+          },
+          {
+            "kind": "peptide",
+            "slug": "glutathione",
+            "display_name": "Glutathione",
+            "status_category": "otc_supplement",
+            "taxonomy_keys": [
+              "mitochondrial_longevity",
+              "immunomodulatory_inflammation"
             ]
           }
         ],
@@ -764,7 +764,7 @@
             "kind": "peptide",
             "slug": "snap-8",
             "display_name": "SNAP-8",
-            "status_category": "investigational_human",
+            "status_category": "cosmetic_topical",
             "taxonomy_keys": [
               "cosmetic_topical"
             ]

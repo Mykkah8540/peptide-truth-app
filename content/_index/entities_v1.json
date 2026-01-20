@@ -183,7 +183,7 @@
       "kind": "peptide",
       "slug": "glutathione",
       "display_name": "Glutathione",
-      "status_category": "investigational_human",
+      "status_category": "otc_supplement",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "mitochondrial_longevity",
@@ -412,7 +412,7 @@
       "kind": "peptide",
       "slug": "snap-8",
       "display_name": "SNAP-8",
-      "status_category": "investigational_human",
+      "status_category": "cosmetic_topical",
       "entity_kind": "peptide",
       "taxonomy_keys": [
         "cosmetic_topical"

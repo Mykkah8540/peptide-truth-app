@@ -3,7 +3,7 @@
   "updated_at": "2026-01-19",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 175,
+    "terms": 188,
     "peptides": 39,
     "blends": 8,
     "categories": 11
@@ -66,6 +66,20 @@
       ],
       "sources": [
         "peptide_search_index:canonical_name"
+      ]
+    },
+    {
+      "term": "acetyl octapeptide-3",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "snap-8",
+          "route": "peptide:snap-8"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -423,6 +437,20 @@
       ],
       "sources": [
         "blend_registry:display_name"
+      ]
+    },
+    {
+      "term": "cathelicidin",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ll-37",
+          "route": "peptide:ll-37"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -1082,6 +1110,34 @@
       ]
     },
     {
+      "term": "gsh",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "glutathione",
+          "route": "peptide:glutathione"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "hcap18",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ll-37",
+          "route": "peptide:ll-37"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "hcg",
       "routes": [
         {
@@ -1330,6 +1386,34 @@
       ]
     },
     {
+      "term": "l glutathione",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "glutathione",
+          "route": "peptide:glutathione"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "l-glutathione",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "glutathione",
+          "route": "peptide:glutathione"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "libido",
       "routes": [
         {
@@ -1357,6 +1441,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "ll37",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "ll-37",
+          "route": "peptide:ll-37"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -1951,6 +2049,20 @@
       ]
     },
     {
+      "term": "reduced glutathione",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "glutathione",
+          "route": "peptide:glutathione"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "regenerative repair",
       "routes": [
         {
@@ -2169,6 +2281,20 @@
       ]
     },
     {
+      "term": "snap 8",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "snap-8",
+          "route": "peptide:snap-8"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "snap-8",
       "routes": [
         {
@@ -2182,6 +2308,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "snap-8 peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "snap-8",
+          "route": "peptide:snap-8"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
@@ -2507,6 +2647,34 @@
       ]
     },
     {
+      "term": "vasoactive intestinal peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "vip",
+          "route": "peptide:vip"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "vasoactive intestinal polypeptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "vip",
+          "route": "peptide:vip"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
+      ]
+    },
+    {
       "term": "vip",
       "routes": [
         {
@@ -2520,6 +2688,20 @@
         "slug",
         "peptide_search_index:canonical_name",
         "peptide_search_index:short_name"
+      ]
+    },
+    {
+      "term": "vip peptide",
+      "routes": [
+        {
+          "type": "entity",
+          "kind": "peptide",
+          "slug": "vip",
+          "route": "peptide:vip"
+        }
+      ],
+      "sources": [
+        "peptide_search_index:aliases"
       ]
     },
     {
