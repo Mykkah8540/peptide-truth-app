@@ -90,7 +90,7 @@ def main() -> int:
                 die(f"terms[{i}].routes entries must be objects")
             rtype = r.get("type")
             route = r.get("route")
-            if rtype not in ("entity", "category"):
+            if rtype not in ("entity", "category", "topic"):
                 die(f"Invalid route type in term '{term}': {rtype}")
             if not isinstance(route, str) or ":" not in route:
                 die(f"Invalid route string in term '{term}': {route}")

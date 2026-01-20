@@ -29,6 +29,8 @@ def main():
     blends_registry = blends_dir / "_index.json"
     out_path = root / "content" / "_index" / "entities_v1.json"
 
+    topics_pages_dir = root / "content" / "topics" / "pages"
+
     governance_path = root / "content" / "_governance" / "coverage_checklist_v1.json"
 
     if not peptides_dir.exists():
@@ -37,6 +39,9 @@ def main():
         die(f"Missing blends dir: {blends_dir}")
     if not blends_registry.exists():
         die(f"Missing blends registry: {blends_registry}")
+
+    if not topics_pages_dir.exists():
+        die(f"Missing topics pages dir: {topics_pages_dir}")
 
     if not governance_path.exists():
         die(f"Missing governance file: {governance_path}")
@@ -153,22 +158,54 @@ def main():
         })
         blend_slugs.add(slug)
 
+    # Topics (topic pages) -> first-class entities
+    topic_files = sorted([p for p in topics_pages_dir.glob("*.json") if p.suffix == ".json"])
+    topics = []
+    topic_slugs = set()
+    for tp in topic_files:
+        d = load_json(tp)
+        if d.get("schema_version") != "topic_page_v1":
+            die(f"Invalid topic schema_version in: {tp}")
+        obj = d.get("topic_page")
+        if not isinstance(obj, dict):
+            die(f"Invalid topic_page object in: {tp}")
+        tid = obj.get("topic_id")
+        title = obj.get("title")
+        if not isinstance(tid, str) or not tid.strip():
+            die(f"Missing topic_id in: {tp}")
+        if not isinstance(title, str) or not title.strip():
+            die(f"Missing title in: {tp}")
+        slug = tp.stem
+        if slug in topic_slugs:
+            die(f"Duplicate topic slug detected: {slug}")
+        topic_slugs.add(slug)
+        topics.append({
+            "kind": "topic",
+            "slug": slug,
+            "topic_id": tid.strip(),
+            "display_name": title.strip(),
+            "source_path": f"content/topics/pages/{slug}.json",
+        })
+
     # Sort deterministically
     peptides = sorted(peptides, key=lambda x: x["slug"])
     blends = sorted(blends, key=lambda x: x["slug"])
+    topics = sorted(topics, key=lambda x: x["slug"])
 
     now = datetime.now().strftime("%Y-%m-%d")
     out = {
         "version": "v1",
         "updated_at": now,
-        "notes": "Unified entity index generated from peptide JSONs + blends registry + blend stubs.",
+        "notes": "Unified entity index generated from peptide JSONs + blends registry + blend stubs + topic pages.",
         "counts": {
             "peptides": len(peptides),
+            "topics": len(topics),
             "blends": len(blends),
-            "total": len(peptides) + len(blends),
+            "total": len(peptides) + len(blends) + len(topics),
         },
         "peptides": peptides,
         "blends": blends,
+        "topics": topics,
     }
 
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

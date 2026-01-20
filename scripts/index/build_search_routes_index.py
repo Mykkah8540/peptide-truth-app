@@ -70,8 +70,9 @@ def main() -> int:
     blends_registry_path = root / "content" / "blends" / "_index.json"
     synonyms_path = root / "content" / "_taxonomy" / "search_synonyms_v1.json"
     pep_cats_path = root / "content" / "_taxonomy" / "peptide_categories_v1.json"
+    topics_pages_dir = root / "content" / "topics" / "pages"
 
-    for p in [entities_path, pep_search_path, blends_registry_path, synonyms_path, pep_cats_path]:
+    for p in [entities_path, pep_search_path, blends_registry_path, synonyms_path, pep_cats_path, topics_pages_dir]:
         if not p.exists():
             die(f"Missing required file: {p}")
 
@@ -121,6 +122,29 @@ def main() -> int:
             tks = e.get("taxonomy_keys") if isinstance(e.get("taxonomy_keys"), list) else []
             blend_tax[slug] = [k for k in tks if isinstance(k, str) and k.strip()]
 
+    # Topics (topic pages): route by slug and title
+    topic_slugs = set()
+    topic_titles = {}
+    topic_ids = {}
+    if topics_pages_dir.exists():
+        for tp in sorted(topics_pages_dir.glob('*.json')):
+            d = load_json(tp)
+            if d.get('schema_version') != 'topic_page_v1':
+                die(f"Invalid topic schema_version: {tp}")
+            obj = d.get('topic_page', {})
+            if not isinstance(obj, dict):
+                die(f"Invalid topic_page object: {tp}")
+            slug = tp.stem
+            tid = obj.get('topic_id')
+            title = obj.get('title')
+            if not isinstance(tid, str) or not tid.strip():
+                die(f"Missing topic_id: {tp}")
+            if not isinstance(title, str) or not title.strip():
+                die(f"Missing title: {tp}")
+            topic_slugs.add(slug)
+            topic_titles[slug] = title.strip()
+            topic_ids[slug] = tid.strip()
+
     # Categories (peptide taxonomy keys)
     pep_classes = pep_cats.get("peptide_classes")
     if not isinstance(pep_classes, list):
@@ -155,6 +179,11 @@ def main() -> int:
         add_term_map(term_map, slug, {"type": "entity", "kind": "blend", "slug": slug, "route": f"blend:{slug}"}, "slug")
 
     # B) Names + aliases from peptide_search_index_v1
+    # A2) Topics should be routable by slug + title
+    for slug in sorted(topic_slugs):
+        add_term_map(term_map, slug, {"type": "topic", "slug": slug, "topic_id": topic_ids.get(slug, ""), "route": f"topic:{slug}"}, "topic:slug")
+        add_term_map(term_map, topic_titles.get(slug, slug), {"type": "topic", "slug": slug, "topic_id": topic_ids.get(slug, ""), "route": f"topic:{slug}"}, "topic:title")
+
     pep_list = pep_search.get("peptides")
     if not isinstance(pep_list, list):
         die("peptides/_search_index.json must contain top-level 'peptides' list")

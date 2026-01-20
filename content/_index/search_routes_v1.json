@@ -3,7 +3,7 @@
   "updated_at": "2026-01-20",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
-    "terms": 266,
+    "terms": 287,
     "peptides": 92,
     "blends": 8,
     "categories": 11
@@ -893,6 +893,34 @@
       ]
     },
     {
+      "term": "cognition mood",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "cognition-mood",
+          "topic_id": "topic_cognition_mood",
+          "route": "topic:cognition-mood"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "cognition-mood",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "cognition-mood",
+          "topic_id": "topic_cognition_mood",
+          "route": "topic:cognition-mood"
+        }
+      ],
+      "sources": [
+        "topic:slug"
+      ]
+    },
+    {
       "term": "copper peptide ghk-cu",
       "routes": [
         {
@@ -1185,6 +1213,20 @@
       ]
     },
     {
+      "term": "fat loss metabolism",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "fat-loss-metabolism",
+          "topic_id": "topic_fat_loss_metabolism",
+          "route": "topic:fat-loss-metabolism"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
       "term": "fat targeting peptide",
       "routes": [
         {
@@ -1196,6 +1238,20 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "fat-loss-metabolism",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "fat-loss-metabolism",
+          "topic_id": "topic_fat_loss_metabolism",
+          "route": "topic:fat-loss-metabolism"
+        }
+      ],
+      "sources": [
+        "topic:slug"
       ]
     },
     {
@@ -1596,6 +1652,34 @@
       ]
     },
     {
+      "term": "gut inflammation",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "gut-inflammation",
+          "topic_id": "topic_gut_inflammation",
+          "route": "topic:gut-inflammation"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "gut-inflammation",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "gut-inflammation",
+          "topic_id": "topic_gut_inflammation",
+          "route": "topic:gut-inflammation"
+        }
+      ],
+      "sources": [
+        "topic:slug"
+      ]
+    },
+    {
       "term": "hcap18",
       "routes": [
         {
@@ -1681,6 +1765,34 @@
       ],
       "sources": [
         "peptide_search_index:aliases"
+      ]
+    },
+    {
+      "term": "hormonal endocrine",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "hormonal-endocrine",
+          "topic_id": "topic_hormonal_endocrine",
+          "route": "topic:hormonal-endocrine"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "hormonal-endocrine",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "hormonal-endocrine",
+          "topic_id": "topic_hormonal_endocrine",
+          "route": "topic:hormonal-endocrine"
+        }
+      ],
+      "sources": [
+        "topic:slug"
       ]
     },
     {
@@ -1815,6 +1927,34 @@
       ]
     },
     {
+      "term": "immune modulation",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "immune-modulation",
+          "topic_id": "topic_immune_modulation",
+          "route": "topic:immune-modulation"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "immune-modulation",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "immune-modulation",
+          "topic_id": "topic_immune_modulation",
+          "route": "topic:immune-modulation"
+        }
+      ],
+      "sources": [
+        "topic:slug"
+      ]
+    },
+    {
       "term": "immunity",
       "routes": [
         {
@@ -1868,6 +2008,34 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "injury healing",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "injury-healing",
+          "topic_id": "topic_injury_healing",
+          "route": "topic:injury-healing"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "injury-healing",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "injury-healing",
+          "topic_id": "topic_injury_healing",
+          "route": "topic:injury-healing"
+        }
+      ],
+      "sources": [
+        "topic:slug"
       ]
     },
     {
@@ -2110,6 +2278,34 @@
       ],
       "sources": [
         "synonyms:category_synonyms"
+      ]
+    },
+    {
+      "term": "longevity aging",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "longevity-aging",
+          "topic_id": "topic_longevity_aging",
+          "route": "topic:longevity-aging"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "longevity-aging",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "longevity-aging",
+          "topic_id": "topic_longevity_aging",
+          "route": "topic:longevity-aging"
+        }
+      ],
+      "sources": [
+        "topic:slug"
       ]
     },
     {
@@ -2503,6 +2699,34 @@
       ],
       "sources": [
         "category:label"
+      ]
+    },
+    {
+      "term": "muscle recovery",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "muscle-recovery",
+          "topic_id": "topic_muscle_recovery",
+          "route": "topic:muscle-recovery"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "muscle-recovery",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "muscle-recovery",
+          "topic_id": "topic_muscle_recovery",
+          "route": "topic:muscle-recovery"
+        }
+      ],
+      "sources": [
+        "topic:slug"
       ]
     },
     {
@@ -3109,6 +3333,34 @@
       ]
     },
     {
+      "term": "safety quality",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "safety-quality-testing",
+          "topic_id": "topic_safety_quality_testing",
+          "route": "topic:safety-quality-testing"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "safety-quality-testing",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "safety-quality-testing",
+          "topic_id": "topic_safety_quality_testing",
+          "route": "topic:safety-quality-testing"
+        }
+      ],
+      "sources": [
+        "topic:slug"
+      ]
+    },
+    {
       "term": "scenesse",
       "routes": [
         {
@@ -3275,6 +3527,34 @@
       ]
     },
     {
+      "term": "skin cosmetic health",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "skin-cosmetic-health",
+          "topic_id": "topic_skin_cosmetic",
+          "route": "topic:skin-cosmetic-health"
+        }
+      ],
+      "sources": [
+        "topic:title"
+      ]
+    },
+    {
+      "term": "skin-cosmetic-health",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "skin-cosmetic-health",
+          "topic_id": "topic_skin_cosmetic",
+          "route": "topic:skin-cosmetic-health"
+        }
+      ],
+      "sources": [
+        "topic:slug"
+      ]
+    },
+    {
       "term": "sleep",
       "routes": [
         {
@@ -3296,10 +3576,31 @@
           "taxonomy_key": "sleep_circadian",
           "label": "Sleep / Circadian",
           "route": "category:sleep_circadian"
+        },
+        {
+          "type": "topic",
+          "slug": "sleep-circadian",
+          "topic_id": "topic_sleep_circadian",
+          "route": "topic:sleep-circadian"
         }
       ],
       "sources": [
+        "topic:title",
         "category:label"
+      ]
+    },
+    {
+      "term": "sleep-circadian",
+      "routes": [
+        {
+          "type": "topic",
+          "slug": "sleep-circadian",
+          "topic_id": "topic_sleep_circadian",
+          "route": "topic:sleep-circadian"
+        }
+      ],
+      "sources": [
+        "topic:slug"
       ]
     },
     {
