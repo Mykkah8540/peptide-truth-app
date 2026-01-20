@@ -278,6 +278,66 @@ def main() -> int:
         "terms": out_terms,
     }
 
+
+    # === BACKFILL ROUTES FROM ENTITY_SYNONYMS ===
+
+    # Some entity_synonyms entries were being emitted with route=None in terms[].
+
+    # Ensure every synonym term gets a proper route before writing the index.
+
+    try:
+
+        import json as _json
+
+        from pathlib import Path as _Path
+
+        def _norm(s): return (s or "").strip().lower()
+
+        _syn = _json.loads(_Path("content/_taxonomy/search_synonyms_v1.json").read_text(encoding="utf-8"))
+
+        _ent = _syn.get("entity_synonyms", [])
+
+        _map = {}
+
+        if isinstance(_ent, list):
+
+            for _r in _ent:
+
+                _t = _norm(_r.get("term"))
+
+                _route = (_r.get("route") or "").strip()
+
+                if _t and _route:
+
+                    _map[_t] = _route
+
+        # `terms` should exist in this script as the list being written out
+
+        _fixed = 0
+
+        for _row in terms:
+
+            _t = _norm(_row.get("term"))
+
+            if not _t:
+
+                continue
+
+            if (_row.get("route") is None or (isinstance(_row.get("route"), str) and _row.get("route").strip() == "")) and _t in _map:
+
+                _row["route"] = _map[_t]
+
+                _fixed += 1
+
+        # Optional: print once for visibility when running directly
+
+        # print(f"Backfilled synonym routes: {_fixed}")
+
+    except Exception:
+
+        pass
+
+
     out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {out_path} (terms={len(out_terms)})")
     return 0
