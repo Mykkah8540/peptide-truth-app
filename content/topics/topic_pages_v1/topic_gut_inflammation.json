@@ -1,0 +1,11 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_gut_inflammation",
+  "peptides": [
+    {
+      "slug": "vip",
+      "canonical_name": "VIP"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}

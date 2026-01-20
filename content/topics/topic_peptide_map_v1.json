@@ -54,6 +54,209 @@
       "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
       "confidence": "unknown",
       "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "oxytocin",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "hcg",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "retatrutide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "cagrilintide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "cagrilintide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "pramlintide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "pramlintide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "mazdutide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "mazdutide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "survodutide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "survodutide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_cognition_mood",
+      "peptide_slug": "vip",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_gut_inflammation",
+      "peptide_slug": "vip",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_immune_modulation",
+      "peptide_slug": "vip",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_immune_modulation",
+      "peptide_slug": "ll-37",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "peptide_slug": "ll-37",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "peptide_slug": "snap-8",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_longevity_aging",
+      "peptide_slug": "glutathione",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "peptide_slug": "glutathione",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "adipotide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_cognition_mood",
+      "peptide_slug": "nad-plus",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_longevity_aging",
+      "peptide_slug": "nad-plus",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_fat_loss_metabolism",
+      "peptide_slug": "5-amino-1mq",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_longevity_aging",
+      "peptide_slug": "5-amino-1mq",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_hormonal_endocrine",
+      "peptide_slug": "mk-677",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_muscle_recovery",
+      "peptide_slug": "mk-677",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_sleep_circadian",
+      "peptide_slug": "mk-677",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "peptide_slug": "melanotan-i",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
+    },
+    {
+      "topic_id": "topic_skin_cosmetic",
+      "peptide_slug": "afamelanotide",
+      "rationale": "PLACEHOLDER: descriptive navigation rationale required (not endorsement).",
+      "confidence": "unknown",
+      "evidence_grade": "mechanistic_only"
     }
   ]
 }

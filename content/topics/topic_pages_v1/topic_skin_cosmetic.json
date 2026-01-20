@@ -7,8 +7,28 @@
       "canonical_name": "Acetyl Hexapeptide-8"
     },
     {
+      "slug": "afamelanotide",
+      "canonical_name": "Afamelanotide"
+    },
+    {
       "slug": "ghk-cu",
       "canonical_name": "Copper Tripeptide-1"
+    },
+    {
+      "slug": "glutathione",
+      "canonical_name": "Glutathione"
+    },
+    {
+      "slug": "ll-37",
+      "canonical_name": "LL-37"
+    },
+    {
+      "slug": "melanotan-i",
+      "canonical_name": "Melanotan I"
+    },
+    {
+      "slug": "snap-8",
+      "canonical_name": "SNAP-8"
     }
   ],
   "note": "Navigation only. Not a recommendation or endorsement."

@@ -1,0 +1,15 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_cognition_mood",
+  "peptides": [
+    {
+      "slug": "nad-plus",
+      "canonical_name": "NAD+"
+    },
+    {
+      "slug": "vip",
+      "canonical_name": "VIP"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}

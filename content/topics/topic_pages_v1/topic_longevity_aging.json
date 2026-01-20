@@ -1,0 +1,19 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_longevity_aging",
+  "peptides": [
+    {
+      "slug": "5-amino-1mq",
+      "canonical_name": "5-Amino-1MQ"
+    },
+    {
+      "slug": "glutathione",
+      "canonical_name": "Glutathione"
+    },
+    {
+      "slug": "nad-plus",
+      "canonical_name": "NAD+"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}

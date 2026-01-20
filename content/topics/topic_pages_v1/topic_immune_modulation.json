@@ -1,0 +1,15 @@
+{
+  "schema_version": "topic_page_v1",
+  "topic_id": "topic_immune_modulation",
+  "peptides": [
+    {
+      "slug": "ll-37",
+      "canonical_name": "LL-37"
+    },
+    {
+      "slug": "vip",
+      "canonical_name": "VIP"
+    }
+  ],
+  "note": "Navigation only. Not a recommendation or endorsement."
+}

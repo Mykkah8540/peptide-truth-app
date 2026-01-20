@@ -1,15 +1,7 @@
 {
   "schema_version": "topic_page_v1",
-  "topic_id": "topic_muscle_recovery",
+  "topic_id": "topic_sleep_circadian",
   "peptides": [
-    {
-      "slug": "aod-9604",
-      "canonical_name": "AOD-9604"
-    },
-    {
-      "slug": "bpc-157",
-      "canonical_name": "BPC-157"
-    },
     {
       "slug": "mk-677",
       "canonical_name": "MK-677"

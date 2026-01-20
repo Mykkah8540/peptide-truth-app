@@ -3,8 +3,36 @@
   "topic_id": "topic_fat_loss_metabolism",
   "peptides": [
     {
+      "slug": "5-amino-1mq",
+      "canonical_name": "5-Amino-1MQ"
+    },
+    {
+      "slug": "adipotide",
+      "canonical_name": "Adipotide"
+    },
+    {
       "slug": "aod-9604",
       "canonical_name": "AOD-9604"
+    },
+    {
+      "slug": "cagrilintide",
+      "canonical_name": "Cagrilintide"
+    },
+    {
+      "slug": "mazdutide",
+      "canonical_name": "Mazdutide"
+    },
+    {
+      "slug": "pramlintide",
+      "canonical_name": "Pramlintide"
+    },
+    {
+      "slug": "retatrutide",
+      "canonical_name": "Retatrutide"
+    },
+    {
+      "slug": "survodutide",
+      "canonical_name": "Survodutide"
     }
   ],
   "note": "Navigation only. Not a recommendation or endorsement."

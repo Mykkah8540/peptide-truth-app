@@ -3,8 +3,36 @@
   "topic_id": "topic_hormonal_endocrine",
   "peptides": [
     {
+      "slug": "cagrilintide",
+      "canonical_name": "Cagrilintide"
+    },
+    {
       "slug": "cjc-1295",
       "canonical_name": "CJC-1295"
+    },
+    {
+      "slug": "hcg",
+      "canonical_name": "hCG"
+    },
+    {
+      "slug": "mazdutide",
+      "canonical_name": "Mazdutide"
+    },
+    {
+      "slug": "mk-677",
+      "canonical_name": "MK-677"
+    },
+    {
+      "slug": "oxytocin",
+      "canonical_name": "Oxytocin"
+    },
+    {
+      "slug": "pramlintide",
+      "canonical_name": "Pramlintide"
+    },
+    {
+      "slug": "survodutide",
+      "canonical_name": "Survodutide"
     }
   ],
   "note": "Navigation only. Not a recommendation or endorsement."
