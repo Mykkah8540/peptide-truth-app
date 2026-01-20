@@ -95,6 +95,26 @@ def normalize_query(q: str) -> str:
     s = re.sub(r"\s+", " ", s).strip()
     return s
 
+def query_variants(qn: str) -> list[str]:
+    # Deterministic variants for exact term lookup ONLY.
+    # We keep this conservative to avoid altering peptide identifiers.
+    out = [qn]
+
+    # If it's a plain alphabetic phrase, also try removing common stopwords like "and"
+    # Example: "sleep and circadian" -> "sleep circadian"
+    if re.fullmatch(r"[a-z ]+", qn) and " and " in qn:
+        out.append(re.sub(r"\band\b", " ", qn))
+        out[-1] = re.sub(r"\s+", " ", out[-1]).strip()
+
+    # De-dupe preserving order
+    seen = set()
+    uniq = []
+    for x in out:
+        if x and x not in seen:
+            seen.add(x)
+            uniq.append(x)
+    return uniq
+
 
 @dataclass(frozen=True)
 class Candidate:
@@ -248,7 +268,11 @@ def resolve_query(query_raw: str) -> dict[str, Any]:
         }
 
     # 1) Exact term match (highest confidence)
-    exact = term_map.get(qn)
+    exact = None
+    for qtry in query_variants(qn):
+        exact = term_map.get(qtry)
+        if exact:
+            break
     if exact:
         cands = candidates_from_term(exact)
         cands = sorted(cands, key=prefer_route_order)
@@ -268,6 +292,14 @@ def resolve_query(query_raw: str) -> dict[str, Any]:
 
         # If one clear candidate, route directly.
         # If multiple, still return candidates but do not pick a single route.
+        # TOPIC_PRECEDENCE_EXACT_MATCH
+        # If both Topic and Category are candidates for an exact term match,
+        # choose Topic deterministically to represent the concept page.
+        if len(cands) > 1:
+            topic_only = [c for c in cands if c.type == "entity" and c.kind == "topic"]
+            if topic_only:
+                cands = [topic_only[0]]
+
         if len(cands) == 1:
             intent = "direct_entity" if cands[0].type == "entity" else "direct_category"
             return {
@@ -302,7 +334,16 @@ def resolve_query(query_raw: str) -> dict[str, Any]:
             if c.type == "category":
                 category_hits.append(c)
     if category_hits:
-        category_hits = sorted(category_hits, key=prefer_route_order)
+        # De-dupe category hits (prevents duplicated category routes from token overlap)
+        uniq = []
+        seen = set()
+        for c in category_hits:
+            k = (c.route, c.type, c.kind, c.slug, c.taxonomy_key)
+            if k in seen:
+                continue
+            seen.add(k)
+            uniq.append(c)
+        category_hits = sorted(uniq, key=prefer_route_order)
         # Deterministically pick first category hit as primary route
         primary = category_hits[0]
         return {
