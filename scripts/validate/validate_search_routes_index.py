@@ -98,7 +98,7 @@ def main() -> int:
             if rtype == "entity":
                 kind = r.get("kind")
                 slug = r.get("slug")
-                if kind not in ("peptide", "blend"):
+                if kind not in ("peptide", "blend", "topic"):
                     die(f"Invalid entity kind in term '{term}': {kind}")
                 if not isinstance(slug, str) or not slug.strip():
                     die(f"Invalid entity slug in term '{term}': {slug}")

@@ -56,7 +56,16 @@ def add_term_map(term_map: dict, term: str, route: dict, source: str) -> None:
         return
     entry = term_map.setdefault(t, {"term": t, "routes": [], "sources": []})
     # avoid duplicate routes
-    if route not in entry["routes"]:
+    # de-dupe routes by the 'route' string (more robust than dict equality)
+    route_key = route.get('route') if isinstance(route, dict) else None
+    already = False
+    if isinstance(route_key, str) and route_key.strip():
+        for r in entry['routes']:
+            if isinstance(r, dict) and r.get('route') == route_key:
+                already = True
+                break
+    if not already:
+        entry['routes'].append(route)
         entry["routes"].append(route)
     if source not in entry["sources"]:
         entry["sources"].append(source)
@@ -84,8 +93,12 @@ def main() -> int:
 
     peptides = entities.get("peptides")
     blends = entities.get("blends")
-    if not isinstance(peptides, list) or not isinstance(blends, list):
-        die("entities_v1.json must contain top-level 'peptides' and 'blends' lists")
+    topics = entities.get("topics")
+    topics = entities.get("topics", [])
+    if topics is None:
+        topics = []
+    if not isinstance(peptides, list) or not isinstance(blends, list) or not isinstance(topics, list):
+        die("entities_v1.json must contain top-level 'peptides' and 'blends' lists (topics optional) (and optional 'topics' list)")
 
     # Build existence sets
     peptide_slugs = set()
@@ -145,6 +158,22 @@ def main() -> int:
             topic_titles[slug] = title.strip()
             topic_ids[slug] = tid.strip()
 
+
+    # Topics (optional) from entities_v1.json
+    topic_slugs = set()
+    topic_display = {}
+    for e in topics:
+        if not isinstance(e, dict):
+            continue
+        if e.get('kind') != 'topic':
+            continue
+        slug = e.get('slug')
+        if isinstance(slug, str) and slug.strip():
+            slug = slug.strip()
+            topic_slugs.add(slug)
+            dn = e.get('display_name') or slug
+            topic_display[slug] = dn
+
     # Categories (peptide taxonomy keys)
     pep_classes = pep_cats.get("peptide_classes")
     if not isinstance(pep_classes, list):
@@ -178,11 +207,29 @@ def main() -> int:
     for slug in sorted(blend_slugs):
         add_term_map(term_map, slug, {"type": "entity", "kind": "blend", "slug": slug, "route": f"blend:{slug}"}, "slug")
 
-    # B) Names + aliases from peptide_search_index_v1
-    # A2) Topics should be routable by slug + title
+
+    # Topics: exact slugs + titles should be routable
+    topic_slugs = set()
+    topic_display = {}
+    if isinstance(topics, list):
+        for t in topics:
+            if not isinstance(t, dict):
+                continue
+            if t.get('kind') != 'topic':
+                continue
+            slug = t.get('slug')
+            dn = t.get('display_name') or slug
+            if isinstance(slug, str) and slug.strip():
+                slug = slug.strip()
+                topic_slugs.add(slug)
+                if isinstance(dn, str) and dn.strip():
+                    topic_display[slug] = dn.strip()
+
     for slug in sorted(topic_slugs):
-        add_term_map(term_map, slug, {"type": "topic", "slug": slug, "topic_id": topic_ids.get(slug, ""), "route": f"topic:{slug}"}, "topic:slug")
-        add_term_map(term_map, topic_titles.get(slug, slug), {"type": "topic", "slug": slug, "topic_id": topic_ids.get(slug, ""), "route": f"topic:{slug}"}, "topic:title")
+        add_term_map(term_map, slug, {'type':'topic','slug':slug,'route':f'topic:{slug}'}, 'topic:slug')
+        dn = topic_display.get(slug)
+        if dn:
+            add_term_map(term_map, dn, {'type':'topic','slug':slug,'route':f'topic:{slug}'}, 'topic:title')
 
     pep_list = pep_search.get("peptides")
     if not isinstance(pep_list, list):
@@ -226,6 +273,11 @@ def main() -> int:
             die(f"blends registry contains blend slug not in entities_v1: {slug}")
         dn = b.get("display_name") or blend_display.get(slug, slug)
         add_term_map(term_map, str(dn), {"type": "entity", "kind": "blend", "slug": slug, "route": f"blend:{slug}"}, "blend_registry:display_name")
+
+    # Topic display names should be routable
+    for slug in sorted(topic_slugs):
+        dn = topic_display.get(slug, slug)
+        add_term_map(term_map, str(dn), {"type": "entity", "kind": "topic", "slug": slug, "route": f"topic:{slug}"}, "topic:display_name")
 
     # D) Categories: allow routing via label and key (keys already routable via slug-like)
     for k in category_keys:
