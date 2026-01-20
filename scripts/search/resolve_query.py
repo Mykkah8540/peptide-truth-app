@@ -238,6 +238,19 @@ def resolve_query(query_raw: str) -> dict[str, Any]:
         cands = candidates_from_term(exact)
         cands = sorted(cands, key=prefer_route_order)
 
+        # De-dupe exact-match candidates (same route may appear multiple times in search_routes_v1)
+        # If duplicates inflate len(cands), we incorrectly fall back to search_results.
+        uniq = []
+        seen = set()
+        for c in cands:
+            k = (c.route, c.type, c.kind, c.slug, c.taxonomy_key)
+            if k in seen:
+                continue
+            seen.add(k)
+            uniq.append(c)
+        cands = uniq
+
+
         # If one clear candidate, route directly.
         # If multiple, still return candidates but do not pick a single route.
         if len(cands) == 1:
