@@ -18,7 +18,8 @@
       "evidence_grade": "regulatory_label",
       "rationale": "Human clinical exposure exists; risks depend on indication, dosing, and patient factors.",
       "unknowns_penalty": true,
-      "developmental_risk": true
+      "developmental_risk": true,
+      "risk_score": 6
     },
     "sections": {
       "overview": [

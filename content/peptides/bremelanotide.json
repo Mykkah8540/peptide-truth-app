@@ -37,7 +37,8 @@
         "melanocortin",
         "hormonal",
         "puberty"
-      ]
+      ],
+      "risk_score": 5
     },
     "sections": {
       "overview": [

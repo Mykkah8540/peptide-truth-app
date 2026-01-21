@@ -34,7 +34,8 @@
       "evidence_grade": "human_interventional",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "Topical cosmetic use generally presents low systemic risk. Main uncertainty comes from variable formulations, inconsistent objective outcomes across small human studies, and limited standardized long-term safety characterization across product types."
+      "rationale": "Topical cosmetic use generally presents low systemic risk. Main uncertainty comes from variable formulations, inconsistent objective outcomes across small human studies, and limited standardized long-term safety characterization across product types.",
+      "risk_score": 2
     },
     "sections": {
       "overview": [

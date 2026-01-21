@@ -36,7 +36,8 @@
         "gh_igf",
         "metabolic",
         "puberty"
-      ]
+      ],
+      "risk_score": 4
     },
     "sections": {
       "overview": [

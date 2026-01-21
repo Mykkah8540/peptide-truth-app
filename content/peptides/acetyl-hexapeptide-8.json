@@ -32,7 +32,8 @@
       "evidence_grade": "human_interventional",
       "developmental_risk": false,
       "unknowns_penalty": true,
-      "rationale": "Topical cosmetic use is generally low systemic risk and small human studies report few significant adverse events. Major uncertainty comes from formulation variability (delivery/penetration), heterogeneous evidence quality, and limited long-term data at high exposure."
+      "rationale": "Topical cosmetic use is generally low systemic risk and small human studies report few significant adverse events. Major uncertainty comes from formulation variability (delivery/penetration), heterogeneous evidence quality, and limited long-term data at high exposure.",
+      "risk_score": 2
     },
     "sections": {
       "overview": [

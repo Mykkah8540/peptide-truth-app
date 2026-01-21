@@ -32,7 +32,8 @@
       "evidence_grade": "animal",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "Key uncertainty is that many benefits are inferred from broader thymosin beta-4 biology and animal work, while real-world risk includes sourcing purity and unregulated administration. Developmental risk flagged due to common youth-athlete interest and limited safety characterization."
+      "rationale": "Key uncertainty is that many benefits are inferred from broader thymosin beta-4 biology and animal work, while real-world risk includes sourcing purity and unregulated administration. Developmental risk flagged due to common youth-athlete interest and limited safety characterization.",
+      "risk_score": 6
     },
     "sections": {
       "overview": [

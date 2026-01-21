@@ -33,7 +33,8 @@
       "evidence_grade": "human_interventional",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "Manipulating GH/IGF axis has systemic downstream effects (glucose handling, edema, blood pressure, sleep). Human studies show endocrine effects; however, long-term outcomes and safety in non-medical enhancement contexts are uncertain. Adolescents are higher consequence risk due to developing endocrine setpoints."
+      "rationale": "Manipulating GH/IGF axis has systemic downstream effects (glucose handling, edema, blood pressure, sleep). Human studies show endocrine effects; however, long-term outcomes and safety in non-medical enhancement contexts are uncertain. Adolescents are higher consequence risk due to developing endocrine setpoints.",
+      "risk_score": 7
     },
     "sections": {
       "overview": [
