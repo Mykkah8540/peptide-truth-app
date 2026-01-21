@@ -81,6 +81,9 @@ const sections = p?.sections ?? {};
       />
 
       <IdentityPanel
+        kind="peptide"
+        slug={slug}
+        riskScore={riskHit ? riskHit.risk.risk_score : null}
         canonicalName={p?.canonical_name}
         shortName={p?.short_name}
         aliases={mergedAliases}

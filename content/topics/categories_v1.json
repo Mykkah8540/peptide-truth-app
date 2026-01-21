@@ -1,0 +1,40 @@
+{
+  "schema_version": "topic_categories_v1",
+  "categories": [
+    {
+      "slug": "fat-loss-metabolism",
+      "title": "Fat Loss & Metabolism",
+      "topic_slugs": ["fat-loss-metabolism"]
+    },
+    {
+      "slug": "cognition-mood",
+      "title": "Cognition & Mood",
+      "topic_slugs": ["cognition-mood"]
+    },
+    {
+      "slug": "gut-inflammation",
+      "title": "Gut & Inflammation",
+      "topic_slugs": ["gut-inflammation"]
+    },
+    {
+      "slug": "recovery-performance",
+      "title": "Recovery & Performance",
+      "topic_slugs": []
+    },
+    {
+      "slug": "skin-hair",
+      "title": "Skin & Aesthetics",
+      "topic_slugs": []
+    },
+    {
+      "slug": "sleep-stress",
+      "title": "Sleep & Stress",
+      "topic_slugs": []
+    },
+    {
+      "slug": "longevity-healthspan",
+      "title": "Longevity & Healthspan",
+      "topic_slugs": []
+    }
+  ]
+}

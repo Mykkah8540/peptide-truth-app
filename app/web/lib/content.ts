@@ -458,3 +458,58 @@ export function filterByQuery<T extends { name?: string; title?: string; slug: s
     return expanded.some((term) => hay.includes(term));
   });
 }
+
+
+/* ------------------------------
+   Stack Builder goals (V1)
+   Source-of-truth: content/stack_builder/goals_v1.json
+-------------------------------- */
+
+type StackBuilderGoalsV1 = {
+  schema_version?: string; // expected: "stack_builder_goals_v1" (kept optional for forward-compat)
+  goals: Array<{
+    goal_id: string;
+    title: string;
+    description?: string;
+    // Goal routing (topic ids are the stable join key)
+    primary_topic_id?: string;
+    secondary_topic_ids?: string[];
+  }>;
+  updated_at?: string;
+};
+
+export function loadStackBuilderGoals(): StackBuilderGoalsV1 | null {
+  const root = repoRoot();
+  const fp = path.join(root, "content", "stack_builder", "goals_v1.json");
+  try {
+    const doc = readJson<any>(fp);
+    if (doc?.schema_version !== "stack_builder_goals_v1") return null;
+    if (!Array.isArray(doc?.goals)) return null;
+    return doc as StackBuilderGoalsV1;
+  } catch {
+    return null;
+  }
+}
+
+/* ------------------------------
+   Topic page loader (topic_page_v1)
+   Topics live under content/topics/pages/*.json
+-------------------------------- */
+
+export function loadTopicPageV1BySlug(slug: string): TopicPageDocV1 | null {
+  const root = repoRoot();
+  const s = (slug || "").trim();
+  if (!s) return null;
+
+  const fp = path.join(root, "content", "topics", "pages", `${s}.json`);
+  if (!existsSync(fp)) return null;
+
+  try {
+    const doc = readJson<any>(fp);
+    if (doc?.schema_version !== "topic_page_v1") return null;
+    if (!doc?.topic_page?.topic_id) return null;
+    return doc as TopicPageDocV1;
+  } catch {
+    return null;
+  }
+}

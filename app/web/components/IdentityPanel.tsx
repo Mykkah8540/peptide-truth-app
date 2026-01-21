@@ -1,5 +1,9 @@
+import RiskBadge from "@/components/RiskBadge";
 type Props = {
-  canonicalName?: string | null;
+  kind?: "peptide" | "blend" | "topic" | null;
+  slug?: string | null;
+  riskScore?: number | null;
+canonicalName?: string | null;
   shortName?: string | null;
   aliases?: string[] | null;
   aminoAcidSeq?: string | null;
@@ -18,15 +22,26 @@ function Row({ label, value }: { label: string; value?: string | number | null }
 }
 
 export default function IdentityPanel(props: Props) {
-  const aliases = (props.aliases ?? []).map((a) => (a || "").trim()).filter(Boolean);
+    const aliases = Array.from(
+    new Set((props.aliases ?? []).map((a) => (a || "").trim()).filter(Boolean))
+  ).sort((a, b) => a.localeCompare(b));
 
   return (
     <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
       <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Identity</h2>
 
+      {props.riskScore !== undefined && props.riskScore !== null ? (
+        <div style={{ marginTop: 10 }}>
+          <RiskBadge score={props.riskScore} />
+        </div>
+      ) : null}
+
+
       <div style={{ marginTop: 10 }}>
         <Row label="Canonical name" value={props.canonicalName ?? null} />
-        <Row label="Short name" value={props.shortName ?? null} />
+                <Row label="Kind" value={props.kind ?? null} />
+        <Row label="Slug" value={props.slug ?? null} />
+<Row label="Short name" value={props.shortName ?? null} />
 
         {aliases.length ? (
           <div style={{ padding: "8px 0" }}>

@@ -23,3 +23,6 @@ scripts/audit/_reports/
 ui_stack_audit.txt
 *.bak
 *.bak.*
+
+# backup artifacts
+*.bak*

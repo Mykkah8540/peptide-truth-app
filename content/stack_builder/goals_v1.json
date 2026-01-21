@@ -1,0 +1,47 @@
+{
+  "schema_version": "stack_builder_goals_v1",
+  "goals": [
+    {
+      "goal_id": "fat_loss",
+      "title": "Fat loss & metabolism",
+      "description": "Appetite, satiety, glucose control, metabolic health, body composition.",
+      "topic_ids": ["fat-loss-metabolism"]
+    },
+    {
+      "goal_id": "recovery",
+      "title": "Recovery & injury",
+      "description": "Soft tissue recovery, repair pathways, inflammation-aware recovery.",
+      "topic_ids": ["recovery-injury"]
+    },
+    {
+      "goal_id": "gut",
+      "title": "Gut & inflammation",
+      "description": "Gut lining, inflammation signaling, GI symptom patterns.",
+      "topic_ids": ["gut-inflammation"]
+    },
+    {
+      "goal_id": "cognition_mood",
+      "title": "Cognition & mood",
+      "description": "Focus, mood, resilience, stress response, sleep-adjacent cognition.",
+      "topic_ids": ["cognition-mood"]
+    },
+    {
+      "goal_id": "sleep",
+      "title": "Sleep",
+      "description": "Sleep architecture support, stress downshift, recovery sleep.",
+      "topic_ids": ["sleep"]
+    },
+    {
+      "goal_id": "skin_hair",
+      "title": "Skin & cosmetic peptides",
+      "description": "Skin barrier, collagen signaling, cosmetic peptide families.",
+      "topic_ids": ["skin-hair"]
+    },
+    {
+      "goal_id": "longevity",
+      "title": "Longevity & healthspan",
+      "description": "Mitochondria, NAD pathways, metabolic flexibility, aging-adjacent themes.",
+      "topic_ids": ["longevity-healthspan"]
+    }
+  ]
+}

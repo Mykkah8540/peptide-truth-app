@@ -34,8 +34,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
       <div style={{ marginTop: 16 }}>
         {riskHit ? (
           <>
-            <RiskBadge score={riskHit.risk.risk_score} />
-            <SafetyLinks safetyIds={riskHit.safety_links} />
+<SafetyLinks safetyIds={riskHit.safety_links} />
             {riskHit.risk.computed_from_components && Array.isArray(riskHit.risk.component_slugs) ? (
               <div style={{ marginTop: 12, fontSize: 13, opacity: 0.85 }}>
                 Computed from components: {riskHit.risk.component_slugs.join(", ")}
@@ -48,6 +47,9 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
       </div>
 
       <IdentityPanel
+        kind="blend"
+        slug={slug}
+        riskScore={riskHit ? riskHit.risk.risk_score : null}
         canonicalName={b?.canonical_name ?? null}
         shortName={b?.short_name ?? null}
         aliases={mergedAliases}
