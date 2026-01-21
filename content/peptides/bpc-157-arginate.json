@@ -80,7 +80,15 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "pLACEHOLDER: What it is; intended biological purpose; why it is studied",
+        "tendon and ligament recovery support",
+        "soft tissue healing after overuse or injury",
+        "return-to-training support during rehab",
+        "joint comfort and mobility support",
+        "interest in tissue repair pathways"
+      ]
     },
     "interactions": {
       "drug_classes": [],

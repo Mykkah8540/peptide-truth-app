@@ -375,5 +375,16 @@
       "slug": "ziconotide",
       "canonical_name": "Ziconotide"
     }
-  ]
+  ],
+  "peptide": {
+    "sections": {
+      "current_outlook_bullets": [
+        "general recovery and resilience interest (anecdotal)",
+        "common biohacker curiosity due to community reports",
+        "interest in mechanisms suggested by early evidence",
+        "used in goal-based stacking discussions (anecdotal)",
+        "exploration in wellness communities despite evidence limits"
+      ]
+    }
+  }
 }

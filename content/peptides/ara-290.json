@@ -80,7 +80,16 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "a bioactive compound discussed in research and/or clinical contexts",
+        "this entry summarizes what it is, what it is studied for, and what evidence does and does not support, without providing protocols",
+        "tendon and ligament recovery support",
+        "soft tissue healing after overuse or injury",
+        "return-to-training support during rehab",
+        "joint comfort and mobility support",
+        "interest in tissue repair pathways"
+      ]
     },
     "interactions": {
       "drug_classes": [],

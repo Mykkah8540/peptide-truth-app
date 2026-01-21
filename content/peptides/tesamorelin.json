@@ -9,7 +9,7 @@
     "classification": {
       "category": "approved_human",
       "needs_prescription": true,
-      "notes": "Synthetic peptide related to the GHRH class (growth hormone–releasing hormone analog). Discussed here for mechanism, evidence, and safety context only; not a use guide."
+      "notes": "Synthetic peptide related to the GHRH class (growth hormone\u2013releasing hormone analog). Discussed here for mechanism, evidence, and safety context only; not a use guide."
     },
     "status": {
       "category": "approved_human",
@@ -86,7 +86,13 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "a synthetic peptide designed to act on the GHRH pathway, which can influence growth hormone signaling and downstream metabolic effects",
+        "studied primarily in human clinical contexts where changes in body composition and related biomarkers are relevant",
+        "weight-loss support (commonly discussed)",
+        "metabolic health support (anecdotal)"
+      ]
     },
     "interactions": {
       "drug_classes": [],
@@ -152,7 +158,7 @@
   "classification": {
     "category": "approved_human",
     "needs_prescription": true,
-    "notes": "Synthetic peptide related to the GHRH class (growth hormone–releasing hormone analog). Discussed here for mechanism, evidence, and safety context only; not a use guide."
+    "notes": "Synthetic peptide related to the GHRH class (growth hormone\u2013releasing hormone analog). Discussed here for mechanism, evidence, and safety context only; not a use guide."
   },
   "status": {
     "category": "approved_human",

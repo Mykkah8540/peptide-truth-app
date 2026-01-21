@@ -85,7 +85,16 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "a synthetic peptide based on tuftsin-related sequences, developed to influence neuromodulatory pathways relevant to anxiety and cognition",
+        "evidence includes mechanistic work and clinical reports, but overall evidence quality varies and many claims lack large, modern, independent replication",
+        "general recovery and resilience interest (anecdotal)",
+        "common biohacker curiosity due to community reports",
+        "interest in mechanisms suggested by early evidence",
+        "used in goal-based stacking discussions (anecdotal)",
+        "exploration in wellness communities despite evidence limits"
+      ]
     },
     "interactions": {
       "drug_classes": [],

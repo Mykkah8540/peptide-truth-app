@@ -87,7 +87,17 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "a synthetic GHRP-class peptide studied for short-term effects on GH release and downstream endocrine/metabolic signaling",
+        "weight-loss support (commonly discussed)",
+        "metabolic health support (anecdotal)",
+        "general recovery and resilience interest (anecdotal)",
+        "common biohacker curiosity due to community reports",
+        "interest in mechanisms suggested by early evidence",
+        "used in goal-based stacking discussions (anecdotal)",
+        "exploration in wellness communities despite evidence limits"
+      ]
     },
     "interactions": {
       "drug_classes": [],

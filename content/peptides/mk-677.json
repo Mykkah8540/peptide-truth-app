@@ -82,7 +82,16 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "a bioactive compound discussed in research and/or clinical contexts",
+        "this entry summarizes what it is, what it is studied for, and key evidence limitations without providing protocols",
+        "sleep quality support",
+        "falling asleep more easily (anecdotal)",
+        "staying asleep through the night (anecdotal)",
+        "circadian rhythm support",
+        "next-day recovery and readiness support"
+      ]
     },
     "interactions": {
       "drug_classes": [],

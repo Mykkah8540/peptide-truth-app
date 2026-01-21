@@ -89,7 +89,18 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "copper Tripeptide-1 (GHK-Cu) is a copper-binding peptide complex used in topical products for skin appearance and barrier-related goals",
+        "evidence includes small human studies and broader reviews; results may depend on formulation and delivery to target layers",
+        "skin appearance and texture support",
+        "interest in skin remodeling pathways",
+        "general recovery and resilience interest (anecdotal)",
+        "common biohacker curiosity due to community reports",
+        "interest in mechanisms suggested by early evidence",
+        "used in goal-based stacking discussions (anecdotal)",
+        "exploration in wellness communities despite evidence limits"
+      ]
     },
     "interactions": {
       "drug_classes": [],

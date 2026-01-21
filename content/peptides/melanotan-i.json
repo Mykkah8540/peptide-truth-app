@@ -83,7 +83,16 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": []
+      "interaction_summary": [],
+      "current_outlook_bullets": [
+        "a bioactive compound discussed in research and/or clinical contexts",
+        "this entry summarizes what it is, what it is studied for, and key evidence limitations without providing protocols",
+        "general recovery and resilience interest (anecdotal)",
+        "common biohacker curiosity due to community reports",
+        "interest in mechanisms suggested by early evidence",
+        "used in goal-based stacking discussions (anecdotal)",
+        "exploration in wellness communities despite evidence limits"
+      ]
     },
     "interactions": {
       "drug_classes": [],
