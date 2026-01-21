@@ -1,0 +1,1872 @@
+{
+  "palmitoyl-tripeptide-1": {
+    "canonical_slug": "palmitoyl-tripeptide-1",
+    "canonical_name": "palmitoyl-tripeptide-1",
+    "candidate_terms": [
+      "palmitoyl",
+      "palmitoyl tripeptide 1",
+      "palmitoyl-tripeptide-1",
+      "palmitoyltripeptide",
+      "palmitoyltripeptide1",
+      "matrixyl 3000",
+      "pal ghk",
+      "pal-ghk",
+      "palmitoyl ghk",
+      "palmitoyl tripeptide-1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "palmitoyl tripeptide 1",
+      "palmitoyl-tripeptide-1",
+      "palmitoyltripeptide1",
+      "palmitoyl",
+      "palmitoyltripeptide",
+      "matrixyl 3000",
+      "pal ghk",
+      "pal-ghk",
+      "palmitoyl ghk",
+      "palmitoyl tripeptide-1"
+    ],
+    "rejected_terms": [],
+    "notes": "Often referenced as Pal-GHK and as a component of Matrixyl 3000 (a blend)."
+  },
+  "mazdutide": {
+    "canonical_slug": "mazdutide",
+    "canonical_name": "Mazdutide",
+    "candidate_terms": [
+      "mazdutide",
+      "ibi 362",
+      "ibi-362",
+      "ibi362",
+      "ly 3305677",
+      "ly-3305677",
+      "ly3305677"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "mazdutide",
+      "ibi 362",
+      "ibi-362",
+      "ibi362",
+      "ly 3305677",
+      "ly-3305677",
+      "ly3305677"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly referenced by development codes IBI362 / LY3305677."
+  },
+  "ipamorelin": {
+    "canonical_slug": "ipamorelin",
+    "canonical_name": "Ipamorelin",
+    "candidate_terms": [
+      "ipamorelin",
+      "ipa"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ipamorelin",
+      "ipa"
+    ],
+    "rejected_terms": [],
+    "notes": "“IPA” is common shorthand but can be ambiguous; keep if search UX benefits."
+  },
+  "ara-290": {
+    "canonical_slug": "ara-290",
+    "canonical_name": "Ara-290",
+    "candidate_terms": [
+      "ara",
+      "ara 290",
+      "ara-290",
+      "ara290",
+      "cibinetide",
+      "hbsp",
+      "phbsp",
+      "pyroglutamate hbsp",
+      "pyroglutamate helix b surface peptide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ara 290",
+      "ara-290",
+      "ara290",
+      "cibinetide",
+      "phbsp",
+      "pyroglutamate hbsp",
+      "pyroglutamate helix b surface peptide",
+      "ara",
+      "hbsp"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly referenced as cibinetide; also appears as HBSP/PHBSP naming variants."
+  },
+  "cjc-1295": {
+    "canonical_slug": "cjc-1295",
+    "canonical_name": "Cjc-1295",
+    "candidate_terms": [
+      "cjc",
+      "cjc 1295",
+      "cjc-1295",
+      "cjc1295",
+      "cjc 1295 no dac",
+      "cjc no dac",
+      "cjc-1295 no dac",
+      "cjc1295 no dac",
+      "cjc1295 nodac"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "cjc 1295",
+      "cjc-1295",
+      "cjc1295",
+      "cjc 1295 no dac",
+      "cjc no dac",
+      "cjc-1295 no dac",
+      "cjc1295 no dac",
+      "cjc1295 nodac"
+    ],
+    "rejected_terms": [
+      "cjc"
+    ],
+    "notes": "“CJC” alone is very ambiguous; consider rejecting it if it causes misroutes."
+  },
+  "bpc-157-arginate": {
+    "canonical_slug": "bpc-157-arginate",
+    "canonical_name": "bpc-157-arginate",
+    "candidate_terms": [
+      "bpc",
+      "bpc 157 arginate",
+      "bpc-157-arginate",
+      "bpc157",
+      "bpc157arginate",
+      "bpc arginate",
+      "bpc-157 arginate",
+      "bpc157 arginate"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "bpc 157 arginate",
+      "bpc-157-arginate",
+      "bpc157arginate",
+      "bpc157",
+      "bpc arginate",
+      "bpc-157 arginate",
+      "bpc157 arginate"
+    ],
+    "rejected_terms": [
+      "bpc"
+    ],
+    "notes": "Keep separate from standard BPC-157."
+  },
+  "thymosin-beta-4": {
+    "canonical_slug": "thymosin-beta-4",
+    "canonical_name": "Thymosin Beta-4",
+    "candidate_terms": [
+      "thymosin",
+      "thymosin beta 4",
+      "thymosin-beta-4",
+      "thymosinbeta",
+      "thymosinbeta4",
+      "tb4",
+      "tb-4",
+      "thymosin b4",
+      "thymosin beta-4",
+      "tβ4"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "thymosin beta 4",
+      "thymosin-beta-4",
+      "thymosinbeta4",
+      "thymosinbeta",
+      "tb4",
+      "tb-4",
+      "thymosin b4",
+      "thymosin beta-4",
+      "tβ4"
+    ],
+    "rejected_terms": [
+      "thymosin"
+    ],
+    "notes": "Frequently confused with TB-500 in forums; do NOT alias them as identical."
+  },
+  "5-amino-1mq": {
+    "canonical_slug": "5-amino-1mq",
+    "canonical_name": "5 Amino 1mq",
+    "candidate_terms": [
+      "5 amino 1mq",
+      "5-amino-1mq",
+      "5amino",
+      "5amino1mq",
+      "1mq"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "5 amino 1mq",
+      "5-amino-1mq",
+      "5amino1mq",
+      "5amino",
+      "1mq"
+    ],
+    "rejected_terms": [],
+    "notes": "Often referenced simply as “1MQ”."
+  },
+  "bivalirudin": {
+    "canonical_slug": "bivalirudin",
+    "canonical_name": "bivalirudin",
+    "candidate_terms": [
+      "bivalirudin",
+      "angiomax"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "bivalirudin",
+      "angiomax"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "substance-p": {
+    "canonical_slug": "substance-p",
+    "canonical_name": "substance-p",
+    "candidate_terms": [
+      "substance",
+      "substance p",
+      "substance-p",
+      "substancep"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "substance p",
+      "substance-p",
+      "substancep"
+    ],
+    "rejected_terms": [
+      "substance"
+    ],
+    "notes": "“Substance” alone is ambiguous; consider rejecting."
+  },
+  "mots-c": {
+    "canonical_slug": "mots-c",
+    "canonical_name": "Mots C",
+    "candidate_terms": [
+      "mots",
+      "mots c",
+      "mots-c",
+      "motsc"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "mots c",
+      "mots-c",
+      "motsc"
+    ],
+    "rejected_terms": [
+      "mots"
+    ],
+    "notes": "“MOTS” alone may be ambiguous in some contexts."
+  },
+  "exenatide": {
+    "canonical_slug": "exenatide",
+    "canonical_name": "exenatide",
+    "candidate_terms": [
+      "exenatide",
+      "bydureon",
+      "byetta",
+      "exendin-4",
+      "exendin 4"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "exenatide",
+      "bydureon",
+      "byetta",
+      "exendin-4",
+      "exendin 4"
+    ],
+    "rejected_terms": [],
+    "notes": "Often referenced as exendin-4; includes common brands."
+  },
+  "gonadorelin": {
+    "canonical_slug": "gonadorelin",
+    "canonical_name": "gonadorelin",
+    "candidate_terms": [
+      "gonadorelin",
+      "gnrh",
+      "lhrh"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "gonadorelin",
+      "gnrh",
+      "lhrh"
+    ],
+    "rejected_terms": [],
+    "notes": "Gonadorelin is also known as GnRH/LHRH in clinical contexts."
+  },
+  "tirzepatide": {
+    "canonical_slug": "tirzepatide",
+    "canonical_name": "tirzepatide",
+    "candidate_terms": [
+      "tirzepatide",
+      "gip glp-1",
+      "gip/glp-1",
+      "ly 3298176",
+      "ly-3298176",
+      "ly3298176",
+      "mounjaro",
+      "zepbound"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "tirzepatide",
+      "gip glp-1",
+      "gip/glp-1",
+      "ly 3298176",
+      "ly-3298176",
+      "ly3298176",
+      "mounjaro",
+      "zepbound"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly searched by brands (Mounjaro/Zepbound) and code LY3298176."
+  },
+  "kpv": {
+    "canonical_slug": "kpv",
+    "canonical_name": "Kpv",
+    "candidate_terms": [
+      "kpv",
+      "lys-pro-val",
+      "lys pro val"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "kpv",
+      "lys-pro-val",
+      "lys pro val"
+    ],
+    "rejected_terms": [],
+    "notes": "Tripeptide is sometimes referenced by amino-acid shorthand."
+  },
+  "glucagon": {
+    "canonical_slug": "glucagon",
+    "canonical_name": "glucagon",
+    "candidate_terms": [
+      "glucagon"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "glucagon"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "eptifibatide": {
+    "canonical_slug": "eptifibatide",
+    "canonical_name": "eptifibatide",
+    "candidate_terms": [
+      "eptifibatide",
+      "integrilin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "eptifibatide",
+      "integrilin"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "vasopressin": {
+    "canonical_slug": "vasopressin",
+    "canonical_name": "vasopressin",
+    "candidate_terms": [
+      "vasopressin",
+      "adh",
+      "arginine vasopressin",
+      "avp"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "vasopressin",
+      "arginine vasopressin",
+      "adh",
+      "avp"
+    ],
+    "rejected_terms": [],
+    "notes": "ADH can be ambiguous; consider rejecting if it causes collisions."
+  },
+  "brain-natriuretic-peptide": {
+    "canonical_slug": "brain-natriuretic-peptide",
+    "canonical_name": "brain-natriuretic-peptide",
+    "candidate_terms": [
+      "brain",
+      "brain natriuretic peptide",
+      "brain-natriuretic-peptide",
+      "brainnatriuretic",
+      "brainnatriureticpeptide",
+      "bnp"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "brain natriuretic peptide",
+      "brain-natriuretic-peptide",
+      "brainnatriureticpeptide",
+      "brainnatriuretic",
+      "bnp"
+    ],
+    "rejected_terms": [
+      "brain"
+    ],
+    "notes": "BNP is extremely common in medical contexts; include for search."
+  },
+  "shlp-2": {
+    "canonical_slug": "shlp-2",
+    "canonical_name": "shlp-2",
+    "candidate_terms": [
+      "shlp",
+      "shlp 2",
+      "shlp-2",
+      "shlp2"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "shlp 2",
+      "shlp-2",
+      "shlp2",
+      "shlp"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "ghk-cu": {
+    "canonical_slug": "ghk-cu",
+    "canonical_name": "Ghk Cu",
+    "candidate_terms": [
+      "ghk",
+      "ghk cu",
+      "ghk-cu",
+      "ghkcu",
+      "copper peptide",
+      "copper tripeptide",
+      "copper tripeptide-1",
+      "ghk copper"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ghk cu",
+      "ghk-cu",
+      "ghkcu",
+      "copper peptide",
+      "copper tripeptide",
+      "copper tripeptide-1",
+      "ghk copper",
+      "ghk"
+    ],
+    "rejected_terms": [],
+    "notes": "Frequently searched as “copper peptide” / “copper tripeptide-1”."
+  },
+  "peg-mgf": {
+    "canonical_slug": "peg-mgf",
+    "canonical_name": "peg-mgf",
+    "candidate_terms": [
+      "peg",
+      "peg mgf",
+      "peg-mgf",
+      "pegmgf",
+      "igf-1ec",
+      "mgf",
+      "mechano growth factor"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "peg mgf",
+      "peg-mgf",
+      "pegmgf",
+      "igf-1ec",
+      "mechano growth factor",
+      "mgf"
+    ],
+    "rejected_terms": [
+      "peg"
+    ],
+    "notes": "Often referenced as MGF (mechano growth factor); IGF-1Ec appears in some discussions."
+  },
+  "desmopressin": {
+    "canonical_slug": "desmopressin",
+    "canonical_name": "desmopressin",
+    "candidate_terms": [
+      "desmopressin",
+      "ddavp"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "desmopressin",
+      "ddavp"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly searched as DDAVP / dDAVP."
+  },
+  "octreotide": {
+    "canonical_slug": "octreotide",
+    "canonical_name": "octreotide",
+    "candidate_terms": [
+      "octreotide",
+      "longastatin",
+      "sandostatin",
+      "sandostatin lar",
+      "sms 201-995",
+      "sms-201-995"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "octreotide",
+      "longastatin",
+      "sandostatin",
+      "sandostatin lar",
+      "sms 201-995",
+      "sms-201-995"
+    ],
+    "rejected_terms": [],
+    "notes": "Includes common brand and code name variants."
+  },
+  "hexarelin": {
+    "canonical_slug": "hexarelin",
+    "canonical_name": "Hexarelin",
+    "candidate_terms": [
+      "hexarelin",
+      "hexa"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "hexarelin",
+      "hexa"
+    ],
+    "rejected_terms": [],
+    "notes": "“Hexa” can be ambiguous; consider rejecting if it misroutes."
+  },
+  "palmitoyl-pentapeptide-4": {
+    "canonical_slug": "palmitoyl-pentapeptide-4",
+    "canonical_name": "palmitoyl-pentapeptide-4",
+    "candidate_terms": [
+      "palmitoyl",
+      "palmitoyl pentapeptide 4",
+      "palmitoyl-pentapeptide-4",
+      "palmitoylpentapeptide",
+      "palmitoylpentapeptide4",
+      "matrixyl",
+      "pal kttks",
+      "pal-kttks",
+      "palmitoyl kttks",
+      "palmitoyl pentapeptide 3"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "palmitoyl pentapeptide 4",
+      "palmitoyl-pentapeptide-4",
+      "palmitoylpentapeptide4",
+      "palmitoyl",
+      "palmitoylpentapeptide",
+      "matrixyl",
+      "pal kttks",
+      "pal-kttks",
+      "palmitoyl kttks",
+      "palmitoyl pentapeptide 3"
+    ],
+    "rejected_terms": [],
+    "notes": "Matrixyl is widely used for palmitoyl pentapeptide-4; older naming includes palmitoyl pentapeptide-3."
+  },
+  "carbetocin": {
+    "canonical_slug": "carbetocin",
+    "canonical_name": "carbetocin",
+    "candidate_terms": [
+      "carbetocin",
+      "duratocin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "carbetocin",
+      "duratocin"
+    ],
+    "rejected_terms": [],
+    "notes": "Duratocin appears in some markets."
+  },
+  "ziconotide": {
+    "canonical_slug": "ziconotide",
+    "canonical_name": "ziconotide",
+    "candidate_terms": [
+      "ziconotide",
+      "prialt"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ziconotide",
+      "prialt"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "melanotan-i": {
+    "canonical_slug": "melanotan-i",
+    "canonical_name": "Melanotan I",
+    "candidate_terms": [
+      "melanotan",
+      "melanotan i",
+      "melanotan-i",
+      "melanotani",
+      "melanotan 1",
+      "melanotan1",
+      "mt1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "melanotan i",
+      "melanotan-i",
+      "melanotani",
+      "melanotan",
+      "melanotan 1",
+      "melanotan1",
+      "mt1"
+    ],
+    "rejected_terms": [],
+    "notes": "Do not alias to afamelanotide; keep separate even though users conflate."
+  },
+  "ss-31": {
+    "canonical_slug": "ss-31",
+    "canonical_name": "Ss-31",
+    "candidate_terms": [
+      "ss 31",
+      "ss-31",
+      "ss31",
+      "bendavia",
+      "elamipretide",
+      "mtp 131",
+      "mtp-131"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ss 31",
+      "ss-31",
+      "ss31",
+      "bendavia",
+      "elamipretide",
+      "mtp 131",
+      "mtp-131"
+    ],
+    "rejected_terms": [],
+    "notes": "SS-31 is widely referenced as elamipretide / MTP-131 / Bendavia."
+  },
+  "motilin": {
+    "canonical_slug": "motilin",
+    "canonical_name": "motilin",
+    "candidate_terms": [
+      "motilin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "motilin"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "survodutide": {
+    "canonical_slug": "survodutide",
+    "canonical_name": "Survodutide",
+    "candidate_terms": [
+      "survodutide",
+      "bi 456906",
+      "bi-456906",
+      "bi456906"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "survodutide",
+      "bi 456906",
+      "bi-456906",
+      "bi456906"
+    ],
+    "rejected_terms": [],
+    "notes": "Formerly referenced as BI 456906."
+  },
+  "igf-1-lr3": {
+    "canonical_slug": "igf-1-lr3",
+    "canonical_name": "igf-1-lr3",
+    "candidate_terms": [
+      "igf",
+      "igf 1 lr3",
+      "igf-1-lr3",
+      "igf1",
+      "igf1lr3",
+      "igf-1 lr3",
+      "igf1 lr3",
+      "long r3 igf-1",
+      "longr3 igf-1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "igf 1 lr3",
+      "igf-1-lr3",
+      "igf1lr3",
+      "igf1",
+      "igf-1 lr3",
+      "igf1 lr3",
+      "long r3 igf-1",
+      "longr3 igf-1"
+    ],
+    "rejected_terms": [
+      "igf"
+    ],
+    "notes": "Often searched as “Long R3 IGF-1”."
+  },
+  "epitalon": {
+    "canonical_slug": "epitalon",
+    "canonical_name": "Epitalon",
+    "candidate_terms": [
+      "epitalon",
+      "epithalon"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "epitalon",
+      "epithalon"
+    ],
+    "rejected_terms": [],
+    "notes": "Spelling variant: epithalon."
+  },
+  "dsip": {
+    "canonical_slug": "dsip",
+    "canonical_name": "Dsip",
+    "candidate_terms": [
+      "dsip",
+      "delta sleep inducing peptide",
+      "delta-sleep inducing peptide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "dsip",
+      "delta sleep inducing peptide",
+      "delta-sleep inducing peptide"
+    ],
+    "rejected_terms": [],
+    "notes": "Expanded acronym variant included."
+  },
+  "igf-1": {
+    "canonical_slug": "igf-1",
+    "canonical_name": "igf-1",
+    "candidate_terms": [
+      "igf",
+      "igf 1",
+      "igf-1",
+      "igf1",
+      "insulin-like growth factor 1",
+      "insulin like growth factor 1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "igf 1",
+      "igf-1",
+      "igf1",
+      "insulin-like growth factor 1",
+      "insulin like growth factor 1"
+    ],
+    "rejected_terms": [
+      "igf"
+    ],
+    "notes": "Expanded medical name included."
+  },
+  "teriparatide": {
+    "canonical_slug": "teriparatide",
+    "canonical_name": "teriparatide",
+    "candidate_terms": [
+      "teriparatide",
+      "forteo"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "teriparatide",
+      "forteo"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "linaclotide": {
+    "canonical_slug": "linaclotide",
+    "canonical_name": "linaclotide",
+    "candidate_terms": [
+      "linaclotide",
+      "linzess"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "linaclotide",
+      "linzess"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "triptorelin": {
+    "canonical_slug": "triptorelin",
+    "canonical_name": "triptorelin",
+    "candidate_terms": [
+      "triptorelin",
+      "decapeptyl",
+      "trelstar"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "triptorelin",
+      "decapeptyl",
+      "trelstar"
+    ],
+    "rejected_terms": [],
+    "notes": "Common brand references included."
+  },
+  "pentagastrin": {
+    "canonical_slug": "pentagastrin",
+    "canonical_name": "pentagastrin",
+    "candidate_terms": [
+      "pentagastrin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "pentagastrin"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "cagrilintide": {
+    "canonical_slug": "cagrilintide",
+    "canonical_name": "Cagrilintide",
+    "candidate_terms": [
+      "cagrilintide",
+      "am 833",
+      "am-833",
+      "am833",
+      "nn0174-0833",
+      "nn 0174-0833"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "cagrilintide",
+      "am 833",
+      "am-833",
+      "am833",
+      "nn0174-0833",
+      "nn 0174-0833"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly referenced as AM833 / NN0174-0833."
+  },
+  "selank": {
+    "canonical_slug": "selank",
+    "canonical_name": "Selank",
+    "candidate_terms": [
+      "selank"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "selank"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "ll-37": {
+    "canonical_slug": "ll-37",
+    "canonical_name": "Ll-37",
+    "candidate_terms": [
+      "ll 37",
+      "ll-37",
+      "ll37",
+      "cathelicidin",
+      "hcap18"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ll 37",
+      "ll-37",
+      "ll37",
+      "cathelicidin",
+      "hcap18"
+    ],
+    "rejected_terms": [],
+    "notes": "Often referenced in immunology contexts as cathelicidin/LL-37 (hCAP18 processing)."
+  },
+  "aod-9604": {
+    "canonical_slug": "aod-9604",
+    "canonical_name": "Aod-9604",
+    "candidate_terms": [
+      "aod",
+      "aod 9604",
+      "aod-9604",
+      "aod9604",
+      "fragment 176-191",
+      "fragment 176 191",
+      "hgh fragment 176-191",
+      "hgh fragment 176 191"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "aod 9604",
+      "aod-9604",
+      "aod9604",
+      "fragment 176-191",
+      "fragment 176 191",
+      "hgh fragment 176-191",
+      "hgh fragment 176 191",
+      "aod"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly referenced as (hGH) fragment 176–191."
+  },
+  "secretin": {
+    "canonical_slug": "secretin",
+    "canonical_name": "secretin",
+    "candidate_terms": [
+      "secretin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "secretin"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "ghrp-2": {
+    "canonical_slug": "ghrp-2",
+    "canonical_name": "ghrp-2",
+    "candidate_terms": [
+      "ghrp",
+      "ghrp 2",
+      "ghrp-2",
+      "ghrp2",
+      "pralmorelin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ghrp 2",
+      "ghrp-2",
+      "ghrp2",
+      "pralmorelin"
+    ],
+    "rejected_terms": [
+      "ghrp"
+    ],
+    "notes": "GHRP-2 is also known as pralmorelin in some contexts."
+  },
+  "bremelanotide": {
+    "canonical_slug": "bremelanotide",
+    "canonical_name": "Bremelanotide",
+    "candidate_terms": [
+      "bremelanotide",
+      "pt 141",
+      "pt-141",
+      "rekynda",
+      "vyleesi"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "bremelanotide",
+      "pt 141",
+      "pt-141",
+      "rekynda",
+      "vyleesi"
+    ],
+    "rejected_terms": [],
+    "notes": "Widely searched as PT-141; includes common brand references."
+  },
+  "melanotan-ii": {
+    "canonical_slug": "melanotan-ii",
+    "canonical_name": "Melanotan Ii",
+    "candidate_terms": [
+      "melanotan",
+      "melanotan ii",
+      "melanotan-ii",
+      "melanotanii",
+      "melanotan 2",
+      "melanotan2",
+      "mt2"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "melanotan ii",
+      "melanotan-ii",
+      "melanotanii",
+      "melanotan",
+      "melanotan 2",
+      "melanotan2",
+      "mt2"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "calcitonin": {
+    "canonical_slug": "calcitonin",
+    "canonical_name": "calcitonin",
+    "candidate_terms": [
+      "calcitonin",
+      "fortical",
+      "miacalcin",
+      "salmon calcitonin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "calcitonin",
+      "fortical",
+      "miacalcin",
+      "salmon calcitonin"
+    ],
+    "rejected_terms": [],
+    "notes": "Includes common brand and salmon-calcitonin phrasing."
+  },
+  "orexin-a": {
+    "canonical_slug": "orexin-a",
+    "canonical_name": "orexin-a",
+    "candidate_terms": [
+      "orexin",
+      "orexin a",
+      "orexin-a",
+      "orexina",
+      "hypocretin 1",
+      "hypocretin-1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "orexin a",
+      "orexin-a",
+      "orexina",
+      "hypocretin 1",
+      "hypocretin-1"
+    ],
+    "rejected_terms": [
+      "orexin"
+    ],
+    "notes": "Orexin-A is also called hypocretin-1."
+  },
+  "vip": {
+    "canonical_slug": "vip",
+    "canonical_name": "Vip",
+    "candidate_terms": [
+      "vip",
+      "vasoactive intestinal peptide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "vip",
+      "vasoactive intestinal peptide"
+    ],
+    "rejected_terms": [],
+    "notes": "Expanded name included."
+  },
+  "semax": {
+    "canonical_slug": "semax",
+    "canonical_name": "Semax",
+    "candidate_terms": [
+      "semax",
+      "acth 4-7 pgp",
+      "acth(4-7) pgp"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "semax",
+      "acth 4-7 pgp",
+      "acth(4-7) pgp"
+    ],
+    "rejected_terms": [],
+    "notes": "Often referenced by its ACTH(4-7) PGP descriptor."
+  },
+  "neuropeptide-y": {
+    "canonical_slug": "neuropeptide-y",
+    "canonical_name": "neuropeptide-y",
+    "candidate_terms": [
+      "neuropeptide",
+      "neuropeptide y",
+      "neuropeptide-y",
+      "neuropeptidey",
+      "npy"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "neuropeptide y",
+      "neuropeptide-y",
+      "neuropeptidey",
+      "neuropeptide",
+      "npy"
+    ],
+    "rejected_terms": [],
+    "notes": "NPY is common shorthand."
+  },
+  "kisspeptin": {
+    "canonical_slug": "kisspeptin",
+    "canonical_name": "kisspeptin",
+    "candidate_terms": [
+      "kisspeptin",
+      "kiss",
+      "kiss-10",
+      "kisspeptin 10",
+      "kisspeptin-10",
+      "metastin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "kisspeptin",
+      "kiss-10",
+      "kisspeptin 10",
+      "kisspeptin-10",
+      "metastin",
+      "kiss"
+    ],
+    "rejected_terms": [],
+    "notes": "Frequently searched as metastin / kisspeptin-10."
+  },
+  "abaloparatide": {
+    "canonical_slug": "abaloparatide",
+    "canonical_name": "abaloparatide",
+    "candidate_terms": [
+      "abaloparatide",
+      "tymlos"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "abaloparatide",
+      "tymlos"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "afamelanotide": {
+    "canonical_slug": "afamelanotide",
+    "canonical_name": "Afamelanotide",
+    "candidate_terms": [
+      "afamelanotide",
+      "scenesse"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "afamelanotide",
+      "scenesse"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "nesiritide": {
+    "canonical_slug": "nesiritide",
+    "canonical_name": "nesiritide",
+    "candidate_terms": [
+      "nesiritide",
+      "natrecor"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "nesiritide",
+      "natrecor"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "lanreotide": {
+    "canonical_slug": "lanreotide",
+    "canonical_name": "lanreotide",
+    "candidate_terms": [
+      "lanreotide",
+      "bim 23014",
+      "bim-23014",
+      "somatuline"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "lanreotide",
+      "bim 23014",
+      "bim-23014",
+      "somatuline"
+    ],
+    "rejected_terms": [],
+    "notes": "Often referenced as Somatuline; development code BIM-23014 appears in some sources."
+  },
+  "tb-500": {
+    "canonical_slug": "tb-500",
+    "canonical_name": "Tb-500",
+    "candidate_terms": [
+      "tb 500",
+      "tb-500",
+      "tb500",
+      "tb 500 peptide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "tb 500",
+      "tb-500",
+      "tb500",
+      "tb 500 peptide"
+    ],
+    "rejected_terms": [],
+    "notes": "Often conflated with thymosin beta-4 in forums; not identical."
+  },
+  "nad-plus": {
+    "canonical_slug": "nad-plus",
+    "canonical_name": "Nad Plus",
+    "candidate_terms": [
+      "nad",
+      "nad plus",
+      "nad-plus",
+      "nadplus",
+      "nad+",
+      "nicotinamide adenine dinucleotide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "nad plus",
+      "nad-plus",
+      "nadplus",
+      "nicotinamide adenine dinucleotide",
+      "nad+"
+    ],
+    "rejected_terms": [
+      "nad"
+    ],
+    "notes": "Not a peptide, but commonly searched in the same ecosystem."
+  },
+  "humanin": {
+    "canonical_slug": "humanin",
+    "canonical_name": "humanin",
+    "candidate_terms": [
+      "humanin",
+      "hn"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "humanin",
+      "hn"
+    ],
+    "rejected_terms": [],
+    "notes": "HN shorthand appears in some communities (can be ambiguous)."
+  },
+  "snap-8": {
+    "canonical_slug": "snap-8",
+    "canonical_name": "Snap-8",
+    "candidate_terms": [
+      "snap",
+      "snap 8",
+      "snap-8",
+      "snap8",
+      "acetyl octapeptide-3"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "snap 8",
+      "snap-8",
+      "snap8",
+      "acetyl octapeptide-3",
+      "snap"
+    ],
+    "rejected_terms": [],
+    "notes": "Common INCI-style synonym: acetyl octapeptide-3."
+  },
+  "bradykinin": {
+    "canonical_slug": "bradykinin",
+    "canonical_name": "bradykinin",
+    "candidate_terms": [
+      "bradykinin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "bradykinin"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "angiotensin-ii": {
+    "canonical_slug": "angiotensin-ii",
+    "canonical_name": "angiotensin-ii",
+    "candidate_terms": [
+      "angiotensin",
+      "angiotensin ii",
+      "angiotensin-ii",
+      "angiotensinii",
+      "ang ii"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "angiotensin ii",
+      "angiotensin-ii",
+      "angiotensinii",
+      "angiotensin",
+      "ang ii"
+    ],
+    "rejected_terms": [],
+    "notes": "ANG II shorthand included."
+  },
+  "atrial-natriuretic-peptide": {
+    "canonical_slug": "atrial-natriuretic-peptide",
+    "canonical_name": "atrial-natriuretic-peptide",
+    "candidate_terms": [
+      "atrial",
+      "atrial natriuretic peptide",
+      "atrial-natriuretic-peptide",
+      "atrialnatriuretic",
+      "atrialnatriureticpeptide",
+      "anp"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "atrial natriuretic peptide",
+      "atrial-natriuretic-peptide",
+      "atrialnatriureticpeptide",
+      "atrialnatriuretic",
+      "anp"
+    ],
+    "rejected_terms": [
+      "atrial"
+    ],
+    "notes": "ANP is common shorthand."
+  },
+  "hcg": {
+    "canonical_slug": "hcg",
+    "canonical_name": "Hcg",
+    "candidate_terms": [
+      "hcg",
+      "chorionic gonadotropin",
+      "choriogonadotropin",
+      "human chorionic gonadotropin",
+      "novarel",
+      "pregnyl"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "hcg",
+      "chorionic gonadotropin",
+      "choriogonadotropin",
+      "human chorionic gonadotropin",
+      "novarel",
+      "pregnyl"
+    ],
+    "rejected_terms": [],
+    "notes": "Includes common expansion and brand names used in searches."
+  },
+  "tesamorelin": {
+    "canonical_slug": "tesamorelin",
+    "canonical_name": "Tesamorelin",
+    "candidate_terms": [
+      "tesamorelin",
+      "egrifta",
+      "egrifta sv"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "tesamorelin",
+      "egrifta",
+      "egrifta sv"
+    ],
+    "rejected_terms": [],
+    "notes": "Often searched by brand Egrifta / Egrifta SV."
+  },
+  "semaglutide": {
+    "canonical_slug": "semaglutide",
+    "canonical_name": "semaglutide",
+    "candidate_terms": [
+      "semaglutide",
+      "nn 9536",
+      "nn-9536",
+      "nn9536",
+      "ozempic",
+      "rybelsus",
+      "wegovy"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "semaglutide",
+      "nn 9536",
+      "nn-9536",
+      "nn9536",
+      "ozempic",
+      "rybelsus",
+      "wegovy"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly searched by brands and code NN9536."
+  },
+  "thymulin": {
+    "canonical_slug": "thymulin",
+    "canonical_name": "thymulin",
+    "candidate_terms": [
+      "thymulin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "thymulin"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "thymosin-beta-4-full": {
+    "canonical_slug": "thymosin-beta-4-full",
+    "canonical_name": "thymosin-beta-4-full",
+    "candidate_terms": [
+      "thymosin",
+      "thymosin beta 4 full",
+      "thymosin-beta-4-full",
+      "thymosinbeta",
+      "thymosinbeta4full",
+      "tb4 full"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "thymosin beta 4 full",
+      "thymosin-beta-4-full",
+      "thymosinbeta4full",
+      "thymosinbeta",
+      "tb4 full"
+    ],
+    "rejected_terms": [
+      "thymosin"
+    ],
+    "notes": "Keep distinct from thymosin-beta-4 if you treat “full” as a separate entity."
+  },
+  "sermorelin": {
+    "canonical_slug": "sermorelin",
+    "canonical_name": "Sermorelin",
+    "candidate_terms": [
+      "sermorelin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "sermorelin"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "liraglutide": {
+    "canonical_slug": "liraglutide",
+    "canonical_name": "liraglutide",
+    "candidate_terms": [
+      "liraglutide",
+      "saxenda",
+      "victoza"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "liraglutide",
+      "saxenda",
+      "victoza"
+    ],
+    "rejected_terms": [],
+    "notes": "Commonly searched by brands Victoza / Saxenda."
+  },
+  "neuropeptide-s": {
+    "canonical_slug": "neuropeptide-s",
+    "canonical_name": "neuropeptide-s",
+    "candidate_terms": [
+      "neuropeptide",
+      "neuropeptide s",
+      "neuropeptide-s",
+      "neuropeptides",
+      "nps"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "neuropeptide s",
+      "neuropeptide-s",
+      "neuropeptides",
+      "neuropeptide",
+      "nps"
+    ],
+    "rejected_terms": [],
+    "notes": "NPS shorthand included."
+  },
+  "adipotide": {
+    "canonical_slug": "adipotide",
+    "canonical_name": "Adipotide",
+    "candidate_terms": [
+      "adipotide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "adipotide"
+    ],
+    "rejected_terms": [],
+    "notes": ""
+  },
+  "ghrp-6": {
+    "canonical_slug": "ghrp-6",
+    "canonical_name": "ghrp-6",
+    "candidate_terms": [
+      "ghrp",
+      "ghrp 6",
+      "ghrp-6",
+      "ghrp6"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "ghrp 6",
+      "ghrp-6",
+      "ghrp6"
+    ],
+    "rejected_terms": [
+      "ghrp"
+    ],
+    "notes": ""
+  },
+  "mk-677": {
+    "canonical_slug": "mk-677",
+    "canonical_name": "Mk-677",
+    "candidate_terms": [
+      "mk 677",
+      "mk-677",
+      "mk677",
+      "ibutamoren",
+      "l-163,191",
+      "l163191",
+      "mk 0677",
+      "mk-0677",
+      "oratrope"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "mk 677",
+      "mk-677",
+      "mk677",
+      "ibutamoren",
+      "l-163,191",
+      "l163191",
+      "mk 0677",
+      "mk-0677",
+      "oratrope"
+    ],
+    "rejected_terms": [],
+    "notes": "Widely searched as ibutamoren and older development names (e.g., Oratrope)."
+  },
+  "endothelin-1": {
+    "canonical_slug": "endothelin-1",
+    "canonical_name": "endothelin-1",
+    "candidate_terms": [
+      "endothelin",
+      "endothelin 1",
+      "endothelin-1",
+      "endothelin1",
+      "et-1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "endothelin 1",
+      "endothelin-1",
+      "endothelin1",
+      "endothelin",
+      "et-1"
+    ],
+    "rejected_terms": [],
+    "notes": "ET-1 shorthand included."
+  },
+  "thymosin-alpha-1": {
+    "canonical_slug": "thymosin-alpha-1",
+    "canonical_name": "Thymosin Alpha-1",
+    "candidate_terms": [
+      "thymosin",
+      "thymosin alpha 1",
+      "thymosin-alpha-1",
+      "thymosinalpha",
+      "thymosinalpha1",
+      "talpha1",
+      "ta1",
+      "thymosin a1"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "thymosin alpha 1",
+      "thymosin-alpha-1",
+      "thymosinalpha1",
+      "thymosinalpha",
+      "talpha1",
+      "ta1",
+      "thymosin a1"
+    ],
+    "rejected_terms": [
+      "thymosin"
+    ],
+    "notes": "TA1 / Tα1 shorthand is common but can be ambiguous."
+  },
+  "plecanatide": {
+    "canonical_slug": "plecanatide",
+    "canonical_name": "plecanatide",
+    "candidate_terms": [
+      "plecanatide",
+      "trulance"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "plecanatide",
+      "trulance"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "bpc-157": {
+    "canonical_slug": "bpc-157",
+    "canonical_name": "Bpc-157",
+    "candidate_terms": [
+      "bpc",
+      "bpc 157",
+      "bpc-157",
+      "bpc157"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "bpc 157",
+      "bpc-157",
+      "bpc157"
+    ],
+    "rejected_terms": [
+      "bpc"
+    ],
+    "notes": "Consider adding route qualifiers elsewhere (e.g., acetate/arginine salt) as separate entities if needed."
+  },
+  "somatostatin": {
+    "canonical_slug": "somatostatin",
+    "canonical_name": "somatostatin",
+    "candidate_terms": [
+      "somatostatin",
+      "gih"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "somatostatin",
+      "gih"
+    ],
+    "rejected_terms": [],
+    "notes": "GIH (growth hormone–inhibiting hormone) appears in some contexts; may be ambiguous."
+  },
+  "glutathione": {
+    "canonical_slug": "glutathione",
+    "canonical_name": "Glutathione",
+    "candidate_terms": [
+      "glutathione",
+      "gsh",
+      "l-glutathione",
+      "reduced glutathione"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "glutathione",
+      "l-glutathione",
+      "reduced glutathione",
+      "gsh"
+    ],
+    "rejected_terms": [],
+    "notes": "Not a peptide, but commonly searched alongside peptides."
+  },
+  "retatrutide": {
+    "canonical_slug": "retatrutide",
+    "canonical_name": "Retatrutide",
+    "candidate_terms": [
+      "retatrutide",
+      "glp 3",
+      "glp-3",
+      "glp3",
+      "ly 3437943",
+      "ly-3437943",
+      "ly3437943",
+      "reta",
+      "triple agonist",
+      "triple g"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "retatrutide",
+      "glp 3",
+      "glp-3",
+      "glp3",
+      "ly 3437943",
+      "ly-3437943",
+      "ly3437943",
+      "triple agonist",
+      "triple g",
+      "reta"
+    ],
+    "rejected_terms": [],
+    "notes": "Community shorthand includes Reta and GLP3 (triple-agonist phrasing); also searched by code LY3437943."
+  },
+  "follistatin-344": {
+    "canonical_slug": "follistatin-344",
+    "canonical_name": "follistatin-344",
+    "candidate_terms": [
+      "follistatin",
+      "follistatin 344",
+      "follistatin-344",
+      "follistatin344",
+      "fs 344",
+      "fs-344",
+      "fs344"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "follistatin 344",
+      "follistatin-344",
+      "follistatin344",
+      "follistatin",
+      "fs 344",
+      "fs-344",
+      "fs344"
+    ],
+    "rejected_terms": [],
+    "notes": "FS344 shorthand included."
+  },
+  "cgrp": {
+    "canonical_slug": "cgrp",
+    "canonical_name": "cgrp",
+    "candidate_terms": [
+      "cgrp",
+      "calcitonin gene-related peptide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "cgrp",
+      "calcitonin gene-related peptide"
+    ],
+    "rejected_terms": [],
+    "notes": "Expanded name included for search."
+  },
+  "acetyl-hexapeptide-8": {
+    "canonical_slug": "acetyl-hexapeptide-8",
+    "canonical_name": "Acetyl Hexapeptide-8",
+    "candidate_terms": [
+      "acetyl",
+      "acetyl hexapeptide 8",
+      "acetyl-hexapeptide-8",
+      "acetylhexapeptide",
+      "acetylhexapeptide8",
+      "acetyl hexapeptide 3",
+      "acetyl hexapeptide-3",
+      "acetyl hexapeptide-8",
+      "acetyl hexapeptide-8 amide",
+      "argireline"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "acetyl hexapeptide 8",
+      "acetyl-hexapeptide-8",
+      "acetylhexapeptide8",
+      "acetyl",
+      "acetylhexapeptide",
+      "acetyl hexapeptide 3",
+      "acetyl hexapeptide-3",
+      "acetyl hexapeptide-8",
+      "acetyl hexapeptide-8 amide",
+      "argireline"
+    ],
+    "rejected_terms": [],
+    "notes": "Argireline is a common trade name; acetyl-hexapeptide-3 is a frequent mislabel/legacy reference."
+  },
+  "pramlintide": {
+    "canonical_slug": "pramlintide",
+    "canonical_name": "Pramlintide",
+    "candidate_terms": [
+      "pramlintide",
+      "symlin",
+      "symlinpen"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "pramlintide",
+      "symlin",
+      "symlinpen"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonyms included for search."
+  },
+  "cjc-1295-dac": {
+    "canonical_slug": "cjc-1295-dac",
+    "canonical_name": "cjc-1295-dac",
+    "candidate_terms": [
+      "cjc",
+      "cjc 1295 dac",
+      "cjc-1295-dac",
+      "cjc1295",
+      "cjc1295dac",
+      "cjc dac",
+      "cjc-1295 dac",
+      "cjc1295 dac"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "cjc 1295 dac",
+      "cjc-1295-dac",
+      "cjc1295",
+      "cjc1295dac",
+      "cjc dac",
+      "cjc-1295 dac",
+      "cjc1295 dac"
+    ],
+    "rejected_terms": [
+      "cjc"
+    ],
+    "notes": "“CJC” alone is ambiguous; consider rejecting if it causes misroutes."
+  },
+  "oxytocin": {
+    "canonical_slug": "oxytocin",
+    "canonical_name": "Oxytocin",
+    "candidate_terms": [
+      "oxytocin",
+      "pitocin"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "oxytocin",
+      "pitocin"
+    ],
+    "rejected_terms": [],
+    "notes": "Brand-name synonym included for search."
+  },
+  "amylin": {
+    "canonical_slug": "amylin",
+    "canonical_name": "amylin",
+    "candidate_terms": [
+      "amylin",
+      "iapp",
+      "islet amyloid polypeptide"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "amylin",
+      "islet amyloid polypeptide",
+      "iapp"
+    ],
+    "rejected_terms": [],
+    "notes": "Expanded name + IAPP shorthand included."
+  },
+  "leuprolide": {
+    "canonical_slug": "leuprolide",
+    "canonical_name": "leuprolide",
+    "candidate_terms": [
+      "leuprolide",
+      "eligard",
+      "lupron"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "leuprolide",
+      "eligard",
+      "lupron"
+    ],
+    "rejected_terms": [],
+    "notes": "Common brand references included."
+  },
+  "prolactin-releasing-peptide": {
+    "canonical_slug": "prolactin-releasing-peptide",
+    "canonical_name": "prolactin-releasing-peptide",
+    "candidate_terms": [
+      "prolactin",
+      "prolactin releasing peptide",
+      "prolactin-releasing-peptide",
+      "prolactinreleasing",
+      "prolactinreleasingpeptide",
+      "prp"
+    ],
+    "status": "REVIEW_REQUIRED",
+    "approved_terms": [
+      "prolactin releasing peptide",
+      "prolactin-releasing-peptide",
+      "prolactinreleasingpeptide",
+      "prolactin",
+      "prolactinreleasing",
+      "prp"
+    ],
+    "rejected_terms": [],
+    "notes": "PRP shorthand can collide (platelet-rich plasma); keep only if your search disambiguates well."
+  }
+}

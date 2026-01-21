@@ -21,3 +21,5 @@ scripts/audit/_reports/
 
 # local audits
 ui_stack_audit.txt
+*.bak
+*.bak.*
