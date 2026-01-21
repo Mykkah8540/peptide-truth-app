@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Peptides", href: "/peptides" },
   { label: "Blends", href: "/blends" },
+  { label: "Interactions", href: "/interactions" },
   { label: "Topics", href: "/topics" },
   { label: "Stack Builder", href: "/stack-builder" },
 ];
