@@ -60,6 +60,11 @@ def main() -> int:
     # 6) Validate unified entities index
     run(["python3", "scripts/validate/validate_entities_index.py"])
 
+    # 6b) Build + validate unified risk index (peptides direct; blends computed)
+    run(["python3", "scripts/index/build_risk_index.py"])
+    run(["python3", "scripts/validate/validate_risk_index_v1.py"])
+
+
     # 7) Build Explore-by-Category index
     run(["python3", "scripts/index/build_category_index.py"])
 
