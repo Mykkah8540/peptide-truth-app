@@ -3,17 +3,20 @@ import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
 import IdentityPanel from "@/components/IdentityPanel";
-import { loadBlendBySlug } from "@/lib/content";
+import { loadBlendBySlug, getAliasesForSlug } from "@/lib/content";
 import EvidenceList from "@/components/EvidenceList";
 
 export default async function BlendPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
   const riskHit = getRiskForBlend(slug);
-  const doc = loadBlendBySlug(slug);
+    const doc = await loadBlendBySlug(slug);
   const b = doc?.blend ?? {};
 
-  // Some blends may store evidence differently; render if present.
+  
+
+  const mergedAliases = Array.from(new Set([...(Array.isArray(b?.aliases) ? b.aliases : []), ...getAliasesForSlug(slug)]));
+// Some blends may store evidence differently; render if present.
   const evidence = Array.isArray(b?.evidence) ? b.evidence : [];
 
   return (
@@ -47,7 +50,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
       <IdentityPanel
         canonicalName={b?.canonical_name ?? null}
         shortName={b?.short_name ?? null}
-        aliases={Array.isArray(b?.aliases) ? b.aliases : null}
+        aliases={mergedAliases}
         aminoAcidSeq={null}
         molecularFormula={null}
         molecularWeight={null}

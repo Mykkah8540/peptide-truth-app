@@ -3,7 +3,7 @@ import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
 import IdentityPanel from "@/components/IdentityPanel";
-import { loadPeptideBySlug } from "@/lib/content";
+import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
 import OutlookSection from "@/components/OutlookSection";
@@ -40,9 +40,11 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
 
   const riskHit = getRiskForPeptide(slug);
-  const doc = loadPeptideBySlug(slug);
+    const doc = await loadPeptideBySlug(slug);
   const p = doc?.peptide ?? {};
-  const sections = p?.sections ?? {};
+  
+  const mergedAliases = Array.from(new Set([...(Array.isArray(p?.aliases) ? p.aliases : []), ...getAliasesForSlug(slug)]));
+const sections = p?.sections ?? {};
 
   const overviewText = sections?.overview?.[0]?.text ?? "";
   const sentences = overviewText ? splitSentences(overviewText) : [];
@@ -81,7 +83,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       <IdentityPanel
         canonicalName={p?.canonical_name}
         shortName={p?.short_name}
-        aliases={p?.aliases}
+        aliases={mergedAliases}
         aminoAcidSeq={p?.structure?.amino_acid_seq}
       />
 
