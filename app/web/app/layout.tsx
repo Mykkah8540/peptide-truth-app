@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { listPeptides, listBlends, listTopics } from "@/lib/content";
+import HomeSearch from "@/components/HomeSearch";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,12 +24,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  
+  const peptides = listPeptides();
+  const blends = listBlends();
+  const topics = listTopics();
+return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        
+      {/* GLOBAL_HEADER_SEARCH */}
+      <header style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto", padding: "14px 16px", display: "grid", gap: 10 }}>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+            <a href="/" style={{ fontWeight: 900, letterSpacing: -0.3, textDecoration: "none", color: "inherit" }}>Pep-Talk</a>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+              <a href="/peptides" style={{ textDecoration: "none", color: "inherit", opacity: 0.85 }}>Peptides</a>
+              <a href="/blends" style={{ textDecoration: "none", color: "inherit", opacity: 0.85 }}>Blends</a>
+              <a href="/topics" style={{ textDecoration: "none", color: "inherit", opacity: 0.85 }}>Topics</a>
+              <a href="/stack-builder" style={{ textDecoration: "none", color: "inherit", opacity: 0.85 }}>Stack Builder</a>
+            </div>
+          </div>
+
+          <HomeSearch peptides={peptides} blends={blends} topics={topics} />
+        </div>
+      </header>
+
+{children}
       </body>
     </html>
   );
