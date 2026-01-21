@@ -8,12 +8,38 @@ export type EntityListItem = {
   slug: string;
   name: string;
   route?: string;
+  aliases?: string[];
 };
 
 export type TopicListItem = {
   slug: string;
   title: string;
   summary?: string;
+};
+
+export type TopicCategory = {
+  slug: string;
+  title: string;
+  topic_slugs: string[];
+};
+
+export type TopicCategoriesDoc = {
+  schema_version: "topic_categories_v1";
+  categories: TopicCategory[];
+};
+
+export type TopicPageDocV1 = {
+  schema_version: "topic_page_v1";
+  topic_page: {
+    topic_id: string;
+    title: string;
+    intro?: any;
+    how_to_use_this_page?: any;
+    peptide_groups?: any[];
+    safety_callouts?: any;
+    evidence_notes?: any;
+    last_reviewed?: string;
+  };
 };
 
 function repoRoot(): string {
@@ -64,7 +90,7 @@ export function listEntities(kind: EntityKind): EntityListItem[] {
       const canonical = safeString(e?.canonical_name) || safeString(e?.name);
       const short = safeString(e?.short_name);
       const name = short || canonical || titleFromSlug(slug);
-      return { kind, slug, name, route };
+      return { kind, slug, name, route: route || (kind === "peptide" ? `/peptide/${slug}` : `/blend/${slug}`), aliases: getAliasesForSlug(slug) };
     })
     .filter((x) => !!x.slug);
 
@@ -131,6 +157,57 @@ export async function loadBlendBySlug(slug: string): Promise<any | null> {
 /**
  * Topics live under content/topics/pages/*.json.
  */
+
+type TopicPageV1 = {
+  schema_version?: string;
+  topic_page?: {
+    topic_id?: string;
+    title?: string;
+    intro?: any;
+    how_to_use_this_page?: any;
+    peptide_groups?: any;
+    safety_callouts?: any;
+    evidence_notes?: any;
+    last_reviewed?: any;
+  };
+};
+
+function topicTitleFromDoc(doc: any, fallbackSlug: string): string {
+  const tp = doc?.topic_page;
+  const t = safeString(tp?.title) || safeString(doc?.title);
+  return t || titleFromSlug(fallbackSlug);
+}
+
+function topicSummaryFromDoc(doc: any): string {
+  // Prefer the first intro text if present; otherwise fallback to description/summary.
+  const tp = doc?.topic_page;
+  const intro = tp?.intro;
+  if (Array.isArray(intro) && intro.length) {
+    const first = intro[0];
+    const t = safeString(first?.text) || safeString(first);
+    if (t) return t;
+  }
+  return safeString(doc?.summary) || safeString(doc?.description);
+}
+
+export async function loadTopicBySlug(slug: string): Promise<any | null> {
+  const root = repoRoot();
+  const s = (slug || "").trim();
+  if (!s) return null;
+
+  const fp = path.join(root, "content", "topics", "pages", `${s}.json`);
+  if (!existsSync(fp)) return null;
+
+  try {
+    const doc: any = readJson<any>(fp);
+    // Normalize a slug field for convenience.
+    if (!doc.slug) doc.slug = s;
+    return doc;
+  } catch {
+    return null;
+  }
+}
+
 export function listTopics(): TopicListItem[] {
   const root = repoRoot();
   const dir = path.join(root, "content", "topics", "pages");
@@ -147,9 +224,9 @@ export function listTopics(): TopicListItem[] {
     const fp = path.join(dir, f);
     try {
       const doc: any = readJson<any>(fp);
-      const slug = safeString(doc?.slug) || f.replace(/\.json$/, "");
-      const title = safeString(doc?.title) || titleFromSlug(slug);
-      const summary = safeString(doc?.summary) || safeString(doc?.description);
+      const slug = f.replace(/\.json$/, "");
+      const title = topicTitleFromDoc(doc, slug);
+      const summary = topicSummaryFromDoc(doc);
       topics.push({ slug, title, summary: summary || undefined });
     } catch {
       // ignore bad topic file
@@ -158,6 +235,65 @@ export function listTopics(): TopicListItem[] {
 
   topics.sort((a, b) => a.title.localeCompare(b.title) || a.slug.localeCompare(b.slug));
   return topics;
+}
+
+/**
+ * Topic categories live at content/topics/categories_v1.json
+ */
+export function loadTopicCategories(): TopicCategory[] {
+  const root = repoRoot();
+  const fp = path.join(root, "content", "topics", "categories_v1.json");
+  try {
+    const doc = readJson<TopicCategoriesDoc>(fp);
+    const cats = Array.isArray(doc?.categories) ? doc.categories : [];
+    return cats
+      .map((c) => ({
+        slug: safeString((c as any)?.slug),
+        title: safeString((c as any)?.title) || titleFromSlug(safeString((c as any)?.slug)),
+        topic_slugs: Array.isArray((c as any)?.topic_slugs) ? (c as any).topic_slugs.map((x: any) => safeString(x)).filter(Boolean) : [],
+      }))
+      .filter((c) => !!c.slug);
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Returns full topic page docs normalized from topic_page_v1 schema.
+ * Files: content/topics/pages/*.json
+ */
+export function listTopicPages(): { slug: string; title: string; topic_id: string; doc: TopicPageDocV1 }[] {
+  const root = repoRoot();
+  const dir = path.join(root, "content", "topics", "pages");
+
+  let files: string[] = [];
+  try {
+    files = readdirSync(dir).filter((f) => f.endsWith(".json"));
+  } catch {
+    return [];
+  }
+
+  const out: any[] = [];
+  for (const f of files) {
+    const fp = path.join(dir, f);
+    try {
+      const raw: any = readJson<any>(fp);
+      const slug = f.replace(/\.json$/, "");
+      const schema = safeString(raw?.schema_version);
+      if (schema !== "topic_page_v1" || !raw?.topic_page) continue;
+
+      const tp = raw.topic_page;
+      const title = safeString(tp?.title) || titleFromSlug(slug);
+      const topic_id = safeString(tp?.topic_id) || slug;
+
+      out.push({ slug, title, topic_id, doc: raw as TopicPageDocV1 });
+    } catch {
+      // ignore
+    }
+  }
+
+  out.sort((a, b) => a.title.localeCompare(b.title) || a.slug.localeCompare(b.slug));
+  return out;
 }
 
 /* ------------------------------
