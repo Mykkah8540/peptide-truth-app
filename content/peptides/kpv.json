@@ -115,7 +115,8 @@
         "topic_gut_inflammation",
         "topic_immune_modulation"
       ]
-    }
+    },
+    "slug": "kpv"
   },
   "canonical_name": "Kpv"
 }

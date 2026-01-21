@@ -127,7 +127,8 @@
         "topic_injury_healing",
         "topic_muscle_recovery"
       ]
-    }
+    },
+    "slug": "tb-500"
   },
   "canonical_name": "Tb-500"
 }

@@ -117,7 +117,8 @@
       "primary": [
         "topic_sleep_circadian"
       ]
-    }
+    },
+    "slug": "dsip"
   },
   "canonical_name": "Dsip"
 }

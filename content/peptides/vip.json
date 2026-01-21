@@ -120,7 +120,8 @@
         "topic_gut_inflammation",
         "topic_cognition_mood"
       ]
-    }
+    },
+    "slug": "vip"
   },
   "canonical_name": "Vip"
 }
