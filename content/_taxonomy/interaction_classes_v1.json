@@ -1,0 +1,92 @@
+{
+  "schema_version": "interaction_classes_v1",
+  "updated_at": "2026-01-21",
+  "drug_classes": [
+    {
+      "slug": "anticoagulants-antiplatelets",
+      "title": "Anticoagulants / antiplatelets",
+      "aka": ["blood thinners", "anticoagulants", "antiplatelets"],
+      "notes": "Bleeding/clotting risk context."
+    },
+    {
+      "slug": "antihypertensives",
+      "title": "Antihypertensives / BP-lowering agents",
+      "aka": ["bp meds", "blood pressure meds", "ace inhibitors", "arbs", "beta blockers"],
+      "notes": "Blood pressure effects and orthostatic risk context."
+    },
+    {
+      "slug": "diabetes-glucose-lowering",
+      "title": "Glucose-lowering agents",
+      "aka": ["insulin", "metformin", "sulfonylureas", "sglt2", "glp-1", "glp1"],
+      "notes": "Hypoglycemia risk context; appetite/gastric effects context."
+    },
+    {
+      "slug": "thyroid-hormone",
+      "title": "Thyroid hormone / thyroid-active meds",
+      "aka": ["levothyroxine", "thyroid meds"],
+      "notes": "Thyroid axis context."
+    },
+    {
+      "slug": "cns-depressants",
+      "title": "CNS depressants / sedatives",
+      "aka": ["benzodiazepines", "sleep meds", "opioids", "sedatives"],
+      "notes": "Sedation/respiratory depression and cognition context."
+    },
+    {
+      "slug": "stimulants-adrenergic",
+      "title": "Stimulants / adrenergic agents",
+      "aka": ["amphetamines", "stimulants", "adhd meds", "adrenergics"],
+      "notes": "Heart rate/BP and anxiety/insomnia context."
+    },
+    {
+      "slug": "serotonergic-antidepressants",
+      "title": "Serotonergic antidepressants",
+      "aka": ["ssri", "snri", "tricyclics", "serotonergic"],
+      "notes": "Serotonin syndrome and mood effects context."
+    },
+    {
+      "slug": "maois",
+      "title": "MAO inhibitors (MAOIs)",
+      "aka": ["maoi"],
+      "notes": "Serotonin/catecholamine interaction context."
+    },
+    {
+      "slug": "immunosuppressants",
+      "title": "Immunosuppressants / immune-modulating drugs",
+      "aka": ["biologics", "immunosuppressants"],
+      "notes": "Immune modulation/infection risk context."
+    },
+    {
+      "slug": "corticosteroids",
+      "title": "Corticosteroids",
+      "aka": ["prednisone", "steroids"],
+      "notes": "Immune/metabolic and wound-healing context."
+    }
+  ],
+  "supplement_classes": [
+    {
+      "slug": "cns-stimulants",
+      "title": "CNS stimulants (supplements)",
+      "aka": ["caffeine", "preworkout", "stimulant supplements"],
+      "notes": "HR/BP and anxiety/insomnia context."
+    },
+    {
+      "slug": "serotonergic-supplements",
+      "title": "Serotonergic supplements",
+      "aka": ["st johns wort", "5-htp", "tryptophan"],
+      "notes": "Serotonin syndrome context."
+    },
+    {
+      "slug": "anticoagulant-herbs",
+      "title": "Anticoagulant / antiplatelet herbs",
+      "aka": ["fish oil", "ginkgo", "garlic", "turmeric"],
+      "notes": "Bleeding risk context."
+    },
+    {
+      "slug": "glucose-lowering-supplements",
+      "title": "Glucose-lowering supplements",
+      "aka": ["berberine", "alpha lipoic acid", "chromium"],
+      "notes": "Hypoglycemia risk context."
+    }
+  ]
+}

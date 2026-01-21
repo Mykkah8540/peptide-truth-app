@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 
+import * as fs from "fs";
 export type EntityKind = "peptide" | "blend";
 
 export type EntityListItem = {
@@ -495,6 +496,50 @@ export function loadStackBuilderGoals(): StackBuilderGoalsV1 | null {
    Topic page loader (topic_page_v1)
    Topics live under content/topics/pages/*.json
 -------------------------------- */
+
+/* -------------------------------
+   Interactions taxonomy + index
+-------------------------------- */
+
+type InteractionClassesV1 = {
+  schema_version: "interaction_classes_v1";
+  updated_at?: string;
+  drug_classes: Array<{ slug: string; title: string; aka?: string[]; notes?: string }>;
+  supplement_classes: Array<{ slug: string; title: string; aka?: string[]; notes?: string }>;
+};
+
+type InteractionsIndexV1 = {
+  schema_version: "interactions_index_v1";
+  generated_at?: string;
+  stats?: Record<string, any>;
+  by_drug_class_name: Record<string, string[]>;
+  by_supplement_class_name: Record<string, string[]>;
+  by_peptide_name: Record<string, string[]>;
+};
+
+export function loadInteractionClassesV1(): InteractionClassesV1 | null {
+  const root = repoRoot();
+  const fp = path.join(root, "content", "_taxonomy", "interaction_classes_v1.json");
+  try {
+    const raw = fs.readFileSync(fp, "utf-8");
+    const doc = JSON.parse(raw);
+    return doc as InteractionClassesV1;
+  } catch {
+    return null;
+  }
+}
+
+export function loadInteractionsIndexV1(): InteractionsIndexV1 | null {
+  const root = repoRoot();
+  const fp = path.join(root, "content", "_index", "interactions_v1.json");
+  try {
+    const raw = fs.readFileSync(fp, "utf-8");
+    const doc = JSON.parse(raw);
+    return doc as InteractionsIndexV1;
+  } catch {
+    return null;
+  }
+}
 
 export function loadTopicPageV1BySlug(slug: string): TopicPageDocV1 | null {
   const root = repoRoot();

@@ -1,0 +1,14 @@
+{
+  "schema_version": "interactions_index_v1",
+  "generated_at": "2026-01-21",
+  "stats": {
+    "total_peptides": 94,
+    "peptides_with_any_interactions": 0,
+    "drug_class_terms": 0,
+    "supplement_class_terms": 0,
+    "peptide_terms": 0
+  },
+  "by_drug_class_name": {},
+  "by_supplement_class_name": {},
+  "by_peptide_name": {}
+}
