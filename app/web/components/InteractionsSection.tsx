@@ -1,8 +1,11 @@
 import ContentBlocks from "@/components/ContentBlocks";
+import Link from "next/link";
 
 type Item = {
   name?: string;
-  risk_note?: string;
+    slug?: string;
+  interaction_slug?: string;
+risk_note?: string;
   confidence?: string;
   evidence_grade?: string;
   notes?: string;
@@ -15,6 +18,27 @@ type Props = {
   peptides?: Item[] | null;
   interactionSummaryBlocks?: any[] | null;
 };
+
+
+function slugify(s: string) {
+  return (s || "")
+    .toLowerCase()
+    .trim()
+    .replace(/['"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function resolveInteractionHref(it: any): string | null {
+  const direct = (it?.slug || it?.interaction_slug || "").toString().trim();
+  if (direct) return `/interaction/${direct}`;
+
+  const name = (it?.name || "").toString().trim();
+  if (!name) return null;
+
+  // Best-effort slugify fallback (works if interaction slugs follow slugified names)
+  return `/interaction/${slugify(name)}`;
+}
 
 function renderList(label: string, items?: Item[] | null) {
   const list = (items ?? []).filter(Boolean);
@@ -34,7 +58,17 @@ function renderList(label: string, items?: Item[] | null) {
 
           return (
             <div key={`${label}-${idx}`} style={{ padding: 12, borderRadius: 14, background: "rgba(0,0,0,0.03)" }}>
-              <div style={{ fontSize: 14, fontWeight: 900 }}>{name || "Interaction"}</div>
+              {(() => {
+                const href = resolveInteractionHref(it);
+                const label = name || "Interaction";
+                return href ? (
+                  <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
+                    <div style={{ fontSize: 14, fontWeight: 900 }}>{label}</div>
+                  </Link>
+                ) : (
+                  <div style={{ fontSize: 14, fontWeight: 900 }}>{label}</div>
+                );
+              })()}
               {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
               {note ? <div style={{ marginTop: 8, fontSize: 13, lineHeight: 1.45 }}>{note}</div> : null}
             </div>
