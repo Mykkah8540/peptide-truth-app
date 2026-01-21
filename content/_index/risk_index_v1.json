@@ -1,0 +1,1933 @@
+{
+  "version": "v1",
+  "generated_on": "2026-01-20",
+  "counts": {
+    "entities": 100,
+    "peptides": 92,
+    "blends": 8
+  },
+  "entities": [
+    {
+      "route": "peptide:5-amino-1mq",
+      "kind": "peptide",
+      "slug": "5-amino-1mq",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:abaloparatide",
+      "kind": "peptide",
+      "slug": "abaloparatide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:acetyl-hexapeptide-8",
+      "kind": "peptide",
+      "slug": "acetyl-hexapeptide-8",
+      "risk": {
+        "risk_score": 2,
+        "severity": "mild",
+        "likelihood": "unlikely",
+        "evidence_grade": "human_interventional",
+        "developmental_risk": false,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:adipotide",
+      "kind": "peptide",
+      "slug": "adipotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:afamelanotide",
+      "kind": "peptide",
+      "slug": "afamelanotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:amylin",
+      "kind": "peptide",
+      "slug": "amylin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:angiotensin-ii",
+      "kind": "peptide",
+      "slug": "angiotensin-ii",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:aod-9604",
+      "kind": "peptide",
+      "slug": "aod-9604",
+      "risk": {
+        "risk_score": 4,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "human_interventional",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ara-290",
+      "kind": "peptide",
+      "slug": "ara-290",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:atrial-natriuretic-peptide",
+      "kind": "peptide",
+      "slug": "atrial-natriuretic-peptide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:bivalirudin",
+      "kind": "peptide",
+      "slug": "bivalirudin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:bpc-157",
+      "kind": "peptide",
+      "slug": "bpc-157",
+      "risk": {
+        "risk_score": 7,
+        "severity": "high",
+        "likelihood": "possible",
+        "evidence_grade": "human_observational",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:bpc-157-arginate",
+      "kind": "peptide",
+      "slug": "bpc-157-arginate",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:bradykinin",
+      "kind": "peptide",
+      "slug": "bradykinin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:brain-natriuretic-peptide",
+      "kind": "peptide",
+      "slug": "brain-natriuretic-peptide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:bremelanotide",
+      "kind": "peptide",
+      "slug": "bremelanotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:cagrilintide",
+      "kind": "peptide",
+      "slug": "cagrilintide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:calcitonin",
+      "kind": "peptide",
+      "slug": "calcitonin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:carbetocin",
+      "kind": "peptide",
+      "slug": "carbetocin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:cgrp",
+      "kind": "peptide",
+      "slug": "cgrp",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:cjc-1295",
+      "kind": "peptide",
+      "slug": "cjc-1295",
+      "risk": {
+        "risk_score": 7,
+        "severity": "high",
+        "likelihood": "possible",
+        "evidence_grade": "human_interventional",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:cjc-1295-dac",
+      "kind": "peptide",
+      "slug": "cjc-1295-dac",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:desmopressin",
+      "kind": "peptide",
+      "slug": "desmopressin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:dsip",
+      "kind": "peptide",
+      "slug": "dsip",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:endothelin-1",
+      "kind": "peptide",
+      "slug": "endothelin-1",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:epitalon",
+      "kind": "peptide",
+      "slug": "epitalon",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:eptifibatide",
+      "kind": "peptide",
+      "slug": "eptifibatide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:exenatide",
+      "kind": "peptide",
+      "slug": "exenatide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:follistatin-344",
+      "kind": "peptide",
+      "slug": "follistatin-344",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ghk-cu",
+      "kind": "peptide",
+      "slug": "ghk-cu",
+      "risk": {
+        "risk_score": 2,
+        "severity": "mild",
+        "likelihood": "unlikely",
+        "evidence_grade": "human_interventional",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ghrp-2",
+      "kind": "peptide",
+      "slug": "ghrp-2",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ghrp-6",
+      "kind": "peptide",
+      "slug": "ghrp-6",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:glucagon",
+      "kind": "peptide",
+      "slug": "glucagon",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:glutathione",
+      "kind": "peptide",
+      "slug": "glutathione",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:gonadorelin",
+      "kind": "peptide",
+      "slug": "gonadorelin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:hcg",
+      "kind": "peptide",
+      "slug": "hcg",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:hexarelin",
+      "kind": "peptide",
+      "slug": "hexarelin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:humanin",
+      "kind": "peptide",
+      "slug": "humanin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:igf-1",
+      "kind": "peptide",
+      "slug": "igf-1",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:igf-1-lr3",
+      "kind": "peptide",
+      "slug": "igf-1-lr3",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ipamorelin",
+      "kind": "peptide",
+      "slug": "ipamorelin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:kisspeptin",
+      "kind": "peptide",
+      "slug": "kisspeptin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:kpv",
+      "kind": "peptide",
+      "slug": "kpv",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:lanreotide",
+      "kind": "peptide",
+      "slug": "lanreotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:leuprolide",
+      "kind": "peptide",
+      "slug": "leuprolide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:linaclotide",
+      "kind": "peptide",
+      "slug": "linaclotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:liraglutide",
+      "kind": "peptide",
+      "slug": "liraglutide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ll-37",
+      "kind": "peptide",
+      "slug": "ll-37",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:mazdutide",
+      "kind": "peptide",
+      "slug": "mazdutide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:melanotan-i",
+      "kind": "peptide",
+      "slug": "melanotan-i",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:melanotan-ii",
+      "kind": "peptide",
+      "slug": "melanotan-ii",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:mk-677",
+      "kind": "peptide",
+      "slug": "mk-677",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:motilin",
+      "kind": "peptide",
+      "slug": "motilin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:mots-c",
+      "kind": "peptide",
+      "slug": "mots-c",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:nad-plus",
+      "kind": "peptide",
+      "slug": "nad-plus",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:nesiritide",
+      "kind": "peptide",
+      "slug": "nesiritide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:neuropeptide-s",
+      "kind": "peptide",
+      "slug": "neuropeptide-s",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:neuropeptide-y",
+      "kind": "peptide",
+      "slug": "neuropeptide-y",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:octreotide",
+      "kind": "peptide",
+      "slug": "octreotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:orexin-a",
+      "kind": "peptide",
+      "slug": "orexin-a",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:oxytocin",
+      "kind": "peptide",
+      "slug": "oxytocin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:palmitoyl-pentapeptide-4",
+      "kind": "peptide",
+      "slug": "palmitoyl-pentapeptide-4",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:palmitoyl-tripeptide-1",
+      "kind": "peptide",
+      "slug": "palmitoyl-tripeptide-1",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:peg-mgf",
+      "kind": "peptide",
+      "slug": "peg-mgf",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:pentagastrin",
+      "kind": "peptide",
+      "slug": "pentagastrin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:plecanatide",
+      "kind": "peptide",
+      "slug": "plecanatide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:pramlintide",
+      "kind": "peptide",
+      "slug": "pramlintide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:prolactin-releasing-peptide",
+      "kind": "peptide",
+      "slug": "prolactin-releasing-peptide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:retatrutide",
+      "kind": "peptide",
+      "slug": "retatrutide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:secretin",
+      "kind": "peptide",
+      "slug": "secretin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:selank",
+      "kind": "peptide",
+      "slug": "selank",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:semaglutide",
+      "kind": "peptide",
+      "slug": "semaglutide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:semax",
+      "kind": "peptide",
+      "slug": "semax",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:sermorelin",
+      "kind": "peptide",
+      "slug": "sermorelin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:shlp-2",
+      "kind": "peptide",
+      "slug": "shlp-2",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:snap-8",
+      "kind": "peptide",
+      "slug": "snap-8",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:somatostatin",
+      "kind": "peptide",
+      "slug": "somatostatin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ss-31",
+      "kind": "peptide",
+      "slug": "ss-31",
+      "risk": {
+        "risk_score": 6,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "regulatory_label",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:substance-p",
+      "kind": "peptide",
+      "slug": "substance-p",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:survodutide",
+      "kind": "peptide",
+      "slug": "survodutide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:tb-500",
+      "kind": "peptide",
+      "slug": "tb-500",
+      "risk": {
+        "risk_score": 6,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "animal",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:teriparatide",
+      "kind": "peptide",
+      "slug": "teriparatide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:tesamorelin",
+      "kind": "peptide",
+      "slug": "tesamorelin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:thymosin-alpha-1",
+      "kind": "peptide",
+      "slug": "thymosin-alpha-1",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:thymosin-beta-4",
+      "kind": "peptide",
+      "slug": "thymosin-beta-4",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:thymosin-beta-4-full",
+      "kind": "peptide",
+      "slug": "thymosin-beta-4-full",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:thymulin",
+      "kind": "peptide",
+      "slug": "thymulin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:tirzepatide",
+      "kind": "peptide",
+      "slug": "tirzepatide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:triptorelin",
+      "kind": "peptide",
+      "slug": "triptorelin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:vasopressin",
+      "kind": "peptide",
+      "slug": "vasopressin",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:vip",
+      "kind": "peptide",
+      "slug": "vip",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "peptide:ziconotide",
+      "kind": "peptide",
+      "slug": "ziconotide",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:bpc-157-tb-500",
+      "kind": "blend",
+      "slug": "bpc-157-tb-500",
+      "risk": {
+        "risk_score": 8,
+        "severity": "high",
+        "likelihood": "possible",
+        "evidence_grade": "animal",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
+        "computed_from_components": true,
+        "component_slugs": [
+          "bpc-157",
+          "tb-500"
+        ]
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:cagri-sema",
+      "kind": "blend",
+      "slug": "cagri-sema",
+      "risk": {
+        "risk_score": 5,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
+        "computed_from_components": true,
+        "component_slugs": [
+          "cagrilintide"
+        ]
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:cjc-ipamorelin",
+      "kind": "blend",
+      "slug": "cjc-ipamorelin",
+      "risk": {
+        "risk_score": 7,
+        "severity": "high",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
+        "computed_from_components": true,
+        "component_slugs": [
+          "cjc-1295",
+          "ipamorelin"
+        ]
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:glow",
+      "kind": "blend",
+      "slug": "glow",
+      "risk": {
+        "risk_score": 8,
+        "severity": "high",
+        "likelihood": "possible",
+        "evidence_grade": "animal",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
+        "computed_from_components": true,
+        "component_slugs": [
+          "bpc-157",
+          "tb-500",
+          "ghk-cu"
+        ]
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:glp1-sma",
+      "kind": "blend",
+      "slug": "glp1-sma",
+      "risk": {
+        "risk_score": 5,
+        "severity": null,
+        "likelihood": null,
+        "evidence_grade": null,
+        "developmental_risk": false,
+        "unknowns_penalty": false,
+        "computed_from_components": true,
+        "component_slugs": []
+      },
+      "safety_links": [
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:glp2-trz",
+      "kind": "blend",
+      "slug": "glp2-trz",
+      "risk": {
+        "risk_score": 5,
+        "severity": null,
+        "likelihood": null,
+        "evidence_grade": null,
+        "developmental_risk": false,
+        "unknowns_penalty": false,
+        "computed_from_components": true,
+        "component_slugs": []
+      },
+      "safety_links": [
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:glp3-reta",
+      "kind": "blend",
+      "slug": "glp3-reta",
+      "risk": {
+        "risk_score": 5,
+        "severity": null,
+        "likelihood": null,
+        "evidence_grade": null,
+        "developmental_risk": false,
+        "unknowns_penalty": false,
+        "computed_from_components": true,
+        "component_slugs": []
+      },
+      "safety_links": [
+        "safety_risk_scoring"
+      ]
+    },
+    {
+      "route": "blend:klow",
+      "kind": "blend",
+      "slug": "klow",
+      "risk": {
+        "risk_score": 8,
+        "severity": "high",
+        "likelihood": "possible",
+        "evidence_grade": "mechanistic_only",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
+        "computed_from_components": true,
+        "component_slugs": [
+          "bpc-157",
+          "tb-500",
+          "ghk-cu",
+          "kpv"
+        ]
+      },
+      "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
+        "safety_risk_scoring"
+      ]
+    }
+  ]
+}
