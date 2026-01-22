@@ -571,6 +571,24 @@ export function loadInteractionsIndexV1(): InteractionsIndexV1 | null {
   }
 }
 
+export type InteractionsToPeptidesIndexV1 = {
+  schema_version: "interactions_to_peptides_v1";
+  generated_at: string;
+  mapping: Record<string, { peptide_slug: string; peptide_name: string }[]>;
+};
+
+export function loadInteractionsToPeptidesIndexV1(): InteractionsToPeptidesIndexV1 | null {
+  try {
+    const root = repoRoot();
+    const fp = path.join(root, "content", "_index", "interactions_to_peptides_v1.json");
+    const doc = readJson<any>(fp);
+    return doc as InteractionsToPeptidesIndexV1;
+  } catch {
+    return null;
+  }
+}
+
+
 export function loadTopicPageV1BySlug(slug: string): TopicPageDocV1 | null {
   const root = repoRoot();
   const s = (slug || "").trim();
