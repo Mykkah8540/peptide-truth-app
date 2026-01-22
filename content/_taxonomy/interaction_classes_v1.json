@@ -200,6 +200,21 @@
         "qt meds"
       ],
       "notes": "Routing/labeling class for drugs associated with QT prolongation/torsades risk. Educational only."
+    },
+    {
+      "slug": "mao-inhibitors",
+      "title": "MAO inhibitors (MAOIs)",
+      "aka": [
+        "maoi",
+        "mao inhibitor",
+        "phenelzine",
+        "tranylcypromine",
+        "isocarboxazid",
+        "selegiline",
+        "rasagiline",
+        "linezolid"
+      ],
+      "notes": "Routing/labeling class for monoamine oxidase inhibitors and notable MAOI-like agents. Educational only."
     }
   ],
   "supplement_classes": [
