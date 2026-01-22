@@ -3,7 +3,7 @@
   "totals": {
     "peptides_total": 92,
     "peptides_with_any_interactions": 27,
-    "drug_items_total": 35,
+    "drug_items_total": 37,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -35,6 +35,10 @@
     [
       "corticosteroids",
       3
+    ],
+    [
+      "anti-infectives-antimicrobials",
+      2
     ]
   ],
   "top_supplement_classes": [],

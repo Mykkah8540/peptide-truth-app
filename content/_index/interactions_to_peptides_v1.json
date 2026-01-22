@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:01:40Z",
+  "generated_at": "2026-01-22T19:14:43Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 27,
-    "interaction_keys": 7
+    "interaction_keys": 8
   },
   "mapping": {
     "antidiabetics-insulin-glp1": [
@@ -153,6 +153,16 @@
         "peptide_slug": "kpv",
         "peptide_name": "Kpv"
       },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "thymosin-alpha-1",
+        "peptide_name": "Thymosin Alpha-1"
+      }
+    ],
+    "anti-infectives-antimicrobials": [
       {
         "peptide_slug": "ll-37",
         "peptide_name": "LL-37"

@@ -168,7 +168,8 @@
   "interactions": {
     "drug_classes": [
       "corticosteroids",
-      "immunosuppressants"
+      "immunosuppressants",
+      "anti-infectives-antimicrobials"
     ],
     "supplement_classes": [],
     "peptides": []

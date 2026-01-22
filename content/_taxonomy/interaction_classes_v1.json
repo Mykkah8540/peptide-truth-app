@@ -252,6 +252,22 @@
         "rate control"
       ],
       "notes": "Routing/labeling class for rhythm-control medications. Educational only."
+    },
+    {
+      "slug": "anti-infectives-antimicrobials",
+      "title": "Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals)",
+      "aka": [
+        "antibiotics",
+        "antibiotic",
+        "antimicrobials",
+        "antimicrobial",
+        "antibacterial",
+        "antiviral",
+        "antifungal",
+        "infection meds",
+        "anti-infectives"
+      ],
+      "notes": "Routing/labeling class for anti-infective medications. Educational only."
     }
   ],
   "supplement_classes": [
