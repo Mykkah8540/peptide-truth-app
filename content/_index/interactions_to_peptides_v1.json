@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T18:35:22Z",
+  "generated_at": "2026-01-22T18:39:13Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 17,
-    "interaction_keys": 3
+    "interaction_keys": 4
   },
   "mapping": {
     "antihypertensives": [
@@ -35,6 +35,24 @@
       }
     ],
     "anticoagulants-antiplatelets": [
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4",
+        "peptide_name": "Thymosin Beta-4"
+      }
+    ],
+    "nsaids": [
       {
         "peptide_slug": "bpc-157",
         "peptide_name": "Bpc-157"

@@ -165,7 +165,8 @@
   "canonical_name": "Ghk Cu",
   "interactions": {
     "drug_classes": [
-      "anticoagulants-antiplatelets"
+      "anticoagulants-antiplatelets",
+      "nsaids"
     ],
     "supplement_classes": [],
     "peptides": []

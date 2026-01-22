@@ -120,6 +120,36 @@
         "insulin"
       ],
       "notes": "Routing/labeling class for diabetes medications (incretin/GLP-1 class, insulin and related). Educational only."
+    },
+    {
+      "slug": "thyroid-replacement",
+      "title": "Thyroid hormone replacement",
+      "aka": [
+        "levothyroxine",
+        "synthroid",
+        "liothyronine",
+        "cytomel",
+        "thyroid meds",
+        "thyroid hormone"
+      ],
+      "notes": "Routing/labeling class for thyroid hormone replacement therapy. Educational only."
+    },
+    {
+      "slug": "nsaids",
+      "title": "NSAIDs (ibuprofen/naproxen and related)",
+      "aka": [
+        "ibuprofen",
+        "naproxen",
+        "aspirin",
+        "celecoxib",
+        "diclofenac",
+        "indomethacin",
+        "meloxicam",
+        "toradol",
+        "ketorolac",
+        "nsaid"
+      ],
+      "notes": "Routing/labeling class for nonsteroidal anti-inflammatory drugs. Educational only."
     }
   ],
   "supplement_classes": [

@@ -5,7 +5,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 17,
-    "drug_class_terms": 23,
+    "drug_class_terms": 35,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
@@ -91,6 +91,78 @@
       "thymosin-beta-4"
     ],
     "anticoagulants-antiplatelets": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "NSAIDs (ibuprofen/naproxen and related)": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "ibuprofen": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "naproxen": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "aspirin": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "celecoxib": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "diclofenac": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "indomethacin": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "meloxicam": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "toradol": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "ketorolac": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "nsaid": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4"
+    ],
+    "nsaids": [
       "bpc-157",
       "ghk-cu",
       "tb-500",
