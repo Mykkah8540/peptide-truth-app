@@ -215,6 +215,24 @@
         "linezolid"
       ],
       "notes": "Routing/labeling class for monoamine oxidase inhibitors and notable MAOI-like agents. Educational only."
+    },
+    {
+      "slug": "androgens-anabolics",
+      "title": "Androgens / anabolic steroids (TRT/AAS)",
+      "aka": [
+        "trt",
+        "testosterone therapy",
+        "androgens",
+        "anabolic steroids",
+        "aas",
+        "testosterone",
+        "nandrolone",
+        "trenbolone",
+        "oxandrolone",
+        "anavar",
+        "winstrol"
+      ],
+      "notes": "Routing/labeling class for androgen/anabolic therapies. Educational only."
     }
   ],
   "supplement_classes": [
