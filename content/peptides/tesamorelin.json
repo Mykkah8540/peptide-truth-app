@@ -262,7 +262,9 @@
   },
   "canonical_name": "Tesamorelin",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "biologics-immunomodulators"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

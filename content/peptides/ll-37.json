@@ -132,7 +132,8 @@
     "drug_classes": [
       "corticosteroids",
       "immunosuppressants",
-      "anti-infectives-antimicrobials"
+      "anti-infectives-antimicrobials",
+      "biologics-immunomodulators"
     ],
     "supplement_classes": [],
     "peptides": []

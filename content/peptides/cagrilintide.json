@@ -133,7 +133,8 @@
   "canonical_name": "Cagrilintide",
   "interactions": {
     "drug_classes": [
-      "antidiabetics-insulin-glp1"
+      "antidiabetics-insulin-glp1",
+      "biologics-immunomodulators"
     ],
     "supplement_classes": [],
     "peptides": []

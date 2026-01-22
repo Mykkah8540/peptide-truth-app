@@ -167,7 +167,8 @@
     "drug_classes": [
       "anticoagulants-antiplatelets",
       "nsaids",
-      "immunosuppressants"
+      "immunosuppressants",
+      "biologics-immunomodulators"
     ],
     "supplement_classes": [],
     "peptides": []

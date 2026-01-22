@@ -268,6 +268,39 @@
         "anti-infectives"
       ],
       "notes": "Routing/labeling class for anti-infective medications. Educational only."
+    },
+    {
+      "slug": "biologics-immunomodulators",
+      "title": "Biologics / immunomodulators (immune-modifying therapies)",
+      "aka": [
+        "biologics",
+        "biologic drugs",
+        "immunomodulators",
+        "immune modulators",
+        "tnf inhibitors",
+        "anti-tnf",
+        "interleukin inhibitors",
+        "jak inhibitors",
+        "monoclonal antibodies",
+        "mabs",
+        "humira",
+        "adalimumab",
+        "enbrel",
+        "etanercept",
+        "remicade",
+        "infliximab",
+        "stelara",
+        "ustekinumab",
+        "cosentyx",
+        "secukinumab",
+        "skyrizi",
+        "risankizumab",
+        "rinvoq",
+        "upadacitinib",
+        "xeljanz",
+        "tofacitinib"
+      ],
+      "notes": "Routing/labeling class for immune-modifying prescription therapies. Educational only."
     }
   ],
   "supplement_classes": [

@@ -147,7 +147,9 @@
   },
   "canonical_name": "Aod-9604",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "biologics-immunomodulators"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

@@ -1,13 +1,79 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:14:43Z",
+  "generated_at": "2026-01-22T19:20:19Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 27,
-    "interaction_keys": 8
+    "peptides_with_any_interactions": 36,
+    "interaction_keys": 9
   },
   "mapping": {
+    "biologics-immunomodulators": [
+      {
+        "peptide_slug": "acetyl-hexapeptide-8",
+        "peptide_name": "Acetyl Hexapeptide-8"
+      },
+      {
+        "peptide_slug": "aod-9604",
+        "peptide_name": "Aod-9604"
+      },
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "bpc-157-arginate",
+        "peptide_name": "BPC-157 Arginate"
+      },
+      {
+        "peptide_slug": "bremelanotide",
+        "peptide_name": "Bremelanotide"
+      },
+      {
+        "peptide_slug": "cagrilintide",
+        "peptide_name": "Cagrilintide"
+      },
+      {
+        "peptide_slug": "cjc-1295",
+        "peptide_name": "Cjc-1295"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "glutathione",
+        "peptide_name": "Glutathione"
+      },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "mazdutide",
+        "peptide_name": "Mazdutide"
+      },
+      {
+        "peptide_slug": "melanotan-ii",
+        "peptide_name": "Melanotan Ii"
+      },
+      {
+        "peptide_slug": "survodutide",
+        "peptide_name": "Survodutide"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "tesamorelin",
+        "peptide_name": "Tesamorelin"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
+      }
+    ],
     "antidiabetics-insulin-glp1": [
       {
         "peptide_slug": "amylin",

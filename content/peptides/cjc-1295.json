@@ -136,7 +136,9 @@
   },
   "canonical_name": "Cjc-1295",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "biologics-immunomodulators"
+    ],
     "supplement_classes": [],
     "peptides": []
   }
