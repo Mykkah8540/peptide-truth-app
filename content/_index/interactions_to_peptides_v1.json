@@ -1,10 +1,10 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:42:59Z",
+  "generated_at": "2026-01-22T19:56:19Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 50,
+    "peptides_with_any_interactions": 52,
     "interaction_keys": 12
   },
   "mapping": {
@@ -98,8 +98,20 @@
         "peptide_name": "Brain Natriuretic Peptide"
       },
       {
+        "peptide_slug": "bremelanotide",
+        "peptide_name": "Bremelanotide"
+      },
+      {
+        "peptide_slug": "cjc-1295",
+        "peptide_name": "Cjc-1295"
+      },
+      {
         "peptide_slug": "endothelin-1",
         "peptide_name": "Endothelin-1"
+      },
+      {
+        "peptide_slug": "melanotan-ii",
+        "peptide_name": "Melanotan Ii"
       },
       {
         "peptide_slug": "nesiritide",

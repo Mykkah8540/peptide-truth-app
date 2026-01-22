@@ -137,7 +137,8 @@
   "canonical_name": "Cjc-1295",
   "interactions": {
     "drug_classes": [
-      "endocrine-axis-modulation-context"
+      "endocrine-axis-modulation-context",
+      "cardiovascular-physiology-context"
     ],
     "supplement_classes": [],
     "peptides": []

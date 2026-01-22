@@ -218,7 +218,9 @@
   },
   "canonical_name": "Melanotan Ii",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "cardiovascular-physiology-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   }
