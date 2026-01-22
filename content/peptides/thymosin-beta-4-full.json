@@ -86,11 +86,6 @@
         "interest in tissue repair pathways"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -120,5 +115,10 @@
       ]
     },
     "slug": "thymosin-beta-4-full"
+  },
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
   }
 }

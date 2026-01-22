@@ -89,11 +89,6 @@
         "muscle performance and endurance interest"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -150,5 +145,10 @@
     },
     "slug": "acetyl-hexapeptide-8"
   },
-  "canonical_name": "Acetyl Hexapeptide-8"
+  "canonical_name": "Acetyl Hexapeptide-8",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

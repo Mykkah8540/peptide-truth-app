@@ -94,11 +94,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -129,5 +124,10 @@
     },
     "slug": "sermorelin"
   },
-  "canonical_name": "Sermorelin"
+  "canonical_name": "Sermorelin",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

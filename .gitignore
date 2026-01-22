@@ -26,3 +26,7 @@ ui_stack_audit.txt
 
 # backup artifacts
 *.bak*
+
+# local scratch/backups
+*.bak
+*.BROKEN.bak

@@ -90,11 +90,6 @@
         "interest in tissue repair pathways"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -127,5 +122,10 @@
       ]
     },
     "slug": "bpc-157-arginate"
+  },
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
   }
 }

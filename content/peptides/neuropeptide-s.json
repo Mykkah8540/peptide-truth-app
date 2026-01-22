@@ -86,11 +86,6 @@
         "next-day recovery and readiness support"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -120,5 +115,10 @@
       ]
     },
     "slug": "neuropeptide-s"
+  },
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
   }
 }

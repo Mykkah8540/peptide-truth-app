@@ -93,11 +93,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -132,5 +127,10 @@
     },
     "slug": "mazdutide"
   },
-  "canonical_name": "Mazdutide"
+  "canonical_name": "Mazdutide",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

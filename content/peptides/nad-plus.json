@@ -95,11 +95,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -134,5 +129,10 @@
     },
     "slug": "nad-plus"
   },
-  "canonical_name": "Nad Plus"
+  "canonical_name": "Nad Plus",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

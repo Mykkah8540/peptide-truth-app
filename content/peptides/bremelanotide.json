@@ -10,7 +10,7 @@
     "classification": {
       "category": "approved_human",
       "needs_prescription": true,
-      "notes": "Melanocortin receptor agonist\u2013class peptide (MC system). Discussed here for mechanism, evidence, and safety context only; not a use guide."
+      "notes": "Melanocortin receptor agonist–class peptide (MC system). Discussed here for mechanism, evidence, and safety context only; not a use guide."
     },
     "status": {
       "category": "approved_human",
@@ -98,11 +98,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -162,7 +157,7 @@
   "classification": {
     "category": "approved_human",
     "needs_prescription": true,
-    "notes": "Melanocortin receptor agonist\u2013class peptide (MC system). Discussed here for mechanism, evidence, and safety context only; not a use guide."
+    "notes": "Melanocortin receptor agonist–class peptide (MC system). Discussed here for mechanism, evidence, and safety context only; not a use guide."
   },
   "status": {
     "category": "approved_human",
@@ -269,5 +264,10 @@
   "meta": {
     "updated_at": "2026-01-19T19:02:46Z"
   },
-  "canonical_name": "Bremelanotide"
+  "canonical_name": "Bremelanotide",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

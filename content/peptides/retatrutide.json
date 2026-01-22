@@ -89,11 +89,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -127,5 +122,12 @@
     },
     "slug": "retatrutide"
   },
-  "canonical_name": "Retatrutide"
+  "canonical_name": "Retatrutide",
+  "interactions": {
+    "drug_classes": [
+      "diabetes-glucose-lowering"
+    ],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

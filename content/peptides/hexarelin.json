@@ -99,11 +99,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -173,5 +168,10 @@
     },
     "slug": "hexarelin"
   },
-  "canonical_name": "Hexarelin"
+  "canonical_name": "Hexarelin",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

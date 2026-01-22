@@ -93,11 +93,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -133,5 +128,10 @@
     },
     "slug": "vip"
   },
-  "canonical_name": "Vip"
+  "canonical_name": "Vip",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

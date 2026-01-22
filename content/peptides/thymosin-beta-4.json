@@ -92,11 +92,6 @@
         "interest in tissue repair pathways"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -127,5 +122,12 @@
     },
     "slug": "thymosin-beta-4"
   },
-  "canonical_name": "Thymosin Beta-4"
+  "canonical_name": "Thymosin Beta-4",
+  "interactions": {
+    "drug_classes": [
+      "anticoagulants-antiplatelets"
+    ],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

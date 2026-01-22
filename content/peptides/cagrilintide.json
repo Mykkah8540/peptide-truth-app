@@ -93,11 +93,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -135,5 +130,12 @@
     },
     "slug": "cagrilintide"
   },
-  "canonical_name": "Cagrilintide"
+  "canonical_name": "Cagrilintide",
+  "interactions": {
+    "drug_classes": [
+      "diabetes-glucose-lowering"
+    ],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

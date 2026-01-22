@@ -93,11 +93,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -169,5 +164,10 @@
     },
     "slug": "thymosin-alpha-1"
   },
-  "canonical_name": "Thymosin Alpha-1"
+  "canonical_name": "Thymosin Alpha-1",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

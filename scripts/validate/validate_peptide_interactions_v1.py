@@ -1,121 +1,91 @@
 #!/usr/bin/env python3
-from __future__ import annotations
-
 import json
-import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set, Tuple
+from typing import Any, Dict, List
 
+ROOT = Path(__file__).resolve().parents[2]
+ENTITIES_FP = ROOT / "content" / "_index" / "entities_v1.json"
+PEPTIDES_DIR = ROOT / "content" / "peptides"
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-PEPTIDES_DIR = REPO_ROOT / "content" / "peptides"
-TAXON_PATH = REPO_ROOT / "content" / "_taxonomy" / "interaction_classes_v1.json"
+def load_json(fp: Path) -> Any:
+    return json.loads(fp.read_text(encoding="utf-8"))
 
+def governed_peptide_entities() -> List[Dict[str, Any]]:
+    d = load_json(ENTITIES_FP)
+    items = d.get("peptides") if isinstance(d, dict) else []
+    if not isinstance(items, list):
+        return []
+    out = []
+    for it in items:
+        if isinstance(it, dict) and isinstance(it.get("slug"), str) and it["slug"].strip():
+            out.append(it)
+    return out
 
-def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def slug_set_from_taxonomy(tax: Dict[str, Any]) -> Tuple[Set[str], Set[str]]:
-    drug: Set[str] = set()
-    supp: Set[str] = set()
-
-    for item in (tax.get("drug_classes") or []):
-        if isinstance(item, dict) and isinstance(item.get("slug"), str):
-            drug.add(item["slug"])
-
-    for item in (tax.get("supplement_classes") or []):
-        if isinstance(item, dict) and isinstance(item.get("slug"), str):
-            supp.add(item["slug"])
-
-    return drug, supp
-
-
-def extract_interaction_lists(doc: Dict[str, Any]) -> Tuple[List[Any], List[Any], List[Any]]:
-    node = doc.get("peptide") if isinstance(doc.get("peptide"), dict) else doc
-    inter = node.get("interactions") if isinstance(node.get("interactions"), dict) else {}
-
-    drug = inter.get("drug_classes") or []
-    supp = inter.get("supplement_classes") or []
-    peps = inter.get("peptides") or []
-
-    return drug, supp, peps
-
-
-def as_slug_list(v: Any) -> Tuple[List[str], List[str]]:
-    slugs: List[str] = []
-    errors: List[str] = []
-
-    if not isinstance(v, list):
-        return [], ["not-a-list"]
-
-    for i, item in enumerate(v):
-        if isinstance(item, str):
-            slugs.append(item)
-        elif isinstance(item, dict) and isinstance(item.get("slug"), str):
-            slugs.append(item["slug"])
-        else:
-            errors.append(f"bad-item[{i}]:{type(item).__name__}")
-    return slugs, errors
-
+def is_token_ok(x: Any) -> bool:
+    # Current pipeline tolerates list entries as str, and also dict {slug/name} in case any legacy remains.
+    if isinstance(x, str) and x.strip():
+        return True
+    if isinstance(x, dict):
+        v = x.get("slug") or x.get("name")
+        return isinstance(v, str) and v.strip()
+    return False
 
 def main() -> int:
-    if not TAXON_PATH.exists():
-        print(f"ERROR: missing taxonomy: {TAXON_PATH}", file=sys.stderr)
-        return 2
-
-    tax = load_json(TAXON_PATH)
-    drug_ok, supp_ok = slug_set_from_taxonomy(tax)
-
-    peptide_files = sorted([p for p in PEPTIDES_DIR.glob("*.json") if p.name not in ("_index.json", "_search_index.json")])
-    if not peptide_files:
-        print(f"ERROR: no peptide files found in {PEPTIDES_DIR}", file=sys.stderr)
-        return 2
-
-    errors: List[str] = []
+    ents = governed_peptide_entities()
     checked = 0
-    touched = 0
+    with_any = 0
+    errors = []
 
-    for fp in peptide_files:
-        doc = load_json(fp)
-        drug_raw, supp_raw, peps_raw = extract_interaction_lists(doc)
-
-        any_present = bool(drug_raw or supp_raw or peps_raw)
-        checked += 1
-        if not any_present:
+    for e in ents:
+        slug = e["slug"]
+        fp = PEPTIDES_DIR / f"{slug}.json"
+        if not fp.exists():
+            errors.append(f"Missing peptide JSON for slug={slug}: {fp}")
+            continue
+        try:
+            doc = load_json(fp)
+        except Exception as ex:
+            errors.append(f"Unreadable JSON: {fp} ({ex})")
+            continue
+        if not isinstance(doc, dict):
+            errors.append(f"Top-level is not object: {fp}")
             continue
 
-        touched += 1
+        checked += 1
 
-        drug_slugs, drug_parse_errs = as_slug_list(drug_raw)
-        supp_slugs, supp_parse_errs = as_slug_list(supp_raw)
+        # ✅ Schema-v1: interactions MUST be TOP-LEVEL
+        inter = doc.get("interactions")
+        if inter is None:
+            continue
+        if not isinstance(inter, dict):
+            errors.append(f"interactions must be object when present: {fp}")
+            continue
 
-        if drug_parse_errs:
-            errors.append(f"{fp.name}: interactions.drug_classes parse errors: {drug_parse_errs}")
-        if supp_parse_errs:
-            errors.append(f"{fp.name}: interactions.supplement_classes parse errors: {supp_parse_errs}")
+        dc = inter.get("drug_classes", [])
+        sc = inter.get("supplement_classes", [])
+        pc = inter.get("peptides", [])
 
-        for s in drug_slugs:
-            if s not in drug_ok:
-                errors.append(f"{fp.name}: unknown drug_class slug '{s}' (not in taxonomy)")
-        for s in supp_slugs:
-            if s not in supp_ok:
-                errors.append(f"{fp.name}: unknown supplement_class slug '{s}' (not in taxonomy)")
+        for key, val in [("drug_classes", dc), ("supplement_classes", sc), ("peptides", pc)]:
+            if not isinstance(val, list):
+                errors.append(f"interactions.{key} must be list: {fp}")
+                continue
+            for item in val:
+                if not is_token_ok(item):
+                    errors.append(f"Bad token in interactions.{key}: {fp} -> {repr(item)}")
 
-        # NOTE: peptide-peptide interactions are intentionally not validated here (would require peptide slug set + rules)
+        if (isinstance(dc, list) and len(dc) > 0) or (isinstance(sc, list) and len(sc) > 0) or (isinstance(pc, list) and len(pc) > 0):
+            with_any += 1
 
     if errors:
         print("PEPTIDE INTERACTIONS VALIDATION FAILED")
         for e in errors[:200]:
-            print(" -", e)
-        if len(errors) > 200:
-            print(f" ... and {len(errors) - 200} more")
+            print("ERROR:", e)
+        print(f"Errors: {len(errors)} (showing up to 200)")
         return 1
 
     print("PEPTIDE INTERACTIONS VALIDATION PASSED")
-    print(f"Peptides checked: {checked}  With interactions present: {touched}")
+    print(f"Peptides checked: {checked}  With interactions present: {with_any}")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

@@ -1,162 +1,123 @@
 #!/usr/bin/env python3
 import json
-import os
-import re
 from pathlib import Path
-from typing import Dict, List, Any, Tuple
+from collections import defaultdict
+from datetime import datetime, timezone
+from typing import Any, Dict, List
 
 ROOT = Path(__file__).resolve().parents[2]
+ENTITIES_FP = ROOT / "content" / "_index" / "entities_v1.json"
 PEPTIDES_DIR = ROOT / "content" / "peptides"
-TAXON_FILE = ROOT / "content" / "_taxonomy" / "interaction_classes_v1.json"
-OUT_FILE = ROOT / "content" / "_index" / "interactions_to_peptides_v1.json"
+OUT_DIR = ROOT / "content" / "_index"
+OUT_FP = OUT_DIR / "interactions_to_peptides_v1.json"
 
-def load_json(path: Path) -> Any:
-  return json.loads(path.read_text(encoding="utf-8"))
+def load_json(fp: Path) -> Any:
+    return json.loads(fp.read_text(encoding="utf-8"))
 
-def norm(s: str) -> str:
-  s = (s or "").strip().lower()
-  s = re.sub(r"\s+", " ", s)
-  return s
+def save_json(fp: Path, data: Any) -> None:
+    fp.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-def build_term_to_slug(tax: Any) -> Dict[str, str]:
-  """
-  Build a lookup from many possible terms -> interaction slug/id.
-  Supports flexible taxonomy shapes.
-  """
-  lookup: Dict[str, str] = {}
-  doc = tax or {}
-
-  # Taxonomy shape (governed):
-  # {
-  #   "drug_classes": [ { "slug", "title", "aka": [...] }, ... ],
-  #   "supplement_classes": [ ... ]
-  # }
-  classes = []
-  for k in ("drug_classes", "supplement_classes"):
-    v = doc.get(k)
-    if isinstance(v, list):
-      classes.extend(v)
-
-  for c in classes:
-    if not isinstance(c, dict):
-      continue
-    slug = (c.get("id") or c.get("slug") or c.get("category_id") or "").strip()
-    if not slug:
-      continue
-
-    terms: List[str] = []
-    for k in ["title", "name", "id", "slug"]:
-      v = c.get(k)
-      if isinstance(v, str) and v.strip():
-        terms.append(v)
-
-    # Synonyms / terms fields (try many names)
-    for k in ["synonyms", "aliases", "terms", "candidate_terms", "search_terms"]:
-      v = c.get(k)
-      if isinstance(v, list):
-        terms.extend([x for x in v if isinstance(x, str)])
-
-    for t in terms:
-      nt = norm(t)
-      if nt and nt not in lookup:
-        lookup[nt] = slug
-
-  return lookup
-
-def extract_interaction_names(peptide_doc: Any) -> List[str]:
-  """
-  Pull interaction class names from peptide doc in a schema-flexible way.
-  We scan common locations and list fields.
-  """
-  out: List[str] = []
-  if not isinstance(peptide_doc, dict):
+def governed_peptide_entities() -> List[Dict[str, Any]]:
+    d = load_json(ENTITIES_FP)
+    items = d.get("peptides") if isinstance(d, dict) else []
+    if not isinstance(items, list):
+        return []
+    out = []
+    for it in items:
+        if isinstance(it, dict) and isinstance(it.get("slug"), str) and it["slug"].strip():
+            out.append(it)
     return out
 
-  interactions = peptide_doc.get("interactions")
-  if not isinstance(interactions, dict):
-    return out
+def iter_tokens(items):
+    if not isinstance(items, list):
+        return
+    for it in items:
+        if isinstance(it, str):
+            tok = it.strip()
+        elif isinstance(it, dict):
+            v = it.get("slug") or it.get("name") or ""
+            tok = str(v).strip()
+        else:
+            continue
+        if tok:
+            yield tok
 
-  # Common structured lists
-  for list_key in ["drug_classes", "supplement_classes", "peptides", "other_peptides", "classes", "items"]:
-    lst = interactions.get(list_key)
-    if not isinstance(lst, list):
-      continue
-    for it in lst:
-      if isinstance(it, str):
-        out.append(it)
-      elif isinstance(it, dict):
-        nm = it.get("name") or it.get("title") or it.get("id") or it.get("slug")
-        if isinstance(nm, str) and nm.strip():
-          out.append(nm)
+def main() -> int:
+    ents = governed_peptide_entities()
+    name_by_slug = {e["slug"]: (e.get("display_name") or e["slug"]) for e in ents}
 
-  # Sometimes there’s a single list of ids/slugs
-  for list_key in ["interaction_ids", "interaction_slugs", "interaction_classes"]:
-    lst = interactions.get(list_key)
-    if isinstance(lst, list):
-      for x in lst:
-        if isinstance(x, str) and x.strip():
-          out.append(x)
+    mapping = defaultdict(list)  # interaction_slug -> [{peptide_slug, peptide_name}...]
 
-  return [x for x in out if isinstance(x, str) and x.strip()]
+    scanned = 0
+    peptides_with_any = 0
 
-def main() -> None:
-  if not TAXON_FILE.exists():
-    raise SystemExit(f"Missing taxonomy file: {TAXON_FILE}")
+    for e in ents:
+        slug = e["slug"]
+        fp = PEPTIDES_DIR / f"{slug}.json"
+        if not fp.exists():
+            continue
+        try:
+            doc = load_json(fp)
+        except Exception:
+            continue
+        if not isinstance(doc, dict):
+            continue
 
-  tax = load_json(TAXON_FILE)
-  term_to_slug = build_term_to_slug(tax)
+        scanned += 1
 
-  # reverse index: interaction_slug -> peptides[]
-  rev: Dict[str, List[Dict[str, str]]] = {}
+        # ✅ Schema-v1: TOP-LEVEL ONLY
+        inter = doc.get("interactions")
+        if not isinstance(inter, dict):
+            continue
 
-  peptide_files = sorted(PEPTIDES_DIR.glob("*.json"))
-  for fp in peptide_files:
-    try:
-      doc = load_json(fp)
-    except Exception:
-      continue
+        hit = False
 
-    peptide_slug = fp.stem
-    peptide_node = doc.get("peptide") if isinstance(doc.get("peptide"), dict) else doc
+        for token in iter_tokens(inter.get("drug_classes")):
+            mapping[token].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
+            hit = True
 
-    peptide_name = (
-      peptide_node.get("canonical_name")
-      or peptide_node.get("short_name")
-      or peptide_node.get("title")
-      or peptide_slug
-    )
+        for token in iter_tokens(inter.get("supplement_classes")):
+            mapping[token].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
+            hit = True
 
-    names = extract_interaction_names(peptide_node)
+        for token in iter_tokens(inter.get("peptides")):
+            mapping[token].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
+            hit = True
 
-    # Resolve names -> interaction slug
-    slugs = set()
-    for nm in names:
-      key = norm(nm)
-      if key in term_to_slug:
-        slugs.add(term_to_slug[key])
-      else:
-        # fallback: if nm itself looks like an id/slug, accept it
-        if re.fullmatch(r"[a-z0-9][a-z0-9\-]{1,80}", key):
-          slugs.add(key)
+        if hit:
+            peptides_with_any += 1
 
-    for interaction_slug in sorted(slugs):
-      rev.setdefault(interaction_slug, []).append({
-        "peptide_slug": peptide_slug,
-        "peptide_name": str(peptide_name),
-      })
+    # de-dupe + sort per key
+    final = {}
+    for k, rows in mapping.items():
+        seen = set()
+        uniq = []
+        for r in rows:
+            key = (r["peptide_slug"], r["peptide_name"])
+            if key in seen:
+                continue
+            seen.add(key)
+            uniq.append(r)
+        uniq.sort(key=lambda x: (x["peptide_name"].lower(), x["peptide_slug"]))
+        final[k] = uniq
 
-  # Sort each list by peptide_name
-  for k in list(rev.keys()):
-    rev[k] = sorted(rev[k], key=lambda x: (x.get("peptide_name","").lower(), x.get("peptide_slug","")))
+    out = {
+        "schema_version": "interactions_to_peptides_index_v1",
+        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "stats": {
+            "total_governed_peptides": len(ents),
+            "total_peptides_loaded": scanned,
+            "peptides_with_any_interactions": peptides_with_any,
+            "interaction_keys": len(final),
+        },
+        "mapping": final,
+    }
 
-  out = {
-    "schema_version": "interactions_to_peptides_v1",
-    "generated_at": __import__("datetime").datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
-    "mapping": rev,
-  }
-
-  OUT_FILE.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-  print(f"OK: wrote {OUT_FILE} ({len(rev)} interaction key(s))")
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    save_json(OUT_FP, out)
+    print(f"OK: wrote {OUT_FP.relative_to(ROOT)} ({len(final)} interaction key(s))")
+    print("STATS:", out["stats"])
+    return 0
 
 if __name__ == "__main__":
-  main()
+    raise SystemExit(main())

@@ -92,11 +92,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -130,5 +125,10 @@
     },
     "slug": "adipotide"
   },
-  "canonical_name": "Adipotide"
+  "canonical_name": "Adipotide",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

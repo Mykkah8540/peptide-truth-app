@@ -93,11 +93,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -131,5 +126,10 @@
     },
     "slug": "hcg"
   },
-  "canonical_name": "Hcg"
+  "canonical_name": "Hcg",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

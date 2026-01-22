@@ -96,11 +96,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -168,5 +163,10 @@
     },
     "slug": "selank"
   },
-  "canonical_name": "Selank"
+  "canonical_name": "Selank",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

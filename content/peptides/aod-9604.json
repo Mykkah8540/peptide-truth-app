@@ -101,11 +101,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -150,5 +145,10 @@
     },
     "slug": "aod-9604"
   },
-  "canonical_name": "Aod-9604"
+  "canonical_name": "Aod-9604",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

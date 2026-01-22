@@ -97,11 +97,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -139,5 +134,10 @@
     },
     "slug": "cjc-1295"
   },
-  "canonical_name": "Cjc-1295"
+  "canonical_name": "Cjc-1295",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

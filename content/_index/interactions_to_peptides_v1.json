@@ -1,5 +1,52 @@
 {
-  "schema_version": "interactions_to_peptides_v1",
-  "generated_at": "2026-01-22T02:07:28Z",
-  "mapping": {}
+  "schema_version": "interactions_to_peptides_index_v1",
+  "generated_at": "2026-01-22T18:25:47Z",
+  "stats": {
+    "total_governed_peptides": 92,
+    "total_peptides_loaded": 92,
+    "peptides_with_any_interactions": 9,
+    "interaction_keys": 2
+  },
+  "mapping": {
+    "anticoagulants-antiplatelets": [
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4",
+        "peptide_name": "Thymosin Beta-4"
+      }
+    ],
+    "diabetes-glucose-lowering": [
+      {
+        "peptide_slug": "cagrilintide",
+        "peptide_name": "Cagrilintide"
+      },
+      {
+        "peptide_slug": "liraglutide",
+        "peptide_name": "Liraglutide"
+      },
+      {
+        "peptide_slug": "retatrutide",
+        "peptide_name": "Retatrutide"
+      },
+      {
+        "peptide_slug": "semaglutide",
+        "peptide_name": "Semaglutide"
+      },
+      {
+        "peptide_slug": "tirzepatide",
+        "peptide_name": "Tirzepatide"
+      }
+    ]
+  }
 }

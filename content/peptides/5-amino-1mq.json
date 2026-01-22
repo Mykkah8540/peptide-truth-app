@@ -93,11 +93,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -132,5 +127,10 @@
     },
     "slug": "5-amino-1mq"
   },
-  "canonical_name": "5 Amino 1mq"
+  "canonical_name": "5 Amino 1mq",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

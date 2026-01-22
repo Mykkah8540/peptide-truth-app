@@ -100,11 +100,6 @@
         "interest in tissue repair pathways"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -177,5 +172,12 @@
     },
     "slug": "bpc-157"
   },
-  "canonical_name": "Bpc-157"
+  "canonical_name": "Bpc-157",
+  "interactions": {
+    "drug_classes": [
+      "anticoagulants-antiplatelets"
+    ],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

@@ -2,12 +2,21 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 0,
-    "drug_items_total": 0,
+    "peptides_with_any_interactions": 9,
+    "drug_items_total": 9,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
-  "top_drug_classes": [],
+  "top_drug_classes": [
+    [
+      "diabetes-glucose-lowering",
+      5
+    ],
+    [
+      "anticoagulants-antiplatelets",
+      4
+    ]
+  ],
   "top_supplement_classes": [],
   "missing_interactions_slugs": [
     "5-amino-1mq",
@@ -22,11 +31,9 @@
     "atrial-natriuretic-peptide",
     "bivalirudin",
     "bpc-157-arginate",
-    "bpc-157",
     "bradykinin",
     "brain-natriuretic-peptide",
     "bremelanotide",
-    "cagrilintide",
     "calcitonin",
     "carbetocin",
     "cgrp",
@@ -39,7 +46,6 @@
     "eptifibatide",
     "exenatide",
     "follistatin-344",
-    "ghk-cu",
     "ghrp-2",
     "ghrp-6",
     "glucagon",
@@ -56,7 +62,6 @@
     "lanreotide",
     "leuprolide",
     "linaclotide",
-    "liraglutide",
     "ll-37",
     "mazdutide",
     "melanotan-i",
@@ -78,10 +83,8 @@
     "plecanatide",
     "pramlintide",
     "prolactin-releasing-peptide",
-    "retatrutide",
     "secretin",
     "selank",
-    "semaglutide",
     "semax",
     "sermorelin",
     "shlp-2",
@@ -90,18 +93,88 @@
     "ss-31",
     "substance-p",
     "survodutide",
-    "tb-500",
     "teriparatide",
     "tesamorelin",
     "thymosin-alpha-1",
     "thymosin-beta-4-full",
-    "thymosin-beta-4",
     "thymulin",
-    "tirzepatide",
     "triptorelin",
     "vasopressin",
     "vip",
     "ziconotide"
   ],
-  "examples": []
+  "examples": [
+    {
+      "slug": "bpc-157",
+      "drug_classes": [
+        "anticoagulants-antiplatelets"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "cagrilintide",
+      "drug_classes": [
+        "diabetes-glucose-lowering"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "ghk-cu",
+      "drug_classes": [
+        "anticoagulants-antiplatelets"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "liraglutide",
+      "drug_classes": [
+        "diabetes-glucose-lowering"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "retatrutide",
+      "drug_classes": [
+        "diabetes-glucose-lowering"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "semaglutide",
+      "drug_classes": [
+        "diabetes-glucose-lowering"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "tb-500",
+      "drug_classes": [
+        "anticoagulants-antiplatelets"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "thymosin-beta-4",
+      "drug_classes": [
+        "anticoagulants-antiplatelets"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "tirzepatide",
+      "drug_classes": [
+        "diabetes-glucose-lowering"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    }
+  ]
 }

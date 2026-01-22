@@ -93,11 +93,6 @@
         "next-day recovery and readiness support"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -133,5 +128,10 @@
     },
     "slug": "mk-677"
   },
-  "canonical_name": "Mk-677"
+  "canonical_name": "Mk-677",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

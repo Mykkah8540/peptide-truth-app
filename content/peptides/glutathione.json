@@ -94,11 +94,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -133,5 +128,10 @@
     },
     "slug": "glutathione"
   },
-  "canonical_name": "Glutathione"
+  "canonical_name": "Glutathione",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

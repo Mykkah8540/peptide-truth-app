@@ -91,11 +91,6 @@
         "interest in tissue repair pathways"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -126,5 +121,10 @@
     },
     "slug": "ara-290"
   },
-  "canonical_name": "Ara-290"
+  "canonical_name": "Ara-290",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

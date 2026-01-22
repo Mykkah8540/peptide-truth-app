@@ -1,6 +1,7 @@
 import InteractionDetail from "@/components/InteractionDetail";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { loadInteractionClassesV1, loadInteractionsIndexV1 } from "@/lib/content";
+import { loadInteractionClassesV1, loadInteractionsIndexV1, loadInteractionsToPeptidesIndexV1 } from "@/lib/content";
 
 function pickFromDoc(doc: any, slug: string) {
   const list =
@@ -47,6 +48,30 @@ export default function InteractionPage({ params }: { params: { slug: string } }
   const interaction = pickFromDoc(classesDoc, slug);
   if (!interaction) return notFound();
   const indexDoc = loadInteractionsIndexV1();
+  const revDoc = loadInteractionsToPeptidesIndexV1();
   const usedBy = pickUsedBy(indexDoc, slug);
-  return <InteractionDetail interaction={interaction} usedBy={usedBy} />;
+  const related = revDoc?.mapping?.[params.slug] || [];
+  return (
+    <div className="space-y-8">
+      <InteractionDetail interaction={interaction} usedBy={usedBy} />
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-semibold">Peptides mentioning this interaction class</h2>
+
+        {related.length === 0 ? (
+          <p className="text-sm text-muted-foreground">None yet. This section will populate as interactions are added to peptide pages.</p>
+        ) : (
+          <ul className="space-y-2">
+            {related.map((p: any) => (
+              <li key={p.peptide_slug}>
+                <Link className="underline underline-offset-4" href={`/peptide/${p.peptide_slug}`}>
+                  {p.peptide_name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    </div>
+  );
 }

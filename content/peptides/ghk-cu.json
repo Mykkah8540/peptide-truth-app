@@ -102,11 +102,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -167,5 +162,12 @@
     },
     "slug": "ghk-cu"
   },
-  "canonical_name": "Ghk Cu"
+  "canonical_name": "Ghk Cu",
+  "interactions": {
+    "drug_classes": [
+      "anticoagulants-antiplatelets"
+    ],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

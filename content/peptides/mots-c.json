@@ -94,11 +94,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "source_id": "E1",
@@ -182,5 +177,10 @@
     },
     "slug": "mots-c"
   },
-  "canonical_name": "Mots C"
+  "canonical_name": "Mots C",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

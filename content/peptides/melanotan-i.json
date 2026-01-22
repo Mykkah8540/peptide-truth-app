@@ -94,11 +94,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -132,5 +127,10 @@
     },
     "slug": "melanotan-i"
   },
-  "canonical_name": "Melanotan I"
+  "canonical_name": "Melanotan I",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

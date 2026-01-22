@@ -89,11 +89,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -128,5 +123,10 @@
     },
     "slug": "kpv"
   },
-  "canonical_name": "Kpv"
+  "canonical_name": "Kpv",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

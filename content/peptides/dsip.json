@@ -96,11 +96,6 @@
         "next-day recovery and readiness support"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -130,5 +125,10 @@
     },
     "slug": "dsip"
   },
-  "canonical_name": "Dsip"
+  "canonical_name": "Dsip",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }

@@ -97,11 +97,6 @@
         "exploration in wellness communities despite evidence limits"
       ]
     },
-    "interactions": {
-      "drug_classes": [],
-      "supplement_classes": [],
-      "peptides": []
-    },
     "evidence": [
       {
         "id": "E1",
@@ -169,5 +164,10 @@
     },
     "slug": "semax"
   },
-  "canonical_name": "Semax"
+  "canonical_name": "Semax",
+  "interactions": {
+    "drug_classes": [],
+    "supplement_classes": [],
+    "peptides": []
+  }
 }
