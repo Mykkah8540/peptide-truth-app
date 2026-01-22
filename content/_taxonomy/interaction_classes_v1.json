@@ -38,56 +38,6 @@
       "notes": "Hypoglycemia risk context; appetite/gastric effects context."
     },
     {
-      "slug": "thyroid-hormone",
-      "title": "Thyroid hormone / thyroid-active meds",
-      "aka": [
-        "levothyroxine",
-        "thyroid meds"
-      ],
-      "notes": "Thyroid axis context."
-    },
-    {
-      "slug": "cns-depressants",
-      "title": "CNS depressants / sedatives",
-      "aka": [
-        "benzodiazepines",
-        "sleep meds",
-        "opioids",
-        "sedatives"
-      ],
-      "notes": "Sedation/respiratory depression and cognition context."
-    },
-    {
-      "slug": "stimulants-adrenergic",
-      "title": "Stimulants / adrenergic agents",
-      "aka": [
-        "amphetamines",
-        "stimulants",
-        "adhd meds",
-        "adrenergics"
-      ],
-      "notes": "Heart rate/BP and anxiety/insomnia context."
-    },
-    {
-      "slug": "serotonergic-antidepressants",
-      "title": "Serotonergic antidepressants",
-      "aka": [
-        "ssri",
-        "snri",
-        "tricyclics",
-        "serotonergic"
-      ],
-      "notes": "Serotonin syndrome and mood effects context."
-    },
-    {
-      "slug": "maois",
-      "title": "MAO inhibitors (MAOIs)",
-      "aka": [
-        "maoi"
-      ],
-      "notes": "Serotonin/catecholamine interaction context."
-    },
-    {
       "slug": "immunosuppressants",
       "title": "Immunosuppressants / immune-modulating drugs",
       "aka": [
@@ -120,19 +70,6 @@
         "insulin"
       ],
       "notes": "Routing/labeling class for diabetes medications (incretin/GLP-1 class, insulin and related). Educational only."
-    },
-    {
-      "slug": "thyroid-replacement",
-      "title": "Thyroid hormone replacement",
-      "aka": [
-        "levothyroxine",
-        "synthroid",
-        "liothyronine",
-        "cytomel",
-        "thyroid meds",
-        "thyroid hormone"
-      ],
-      "notes": "Routing/labeling class for thyroid hormone replacement therapy. Educational only."
     },
     {
       "slug": "nsaids",
@@ -172,88 +109,6 @@
       "notes": "Routing/labeling class for serotonergic antidepressants and agents. Educational only."
     },
     {
-      "slug": "stimulants-adhd",
-      "title": "Stimulants (ADHD medications and related)",
-      "aka": [
-        "adhd meds",
-        "stimulants",
-        "amphetamine",
-        "dextroamphetamine",
-        "adderall",
-        "vyvanse",
-        "lisdexamfetamine",
-        "methylphenidate",
-        "ritalin",
-        "concerta"
-      ],
-      "notes": "Routing/labeling class for prescription stimulants. Educational only."
-    },
-    {
-      "slug": "qt-prolonging-agents",
-      "title": "QT-prolonging agents",
-      "aka": [
-        "qt prolongation",
-        "long qt",
-        "torsades",
-        "torsades de pointes",
-        "qt interval",
-        "qt meds"
-      ],
-      "notes": "Routing/labeling class for drugs associated with QT prolongation/torsades risk. Educational only."
-    },
-    {
-      "slug": "mao-inhibitors",
-      "title": "MAO inhibitors (MAOIs)",
-      "aka": [
-        "maoi",
-        "mao inhibitor",
-        "phenelzine",
-        "tranylcypromine",
-        "isocarboxazid",
-        "selegiline",
-        "rasagiline",
-        "linezolid"
-      ],
-      "notes": "Routing/labeling class for monoamine oxidase inhibitors and notable MAOI-like agents. Educational only."
-    },
-    {
-      "slug": "androgens-anabolics",
-      "title": "Androgens / anabolic steroids (TRT/AAS)",
-      "aka": [
-        "trt",
-        "testosterone therapy",
-        "androgens",
-        "anabolic steroids",
-        "aas",
-        "testosterone",
-        "nandrolone",
-        "trenbolone",
-        "oxandrolone",
-        "anavar",
-        "winstrol"
-      ],
-      "notes": "Routing/labeling class for androgen/anabolic therapies. Educational only."
-    },
-    {
-      "slug": "antiarrhythmics",
-      "title": "Antiarrhythmics (heart rhythm medications)",
-      "aka": [
-        "antiarrhythmic",
-        "arrhythmia meds",
-        "amiodarone",
-        "sotalol",
-        "flecainide",
-        "propafenone",
-        "dofetilide",
-        "quinidine",
-        "procainamide",
-        "lidocaine (IV)",
-        "beta blockers for rhythm",
-        "rate control"
-      ],
-      "notes": "Routing/labeling class for rhythm-control medications. Educational only."
-    },
-    {
       "slug": "anti-infectives-antimicrobials",
       "title": "Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals)",
       "aka": [
@@ -268,39 +123,6 @@
         "anti-infectives"
       ],
       "notes": "Routing/labeling class for anti-infective medications. Educational only."
-    },
-    {
-      "slug": "biologics-immunomodulators",
-      "title": "Biologics / immunomodulators (immune-modifying therapies)",
-      "aka": [
-        "biologics",
-        "biologic drugs",
-        "immunomodulators",
-        "immune modulators",
-        "tnf inhibitors",
-        "anti-tnf",
-        "interleukin inhibitors",
-        "jak inhibitors",
-        "monoclonal antibodies",
-        "mabs",
-        "humira",
-        "adalimumab",
-        "enbrel",
-        "etanercept",
-        "remicade",
-        "infliximab",
-        "stelara",
-        "ustekinumab",
-        "cosentyx",
-        "secukinumab",
-        "skyrizi",
-        "risankizumab",
-        "rinvoq",
-        "upadacitinib",
-        "xeljanz",
-        "tofacitinib"
-      ],
-      "notes": "Routing/labeling class for immune-modifying prescription therapies. Educational only."
     },
     {
       "slug": "immune-modulation-infection-risk",
