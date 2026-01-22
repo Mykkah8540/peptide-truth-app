@@ -124,9 +124,7 @@
     "slug": "bpc-157-arginate"
   },
   "interactions": {
-    "drug_classes": [
-      "biologics-immunomodulators"
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

@@ -301,6 +301,18 @@
         "tofacitinib"
       ],
       "notes": "Routing/labeling class for immune-modifying prescription therapies. Educational only."
+    },
+    {
+      "slug": "immune-modulation-infection-risk",
+      "title": "Immune modulation / infection risk context",
+      "aka": [
+        "immune modulation",
+        "infection risk",
+        "immune system",
+        "opportunistic infection",
+        "immunomodulator context"
+      ],
+      "notes": "Educational grouping for peptides that frequently appear in immune/infection discussions. Not a medication class."
     }
   ],
   "supplement_classes": [

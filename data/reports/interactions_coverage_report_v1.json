@@ -2,16 +2,12 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 36,
-    "drug_items_total": 53,
+    "peptides_with_any_interactions": 28,
+    "drug_items_total": 41,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
   "top_drug_classes": [
-    [
-      "biologics-immunomodulators",
-      16
-    ],
     [
       "antidiabetics-insulin-glp1",
       11
@@ -33,6 +29,10 @@
       4
     ],
     [
+      "immune-modulation-infection-risk",
+      4
+    ],
+    [
       "ssri-snri-serotonergic",
       3
     ],
@@ -49,20 +49,26 @@
   "missing_interactions_slugs": [
     "5-amino-1mq",
     "abaloparatide",
+    "acetyl-hexapeptide-8",
     "adipotide",
     "afamelanotide",
+    "aod-9604",
     "ara-290",
     "bivalirudin",
+    "bpc-157-arginate",
+    "bremelanotide",
     "calcitonin",
     "carbetocin",
     "cgrp",
     "cjc-1295-dac",
+    "cjc-1295",
     "desmopressin",
     "epitalon",
     "eptifibatide",
     "follistatin-344",
     "ghrp-2",
     "ghrp-6",
+    "glutathione",
     "gonadorelin",
     "hcg",
     "hexarelin",
@@ -75,6 +81,7 @@
     "leuprolide",
     "linaclotide",
     "melanotan-i",
+    "melanotan-ii",
     "mk-677",
     "motilin",
     "mots-c",
@@ -98,6 +105,7 @@
     "ss-31",
     "substance-p",
     "teriparatide",
+    "tesamorelin",
     "thymosin-beta-4-full",
     "thymulin",
     "triptorelin",
@@ -105,14 +113,6 @@
     "ziconotide"
   ],
   "examples": [
-    {
-      "slug": "acetyl-hexapeptide-8",
-      "drug_classes": [
-        "biologics-immunomodulators"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
     {
       "slug": "amylin",
       "drug_classes": [
@@ -130,14 +130,6 @@
       "peptides": []
     },
     {
-      "slug": "aod-9604",
-      "drug_classes": [
-        "biologics-immunomodulators"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
       "slug": "atrial-natriuretic-peptide",
       "drug_classes": [
         "antihypertensives"
@@ -146,19 +138,10 @@
       "peptides": []
     },
     {
-      "slug": "bpc-157-arginate",
-      "drug_classes": [
-        "biologics-immunomodulators"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
       "slug": "bpc-157",
       "drug_classes": [
         "anticoagulants-antiplatelets",
-        "nsaids",
-        "biologics-immunomodulators"
+        "nsaids"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -180,9 +163,33 @@
       "peptides": []
     },
     {
-      "slug": "bremelanotide",
+      "slug": "cagrilintide",
       "drug_classes": [
-        "biologics-immunomodulators"
+        "antidiabetics-insulin-glp1"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "dsip",
+      "drug_classes": [
+        "ssri-snri-serotonergic"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "endothelin-1",
+      "drug_classes": [
+        "antihypertensives"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "exenatide",
+      "drug_classes": [
+        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []

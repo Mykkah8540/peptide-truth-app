@@ -4,8 +4,8 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 27,
-    "drug_class_terms": 57,
+    "peptides_with_any_interactions": 28,
+    "drug_class_terms": 75,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
@@ -421,6 +421,92 @@
     ],
     "corticosteroids": [
       "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "Immune modulation / infection risk context": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "immune modulation": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "infection risk": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "immune system": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "opportunistic infection": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "immunomodulator context": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "immune-modulation-infection-risk": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "vip"
+    ],
+    "Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals)": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antibiotics": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antibiotic": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antimicrobials": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antimicrobial": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antibacterial": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antiviral": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "antifungal": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "infection meds": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "anti-infectives": [
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "anti-infectives-antimicrobials": [
       "ll-37",
       "thymosin-alpha-1"
     ]

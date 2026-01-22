@@ -127,7 +127,8 @@
   "interactions": {
     "drug_classes": [
       "corticosteroids",
-      "immunosuppressants"
+      "immunosuppressants",
+      "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],
     "peptides": []

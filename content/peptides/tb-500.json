@@ -138,8 +138,7 @@
   "interactions": {
     "drug_classes": [
       "anticoagulants-antiplatelets",
-      "nsaids",
-      "biologics-immunomodulators"
+      "nsaids"
     ],
     "supplement_classes": [],
     "peptides": []

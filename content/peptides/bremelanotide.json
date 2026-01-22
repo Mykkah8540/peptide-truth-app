@@ -266,9 +266,7 @@
   },
   "canonical_name": "Bremelanotide",
   "interactions": {
-    "drug_classes": [
-      "biologics-immunomodulators"
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }
