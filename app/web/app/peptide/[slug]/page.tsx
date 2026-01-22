@@ -3,7 +3,8 @@ import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
 import IdentityPanel from "@/components/IdentityPanel";
-import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
+import {loadPeptideBySlug, getAliasesForSlug, loadInteractionClassesV1} from "@/lib/content";
+
 import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
 import OutlookSection from "@/components/OutlookSection";
@@ -96,6 +97,78 @@ const sections = p?.sections ?? {};
         peptides={p?.interactions?.peptides}
         interactionSummaryBlocks={sections?.interaction_summary}
       />
+
+      {/* Interaction class links (navigation aid) */}
+      {(() => {
+        const classes = loadInteractionClassesV1();
+        const list = [
+          ...((doc?.interactions?.drug_classes ?? []) as any[]),
+          ...((doc?.interactions?.supplement_classes ?? []) as any[]),
+          ...((doc?.interactions?.peptides ?? []) as any[]),
+        ];
+
+        const termToSlug = new Map<string, string>();
+        const all = ((classes as any)?.categories ?? (classes as any)?.classes ?? (classes as any)?.interaction_classes ?? []) as any[];
+        for (const c of all) {
+          const slug = String(c?.id ?? c?.slug ?? c?.category_id ?? "").trim();
+          if (!slug) continue;
+          const terms: string[] = [];
+          for (const k of ["title","name","id","slug"]) {
+            const v = c?.[k];
+            if (typeof v === "string" && v.trim()) terms.push(v);
+          }
+          for (const k of ["synonyms","aliases","terms","candidate_terms","search_terms"]) {
+            const v = c?.[k];
+            if (Array.isArray(v)) for (const t of v) if (typeof t === "string") terms.push(t);
+          }
+          for (const t of terms) {
+            const key = String(t).trim().toLowerCase();
+            if (key && !termToSlug.has(key)) termToSlug.set(key, slug);
+          }
+        }
+
+        const slugs = new Map<string, { slug: string; label: string }>();
+        for (const it of list) {
+          const name = typeof it === "string" ? it : String(it?.name ?? it?.title ?? "").trim();
+          if (!name) continue;
+          const key = name.toLowerCase();
+          const slug = termToSlug.get(key);
+          if (slug) slugs.set(slug, { slug, label: name });
+        }
+
+        const links = Array.from(slugs.values());
+        if (!links.length) return null;
+
+        return (
+          <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
+            <h2 style={{ margin: 0, fontSize: 16, fontWeight: 900 }}>Interaction classes referenced</h2>
+            <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
+              Jump to the interaction class pages referenced in this peptide’s interaction notes.
+            </p>
+            <div style={{ marginTop: 12, display: "flex", gap: 10, flexWrap: "wrap" }}>
+              {links.map((x) => (
+                <a
+                  key={x.slug}
+                  href={`/interaction/${x.slug}`}
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    fontSize: 13,
+                    fontWeight: 800,
+                    padding: "8px 10px",
+                    borderRadius: 999,
+                    background: "rgba(0,0,0,0.03)",
+                    border: "1px solid rgba(0,0,0,0.06)",
+                  }}
+                >
+                  {x.label} →
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
+
 
       <ContentBlocks heading="Developmental / adolescent risk" blocks={sections?.developmental_risk_block ?? null} />
 
