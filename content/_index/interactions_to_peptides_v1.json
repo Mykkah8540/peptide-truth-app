@@ -1,6 +1,6 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T20:17:45Z",
+  "generated_at": "2026-01-22T20:24:44Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
@@ -76,6 +76,10 @@
         "peptide_name": "Amylin"
       },
       {
+        "peptide_slug": "aod-9604",
+        "peptide_name": "Aod-9604"
+      },
+      {
         "peptide_slug": "cagrilintide",
         "peptide_name": "Cagrilintide"
       },
@@ -88,12 +92,24 @@
         "peptide_name": "Glucagon"
       },
       {
+        "peptide_slug": "hexarelin",
+        "peptide_name": "Hexarelin"
+      },
+      {
+        "peptide_slug": "ipamorelin",
+        "peptide_name": "Ipamorelin"
+      },
+      {
         "peptide_slug": "liraglutide",
         "peptide_name": "Liraglutide"
       },
       {
         "peptide_slug": "mazdutide",
         "peptide_name": "Mazdutide"
+      },
+      {
+        "peptide_slug": "mots-c",
+        "peptide_name": "Mots C"
       },
       {
         "peptide_slug": "pramlintide",

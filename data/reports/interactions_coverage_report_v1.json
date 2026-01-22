@@ -3,7 +3,7 @@
   "totals": {
     "peptides_total": 92,
     "peptides_with_any_interactions": 57,
-    "drug_items_total": 90,
+    "drug_items_total": 94,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -18,7 +18,7 @@
     ],
     [
       "antidiabetics-insulin-glp1",
-      11
+      15
     ],
     [
       "cardiovascular-physiology-context",
@@ -129,7 +129,8 @@
       "slug": "aod-9604",
       "drug_classes": [
         "endocrine-axis-modulation-context",
-        "diabetes-glucose-lowering"
+        "diabetes-glucose-lowering",
+        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []
