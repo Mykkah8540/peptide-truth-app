@@ -125,7 +125,8 @@
   "canonical_name": "Retatrutide",
   "interactions": {
     "drug_classes": [
-      "antidiabetics-insulin-glp1"
+      "antidiabetics-insulin-glp1",
+      "diabetes-glucose-lowering"
     ],
     "supplement_classes": [],
     "peptides": []

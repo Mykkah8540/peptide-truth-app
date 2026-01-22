@@ -130,7 +130,8 @@
   "canonical_name": "Mazdutide",
   "interactions": {
     "drug_classes": [
-      "antidiabetics-insulin-glp1"
+      "antidiabetics-insulin-glp1",
+      "diabetes-glucose-lowering"
     ],
     "supplement_classes": [],
     "peptides": []

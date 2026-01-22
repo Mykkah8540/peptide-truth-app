@@ -179,7 +179,9 @@
   },
   "canonical_name": "Mots C",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "diabetes-glucose-lowering"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

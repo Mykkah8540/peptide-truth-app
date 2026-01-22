@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T20:09:58Z",
+  "generated_at": "2026-01-22T20:17:45Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 56,
-    "interaction_keys": 12
+    "peptides_with_any_interactions": 57,
+    "interaction_keys": 13
   },
   "mapping": {
     "neuropeptide-cns-context": [
@@ -252,6 +252,36 @@
       {
         "peptide_slug": "triptorelin",
         "peptide_name": "Triptorelin"
+      }
+    ],
+    "diabetes-glucose-lowering": [
+      {
+        "peptide_slug": "aod-9604",
+        "peptide_name": "Aod-9604"
+      },
+      {
+        "peptide_slug": "hexarelin",
+        "peptide_name": "Hexarelin"
+      },
+      {
+        "peptide_slug": "ipamorelin",
+        "peptide_name": "Ipamorelin"
+      },
+      {
+        "peptide_slug": "mazdutide",
+        "peptide_name": "Mazdutide"
+      },
+      {
+        "peptide_slug": "mots-c",
+        "peptide_name": "Mots C"
+      },
+      {
+        "peptide_slug": "retatrutide",
+        "peptide_name": "Retatrutide"
+      },
+      {
+        "peptide_slug": "survodutide",
+        "peptide_name": "Survodutide"
       }
     ],
     "anticoagulants-antiplatelets": [

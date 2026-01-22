@@ -175,7 +175,8 @@
   "canonical_name": "Ipamorelin",
   "interactions": {
     "drug_classes": [
-      "endocrine-axis-modulation-context"
+      "endocrine-axis-modulation-context",
+      "diabetes-glucose-lowering"
     ],
     "supplement_classes": [],
     "peptides": []

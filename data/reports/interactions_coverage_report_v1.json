@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 56,
-    "drug_items_total": 83,
+    "peptides_with_any_interactions": 57,
+    "drug_items_total": 90,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -23,6 +23,10 @@
     [
       "cardiovascular-physiology-context",
       10
+    ],
+    [
+      "diabetes-glucose-lowering",
+      7
     ],
     [
       "antihypertensives",
@@ -78,7 +82,6 @@
     "lanreotide",
     "linaclotide",
     "motilin",
-    "mots-c",
     "nad-plus",
     "octreotide",
     "palmitoyl-pentapeptide-4",
@@ -125,7 +128,8 @@
     {
       "slug": "aod-9604",
       "drug_classes": [
-        "endocrine-axis-modulation-context"
+        "endocrine-axis-modulation-context",
+        "diabetes-glucose-lowering"
       ],
       "supplement_classes": [],
       "peptides": []
