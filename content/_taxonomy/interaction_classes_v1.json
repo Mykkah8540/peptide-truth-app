@@ -233,6 +233,25 @@
         "winstrol"
       ],
       "notes": "Routing/labeling class for androgen/anabolic therapies. Educational only."
+    },
+    {
+      "slug": "antiarrhythmics",
+      "title": "Antiarrhythmics (heart rhythm medications)",
+      "aka": [
+        "antiarrhythmic",
+        "arrhythmia meds",
+        "amiodarone",
+        "sotalol",
+        "flecainide",
+        "propafenone",
+        "dofetilide",
+        "quinidine",
+        "procainamide",
+        "lidocaine (IV)",
+        "beta blockers for rhythm",
+        "rate control"
+      ],
+      "notes": "Routing/labeling class for rhythm-control medications. Educational only."
     }
   ],
   "supplement_classes": [
