@@ -1,6 +1,6 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T20:24:44Z",
+  "generated_at": "2026-01-22T20:26:09Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
