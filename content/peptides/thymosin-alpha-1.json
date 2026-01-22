@@ -167,7 +167,8 @@
   "canonical_name": "Thymosin Alpha-1",
   "interactions": {
     "drug_classes": [
-      "corticosteroids"
+      "corticosteroids",
+      "immunosuppressants"
     ],
     "supplement_classes": [],
     "peptides": []

@@ -166,7 +166,8 @@
   "interactions": {
     "drug_classes": [
       "anticoagulants-antiplatelets",
-      "nsaids"
+      "nsaids",
+      "immunosuppressants"
     ],
     "supplement_classes": [],
     "peptides": []

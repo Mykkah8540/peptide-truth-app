@@ -3,7 +3,7 @@
   "totals": {
     "peptides_total": 92,
     "peptides_with_any_interactions": 23,
-    "drug_items_total": 27,
+    "drug_items_total": 31,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -22,6 +22,10 @@
     ],
     [
       "nsaids",
+      4
+    ],
+    [
+      "immunosuppressants",
       4
     ],
     [
@@ -183,7 +187,8 @@
       "slug": "ghk-cu",
       "drug_classes": [
         "anticoagulants-antiplatelets",
-        "nsaids"
+        "nsaids",
+        "immunosuppressants"
       ],
       "supplement_classes": [],
       "peptides": []

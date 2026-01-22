@@ -5,7 +5,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 23,
-    "drug_class_terms": 54,
+    "drug_class_terms": 57,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
@@ -341,6 +341,24 @@
       "dsip",
       "selank",
       "semax"
+    ],
+    "Immunosuppressants / immune-modulating drugs": [
+      "ghk-cu",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "biologics": [
+      "ghk-cu",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "immunosuppressants": [
+      "ghk-cu",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
     ],
     "Corticosteroids": [
       "kpv",

@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T18:50:02Z",
+  "generated_at": "2026-01-22T18:54:10Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 23,
-    "interaction_keys": 6
+    "interaction_keys": 7
   },
   "mapping": {
     "antihypertensives": [
@@ -112,6 +112,24 @@
       {
         "peptide_slug": "semax",
         "peptide_name": "Semax"
+      }
+    ],
+    "immunosuppressants": [
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "kpv",
+        "peptide_name": "Kpv"
+      },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "thymosin-alpha-1",
+        "peptide_name": "Thymosin Alpha-1"
       }
     ],
     "corticosteroids": [
