@@ -3,7 +3,9 @@ import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
 import IdentityPanel from "@/components/IdentityPanel";
-import {loadPeptideBySlug, getAliasesForSlug, loadInteractionClassesV1} from "@/lib/content";
+import { loadPeptideBySlug, getAliasesForSlug, loadInteractionClassesV1, loadInteractionsIndexV1 } from "@/lib/content";
+
+import Link from "next/link";
 
 import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
@@ -35,6 +37,17 @@ function classifySentence(s: string): "outlook" | "disclaimer" {
     "unknown",
   ];
   return disclaimerKeywords.some((k) => t.includes(k)) ? "disclaimer" : "outlook";
+}
+
+// PEP-TALK: interaction hub links
+function uniqStrings(xs: string[]) {
+  return Array.from(new Set(xs.filter(Boolean)));
+}
+function titleCase(s: string) {
+  return (s || "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (c: string) => c.toUpperCase())
+    .trim();
 }
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -98,7 +111,65 @@ const sections = p?.sections ?? {};
         interactionSummaryBlocks={sections?.interaction_summary}
       />
 
-      {/* Interaction class links (navigation aid) */}
+      
+{/* PEP-TALK: related interaction class pages */}
+{(() => {
+  const idx = loadInteractionsIndexV1();
+  const all = [
+    ...((doc?.interactions?.drug_classes ?? []) as any[]),
+    ...((doc?.interactions?.supplement_classes ?? []) as any[]),
+    ...((doc?.interactions?.peptides ?? []) as any[]),
+  ];
+  const slugs = uniqStrings(
+    all
+      .map((it: any) => (it?.interaction_id || it?.id || it?.slug || "").toString().trim())
+      .filter(Boolean)
+  );
+
+  if (!slugs.length) return null;
+
+  // Use index titles when available
+  const idxList = (((idx as any)?.interactions ?? (idx as any)?.items ?? (idx as any)?.index ?? (idx as any)?.classes ?? []) as any[]);
+  const titleBySlug = new Map<string, string>(
+    idxList.map((it: any) => [it.slug, it.title ?? it.name ?? it.slug])
+  );
+return (
+    <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
+      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Related interaction classes</h2>
+      <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
+        These are the interaction classes referenced above. Tap to read the class overview and rationale.
+      </p>
+
+      <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 10 }}>
+        {slugs.map((slug) => {
+          const title = titleBySlug.get(slug) || titleCase(slug);
+          return (
+            <Link
+              key={slug}
+              href={`/interaction/${slug}`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "10px 12px",
+                borderRadius: 999,
+                border: "1px solid rgba(0,0,0,0.10)",
+                textDecoration: "none",
+                color: "inherit",
+                fontSize: 13,
+                fontWeight: 800,
+                background: "rgba(0,0,0,0.02)",
+              }}
+            >
+              {title} →
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+})()}
+{/* Interaction class links (navigation aid) */}
       {(() => {
         const classes = loadInteractionClassesV1();
         const list = [
