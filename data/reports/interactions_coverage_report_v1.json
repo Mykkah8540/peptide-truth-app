@@ -2,15 +2,15 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 55,
-    "drug_items_total": 82,
+    "peptides_with_any_interactions": 56,
+    "drug_items_total": 83,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
   "top_drug_classes": [
     [
       "endocrine-axis-modulation-context",
-      16
+      17
     ],
     [
       "neuropeptide-cns-context",
@@ -63,7 +63,6 @@
     "abaloparatide",
     "acetyl-hexapeptide-8",
     "adipotide",
-    "aod-9604",
     "ara-290",
     "bivalirudin",
     "bpc-157-arginate",
@@ -124,6 +123,14 @@
       "peptides": []
     },
     {
+      "slug": "aod-9604",
+      "drug_classes": [
+        "endocrine-axis-modulation-context"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
       "slug": "atrial-natriuretic-peptide",
       "drug_classes": [
         "antihypertensives",
@@ -172,14 +179,6 @@
       "slug": "cagrilintide",
       "drug_classes": [
         "antidiabetics-insulin-glp1"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "cjc-1295-dac",
-      "drug_classes": [
-        "endocrine-axis-modulation-context"
       ],
       "supplement_classes": [],
       "peptides": []

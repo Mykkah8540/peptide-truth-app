@@ -1,10 +1,10 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T20:08:06Z",
+  "generated_at": "2026-01-22T20:09:58Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 55,
+    "peptides_with_any_interactions": 56,
     "interaction_keys": 12
   },
   "mapping": {
@@ -184,43 +184,11 @@
         "peptide_name": "Vasopressin"
       }
     ],
-    "anticoagulants-antiplatelets": [
-      {
-        "peptide_slug": "bpc-157",
-        "peptide_name": "Bpc-157"
-      },
-      {
-        "peptide_slug": "ghk-cu",
-        "peptide_name": "Ghk Cu"
-      },
-      {
-        "peptide_slug": "tb-500",
-        "peptide_name": "Tb-500"
-      },
-      {
-        "peptide_slug": "thymosin-beta-4",
-        "peptide_name": "Thymosin Beta-4"
-      }
-    ],
-    "nsaids": [
-      {
-        "peptide_slug": "bpc-157",
-        "peptide_name": "Bpc-157"
-      },
-      {
-        "peptide_slug": "ghk-cu",
-        "peptide_name": "Ghk Cu"
-      },
-      {
-        "peptide_slug": "tb-500",
-        "peptide_name": "Tb-500"
-      },
-      {
-        "peptide_slug": "thymosin-beta-4",
-        "peptide_name": "Thymosin Beta-4"
-      }
-    ],
     "endocrine-axis-modulation-context": [
+      {
+        "peptide_slug": "aod-9604",
+        "peptide_name": "Aod-9604"
+      },
       {
         "peptide_slug": "cjc-1295",
         "peptide_name": "Cjc-1295"
@@ -284,6 +252,42 @@
       {
         "peptide_slug": "triptorelin",
         "peptide_name": "Triptorelin"
+      }
+    ],
+    "anticoagulants-antiplatelets": [
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4",
+        "peptide_name": "Thymosin Beta-4"
+      }
+    ],
+    "nsaids": [
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4",
+        "peptide_name": "Thymosin Beta-4"
       }
     ],
     "ssri-snri-serotonergic": [
