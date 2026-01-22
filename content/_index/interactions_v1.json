@@ -4,8 +4,8 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 20,
-    "drug_class_terms": 39,
+    "peptides_with_any_interactions": 23,
+    "drug_class_terms": 54,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
@@ -266,6 +266,81 @@
       "retatrutide",
       "semaglutide",
       "tirzepatide"
+    ],
+    "SSRIs/SNRIs and other serotonergic agents": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "ssri": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "snri": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonergic": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonin meds": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonin reuptake inhibitor": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "fluoxetine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "sertraline": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "escitalopram": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "citalopram": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "paroxetine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "venlafaxine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "duloxetine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonin syndrome": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "ssri-snri-serotonergic": [
+      "dsip",
+      "selank",
+      "semax"
     ],
     "Corticosteroids": [
       "kpv",

@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T18:40:44Z",
+  "generated_at": "2026-01-22T18:42:16Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 20,
-    "interaction_keys": 5
+    "peptides_with_any_interactions": 23,
+    "interaction_keys": 6
   },
   "mapping": {
     "antihypertensives": [
@@ -98,6 +98,20 @@
       {
         "peptide_slug": "tirzepatide",
         "peptide_name": "Tirzepatide"
+      }
+    ],
+    "ssri-snri-serotonergic": [
+      {
+        "peptide_slug": "dsip",
+        "peptide_name": "Dsip"
+      },
+      {
+        "peptide_slug": "selank",
+        "peptide_name": "Selank"
+      },
+      {
+        "peptide_slug": "semax",
+        "peptide_name": "Semax"
       }
     ],
     "corticosteroids": [

@@ -166,7 +166,9 @@
   },
   "canonical_name": "Semax",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "ssri-snri-serotonergic"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

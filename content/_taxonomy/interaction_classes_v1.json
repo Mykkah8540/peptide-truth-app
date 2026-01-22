@@ -150,6 +150,26 @@
         "nsaid"
       ],
       "notes": "Routing/labeling class for nonsteroidal anti-inflammatory drugs. Educational only."
+    },
+    {
+      "slug": "ssri-snri-serotonergic",
+      "title": "SSRIs/SNRIs and other serotonergic agents",
+      "aka": [
+        "ssri",
+        "snri",
+        "serotonergic",
+        "serotonin meds",
+        "serotonin reuptake inhibitor",
+        "fluoxetine",
+        "sertraline",
+        "escitalopram",
+        "citalopram",
+        "paroxetine",
+        "venlafaxine",
+        "duloxetine",
+        "serotonin syndrome"
+      ],
+      "notes": "Routing/labeling class for serotonergic antidepressants and agents. Educational only."
     }
   ],
   "supplement_classes": [

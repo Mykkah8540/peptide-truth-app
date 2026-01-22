@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 20,
-    "drug_items_total": 24,
+    "peptides_with_any_interactions": 23,
+    "drug_items_total": 27,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -23,6 +23,10 @@
     [
       "nsaids",
       4
+    ],
+    [
+      "ssri-snri-serotonergic",
+      3
     ],
     [
       "corticosteroids",
@@ -48,7 +52,6 @@
     "cjc-1295-dac",
     "cjc-1295",
     "desmopressin",
-    "dsip",
     "epitalon",
     "eptifibatide",
     "follistatin-344",
@@ -86,8 +89,6 @@
     "pramlintide",
     "prolactin-releasing-peptide",
     "secretin",
-    "selank",
-    "semax",
     "sermorelin",
     "shlp-2",
     "snap-8",
@@ -155,6 +156,14 @@
       "peptides": []
     },
     {
+      "slug": "dsip",
+      "drug_classes": [
+        "ssri-snri-serotonergic"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
       "slug": "endothelin-1",
       "drug_classes": [
         "antihypertensives"
@@ -175,14 +184,6 @@
       "drug_classes": [
         "anticoagulants-antiplatelets",
         "nsaids"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "kpv",
-      "drug_classes": [
-        "corticosteroids"
       ],
       "supplement_classes": [],
       "peptides": []
