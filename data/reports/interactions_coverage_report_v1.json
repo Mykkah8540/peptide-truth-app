@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 52,
-    "drug_items_total": 73,
+    "peptides_with_any_interactions": 55,
+    "drug_items_total": 82,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -11,6 +11,10 @@
     [
       "endocrine-axis-modulation-context",
       16
+    ],
+    [
+      "neuropeptide-cns-context",
+      15
     ],
     [
       "antidiabetics-insulin-glp1",
@@ -22,10 +26,6 @@
     ],
     [
       "antihypertensives",
-      6
-    ],
-    [
-      "neuropeptide-cns-context",
       6
     ],
     [
@@ -63,7 +63,6 @@
     "abaloparatide",
     "acetyl-hexapeptide-8",
     "adipotide",
-    "afamelanotide",
     "aod-9604",
     "ara-290",
     "bivalirudin",
@@ -79,11 +78,9 @@
     "humanin",
     "lanreotide",
     "linaclotide",
-    "melanotan-i",
     "motilin",
     "mots-c",
     "nad-plus",
-    "neuropeptide-s",
     "octreotide",
     "palmitoyl-pentapeptide-4",
     "palmitoyl-tripeptide-1",
@@ -101,6 +98,14 @@
     "ziconotide"
   ],
   "examples": [
+    {
+      "slug": "afamelanotide",
+      "drug_classes": [
+        "neuropeptide-cns-context"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
     {
       "slug": "amylin",
       "drug_classes": [
@@ -157,7 +162,8 @@
     {
       "slug": "bremelanotide",
       "drug_classes": [
-        "cardiovascular-physiology-context"
+        "cardiovascular-physiology-context",
+        "neuropeptide-cns-context"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -174,15 +180,6 @@
       "slug": "cjc-1295-dac",
       "drug_classes": [
         "endocrine-axis-modulation-context"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "cjc-1295",
-      "drug_classes": [
-        "endocrine-axis-modulation-context",
-        "cardiovascular-physiology-context"
       ],
       "supplement_classes": [],
       "peptides": []

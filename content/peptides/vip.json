@@ -131,7 +131,8 @@
   "canonical_name": "Vip",
   "interactions": {
     "drug_classes": [
-      "immune-modulation-infection-risk"
+      "immune-modulation-infection-risk",
+      "neuropeptide-cns-context"
     ],
     "supplement_classes": [],
     "peptides": []

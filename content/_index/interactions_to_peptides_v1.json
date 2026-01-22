@@ -1,13 +1,75 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:56:19Z",
+  "generated_at": "2026-01-22T20:08:06Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 52,
+    "peptides_with_any_interactions": 55,
     "interaction_keys": 12
   },
   "mapping": {
+    "neuropeptide-cns-context": [
+      {
+        "peptide_slug": "afamelanotide",
+        "peptide_name": "Afamelanotide"
+      },
+      {
+        "peptide_slug": "bremelanotide",
+        "peptide_name": "Bremelanotide"
+      },
+      {
+        "peptide_slug": "dsip",
+        "peptide_name": "Dsip"
+      },
+      {
+        "peptide_slug": "melanotan-i",
+        "peptide_name": "Melanotan I"
+      },
+      {
+        "peptide_slug": "melanotan-ii",
+        "peptide_name": "Melanotan Ii"
+      },
+      {
+        "peptide_slug": "neuropeptide-s",
+        "peptide_name": "Neuropeptide S"
+      },
+      {
+        "peptide_slug": "neuropeptide-y",
+        "peptide_name": "Neuropeptide Y"
+      },
+      {
+        "peptide_slug": "orexin-a",
+        "peptide_name": "Orexin-A"
+      },
+      {
+        "peptide_slug": "oxytocin",
+        "peptide_name": "Oxytocin"
+      },
+      {
+        "peptide_slug": "selank",
+        "peptide_name": "Selank"
+      },
+      {
+        "peptide_slug": "semax",
+        "peptide_name": "Semax"
+      },
+      {
+        "peptide_slug": "somatostatin",
+        "peptide_name": "Somatostatin"
+      },
+      {
+        "peptide_slug": "substance-p",
+        "peptide_name": "Substance P"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
+      }
+    ],
     "antidiabetics-insulin-glp1": [
       {
         "peptide_slug": "amylin",
@@ -296,32 +358,6 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
-      }
-    ],
-    "neuropeptide-cns-context": [
-      {
-        "peptide_slug": "neuropeptide-y",
-        "peptide_name": "Neuropeptide Y"
-      },
-      {
-        "peptide_slug": "orexin-a",
-        "peptide_name": "Orexin-A"
-      },
-      {
-        "peptide_slug": "oxytocin",
-        "peptide_name": "Oxytocin"
-      },
-      {
-        "peptide_slug": "somatostatin",
-        "peptide_name": "Somatostatin"
-      },
-      {
-        "peptide_slug": "substance-p",
-        "peptide_name": "Substance P"
-      },
-      {
-        "peptide_slug": "vasopressin",
-        "peptide_name": "Vasopressin"
       }
     ]
   }

@@ -267,7 +267,8 @@
   "canonical_name": "Bremelanotide",
   "interactions": {
     "drug_classes": [
-      "cardiovascular-physiology-context"
+      "cardiovascular-physiology-context",
+      "neuropeptide-cns-context"
     ],
     "supplement_classes": [],
     "peptides": []

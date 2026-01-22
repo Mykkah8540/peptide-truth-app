@@ -128,7 +128,8 @@
   "canonical_name": "Dsip",
   "interactions": {
     "drug_classes": [
-      "ssri-snri-serotonergic"
+      "ssri-snri-serotonergic",
+      "neuropeptide-cns-context"
     ],
     "supplement_classes": [],
     "peptides": []
