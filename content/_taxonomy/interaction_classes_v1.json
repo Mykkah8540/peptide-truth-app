@@ -187,6 +187,19 @@
         "concerta"
       ],
       "notes": "Routing/labeling class for prescription stimulants. Educational only."
+    },
+    {
+      "slug": "qt-prolonging-agents",
+      "title": "QT-prolonging agents",
+      "aka": [
+        "qt prolongation",
+        "long qt",
+        "torsades",
+        "torsades de pointes",
+        "qt interval",
+        "qt meds"
+      ],
+      "notes": "Routing/labeling class for drugs associated with QT prolongation/torsades risk. Educational only."
     }
   ],
   "supplement_classes": [
