@@ -313,6 +313,19 @@
         "immunomodulator context"
       ],
       "notes": "Educational grouping for peptides that frequently appear in immune/infection discussions. Not a medication class."
+    },
+    {
+      "slug": "cardiovascular-physiology-context",
+      "title": "Cardiovascular physiology / vasoactive peptide context",
+      "aka": [
+        "cardiovascular physiology",
+        "vasoactive peptides",
+        "blood pressure regulation",
+        "vascular tone",
+        "hemodynamics",
+        "cardiac peptides"
+      ],
+      "notes": "Educational context grouping for endogenous or peptide-like agents involved in cardiovascular regulation (BP, volume, vascular tone). Not a medication class."
     }
   ],
   "supplement_classes": [

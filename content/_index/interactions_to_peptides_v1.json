@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:29:49Z",
+  "generated_at": "2026-01-22T19:35:09Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 28,
-    "interaction_keys": 9
+    "peptides_with_any_interactions": 29,
+    "interaction_keys": 10
   },
   "mapping": {
     "antidiabetics-insulin-glp1": [
@@ -78,6 +78,36 @@
       {
         "peptide_slug": "nesiritide",
         "peptide_name": "Nesiritide"
+      }
+    ],
+    "cardiovascular-physiology-context": [
+      {
+        "peptide_slug": "angiotensin-ii",
+        "peptide_name": "Angiotensin II"
+      },
+      {
+        "peptide_slug": "atrial-natriuretic-peptide",
+        "peptide_name": "Atrial Natriuretic Peptide"
+      },
+      {
+        "peptide_slug": "bradykinin",
+        "peptide_name": "Bradykinin"
+      },
+      {
+        "peptide_slug": "brain-natriuretic-peptide",
+        "peptide_name": "Brain Natriuretic Peptide"
+      },
+      {
+        "peptide_slug": "endothelin-1",
+        "peptide_name": "Endothelin-1"
+      },
+      {
+        "peptide_slug": "nesiritide",
+        "peptide_name": "Nesiritide"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
       }
     ],
     "anticoagulants-antiplatelets": [

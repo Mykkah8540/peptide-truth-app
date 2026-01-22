@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 28,
-    "drug_items_total": 41,
+    "peptides_with_any_interactions": 29,
+    "drug_items_total": 48,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -11,6 +11,10 @@
     [
       "antidiabetics-insulin-glp1",
       11
+    ],
+    [
+      "cardiovascular-physiology-context",
+      7
     ],
     [
       "antihypertensives",
@@ -109,7 +113,6 @@
     "thymosin-beta-4-full",
     "thymulin",
     "triptorelin",
-    "vasopressin",
     "ziconotide"
   ],
   "examples": [
@@ -124,7 +127,8 @@
     {
       "slug": "angiotensin-ii",
       "drug_classes": [
-        "antihypertensives"
+        "antihypertensives",
+        "cardiovascular-physiology-context"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -132,7 +136,8 @@
     {
       "slug": "atrial-natriuretic-peptide",
       "drug_classes": [
-        "antihypertensives"
+        "antihypertensives",
+        "cardiovascular-physiology-context"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -149,7 +154,8 @@
     {
       "slug": "bradykinin",
       "drug_classes": [
-        "antihypertensives"
+        "antihypertensives",
+        "cardiovascular-physiology-context"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -157,7 +163,8 @@
     {
       "slug": "brain-natriuretic-peptide",
       "drug_classes": [
-        "antihypertensives"
+        "antihypertensives",
+        "cardiovascular-physiology-context"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -181,7 +188,8 @@
     {
       "slug": "endothelin-1",
       "drug_classes": [
-        "antihypertensives"
+        "antihypertensives",
+        "cardiovascular-physiology-context"
       ],
       "supplement_classes": [],
       "peptides": []
