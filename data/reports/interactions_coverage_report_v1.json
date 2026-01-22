@@ -2,15 +2,15 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 9,
-    "drug_items_total": 9,
+    "peptides_with_any_interactions": 11,
+    "drug_items_total": 11,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
   "top_drug_classes": [
     [
-      "diabetes-glucose-lowering",
-      5
+      "antidiabetics-insulin-glp1",
+      7
     ],
     [
       "anticoagulants-antiplatelets",
@@ -44,7 +44,6 @@
     "endothelin-1",
     "epitalon",
     "eptifibatide",
-    "exenatide",
     "follistatin-344",
     "ghrp-2",
     "ghrp-6",
@@ -63,7 +62,6 @@
     "leuprolide",
     "linaclotide",
     "ll-37",
-    "mazdutide",
     "melanotan-i",
     "melanotan-ii",
     "mk-677",
@@ -115,7 +113,15 @@
     {
       "slug": "cagrilintide",
       "drug_classes": [
-        "diabetes-glucose-lowering"
+        "antidiabetics-insulin-glp1"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "exenatide",
+      "drug_classes": [
+        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -131,7 +137,15 @@
     {
       "slug": "liraglutide",
       "drug_classes": [
-        "diabetes-glucose-lowering"
+        "antidiabetics-insulin-glp1"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "mazdutide",
+      "drug_classes": [
+        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -139,7 +153,7 @@
     {
       "slug": "retatrutide",
       "drug_classes": [
-        "diabetes-glucose-lowering"
+        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -147,7 +161,7 @@
     {
       "slug": "semaglutide",
       "drug_classes": [
-        "diabetes-glucose-lowering"
+        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -164,14 +178,6 @@
       "slug": "thymosin-beta-4",
       "drug_classes": [
         "anticoagulants-antiplatelets"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "tirzepatide",
-      "drug_classes": [
-        "diabetes-glucose-lowering"
       ],
       "supplement_classes": [],
       "peptides": []

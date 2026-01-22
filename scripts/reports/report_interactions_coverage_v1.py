@@ -18,9 +18,13 @@ def load_json(path: Path) -> Any:
 
 
 def extract(doc: Dict[str, Any]) -> Tuple[List[Any], List[Any], List[Any]]:
-    node = doc.get("peptide") if isinstance(doc.get("peptide"), dict) else doc
-    inter = node.get("interactions") if isinstance(node.get("interactions"), dict) else {}
-    return inter.get("drug_classes") or [], inter.get("supplement_classes") or [], inter.get("peptides") or []
+    # Schema-v1: interactions live at TOP-LEVEL only
+    inter = doc.get("interactions") if isinstance(doc.get("interactions"), dict) else {}
+    return (
+        inter.get("drug_classes") or [],
+        inter.get("supplement_classes") or [],
+        inter.get("peptides") or [],
+    )
 
 
 def to_slugs(v: Any) -> List[str]:
@@ -33,7 +37,6 @@ def to_slugs(v: Any) -> List[str]:
         elif isinstance(item, dict) and isinstance(item.get("slug"), str):
             out.append(item["slug"])
     return out
-
 
 def main() -> int:
     peptide_files = sorted([p for p in PEPTIDES_DIR.glob("*.json") if not p.name.startswith("_")])

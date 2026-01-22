@@ -5,87 +5,163 @@
     {
       "slug": "anticoagulants-antiplatelets",
       "title": "Anticoagulants / antiplatelets",
-      "aka": ["blood thinners", "anticoagulants", "antiplatelets"],
+      "aka": [
+        "blood thinners",
+        "anticoagulants",
+        "antiplatelets"
+      ],
       "notes": "Bleeding/clotting risk context."
     },
     {
       "slug": "antihypertensives",
       "title": "Antihypertensives / BP-lowering agents",
-      "aka": ["bp meds", "blood pressure meds", "ace inhibitors", "arbs", "beta blockers"],
+      "aka": [
+        "bp meds",
+        "blood pressure meds",
+        "ace inhibitors",
+        "arbs",
+        "beta blockers"
+      ],
       "notes": "Blood pressure effects and orthostatic risk context."
     },
     {
       "slug": "diabetes-glucose-lowering",
       "title": "Glucose-lowering agents",
-      "aka": ["insulin", "metformin", "sulfonylureas", "sglt2", "glp-1", "glp1"],
+      "aka": [
+        "insulin",
+        "metformin",
+        "sulfonylureas",
+        "sglt2",
+        "glp-1",
+        "glp1"
+      ],
       "notes": "Hypoglycemia risk context; appetite/gastric effects context."
     },
     {
       "slug": "thyroid-hormone",
       "title": "Thyroid hormone / thyroid-active meds",
-      "aka": ["levothyroxine", "thyroid meds"],
+      "aka": [
+        "levothyroxine",
+        "thyroid meds"
+      ],
       "notes": "Thyroid axis context."
     },
     {
       "slug": "cns-depressants",
       "title": "CNS depressants / sedatives",
-      "aka": ["benzodiazepines", "sleep meds", "opioids", "sedatives"],
+      "aka": [
+        "benzodiazepines",
+        "sleep meds",
+        "opioids",
+        "sedatives"
+      ],
       "notes": "Sedation/respiratory depression and cognition context."
     },
     {
       "slug": "stimulants-adrenergic",
       "title": "Stimulants / adrenergic agents",
-      "aka": ["amphetamines", "stimulants", "adhd meds", "adrenergics"],
+      "aka": [
+        "amphetamines",
+        "stimulants",
+        "adhd meds",
+        "adrenergics"
+      ],
       "notes": "Heart rate/BP and anxiety/insomnia context."
     },
     {
       "slug": "serotonergic-antidepressants",
       "title": "Serotonergic antidepressants",
-      "aka": ["ssri", "snri", "tricyclics", "serotonergic"],
+      "aka": [
+        "ssri",
+        "snri",
+        "tricyclics",
+        "serotonergic"
+      ],
       "notes": "Serotonin syndrome and mood effects context."
     },
     {
       "slug": "maois",
       "title": "MAO inhibitors (MAOIs)",
-      "aka": ["maoi"],
+      "aka": [
+        "maoi"
+      ],
       "notes": "Serotonin/catecholamine interaction context."
     },
     {
       "slug": "immunosuppressants",
       "title": "Immunosuppressants / immune-modulating drugs",
-      "aka": ["biologics", "immunosuppressants"],
+      "aka": [
+        "biologics",
+        "immunosuppressants"
+      ],
       "notes": "Immune modulation/infection risk context."
     },
     {
       "slug": "corticosteroids",
       "title": "Corticosteroids",
-      "aka": ["prednisone", "steroids"],
+      "aka": [
+        "prednisone",
+        "steroids"
+      ],
       "notes": "Immune/metabolic and wound-healing context."
+    },
+    {
+      "slug": "antidiabetics-insulin-glp1",
+      "title": "Antidiabetics (Insulin/GLP-1 and related)",
+      "aka": [
+        "diabetes-glucose-lowering",
+        "diabetes meds",
+        "glucose lowering",
+        "blood sugar meds",
+        "antidiabetics",
+        "GLP-1",
+        "GLP1",
+        "incretin",
+        "insulin"
+      ],
+      "notes": "Routing/labeling class for diabetes medications (incretin/GLP-1 class, insulin and related). Educational only."
     }
   ],
   "supplement_classes": [
     {
       "slug": "cns-stimulants",
       "title": "CNS stimulants (supplements)",
-      "aka": ["caffeine", "preworkout", "stimulant supplements"],
+      "aka": [
+        "caffeine",
+        "preworkout",
+        "stimulant supplements"
+      ],
       "notes": "HR/BP and anxiety/insomnia context."
     },
     {
       "slug": "serotonergic-supplements",
       "title": "Serotonergic supplements",
-      "aka": ["st johns wort", "5-htp", "tryptophan"],
+      "aka": [
+        "st johns wort",
+        "5-htp",
+        "tryptophan"
+      ],
       "notes": "Serotonin syndrome context."
     },
     {
       "slug": "anticoagulant-herbs",
       "title": "Anticoagulant / antiplatelet herbs",
-      "aka": ["fish oil", "ginkgo", "garlic", "turmeric"],
+      "aka": [
+        "fish oil",
+        "ginkgo",
+        "garlic",
+        "turmeric"
+      ],
       "notes": "Bleeding risk context."
     },
     {
       "slug": "glucose-lowering-supplements",
       "title": "Glucose-lowering supplements",
-      "aka": ["berberine", "alpha lipoic acid", "chromium"],
+      "aka": [
+        "berberine",
+        "alpha lipoic acid",
+        "chromium"
+      ],
       "notes": "Hypoglycemia risk context."
     }
   ]

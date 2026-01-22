@@ -118,7 +118,7 @@
   },
   "interactions": {
     "drug_classes": [
-      "diabetes-glucose-lowering"
+      "antidiabetics-insulin-glp1"
     ],
     "supplement_classes": [],
     "peptides": []

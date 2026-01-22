@@ -1,10 +1,10 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T18:25:47Z",
+  "generated_at": "2026-01-22T18:33:03Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 9,
+    "peptides_with_any_interactions": 11,
     "interaction_keys": 2
   },
   "mapping": {
@@ -26,14 +26,22 @@
         "peptide_name": "Thymosin Beta-4"
       }
     ],
-    "diabetes-glucose-lowering": [
+    "antidiabetics-insulin-glp1": [
       {
         "peptide_slug": "cagrilintide",
         "peptide_name": "Cagrilintide"
       },
       {
+        "peptide_slug": "exenatide",
+        "peptide_name": "Exenatide"
+      },
+      {
         "peptide_slug": "liraglutide",
         "peptide_name": "Liraglutide"
+      },
+      {
+        "peptide_slug": "mazdutide",
+        "peptide_name": "Mazdutide"
       },
       {
         "peptide_slug": "retatrutide",

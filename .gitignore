@@ -30,3 +30,7 @@ ui_stack_audit.txt
 # local scratch/backups
 *.bak
 *.BROKEN.bak
+
+# local scratch/backups
+*.bak
+*.BROKEN.bak
