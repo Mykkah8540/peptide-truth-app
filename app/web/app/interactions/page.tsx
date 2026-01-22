@@ -1,37 +1,50 @@
 import Link from "next/link";
-import { listInteractions, loadInteractionClassesV1 } from "@/lib/content";
+import { listInteractions } from "@/lib/content";
 import InteractionsClient from "@/components/InteractionsClient";
 
 export default function InteractionsPage() {
-  const interactions = listInteractions();
+  const rawList = listInteractions();
 
-  const classes = loadInteractionClassesV1();
-  const categories = (
-    (((classes as any)?.categories ??
-      (classes as any)?.classes ??
-      (classes as any)?.interaction_classes ??
-      []) as any[])
-      .map((c: any) => ({
-        id: String(c?.id ?? c?.category_id ?? c?.slug ?? "").trim(),
-        title: String(c?.title ?? c?.name ?? c?.id ?? c?.slug ?? "").trim(),
-      }))
-      .filter((x: any) => x.id && x.title)
-  ) ?? [];
-
-  // Normalize interaction items for the client
   const items =
-    (interactions ?? []).map((it: any) => ({
+    (rawList ?? []).map((it: any) => ({
       slug: it.slug,
-      title: it.title ?? it.slug,
+      title: it.title ?? it.name ?? it.slug,
       category: it.category ?? "other",
       summary: it.summary ?? "",
     })) ?? [];
 
+  // Derive categories from items (no dependency on taxonomy schema)
+  const categories = Array.from(
+    new Map(
+      items.map((it) => [
+        it.category || "other",
+        {
+          id: it.category || "other",
+          title:
+            (it.category || "other")
+              .replace(/[-_]+/g, " ")
+              .replace(/\b\w/g, (c: string) => c.toUpperCase()) || "Other",
+        },
+      ])
+    ).values()
+  );
+
   return (
     <main style={{ maxWidth: 920, margin: "0 auto", padding: "24px 16px" }}>
-      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "baseline", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 10,
+          flexWrap: "wrap",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+        }}
+      >
         <h1 style={{ fontSize: 22, fontWeight: 900, margin: 0 }}>Interactions</h1>
-        <Link href="/safety/safety_interactions" style={{ fontSize: 13, fontWeight: 800, textDecoration: "none" }}>
+        <Link
+          href="/safety/safety_interactions"
+          style={{ fontSize: 13, fontWeight: 800, textDecoration: "none" }}
+        >
           Safety: interactions overview →
         </Link>
       </div>
