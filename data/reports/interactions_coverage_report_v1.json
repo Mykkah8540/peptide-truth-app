@@ -2,12 +2,16 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 29,
-    "drug_items_total": 48,
+    "peptides_with_any_interactions": 45,
+    "drug_items_total": 64,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
   "top_drug_classes": [
+    [
+      "endocrine-axis-modulation-context",
+      16
+    ],
     [
       "antidiabetics-insulin-glp1",
       11
@@ -64,29 +68,16 @@
     "calcitonin",
     "carbetocin",
     "cgrp",
-    "cjc-1295-dac",
-    "cjc-1295",
     "desmopressin",
     "epitalon",
     "eptifibatide",
     "follistatin-344",
-    "ghrp-2",
-    "ghrp-6",
     "glutathione",
-    "gonadorelin",
-    "hcg",
-    "hexarelin",
     "humanin",
-    "igf-1-lr3",
-    "igf-1",
-    "ipamorelin",
-    "kisspeptin",
     "lanreotide",
-    "leuprolide",
     "linaclotide",
     "melanotan-i",
     "melanotan-ii",
-    "mk-677",
     "motilin",
     "mots-c",
     "nad-plus",
@@ -102,17 +93,14 @@
     "plecanatide",
     "prolactin-releasing-peptide",
     "secretin",
-    "sermorelin",
     "shlp-2",
     "snap-8",
     "somatostatin",
     "ss-31",
     "substance-p",
     "teriparatide",
-    "tesamorelin",
     "thymosin-beta-4-full",
     "thymulin",
-    "triptorelin",
     "ziconotide"
   ],
   "examples": [
@@ -178,26 +166,25 @@
       "peptides": []
     },
     {
+      "slug": "cjc-1295-dac",
+      "drug_classes": [
+        "endocrine-axis-modulation-context"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "cjc-1295",
+      "drug_classes": [
+        "endocrine-axis-modulation-context"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
       "slug": "dsip",
       "drug_classes": [
         "ssri-snri-serotonergic"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "endothelin-1",
-      "drug_classes": [
-        "antihypertensives",
-        "cardiovascular-physiology-context"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "exenatide",
-      "drug_classes": [
-        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []

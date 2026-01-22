@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:35:09Z",
+  "generated_at": "2026-01-22T19:38:14Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 29,
-    "interaction_keys": 10
+    "peptides_with_any_interactions": 45,
+    "interaction_keys": 11
   },
   "mapping": {
     "antidiabetics-insulin-glp1": [
@@ -144,6 +144,72 @@
       {
         "peptide_slug": "thymosin-beta-4",
         "peptide_name": "Thymosin Beta-4"
+      }
+    ],
+    "endocrine-axis-modulation-context": [
+      {
+        "peptide_slug": "cjc-1295",
+        "peptide_name": "Cjc-1295"
+      },
+      {
+        "peptide_slug": "cjc-1295-dac",
+        "peptide_name": "CJC-1295 DAC"
+      },
+      {
+        "peptide_slug": "ghrp-2",
+        "peptide_name": "GHRP-2"
+      },
+      {
+        "peptide_slug": "ghrp-6",
+        "peptide_name": "GHRP-6"
+      },
+      {
+        "peptide_slug": "gonadorelin",
+        "peptide_name": "Gonadorelin"
+      },
+      {
+        "peptide_slug": "hcg",
+        "peptide_name": "hCG"
+      },
+      {
+        "peptide_slug": "hexarelin",
+        "peptide_name": "Hexarelin"
+      },
+      {
+        "peptide_slug": "igf-1",
+        "peptide_name": "IGF-1"
+      },
+      {
+        "peptide_slug": "igf-1-lr3",
+        "peptide_name": "IGF-1 LR3"
+      },
+      {
+        "peptide_slug": "ipamorelin",
+        "peptide_name": "Ipamorelin"
+      },
+      {
+        "peptide_slug": "kisspeptin",
+        "peptide_name": "Kisspeptin"
+      },
+      {
+        "peptide_slug": "leuprolide",
+        "peptide_name": "Leuprolide"
+      },
+      {
+        "peptide_slug": "mk-677",
+        "peptide_name": "MK-677"
+      },
+      {
+        "peptide_slug": "sermorelin",
+        "peptide_name": "Sermorelin"
+      },
+      {
+        "peptide_slug": "tesamorelin",
+        "peptide_name": "Tesamorelin"
+      },
+      {
+        "peptide_slug": "triptorelin",
+        "peptide_name": "Triptorelin"
       }
     ],
     "ssri-snri-serotonergic": [

@@ -326,6 +326,31 @@
         "cardiac peptides"
       ],
       "notes": "Educational context grouping for endogenous or peptide-like agents involved in cardiovascular regulation (BP, volume, vascular tone). Not a medication class."
+    },
+    {
+      "slug": "endocrine-axis-modulation-context",
+      "title": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
+      "aka": [
+        "endocrine axis",
+        "pituitary",
+        "hypothalamus",
+        "hormone axis",
+        "hpG axis",
+        "hpA axis",
+        "hpT axis",
+        "gh axis",
+        "gonadotropin",
+        "gnrh",
+        "lh",
+        "fsh",
+        "testosterone",
+        "estrogen",
+        "growth hormone",
+        "igf-1",
+        "thyroid axis",
+        "cortisol axis"
+      ],
+      "notes": "Educational grouping for peptides/hormones that directly influence endocrine axes. Not a medication class."
     }
   ],
   "supplement_classes": [
