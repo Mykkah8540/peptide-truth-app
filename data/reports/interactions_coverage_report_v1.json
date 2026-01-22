@@ -2,15 +2,15 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 23,
-    "drug_items_total": 31,
+    "peptides_with_any_interactions": 27,
+    "drug_items_total": 35,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
   "top_drug_classes": [
     [
       "antidiabetics-insulin-glp1",
-      7
+      11
     ],
     [
       "antihypertensives",
@@ -44,7 +44,6 @@
     "acetyl-hexapeptide-8",
     "adipotide",
     "afamelanotide",
-    "amylin",
     "aod-9604",
     "ara-290",
     "bivalirudin",
@@ -61,7 +60,6 @@
     "follistatin-344",
     "ghrp-2",
     "ghrp-6",
-    "glucagon",
     "glutathione",
     "gonadorelin",
     "hcg",
@@ -90,7 +88,6 @@
     "peg-mgf",
     "pentagastrin",
     "plecanatide",
-    "pramlintide",
     "prolactin-releasing-peptide",
     "secretin",
     "sermorelin",
@@ -99,7 +96,6 @@
     "somatostatin",
     "ss-31",
     "substance-p",
-    "survodutide",
     "teriparatide",
     "tesamorelin",
     "thymosin-beta-4-full",
@@ -110,6 +106,14 @@
     "ziconotide"
   ],
   "examples": [
+    {
+      "slug": "amylin",
+      "drug_classes": [
+        "antidiabetics-insulin-glp1"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
     {
       "slug": "angiotensin-ii",
       "drug_classes": [
@@ -179,16 +183,6 @@
       "slug": "exenatide",
       "drug_classes": [
         "antidiabetics-insulin-glp1"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "ghk-cu",
-      "drug_classes": [
-        "anticoagulants-antiplatelets",
-        "nsaids",
-        "immunosuppressants"
       ],
       "supplement_classes": [],
       "peptides": []

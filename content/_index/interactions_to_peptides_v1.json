@@ -1,13 +1,59 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T18:56:09Z",
+  "generated_at": "2026-01-22T19:01:40Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 23,
+    "peptides_with_any_interactions": 27,
     "interaction_keys": 7
   },
   "mapping": {
+    "antidiabetics-insulin-glp1": [
+      {
+        "peptide_slug": "amylin",
+        "peptide_name": "Amylin"
+      },
+      {
+        "peptide_slug": "cagrilintide",
+        "peptide_name": "Cagrilintide"
+      },
+      {
+        "peptide_slug": "exenatide",
+        "peptide_name": "Exenatide"
+      },
+      {
+        "peptide_slug": "glucagon",
+        "peptide_name": "Glucagon"
+      },
+      {
+        "peptide_slug": "liraglutide",
+        "peptide_name": "Liraglutide"
+      },
+      {
+        "peptide_slug": "mazdutide",
+        "peptide_name": "Mazdutide"
+      },
+      {
+        "peptide_slug": "pramlintide",
+        "peptide_name": "Pramlintide"
+      },
+      {
+        "peptide_slug": "retatrutide",
+        "peptide_name": "Retatrutide"
+      },
+      {
+        "peptide_slug": "semaglutide",
+        "peptide_name": "Semaglutide"
+      },
+      {
+        "peptide_slug": "survodutide",
+        "peptide_name": "Survodutide"
+      },
+      {
+        "peptide_slug": "tirzepatide",
+        "peptide_name": "Tirzepatide"
+      }
+    ],
     "antihypertensives": [
       {
         "peptide_slug": "angiotensin-ii",
@@ -68,36 +114,6 @@
       {
         "peptide_slug": "thymosin-beta-4",
         "peptide_name": "Thymosin Beta-4"
-      }
-    ],
-    "antidiabetics-insulin-glp1": [
-      {
-        "peptide_slug": "cagrilintide",
-        "peptide_name": "Cagrilintide"
-      },
-      {
-        "peptide_slug": "exenatide",
-        "peptide_name": "Exenatide"
-      },
-      {
-        "peptide_slug": "liraglutide",
-        "peptide_name": "Liraglutide"
-      },
-      {
-        "peptide_slug": "mazdutide",
-        "peptide_name": "Mazdutide"
-      },
-      {
-        "peptide_slug": "retatrutide",
-        "peptide_name": "Retatrutide"
-      },
-      {
-        "peptide_slug": "semaglutide",
-        "peptide_name": "Semaglutide"
-      },
-      {
-        "peptide_slug": "tirzepatide",
-        "peptide_name": "Tirzepatide"
       }
     ],
     "ssri-snri-serotonergic": [

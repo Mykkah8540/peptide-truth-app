@@ -129,7 +129,9 @@
   },
   "canonical_name": "Survodutide",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "antidiabetics-insulin-glp1"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

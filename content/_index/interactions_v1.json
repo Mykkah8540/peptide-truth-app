@@ -4,12 +4,155 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 23,
+    "peptides_with_any_interactions": 27,
     "drug_class_terms": 57,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
   "drug_classes": {
+    "Antidiabetics (Insulin/GLP-1 and related)": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "diabetes-glucose-lowering": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "diabetes meds": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "glucose lowering": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "blood sugar meds": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "antidiabetics": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "GLP-1": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "GLP1": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "incretin": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "insulin": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "antidiabetics-insulin-glp1": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
     "Antihypertensives / BP-lowering agents": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
@@ -167,105 +310,6 @@
       "ghk-cu",
       "tb-500",
       "thymosin-beta-4"
-    ],
-    "Antidiabetics (Insulin/GLP-1 and related)": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "diabetes-glucose-lowering": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "diabetes meds": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "glucose lowering": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "blood sugar meds": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "antidiabetics": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "GLP-1": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "GLP1": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "incretin": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "insulin": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
-    ],
-    "antidiabetics-insulin-glp1": [
-      "cagrilintide",
-      "exenatide",
-      "liraglutide",
-      "mazdutide",
-      "retatrutide",
-      "semaglutide",
-      "tirzepatide"
     ],
     "SSRIs/SNRIs and other serotonergic agents": [
       "dsip",
