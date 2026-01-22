@@ -516,6 +516,36 @@ type InteractionsIndexV1 = {
   by_supplement_class_name: Record<string, string[]>;
   by_peptide_name: Record<string, string[]>;
 };
+export type InteractionListItem = {
+  slug: string;
+  title: string;
+  category?: string;
+  summary?: string;
+};
+
+export function listInteractions(): InteractionListItem[] {
+  const root = repoRoot();
+  const fp = path.join(root, "content", "_index", "interactions_v1.json");
+  try {
+    const raw = fs.readFileSync(fp, "utf-8");
+    const doc = JSON.parse(raw);
+
+    const arr =
+      (Array.isArray(doc?.interactions) ? doc.interactions :
+      Array.isArray(doc?.items) ? doc.items :
+      Array.isArray(doc) ? doc : []);
+
+    return (arr ?? []).map((it: any) => ({
+      slug: String(it?.slug ?? it?.id ?? "").trim(),
+      title: String(it?.title ?? it?.name ?? it?.slug ?? it?.id ?? "").trim(),
+      category: it?.category ? String(it.category) : undefined,
+      summary: it?.summary ? String(it.summary) : undefined,
+    })).filter((x: any) => x.slug && x.title);
+  } catch {
+    return [];
+  }
+}
+
 
 export function loadInteractionClassesV1(): InteractionClassesV1 | null {
   const root = repoRoot();
