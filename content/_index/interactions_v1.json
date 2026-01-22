@@ -4,8 +4,8 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 17,
-    "drug_class_terms": 35,
+    "peptides_with_any_interactions": 20,
+    "drug_class_terms": 39,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
@@ -266,6 +266,26 @@
       "retatrutide",
       "semaglutide",
       "tirzepatide"
+    ],
+    "Corticosteroids": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "prednisone": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "steroids": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
+    ],
+    "corticosteroids": [
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1"
     ]
   },
   "supplement_classes": {},

@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T18:39:13Z",
+  "generated_at": "2026-01-22T18:40:44Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 17,
-    "interaction_keys": 4
+    "peptides_with_any_interactions": 20,
+    "interaction_keys": 5
   },
   "mapping": {
     "antihypertensives": [
@@ -98,6 +98,20 @@
       {
         "peptide_slug": "tirzepatide",
         "peptide_name": "Tirzepatide"
+      }
+    ],
+    "corticosteroids": [
+      {
+        "peptide_slug": "kpv",
+        "peptide_name": "Kpv"
+      },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "thymosin-alpha-1",
+        "peptide_name": "Thymosin Alpha-1"
       }
     ]
   }

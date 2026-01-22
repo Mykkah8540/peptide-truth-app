@@ -129,7 +129,9 @@
   },
   "canonical_name": "Ll-37",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "corticosteroids"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 17,
-    "drug_items_total": 21,
+    "peptides_with_any_interactions": 20,
+    "drug_items_total": 24,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -23,6 +23,10 @@
     [
       "nsaids",
       4
+    ],
+    [
+      "corticosteroids",
+      3
     ]
   ],
   "top_supplement_classes": [],
@@ -60,11 +64,9 @@
     "igf-1",
     "ipamorelin",
     "kisspeptin",
-    "kpv",
     "lanreotide",
     "leuprolide",
     "linaclotide",
-    "ll-37",
     "melanotan-i",
     "melanotan-ii",
     "mk-677",
@@ -95,7 +97,6 @@
     "survodutide",
     "teriparatide",
     "tesamorelin",
-    "thymosin-alpha-1",
     "thymosin-beta-4-full",
     "thymulin",
     "triptorelin",
@@ -179,9 +180,9 @@
       "peptides": []
     },
     {
-      "slug": "liraglutide",
+      "slug": "kpv",
       "drug_classes": [
-        "antidiabetics-insulin-glp1"
+        "corticosteroids"
       ],
       "supplement_classes": [],
       "peptides": []
