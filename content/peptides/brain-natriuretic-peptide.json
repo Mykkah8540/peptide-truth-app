@@ -116,7 +116,9 @@
     "slug": "brain-natriuretic-peptide"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "antihypertensives"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

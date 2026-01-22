@@ -116,7 +116,9 @@
     "slug": "atrial-natriuretic-peptide"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "antihypertensives"
+    ],
     "supplement_classes": [],
     "peptides": []
   }

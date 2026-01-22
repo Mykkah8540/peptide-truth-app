@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 11,
-    "drug_items_total": 11,
+    "peptides_with_any_interactions": 17,
+    "drug_items_total": 17,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -11,6 +11,10 @@
     [
       "antidiabetics-insulin-glp1",
       7
+    ],
+    [
+      "antihypertensives",
+      6
     ],
     [
       "anticoagulants-antiplatelets",
@@ -25,14 +29,10 @@
     "adipotide",
     "afamelanotide",
     "amylin",
-    "angiotensin-ii",
     "aod-9604",
     "ara-290",
-    "atrial-natriuretic-peptide",
     "bivalirudin",
     "bpc-157-arginate",
-    "bradykinin",
-    "brain-natriuretic-peptide",
     "bremelanotide",
     "calcitonin",
     "carbetocin",
@@ -41,7 +41,6 @@
     "cjc-1295",
     "desmopressin",
     "dsip",
-    "endothelin-1",
     "epitalon",
     "eptifibatide",
     "follistatin-344",
@@ -68,7 +67,6 @@
     "motilin",
     "mots-c",
     "nad-plus",
-    "nesiritide",
     "neuropeptide-s",
     "neuropeptide-y",
     "octreotide",
@@ -103,6 +101,22 @@
   ],
   "examples": [
     {
+      "slug": "angiotensin-ii",
+      "drug_classes": [
+        "antihypertensives"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "atrial-natriuretic-peptide",
+      "drug_classes": [
+        "antihypertensives"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
       "slug": "bpc-157",
       "drug_classes": [
         "anticoagulants-antiplatelets"
@@ -111,9 +125,33 @@
       "peptides": []
     },
     {
+      "slug": "bradykinin",
+      "drug_classes": [
+        "antihypertensives"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "brain-natriuretic-peptide",
+      "drug_classes": [
+        "antihypertensives"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
       "slug": "cagrilintide",
       "drug_classes": [
         "antidiabetics-insulin-glp1"
+      ],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "endothelin-1",
+      "drug_classes": [
+        "antihypertensives"
       ],
       "supplement_classes": [],
       "peptides": []
@@ -138,46 +176,6 @@
       "slug": "liraglutide",
       "drug_classes": [
         "antidiabetics-insulin-glp1"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "mazdutide",
-      "drug_classes": [
-        "antidiabetics-insulin-glp1"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "retatrutide",
-      "drug_classes": [
-        "antidiabetics-insulin-glp1"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "semaglutide",
-      "drug_classes": [
-        "antidiabetics-insulin-glp1"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "tb-500",
-      "drug_classes": [
-        "anticoagulants-antiplatelets"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "thymosin-beta-4",
-      "drug_classes": [
-        "anticoagulants-antiplatelets"
       ],
       "supplement_classes": [],
       "peptides": []

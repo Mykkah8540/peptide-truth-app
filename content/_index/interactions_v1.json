@@ -4,12 +4,68 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 11,
-    "drug_class_terms": 16,
+    "peptides_with_any_interactions": 17,
+    "drug_class_terms": 23,
     "supplement_class_terms": 0,
     "peptide_terms": 0
   },
   "drug_classes": {
+    "Antihypertensives / BP-lowering agents": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
+    "bp meds": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
+    "blood pressure meds": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
+    "ace inhibitors": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
+    "arbs": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
+    "beta blockers": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
+    "antihypertensives": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "endothelin-1",
+      "nesiritide"
+    ],
     "Anticoagulants / antiplatelets": [
       "bpc-157",
       "ghk-cu",
