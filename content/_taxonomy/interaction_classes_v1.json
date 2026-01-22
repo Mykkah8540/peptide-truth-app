@@ -351,6 +351,34 @@
         "cortisol axis"
       ],
       "notes": "Educational grouping for peptides/hormones that directly influence endocrine axes. Not a medication class."
+    },
+    {
+      "slug": "neuropeptide-cns-context",
+      "title": "Neuropeptides / CNS signaling (context)",
+      "aka": [
+        "cns",
+        "central nervous system",
+        "neuropeptide",
+        "neuromodulator",
+        "orexin",
+        "hypocretin",
+        "substance p",
+        "tachykinin",
+        "neuropeptide y",
+        "npy",
+        "oxytocin",
+        "vasopressin",
+        "melanocortin",
+        "alpha msh",
+        "msh",
+        "endorphin",
+        "enkephalin",
+        "somatostatin",
+        "crh",
+        "trh",
+        "gnrh"
+      ],
+      "notes": "Educational grouping for endogenous peptides with prominent CNS signaling roles. Not a medication class."
     }
   ],
   "supplement_classes": [

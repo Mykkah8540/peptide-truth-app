@@ -1,11 +1,11 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-22T19:38:14Z",
+  "generated_at": "2026-01-22T19:40:51Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 45,
-    "interaction_keys": 11
+    "peptides_with_any_interactions": 50,
+    "interaction_keys": 12
   },
   "mapping": {
     "antidiabetics-insulin-glp1": [
@@ -284,6 +284,32 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      }
+    ],
+    "neuropeptide-cns-context": [
+      {
+        "peptide_slug": "neuropeptide-y",
+        "peptide_name": "Neuropeptide Y"
+      },
+      {
+        "peptide_slug": "orexin-a",
+        "peptide_name": "Orexin-A"
+      },
+      {
+        "peptide_slug": "oxytocin",
+        "peptide_name": "Oxytocin"
+      },
+      {
+        "peptide_slug": "somatostatin",
+        "peptide_name": "Somatostatin"
+      },
+      {
+        "peptide_slug": "substance-p",
+        "peptide_name": "Substance P"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
       }
     ]
   }

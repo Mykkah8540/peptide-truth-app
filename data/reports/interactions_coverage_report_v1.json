@@ -2,8 +2,8 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 45,
-    "drug_items_total": 64,
+    "peptides_with_any_interactions": 50,
+    "drug_items_total": 70,
     "supp_items_total": 0,
     "peptide_items_total": 0
   },
@@ -22,6 +22,10 @@
     ],
     [
       "antihypertensives",
+      6
+    ],
+    [
+      "neuropeptide-cns-context",
       6
     ],
     [
@@ -82,10 +86,7 @@
     "mots-c",
     "nad-plus",
     "neuropeptide-s",
-    "neuropeptide-y",
     "octreotide",
-    "orexin-a",
-    "oxytocin",
     "palmitoyl-pentapeptide-4",
     "palmitoyl-tripeptide-1",
     "peg-mgf",
@@ -95,9 +96,7 @@
     "secretin",
     "shlp-2",
     "snap-8",
-    "somatostatin",
     "ss-31",
-    "substance-p",
     "teriparatide",
     "thymosin-beta-4-full",
     "thymulin",
