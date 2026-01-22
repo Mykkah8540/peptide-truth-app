@@ -170,6 +170,23 @@
         "serotonin syndrome"
       ],
       "notes": "Routing/labeling class for serotonergic antidepressants and agents. Educational only."
+    },
+    {
+      "slug": "stimulants-adhd",
+      "title": "Stimulants (ADHD medications and related)",
+      "aka": [
+        "adhd meds",
+        "stimulants",
+        "amphetamine",
+        "dextroamphetamine",
+        "adderall",
+        "vyvanse",
+        "lisdexamfetamine",
+        "methylphenidate",
+        "ritalin",
+        "concerta"
+      ],
+      "notes": "Routing/labeling class for prescription stimulants. Educational only."
     }
   ],
   "supplement_classes": [
