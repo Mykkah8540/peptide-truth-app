@@ -34,6 +34,22 @@ def _compute_peptides_with_any_interactions(repo_root: Path) -> int:
             n += 1
     return n
 
+
+
+def _compute_peptides_with_populated_interactions(repo_root: Path) -> int:
+    peptides_dir = repo_root / "content" / "peptides"
+    n = 0
+    for fp in sorted(peptides_dir.glob("*.json")):
+        slug = fp.stem
+        if slug.startswith("_"):
+            continue
+        try:
+            doc = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if isinstance(doc, dict) and _peptide_has_any_interactions(doc):
+            n += 1
+    return n  # PEP_TALK__POPULATED_HELPER_V1
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = REPO_ROOT / "content" / "peptides"
 OUT_DIR = REPO_ROOT / "data" / "reports"
@@ -89,6 +105,7 @@ def main() -> int:
 
         totals["peptides_total"] += 1
         totals["peptides_with_any_interactions"] += int(any_present)
+        totals["peptides_with_populated_interactions"] += int(_peptide_has_any_interactions(doc))  # PEP_TALK__COUNT_POPULATED_V1
         totals["drug_items_total"] += len(d)
         totals["supp_items_total"] += len(s)
         totals["peptide_items_total"] += len(p)
@@ -114,18 +131,22 @@ def main() -> int:
 
     out_path = OUT_DIR / "interactions_coverage_report_v1.json"
     out_path.write_text(json.dumps(report, indent=2, sort_keys=False) + "\n", encoding="utf-8")
-
+    
     print("OK: wrote", out_path)
     print("Totals:", dict(totals))
     # PEP_TALK__FORCE_OVERRIDE_COUNTS_V4
     try:
-        totals['peptides_with_any_interactions'] = _compute_peptides_with_any_interactions(repo_root)
+        totals["peptides_with_any_interactions"] = _compute_peptides_with_any_interactions(REPO_ROOT)
+        # populated metric computed via existing helper if present; otherwise safe fallback
+        if "def _compute_peptides_with_populated_interactions" in s:
+            totals["peptides_with_populated_interactions"] = _compute_peptides_with_populated_interactions(REPO_ROOT)
+        else:
+            totals["peptides_with_populated_interactions"] = totals.get("peptides_with_populated_interactions", 0)
+        report["totals"] = dict(totals)
+        out_path.write_text(json.dumps(report, indent=2, sort_keys=False) + "\n", encoding="utf-8")
     except Exception:
         pass
-    
     print("Missing interactions:", len(missing))
     return 0
-
-
 if __name__ == "__main__":
     raise SystemExit(main())

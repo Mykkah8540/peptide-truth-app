@@ -3,6 +3,7 @@
   "totals": {
     "peptides_total": 92,
     "peptides_with_any_interactions": 92,
+    "peptides_with_populated_interactions": 92,
     "drug_items_total": 94,
     "supp_items_total": 0,
     "peptide_items_total": 0
