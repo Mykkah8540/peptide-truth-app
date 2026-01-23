@@ -1,10 +1,10 @@
 # Interactions V1 Snapshot
 
-- Generated (UTC): **2026-01-23 01:57:00Z**
+- Generated (UTC): **2026-01-23 02:02:42Z**
 - Repo: `peptide-truth-app`
 - Branch: `feat/ui-risk-badge`
-- Commit: `849259a`
-- Describe: `v1.0.0-interactions`
+- Commit: `ceca2fc`
+- Describe: `v1.0.0-interactions-1-gceca2fc-dirty`
 
 ## Source Artifacts
 
@@ -19,24 +19,25 @@
 - **drug_items_total**: 94
 - **supp_items_total**: 0
 - **peptide_items_total**: 0
+- **missing_interactions**: 35
 
 ## Interaction Classes (Drug Classes)
 
 | Rank | Slug | Title | Aka count | Peptides tagged |
 |---:|---|---|---:|---:|
-| 1 | `anti-infectives-antimicrobials` | Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals) | 9 | 0 |
-| 2 | `anticoagulants-antiplatelets` | Anticoagulants / antiplatelets | 3 | 0 |
-| 3 | `antidiabetics-insulin-glp1` | Antidiabetics (Insulin/GLP-1 and related) | 9 | 0 |
-| 4 | `antihypertensives` | Antihypertensives / BP-lowering agents | 5 | 0 |
-| 5 | `cardiovascular-physiology-context` | Cardiovascular physiology / vasoactive peptide context | 6 | 0 |
-| 6 | `corticosteroids` | Corticosteroids | 2 | 0 |
-| 7 | `endocrine-axis-modulation-context` | Endocrine axis modulation (HPT/HPA/HPG/GH context) | 18 | 0 |
-| 8 | `diabetes-glucose-lowering` | Glucose-lowering agents | 6 | 0 |
-| 9 | `immune-modulation-infection-risk` | Immune modulation / infection risk context | 5 | 0 |
-| 10 | `immunosuppressants` | Immunosuppressants / immune-modulating drugs | 2 | 0 |
-| 11 | `nsaids` | NSAIDs (ibuprofen/naproxen and related) | 10 | 0 |
-| 12 | `neuropeptide-cns-context` | Neuropeptides / CNS signaling (context) | 21 | 0 |
-| 13 | `ssri-snri-serotonergic` | SSRIs/SNRIs and other serotonergic agents | 13 | 0 |
+| 1 | `endocrine-axis-modulation-context` | Endocrine axis modulation (HPT/HPA/HPG/GH context) | 18 | 17 |
+| 2 | `antidiabetics-insulin-glp1` | Antidiabetics (Insulin/GLP-1 and related) | 9 | 15 |
+| 3 | `neuropeptide-cns-context` | Neuropeptides / CNS signaling (context) | 21 | 15 |
+| 4 | `cardiovascular-physiology-context` | Cardiovascular physiology / vasoactive peptide context | 6 | 10 |
+| 5 | `diabetes-glucose-lowering` | Glucose-lowering agents | 6 | 7 |
+| 6 | `antihypertensives` | Antihypertensives / BP-lowering agents | 5 | 6 |
+| 7 | `anticoagulants-antiplatelets` | Anticoagulants / antiplatelets | 3 | 4 |
+| 8 | `immune-modulation-infection-risk` | Immune modulation / infection risk context | 5 | 4 |
+| 9 | `immunosuppressants` | Immunosuppressants / immune-modulating drugs | 2 | 4 |
+| 10 | `nsaids` | NSAIDs (ibuprofen/naproxen and related) | 10 | 4 |
+| 11 | `corticosteroids` | Corticosteroids | 2 | 3 |
+| 12 | `ssri-snri-serotonergic` | SSRIs/SNRIs and other serotonergic agents | 13 | 3 |
+| 13 | `anti-infectives-antimicrobials` | Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals) | 9 | 2 |
 
 ### Notes
 

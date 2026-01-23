@@ -63,8 +63,10 @@ def main() -> None:
         drug_classes = taxonomy["drug_classes"]
 
     index_map: Dict[str, Any] = {}
-    if isinstance(index, dict) and isinstance(index.get("drug_classes"), dict):
-        index_map = index["drug_classes"]
+    # reverse index shape:
+    # { "generated_at": "...", "schema_version": "...", "stats": {...}, "mapping": {...} }
+    if isinstance(index, dict) and isinstance(index.get("mapping"), dict):
+        index_map = index["mapping"]
 
     per_class_counts: Dict[str, int] = {}
     for slug, peptide_slugs in index_map.items():
@@ -106,8 +108,15 @@ def main() -> None:
     for k in keys_order:
         if k in totals:
             lines.append(f"- **{k}**: {totals[k]}")
-    if missing is not None:
+
+    # Deterministic missing count even if coverage JSON shape changes
+    pt = totals.get("peptides_total")
+    pwi = totals.get("peptides_with_any_interactions")
+    if isinstance(pt, int) and isinstance(pwi, int):
+        lines.append(f"- **missing_interactions**: {pt - pwi}")
+    elif missing is not None:
         lines.append(f"- **missing_interactions**: {missing}")
+
     lines.append("")
     lines.append("## Interaction Classes (Drug Classes)")
     lines.append("")
