@@ -2,12 +2,12 @@ import { filterByQuery, listBlends } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 
-export default function BlendsPage({
+export default async function BlendsPage({
   searchParams,
 }: {
   searchParams?: { q?: string };
 }) {
-  const q = searchParams?.q ?? "";
+  const { q = \"\" } = (await searchParams) ?? {}; /* PEP_TALK__SEARCHPARAMS_PROMISE_FIX_V1 */
   const all = listBlends();
   const rows = filterByQuery(all, q);
 

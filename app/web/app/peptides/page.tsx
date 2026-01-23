@@ -2,12 +2,12 @@ import { filterByQuery, listPeptides } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
 
-export default function PeptidesPage({
+export default async function PeptidesPage({
   searchParams,
 }: {
   searchParams?: { q?: string };
 }) {
-  const q = searchParams?.q ?? "";
+  const { q = \"\" } = (await searchParams) ?? {}; /* PEP_TALK__SEARCHPARAMS_PROMISE_FIX_V1 */
   const all = listPeptides();
   const rows = filterByQuery(all, q);
 
