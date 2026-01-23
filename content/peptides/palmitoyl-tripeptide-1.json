@@ -116,7 +116,12 @@
     "slug": "palmitoyl-tripeptide-1"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      {
+        "name": "Immune modulation / infection risk context",
+        "interaction_slug": "immune-modulation-infection-risk"
+      }
+    ],
     "supplement_classes": [],
     "peptides": []
   }

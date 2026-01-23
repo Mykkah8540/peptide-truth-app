@@ -116,7 +116,12 @@
     "slug": "teriparatide"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      {
+        "name": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
+        "interaction_slug": "endocrine-axis-modulation-context"
+      }
+    ],
     "supplement_classes": [],
     "peptides": []
   }

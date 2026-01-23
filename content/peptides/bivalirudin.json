@@ -116,7 +116,12 @@
     "slug": "bivalirudin"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      {
+        "name": "Anticoagulants / antiplatelets",
+        "interaction_slug": "anticoagulants-antiplatelets"
+      }
+    ],
     "supplement_classes": [],
     "peptides": []
   }

@@ -173,7 +173,11 @@
     "drug_classes": [
       "endocrine-axis-modulation-context",
       "diabetes-glucose-lowering",
-      "antidiabetics-insulin-glp1"
+      "antidiabetics-insulin-glp1",
+      {
+        "name": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
+        "interaction_slug": "endocrine-axis-modulation-context"
+      }
     ],
     "supplement_classes": [],
     "peptides": []

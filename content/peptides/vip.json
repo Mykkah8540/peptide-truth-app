@@ -132,7 +132,11 @@
   "interactions": {
     "drug_classes": [
       "immune-modulation-infection-risk",
-      "neuropeptide-cns-context"
+      "neuropeptide-cns-context",
+      {
+        "name": "Cardiovascular physiology / vasoactive peptide context",
+        "interaction_slug": "cardiovascular-physiology-context"
+      }
     ],
     "supplement_classes": [],
     "peptides": []

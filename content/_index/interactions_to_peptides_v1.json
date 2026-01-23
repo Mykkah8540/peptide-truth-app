@@ -1,13 +1,95 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-23T02:01:37Z",
+  "generated_at": "2026-01-23T04:00:45Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 57,
-    "interaction_keys": 13
+    "peptides_with_any_interactions": 74,
+    "interaction_keys": 19
   },
   "mapping": {
+    "Endocrine axis modulation (HPT/HPA/HPG/GH context)": [
+      {
+        "peptide_slug": "abaloparatide",
+        "peptide_name": "Abaloparatide"
+      },
+      {
+        "peptide_slug": "calcitonin",
+        "peptide_name": "Calcitonin"
+      },
+      {
+        "peptide_slug": "carbetocin",
+        "peptide_name": "Carbetocin"
+      },
+      {
+        "peptide_slug": "desmopressin",
+        "peptide_name": "Desmopressin"
+      },
+      {
+        "peptide_slug": "ghrp-2",
+        "peptide_name": "GHRP-2"
+      },
+      {
+        "peptide_slug": "ghrp-6",
+        "peptide_name": "GHRP-6"
+      },
+      {
+        "peptide_slug": "hexarelin",
+        "peptide_name": "Hexarelin"
+      },
+      {
+        "peptide_slug": "ipamorelin",
+        "peptide_name": "Ipamorelin"
+      },
+      {
+        "peptide_slug": "lanreotide",
+        "peptide_name": "Lanreotide"
+      },
+      {
+        "peptide_slug": "octreotide",
+        "peptide_name": "Octreotide"
+      },
+      {
+        "peptide_slug": "teriparatide",
+        "peptide_name": "PTH 1-34 (Teriparatide)"
+      },
+      {
+        "peptide_slug": "sermorelin",
+        "peptide_name": "Sermorelin"
+      },
+      {
+        "peptide_slug": "tesamorelin",
+        "peptide_name": "Tesamorelin"
+      }
+    ],
+    "Neuropeptides / CNS signaling (context)": [
+      {
+        "peptide_slug": "acetyl-hexapeptide-8",
+        "peptide_name": "Acetyl Hexapeptide-8"
+      },
+      {
+        "peptide_slug": "epitalon",
+        "peptide_name": "Epitalon"
+      },
+      {
+        "peptide_slug": "linaclotide",
+        "peptide_name": "Linaclotide"
+      },
+      {
+        "peptide_slug": "plecanatide",
+        "peptide_name": "Plecanatide"
+      },
+      {
+        "peptide_slug": "snap-8",
+        "peptide_name": "SNAP-8"
+      }
+    ],
+    "Glucose-lowering agents": [
+      {
+        "peptide_slug": "adipotide",
+        "peptide_name": "Adipotide"
+      }
+    ],
     "neuropeptide-cns-context": [
       {
         "peptide_slug": "afamelanotide",
@@ -300,6 +382,16 @@
         "peptide_name": "Survodutide"
       }
     ],
+    "Anticoagulants / antiplatelets": [
+      {
+        "peptide_slug": "bivalirudin",
+        "peptide_name": "Bivalirudin"
+      },
+      {
+        "peptide_slug": "eptifibatide",
+        "peptide_name": "Eptifibatide"
+      }
+    ],
     "anticoagulants-antiplatelets": [
       {
         "peptide_slug": "bpc-157",
@@ -334,6 +426,28 @@
       {
         "peptide_slug": "thymosin-beta-4",
         "peptide_name": "Thymosin Beta-4"
+      }
+    ],
+    "Immune modulation / infection risk context": [
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "glutathione",
+        "peptide_name": "Glutathione"
+      },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "palmitoyl-tripeptide-1",
+        "peptide_name": "Palmitoyl Tripeptide-1"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
       }
     ],
     "ssri-snri-serotonergic": [
@@ -408,6 +522,12 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      }
+    ],
+    "Cardiovascular physiology / vasoactive peptide context": [
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
       }
     ]
   }

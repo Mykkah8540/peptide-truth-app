@@ -176,7 +176,11 @@
   "interactions": {
     "drug_classes": [
       "anticoagulants-antiplatelets",
-      "nsaids"
+      "nsaids",
+      {
+        "name": "Immune modulation / infection risk context",
+        "interaction_slug": "immune-modulation-infection-risk"
+      }
     ],
     "supplement_classes": [],
     "peptides": []
