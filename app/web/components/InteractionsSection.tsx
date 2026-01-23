@@ -1,5 +1,6 @@
 import ContentBlocks from "@/components/ContentBlocks";
 import Link from "next/link";
+import { listInteractions } from "@/lib/content";
 
 type Item = {
   name?: string;
@@ -29,6 +30,24 @@ function slugify(s: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+const __interactionTitleToSlug = (() => {
+  try {
+    const list = listInteractions();
+    const m = new Map<string, string>();
+    for (const it of list) {
+      const slug = String((it as any)?.slug ?? "").trim();
+      const title = String((it as any)?.title ?? "").trim();
+      if (slug && title) m.set(title.toLowerCase(), slug);
+      // Also index common variants if present
+      const name = String((it as any)?.name ?? "").trim();
+      if (slug && name) m.set(name.toLowerCase(), slug);
+    }
+    return m;
+  } catch {
+    return new Map<string, string>();
+  }
+})();
+
 function resolveInteractionHref(it: any): string | null {
   const direct = (it?.slug || it?.interaction_slug || "").toString().trim();
   if (direct) return `/interaction/${direct}`;
@@ -36,7 +55,11 @@ function resolveInteractionHref(it: any): string | null {
   const name = (it?.name || "").toString().trim();
   if (!name) return null;
 
-  // Best-effort slugify fallback (works if interaction slugs follow slugified names)
+  // Prefer governed slugs from interactions index (title/name -> slug)
+  const hit = __interactionTitleToSlug.get(name.toLowerCase());
+  if (hit) return `/interaction/${hit}`;
+
+  // Last-resort fallback: slugify (may not match governed slugs)
   return `/interaction/${slugify(name)}`;
 }
 
