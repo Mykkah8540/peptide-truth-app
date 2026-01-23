@@ -108,9 +108,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       />
 
       <InteractionsSection
-        drugClasses={p?.interactions?.drug_classes}
-        supplementClasses={p?.interactions?.supplement_classes}
-        peptides={p?.interactions?.peptides}
+        drugClasses={doc?.interactions?.drug_classes}
+        supplementClasses={doc?.interactions?.supplement_classes}
+        peptides={doc?.interactions?.peptides}
         interactionSummaryBlocks={sections?.interaction_summary}
       />
 
