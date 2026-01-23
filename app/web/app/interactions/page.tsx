@@ -1,9 +1,15 @@
 import Link from "next/link";
-import { listInteractions } from "@/lib/content";
+import { listInteractions, loadInteractionsToPeptidesIndexV1 } from "@/lib/content";
 import InteractionsClient from "@/components/InteractionsClient";
 
 export default function InteractionsPage() {
   const rawList = listInteractions();
+  const rev = loadInteractionsToPeptidesIndexV1();
+  const mapping = (rev && typeof rev === "object" && (rev as any).mapping && typeof (rev as any).mapping === "object")
+    ? (rev as any).mapping
+    : {};
+  const countFor = (slug: string) => Array.isArray(mapping?.[slug]) ? mapping[slug].length : 0;
+
 
   const items =
     (rawList ?? []).map((it: any) => ({
@@ -11,7 +17,16 @@ export default function InteractionsPage() {
       title: it.title ?? it.name ?? it.slug,
       category: it.category ?? "other",
       summary: it.summary ?? "",
+      count: countFor(it.slug),
     })) ?? [];
+
+  // Sort by coverage (desc), then title
+  items.sort((a: any, b: any) => {
+    const ca = Number(a?.count ?? 0);
+    const cb = Number(b?.count ?? 0);
+    if (cb !== ca) return cb - ca;
+    return String(a?.title ?? "").localeCompare(String(b?.title ?? ""));
+  });
 
   // Derive categories from items (no dependency on taxonomy schema)
   const categories = Array.from(
@@ -49,9 +64,9 @@ export default function InteractionsPage() {
         </Link>
       </div>
 
-      <p style={{ marginTop: 10, opacity: 0.8, lineHeight: 1.45 }}>
-        Browse interaction classes (medications, supplements, and other peptides). These pages explain why an interaction matters,
-        what the evidence looks like, and what uncertainty remains.
+      <p style={{ marginTop: 10, opacity: 0.85, lineHeight: 1.5 }}>
+        Interaction classes are <strong>educational context tags</strong> that help you review peptide content with safety in mind
+        (e.g., “anticoagulants/antiplatelets”, “SSRIs/SNRIs”, “immunosuppressants”). This is <strong>not</strong> medical advice.
       </p>
 
       <div style={{ marginTop: 16 }}>

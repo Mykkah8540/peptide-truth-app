@@ -9,6 +9,7 @@ type InteractionItem = {
   title: string;
   category: string;
   summary?: string;
+  count?: number;
 };
 
 function normalize(s: string) {
@@ -39,7 +40,12 @@ export default function InteractionsClient(props: {
         const hay = normalize(`${it.title} ${it.slug} ${it.summary ?? ""}`);
         return hay.includes(query);
       })
-      .sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+      .sort((a, b) => {
+        const ca = Number(a.count ?? 0);
+        const cb = Number(b.count ?? 0);
+        if (cb !== ca) return cb - ca;
+        return (a.title || "").localeCompare(b.title || "");
+      });
   }, [props.interactions, q, cat]);
 
   const countsByCat = useMemo(() => {
@@ -105,8 +111,13 @@ export default function InteractionsClient(props: {
             >
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "baseline", justifyContent: "space-between" }}>
                 <div style={{ fontSize: 15, fontWeight: 900 }}>{it.title || it.slug}</div>
-                <div style={{ fontSize: 12, fontWeight: 800, opacity: 0.65 }}>
-                  {categories.find((c) => c.id === it.category)?.title ?? it.category}
+                <div style={{ display: "flex", gap: 10, alignItems: "baseline", flexWrap: "wrap", justifyContent: "flex-end" }}>
+                  <div style={{ fontSize: 12, fontWeight: 800, opacity: 0.65 }}>
+                    {categories.find((c) => c.id === it.category)?.title ?? it.category}
+                  </div>
+                  <div style={{ fontSize: 12, fontWeight: 900, padding: "4px 8px", borderRadius: 999, background: "rgba(0,0,0,0.05)" }}>
+                    {Number(it.count ?? 0)} peptides
+                  </div>
                 </div>
               </div>
               {it.summary ? (
