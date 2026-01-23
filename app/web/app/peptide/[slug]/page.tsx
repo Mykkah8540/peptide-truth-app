@@ -54,37 +54,39 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
 
   const riskHit = getRiskForPeptide(slug);
-    const doc = await loadPeptideBySlug(slug);
+  const doc = await loadPeptideBySlug(slug);
   const p = doc?.peptide ?? {};
-  
+
   const mergedAliases = Array.from(new Set([...(Array.isArray(p?.aliases) ? p.aliases : []), ...getAliasesForSlug(slug)]));
-const sections = p?.sections ?? {};
+  const sections = p?.sections ?? {};
 
   const overviewText = sections?.overview?.[0]?.text ?? "";
   const sentences = overviewText ? splitSentences(overviewText) : [];
 
-  const outlookText = sentences.filter(s => classifySentence(s) === "outlook").join(" ");
+  const outlookText = sentences.filter((s) => classifySentence(s) === "outlook").join(" ");
   const disclaimerText = [
-    sentences.filter(s => classifySentence(s) === "disclaimer").join(" "),
+    sentences.filter((s) => classifySentence(s) === "disclaimer").join(" "),
     p?.status?.human_use_note,
-    p?.classification?.notes
-  ].filter(Boolean).join(" ");
+    p?.classification?.notes,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <main style={{ padding: 24, maxWidth: 980, margin: "0 auto" }}>
       <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
         <VialImage kind="peptide" slug={slug} alt={`${p?.canonical_name ?? slug} vial`} />
         <div>
-          <h1 style={{ fontSize: 30, fontWeight: 900, margin: 0 }}>
-            {p?.canonical_name ?? slug}
-          </h1>
-          <p style={{ opacity: 0.75, marginTop: 6 }}>
-            Educational resource. Not medical advice. No dosing or instructions.
-          </p>
+          <h1 style={{ fontSize: 30, fontWeight: 900, margin: 0 }}>{p?.canonical_name ?? slug}</h1>
+          <p style={{ opacity: 0.75, marginTop: 6 }}>Educational resource. Not medical advice. No dosing or instructions.</p>
         </div>
       </div>
 
-      {riskHit && <div style={{ marginTop: 16 }}><RiskBadge score={riskHit.risk.risk_score} /></div>}
+      {riskHit && (
+        <div style={{ marginTop: 16 }}>
+          <RiskBadge score={riskHit.risk.risk_score} />
+        </div>
+      )}
 
       <ContentBlocks heading="Overview" blocks={sections?.overview ?? null} />
 
@@ -111,65 +113,68 @@ const sections = p?.sections ?? {};
         interactionSummaryBlocks={sections?.interaction_summary}
       />
 
-      
-{/* PEP-TALK: related interaction class pages */}
-{(() => {
-  const idx = loadInteractionsIndexV1();
-  const all = [
-    ...((doc?.interactions?.drug_classes ?? []) as any[]),
-    ...((doc?.interactions?.supplement_classes ?? []) as any[]),
-    ...((doc?.interactions?.peptides ?? []) as any[]),
-  ];
-  const slugs = uniqStrings(
-    all
-      .map((it: any) => (it?.interaction_id || it?.id || it?.slug || "").toString().trim())
-      .filter(Boolean)
-  );
+      {/* PEP-TALK: related interaction class pages */}
+      {(() => {
+        const idx = loadInteractionsIndexV1();
+        const all = [
+          ...((doc?.interactions?.drug_classes ?? []) as any[]),
+          ...((doc?.interactions?.supplement_classes ?? []) as any[]),
+          ...((doc?.interactions?.peptides ?? []) as any[]),
+        ];
+        const slugs = uniqStrings(
+          all
+            .map((it: any) => (it?.interaction_id || it?.id || it?.slug || "").toString().trim())
+            .filter(Boolean)
+        );
 
-  if (!slugs.length) return null;
+        if (!slugs.length) return null;
 
-  // Use index titles when available
-  const idxList = (((idx as any)?.interactions ?? (idx as any)?.items ?? (idx as any)?.index ?? (idx as any)?.classes ?? []) as any[]);
-  const titleBySlug = new Map<string, string>(
-    idxList.map((it: any) => [it.slug, it.title ?? it.name ?? it.slug])
-  );
-return (
-    <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Related interaction classes</h2>
-      <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
-        These are the interaction classes referenced above. Tap to read the class overview and rationale.
-      </p>
+        // Use index titles when available
+        const idxList = (((idx as any)?.interactions ??
+          (idx as any)?.items ??
+          (idx as any)?.index ??
+          (idx as any)?.classes ??
+          []) as any[]);
+        const titleBySlug = new Map<string, string>(idxList.map((it: any) => [it.slug, it.title ?? it.name ?? it.slug]));
 
-      <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 10 }}>
-        {slugs.map((slug) => {
-          const title = titleBySlug.get(slug) || titleCase(slug);
-          return (
-            <Link
-              key={slug}
-              href={`/interaction/${slug}`}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "10px 12px",
-                borderRadius: 999,
-                border: "1px solid rgba(0,0,0,0.10)",
-                textDecoration: "none",
-                color: "inherit",
-                fontSize: 13,
-                fontWeight: 800,
-                background: "rgba(0,0,0,0.02)",
-              }}
-            >
-              {title} →
-            </Link>
-          );
-        })}
-      </div>
-    </section>
-  );
-})()}
-{/* Interaction class links (navigation aid) */}
+        return (
+          <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
+            <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Related interaction classes</h2>
+            <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
+              These are the interaction classes referenced above. Tap to read the class overview and rationale.
+            </p>
+
+            <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 10 }}>
+              {slugs.map((slug) => {
+                const title = titleBySlug.get(slug) || titleCase(slug);
+                return (
+                  <Link
+                    key={slug}
+                    href={`/interaction/${slug}`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      padding: "10px 12px",
+                      borderRadius: 999,
+                      border: "1px solid rgba(0,0,0,0.10)",
+                      textDecoration: "none",
+                      color: "inherit",
+                      fontSize: 13,
+                      fontWeight: 800,
+                      background: "rgba(0,0,0,0.02)",
+                    }}
+                  >
+                    {title} →
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Interaction class links (navigation aid) */}
       {(() => {
         const classes = loadInteractionClassesV1();
         const list = [
@@ -179,16 +184,19 @@ return (
         ];
 
         const termToSlug = new Map<string, string>();
-        const all = ((classes as any)?.categories ?? (classes as any)?.classes ?? (classes as any)?.interaction_classes ?? []) as any[];
+        const all = (((classes as any)?.categories ??
+          (classes as any)?.classes ??
+          (classes as any)?.interaction_classes ??
+          []) as any[]);
         for (const c of all) {
           const slug = String(c?.id ?? c?.slug ?? c?.category_id ?? "").trim();
           if (!slug) continue;
           const terms: string[] = [];
-          for (const k of ["title","name","id","slug"]) {
+          for (const k of ["title", "name", "id", "slug"]) {
             const v = c?.[k];
             if (typeof v === "string" && v.trim()) terms.push(v);
           }
-          for (const k of ["synonyms","aliases","terms","candidate_terms","search_terms"]) {
+          for (const k of ["synonyms", "aliases", "terms", "candidate_terms", "search_terms"]) {
             const v = c?.[k];
             if (Array.isArray(v)) for (const t of v) if (typeof t === "string") terms.push(t);
           }
@@ -239,7 +247,6 @@ return (
           </section>
         );
       })()}
-
 
       <ContentBlocks heading="Developmental / adolescent risk" blocks={sections?.developmental_risk_block ?? null} />
 
