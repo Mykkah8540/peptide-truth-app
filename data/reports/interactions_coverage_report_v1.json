@@ -2,7 +2,7 @@
   "schema_version": "interactions_coverage_report_v1",
   "totals": {
     "peptides_total": 92,
-    "peptides_with_any_interactions": 57,
+    "peptides_with_any_interactions": 92,
     "drug_items_total": 94,
     "supp_items_total": 0,
     "peptide_items_total": 0
@@ -62,44 +62,32 @@
     ]
   ],
   "top_supplement_classes": [],
-  "missing_interactions_slugs": [
-    "5-amino-1mq",
-    "abaloparatide",
-    "acetyl-hexapeptide-8",
-    "adipotide",
-    "ara-290",
-    "bivalirudin",
-    "bpc-157-arginate",
-    "calcitonin",
-    "carbetocin",
-    "cgrp",
-    "desmopressin",
-    "epitalon",
-    "eptifibatide",
-    "follistatin-344",
-    "glutathione",
-    "humanin",
-    "lanreotide",
-    "linaclotide",
-    "motilin",
-    "nad-plus",
-    "octreotide",
-    "palmitoyl-pentapeptide-4",
-    "palmitoyl-tripeptide-1",
-    "peg-mgf",
-    "pentagastrin",
-    "plecanatide",
-    "prolactin-releasing-peptide",
-    "secretin",
-    "shlp-2",
-    "snap-8",
-    "ss-31",
-    "teriparatide",
-    "thymosin-beta-4-full",
-    "thymulin",
-    "ziconotide"
-  ],
+  "missing_interactions_slugs": [],
   "examples": [
+    {
+      "slug": "5-amino-1mq",
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "abaloparatide",
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "acetyl-hexapeptide-8",
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
+      "slug": "adipotide",
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
     {
       "slug": "afamelanotide",
       "drug_classes": [
@@ -136,54 +124,16 @@
       "peptides": []
     },
     {
+      "slug": "ara-290",
+      "drug_classes": [],
+      "supplement_classes": [],
+      "peptides": []
+    },
+    {
       "slug": "atrial-natriuretic-peptide",
       "drug_classes": [
         "antihypertensives",
         "cardiovascular-physiology-context"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "bpc-157",
-      "drug_classes": [
-        "anticoagulants-antiplatelets",
-        "nsaids"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "bradykinin",
-      "drug_classes": [
-        "antihypertensives",
-        "cardiovascular-physiology-context"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "brain-natriuretic-peptide",
-      "drug_classes": [
-        "antihypertensives",
-        "cardiovascular-physiology-context"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "bremelanotide",
-      "drug_classes": [
-        "cardiovascular-physiology-context",
-        "neuropeptide-cns-context"
-      ],
-      "supplement_classes": [],
-      "peptides": []
-    },
-    {
-      "slug": "cagrilintide",
-      "drug_classes": [
-        "antidiabetics-insulin-glp1"
       ],
       "supplement_classes": [],
       "peptides": []

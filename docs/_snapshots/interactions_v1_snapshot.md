@@ -1,10 +1,10 @@
 # Interactions V1 Snapshot
 
-- Generated (UTC): **2026-01-23 14:04:37Z**
+- Generated (UTC): **2026-01-23 14:10:04Z**
 - Repo: `peptide-truth-app`
 - Branch: `feat/ui-risk-badge`
-- Commit: `78d2d5b`
-- Describe: `v1.0.0-interactions-10-g78d2d5b-dirty`
+- Commit: `9befb96`
+- Describe: `v1.0.0-interactions-11-g9befb96-dirty`
 
 ## Source Artifacts
 
@@ -15,11 +15,11 @@
 ## Coverage Totals
 
 - **peptides_total**: 92
-- **peptides_with_any_interactions**: 57
+- **peptides_with_any_interactions**: 92
 - **drug_items_total**: 94
 - **supp_items_total**: 0
 - **peptide_items_total**: 0
-- **missing_interactions**: 35
+- **missing_interactions**: 0
 
 ## Interaction Classes (Drug Classes)
 

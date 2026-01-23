@@ -81,7 +81,11 @@ def main() -> int:
         s = to_slugs(s_raw)
         p = to_slugs(p_raw)
 
-        any_present = bool(d or s or p)
+        # PEP_TALK__COUNT_INTERACTIONS_PRESENT_V6
+        # Interactions are considered 'present' if the top-level `interactions` dict exists.
+        intr = doc.get('interactions', None)
+        any_present = isinstance(intr, dict)
+
 
         totals["peptides_total"] += 1
         totals["peptides_with_any_interactions"] += int(any_present)
