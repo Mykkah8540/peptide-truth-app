@@ -116,7 +116,12 @@
     "slug": "cgrp"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      {
+        "name": "Cardiovascular physiology / vasoactive peptide context",
+        "interaction_slug": "cardiovascular-physiology-context"
+      }
+    ],
     "supplement_classes": [],
     "peptides": []
   }

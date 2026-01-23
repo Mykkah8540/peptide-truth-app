@@ -1,13 +1,23 @@
 {
   "schema_version": "interactions_to_peptides_index_v1",
-  "generated_at": "2026-01-23T13:48:27Z",
+  "generated_at": "2026-01-23T13:55:28Z",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 74,
+    "peptides_with_any_interactions": 92,
     "interaction_keys": 19
   },
   "mapping": {
+    "Glucose-lowering agents": [
+      {
+        "peptide_slug": "5-amino-1mq",
+        "peptide_name": "5-Amino-1MQ"
+      },
+      {
+        "peptide_slug": "adipotide",
+        "peptide_name": "Adipotide"
+      }
+    ],
     "Endocrine axis modulation (HPT/HPA/HPG/GH context)": [
       {
         "peptide_slug": "abaloparatide",
@@ -24,6 +34,10 @@
       {
         "peptide_slug": "desmopressin",
         "peptide_name": "Desmopressin"
+      },
+      {
+        "peptide_slug": "follistatin-344",
+        "peptide_name": "Follistatin-344"
       },
       {
         "peptide_slug": "ghrp-2",
@@ -46,8 +60,20 @@
         "peptide_name": "Lanreotide"
       },
       {
+        "peptide_slug": "nad-plus",
+        "peptide_name": "NAD+"
+      },
+      {
         "peptide_slug": "octreotide",
         "peptide_name": "Octreotide"
+      },
+      {
+        "peptide_slug": "peg-mgf",
+        "peptide_name": "PEG-MGF"
+      },
+      {
+        "peptide_slug": "prolactin-releasing-peptide",
+        "peptide_name": "Prolactin Releasing Peptide"
       },
       {
         "peptide_slug": "teriparatide",
@@ -72,22 +98,44 @@
         "peptide_name": "Epitalon"
       },
       {
+        "peptide_slug": "humanin",
+        "peptide_name": "Humanin"
+      },
+      {
         "peptide_slug": "linaclotide",
         "peptide_name": "Linaclotide"
+      },
+      {
+        "peptide_slug": "motilin",
+        "peptide_name": "Motilin"
+      },
+      {
+        "peptide_slug": "pentagastrin",
+        "peptide_name": "Pentagastrin"
       },
       {
         "peptide_slug": "plecanatide",
         "peptide_name": "Plecanatide"
       },
       {
+        "peptide_slug": "secretin",
+        "peptide_name": "Secretin"
+      },
+      {
+        "peptide_slug": "shlp-2",
+        "peptide_name": "SHLP-2"
+      },
+      {
         "peptide_slug": "snap-8",
         "peptide_name": "SNAP-8"
-      }
-    ],
-    "Glucose-lowering agents": [
+      },
       {
-        "peptide_slug": "adipotide",
-        "peptide_name": "Adipotide"
+        "peptide_slug": "ss-31",
+        "peptide_name": "Ss-31"
+      },
+      {
+        "peptide_slug": "ziconotide",
+        "peptide_name": "Ziconotide"
       }
     ],
     "neuropeptide-cns-context": [
@@ -382,6 +430,48 @@
         "peptide_name": "Survodutide"
       }
     ],
+    "Immune modulation / infection risk context": [
+      {
+        "peptide_slug": "ara-290",
+        "peptide_name": "Ara-290"
+      },
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "bpc-157-arginate",
+        "peptide_name": "BPC-157 Arginate"
+      },
+      {
+        "peptide_slug": "glutathione",
+        "peptide_name": "Glutathione"
+      },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "palmitoyl-pentapeptide-4",
+        "peptide_name": "Palmitoyl Pentapeptide-4"
+      },
+      {
+        "peptide_slug": "palmitoyl-tripeptide-1",
+        "peptide_name": "Palmitoyl Tripeptide-1"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4-full",
+        "peptide_name": "Thymosin Beta-4 (full length)"
+      },
+      {
+        "peptide_slug": "thymulin",
+        "peptide_name": "Thymulin"
+      }
+    ],
     "Anticoagulants / antiplatelets": [
       {
         "peptide_slug": "bivalirudin",
@@ -428,26 +518,14 @@
         "peptide_name": "Thymosin Beta-4"
       }
     ],
-    "Immune modulation / infection risk context": [
+    "Cardiovascular physiology / vasoactive peptide context": [
       {
-        "peptide_slug": "bpc-157",
-        "peptide_name": "Bpc-157"
+        "peptide_slug": "cgrp",
+        "peptide_name": "CGRP"
       },
       {
-        "peptide_slug": "glutathione",
-        "peptide_name": "Glutathione"
-      },
-      {
-        "peptide_slug": "ll-37",
-        "peptide_name": "LL-37"
-      },
-      {
-        "peptide_slug": "palmitoyl-tripeptide-1",
-        "peptide_name": "Palmitoyl Tripeptide-1"
-      },
-      {
-        "peptide_slug": "tb-500",
-        "peptide_name": "Tb-500"
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
       }
     ],
     "ssri-snri-serotonergic": [
@@ -522,12 +600,6 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
-      }
-    ],
-    "Cardiovascular physiology / vasoactive peptide context": [
-      {
-        "peptide_slug": "vip",
-        "peptide_name": "VIP"
       }
     ]
   }

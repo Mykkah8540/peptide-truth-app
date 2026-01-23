@@ -7,6 +7,33 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 
+# PEP_TALK__FIX_COUNTS_V1
+def _peptide_has_any_interactions(doc: dict) -> bool:
+    it = doc.get("interactions")
+    if not isinstance(it, dict):
+        return False
+    for k in ("drug_classes", "supplement_classes", "peptides"):
+        v = it.get(k)
+        if isinstance(v, list) and len(v) > 0:
+            return True
+    return False
+
+def _compute_peptides_with_any_interactions(repo_root: Path) -> int:
+    import json
+    peptides_dir = repo_root / "content" / "peptides"
+    n = 0
+    for fp in sorted(peptides_dir.glob("*.json")):
+        slug = fp.stem
+        if slug.startswith("_"):
+            continue
+        try:
+            doc = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        if isinstance(doc, dict) and _peptide_has_any_interactions(doc):
+            n += 1
+    return n
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = REPO_ROOT / "content" / "peptides"
 OUT_DIR = REPO_ROOT / "data" / "reports"
