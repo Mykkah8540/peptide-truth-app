@@ -5,9 +5,10 @@ export const dynamic = "force-dynamic";
 export default async function BlendsPage({
   searchParams,
 }: {
-  searchParams?: { q?: string };
+  searchParams?: Promise<{ q?: string }> | { q?: string };
 }) {
-  const { q = \"\" } = (await searchParams) ?? {}; /* PEP_TALK__SEARCHPARAMS_PROMISE_FIX_V1 */
+  const sp = await Promise.resolve(searchParams ?? {}); /* PEP_TALK__SEARCHPARAMS_PROMISE_FIX_V2 */
+  const { q = "" } = sp as any;
   const all = listBlends();
   const rows = filterByQuery(all, q);
 
