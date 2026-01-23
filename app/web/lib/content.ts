@@ -524,26 +524,28 @@ export type InteractionListItem = {
 };
 
 export function listInteractions(): InteractionListItem[] {
-  const root = repoRoot();
-  const fp = path.join(root, "content", "_index", "interactions_v1.json");
-  try {
-    const raw = fs.readFileSync(fp, "utf-8");
-    const doc = JSON.parse(raw);
+  // Canonical source of interaction classes is the registry (taxonomy), not the index.
+  // The index (content/_index/interactions_v1.json) is term→peptide mapping and is not a list of classes.
+  const classesDoc = loadInteractionClassesV1();
+  if (!classesDoc) return [];
 
-    const arr =
-      (Array.isArray(doc?.interactions) ? doc.interactions :
-      Array.isArray(doc?.items) ? doc.items :
-      Array.isArray(doc) ? doc : []);
-
-    return (arr ?? []).map((it: any) => ({
-      slug: String(it?.slug ?? it?.id ?? "").trim(),
-      title: String(it?.title ?? it?.name ?? it?.slug ?? it?.id ?? "").trim(),
-      category: it?.category ? String(it.category) : undefined,
-      summary: it?.summary ? String(it.summary) : undefined,
-    })).filter((x: any) => x.slug && x.title);
-  } catch {
-    return [];
+  const out: InteractionListItem[] = [];
+  for (const c of (classesDoc.drug_classes ?? [])) {
+    out.push({ slug: c.slug, title: c.title, category: "medication", summary: c.notes });
   }
+  for (const c of (classesDoc.supplement_classes ?? [])) {
+    out.push({ slug: c.slug, title: c.title, category: "supplement", summary: c.notes });
+  }
+
+  // Stable sort: category then title
+  out.sort((a, b) => {
+    const ca = String(a.category ?? "");
+    const cb = String(b.category ?? "");
+    if (ca != cb) return ca.localeCompare(cb);
+    return String(a.title ?? "").localeCompare(String(b.title ?? ""));
+  });
+
+  return out; /* PEP_TALK__LIST_INTERACTIONS_FROM_REGISTRY_V1 */
 }
 
 
