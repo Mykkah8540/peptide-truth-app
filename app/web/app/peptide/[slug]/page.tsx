@@ -219,33 +219,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         if (!links.length) return null;
 
         return (
-          <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-            <h2 style={{ margin: 0, fontSize: 16, fontWeight: 900 }}>Interaction classes referenced</h2>
-            <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
-              Jump to the interaction class pages referenced in this peptide’s interaction notes.
-            </p>
-            <div style={{ marginTop: 12, display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {links.map((x) => (
-                <a
-                  key={x.slug}
-                  href={`/interaction/${x.slug}`}
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    fontSize: 13,
-                    fontWeight: 800,
-                    padding: "8px 10px",
-                    borderRadius: 999,
-                    background: "rgba(0,0,0,0.03)",
-                    border: "1px solid rgba(0,0,0,0.06)",
-                  }}
-                >
-                  {x.label} →
-                </a>
-              ))}
-            </div>
-          </section>
-        );
+      {/* PEP_TALK__DEDUP_INTERACTION_SECTIONS_V1 removed duplicate interaction section */}
+);
       })()}
 
       <ContentBlocks heading="Developmental / adolescent risk" blocks={sections?.developmental_risk_block ?? null} />
