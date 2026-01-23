@@ -53,6 +53,35 @@ export default function InteractionPage({ params }: { params: { slug: string } }
   const related = revDoc?.mapping?.[params.slug] || [];
   return (
     <div className="space-y-8">
+      {/* Pep-Talk Interaction Detail (V1) */}
+      <section className="rounded-xl bg-muted/40 p-3 space-y-2">
+        <div className="text-xs font-extrabold tracking-wide uppercase">Educational context tag</div>
+        <p className="text-sm text-muted-foreground">
+          This page summarizes an <strong>interaction context</strong> used for browsing peptide content.
+          It does <strong>not</strong> provide medical advice, dosing guidance, or prescribing recommendations.
+        </p>
+      </section>
+
+      {(interaction?.aka?.length ?? 0) > 0 ? (
+        <section className="space-y-2">
+          <div className="text-xs font-extrabold tracking-wide uppercase text-muted-foreground">Also called</div>
+          <div className="flex flex-wrap gap-2">
+            {(interaction.aka || []).slice(0, 24).map((a: string) => (
+              <span key={a} className="rounded-full bg-muted px-3 py-1 text-xs font-bold">
+                {a}
+              </span>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {interaction?.notes ? (
+        <section className="space-y-2">
+          <div className="text-xs font-extrabold tracking-wide uppercase text-muted-foreground">Notes</div>
+          <p className="text-sm text-muted-foreground">{interaction.notes}</p>
+        </section>
+      ) : null}
+
       <InteractionDetail interaction={interaction} usedBy={usedBy} />
 
       <section className="space-y-3">
