@@ -113,6 +113,12 @@ def main() -> int:
 
     print("OK: wrote", out_path)
     print("Totals:", dict(totals))
+    # PEP_TALK__FORCE_OVERRIDE_COUNTS_V4
+    try:
+        totals['peptides_with_any_interactions'] = _compute_peptides_with_any_interactions(repo_root)
+    except Exception:
+        pass
+    
     print("Missing interactions:", len(missing))
     return 0
 
