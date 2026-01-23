@@ -12,6 +12,7 @@ import EvidenceList from "@/components/EvidenceList";
 import OutlookSection from "@/components/OutlookSection";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import InteractionsSection from "@/components/InteractionsSection";
+import type { ReactNode } from "react";
 
 function splitSentences(text: string): string[] {
   return text
@@ -113,8 +114,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         interactionSummaryBlocks={sections?.interaction_summary}
       />
 
-      {/* PEP-TALK: related interaction class pages */}
-      {(() => {
+      {/* PEP-TALK: related interaction class pages */} /* PEP_TALK__NO_RETURN_EMPTY_OBJECT_V1 */
+      {(() => { /* PEP_TALK__IIFE_RET_ANNOTATION_V1 */
         const idx = loadInteractionsIndexV1();
         const all = [
           ...((doc?.interactions?.drug_classes ?? []) as any[]),
@@ -172,7 +173,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             </div>
           </section>
         );
-      })()}
+      })() as any} /* PEP_TALK__CAST_RELATED_INTERACTIONS_IIFE_ANY_V1 */
 
       {/* Interaction class links (navigation aid) */}
       {(() => {
