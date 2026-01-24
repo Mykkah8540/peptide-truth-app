@@ -3,7 +3,7 @@ import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
 import IdentityPanel from "@/components/IdentityPanel";
-import { loadPeptideBySlug, getAliasesForSlug, loadInteractionClassesV1, loadInteractionsIndexV1 } from "@/lib/content";
+import { loadPeptideBySlug, getAliasesForSlug, loadInteractionClassesV1 } from "@/lib/content";
 
 import Link from "next/link";
 
@@ -116,7 +116,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
       {/* PEP-TALK: related interaction class pages */} /* PEP_TALK__NO_RETURN_EMPTY_OBJECT_V1 */
       {(() => { /* PEP_TALK__IIFE_RET_ANNOTATION_V1 */
-        const idx = loadInteractionsIndexV1();
+        const idx = loadInteractionClassesV1();
         const all = [
           ...((doc?.interactions?.drug_classes ?? []) as any[]),
           ...((doc?.interactions?.supplement_classes ?? []) as any[]),
@@ -129,14 +129,11 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         );
 
         if (!slugs.length) return null;
-
-        // Use index titles when available
-        const idxList = (((idx as any)?.interactions ??
-          (idx as any)?.items ??
-          (idx as any)?.index ??
-          (idx as any)?.classes ??
-          []) as any[]);
-        const titleBySlug = new Map<string, string>(idxList.map((it: any) => [it.slug, it.title ?? it.name ?? it.slug]));
+          // Use registry titles when available (taxonomy is canonical)
+          const classesDoc = loadInteractionClassesV1(); /* PEP_TALK__LOAD_CLASSESDOC_IN_RELATED_IIFE_V1 */
+          const titleBySlug = new Map<string, string>();
+          for (const c of (classesDoc?.drug_classes ?? [])) titleBySlug.set(c.slug, c.title ?? c.slug);
+          for (const c of (classesDoc?.supplement_classes ?? [])) titleBySlug.set(c.slug, c.title ?? c.slug);
 
         return (
           <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
