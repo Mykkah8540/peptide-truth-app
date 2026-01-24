@@ -117,13 +117,7 @@
     "slug": "ghrp-2"
   },
   "interactions": {
-    "drug_classes": [
-      "endocrine-axis-modulation-context",
-      {
-        "name": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
-        "interaction_slug": "endocrine-axis-modulation-context"
-      }
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

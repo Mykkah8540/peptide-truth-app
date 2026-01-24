@@ -131,12 +131,7 @@
   },
   "canonical_name": "Nad Plus",
   "interactions": {
-    "drug_classes": [
-      {
-        "name": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
-        "interaction_slug": "endocrine-axis-modulation-context"
-      }
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

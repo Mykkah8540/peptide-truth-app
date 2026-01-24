@@ -262,13 +262,7 @@
   },
   "canonical_name": "Tesamorelin",
   "interactions": {
-    "drug_classes": [
-      "endocrine-axis-modulation-context",
-      {
-        "name": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
-        "interaction_slug": "endocrine-axis-modulation-context"
-      }
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

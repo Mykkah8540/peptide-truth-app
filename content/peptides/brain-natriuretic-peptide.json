@@ -117,8 +117,7 @@
   },
   "interactions": {
     "drug_classes": [
-      "antihypertensives",
-      "cardiovascular-physiology-context"
+      "antihypertensives"
     ],
     "supplement_classes": [],
     "peptides": []

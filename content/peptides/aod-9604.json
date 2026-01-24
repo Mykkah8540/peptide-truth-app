@@ -148,7 +148,6 @@
   "canonical_name": "Aod-9604",
   "interactions": {
     "drug_classes": [
-      "endocrine-axis-modulation-context",
       "diabetes-glucose-lowering",
       "antidiabetics-insulin-glp1"
     ],

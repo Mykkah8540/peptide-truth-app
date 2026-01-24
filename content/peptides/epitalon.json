@@ -123,12 +123,7 @@
   },
   "canonical_name": "Epitalon",
   "interactions": {
-    "drug_classes": [
-      {
-        "name": "Neuropeptides / CNS signaling (context)",
-        "interaction_slug": "neuropeptide-cns-context"
-      }
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

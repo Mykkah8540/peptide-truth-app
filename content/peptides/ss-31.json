@@ -59,11 +59,8 @@
   },
   "canonical_name": "Ss-31",
   "interactions": {
-    "drug_classes": [
-      {
-        "name": "Neuropeptides / CNS signaling (context)",
-        "interaction_slug": "neuropeptide-cns-context"
-      }
-    ]
+    "drug_classes": [],
+    "supplement_classes": null,
+    "peptides": null
   }
 }

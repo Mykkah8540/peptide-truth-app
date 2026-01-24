@@ -133,11 +133,7 @@
       "corticosteroids",
       "immunosuppressants",
       "anti-infectives-antimicrobials",
-      "immune-modulation-infection-risk",
-      {
-        "name": "Immune modulation / infection risk context",
-        "interaction_slug": "immune-modulation-infection-risk"
-      }
+      "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],
     "peptides": []

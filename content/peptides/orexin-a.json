@@ -117,9 +117,7 @@
     "slug": "orexin-a"
   },
   "interactions": {
-    "drug_classes": [
-      "neuropeptide-cns-context"
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

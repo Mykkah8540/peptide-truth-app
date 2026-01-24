@@ -117,9 +117,7 @@
     "slug": "cjc-1295-dac"
   },
   "interactions": {
-    "drug_classes": [
-      "endocrine-axis-modulation-context"
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

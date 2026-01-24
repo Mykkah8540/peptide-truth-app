@@ -147,12 +147,7 @@
   },
   "canonical_name": "Acetyl Hexapeptide-8",
   "interactions": {
-    "drug_classes": [
-      {
-        "name": "Neuropeptides / CNS signaling (context)",
-        "interaction_slug": "neuropeptide-cns-context"
-      }
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

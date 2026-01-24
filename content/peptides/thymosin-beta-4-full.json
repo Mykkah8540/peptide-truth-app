@@ -117,12 +117,7 @@
     "slug": "thymosin-beta-4-full"
   },
   "interactions": {
-    "drug_classes": [
-      {
-        "name": "Immune modulation / infection risk context",
-        "interaction_slug": "immune-modulation-infection-risk"
-      }
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

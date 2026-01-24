@@ -175,13 +175,8 @@
   "canonical_name": "Ipamorelin",
   "interactions": {
     "drug_classes": [
-      "endocrine-axis-modulation-context",
       "diabetes-glucose-lowering",
-      "antidiabetics-insulin-glp1",
-      {
-        "name": "Endocrine axis modulation (HPT/HPA/HPG/GH context)",
-        "interaction_slug": "endocrine-axis-modulation-context"
-      }
+      "antidiabetics-insulin-glp1"
     ],
     "supplement_classes": [],
     "peptides": []

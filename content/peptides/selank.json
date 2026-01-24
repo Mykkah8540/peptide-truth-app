@@ -166,8 +166,7 @@
   "canonical_name": "Selank",
   "interactions": {
     "drug_classes": [
-      "ssri-snri-serotonergic",
-      "neuropeptide-cns-context"
+      "ssri-snri-serotonergic"
     ],
     "supplement_classes": [],
     "peptides": []

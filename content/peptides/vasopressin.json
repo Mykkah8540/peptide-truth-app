@@ -117,10 +117,7 @@
     "slug": "vasopressin"
   },
   "interactions": {
-    "drug_classes": [
-      "cardiovascular-physiology-context",
-      "neuropeptide-cns-context"
-    ],
+    "drug_classes": [],
     "supplement_classes": [],
     "peptides": []
   }

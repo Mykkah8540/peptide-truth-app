@@ -131,12 +131,7 @@
   "canonical_name": "Vip",
   "interactions": {
     "drug_classes": [
-      "immune-modulation-infection-risk",
-      "neuropeptide-cns-context",
-      {
-        "name": "Cardiovascular physiology / vasoactive peptide context",
-        "interaction_slug": "cardiovascular-physiology-context"
-      }
+      "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],
     "peptides": []
