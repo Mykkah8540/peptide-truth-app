@@ -104,6 +104,83 @@ def _canonical_interaction_slug(token: str, all_slugs: set, term_to_slug: dict) 
     if cand in all_slugs:
         return cand
     return None
+
+
+# --- Canonical interaction key resolution (taxonomy is source of truth) ---
+TAXONOMY_FP = ROOT / "content" / "_taxonomy" / "interaction_classes_v1.json"
+
+def _norm(s: str) -> str:
+    s = (s or "").strip().lower()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+def _slugify(s: str) -> str:
+    s = (s or "").strip().lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s)
+    s = re.sub(r"-+", "-", s).strip("-")
+    return s
+
+def _load_interaction_canon() -> tuple[set[str], dict[str, str]]:
+    """Returns (all_slugs, term_to_slug) from interaction taxonomy."""
+    all_slugs: set[str] = set()
+    term_to_slug: dict[str, str] = {}
+
+    try:
+        doc = load_json(TAXONOMY_FP)
+    except Exception:
+        return all_slugs, term_to_slug
+
+    def add_term(term: str, slug: str) -> None:
+        t = _norm(term)
+        if not t:
+            return
+        term_to_slug.setdefault(t, slug)
+
+    def ingest(items):
+        if not isinstance(items, list):
+            return
+        for c in items:
+            if not isinstance(c, dict):
+                continue
+            slug = str(c.get("slug") or "").strip()
+            if not slug:
+                continue
+            all_slugs.add(slug)
+            add_term(slug, slug)
+            add_term(str(c.get("title") or ""), slug)
+            aka = c.get("aka") or []
+            if isinstance(aka, list):
+                for a in aka:
+                    if isinstance(a, str):
+                        add_term(a, slug)
+
+    ingest(doc.get("drug_classes"))
+    ingest(doc.get("supplement_classes"))
+    return all_slugs, term_to_slug
+
+def _canonical_interaction_slug(token: str, all_slugs: set[str], term_to_slug: dict[str, str]) -> Optional[str]:
+    """Resolve token to canonical taxonomy slug; return None if it can't be resolved."""
+    raw = (token or "").strip()
+    if not raw:
+        return None
+
+    # direct slug match
+    if raw in all_slugs:
+        return raw
+
+    # title/aka exact (normalized)
+    hit = term_to_slug.get(_norm(raw))
+    if hit:
+        return hit
+
+    # slugify fallback
+    cand = _slugify(raw)
+    if cand in all_slugs:
+        return cand
+
+    return None
+# --- end canonicalization ---  # PEP_TALK__CANONICALIZE_INTERACTION_KEYS_V1
+
 def main() -> int:
     ents = governed_peptide_entities()
     all_slugs, term_to_slug = _load_interaction_registry()  # PEP_TALK__USE_CANON_KEYS_IN_MAPPING_V1
