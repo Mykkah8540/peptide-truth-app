@@ -22,14 +22,17 @@ else
 fi
 
 echo
+echo
 echo "== VALIDATING: interactions reverse index =="
-( python3 scripts/validate/validate_interactions_to_peptides_index_v1.py ) >> "$LOG" 2>&1
-vcode=$?
-if [[ $vcode -eq 0 ]] && rg -q "VALIDATION PASSED" "$LOG"; then
+REVLOG="/tmp/peptalk_revindex.log"
+: > "$REVLOG"
+
+if ( python3 scripts/validate/validate_interactions_to_peptides_index_v1.py ) > "$REVLOG" 2>&1; then
   echo "REVINDEX_OK=1"
 else
   echo "REVINDEX_OK=0"
+  echo "---- revindex validator tail (last 120 lines) ----"
+  tail -n 120 "$REVLOG" || true
+  echo "--------------------------------------------------"
 fi  # PEP_TALK__GATE_VALIDATE_REVINDEX_V1
-
-
 exit 0
