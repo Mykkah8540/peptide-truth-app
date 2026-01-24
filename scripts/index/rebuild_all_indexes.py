@@ -43,6 +43,9 @@ def main() -> int:
     # 2b) Validate queue CSV (topic ids, structure)
     run(["python3", "scripts/validate/validate_queue_csv.py"])
 
+    # Practical block validation (benefits/side-effects/cautions) — real-world voice guardrail
+    run(["python3", "scripts/validate/validate_practical_block_v1.py"])  # PEP_TALK__ADD_PRACTICAL_VALIDATE_V1
+
     # 3) Validate blend JSON stubs
     # Validate every blend json file (excluding _index.json + README)
     blends_dir = ROOT / "content" / "blends"

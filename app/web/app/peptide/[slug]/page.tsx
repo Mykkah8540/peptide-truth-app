@@ -107,6 +107,60 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         aminoAcidSeq={p?.structure?.amino_acid_seq}
       />
 
+        {/* Practical, real-world summary (not medical advice) */} {/* PEP_TALK__PRACTICAL_BLOCK_UI_V1 */}
+        {doc?.practical ? (
+          <section className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
+            <h2 className="text-lg font-semibold">Practical summary</h2>
+            <p className="mt-2 text-sm text-neutral-700">
+              {String(doc.practical.bottom_line || "").trim()}
+            </p>
+
+            {Array.isArray(doc.practical.benefits) && doc.practical.benefits.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Common reasons people consider it</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.benefits.map((b: string, i: number) => (
+                    <li key={"b"+i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {Array.isArray(doc.practical.side_effects_common) && doc.practical.side_effects_common.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Most commonly reported downsides</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.side_effects_common.map((b: string, i: number) => (
+                    <li key={"c"+i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {Array.isArray(doc.practical.side_effects_serious) && doc.practical.side_effects_serious.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Serious red flags to know</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.side_effects_serious.map((b: string, i: number) => (
+                    <li key={"s"+i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {Array.isArray(doc.practical.who_should_be_cautious) && doc.practical.who_should_be_cautious.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Who should be cautious</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.who_should_be_cautious.map((b: string, i: number) => (
+                    <li key={"w"+i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </section>
+        ) : null}
+
       <InteractionsSection
         drugClasses={doc?.interactions?.drug_classes}
         supplementClasses={doc?.interactions?.supplement_classes}
