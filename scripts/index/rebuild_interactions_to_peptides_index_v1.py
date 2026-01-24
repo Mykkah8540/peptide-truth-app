@@ -43,8 +43,70 @@ def iter_tokens(items):
         if tok:
             yield tok
 
+
+# PEP_TALK__CANON_INTERACTION_KEYS_V1
+INTERACTION_CLASSES_FP = ROOT / "content" / "_taxonomy" / "interaction_classes_v1.json"
+
+def _norm(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").strip().lower())
+
+def _slugify(s: str) -> str:
+    s = _norm(s)
+    s = re.sub(r"[^a-z0-9\s-]", "", s)
+    s = re.sub(r"[\s_]+", "-", s)
+    s = re.sub(r"-{2,}", "-", s).strip("-")
+    return s
+
+def _load_interaction_registry():
+    try:
+        d = load_json(INTERACTION_CLASSES_FP)
+    except Exception:
+        return set(), {}
+    all_slugs = set()
+    term_to_slug = {}
+
+    def add_term(term: str, slug: str):
+        t = _norm(term)
+        if t:
+            term_to_slug[t] = slug
+
+    for bucket in ("drug_classes", "supplement_classes"):
+        items = d.get(bucket) if isinstance(d, dict) else []
+        if not isinstance(items, list):
+            continue
+        for c in items:
+            if not isinstance(c, dict):
+                continue
+            slug = (c.get("slug") or "").strip()
+            if not slug:
+                continue
+            all_slugs.add(slug)
+            add_term(slug, slug)
+            add_term(c.get("title") or "", slug)
+            aka = c.get("aka") or []
+            if isinstance(aka, list):
+                for a in aka:
+                    if isinstance(a, str):
+                        add_term(a, slug)
+
+    return all_slugs, term_to_slug
+
+def _canonical_interaction_slug(token: str, all_slugs: set, term_to_slug: dict) -> Optional[str]:
+    raw = (token or "").strip()
+    if not raw:
+        return None
+    if raw in all_slugs:
+        return raw
+    hit = term_to_slug.get(_norm(raw))
+    if hit:
+        return hit
+    cand = _slugify(raw)
+    if cand in all_slugs:
+        return cand
+    return None
 def main() -> int:
     ents = governed_peptide_entities()
+    all_slugs, term_to_slug = _load_interaction_registry()  # PEP_TALK__USE_CANON_KEYS_IN_MAPPING_V1
     name_by_slug = {e["slug"]: (e.get("display_name") or e["slug"]) for e in ents}
 
     mapping = defaultdict(list)  # interaction_slug -> [{peptide_slug, peptide_name}...]
@@ -74,16 +136,25 @@ def main() -> int:
         hit = False
 
         for token in iter_tokens(inter.get("drug_classes")):
-            mapping[token].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
-            hit = True
+          key = _canonical_interaction_slug(token, all_slugs, term_to_slug)
+          if not key:
+              continue
+          mapping[key].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
+          hit = True  # PEP_TALK__USE_CANON_KEYS_IN_MAPPING_V1
 
         for token in iter_tokens(inter.get("supplement_classes")):
-            mapping[token].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
-            hit = True
+          key = _canonical_interaction_slug(token, all_slugs, term_to_slug)
+          if not key:
+              continue
+          mapping[key].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
+          hit = True  # PEP_TALK__USE_CANON_KEYS_IN_MAPPING_V1
 
         for token in iter_tokens(inter.get("peptides")):
-            mapping[token].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
-            hit = True
+          key = _canonical_interaction_slug(token, all_slugs, term_to_slug)
+          if not key:
+              continue
+          mapping[key].append({"peptide_slug": slug, "peptide_name": name_by_slug.get(slug, slug)})
+          hit = True  # PEP_TALK__USE_CANON_KEYS_IN_MAPPING_V1
 
         if hit:
             peptides_with_any += 1
