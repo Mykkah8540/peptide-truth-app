@@ -60,6 +60,10 @@ def main() -> int:
     # 6) Validate unified entities index
     run(["python3", "scripts/validate/validate_entities_index.py"])
 
+    # Build + validate interactions reverse index (interaction_slug -> peptides)
+    run(["python3", "scripts/index/rebuild_interactions_to_peptides_index_v1.py"])
+    run(["python3", "scripts/validate/validate_interactions_to_peptides_index_v1.py"])  # PEP_TALK__ADD_REVINDEX_VALIDATE_V1
+
     # 6b) Build + validate unified risk index (peptides direct; blends computed)
     run(["python3", "scripts/index/build_risk_index.py"])
     run(["python3", "scripts/validate/validate_risk_index_v1.py"])
