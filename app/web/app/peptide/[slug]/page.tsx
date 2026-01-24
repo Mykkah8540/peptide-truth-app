@@ -130,7 +130,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
         if (!slugs.length) return null;
           // Use registry titles when available (taxonomy is canonical)
-          const classesDoc = loadInteractionClassesV1(); /* PEP_TALK__LOAD_CLASSESDOC_IN_RELATED_IIFE_V1 */
+          const classesDoc = loadInteractionClassesV1(); /* PEP_TALK__RELATED_INTERACTION_TITLES_FROM_REGISTRY_V1 */
           const titleBySlug = new Map<string, string>();
           for (const c of (classesDoc?.drug_classes ?? [])) titleBySlug.set(c.slug, c.title ?? c.slug);
           for (const c of (classesDoc?.supplement_classes ?? [])) titleBySlug.set(c.slug, c.title ?? c.slug);
