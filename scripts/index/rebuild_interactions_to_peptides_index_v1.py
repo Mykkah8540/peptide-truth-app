@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import json
+import re
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parents[2]
 ENTITIES_FP = ROOT / "content" / "_index" / "entities_v1.json"
