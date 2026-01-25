@@ -50,7 +50,8 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
         kind="blend"
         slug={slug}
         riskScore={riskHit ? riskHit.risk.risk_score : null}
-        canonicalName={b?.canonical_name ?? null}
+        
+        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}canonicalName={b?.canonical_name ?? null}
         shortName={b?.short_name ?? null}
         aliases={mergedAliases}
         aminoAcidSeq={null}

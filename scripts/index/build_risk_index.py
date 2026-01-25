@@ -149,6 +149,41 @@ def max_likelihood(a: str | None, b: str | None) -> str | None:
 def clamp_score(x: int) -> int:
     return max(1, min(10, x))
 
+def compute_risk_tier(
+    *,
+    risk_score: int,
+    severity: str | None,
+    likelihood: str | None,
+    developmental_risk: bool,
+    unknowns_penalty: bool,
+) -> str:
+    """
+    Tier rubric (v1):
+    - Base bands: 1–3 low, 4–6 moderate, 7–10 high
+    - Escalate: severity high/critical => high
+    - Escalate: unknowns_penalty or developmental_risk + score>=6 => high
+    - No automatic bump from flags when score<=3 (prevents inflation)
+    """
+    s = clamp_score(int(risk_score))
+
+    # Base from score
+    tier = "low" if s <= 3 else ("moderate" if s <= 6 else "high")
+
+    sev = (severity or "").strip().lower() or None
+    like = (likelihood or "").strip().lower() or None
+
+    if sev in ("critical", "high"):
+        return "high"
+
+    if (unknowns_penalty or developmental_risk) and s >= 6:
+        return "high"
+
+    if sev == "moderate" and like in ("very_likely", "likely"):
+        return "moderate" if tier == "low" else tier
+
+    return tier
+
+
 
 def compute_blend_risk(component_risks: list[dict]) -> dict:
     # Conservative aggregation:
@@ -172,6 +207,13 @@ def compute_blend_risk(component_risks: list[dict]) -> dict:
 
     return {
         "risk_score": clamp_score(int(score)),
+        "risk_tier": compute_risk_tier(
+            risk_score=int(score),
+            severity=severity,
+            likelihood=likelihood,
+            developmental_risk=developmental,
+            unknowns_penalty=unknowns,
+        ),
         "severity": severity,
         "likelihood": likelihood,
         "evidence_grade": evidence,
@@ -181,6 +223,7 @@ def compute_blend_risk(component_risks: list[dict]) -> dict:
 
 
 def main() -> int:
+
     allowed_safety = safety_ids()
 
     # Build peptide risk map
@@ -225,6 +268,13 @@ def main() -> int:
         dev = bool(r.get("developmental_risk"))
         unk = bool(r.get("unknowns_penalty"))
         inter = bool(pep_has_interactions.get(slug, False))
+        tier = compute_risk_tier(
+            risk_score=int(r.get("risk_score")),
+            severity=r.get("severity"),
+            likelihood=r.get("likelihood"),
+            developmental_risk=dev,
+            unknowns_penalty=unk,
+        )
         links = build_safety_links(developmental_risk=dev, unknowns_penalty=unk, has_interactions=inter)
         links = [x for x in links if x in allowed_safety] if allowed_safety else links
 
@@ -234,6 +284,7 @@ def main() -> int:
             "slug": slug,
             "risk": {
                 "risk_score": int(r.get("risk_score")),
+                "risk_tier": tier,
                 "severity": r.get("severity"),
                 "likelihood": r.get("likelihood"),
                 "evidence_grade": r.get("evidence_grade"),
@@ -264,6 +315,13 @@ def main() -> int:
         # blend interactions = OR of component interactions (until you add real blend interactions)
         inter = any(bool(pep_has_interactions.get(c, False)) for c in comps)
 
+        tier = compute_risk_tier(
+            risk_score=int(br.get("risk_score")),
+            severity=br.get("severity"),
+            likelihood=br.get("likelihood"),
+            developmental_risk=dev,
+            unknowns_penalty=unk,
+        )
         links = build_safety_links(developmental_risk=dev, unknowns_penalty=unk, has_interactions=inter)
         links = [x for x in links if x in allowed_safety] if allowed_safety else links
 
@@ -273,6 +331,7 @@ def main() -> int:
             "slug": slug,
             "risk": {
                 "risk_score": int(br.get("risk_score")),
+                "risk_tier": tier,
                 "severity": br.get("severity"),
                 "likelihood": br.get("likelihood"),
                 "evidence_grade": br.get("evidence_grade"),

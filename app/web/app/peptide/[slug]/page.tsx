@@ -85,7 +85,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
       {riskHit && (
         <div style={{ marginTop: 16 }}>
-          <RiskBadge score={riskHit.risk.risk_score} />
+          <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
         </div>
       )}
 
@@ -101,7 +101,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         kind="peptide"
         slug={slug}
         riskScore={riskHit ? riskHit.risk.risk_score : null}
-        canonicalName={p?.canonical_name}
+        
+        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}canonicalName={p?.canonical_name}
         shortName={p?.short_name}
         aliases={mergedAliases}
         aminoAcidSeq={p?.structure?.amino_acid_seq}

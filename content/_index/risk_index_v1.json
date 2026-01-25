@@ -13,6 +13,7 @@
       "slug": "5-amino-1mq",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -32,6 +33,7 @@
       "slug": "abaloparatide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -51,6 +53,7 @@
       "slug": "acetyl-hexapeptide-8",
       "risk": {
         "risk_score": 2,
+        "risk_tier": "low",
         "severity": "mild",
         "likelihood": "unlikely",
         "evidence_grade": "human_interventional",
@@ -68,6 +71,7 @@
       "slug": "adipotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -87,6 +91,7 @@
       "slug": "afamelanotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -106,6 +111,7 @@
       "slug": "amylin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -125,6 +131,7 @@
       "slug": "angiotensin-ii",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -144,6 +151,7 @@
       "slug": "aod-9604",
       "risk": {
         "risk_score": 4,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "human_interventional",
@@ -163,6 +171,7 @@
       "slug": "ara-290",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -182,6 +191,7 @@
       "slug": "atrial-natriuretic-peptide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -201,6 +211,7 @@
       "slug": "bivalirudin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -220,6 +231,7 @@
       "slug": "bpc-157",
       "risk": {
         "risk_score": 7,
+        "risk_tier": "high",
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "human_observational",
@@ -239,6 +251,7 @@
       "slug": "bpc-157-arginate",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -258,6 +271,7 @@
       "slug": "bradykinin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -277,6 +291,7 @@
       "slug": "brain-natriuretic-peptide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -296,6 +311,7 @@
       "slug": "bremelanotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -315,6 +331,7 @@
       "slug": "cagrilintide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -334,6 +351,7 @@
       "slug": "calcitonin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -353,6 +371,7 @@
       "slug": "carbetocin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -372,6 +391,7 @@
       "slug": "cgrp",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -391,6 +411,7 @@
       "slug": "cjc-1295",
       "risk": {
         "risk_score": 7,
+        "risk_tier": "high",
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "human_interventional",
@@ -410,6 +431,7 @@
       "slug": "cjc-1295-dac",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -429,6 +451,7 @@
       "slug": "desmopressin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -448,6 +471,7 @@
       "slug": "dsip",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -467,6 +491,7 @@
       "slug": "endothelin-1",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -486,6 +511,7 @@
       "slug": "epitalon",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -505,6 +531,7 @@
       "slug": "eptifibatide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -524,6 +551,7 @@
       "slug": "exenatide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -543,6 +571,7 @@
       "slug": "follistatin-344",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -562,6 +591,7 @@
       "slug": "ghk-cu",
       "risk": {
         "risk_score": 2,
+        "risk_tier": "low",
         "severity": "mild",
         "likelihood": "unlikely",
         "evidence_grade": "human_interventional",
@@ -581,6 +611,7 @@
       "slug": "ghrp-2",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -600,6 +631,7 @@
       "slug": "ghrp-6",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -619,6 +651,7 @@
       "slug": "glucagon",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -638,6 +671,7 @@
       "slug": "glutathione",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -657,6 +691,7 @@
       "slug": "gonadorelin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -676,6 +711,7 @@
       "slug": "hcg",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -695,6 +731,7 @@
       "slug": "hexarelin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -714,6 +751,7 @@
       "slug": "humanin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -733,6 +771,7 @@
       "slug": "igf-1",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -752,6 +791,7 @@
       "slug": "igf-1-lr3",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -771,6 +811,7 @@
       "slug": "ipamorelin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -790,6 +831,7 @@
       "slug": "kisspeptin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -809,6 +851,7 @@
       "slug": "kpv",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -828,6 +871,7 @@
       "slug": "lanreotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -847,6 +891,7 @@
       "slug": "leuprolide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -866,6 +911,7 @@
       "slug": "linaclotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -885,6 +931,7 @@
       "slug": "liraglutide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -904,6 +951,7 @@
       "slug": "ll-37",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -923,6 +971,7 @@
       "slug": "mazdutide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -942,6 +991,7 @@
       "slug": "melanotan-i",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -961,6 +1011,7 @@
       "slug": "melanotan-ii",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -980,6 +1031,7 @@
       "slug": "mk-677",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -999,6 +1051,7 @@
       "slug": "motilin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1018,6 +1071,7 @@
       "slug": "mots-c",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1037,6 +1091,7 @@
       "slug": "nad-plus",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1056,6 +1111,7 @@
       "slug": "nesiritide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1075,6 +1131,7 @@
       "slug": "neuropeptide-s",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1094,6 +1151,7 @@
       "slug": "neuropeptide-y",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1113,6 +1171,7 @@
       "slug": "octreotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1132,6 +1191,7 @@
       "slug": "orexin-a",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1151,6 +1211,7 @@
       "slug": "oxytocin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1170,6 +1231,7 @@
       "slug": "palmitoyl-pentapeptide-4",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1189,6 +1251,7 @@
       "slug": "palmitoyl-tripeptide-1",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1208,6 +1271,7 @@
       "slug": "peg-mgf",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1227,6 +1291,7 @@
       "slug": "pentagastrin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1246,6 +1311,7 @@
       "slug": "plecanatide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1265,6 +1331,7 @@
       "slug": "pramlintide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1284,6 +1351,7 @@
       "slug": "prolactin-releasing-peptide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1303,6 +1371,7 @@
       "slug": "retatrutide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1322,6 +1391,7 @@
       "slug": "secretin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1341,6 +1411,7 @@
       "slug": "selank",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1360,6 +1431,7 @@
       "slug": "semaglutide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1379,6 +1451,7 @@
       "slug": "semax",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1398,6 +1471,7 @@
       "slug": "sermorelin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1417,6 +1491,7 @@
       "slug": "shlp-2",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1436,6 +1511,7 @@
       "slug": "snap-8",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1455,6 +1531,7 @@
       "slug": "somatostatin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1474,6 +1551,7 @@
       "slug": "ss-31",
       "risk": {
         "risk_score": 6,
+        "risk_tier": "high",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "regulatory_label",
@@ -1493,6 +1571,7 @@
       "slug": "substance-p",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1512,6 +1591,7 @@
       "slug": "survodutide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1531,6 +1611,7 @@
       "slug": "tb-500",
       "risk": {
         "risk_score": 6,
+        "risk_tier": "high",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "animal",
@@ -1550,6 +1631,7 @@
       "slug": "teriparatide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1569,6 +1651,7 @@
       "slug": "tesamorelin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1588,6 +1671,7 @@
       "slug": "thymosin-alpha-1",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1607,6 +1691,7 @@
       "slug": "thymosin-beta-4",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1626,6 +1711,7 @@
       "slug": "thymosin-beta-4-full",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1645,6 +1731,7 @@
       "slug": "thymulin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1664,6 +1751,7 @@
       "slug": "tirzepatide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1683,6 +1771,7 @@
       "slug": "triptorelin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1702,6 +1791,7 @@
       "slug": "vasopressin",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1721,6 +1811,7 @@
       "slug": "vip",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1740,6 +1831,7 @@
       "slug": "ziconotide",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1759,6 +1851,7 @@
       "slug": "bpc-157-tb-500",
       "risk": {
         "risk_score": 8,
+        "risk_tier": "high",
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "animal",
@@ -1783,6 +1876,7 @@
       "slug": "cagri-sema",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": "moderate",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1806,6 +1900,7 @@
       "slug": "cjc-ipamorelin",
       "risk": {
         "risk_score": 7,
+        "risk_tier": "high",
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",
@@ -1830,6 +1925,7 @@
       "slug": "glow",
       "risk": {
         "risk_score": 8,
+        "risk_tier": "high",
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "animal",
@@ -1855,6 +1951,7 @@
       "slug": "glp1-sma",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": null,
         "likelihood": null,
         "evidence_grade": null,
@@ -1873,6 +1970,7 @@
       "slug": "glp2-trz",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": null,
         "likelihood": null,
         "evidence_grade": null,
@@ -1891,6 +1989,7 @@
       "slug": "glp3-reta",
       "risk": {
         "risk_score": 5,
+        "risk_tier": "moderate",
         "severity": null,
         "likelihood": null,
         "evidence_grade": null,
@@ -1909,6 +2008,7 @@
       "slug": "klow",
       "risk": {
         "risk_score": 8,
+        "risk_tier": "high",
         "severity": "high",
         "likelihood": "possible",
         "evidence_grade": "mechanistic_only",

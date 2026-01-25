@@ -7,6 +7,7 @@ export type RiskIndexEntity = {
   slug: string;
   risk: {
     risk_score: number;       // 1..10
+    risk_tier?: "low" | "moderate" | "high";
     severity?: string | null;
     likelihood?: string | null;
     evidence_grade?: string | null;
