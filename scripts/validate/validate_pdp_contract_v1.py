@@ -20,10 +20,14 @@ import sys
 from pathlib import Path
 from typing import Any, Iterable
 
+import re
+
 ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 BLENDS_DIR = ROOT / "content" / "blends"
 WEB_DIR = ROOT / "app" / "web"
+
+IGNORE_DIRS = {".next", "node_modules"}
 
 FAIL = False
 
@@ -50,6 +54,9 @@ BANNED_PHRASES = [
     "pathway modulation",
     "mechanistic_only",  # evidence-grade leakage into user-facing copy is not allowed
 ]
+
+# Allowed internal enum string when used ONLY as a structured JSON value for evidence_grade.
+ALLOW_MECHANISTIC_ONLY_EVIDENCE_GRADE_RE = re.compile(r'\"evidence_grade\"\s*:\s*\"mechanistic_only\"')
 
 def die(msg: str) -> None:
     global FAIL
@@ -96,12 +103,18 @@ def scan_content_json_files(files: list[Path], label: str) -> None:
 
             for phrase in BANNED_PHRASES:
                 if phrase.lower() in s_l:
+                    # Allow internal enum in structured data; UI must map this to friendly labels.
+                    if phrase == "mechanistic_only":
+                        if jp.endswith(".evidence_grade") and ALLOW_MECHANISTIC_ONLY_EVIDENCE_GRADE_RE.search(p.read_text(encoding="utf-8", errors="replace")):
+                            continue
                     die(f"{label} banned phrase '{phrase}' found in {p} at {jp}")
 
 def scan_web_for_leaks() -> None:
     if not WEB_DIR.exists():
         return
     for p in WEB_DIR.rglob("*"):
+        if any(part in IGNORE_DIRS for part in p.parts):
+            continue
         if not p.is_file():
             continue
         # Only scan typical source + templates
