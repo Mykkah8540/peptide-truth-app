@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "updated_at": "2026-01-24",
+  "updated_at": "2026-01-25",
   "notes": "Unified entity index generated from peptide JSONs + blends registry + blend stubs + topic pages.",
   "counts": {
     "peptides": 92,

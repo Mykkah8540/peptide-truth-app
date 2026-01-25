@@ -14,20 +14,20 @@
     "classification": {
       "category": "investigational_human",
       "needs_prescription": false,
-      "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
+      "notes": ""
     },
     "status": {
       "category": "investigational_human",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-19",
-      "human_use_note": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
+      "human_use_note": ""
     },
     "structure": {
-      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "sequence_oneletter": "",
+      "amino_acid_seq": "",
+      "molecular_formula": "",
       "molecular_weight": null,
-      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
+      "structure_image_url": ""
     },
     "risk": {
       "current_score": 5,
@@ -36,7 +36,7 @@
       "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "rationale": "",
       "risk_score": 5
     },
     "sections": {
@@ -44,14 +44,60 @@
         {
           "claim_type": "overview",
           "title": "What it is",
-          "population_group": "general",
-          "confidence": "unknown",
-          "evidence_grade": "unknown",
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "population_group": null,
+          "confidence": null,
+          "evidence_grade": null,
+          "text": "Retatrutide is a newer “triple-agonist” peptide that targets three hormone receptors involved in appetite, blood sugar regulation, and energy balance (GLP-1, GIP, and glucagon). People usually compare it to GLP-1 medications — but with an added pathway that may change how strong the effects feel.",
+          "evidence_refs": []
+        },
+        {
+          "claim_type": "overview",
+          "title": "What people are trying to get from it",
+          "population_group": null,
+          "confidence": null,
+          "evidence_grade": null,
+          "text": "Most interest is about fat-loss and metabolic improvement — especially stronger appetite control and easier adherence to a calorie deficit. The real-world tradeoff is tolerability: if your intake drops too hard, the practical issues show up fast (nausea, constipation, fatigue, dehydration, and losing muscle if protein falls).",
           "evidence_refs": []
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "claim_type": "use_case",
+          "title": "What it commonly feels like",
+          "population_group": null,
+          "confidence": null,
+          "evidence_grade": null,
+          "text": "The most commonly discussed effects are reduced appetite, smaller portions without feeling like you’re fighting yourself, and easier consistency with nutrition. Many people also talk about fewer cravings and less impulsive eating.",
+          "evidence_refs": []
+        },
+        {
+          "claim_type": "use_case",
+          "title": "Nutrition considerations",
+          "population_group": null,
+          "confidence": null,
+          "evidence_grade": null,
+          "text": "If appetite drops hard, protein is the #1 thing people accidentally under-shoot — and that’s where fatigue and muscle loss can sneak in during aggressive weight loss. Constipation is also common, so hydration + fiber matter more than people expect. If nausea shows up, smaller meals and simpler foods are usually easier.",
+          "evidence_refs": []
+        },
+        {
+          "claim_type": "use_case",
+          "title": "Fitness & performance considerations",
+          "population_group": null,
+          "confidence": null,
+          "evidence_grade": null,
+          "text": "This tends to work best when you keep training consistent. Resistance training matters most for protecting strength and lean mass. If calories crash too low, performance and recovery can dip — so adjust volume realistically instead of trying to train like you’re fully fed.",
+          "evidence_refs": []
+        },
+        {
+          "claim_type": "use_case",
+          "title": "What’s still uncertain (simple version)",
+          "population_group": null,
+          "confidence": null,
+          "evidence_grade": null,
+          "text": "Retatrutide shows strong promise, but the full long-term story is still being written. Most of what we know comes from limited human trials so far, and ongoing research will clarify durability, safety, and who benefits most.",
+          "evidence_refs": []
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -62,12 +108,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "route": "",
+          "unit": "",
           "min": null,
           "max": null,
-          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "frequency": "",
+          "duration": "",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -85,24 +131,23 @@
       ],
       "interaction_summary": [],
       "current_outlook_bullets": [
-        "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-        "general recovery and resilience interest (anecdotal)",
-        "common biohacker curiosity due to community reports",
-        "interest in mechanisms suggested by early evidence",
-        "used in goal-based stacking discussions (anecdotal)",
-        "exploration in wellness communities despite evidence limits"
+        "strong appetite control / less “food noise”",
+        "fat loss and body-composition goals",
+        "blood sugar / insulin resistance improvement interest",
+        "curiosity about “triple agonist” vs GLP-1 only",
+        "how to keep energy, training, and lean mass solid during weight loss"
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "title": "",
         "source_type": "pubmed",
-        "source_id": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "source_id": "",
+        "url": "",
+        "published_date": "",
         "evidence_grade": "unknown",
-        "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
+        "notes": ""
       }
     ],
     "changelog": [
@@ -137,10 +182,61 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
+    "benefits": [
+      "appetite suppression / reduced cravings (commonly discussed)",
+      "fat-loss support when paired with a calorie deficit",
+      "improved glucose control in metabolic discussions",
+      "some people report improved adherence and less impulsive eating"
+    ],
+    "side_effects_common": [
+      "nausea, reflux, or reduced appetite beyond what’s comfortable",
+      "constipation or slowed digestion",
+      "dehydration risk if fluids/electrolytes drop alongside food intake",
+      "fatigue or reduced training performance if intake drops too low"
+    ],
+    "side_effects_serious": [
+      "persistent vomiting or inability to keep fluids down",
+      "severe abdominal pain (especially if paired with fever or ongoing nausea)",
+      "symptoms of dehydration (dizziness, rapid heart rate, very dark urine)"
+    ],
     "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Most people look into retatrutide for appetite control and fat-loss support. The practical keys are: eat enough protein to protect lean mass, stay on top of hydration (constipation/dehydration are common), and adjust training so performance doesn’t fall off when intake drops."
+  },
+  "sections": {
+    "overview": [
+      {
+        "heading": "What it is",
+        "text": "Retatrutide is an investigational “triple-agonist” peptide designed to act on three hormone pathways involved in appetite, blood sugar control, and energy balance (GLP-1, GIP, and glucagon receptors). It’s being studied primarily for obesity and metabolic disease."
+      },
+      {
+        "heading": "Big picture",
+        "text": "Most interest centers on the possibility of larger fat-loss and stronger metabolic effects than earlier incretin therapies. The practical tradeoff is tolerability: GI side effects can be meaningful, and long-term safety is still being defined as the research matures."
+      }
+    ],
+    "current_outlook_bullets": [
+      "appetite control and reduced food noise",
+      "fat-loss and waist reduction goals",
+      "improved glucose control in metabolic discussions",
+      "curiosity about “GLP-1 + more” (triple-agonist hype)",
+      "interest in whether it preserves energy and performance better than older options"
+    ],
+    "use_cases": [
+      {
+        "heading": "What it appears to do",
+        "text": "Across early human research and real-world discussion, the most commonly expected effects are reduced appetite, easier adherence to a calorie deficit, and improvements in metabolic markers (especially glucose regulation). Some people also report changes in cravings and meal portion size."
+      },
+      {
+        "heading": "Nutrition considerations",
+        "text": "If appetite drops sharply, under-eating protein becomes the most common “silent” mistake—especially during aggressive fat loss. Hydration and fiber matter because constipation and GI slowdown are common practical issues people report with this class. If nausea shows up, simpler foods and smaller meals are often easier to tolerate."
+      },
+      {
+        "heading": "Fitness & performance considerations",
+        "text": "Results are typically better when paired with consistent training. Resistance work is especially relevant during weight loss to help preserve strength and lean mass. If food intake drops too low, fatigue and performance dips are common—so training volume and recovery need to stay realistic."
+      },
+      {
+        "heading": "Regulatory & scientific uncertainty",
+        "text": "While this peptide shows meaningful promise, much of what is known today comes from limited human trials and evolving research programs. Ongoing studies will determine how well early results translate into broader, approved clinical use and long-term safety."
+      }
+    ]
   }
 }

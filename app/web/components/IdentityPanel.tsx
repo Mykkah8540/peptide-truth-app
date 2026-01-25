@@ -54,8 +54,6 @@ export default function IdentityPanel(props: Props) {
         </div>
 <div style={{ marginTop: 10 }}>
         <Row label="Canonical name" value={props.canonicalName ?? null} />
-        <Row label="Kind" value={props.kind ?? null} />
-        <Row label="Slug" value={props.slug ?? null} />
         <Row label="Short name" value={props.shortName ?? null} />
 
         {aliases.length ? (

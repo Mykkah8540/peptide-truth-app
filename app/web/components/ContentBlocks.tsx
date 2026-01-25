@@ -13,6 +13,8 @@ type Props = {
   blocks?: Block[] | null;
 };
 
+const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
+
 export default function ContentBlocks({ heading, blocks }: Props) {
   const list = (blocks ?? []).filter(Boolean);
   if (!list.length) return null;
@@ -26,9 +28,6 @@ export default function ContentBlocks({ heading, blocks }: Props) {
           const title = (b.title || "").trim();
           const text = (b.text || "").trim();
           const metaParts = [
-            b.population_group ? `Population: ${b.population_group}` : null,
-            b.confidence ? `Confidence: ${b.confidence}` : null,
-            b.evidence_grade ? `Evidence: ${b.evidence_grade}` : null,
           ].filter(Boolean);
 
           const refs = Array.isArray(b.evidence_refs) ? b.evidence_refs.filter(Boolean) : [];

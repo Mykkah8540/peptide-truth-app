@@ -75,8 +75,6 @@ function renderList(label: string, items?: Item[] | null) {
           const name = (it.name || "").trim();
           const note = (it.risk_note || it.notes || "").trim();
           const metaParts = [
-            it.confidence ? `Confidence: ${it.confidence}` : null,
-            it.evidence_grade ? `Evidence: ${it.evidence_grade}` : null,
           ].filter(Boolean);
 
           return (
@@ -101,6 +99,8 @@ function renderList(label: string, items?: Item[] | null) {
     </div>
   );
 }
+
+const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
 export default function InteractionsSection({
   heading = "Interactions and medication considerations",
