@@ -45,6 +45,7 @@ def main() -> int:
 
     # Practical block validation (benefits/side-effects/cautions) — real-world voice guardrail
     run(["python3", "scripts/validate/validate_practical_block_v1.py"])  # PEP_TALK__ADD_PRACTICAL_VALIDATE_V1
+    run(["python3", "scripts/validate/validate_pdp_contract_v1.py"])
 
     # 3) Validate blend JSON stubs
     # Validate every blend json file (excluding _index.json + README)
