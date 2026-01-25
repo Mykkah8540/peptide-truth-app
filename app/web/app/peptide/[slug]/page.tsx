@@ -1,4 +1,4 @@
-import { getRiskForPeptide } from "@/lib/riskIndex";
+import { getRiskForPeptide, evidenceGradeLabel } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
@@ -97,18 +97,20 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         blocks={sections?.use_cases ?? null}
       />
 
-      <IdentityPanel
+        <IdentityPanel
         kind="peptide"
         slug={slug}
         riskScore={riskHit ? riskHit.risk.risk_score : null}
         
-        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}canonicalName={p?.canonical_name}
+        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}
+          evidenceGradeLabel={evidenceGradeLabel(riskHit?.risk.evidence_grade ?? null)}
+          canonicalName={p?.canonical_name}
         shortName={p?.short_name}
         aliases={mergedAliases}
         aminoAcidSeq={p?.structure?.amino_acid_seq}
       />
 
-        {/* Practical, real-world summary (not medical advice) */} {/* PEP_TALK__PRACTICAL_BLOCK_UI_V1 */}
+        {/* Practical, real-world summary (not medical advice) */} {}
         {doc?.practical ? (
           <section className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
             <h2 className="text-lg font-semibold">Practical summary</h2>
@@ -169,8 +171,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         interactionSummaryBlocks={sections?.interaction_summary}
       />
 
-      {/* PEP-TALK: related interaction class pages */} /* PEP_TALK__NO_RETURN_EMPTY_OBJECT_V1 */
-      {(() => { /* PEP_TALK__IIFE_RET_ANNOTATION_V1 */
+      {/* PEP-TALK: related interaction class pages */} 
+      {(() => { 
         const idx = loadInteractionClassesV1();
         const all = [
           ...((doc?.interactions?.drug_classes ?? []) as any[]),
@@ -185,7 +187,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
         if (!slugs.length) return null;
           // Use registry titles when available (taxonomy is canonical)
-          const classesDoc = loadInteractionClassesV1(); /* PEP_TALK__RELATED_INTERACTION_TITLES_FROM_REGISTRY_V1 */
+          const classesDoc = loadInteractionClassesV1(); 
           const titleBySlug = new Map<string, string>();
           for (const c of (classesDoc?.drug_classes ?? [])) titleBySlug.set(c.slug, c.title ?? c.slug);
           for (const c of (classesDoc?.supplement_classes ?? [])) titleBySlug.set(c.slug, c.title ?? c.slug);
@@ -225,7 +227,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             </div>
           </section>
         );
-      })() as any} /* PEP_TALK__CAST_RELATED_INTERACTIONS_IIFE_ANY_V1 */
+      })() as any} 
 
       {/* Interaction class links (navigation aid) */}
       {(() => {
@@ -272,7 +274,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         if (!links.length) return null;
 
         return (
-      {/* PEP_TALK__DEDUP_INTERACTION_SECTIONS_V1 removed duplicate interaction section */}
+      {}
 );
       })()}
 

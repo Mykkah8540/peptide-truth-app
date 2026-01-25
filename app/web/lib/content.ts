@@ -545,7 +545,7 @@ export function listInteractions(): InteractionListItem[] {
     return String(a.title ?? "").localeCompare(String(b.title ?? ""));
   });
 
-  return out; /* PEP_TALK__LIST_INTERACTIONS_FROM_REGISTRY_V1 */
+  return out; 
 }
 
 

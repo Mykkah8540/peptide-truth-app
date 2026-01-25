@@ -20,11 +20,11 @@
       "human_use_note": "TB-500 is not an approved therapeutic drug. Evidence for many recovery claims is primarily preclinical; human evidence for TB-500 specifically is limited."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 6,
@@ -79,7 +79,7 @@
           "title": "Developmental / Adolescent risk",
           "population_group": "adolescent",
           "confidence": "low",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Because TB-500 claims are often preclinical and safety is not well characterized, adolescents should treat uncertainty as meaningful risk, especially given real-world sourcing variability.",
           "evidence_refs": [
             "E1"

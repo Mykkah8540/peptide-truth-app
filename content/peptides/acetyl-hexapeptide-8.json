@@ -19,11 +19,11 @@
       "human_use_note": "Acetyl Hexapeptide-8 (Argireline) is widely used topically in cosmetic products for appearance-related claims (e.g., reducing the appearance of expression lines). It is not an FDA-approved therapeutic drug, and effectiveness/safety depend heavily on formulation, concentration, and delivery."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 2,
@@ -118,7 +118,7 @@
         "source_type": "clinicaltrials",
         "source_id": "NCT01381484",
         "url": "https://clinicaltrials.gov/study/NCT01381484",
-        "published_date": "",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "evidence_grade": "human_interventional",
         "notes": "ClinicalTrials.gov registry entry documenting a human study context for Argireline and periorbital wrinkles.",
         "year": 2011

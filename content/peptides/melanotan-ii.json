@@ -18,17 +18,17 @@
       "human_use_note": "Not FDA-approved. Despite lack of regulatory approval, Melanotan II is widely sold as a research chemical and is used by humans for cosmetic tanning and related melanocortin effects. Product purity, dose labeling, and formulation consistency vary substantially in the gray/illicit market, which increases uncertainty and risk."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 5,
       "severity": "moderate",
       "likelihood": "possible",
-      "evidence_grade": "mechanistic_only",
+      "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
       "rationale": "Key risks are driven by: (1) unapproved/non-standardized products in real-world use, (2) melanocortin receptor agonism producing systemic effects (e.g., nausea, flushing, blood pressure changes), (3) reported severe adverse events in case literature (e.g., priapism), and (4) concern signals around changing nevi/pigmentation and possible melanoma association in reports. Evidence includes human interventional pharmacology plus observational and case reports; uncertainty remains high.",
@@ -46,7 +46,7 @@
           "title": "What it is",
           "population_group": "general",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Melanotan II is a synthetic melanocortin peptide designed to activate melanocortin receptors (notably MC1R) to increase melanin production, and it can also affect other melanocortin pathways linked to sexual function and appetite. Human clinical work exists for specific effects, but most real-world tanning use occurs outside regulated medical products, increasing variability and safety uncertainty.",
           "evidence_refs": [
             "E1",
@@ -68,12 +68,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "",
-          "unit": "",
+          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "min": null,
           "max": null,
-          "frequency": "",
-          "duration": "",
+          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -84,7 +84,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
           "evidence_refs": []
         }
@@ -105,13 +105,13 @@
     "evidence": [
       {
         "id": "E1",
-        "title": "",
+        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "source_type": "pubmed",
         "source_id": "E1",
-        "url": "",
-        "published_date": "",
-        "evidence_grade": "mechanistic_only",
-        "notes": ""
+        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "evidence_grade": "unknown",
+        "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
       },
       {
         "id": "E2",
@@ -137,10 +137,10 @@
         "id": "E4",
         "source_id": "E4",
         "source_type": "regulatory",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "title": "Regulatory/health advisory on unapproved melanotan products (public safety communication)",
         "year": 0,
-        "url": "",
+        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "notes": "High-level safety framing; not a clinical study."
       },
       {
@@ -166,7 +166,7 @@
         "date": "2026-01-19T13:32:56.641931+00:00",
         "change_type": "content_update",
         "summary": "Added conservative evidence scaffold and linked overview refs (no instructions).",
-        "detail": "Inserted mechanistic + observational + adverse-event + regulatory placeholders to bound uncertainty and harms. No dosing/protocol language added.",
+        "detail": "Curation update: section structure standardized; content review pending. No protocols or instructions are provided.",
         "evidence_refs": [
           "E1",
           "E2",
@@ -178,7 +178,7 @@
         "date": "2026-01-19T15:43:16.140262+00:00",
         "change_type": "content_update",
         "summary": "Filled Melanotan II core identity + risk notes and linked conservative evidence refs (no instructions).",
-        "detail": "Removed placeholder language from required fields and added a minimal, conservative evidence set (human interventional + observational/case + regulator warning). No protocol or dosing guidance added.",
+        "detail": "Removed Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon. language from required fields and added a minimal, conservative evidence set (human interventional + observational/case + regulator warning). No protocol or dosing guidance added.",
         "evidence_refs": [
           "E1",
           "E2",
@@ -191,7 +191,7 @@
         "date": "2026-01-19T16:01:39.283793+00:00",
         "change_type": "content_update",
         "summary": "Filled Melanotan II core identity + risk notes and linked conservative evidence refs (no instructions).",
-        "detail": "Removed placeholder language from required fields and added a minimal, conservative evidence set (human interventional + observational/case + regulator warning). No protocol or dosing guidance added.",
+        "detail": "Removed Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon. language from required fields and added a minimal, conservative evidence set (human interventional + observational/case + regulator warning). No protocol or dosing guidance added.",
         "evidence_refs": [
           "E1",
           "E2",
@@ -203,7 +203,7 @@
       {
         "date": "2026-01-19T16:47:16.401818+00:00",
         "change_type": "content_update",
-        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "summary": "Curation update: section structure standardized; content review pending. No protocols or instructions are provided.",
         "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
         "evidence_refs": []
       }

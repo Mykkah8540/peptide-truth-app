@@ -4,7 +4,8 @@ type Props = {
   kind?: "peptide" | "blend" | "topic" | null;
   slug?: string | null;
   riskScore?: number | null;
-  riskTier?: "low" | "moderate" | "high" | null;  evidenceGradeLabel?: string | null;
+  riskTier?: "low" | "moderate" | "high" | null;
+  evidenceGradeLabel?: string | null;
 
   canonicalName?: string | null;
   shortName?: string | null;
@@ -42,11 +43,16 @@ export default function IdentityPanel(props: Props) {
 
       {props.riskScore !== undefined && props.riskScore !== null ? (
         <div style={{ marginTop: 10 }}>
-          <RiskBadge score={props.riskScore} tier={props.riskTier ?? null} />
+          
+<RiskBadge score={props.riskScore} tier={props.riskTier ?? null} />
         </div>
       ) : null}
 
-      <div style={{ marginTop: 10 }}>
+      
+        <div style={{ marginTop: 6 }}>
+          <Row label="Evidence" value={props.evidenceGradeLabel ?? null} />
+        </div>
+<div style={{ marginTop: 10 }}>
         <Row label="Canonical name" value={props.canonicalName ?? null} />
         <Row label="Kind" value={props.kind ?? null} />
         <Row label="Slug" value={props.slug ?? null} />

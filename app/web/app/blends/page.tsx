@@ -7,7 +7,7 @@ export default async function BlendsPage({
 }: {
   searchParams?: Promise<{ q?: string }> | { q?: string };
 }) {
-  const sp = await Promise.resolve(searchParams ?? {}); /* PEP_TALK__SEARCHPARAMS_PROMISE_FIX_V2 */
+  const sp = await Promise.resolve(searchParams ?? {}); 
   const { q = "" } = sp as any;
   const all = listBlends();
   const rows = filterByQuery(all, q);

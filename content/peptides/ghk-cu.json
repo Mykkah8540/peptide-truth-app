@@ -24,11 +24,11 @@
       "human_use_note": "Copper Tripeptide-1 (GHK-Cu) is widely used topically in skincare. Human evidence is mixed and formulation-dependent. It is not an FDA-approved therapeutic drug."
     },
     "structure": {
-      "sequence_oneletter": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "amino_acid_seq": "Gly-His-Lys (copper complex)",
-      "molecular_formula": "",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 2,
@@ -87,7 +87,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental exposure may carry higher and less predictable risk than adult exposure. Long-term effects on growth, endocrine signaling, and neurodevelopment are not well studied and may be irreversible.",
           "evidence_refs": []
         }

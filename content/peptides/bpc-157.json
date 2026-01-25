@@ -22,11 +22,11 @@
       "human_use_note": "BPC-157 is not an approved human drug. Human evidence is limited and heterogeneous. Regulatory bodies and anti-doping organizations flag it as an unapproved substance with meaningful uncertainty and potential safety concerns."
     },
     "structure": {
-      "sequence_oneletter": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "amino_acid_seq": "Pentadecapeptide (15 amino acids)",
-      "molecular_formula": "",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 7,
@@ -85,7 +85,7 @@
           "title": "Developmental / Adolescent risk",
           "population_group": "adolescent",
           "confidence": "moderate",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Adolescents are still calibrating long-term repair, endocrine, and neurodevelopmental setpoints. For BPC-157, high uncertainty plus unregulated real-world use patterns increase consequence risk. Treat 'unknown' as part of risk in under-18 athletes.",
           "evidence_refs": [
             "E2",
@@ -121,7 +121,7 @@
         "source_type": "fda",
         "source_id": "fda_compounding_category2_bpc157",
         "url": "https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks",
-        "published_date": "",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "evidence_grade": "regulatory_label",
         "notes": "FDA compounding safety note: limited safety-related information for proposed routes; immunogenicity and impurity characterization concerns."
       },
@@ -131,7 +131,7 @@
         "source_type": "usada",
         "source_id": "usada_bpc157",
         "url": "https://www.usada.org/spirit-of-sport/bpc-157-peptide-prohibited/",
-        "published_date": "",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "evidence_grade": "human_observational",
         "notes": "Anti-doping perspective noting unapproved status and uncertainty for athlete use."
       },

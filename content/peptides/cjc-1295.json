@@ -21,11 +21,11 @@
       "human_use_note": "CJC-1295 is not an approved therapeutic drug. Human evidence exists for GH/IGF changes in controlled settings, but long-term safety and outcome evidence for enhancement use is limited."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 7,
@@ -80,7 +80,7 @@
           "title": "Developmental / Adolescent risk",
           "population_group": "adolescent",
           "confidence": "moderate",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Because CJC-1295 targets GH/IGF signaling, adolescents and still-developing endocrine systems should treat uncertainty as a meaningful risk. Long-term setpoint changes are not well characterized.",
           "evidence_refs": [
             "E1"

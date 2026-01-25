@@ -18,17 +18,17 @@
       "human_use_note": "Not FDA-approved. Human use is widely reported in gray-market contexts. Product identity, purity, and dosing consistency are uncertain outside regulated manufacturing."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 5,
       "severity": "moderate",
       "likelihood": "possible",
-      "evidence_grade": "mechanistic_only",
+      "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
       "rationale": "Primary risks relate to GH/IGF-1 axis perturbation, metabolic effects (e.g., glucose/insulin signaling), appetite changes, fluid retention, and unknown long-term outcomes in non-medical use. Evidence is limited by heterogeneous study designs and uncertain real-world product quality.",
@@ -46,7 +46,7 @@
           "title": "What it is",
           "population_group": "general",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Hexarelin is a synthetic GHRP-class peptide studied for short-term effects on GH release and downstream endocrine/metabolic signaling. Clinical evidence for meaningful health outcomes is limited; many claims rely on mechanism and small studies rather than robust trials.",
           "evidence_refs": [
             "E1",
@@ -66,12 +66,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "",
-          "unit": "",
+          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "min": null,
           "max": null,
-          "frequency": "",
-          "duration": "",
+          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -82,7 +82,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
           "evidence_refs": []
         }
@@ -102,13 +102,13 @@
     "evidence": [
       {
         "id": "E1",
-        "title": "",
+        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "source_type": "pubmed",
         "source_id": "E1",
-        "url": "",
-        "published_date": "",
-        "evidence_grade": "mechanistic_only",
-        "notes": ""
+        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "evidence_grade": "unknown",
+        "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
       },
       {
         "id": "E2",
@@ -125,7 +125,7 @@
         "title": "Stimulation of endogenous pulsatile growth hormone secretion by activation of growth hormone secretagogue receptor reduces the fat accumulation and improves the insulin sensitivity in obese mice.",
         "source_type": "review",
         "source_id": "PMID:33368660",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "year": 2021,
         "url": "https://pubmed.ncbi.nlm.nih.gov/33368660/",
         "notes": "Safety framing; not a protocol guide."
@@ -143,7 +143,7 @@
         "date": "2026-01-19T16:33:35.011290+00:00",
         "change_type": "content_update",
         "summary": "Filled hexarelin core fields and linked conservative evidence refs (no instructions).",
-        "detail": "Removed placeholder language from key descriptive fields and ensured overview evidence_refs are present. Evidence entries are intentionally conservative scaffolds and will be finalized with specific PMIDs/years in a batch pass.",
+        "detail": "Removed Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon. language from key descriptive fields and ensured overview evidence_refs are present. Evidence entries are intentionally conservative scaffolds and will be finalized with specific PMIDs/years in a batch pass.",
         "evidence_refs": [
           "E1",
           "E2",
@@ -153,12 +153,12 @@
       {
         "date": "2026-01-19T16:47:19.279938+00:00",
         "change_type": "content_update",
-        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "summary": "Curation update: section structure standardized; content review pending. No protocols or instructions are provided.",
         "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
         "evidence_refs": []
       }
     ],
-    "notes": "",
+    "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
     "meta": {},
     "topics": {
       "primary": [

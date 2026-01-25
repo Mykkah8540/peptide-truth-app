@@ -18,17 +18,17 @@
       "human_use_note": "Exists as an approved prescription drug in specific indications/contexts (region- and label-dependent). Also discussed in research and off-label circles; this app describes evidence and risk without providing instructions."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 5,
       "severity": "moderate",
       "likelihood": "possible",
-      "evidence_grade": "mechanistic_only",
+      "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
       "rationale": "Primary safety understanding comes from regulated clinical trials in specific populations and endpoints. Generalization beyond labeled contexts increases uncertainty. Mechanistic risks cluster around endocrine signaling, metabolic effects, and individual contraindications.",
@@ -46,7 +46,7 @@
           "title": "What it is",
           "population_group": "general",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Tesamorelin is a synthetic peptide designed to act on the GHRH pathway, which can influence growth hormone signaling and downstream metabolic effects. It is studied primarily in human clinical contexts where changes in body composition and related biomarkers are relevant. This entry summarizes mechanisms, evidence quality, and safety considerations without providing dosing, preparation, or administration instructions.",
           "evidence_refs": [
             "fda_tesamorelin_label",
@@ -65,12 +65,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "",
-          "unit": "",
+          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "min": null,
           "max": null,
-          "frequency": "",
-          "duration": "",
+          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -81,7 +81,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
           "evidence_refs": []
         }
@@ -97,13 +97,13 @@
     "evidence": [
       {
         "id": "E1",
-        "title": "",
+        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "source_type": "pubmed",
         "source_id": "E1",
-        "url": "",
-        "published_date": "",
-        "evidence_grade": "mechanistic_only",
-        "notes": ""
+        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "evidence_grade": "unknown",
+        "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
       },
       {
         "id": "pubmed_tesamorelin_hiv_lipodystrophy",
@@ -165,7 +165,7 @@
     "current_score": 5,
     "severity": "moderate",
     "likelihood": "possible",
-    "evidence_grade": "mechanistic_only",
+    "evidence_grade": "unknown",
     "developmental_risk": true,
     "unknowns_penalty": true,
     "rationale": "Primary safety understanding comes from regulated clinical trials in specific populations and endpoints. Generalization beyond labeled contexts increases uncertainty. Mechanistic risks cluster around endocrine signaling, metabolic effects, and individual contraindications.",
@@ -182,7 +182,7 @@
         "title": "What it is",
         "population_group": "general",
         "confidence": "unknown",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "text": "Tesamorelin is a synthetic peptide designed to act on the GHRH pathway, which can influence growth hormone signaling and downstream metabolic effects. It is studied primarily in human clinical contexts where changes in body composition and related biomarkers are relevant. This entry summarizes mechanisms, evidence quality, and safety considerations without providing dosing, preparation, or administration instructions.",
         "evidence_refs": [
           "fda_tesamorelin_label",
@@ -201,12 +201,12 @@
     "monitoring": [],
     "observed_exposure_ranges": [
       {
-        "route": "",
-        "unit": "",
+        "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "min": null,
         "max": null,
-        "frequency": "",
-        "duration": "",
+        "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "population_group": "general",
         "notes": "Descriptive only. Observed in studies; not instructions.",
         "evidence_refs": []
@@ -217,7 +217,7 @@
         "claim_type": "risk",
         "population_group": "adolescent",
         "confidence": "unknown",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
         "evidence_refs": []
       }
@@ -227,13 +227,13 @@
   "evidence": [
     {
       "id": "E1",
-      "title": "",
+      "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "source_type": "pubmed",
       "source_id": "E1",
-      "url": "",
-      "published_date": "",
-      "evidence_grade": "mechanistic_only",
-      "notes": ""
+      "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "evidence_grade": "unknown",
+      "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     {
       "id": "pubmed_tesamorelin_hiv_lipodystrophy",

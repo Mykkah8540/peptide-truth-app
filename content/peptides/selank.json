@@ -16,17 +16,17 @@
       "human_use_note": "Not FDA-approved. Human use is reported, including use in regions where it has been marketed/used clinically and in gray-market contexts elsewhere. Product quality and labeling vary outside regulated supply chains, increasing uncertainty."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 5,
       "severity": "moderate",
       "likelihood": "possible",
-      "evidence_grade": "mechanistic_only",
+      "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
       "rationale": "Risk uncertainty is driven by heterogeneous clinical literature (often region-specific), variability in delivery/formulations in real-world use, and limited large, independently replicated trials for many claimed outcomes. Potential risks include neuropsychiatric effects, interactions with other CNS-active agents, and unknown long-term safety in adolescents.",
@@ -44,7 +44,7 @@
           "title": "What it is",
           "population_group": "general",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Selank is a synthetic peptide based on tuftsin-related sequences, developed to influence neuromodulatory pathways relevant to anxiety and cognition. Evidence includes mechanistic work and clinical reports, but overall evidence quality varies and many claims lack large, modern, independent replication.",
           "evidence_refs": [
             "E1",
@@ -64,12 +64,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "",
-          "unit": "",
+          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "min": null,
           "max": null,
-          "frequency": "",
-          "duration": "",
+          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -80,7 +80,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
           "evidence_refs": []
         }
@@ -99,13 +99,13 @@
     "evidence": [
       {
         "id": "E1",
-        "title": "",
+        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "source_type": "pubmed",
         "source_id": "E1",
-        "url": "",
-        "published_date": "",
-        "evidence_grade": "mechanistic_only",
-        "notes": ""
+        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "evidence_grade": "unknown",
+        "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
       },
       {
         "id": "E2",
@@ -140,7 +140,7 @@
         "date": "2026-01-19T16:15:22.819308+00:00",
         "change_type": "content_update",
         "summary": "Filled Selank core fields and linked conservative evidence refs (no instructions).",
-        "detail": "Removed placeholder language from key descriptive fields and added a minimal evidence scaffold. No protocols/dosing/instructions added.",
+        "detail": "Removed Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon. language from key descriptive fields and added a minimal evidence scaffold. No protocols/dosing/instructions added.",
         "evidence_refs": [
           "E1",
           "E2",
@@ -150,7 +150,7 @@
       {
         "date": "2026-01-19T16:47:13.491291+00:00",
         "change_type": "content_update",
-        "summary": "Evidence finalization: replaced PubMed placeholders with specific PMIDs/years (no instructions).",
+        "summary": "Curation update: section structure standardized; content review pending. No protocols or instructions are provided.",
         "detail": "Auto-filled evidence metadata using NCBI E-utilities (query-based). Best-effort year extraction for non-NCBI pages where applicable. No dosing/protocol instructions added.",
         "evidence_refs": []
       }

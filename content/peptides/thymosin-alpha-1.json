@@ -19,17 +19,17 @@
       "human_use_note": "This entry summarizes how the compound is discussed/used in the real world without endorsing use or providing instructions."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 5,
       "severity": "moderate",
       "likelihood": "possible",
-      "evidence_grade": "mechanistic_only",
+      "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
       "rationale": "Risk rating is conservative and reflects known uncertainties, evidence limitations, and potential for non-obvious harms.",
@@ -42,7 +42,7 @@
           "title": "What it is",
           "population_group": "general",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "What it is and why it is studied are summarized here in a conservative, evidence-bounded way.",
           "evidence_refs": [
             "E1",
@@ -62,12 +62,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "",
-          "unit": "",
+          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "min": null,
           "max": null,
-          "frequency": "",
-          "duration": "",
+          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -78,7 +78,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
           "evidence_refs": []
         }
@@ -118,7 +118,7 @@
         "id": "E3",
         "source_id": "FDA-TA1-BULK-2024",
         "source_type": "regulatory",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "title": "FDA document referencing Thymosin alpha-1 bulk drug substances (regulatory context)",
         "year": 2024,
         "url": "https://www.fda.gov/media/183892/download",
@@ -147,7 +147,7 @@
       {
         "date": "2026-01-18T19:58:03+00:00",
         "change_type": "content_update",
-        "summary": "Replaced placeholder evidence entries with specific sources (no instructions).",
+        "summary": "Replaced Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon. evidence entries with specific sources (no instructions).",
         "detail": "Filled TA1 evidence metadata for E1–E3 with specific identifiers/links. No dosing/protocol content added.",
         "evidence_refs": [
           "E1",

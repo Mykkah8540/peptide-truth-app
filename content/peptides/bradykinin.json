@@ -5,31 +5,31 @@
     "short_name": "Bradykinin",
     "aliases": [],
     "classification": {
-      "category": "",
+      "category": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
-      "notes": "PLACEHOLDER: Classification notes (non-prescriptive)."
+      "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "status": {
-      "category": "",
+      "category": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "jurisdiction": "GLOBAL",
       "last_reviewed": "2026-01-20",
-      "human_use_note": "PLACEHOLDER: Status + real-world use context (descriptive only)."
+      "human_use_note": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "structure": {
-      "sequence_oneletter": "",
-      "amino_acid_seq": "",
-      "molecular_formula": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "amino_acid_seq": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 5,
       "severity": "moderate",
       "likelihood": "possible",
-      "evidence_grade": "mechanistic_only",
+      "evidence_grade": "unknown",
       "developmental_risk": true,
       "unknowns_penalty": true,
-      "rationale": "PLACEHOLDER: Risk rationale tied to evidence limits and known unknowns.",
+      "rationale": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "risk_score": 5
     },
     "sections": {
@@ -39,8 +39,8 @@
           "title": "What it is",
           "population_group": "general",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
-          "text": "PLACEHOLDER: What it is; intended biological purpose; why it is studied.",
+          "evidence_grade": "unknown",
+          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -55,12 +55,12 @@
       "monitoring": [],
       "observed_exposure_ranges": [
         {
-          "route": "",
-          "unit": "",
+          "route": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "unit": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "min": null,
           "max": null,
-          "frequency": "",
-          "duration": "",
+          "frequency": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "duration": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "population_group": "general",
           "notes": "Descriptive only. Observed in studies; not instructions.",
           "evidence_refs": []
@@ -71,14 +71,14 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Developmental risk is flagged due to limited adolescent data and uncertain long-term effects. Endocrine, growth, neurodevelopmental, and metabolic setpoints may be sensitive to perturbation. This section is descriptive only; uncertainty is explicitly acknowledged.",
           "evidence_refs": []
         }
       ],
       "interaction_summary": [],
       "current_outlook_bullets": [
-        "pLACEHOLDER: What it is; intended biological purpose; why it is studied",
+        "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "general recovery and resilience interest (anecdotal)",
         "common biohacker curiosity due to community reports",
         "interest in mechanisms suggested by early evidence",
@@ -89,13 +89,13 @@
     "evidence": [
       {
         "id": "E1",
-        "title": "",
+        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "source_type": "pubmed",
-        "source_id": "",
-        "url": "",
-        "published_date": "",
-        "evidence_grade": "mechanistic_only",
-        "notes": ""
+        "source_id": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "published_date": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+        "evidence_grade": "unknown",
+        "notes": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
       }
     ],
     "changelog": [

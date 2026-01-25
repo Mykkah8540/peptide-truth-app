@@ -19,11 +19,11 @@
       "human_use_note": "AOD-9604 is not approved for human therapeutic use. Despite this, it is widely marketed and consumed as a research peptide, particularly in weight-loss contexts. No regulatory body currently authorizes it for medical treatment."
     },
     "structure": {
-      "sequence_oneletter": "",
+      "sequence_oneletter": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "amino_acid_seq": "YLRIVQCRSVEGSCGF",
-      "molecular_formula": "",
+      "molecular_formula": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
       "molecular_weight": null,
-      "structure_image_url": ""
+      "structure_image_url": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon."
     },
     "risk": {
       "current_score": 4,
@@ -84,7 +84,7 @@
           "claim_type": "risk",
           "population_group": "adolescent",
           "confidence": "unknown",
-          "evidence_grade": "mechanistic_only",
+          "evidence_grade": "unknown",
           "text": "Use during adolescence may interfere with normal endocrine signaling and metabolic regulation. Long-term developmental effects have not been studied and may be irreversible.",
           "evidence_refs": []
         }
@@ -121,7 +121,7 @@
         "source_id": "12183452",
         "url": "https://pubmed.ncbi.nlm.nih.gov/12183452/",
         "published_date": "2002-01-01",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "notes": "Identified the 176–191 fragment responsible for fat metabolism signaling.",
         "year": 2002
       }
