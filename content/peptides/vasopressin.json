@@ -3,7 +3,10 @@
   "peptide": {
     "canonical_name": "Vasopressin",
     "short_name": "Vasopressin",
-    "aliases": [],
+    "aliases": [
+      "adh",
+      "avp"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,

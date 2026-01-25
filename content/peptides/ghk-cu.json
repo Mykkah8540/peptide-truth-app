@@ -4,10 +4,13 @@
     "canonical_name": "Ghk Cu",
     "short_name": "GHK-Cu",
     "aliases": [
-      "GHK-Cu",
       "Copper peptide GHK-Cu",
-      "Glycyl-L-histidyl-L-lysine copper complex",
-      "GHK copper complex"
+      "ghk",
+      "GHK copper complex",
+      "ghk cu",
+      "GHK-Cu",
+      "ghkcu",
+      "Glycyl-L-histidyl-L-lysine copper complex"
     ],
     "classification": {
       "category": "investigational_human",

@@ -3,7 +3,10 @@
   "peptide": {
     "canonical_name": "Tirzepatide",
     "short_name": "Tirzepatide",
-    "aliases": [],
+    "aliases": [
+      "tirz",
+      "trz"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,

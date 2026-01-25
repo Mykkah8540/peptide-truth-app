@@ -3,7 +3,9 @@
   "peptide": {
     "canonical_name": "Semaglutide",
     "short_name": "Semaglutide",
-    "aliases": [],
+    "aliases": [
+      "sema"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,

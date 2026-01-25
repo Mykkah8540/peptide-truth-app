@@ -3,7 +3,9 @@
   "peptide": {
     "canonical_name": "Brain Natriuretic Peptide",
     "short_name": "Brain Natriuretic Peptide",
-    "aliases": [],
+    "aliases": [
+      "bnp"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,

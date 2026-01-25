@@ -3,7 +3,9 @@
   "peptide": {
     "canonical_name": "CGRP",
     "short_name": "CGRP",
-    "aliases": [],
+    "aliases": [
+      "cgrp"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,

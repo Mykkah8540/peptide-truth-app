@@ -12,6 +12,7 @@
       "canonical_name": "5-Amino-1MQ",
       "short_name": "5-Amino-1MQ",
       "aliases": [
+        "1mq",
         "5 amino 1mq",
         "5-amino-1mq",
         "5amino1mq"
@@ -145,6 +146,7 @@
       "canonical_name": "Aod-9604",
       "short_name": "AOD-9604",
       "aliases": [
+        "aod",
         "hGH fragment 176-191"
       ],
       "status_category": "investigational_human",
@@ -164,6 +166,7 @@
       "canonical_name": "Ara-290",
       "short_name": "ARA-290",
       "aliases": [
+        "ara",
         "cibinetide"
       ],
       "status_category": "investigational_human",
@@ -182,7 +185,9 @@
       "slug": "atrial-natriuretic-peptide",
       "canonical_name": "Atrial Natriuretic Peptide",
       "short_name": "Atrial Natriuretic Peptide",
-      "aliases": [],
+      "aliases": [
+        "anp"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
@@ -218,7 +223,10 @@
       "short_name": "BPC-157",
       "aliases": [
         "Body Protection Compound-157",
-        "Pentadecapeptide BPC 157"
+        "Pentadecapeptide BPC 157",
+        "bpc",
+        "bpc 157",
+        "bpc157"
       ],
       "status_category": "investigational_human",
       "needs_prescription": false,
@@ -274,7 +282,9 @@
       "slug": "brain-natriuretic-peptide",
       "canonical_name": "Brain Natriuretic Peptide",
       "short_name": "Brain Natriuretic Peptide",
-      "aliases": [],
+      "aliases": [
+        "bnp"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
@@ -314,6 +324,7 @@
       "aliases": [
         "am833",
         "amylin analog",
+        "cagri",
         "long acting amylin"
       ],
       "status_category": "investigational_human",
@@ -366,7 +377,9 @@
       "slug": "cgrp",
       "canonical_name": "CGRP",
       "short_name": "CGRP",
-      "aliases": [],
+      "aliases": [
+        "cgrp"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
@@ -386,7 +399,8 @@
       "aliases": [
         "CJC-1295 (no DAC)",
         "CJC-1295 DAC",
-        "GHRH analog"
+        "GHRH analog",
+        "cjc"
       ],
       "status_category": "investigational_human",
       "needs_prescription": false,
@@ -439,7 +453,8 @@
       "canonical_name": "Dsip",
       "short_name": "DSIP",
       "aliases": [
-        "delta-sleep-inducing-peptide"
+        "delta-sleep-inducing-peptide",
+        "dsip"
       ],
       "status_category": "investigational_human",
       "needs_prescription": false,
@@ -457,7 +472,10 @@
       "slug": "endothelin-1",
       "canonical_name": "Endothelin-1",
       "short_name": "Endothelin-1",
-      "aliases": [],
+      "aliases": [
+        "et-1",
+        "et1"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
@@ -549,7 +567,10 @@
         "Copper peptide GHK-Cu",
         "GHK copper complex",
         "GHK-Cu",
-        "Glycyl-L-histidyl-L-lysine copper complex"
+        "Glycyl-L-histidyl-L-lysine copper complex",
+        "ghk",
+        "ghk cu",
+        "ghkcu"
       ],
       "status_category": "investigational_human",
       "needs_prescription": false,
@@ -1278,7 +1299,11 @@
       "canonical_name": "Retatrutide",
       "short_name": "Retatrutide",
       "aliases": [
+        "glp 3",
+        "glp-3",
+        "glp3",
         "ly3437943",
+        "reta",
         "triple g"
       ],
       "status_category": "investigational_human",
@@ -1331,7 +1356,9 @@
       "slug": "semaglutide",
       "canonical_name": "Semaglutide",
       "short_name": "Semaglutide",
-      "aliases": [],
+      "aliases": [
+        "sema"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
@@ -1494,7 +1521,8 @@
       "short_name": "TB-500",
       "aliases": [
         "TB500",
-        "Thymosin Beta-4 fragment"
+        "Thymosin Beta-4 fragment",
+        "tb 500"
       ],
       "status_category": "investigational_human",
       "needs_prescription": false,
@@ -1605,7 +1633,10 @@
       "slug": "tirzepatide",
       "canonical_name": "Tirzepatide",
       "short_name": "Tirzepatide",
-      "aliases": [],
+      "aliases": [
+        "tirz",
+        "trz"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {
@@ -1639,7 +1670,10 @@
       "slug": "vasopressin",
       "canonical_name": "Vasopressin",
       "short_name": "Vasopressin",
-      "aliases": [],
+      "aliases": [
+        "adh",
+        "avp"
+      ],
       "status_category": "unknown",
       "needs_prescription": false,
       "risk": {

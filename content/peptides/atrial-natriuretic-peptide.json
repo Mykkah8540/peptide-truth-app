@@ -3,7 +3,9 @@
   "peptide": {
     "canonical_name": "Atrial Natriuretic Peptide",
     "short_name": "Atrial Natriuretic Peptide",
-    "aliases": [],
+    "aliases": [
+      "anp"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,

@@ -4,7 +4,8 @@
     "canonical_name": "Dsip",
     "short_name": "DSIP",
     "aliases": [
-      "delta-sleep-inducing-peptide"
+      "delta-sleep-inducing-peptide",
+      "dsip"
     ],
     "classification": {
       "category": "investigational_human",

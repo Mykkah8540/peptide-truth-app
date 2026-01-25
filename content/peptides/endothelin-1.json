@@ -3,7 +3,10 @@
   "peptide": {
     "canonical_name": "Endothelin-1",
     "short_name": "Endothelin-1",
-    "aliases": [],
+    "aliases": [
+      "et-1",
+      "et1"
+    ],
     "classification": {
       "category": "",
       "needs_prescription": false,
