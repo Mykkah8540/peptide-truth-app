@@ -4,7 +4,8 @@ type Props = {
   kind?: "peptide" | "blend" | "topic" | null;
   slug?: string | null;
   riskScore?: number | null;
-  riskTier?: "low" | "moderate" | "high" | null;
+  riskTier?: "low" | "moderate" | "high" | null;  evidenceGradeLabel?: string | null;
+
   canonicalName?: string | null;
   shortName?: string | null;
   aliases?: string[] | null;

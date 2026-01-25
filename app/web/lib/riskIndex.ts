@@ -63,3 +63,21 @@ export function getRiskForPeptide(slug: string): RiskIndexEntity | null {
 export function getRiskForBlend(slug: string): RiskIndexEntity | null {
   return getRiskForRoute(`blend:${slug}`);
 }
+
+// Evidence grade UI mapping: keep user-facing copy friendly.
+// Enums may be technical; UI must translate them.
+export const EVIDENCE_GRADE_LABELS: Record<string, string> = {
+  regulatory_label: "Regulatory label / approved use",
+  rct_meta: "Strong human evidence (meta-analysis of trials)",
+  rct: "Strong human evidence (randomized trial)",
+  human_interventional: "Human evidence (interventional study)",
+  human_observational: "Human evidence (observational study)",
+  animal: "Animal evidence (no human trials)",
+  in_vitro: "Lab evidence (cells/tissue)",
+  mechanistic_only: "Early mechanistic evidence (no human trials)",
+};
+
+export function evidenceGradeLabel(grade?: string | null): string {
+  if (!grade) return "Evidence grade unknown";
+  return EVIDENCE_GRADE_LABELS[grade] ?? "Evidence grade unknown";
+}

@@ -1,4 +1,4 @@
-import { getRiskForBlend } from "@/lib/riskIndex";
+import { getRiskForBlend, evidenceGradeLabel } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
@@ -51,7 +51,9 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
         slug={slug}
         riskScore={riskHit ? riskHit.risk.risk_score : null}
         
-        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}canonicalName={b?.canonical_name ?? null}
+        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}
+          evidenceGradeLabel={evidenceGradeLabel(riskHit?.risk.evidence_grade ?? null)}
+          canonicalName={b?.canonical_name ?? null}
         shortName={b?.short_name ?? null}
         aliases={mergedAliases}
         aminoAcidSeq={null}
