@@ -34,7 +34,7 @@
             "risk_score": 5,
             "developmental_risk": true,
             "evidence_snapshot": {
-              "best_available_grade": "mechanistic_only",
+              "best_available_grade": "unknown",
               "human_evidence_exists": false
             }
           },
@@ -46,7 +46,7 @@
             "risk_score": 5,
             "developmental_risk": true,
             "evidence_snapshot": {
-              "best_available_grade": "mechanistic_only",
+              "best_available_grade": "unknown",
               "human_evidence_exists": false
             }
           }

@@ -22,7 +22,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -34,12 +34,12 @@
       "canonical_name": "Abaloparatide",
       "short_name": "Abaloparatide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -79,7 +79,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -100,7 +100,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -112,12 +112,12 @@
       "canonical_name": "Amylin",
       "short_name": "Amylin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -129,12 +129,12 @@
       "canonical_name": "Angiotensin II",
       "short_name": "Angiotensin II",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -174,7 +174,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -188,12 +188,12 @@
       "aliases": [
         "anp"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -205,12 +205,12 @@
       "canonical_name": "Bivalirudin",
       "short_name": "Bivalirudin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -254,7 +254,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -266,12 +266,12 @@
       "canonical_name": "Bradykinin",
       "short_name": "Bradykinin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -285,12 +285,12 @@
       "aliases": [
         "bnp"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -310,7 +310,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -332,7 +332,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -344,12 +344,12 @@
       "canonical_name": "Calcitonin",
       "short_name": "Calcitonin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -361,12 +361,12 @@
       "canonical_name": "Carbetocin",
       "short_name": "Carbetocin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -380,12 +380,12 @@
       "aliases": [
         "cgrp"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -419,12 +419,12 @@
       "canonical_name": "CJC-1295 DAC",
       "short_name": "CJC-1295 DAC",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -436,12 +436,12 @@
       "canonical_name": "Desmopressin",
       "short_name": "Desmopressin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -461,7 +461,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -476,12 +476,12 @@
         "et-1",
         "et1"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -501,7 +501,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -513,12 +513,12 @@
       "canonical_name": "Eptifibatide",
       "short_name": "Eptifibatide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -530,12 +530,12 @@
       "canonical_name": "Exenatide",
       "short_name": "Exenatide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -547,12 +547,12 @@
       "canonical_name": "Follistatin-344",
       "short_name": "Follistatin-344",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -589,12 +589,12 @@
       "canonical_name": "GHRP-2",
       "short_name": "GHRP-2",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -606,12 +606,12 @@
       "canonical_name": "GHRP-6",
       "short_name": "GHRP-6",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -623,12 +623,12 @@
       "canonical_name": "Glucagon",
       "short_name": "Glucagon",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -650,7 +650,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -662,12 +662,12 @@
       "canonical_name": "Gonadorelin",
       "short_name": "Gonadorelin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -688,7 +688,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -707,7 +707,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -719,12 +719,12 @@
       "canonical_name": "Humanin",
       "short_name": "Humanin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -736,12 +736,12 @@
       "canonical_name": "IGF-1",
       "short_name": "IGF-1",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -753,12 +753,12 @@
       "canonical_name": "IGF-1 LR3",
       "short_name": "IGF-1 LR3",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -777,7 +777,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -789,12 +789,12 @@
       "canonical_name": "Kisspeptin",
       "short_name": "Kisspeptin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -811,7 +811,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -823,12 +823,12 @@
       "canonical_name": "Lanreotide",
       "short_name": "Lanreotide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -840,12 +840,12 @@
       "canonical_name": "Leuprolide",
       "short_name": "Leuprolide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -857,12 +857,12 @@
       "canonical_name": "Linaclotide",
       "short_name": "Linaclotide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -874,12 +874,12 @@
       "canonical_name": "Liraglutide",
       "short_name": "Liraglutide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -900,7 +900,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -921,7 +921,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -943,7 +943,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -962,7 +962,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -983,7 +983,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -995,12 +995,12 @@
       "canonical_name": "Motilin",
       "short_name": "Motilin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1019,7 +1019,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1042,7 +1042,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1054,12 +1054,12 @@
       "canonical_name": "Nesiritide",
       "short_name": "Nesiritide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1071,12 +1071,12 @@
       "canonical_name": "Neuropeptide S",
       "short_name": "Neuropeptide S",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1088,12 +1088,12 @@
       "canonical_name": "Neuropeptide Y",
       "short_name": "Neuropeptide Y",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1105,12 +1105,12 @@
       "canonical_name": "Octreotide",
       "short_name": "Octreotide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1122,12 +1122,12 @@
       "canonical_name": "Orexin-A",
       "short_name": "Orexin-A",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1147,7 +1147,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1159,12 +1159,12 @@
       "canonical_name": "Palmitoyl Pentapeptide-4",
       "short_name": "Palmitoyl Pentapeptide-4",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1176,12 +1176,12 @@
       "canonical_name": "Palmitoyl Tripeptide-1",
       "short_name": "Palmitoyl Tripeptide-1",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1193,12 +1193,12 @@
       "canonical_name": "PEG-MGF",
       "short_name": "PEG-MGF",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1210,12 +1210,12 @@
       "canonical_name": "Pentagastrin",
       "short_name": "Pentagastrin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1227,12 +1227,12 @@
       "canonical_name": "Plecanatide",
       "short_name": "Plecanatide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1253,7 +1253,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1265,12 +1265,12 @@
       "canonical_name": "Prolactin Releasing Peptide",
       "short_name": "Prolactin Releasing Peptide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1282,12 +1282,12 @@
       "canonical_name": "PTH 1-34 (Teriparatide)",
       "short_name": "PTH 1-34 (Teriparatide)",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1311,7 +1311,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1323,12 +1323,12 @@
       "canonical_name": "Secretin",
       "short_name": "Secretin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1345,7 +1345,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1359,12 +1359,12 @@
       "aliases": [
         "sema"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1381,7 +1381,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1398,7 +1398,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1410,12 +1410,12 @@
       "canonical_name": "SHLP-2",
       "short_name": "SHLP-2",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1436,7 +1436,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1448,12 +1448,12 @@
       "canonical_name": "Somatostatin",
       "short_name": "Somatostatin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1482,12 +1482,12 @@
       "canonical_name": "Substance P",
       "short_name": "Substance P",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1508,7 +1508,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1548,7 +1548,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1568,7 +1568,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1588,7 +1588,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1600,12 +1600,12 @@
       "canonical_name": "Thymosin Beta-4 (full length)",
       "short_name": "Thymosin Beta-4 (full length)",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1617,12 +1617,12 @@
       "canonical_name": "Thymulin",
       "short_name": "Thymulin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1637,12 +1637,12 @@
         "tirz",
         "trz"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1654,12 +1654,12 @@
       "canonical_name": "Triptorelin",
       "short_name": "Triptorelin",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1674,12 +1674,12 @@
         "adh",
         "avp"
       ],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1700,7 +1700,7 @@
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
@@ -1712,12 +1712,12 @@
       "canonical_name": "Ziconotide",
       "short_name": "Ziconotide",
       "aliases": [],
-      "status_category": "unknown",
+      "status_category": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
       "needs_prescription": false,
       "risk": {
         "severity": "moderate",
         "likelihood": "possible",
-        "evidence_grade": "mechanistic_only",
+        "evidence_grade": "unknown",
         "developmental_risk": true
       },
       "topics": {
