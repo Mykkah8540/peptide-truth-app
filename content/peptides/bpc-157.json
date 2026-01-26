@@ -41,17 +41,12 @@
     "sections": {
       "overview": [
         {
-          "claim_type": "overview",
           "title": "What it is",
-          "population_group": "general",
-          "confidence": "low",
-          "evidence_grade": "human_observational",
-          "text": "BPC-157 is a synthetic pentadecapeptide discussed in injury recovery and GI contexts. Most supportive evidence is preclinical (animal models). Human evidence is limited, not definitive, and quality varies. The largest real-world risk driver is unregulated sourcing and non-medical administration practices.",
-          "evidence_refs": [
-            "E1",
-            "E2",
-            "E3"
-          ]
+          "text": "BPC-157 is a synthetic 15-amino-acid peptide widely discussed in injury-recovery and GI contexts. Much of the optimistic literature comes from animal and cell models; human clinical evidence is limited and not definitive."
+        },
+        {
+          "title": "What drives real-world risk",
+          "text": "The practical risk is less about a well-characterized side-effect profile and more about product quality, contamination, and non-medical injection practices in an unregulated market."
         }
       ],
       "use_cases": [],
@@ -185,11 +180,28 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "BPC-157 is commonly discussed for tendon/ligament and gut irritation complaints, but the strongest supportive evidence is preclinical. The biggest real-world risk is unregulated sourcing and non-medical injection practices—not a well-defined clinical safety profile.",
+    "benefits": [
+      "Often discussed for soft-tissue recovery support (largely anecdotal)",
+      "Frequently discussed for GI irritation/comfort (evidence mixed; human data limited)",
+      "Sometimes discussed for return-to-training support during rehab (anecdotal)"
+    ],
+    "side_effects_common": [
+      "Injection-site irritation (when injected)",
+      "Headache or fatigue (reports vary)",
+      "GI upset or appetite change (reports vary)"
+    ],
+    "side_effects_serious": [
+      "Allergic reaction signs (hives, facial swelling, trouble breathing)",
+      "Fever, severe redness, or drainage at injection site (possible infection/contamination)",
+      "Chest pain or severe shortness of breath"
+    ],
+    "who_should_be_cautious": [
+      "People on anticoagulants/antiplatelets or NSAIDs (interaction/bleeding-risk context should be clinician-reviewed)",
+      "Autoimmune disease history or prior significant allergic reactions (uncertain immune effects)",
+      "Pregnant or breastfeeding individuals",
+      "Adolescents / competitive athletes (uncertainty + anti-doping rules)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

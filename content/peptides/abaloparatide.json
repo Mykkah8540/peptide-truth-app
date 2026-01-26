@@ -35,16 +35,20 @@
     "sections": {
       "overview": [
         {
-          "claim_type": "overview",
           "title": "What it is",
-          "population_group": "general",
-          "confidence": "unknown",
-          "evidence_grade": "unknown",
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": []
+          "text": "Abaloparatide is a synthetic peptide that activates the parathyroid hormone receptor pathway and is used as a prescription treatment for osteoporosis in specific high-risk patients."
+        },
+        {
+          "title": "What people use it for in practice",
+          "text": "In legitimate use, it’s a clinician-directed osteoporosis therapy aimed at lowering fracture risk. It’s not a general wellness compound and isn’t a fit for self-directed experimentation."
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "title": "Intended use context",
+          "text": "This is primarily a medical osteoporosis therapy. Pep-Talk does not provide dosing or protocols."
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -121,11 +125,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Abaloparatide is a prescription osteoporosis medicine used to reduce fracture risk in high-risk patients. Outside of supervised medical care, the main real-world risk is using a potent bone-active drug without appropriate evaluation and monitoring.",
+    "benefits": [
+      "Lower fracture risk in indicated high-risk osteoporosis patients (medical use)",
+      "Increases bone mineral density over time (medical use)"
+    ],
+    "side_effects_common": [
+      "Dizziness or feeling light-headed (especially early on)",
+      "Nausea or stomach upset",
+      "Headache",
+      "Palpitations / fast heart rate",
+      "Injection-site irritation"
+    ],
+    "side_effects_serious": [
+      "Fainting or severe dizziness",
+      "Chest pain, severe palpitations, or shortness of breath",
+      "Signs of high calcium (confusion, severe constipation, vomiting, weakness)"
+    ],
+    "who_should_be_cautious": [
+      "Anyone with unexplained high calcium or disorders of calcium metabolism",
+      "People with prior skeletal radiation therapy or certain bone cancers (contraindication context)",
+      "Pregnant or breastfeeding individuals",
+      "Adolescents / still-developing skeleton (not an appropriate context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

@@ -39,15 +39,12 @@
     "sections": {
       "overview": [
         {
-          "claim_type": "overview",
           "title": "What it is",
-          "population_group": "general",
-          "confidence": "unknown",
-          "evidence_grade": "unknown",
-          "text": "MK-677 is a bioactive compound discussed in research and/or clinical contexts. This entry summarizes what it is, what it is studied for, and key evidence limitations without providing protocols.",
-          "evidence_refs": [
-            "E1"
-          ]
+          "text": "MK-677 (ibutamoren) is an investigational, oral ghrelin-receptor agonist that increases growth hormone and IGF-1 signaling. It is not approved as a general wellness compound."
+        },
+        {
+          "title": "Why people discuss it",
+          "text": "It’s commonly discussed for appetite, sleep/recovery feelings, and body-composition goals. Practical downsides frequently center on appetite/weight gain, fluid retention, and glucose tolerance."
         }
       ],
       "use_cases": [],
@@ -135,11 +132,30 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "MK-677 (ibutamoren) is an investigational oral ghrelin-receptor agonist that increases growth hormone/IGF-1 signaling. It’s often discussed for sleep, appetite, and body-composition goals, but tradeoffs commonly involve appetite/weight gain, fluid retention, and glucose tolerance concerns.",
+    "benefits": [
+      "Increases GH/IGF-1 signaling in studies (mechanistic effect)",
+      "Often discussed for sleep quality or recovery feelings (mixed reports)",
+      "Often discussed for appetite and weight gain (common effect)"
+    ],
+    "side_effects_common": [
+      "Increased appetite / cravings",
+      "Water retention or puffiness",
+      "Fatigue or lethargy",
+      "Numbness/tingling or carpal-tunnel-like complaints (reports vary)",
+      "Vivid dreams (reports vary)"
+    ],
+    "side_effects_serious": [
+      "Worsening blood sugar control signs (excess thirst/urination, blurry vision)",
+      "Rapid swelling, shortness of breath, or chest pain",
+      "Severe headaches or neurologic symptoms"
+    ],
+    "who_should_be_cautious": [
+      "Diabetes, prediabetes, metabolic syndrome, or strong family history (glucose tolerance concern)",
+      "Heart failure / edema-prone conditions",
+      "Pregnant or breastfeeding individuals",
+      "Adolescents (growth/endocrine setpoints; not an appropriate context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
