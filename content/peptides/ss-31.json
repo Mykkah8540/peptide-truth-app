@@ -55,7 +55,33 @@
         "topic_longevity_aging"
       ]
     },
-    "slug": "ss-31"
+    "slug": "ss-31",
+    "practical": {
+      "schema_version": "practical_block_v1",
+      "bottom_line": "SS-31 (elamipretide) is a mitochondria-targeting peptide studied in clinical research for mitochondrial dysfunction-related conditions. In wellness communities it is discussed for fatigue and recovery, but the evidence base is specialized and product quality differences are a major practical risk.",
+      "benefits": [
+        "Energy and fatigue support interest in some communities",
+        "Recovery support interest during heavy training or illness recovery periods",
+        "Mitochondrial function interest in longevity discussions"
+      ],
+      "side_effects_common": [
+        "Injection-site irritation or discomfort",
+        "Nausea",
+        "Headache",
+        "Fatigue"
+      ],
+      "side_effects_serious": [
+        "Allergic reaction with hives, facial swelling, or trouble breathing",
+        "Severe dizziness, fainting, or chest pain",
+        "Severe swelling, rapidly spreading redness, or drainage at an injection site"
+      ],
+      "who_should_be_cautious": [
+        "Pregnancy or breastfeeding",
+        "Children and adolescents",
+        "Significant cardiovascular disease",
+        "Significant kidney or liver disease"
+      ]
+    }
   },
   "canonical_name": "Ss-31",
   "interactions": {
@@ -65,27 +91,28 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "SS-31 is a mitochondria-targeted peptide studied in select clinical research contexts. Consumer wellness narratives often run ahead of evidence; practical risk includes overinterpretation and unregulated sourcing.",
+    "bottom_line": "SS-31 (elamipretide) is a mitochondria-targeting peptide studied in clinical research for mitochondrial dysfunction-related conditions. In wellness communities it is discussed for fatigue and recovery, but the evidence base is specialized and product quality differences are a major practical risk.",
     "benefits": [
-      "Interest in mitochondrial function and fatigue-related symptoms (research interest)",
-      "Interest in recovery and resilience narratives (community use)",
-      "Interest in age-related decline narratives (community use)"
+      "Energy and fatigue support interest in some communities",
+      "Recovery support interest during heavy training or illness recovery periods",
+      "Mitochondrial function interest in longevity discussions"
     ],
     "side_effects_common": [
-      "Headache",
+      "Injection-site irritation or discomfort",
       "Nausea",
-      "Fatigue",
-      "Injection-site irritation (if injected)"
+      "Headache",
+      "Fatigue"
     ],
     "side_effects_serious": [
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
+      "Allergic reaction with hives, facial swelling, or trouble breathing",
       "Severe dizziness, fainting, or chest pain",
-      "High fever or severe systemic symptoms"
+      "Severe swelling, rapidly spreading redness, or drainage at an injection site"
     ],
     "who_should_be_cautious": [
-      "People with significant cardiovascular disease or unstable medical conditions",
-      "Pregnant or breastfeeding individuals",
-      "Anyone under 18"
+      "Pregnancy or breastfeeding",
+      "Children and adolescents",
+      "Significant cardiovascular disease",
+      "Significant kidney or liver disease"
     ]
   }
 }

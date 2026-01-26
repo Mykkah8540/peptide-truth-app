@@ -123,7 +123,34 @@
         "topic_hormonal_endocrine"
       ]
     },
-    "slug": "oxytocin"
+    "slug": "oxytocin",
+    "practical": {
+      "schema_version": "practical_block_v1",
+      "bottom_line": "Oxytocin is a human hormone used clinically in specific obstetric settings. In non-clinical markets it is discussed for social bonding and mood effects, but the biggest risks are inappropriate use, contraindicated medical situations, and lack of supervision.",
+      "benefits": [
+        "Social bonding and connection interest in some communities",
+        "Stress and mood support interest in some communities",
+        "Clinical relevance in obstetric care contexts"
+      ],
+      "side_effects_common": [
+        "Headache",
+        "Nausea",
+        "Dizziness",
+        "Fatigue"
+      ],
+      "side_effects_serious": [
+        "Chest pain, fainting, or severe shortness of breath",
+        "Severe confusion or severe agitation",
+        "Severe uterine cramping in pregnancy"
+      ],
+      "who_should_be_cautious": [
+        "Pregnancy or trying to conceive",
+        "Postpartum complications or significant gynecologic history",
+        "Significant cardiovascular disease",
+        "Seizure disorders",
+        "Children and adolescents"
+      ]
+    }
   },
   "canonical_name": "Oxytocin",
   "interactions": {
@@ -133,11 +160,11 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "Oxytocin has established medical uses and is discussed in wellness contexts for mood, bonding, and social effects. Practical risk is driven by inappropriate self-use and individual sensitivity.",
+    "bottom_line": "Oxytocin is a human hormone used clinically in specific obstetric settings. In non-clinical markets it is discussed for social bonding and mood effects, but the biggest risks are inappropriate use, contraindicated medical situations, and lack of supervision.",
     "benefits": [
-      "Interest in social calm and connection effects (community use)",
-      "Interest in stress response modulation (community use)",
-      "Clinical relevance in obstetric settings (medical context)"
+      "Social bonding and connection interest in some communities",
+      "Stress and mood support interest in some communities",
+      "Clinical relevance in obstetric care contexts"
     ],
     "side_effects_common": [
       "Headache",
@@ -146,15 +173,16 @@
       "Fatigue"
     ],
     "side_effects_serious": [
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Chest pain, fainting, or severe palpitations",
-      "Severe confusion or agitation"
+      "Chest pain, fainting, or severe shortness of breath",
+      "Severe confusion or severe agitation",
+      "Severe uterine cramping in pregnancy"
     ],
     "who_should_be_cautious": [
-      "Pregnant individuals (non-medical use is inappropriate)",
-      "People with significant cardiovascular disease or arrhythmia history",
-      "People with bipolar disorder or a history of mania",
-      "Anyone under 18"
+      "Pregnancy or trying to conceive",
+      "Postpartum complications or significant gynecologic history",
+      "Significant cardiovascular disease",
+      "Seizure disorders",
+      "Children and adolescents"
     ]
   }
 }

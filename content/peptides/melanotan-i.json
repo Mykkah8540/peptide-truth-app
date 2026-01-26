@@ -125,7 +125,35 @@
         "topic_skin_cosmetic"
       ]
     },
-    "slug": "melanotan-i"
+    "slug": "melanotan-i",
+    "practical": {
+      "schema_version": "practical_block_v1",
+      "bottom_line": "Melanotan I is discussed for tanning and pigmentation effects via melanocortin pathways. In consumer markets, the dominant risks are unregulated sourcing, unexpected pigmentation changes, and lack of medical oversight for skin-related concerns.",
+      "benefits": [
+        "Tanning and pigmentation interest in appearance-focused communities",
+        "Sun-exposure management interest in some user communities",
+        "Cosmetic skin tone interest for photos and events"
+      ],
+      "side_effects_common": [
+        "Nausea",
+        "Flushing",
+        "Reduced appetite",
+        "Headache",
+        "Darkening of existing freckles or moles"
+      ],
+      "side_effects_serious": [
+        "Allergic reaction with hives, facial swelling, or trouble breathing",
+        "New or changing mole with rapid change in size, shape, or color",
+        "Severe dizziness, fainting, or chest pain"
+      ],
+      "who_should_be_cautious": [
+        "Personal history of melanoma or high-risk skin cancer history",
+        "Multiple atypical moles or strong family history of melanoma",
+        "Pregnancy or breastfeeding",
+        "Children and adolescents",
+        "People with significant cardiovascular disease"
+      ]
+    }
   },
   "canonical_name": "Melanotan I",
   "interactions": {
@@ -135,27 +163,30 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "Melanotan I is a peptide analog related to pigmentation pathways and is discussed for tanning and skin tone effects. Practical risk is driven by side effects, cosmetic overuse patterns, and unregulated sourcing.",
+    "bottom_line": "Melanotan I is discussed for tanning and pigmentation effects via melanocortin pathways. In consumer markets, the dominant risks are unregulated sourcing, unexpected pigmentation changes, and lack of medical oversight for skin-related concerns.",
     "benefits": [
-      "Tanning and pigmentation interest (community use)",
-      "Interest in reducing sun exposure time (community use)"
+      "Tanning and pigmentation interest in appearance-focused communities",
+      "Sun-exposure management interest in some user communities",
+      "Cosmetic skin tone interest for photos and events"
     ],
     "side_effects_common": [
       "Nausea",
-      "Headache",
       "Flushing",
-      "Increased appetite"
+      "Reduced appetite",
+      "Headache",
+      "Darkening of existing freckles or moles"
     ],
     "side_effects_serious": [
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "New or rapidly changing mole or skin lesion",
-      "Severe vomiting or dehydration symptoms"
+      "Allergic reaction with hives, facial swelling, or trouble breathing",
+      "New or changing mole with rapid change in size, shape, or color",
+      "Severe dizziness, fainting, or chest pain"
     ],
     "who_should_be_cautious": [
-      "People with a personal history of melanoma or high-risk skin cancer",
-      "People with many atypical moles or strong family history of melanoma",
-      "Pregnant or breastfeeding individuals",
-      "Anyone under 18"
+      "Personal history of melanoma or high-risk skin cancer history",
+      "Multiple atypical moles or strong family history of melanoma",
+      "Pregnancy or breastfeeding",
+      "Children and adolescents",
+      "People with significant cardiovascular disease"
     ]
   }
 }

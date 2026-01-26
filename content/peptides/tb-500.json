@@ -133,7 +133,34 @@
         "topic_muscle_recovery"
       ]
     },
-    "slug": "tb-500"
+    "slug": "tb-500",
+    "practical": {
+      "schema_version": "practical_block_v1",
+      "bottom_line": "TB-500 is a market name often associated with thymosin beta-4–related fragments and is commonly discussed for injury recovery. Most supportive data is preclinical or indirect, and real-world risk is driven by product identity confusion and unregulated sourcing.",
+      "benefits": [
+        "Soft-tissue recovery interest after overuse or injury",
+        "Return-to-training support interest during rehab periods",
+        "Joint comfort and mobility support interest in recovery discussions"
+      ],
+      "side_effects_common": [
+        "Injection-site irritation or discomfort",
+        "Headache",
+        "Nausea",
+        "Fatigue"
+      ],
+      "side_effects_serious": [
+        "Allergic reaction with hives, facial swelling, or trouble breathing",
+        "Chest pain, fainting, or severe shortness of breath",
+        "Severe swelling, rapidly spreading redness, or drainage at an injection site"
+      ],
+      "who_should_be_cautious": [
+        "Active cancer or recent cancer treatment",
+        "People using anticoagulants or antiplatelets",
+        "Bleeding disorders",
+        "Pregnancy or breastfeeding",
+        "Children and adolescents"
+      ]
+    }
   },
   "canonical_name": "Tb-500",
   "interactions": {
@@ -146,28 +173,29 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "TB-500 is marketed as a repair and recovery peptide, often associated with thymosin beta-4 fragments. Practical risk is driven by limited human evidence in wellness use and unregulated sourcing.",
+    "bottom_line": "TB-500 is a market name often associated with thymosin beta-4–related fragments and is commonly discussed for injury recovery. Most supportive data is preclinical or indirect, and real-world risk is driven by product identity confusion and unregulated sourcing.",
     "benefits": [
-      "Soft tissue recovery interest (community use)",
-      "Interest in rehab support and return-to-training (community use)",
-      "Interest in mobility and comfort during recovery (community use)"
+      "Soft-tissue recovery interest after overuse or injury",
+      "Return-to-training support interest during rehab periods",
+      "Joint comfort and mobility support interest in recovery discussions"
     ],
     "side_effects_common": [
-      "Injection-site irritation (if injected)",
-      "Fatigue",
+      "Injection-site irritation or discomfort",
       "Headache",
-      "Nausea"
+      "Nausea",
+      "Fatigue"
     ],
     "side_effects_serious": [
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Fever, chills, spreading redness, or drainage at injection site",
-      "Severe dizziness, fainting, or chest pain"
+      "Allergic reaction with hives, facial swelling, or trouble breathing",
+      "Chest pain, fainting, or severe shortness of breath",
+      "Severe swelling, rapidly spreading redness, or drainage at an injection site"
     ],
     "who_should_be_cautious": [
-      "People with active cancer or recent cancer treatment",
-      "People with immune suppression or active infection",
-      "Pregnant or breastfeeding individuals",
-      "Anyone under 18"
+      "Active cancer or recent cancer treatment",
+      "People using anticoagulants or antiplatelets",
+      "Bleeding disorders",
+      "Pregnancy or breastfeeding",
+      "Children and adolescents"
     ]
   }
 }
