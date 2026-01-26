@@ -156,28 +156,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
+    "bottom_line": "AOD-9604 is discussed for fat-loss and metabolic goals. Human outcomes are not well-established, so real-world expectations should be conservative.",
     "benefits": [
-      "Discussed for fat-loss support without “full GH” effects (marketing claim; evidence mixed)",
-      "Used in weight-loss experimentation circles as a “metabolic helper” (anecdotal)",
-      "Sometimes framed as an adjunct to diet/training efforts (conceptual)"
+      "fat-loss interest driven by early mechanistic claims",
+      "metabolic curiosity in wellness communities (evidence limited)",
+      "often discussed in weight-management stacking conversations (anecdotal)"
     ],
     "side_effects_common": [
-      "GI upset or nausea (reported anecdotally)",
-      "Headache or fatigue (nonspecific)",
-      "No noticeable effect is common (frequent real-world report)"
+      "headache",
+      "nausea or stomach upset",
+      "sleep disruption in sensitive users"
     ],
     "side_effects_serious": [
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Persistent abdominal pain, vomiting, or signs of dehydration (seek care)",
-      "New/worsening mood symptoms or sleep disruption that becomes severe (seek evaluation)"
+      "chest pain, fainting, or severe shortness of breath",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "Pregnancy/breastfeeding (avoid due to uncertainty)",
-      "Adolescents (avoid: long-term metabolic setpoints + uncertainty)",
-      "People with significant endocrine disorders (requires clinician oversight)",
-      "Anyone relying on unregulated sources (quality/contamination risk is a major real-world hazard)"
+      "people with diabetes or unstable blood sugar control",
+      "people with cardiovascular disease or uncontrolled blood pressure",
+      "pregnant or breastfeeding individuals",
+      "adolescents (developmental risk plus limited evidence)"
     ],
-    "bottom_line": "AOD-9604 is a peptide fragment derived from the C-terminal region of human growth hormone (often described as hGH fragment 176–191). It’s marketed heavily for fat loss, but human evidence has been mixed/weak in many summaries, and real-world products vary widely in quality."
+    "schema_version": "practical_block_v1"
   }
 }

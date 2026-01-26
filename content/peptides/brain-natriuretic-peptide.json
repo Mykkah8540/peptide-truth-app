@@ -125,11 +125,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Brain natriuretic peptide (BNP) is a cardiovascular hormone used clinically as a biomarker and is relevant to fluid balance and cardiac strain. It is not a wellness peptide; unsupervised use could affect blood pressure and fluid status.",
+    "benefits": [
+      "clinical relevance as a heart-failure biomarker (BNP/NT-proBNP)",
+      "physiology relevance in natriuresis and vascular tone regulation"
+    ],
+    "side_effects_common": [
+      "lightheadedness from lower blood pressure",
+      "headache",
+      "fatigue"
+    ],
+    "side_effects_serious": [
+      "fainting or severe dizziness",
+      "dangerous low blood pressure symptoms (confusion, collapse)",
+      "signs of electrolyte imbalance (severe weakness, palpitations)"
+    ],
+    "who_should_be_cautious": [
+      "people with low blood pressure or on vasodilators/blood pressure meds",
+      "people with kidney disease or unstable fluid balance",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence plus limited context for use)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
