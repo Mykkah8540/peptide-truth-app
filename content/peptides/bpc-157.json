@@ -180,26 +180,25 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Often discussed for tendon/ligament and gut-related recovery. Most supportive evidence is preclinical; human evidence is limited and heterogeneous. The biggest real-world risk driver is unregulated sourcing and non-medical administration practices.",
+    "bottom_line": "BPC-157 is mostly supported by preclinical research. Human evidence is limited. In real-world use, the biggest safety variable is unregulated sourcing and non-medical handling.",
     "benefits": [
-      "Interest in soft tissue recovery and return-to-training support (evidence quality mixed; human data limited)",
-      "Interest in GI symptom support and gut barrier/inflammation pathways (mostly preclinical)",
-      "Used in rehab conversations for overuse injuries (largely anecdotal)"
+      "Interest in tendon/ligament and soft-tissue recovery support (evidence is limited)",
+      "Interest in GI comfort / gut inflammation contexts (evidence is limited)",
+      "Used in return-to-training discussions during rehab (anecdotal)"
     ],
     "side_effects_common": [
-      "Injection-site irritation or discomfort (in real-world use contexts)",
-      "Headache or fatigue reports (non-specific; causality unclear)",
-      "GI upset or appetite changes (reported; inconsistent)"
+      "No consistent, high-quality human side-effect profile is established",
+      "Local irritation or discomfort at the site of use is commonly reported anecdotally"
     ],
     "side_effects_serious": [
-      "Unexpected allergic-type reactions (rare; seek care if severe)",
-      "Fever, chills, spreading redness, warmth, swelling, or pus at an injection site"
+      "Fever, spreading redness, swelling, drainage, or rapidly worsening pain — seek medical care",
+      "Chest pain, shortness of breath, fainting, or severe allergic symptoms — seek emergency care"
     ],
     "who_should_be_cautious": [
-      "Anyone with a history of severe allergies or prior reactions to injectables",
-      "People using anticoagulants/antiplatelets or NSAIDs (discuss bleeding/bruising concerns with a clinician)",
-      "Pregnancy/breastfeeding (data gaps)",
-      "Under-18 athletes (developmental uncertainty + real-world use risk)"
+      "Pregnant or breastfeeding people",
+      "People using anticoagulants/antiplatelets or NSAIDs",
+      "Anyone with immune suppression or a history of severe allergic reactions",
+      "Competitive athletes (anti-doping rules can prohibit use)"
     ],
     "schema_version": "practical_block_v1"
   }
