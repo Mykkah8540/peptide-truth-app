@@ -135,10 +135,30 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Melanotan I is discussed for tanning and reduced sun sensitivity. Human evidence is limited, and real-world risk is driven by unregulated sourcing and overexposure behavior.",
+    "benefits": [
+      "Tanning / increased skin pigmentation interest",
+      "Interest in reduced sunburn frequency during sun exposure",
+      "Cosmetic interest for more even-looking tone (user-reported)"
+    ],
+    "side_effects_common": [
+      "Nausea",
+      "Flushing or warmth",
+      "Headache",
+      "Decreased appetite",
+      "Injection-site irritation (if injected)"
+    ],
+    "side_effects_serious": [
+      "New, changing, or rapidly darkening moles/lesions",
+      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
+      "Severe dizziness, fainting, or chest pain"
+    ],
+    "who_should_be_cautious": [
+      "Anyone with a personal history of melanoma or high-risk skin cancer",
+      "People with many atypical moles or a strong family history of melanoma",
+      "People with cardiovascular disease or uncontrolled hypertension",
+      "Pregnant or breastfeeding individuals",
+      "Anyone under 18"
+    ]
   }
 }
