@@ -104,10 +104,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               </ul>
             </div>
           ) : (
-        <section className="pt-card">
-          <h2 className="pt-card-title">Practical summary</h2>
-          <p className="pt-card-subtext">Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed.</p>
-        </section>
+        
+
       )}
 
           {Array.isArray(doc.practical.side_effects_common) && doc.practical.side_effects_common.length ? (
