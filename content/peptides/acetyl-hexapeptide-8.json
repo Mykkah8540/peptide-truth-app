@@ -152,11 +152,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Acetyl hexapeptide-8 (often marketed as Argireline) is used topically for cosmetic “expression line” smoothing. Effects are subtle and depend on formulation and consistent use.",
+    "benefits": [
+      "cosmetic interest for mild, temporary smoothing of expression lines",
+      "used in skincare routines as a non-procedure option (anecdotal)",
+      "often paired with hydration-focused skincare for appearance goals"
+    ],
+    "side_effects_common": [
+      "skin irritation or redness, especially on sensitive skin",
+      "dryness or mild peeling depending on the product base",
+      "eye-area irritation if applied too close to eyes"
+    ],
+    "side_effects_serious": [
+      "severe rash or swelling suggesting allergic contact dermatitis",
+      "eye pain or vision changes after accidental exposure to eyes"
+    ],
+    "who_should_be_cautious": [
+      "people with a history of severe skin allergies or eczema flares",
+      "people using strong actives (retinoids, acids) who frequently react",
+      "pregnant or breastfeeding individuals (safety data is limited)",
+      "adolescents (cosmetic use is generally low priority; data limited)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

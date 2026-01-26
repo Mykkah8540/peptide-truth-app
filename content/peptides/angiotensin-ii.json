@@ -123,11 +123,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Angiotensin II is a potent vasoactive peptide used in critical-care settings for specific indications. It is not a wellness peptide; unsupervised use carries high cardiovascular risk.",
+    "benefits": [
+      "clinically relevant for raising blood pressure in controlled medical settings",
+      "mechanistic interest in vascular tone regulation"
+    ],
+    "side_effects_common": [
+      "headache or flushing",
+      "elevated blood pressure beyond target range in sensitive individuals",
+      "nausea or dizziness"
+    ],
+    "side_effects_serious": [
+      "severe hypertension symptoms (severe headache, vision changes, confusion)",
+      "chest pain, stroke-like symptoms, or sudden weakness/numbness",
+      "signs of clotting events (leg swelling/pain, sudden shortness of breath)"
+    ],
+    "who_should_be_cautious": [
+      "anyone with cardiovascular disease, stroke history, or clotting disorders",
+      "people on blood pressure medications or vasoactive drugs",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence + inappropriate for non-clinical use)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

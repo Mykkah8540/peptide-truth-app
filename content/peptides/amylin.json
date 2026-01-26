@@ -124,11 +124,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Amylin is a hormone involved in satiety and glucose regulation and is relevant to metabolic disease contexts. Using amylin-like therapies outside supervised care raises risk because glucose effects are meaningful.",
+    "benefits": [
+      "satiety and appetite regulation interest in metabolic contexts",
+      "post-meal glucose control interest (clinical context dependent)",
+      "sometimes discussed alongside GLP-1 approaches (context varies)"
+    ],
+    "side_effects_common": [
+      "nausea, especially during early use",
+      "reduced appetite that can impair fueling for training",
+      "dizziness or lightheadedness if meals are skipped"
+    ],
+    "side_effects_serious": [
+      "symptoms of hypoglycemia (confusion, sweating, tremor, fainting)",
+      "severe vomiting with inability to keep fluids down"
+    ],
+    "who_should_be_cautious": [
+      "people with diabetes using insulin or insulin secretagogues",
+      "people with a history of severe hypoglycemia",
+      "pregnant or breastfeeding individuals",
+      "adolescents (growth and metabolic setpoints are sensitive)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
