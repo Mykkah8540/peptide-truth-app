@@ -272,10 +272,28 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "benefits": [
+      "Discussed for sexual desire/arousal support (primary use-case in public discussion)",
+      "Sometimes discussed for mood/drive effects (secondary, anecdotal)",
+      "Occasionally mentioned in ‘libido stack’ conversations (conceptual)"
+    ],
+    "side_effects_common": [
+      "Nausea (commonly discussed)",
+      "Flushing or warmth",
+      "Headache",
+      "Temporary increases in blood pressure (reported/flagged in some contexts)"
+    ],
+    "side_effects_serious": [
+      "Chest pain, severe shortness of breath, or fainting (seek urgent care)",
+      "Severe headache with neurological symptoms (urgent evaluation)",
+      "Severe or persistent blood pressure elevation symptoms (urgent evaluation)"
+    ],
+    "who_should_be_cautious": [
+      "People with uncontrolled hypertension or significant cardiovascular disease",
+      "History of severe migraines or neurologic events (needs clinician guidance)",
+      "Pregnancy/breastfeeding (avoid due to uncertainty)",
+      "Adolescents (avoid)"
+    ],
+    "bottom_line": "Bremelanotide is a melanocortin receptor agonist discussed for sexual desire/arousal effects. Unlike many “research peptides,” it has formal drug development history—but real-world use still varies, and side effects can be meaningful for some people."
   }
 }
