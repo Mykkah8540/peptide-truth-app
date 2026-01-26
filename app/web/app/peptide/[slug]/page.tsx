@@ -114,10 +114,7 @@ function isCurationPendingText(v: any): boolean {
                 ))}
               </ul>
             </div>
-          ) : (
-        
-
-      )}
+          ) : null}
 
           {Array.isArray(doc.practical.side_effects_common) && doc.practical.side_effects_common.length ? (
             <div className="mt-4">
