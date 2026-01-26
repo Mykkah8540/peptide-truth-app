@@ -269,24 +269,24 @@
   "practical": {
     "schema_version": "practical_block_v1",
     "benefits": [
-      "Body-composition interest (fat distribution / metabolic markers) in appropriate medical contexts",
-      "Interest in IGF-1 mediated downstream effects (interpretation depends on context)"
+      "Indication-specific reduction in visceral adipose tissue (in approved context)",
+      "Interest in body composition and metabolic parameters (outside label: evidence varies)"
     ],
     "side_effects_common": [
-      "Injection-site reactions",
-      "Fluid retention or swelling",
-      "Joint aches or muscle pain reports"
+      "Joint pain (arthralgia)",
+      "Muscle pain (myalgia)",
+      "Swelling or fluid retention",
+      "Numbness or tingling sensations"
     ],
     "side_effects_serious": [
-      "Glucose intolerance/worsening glycemic control in susceptible individuals",
-      "Potential tumor growth concerns in those with active malignancy (context-dependent; contraindications exist)"
+      "Severe allergic symptoms — seek emergency care",
+      "Severe swelling, shortness of breath, or chest pain — seek medical care"
     ],
     "who_should_be_cautious": [
-      "Diabetes or significant insulin resistance",
-      "History of malignancy or active cancer (discuss risk context with a clinician)",
-      "Pregnancy/breastfeeding",
-      "Under-18 athletes (endocrine setpoints + uncertainty)"
+      "History of malignancy or active cancer",
+      "Pregnant or breastfeeding people",
+      "People with uncontrolled diabetes or significant glucose dysregulation"
     ],
-    "bottom_line": "A prescription peptide in specific clinical contexts. Outside that context, discussions often focus on body composition and metabolic effects. Practical use requires careful framing: real effects can exist, but risks and contraindications matter and depend on the person."
+    "bottom_line": "Tesamorelin is a GHRH analog with FDA approval in specific indications. Outside that context, risk/benefit depends on medical oversight and individual factors."
   }
 }

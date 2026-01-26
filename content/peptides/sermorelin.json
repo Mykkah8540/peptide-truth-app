@@ -133,24 +133,24 @@
   "practical": {
     "schema_version": "practical_block_v1",
     "benefits": [
-      "Sleep and recovery interest (subjective outcomes vary)",
-      "Body-composition curiosity (often overstated; depends heavily on baseline factors)"
+      "Interest in sleep quality and recovery support (variable; evidence is mixed)",
+      "Interest in body composition support via GH/IGF-1 pathways (variable)"
     ],
     "side_effects_common": [
-      "Injection-site irritation",
-      "Headache or flushing reports",
-      "Transient fatigue or dizziness reports"
+      "Headache",
+      "Flushing",
+      "Nausea",
+      "Fatigue"
     ],
     "side_effects_serious": [
-      "Worsening glucose control in susceptible individuals (uncommon; context-dependent)",
-      "Signs of significant edema or shortness of breath (seek care)"
+      "Severe swelling of face/lips/tongue, wheeze, or trouble breathing — seek emergency care",
+      "Severe persistent headache with vision changes — seek medical care"
     ],
     "who_should_be_cautious": [
-      "Diabetes/insulin resistance",
-      "Active malignancy/history of malignancy (medical guidance required)",
-      "Pregnancy/breastfeeding",
-      "Under-18 athletes"
+      "Pregnant or breastfeeding people",
+      "People with uncontrolled diabetes or significant glucose dysregulation",
+      "People with untreated thyroid disease"
     ],
-    "bottom_line": "Discussed as a growth-hormone–axis modulator. Real-world interest is mostly around sleep, recovery, and body composition, but outcomes are variable and depend on baseline physiology. Evidence and claims are often overstated."
+    "bottom_line": "Sermorelin is a GHRH analog discussed for growth-hormone axis signaling. Effects and tolerability depend heavily on individual physiology and context."
   }
 }

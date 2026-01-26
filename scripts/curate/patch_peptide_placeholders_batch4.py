@@ -1,148 +1,130 @@
 #!/usr/bin/env python3
-from __future__ import annotations
-
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-PEPTIDES_DIR = ROOT / "content" / "peptides"
 
-SCHEMA = "practical_block_v1"
+def load(path: Path):
+  return json.loads(path.read_text(encoding="utf-8"))
 
-def load(p: Path) -> dict:
-  return json.loads(p.read_text(encoding="utf-8"))
+def save(path: Path, data):
+  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-def save(p: Path, d: dict) -> None:
-  p.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
-def ensure_practical(doc: dict) -> dict:
-  # Practical can be top-level (preferred) or nested; standardize to top-level.
-  pr = doc.get("practical")
+def ensure_practical(d: dict) -> dict:
+  # practical block should live at top-level: d["practical"]
+  pr = d.get("practical")
   if not isinstance(pr, dict):
     pr = {}
-    doc["practical"] = pr
-
-  pr["schema_version"] = SCHEMA
-
+    d["practical"] = pr
+  pr["schema_version"] = "practical_block_v1"
   pr.setdefault("bottom_line", "")
   pr.setdefault("benefits", [])
   pr.setdefault("side_effects_common", [])
   pr.setdefault("side_effects_serious", [])
   pr.setdefault("who_should_be_cautious", [])
-
-  # Ensure correct types
-  for k in ["benefits", "side_effects_common", "side_effects_serious", "who_should_be_cautious"]:
-    if not isinstance(pr.get(k), list):
-      pr[k] = []
-  for k in ["bottom_line"]:
-    if not isinstance(pr.get(k), str):
-      pr[k] = str(pr.get(k) or "")
-
   return pr
 
-def patch(slug: str, bottom_line: str, benefits: list[str], common: list[str], serious: list[str], cautious: list[str]) -> None:
-  p = PEPTIDES_DIR / f"{slug}.json"
-  if not p.exists():
-    print(f"SKIP: {slug} (missing file)")
-    return
-
-  d = load(p)
+def patch_bpc_157(fp: Path):
+  d = load(fp)
   pr = ensure_practical(d)
+  pr["bottom_line"] = (
+    "BPC-157 is mostly supported by preclinical research. Human evidence is limited. "
+    "In real-world use, the biggest safety variable is unregulated sourcing and non-medical handling."
+  )
+  pr["benefits"] = [
+    "Interest in tendon/ligament and soft-tissue recovery support (evidence is limited)",
+    "Interest in GI comfort / gut inflammation contexts (evidence is limited)",
+    "Used in return-to-training discussions during rehab (anecdotal)",
+  ]
+  pr["side_effects_common"] = [
+    "No consistent, high-quality human side-effect profile is established",
+    "Local irritation or discomfort at the site of use is commonly reported anecdotally",
+  ]
+  # Remove “could/may/indicate” style phrasing; keep direct symptom list + action.
+  pr["side_effects_serious"] = [
+    "Fever, spreading redness, swelling, drainage, or rapidly worsening pain — seek medical care",
+    "Chest pain, shortness of breath, fainting, or severe allergic symptoms — seek emergency care",
+  ]
+  pr["who_should_be_cautious"] = [
+    "Pregnant or breastfeeding people",
+    "People using anticoagulants/antiplatelets or NSAIDs",
+    "Anyone with immune suppression or a history of severe allergic reactions",
+    "Competitive athletes (anti-doping rules may apply)",
+  ]
+  save(fp, d)
+  print("OK: patched bpc-157")
 
-  pr["bottom_line"] = bottom_line
-  pr["benefits"] = benefits
-  pr["side_effects_common"] = common
-  pr["side_effects_serious"] = serious
-  pr["who_should_be_cautious"] = cautious
+def patch_sermorelin(fp: Path):
+  d = load(fp)
+  pr = ensure_practical(d)
+  pr["bottom_line"] = (
+    "Sermorelin is a GHRH analog discussed for growth-hormone axis signaling. "
+    "Effects and tolerability depend heavily on individual physiology and context."
+  )
+  pr["benefits"] = [
+    "Interest in sleep quality and recovery support (variable; evidence is mixed)",
+    "Interest in body composition support via GH/IGF-1 pathways (variable)",
+  ]
+  pr["side_effects_common"] = [
+    "Headache",
+    "Flushing",
+    "Nausea",
+    "Fatigue",
+  ]
+  pr["side_effects_serious"] = [
+    "Severe swelling of face/lips/tongue, wheeze, or trouble breathing — seek emergency care",
+    "Severe persistent headache with vision changes — seek medical care",
+  ]
+  pr["who_should_be_cautious"] = [
+    "Pregnant or breastfeeding people",
+    "People with uncontrolled diabetes or significant glucose dysregulation",
+    "People with untreated thyroid disease",
+  ]
+  save(fp, d)
+  print("OK: patched sermorelin")
 
-  save(p, d)
-  print(f"OK: patched {slug}")
+def patch_tesamorelin(fp: Path):
+  d = load(fp)
+  pr = ensure_practical(d)
+  pr["bottom_line"] = (
+    "Tesamorelin is a GHRH analog with FDA approval in specific indications. "
+    "Outside that context, risk/benefit depends on medical oversight and individual factors."
+  )
+  pr["benefits"] = [
+    "Indication-specific reduction in visceral adipose tissue (in approved context)",
+    "Interest in body composition and metabolic parameters (outside label: evidence varies)",
+  ]
+  pr["side_effects_common"] = [
+    "Joint pain (arthralgia)",
+    "Muscle pain (myalgia)",
+    "Swelling or fluid retention",
+    "Numbness or tingling sensations",
+  ]
+  pr["side_effects_serious"] = [
+    "Severe allergic symptoms — seek emergency care",
+    "Severe swelling, shortness of breath, or chest pain — seek medical care",
+  ]
+  # Remove “may apply / follow guidance” phrasing; keep direct constraint.
+  pr["who_should_be_cautious"] = [
+    "History of malignancy or active cancer",
+    "Pregnant or breastfeeding people",
+    "People with uncontrolled diabetes or significant glucose dysregulation",
+  ]
+  save(fp, d)
+  print("OK: patched tesamorelin")
 
 def main():
-  # Batch 4 targets: high-traffic / high-visibility peptides that must not look “empty”.
-  patch(
-    "bpc-157",
-    bottom_line=(
-      "Often discussed for tendon/ligament and gut-related recovery. Most supportive evidence is preclinical; "
-      "human evidence is limited and heterogeneous. The biggest real-world risk driver is unregulated sourcing "
-      "and non-medical administration practices."
-    ),
-    benefits=[
-      "Interest in soft tissue recovery and return-to-training support (evidence quality mixed; human data limited)",
-      "Interest in GI symptom support and gut barrier/inflammation pathways (mostly preclinical)",
-      "Used in rehab conversations for overuse injuries (largely anecdotal)",
-    ],
-    common=[
-      "Injection-site irritation or discomfort (in real-world use contexts)",
-      "Headache or fatigue reports (non-specific; causality unclear)",
-      "GI upset or appetite changes (reported; inconsistent)",
-    ],
-    serious=[
-      "Unexpected allergic-type reactions (rare; seek care if severe)",
-      "Worsening or unusual symptoms that could indicate infection/contamination risk from sourcing/handling",
-    ],
-    cautious=[
-      "Anyone with a history of severe allergies or prior reactions to injectables",
-      "People using anticoagulants/antiplatelets or NSAIDs (bleeding/bruising risk may be amplified in real-world use)",
-      "Pregnancy/breastfeeding (data gaps)",
-      "Under-18 athletes (developmental uncertainty + real-world use risk)",
-    ],
-  )
-
-  patch(
-    "tesamorelin",
-    bottom_line=(
-      "A prescription peptide in specific clinical contexts. Outside that context, discussions often focus on "
-      "body composition and metabolic effects. Practical use requires careful framing: real effects may exist, "
-      "but risks and contraindications matter and depend on the person."
-    ),
-    benefits=[
-      "Body-composition interest (fat distribution / metabolic markers) in appropriate medical contexts",
-      "Interest in IGF-1 mediated downstream effects (interpretation depends on context)",
-    ],
-    common=[
-      "Injection-site reactions",
-      "Fluid retention or swelling",
-      "Joint aches or muscle pain reports",
-    ],
-    serious=[
-      "Glucose intolerance/worsening glycemic control in susceptible individuals",
-      "Potential tumor growth concerns in those with active malignancy (context-dependent; contraindications exist)",
-    ],
-    cautious=[
-      "Diabetes or significant insulin resistance",
-      "History of malignancy or active cancer (follow medical guidance; contraindications may apply)",
-      "Pregnancy/breastfeeding",
-      "Under-18 athletes (endocrine setpoints + uncertainty)",
-    ],
-  )
-
-  patch(
-    "sermorelin",
-    bottom_line=(
-      "Discussed as a growth-hormone–axis modulator. Real-world interest is mostly around sleep, recovery, and "
-      "body composition, but outcomes are variable and depend on baseline physiology. Evidence and claims are often overstated."
-    ),
-    benefits=[
-      "Sleep and recovery interest (subjective outcomes vary)",
-      "Body-composition curiosity (often overstated; depends heavily on baseline factors)",
-    ],
-    common=[
-      "Injection-site irritation",
-      "Headache or flushing reports",
-      "Transient fatigue or dizziness reports",
-    ],
-    serious=[
-      "Worsening glucose control in susceptible individuals (uncommon; context-dependent)",
-      "Signs of significant edema or shortness of breath (seek care)",
-    ],
-    cautious=[
-      "Diabetes/insulin resistance",
-      "Active malignancy/history of malignancy (medical guidance required)",
-      "Pregnancy/breastfeeding",
-      "Under-18 athletes",
-    ],
-  )
+  targets = {
+    "bpc-157": patch_bpc_157,
+    "sermorelin": patch_sermorelin,
+    "tesamorelin": patch_tesamorelin,
+  }
+  for slug, fn in targets.items():
+    fp = ROOT / "content" / "peptides" / f"{slug}.json"
+    if not fp.exists():
+      print(f"SKIP: missing {fp}")
+      continue
+    fn(fp)
 
 if __name__ == "__main__":
   main()
