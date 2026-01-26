@@ -123,10 +123,28 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Thymosin beta-4 (full-length) is discussed for tissue repair and recovery. Most real-world uncertainty comes from limited human data in wellness contexts and variable product quality.",
+    "benefits": [
+      "Soft tissue recovery interest (community use)",
+      "Interest in wound or injury recovery support (community use)",
+      "Interest in mobility and comfort during rehab (community use)"
+    ],
+    "side_effects_common": [
+      "Injection-site irritation (if injected)",
+      "Fatigue",
+      "Headache",
+      "Nausea"
+    ],
+    "side_effects_serious": [
+      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
+      "Fever, chills, spreading redness, or drainage at injection site",
+      "Severe dizziness, fainting, or chest pain"
+    ],
+    "who_should_be_cautious": [
+      "People with active cancer or recent cancer treatment",
+      "People with immune suppression or active infection",
+      "Pregnant or breastfeeding individuals",
+      "Anyone under 18"
+    ]
   }
 }
