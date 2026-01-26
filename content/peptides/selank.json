@@ -173,10 +173,28 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Selank is discussed as a calming, anxiety-oriented nootropic peptide. Human evidence is limited and effects vary widely by person. The main real-world risk is treating it as a substitute for clinical care or relying on unregulated sourcing.",
+    "benefits": [
+      "calmer baseline mood / reduced anxious feeling (community-reported)",
+      "stress tolerance support during high-pressure periods (community-reported)",
+      "sleep continuity support in people whose sleep is disrupted by anxiety (community-reported)",
+      "cognitive steadiness under stress (community-reported)"
+    ],
+    "side_effects_common": [
+      "headache",
+      "fatigue or “flat” feeling",
+      "nausea or stomach upset",
+      "irritability or mood shift"
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, breathing difficulty)",
+      "marked mood destabilization (panic escalation, agitation, suicidal thoughts)"
+    ],
+    "who_should_be_cautious": [
+      "people with severe anxiety, panic disorder, bipolar disorder, or major depression",
+      "people taking psychiatric medications (coordinate with a clinician; avoid abrupt changes)",
+      "pregnancy or breastfeeding",
+      "anyone with a history of serious allergic reactions to peptides"
+    ]
   }
 }
