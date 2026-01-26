@@ -135,28 +135,25 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "Melanotan I is discussed for tanning and reduced sun sensitivity. Human evidence is limited, and real-world risk is driven by unregulated sourcing and overexposure behavior.",
+    "bottom_line": "Melanotan I is a peptide analog related to pigmentation pathways and is discussed for tanning and skin tone effects. Practical risk is driven by side effects, cosmetic overuse patterns, and unregulated sourcing.",
     "benefits": [
-      "Tanning / increased skin pigmentation interest",
-      "Interest in reduced sunburn frequency during sun exposure",
-      "Cosmetic interest for more even-looking tone (user-reported)"
+      "Tanning and pigmentation interest (community use)",
+      "Interest in reducing sun exposure time (community use)"
     ],
     "side_effects_common": [
       "Nausea",
-      "Flushing or warmth",
       "Headache",
-      "Decreased appetite",
-      "Injection-site irritation (if injected)"
+      "Flushing",
+      "Increased appetite"
     ],
     "side_effects_serious": [
-      "New, changing, or rapidly darkening moles/lesions",
       "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Severe dizziness, fainting, or chest pain"
+      "New or rapidly changing mole or skin lesion",
+      "Severe vomiting or dehydration symptoms"
     ],
     "who_should_be_cautious": [
-      "Anyone with a personal history of melanoma or high-risk skin cancer",
-      "People with many atypical moles or a strong family history of melanoma",
-      "People with cardiovascular disease or uncontrolled hypertension",
+      "People with a personal history of melanoma or high-risk skin cancer",
+      "People with many atypical moles or strong family history of melanoma",
       "Pregnant or breastfeeding individuals",
       "Anyone under 18"
     ]

@@ -224,31 +224,26 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "Melanotan II is discussed for tanning and sometimes libido effects. Evidence quality is limited; the largest practical risk is unregulated sourcing and behavior that increases UV damage.",
+    "bottom_line": "Melanotan II is discussed for tanning and sometimes libido effects. Practical risk includes side effects, pigment changes, and unregulated sourcing in non-medical settings.",
     "benefits": [
-      "Tanning / increased skin pigmentation interest",
-      "Cosmetic interest for quicker pigment changes than sun alone (user-reported)",
-      "Libido/arousal effects are commonly discussed (user-reported)"
+      "Tanning and pigmentation interest (community use)",
+      "Libido and sexual interest (community use)"
     ],
     "side_effects_common": [
       "Nausea",
-      "Flushing or warmth",
+      "Flushing",
       "Headache",
-      "Appetite suppression",
-      "Darkening of freckles and existing moles",
-      "Injection-site irritation (if injected)"
+      "Increased appetite"
     ],
     "side_effects_serious": [
-      "New, changing, or rapidly darkening moles/lesions",
       "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Prolonged painful erection (priapism)",
-      "Severe dizziness, fainting, or chest pain"
+      "New or rapidly changing mole or skin lesion",
+      "Severe prolonged erection requiring urgent care"
     ],
     "who_should_be_cautious": [
-      "Anyone with a personal history of melanoma or high-risk skin cancer",
-      "People with many atypical moles or a strong family history of melanoma",
-      "People with cardiovascular disease or uncontrolled hypertension",
-      "People with a history of priapism or significant urologic disease",
+      "People with a personal history of melanoma or high-risk skin cancer",
+      "People with many atypical moles or strong family history of melanoma",
+      "People with significant cardiovascular disease",
       "Pregnant or breastfeeding individuals",
       "Anyone under 18"
     ]

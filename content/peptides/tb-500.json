@@ -146,15 +146,15 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "TB-500 is a synthetic peptide discussed for soft-tissue recovery and inflammation signaling. Human clinical evidence is limited; practical risk is driven by non-medical use and unregulated sourcing.",
+    "bottom_line": "TB-500 is marketed as a repair and recovery peptide, often associated with thymosin beta-4 fragments. Practical risk is driven by limited human evidence in wellness use and unregulated sourcing.",
     "benefits": [
-      "Interest in tendon/ligament recovery support (community use)",
-      "Interest in muscle recovery and training continuity during rehab (community use)",
-      "Interest in inflammation-related comfort signals (community use)"
+      "Soft tissue recovery interest (community use)",
+      "Interest in rehab support and return-to-training (community use)",
+      "Interest in mobility and comfort during recovery (community use)"
     ],
     "side_effects_common": [
       "Injection-site irritation (if injected)",
-      "Fatigue or low energy",
+      "Fatigue",
       "Headache",
       "Nausea"
     ],

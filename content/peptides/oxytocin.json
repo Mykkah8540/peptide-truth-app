@@ -133,29 +133,27 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "Oxytocin is a human hormone used medically in obstetrics; off-label wellness use focuses on mood and social effects. Evidence for these effects is mixed, and side effects depend on route and context.",
+    "bottom_line": "Oxytocin has established medical uses and is discussed in wellness contexts for mood, bonding, and social effects. Practical risk is driven by inappropriate self-use and individual sensitivity.",
     "benefits": [
-      "Clinical use in labor and postpartum bleeding control (medical setting)",
-      "Interest in social bonding / affiliative behavior effects (research and user interest)",
-      "Interest in anxiety modulation in select contexts (mixed evidence)"
+      "Interest in social calm and connection effects (community use)",
+      "Interest in stress response modulation (community use)",
+      "Clinical relevance in obstetric settings (medical context)"
     ],
     "side_effects_common": [
       "Headache",
       "Nausea",
       "Dizziness",
-      "Nasal irritation (intranasal use)",
       "Fatigue"
     ],
     "side_effects_serious": [
-      "Significant blood pressure changes, fainting, or chest pain",
       "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Confusion, severe headache, or seizures (electrolyte disturbance risk)",
-      "Uterine cramping/bleeding outside appropriate medical supervision"
+      "Chest pain, fainting, or severe palpitations",
+      "Severe confusion or agitation"
     ],
     "who_should_be_cautious": [
-      "Pregnant individuals (obstetric effects are primary and clinically significant)",
+      "Pregnant individuals (non-medical use is inappropriate)",
       "People with significant cardiovascular disease or arrhythmia history",
-      "People with seizure disorders or history of severe hyponatremia",
+      "People with bipolar disorder or a history of mania",
       "Anyone under 18"
     ]
   }
