@@ -180,27 +180,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "BPC-157 is commonly discussed for tendon/ligament and gut irritation complaints, but the strongest supportive evidence is preclinical. The biggest real-world risk is unregulated sourcing and non-medical injection practices—not a well-defined clinical safety profile.",
+    "bottom_line": "Often discussed for tendon/ligament and gut-related recovery. Most supportive evidence is preclinical; human evidence is limited and heterogeneous. The biggest real-world risk driver is unregulated sourcing and non-medical administration practices.",
     "benefits": [
-      "Often discussed for soft-tissue recovery support (largely anecdotal)",
-      "Frequently discussed for GI irritation/comfort (evidence mixed; human data limited)",
-      "Sometimes discussed for return-to-training support during rehab (anecdotal)"
+      "Interest in soft tissue recovery and return-to-training support (evidence quality mixed; human data limited)",
+      "Interest in GI symptom support and gut barrier/inflammation pathways (mostly preclinical)",
+      "Used in rehab conversations for overuse injuries (largely anecdotal)"
     ],
     "side_effects_common": [
-      "Injection-site irritation (when injected)",
-      "Headache or fatigue (reports vary)",
-      "GI upset or appetite change (reports vary)"
+      "Injection-site irritation or discomfort (in real-world use contexts)",
+      "Headache or fatigue reports (non-specific; causality unclear)",
+      "GI upset or appetite changes (reported; inconsistent)"
     ],
     "side_effects_serious": [
-      "Allergic reaction signs (hives, facial swelling, trouble breathing)",
-      "Fever, severe redness, or drainage at injection site (possible infection/contamination)",
-      "Chest pain or severe shortness of breath"
+      "Unexpected allergic-type reactions (rare; seek care if severe)",
+      "Fever, chills, spreading redness, warmth, swelling, or pus at an injection site"
     ],
     "who_should_be_cautious": [
-      "People on anticoagulants/antiplatelets or NSAIDs (interaction/bleeding-risk context should be clinician-reviewed)",
-      "Autoimmune disease history or prior significant allergic reactions (uncertain immune effects)",
-      "Pregnant or breastfeeding individuals",
-      "Adolescents / competitive athletes (uncertainty + anti-doping rules)"
+      "Anyone with a history of severe allergies or prior reactions to injectables",
+      "People using anticoagulants/antiplatelets or NSAIDs (discuss bleeding/bruising concerns with a clinician)",
+      "Pregnancy/breastfeeding (data gaps)",
+      "Under-18 athletes (developmental uncertainty + real-world use risk)"
     ],
     "schema_version": "practical_block_v1"
   }
