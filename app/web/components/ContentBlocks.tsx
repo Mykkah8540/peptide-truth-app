@@ -17,6 +17,12 @@ type Props = {
 
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
+function isPlaceholderBlock(b: any): boolean {
+  const t = String(b?.title || "").toLowerCase();
+  const x = String(b?.text || "").toLowerCase();
+  return t.includes("pep-talk curation pending") || x.includes("pep-talk curation pending");
+}
+
 function isPendingText(s?: string | null): boolean {
   const t = String(s ?? "").trim();
   if (!t) return false;
@@ -36,7 +42,7 @@ function isPendingBlock(b: any): boolean {
 
 
 export default function ContentBlocks({ heading, blocks, showEmpty = false, emptyText }: Props) {
-  const list = (blocks ?? []).filter(Boolean);
+  const list = (blocks ?? []).filter(Boolean).filter((b) => !isPlaceholderBlock(b));
   const allPending = list.length > 0 && list.every((b) => isPendingBlock(b));
   if (!list.length) {
     const shouldRenderEmpty = showEmpty && String(heading || "").trim().length > 0;

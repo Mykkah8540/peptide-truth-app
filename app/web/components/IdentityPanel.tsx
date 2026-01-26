@@ -28,6 +28,12 @@ type Props = {
   molecularWeight?: number | string | null;
 };
 
+function isPlaceholderValue(v: any): boolean {
+  const s = String(v ?? "").toLowerCase();
+  return s.includes("pep-talk curation pending");
+}
+
+
 function Row({ label, value }: { label: string; value?: string | number | null }) {
   if (value === undefined || value === null || value === "") return null;
   if (isPendingText(value)) return null;
@@ -86,8 +92,8 @@ export default function IdentityPanel(props: Props) {
           </div>
         ) : null}
 
-        <Row label="AA sequence" value={props.aminoAcidSeq ?? null} />
-        <Row label="Molecular formula" value={props.molecularFormula ?? null} />
+        <Row label="AA sequence" value={isPlaceholderValue(props.aminoAcidSeq) ? null : (props.aminoAcidSeq ?? null)} />
+        <Row label="Molecular formula" value={isPlaceholderValue(props.molecularFormula) ? null : (props.molecularFormula ?? null)} />
         <Row label="Molecular weight" value={props.molecularWeight ?? null} />
       </div>
     </section>

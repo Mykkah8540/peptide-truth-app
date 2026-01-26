@@ -23,6 +23,12 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
     new Set([...(Array.isArray(p?.aliases) ? p.aliases : []), ...getAliasesForSlug(slug)])
   );
 
+const pr = doc?.practical ?? null;
+  const isPracticalPlaceholder =
+    !!pr &&
+    isCurationPendingText(pr?.bottom_line) &&
+    !((pr?.benefits ?? []).length || (pr?.side_effects_common ?? []).length || (pr?.side_effects_serious ?? []).length || (pr?.who_should_be_cautious ?? []).length);
+
   // We do NOT derive "outlookText" from overview (it creates duplication + weird tone).
   const outlookText = "";
 
@@ -64,6 +70,11 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
   const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
+function isCurationPendingText(v: any): boolean {
+  const s = String(v ?? "").toLowerCase();
+  return s.includes("pep-talk curation pending");
+}
+
   return (
     <main className="pt-page">
       <div className="pt-hero">
@@ -81,7 +92,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* Put practical summary early (what people actually want) */}
-      {doc?.practical ? (
+      {doc?.practical && !isPracticalPlaceholder ? (
         <section className="pt-card">
           <h2 className="pt-card-title">Practical summary</h2>
           <p className="pt-card-subtext">

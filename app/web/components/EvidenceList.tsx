@@ -42,6 +42,11 @@ function isUnknown(v?: string | null) {
   return !s || s === "unknown" || s === "n/a" || s === "na";
 }
 
+function isPlaceholderEvidence(e: any): boolean {
+  const hay = [e?.title, e?.notes, e?.url].filter(Boolean).join(" ").toLowerCase();
+  return hay.includes("pep-talk curation pending");
+}
+
 export default function EvidenceList({ evidence }: Props) {
   const list = (evidence ?? []).filter(Boolean).filter((e: any) => {
     const hay = [e?.title, e?.url, e?.notes].filter(Boolean).join(' ');
