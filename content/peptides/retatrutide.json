@@ -182,25 +182,27 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
+    "bottom_line": "This peptide is discussed primarily in metabolic and body-composition contexts. Human evidence exists for some indications, but real-world use often exceeds approved frameworks. Risk is driven by dose escalation, stacking, and sourcing quality.",
     "benefits": [
-      "appetite suppression / reduced cravings (commonly discussed)",
-      "fat-loss support when paired with a calorie deficit",
-      "improved glucose control in metabolic discussions",
-      "some people report improved adherence and less impulsive eating"
+      "appetite regulation effects discussed in clinical contexts",
+      "weight and metabolic interest in obesity-related discussions",
+      "investigated effects on insulin sensitivity and glycemic control"
     ],
     "side_effects_common": [
-      "nausea, reflux, or reduced appetite beyond what’s comfortable",
-      "constipation or slowed digestion",
-      "dehydration risk if fluids/electrolytes drop alongside food intake",
-      "fatigue or reduced training performance if intake drops too low"
+      "nausea or GI discomfort",
+      "reduced appetite beyond intended levels",
+      "fatigue during adjustment periods"
     ],
     "side_effects_serious": [
-      "persistent vomiting or inability to keep fluids down",
-      "severe abdominal pain (especially if paired with fever or ongoing nausea)",
-      "symptoms of dehydration (dizziness, rapid heart rate, very dark urine)"
+      "persistent vomiting or dehydration",
+      "gallbladder complications reported in some contexts",
+      "hypoglycemia risk when combined with other agents"
     ],
-    "who_should_be_cautious": [],
-    "bottom_line": "Most people look into retatrutide for appetite control and fat-loss support. The practical keys are: eat enough protein to protect lean mass, stay on top of hydration (constipation/dehydration are common), and adjust training so performance doesn’t fall off when intake drops."
+    "who_should_be_cautious": [
+      "individuals with prior GI disorders",
+      "those with eating disorder history",
+      "people combining multiple metabolic agents"
+    ]
   },
   "sections": {
     "overview": [
