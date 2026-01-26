@@ -3,6 +3,7 @@ import Link from "next/link";
 import { listInteractions } from "@/lib/content";
 
 type Item = {
+  title?: string;
   name?: string;
     slug?: string;
   interaction_slug?: string;
@@ -63,42 +64,65 @@ function resolveInteractionHref(it: any): string | null {
   return `/interaction/${slugify(name)}`;
 }
 
-function renderList(label: string, items?: Item[] | null) {
-  const list = (items ?? []).filter(Boolean);
-  if (!list.length) return null;
+function renderList(label: string, items?: Item[] | null, opts?: { showNone?: boolean }) {
+    const raw = (items ?? []).filter(Boolean);
 
-  return (
-    <div style={{ marginTop: 10 }}>
-      <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
-      <div style={{ marginTop: 8, display: "grid", gap: 10 }}>
-        {list.map((it, idx) => {
-          const name = (it.name || "").trim();
-          const note = (it.risk_note || it.notes || "").trim();
-          const metaParts = [
-          ].filter(Boolean);
+    // Normalize strings into { name } items, and filter out items with no usable label.
+    const list: Item[] = raw
+      .map((it: any) => (typeof it === "string" ? ({ name: it } as any) : it))
+      .filter((it: any) => {
+        const name = String(it?.name ?? it?.title ?? "").trim();
+        const note = String(it?.risk_note ?? it?.notes ?? "").trim();
+        // Keep if it has either a label or a note (note-only can still be meaningful)
+        return Boolean(name || note);
+      });
 
-          return (
-            <div key={`${label}-${idx}`} style={{ padding: 12, borderRadius: 14, background: "rgba(0,0,0,0.03)" }}>
-              {(() => {
-                const href = resolveInteractionHref(it);
-                const label = name || "Interaction";
-                return href ? (
-                  <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
-                    <div style={{ fontSize: 14, fontWeight: 900 }}>{label}</div>
-                  </Link>
-                ) : (
-                  <div style={{ fontSize: 14, fontWeight: 900 }}>{label}</div>
-                );
-              })()}
-              {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
-              {note ? <div style={{ marginTop: 8, fontSize: 13, lineHeight: 1.45 }}>{note}</div> : null}
-            </div>
-          );
-        })}
+    if (!list.length) {
+      if (opts?.showNone) {
+        return (
+          <div style={{ marginTop: 10 }}>
+            <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
+            <div style={{ marginTop: 8, fontSize: 13, opacity: 0.55 }}>None</div>
+          </div>
+        );
+      }
+      return null;
+    }
+
+    return (
+      <div style={{ marginTop: 10 }}>
+        <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
+        <div style={{ marginTop: 8, display: "grid", gap: 10 }}>
+          {list.map((it, idx) => {
+            const name = String(it.name ?? it.title ?? "").trim();
+            const note = String(it.risk_note ?? it.notes ?? "").trim();
+            const metaParts: string[] = [].filter(Boolean);
+
+            return (
+              <div key={`${label}-${idx}`} style={{ padding: 12, borderRadius: 14, background: "rgba(0,0,0,0.03)" }}>
+                {(() => {
+                  const href = resolveInteractionHref(it);
+                  // If we have no name, don't show a fake label; just show the note.
+                  const display = name || null;
+                  return display ? (
+                    href ? (
+                      <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
+                        <div style={{ fontSize: 14, fontWeight: 900 }}>{display}</div>
+                      </Link>
+                    ) : (
+                      <div style={{ fontSize: 14, fontWeight: 900 }}>{display}</div>
+                    )
+                  ) : null;
+                })()}
+                {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
+                {note ? <div style={{ marginTop: name ? 8 : 0, fontSize: 13, lineHeight: 1.45 }}>{note}</div> : null}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
@@ -119,8 +143,7 @@ export default function InteractionsSection({
     <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
       <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>{heading}</h2>
       <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
-        This section highlights known or suspected interaction risks with common medication/supplement classes and other peptides.
-        If empty, it means this entry has not been populated yet.
+        This section lists interaction considerations that have been added for this peptide. If nothing appears here, it usually means there isn’t curated interaction info in the database yet.
       </p>
 
       {(interactionSummaryBlocks ?? []).length ? (
@@ -129,13 +152,13 @@ export default function InteractionsSection({
         </div>
       ) : null}
 
-      {renderList("Medication classes", drugClasses)}
-      {renderList("Supplement classes", supplementClasses)}
-      {renderList("Other peptides", peptides)}
+      {renderList("Medication classes", drugClasses, { showNone: hasStructured })}
+      {renderList("Supplement classes", supplementClasses, { showNone: hasStructured })}
+      {renderList("Other peptides", peptides, { showNone: hasStructured })}
 
       {!hasStructured ? (
         <div style={{ marginTop: 12, padding: 12, borderRadius: 14, background: "rgba(0,0,0,0.03)", fontSize: 13, opacity: 0.85 }}>
-          No interaction entries have been added for this peptide yet.
+          No interaction details have been added yet.
         </div>
       ) : null}
     </section>

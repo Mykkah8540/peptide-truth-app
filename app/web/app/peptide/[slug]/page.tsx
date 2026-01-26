@@ -77,7 +77,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
           {Array.isArray(doc.practical.side_effects_serious) && doc.practical.side_effects_serious.length ? (
             <div className="mt-4">
-              <h3 className="text-sm font-semibold text-neutral-900">Serious red flags to know</h3>
+              <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
+                  <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
                 {doc.practical.side_effects_serious.map((b: string, i: number) => (
                   <li key={"s" + i}>{b}</li>
