@@ -1,5 +1,18 @@
 import RiskBadge from "@/components/RiskBadge";
 
+function isPendingText(s?: string | number | null): boolean {
+  const t = String(s ?? "").trim();
+  if (!t) return false;
+  const low = t.toLowerCase();
+  return (
+    low.includes("pep-talk curation pending") ||
+    low.includes("we’re reviewing the evidence") ||
+    low.includes("we're reviewing the evidence") ||
+    low.includes("will expand this section soon")
+  );
+}
+
+
 type Props = {
   kind?: "peptide" | "blend" | "topic" | null;
   slug?: string | null;
@@ -17,6 +30,7 @@ type Props = {
 
 function Row({ label, value }: { label: string; value?: string | number | null }) {
   if (value === undefined || value === null || value === "") return null;
+  if (isPendingText(value)) return null;
   return (
     <div style={{ display: "grid", gridTemplateColumns: "160px 1fr", gap: 12, padding: "6px 0" }}>
       <div style={{ opacity: 0.7, fontSize: 13 }}>{label}</div>
@@ -31,15 +45,8 @@ export default function IdentityPanel(props: Props) {
   ).sort((a, b) => a.localeCompare(b));
 
   return (
-    <section
-      style={{
-        marginTop: 16,
-        padding: 16,
-        borderRadius: 16,
-        border: "1px solid rgba(0,0,0,0.08)",
-      }}
-    >
-      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Identity</h2>
+    <section className="pt-card">
+      <h2 className="pt-card-title">Identity</h2>
 
       {props.riskScore !== undefined && props.riskScore !== null ? (
         <div style={{ marginTop: 10 }}>

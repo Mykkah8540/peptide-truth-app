@@ -19,32 +19,35 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
 // Some blends may store evidence differently; render if present.
   const evidence = Array.isArray(b?.evidence) ? b.evidence : [];
 
+  const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
+
   return (
-    <main style={{ padding: 24, maxWidth: 980, margin: "0 auto" }}>
-      <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+    <main className="pt-page">
+      <div className="pt-hero">
         <VialImage kind="blend" slug={slug} alt={`${b?.canonical_name ?? slug} vial`} />
         <div>
-          <h1 style={{ fontSize: 30, fontWeight: 900, margin: 0 }}>{b?.canonical_name ?? `Blend: ${slug}`}</h1>
-          <p style={{ opacity: 0.75, marginTop: 6, marginBottom: 0 }}>
+          <h1>{b?.canonical_name ?? `Blend: ${slug}`}</h1>
+          <p style={{ marginBottom: 0 }}>
             Educational resource. Not medical advice. No dosing or instructions.
           </p>
         </div>
       </div>
 
-      <div style={{ marginTop: 16 }}>
-        {riskHit ? (
-          <>
-<SafetyLinks safetyIds={riskHit.safety_links} />
-            {riskHit.risk.computed_from_components && Array.isArray(riskHit.risk.component_slugs) ? (
-              <div style={{ marginTop: 12, fontSize: 13, opacity: 0.85 }}>
-                Computed from components: {riskHit.risk.component_slugs.join(", ")}
-              </div>
-            ) : null}
-          </>
-        ) : (
-          <p style={{ marginTop: 14 }}>No risk data found for this blend.</p>
-        )}
-      </div>
+      {riskHit ? (
+        <div style={{ marginTop: 16 }}>
+          <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
+
+          {riskHit.risk.computed_from_components && Array.isArray(riskHit.risk.component_slugs) ? (
+            <div className="pt-card-subtext" style={{ marginTop: 10 }}>
+              Computed from components: {riskHit.risk.component_slugs.join(", ")}
+            </div>
+          ) : null}
+
+          {DEBUG ? <div style={{ marginTop: 10 }}><SafetyLinks safetyIds={riskHit.safety_links} /></div> : null}
+        </div>
+      ) : (
+        <p style={{ marginTop: 14 }}>No risk data found for this blend.</p>
+      )}
 
       <IdentityPanel
         kind="blend"

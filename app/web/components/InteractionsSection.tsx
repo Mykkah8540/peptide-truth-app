@@ -92,14 +92,14 @@ function renderList(label: string, items?: Item[] | null, opts?: { showNone?: bo
     return (
       <div style={{ marginTop: 10 }}>
         <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
-        <div style={{ marginTop: 8, display: "grid", gap: 10 }}>
+        <div style={{ marginTop: 10 }} className="pt-stack">
           {list.map((it, idx) => {
             const name = String(it.name ?? it.title ?? "").trim();
             const note = String(it.risk_note ?? it.notes ?? "").trim();
             const metaParts: string[] = [].filter(Boolean);
 
             return (
-              <div key={`${label}-${idx}`} style={{ padding: 12, borderRadius: 14, background: "rgba(0,0,0,0.03)" }}>
+              <div key={`${label}-${idx}`} className="pt-item">
                 {(() => {
                   const href = resolveInteractionHref(it);
                   // If we have no name, don't show a fake label; just show the note.
@@ -107,15 +107,15 @@ function renderList(label: string, items?: Item[] | null, opts?: { showNone?: bo
                   return display ? (
                     href ? (
                       <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
-                        <div style={{ fontSize: 14, fontWeight: 900 }}>{display}</div>
+                        <div className="pt-item-title">{display}</div>
                       </Link>
                     ) : (
-                      <div style={{ fontSize: 14, fontWeight: 900 }}>{display}</div>
+                      <div className="pt-item-title">{display}</div>
                     )
                   ) : null;
                 })()}
                 {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
-                {note ? <div style={{ marginTop: name ? 8 : 0, fontSize: 13, lineHeight: 1.45 }}>{note}</div> : null}
+                {note ? <div className="pt-item-note" style={{ marginTop: name ? 8 : 0 }}>{note}</div> : null}
               </div>
             );
           })}
@@ -140,9 +140,9 @@ export default function InteractionsSection({
     (interactionSummaryBlocks ?? []).length > 0;
 
   return (
-    <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>{heading}</h2>
-      <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
+    <section className="pt-card">
+      <h2 className="pt-card-title">{heading}</h2>
+      <p className="pt-card-subtext">
         This section lists interaction considerations that have been added for this peptide. If nothing appears here, it usually means there isn’t curated interaction info in the database yet.
       </p>
 
@@ -157,7 +157,7 @@ export default function InteractionsSection({
       {renderList("Other peptides", peptides, { showNone: hasStructured })}
 
       {!hasStructured ? (
-        <div style={{ marginTop: 12, padding: 12, borderRadius: 14, background: "rgba(0,0,0,0.03)", fontSize: 13, opacity: 0.85 }}>
+        <div className="pt-item" style={{ opacity: 0.9 }}>
           No interaction details have been added yet.
         </div>
       ) : null}

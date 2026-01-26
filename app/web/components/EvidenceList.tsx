@@ -25,20 +25,35 @@ function pubmedUrl(pmid: string) {
   return `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
 }
 
+function isPendingText(s?: string | null): boolean {
+  const t = String(s ?? "").trim();
+  if (!t) return false;
+  const low = t.toLowerCase();
+  return (
+    low.includes("pep-talk curation pending") ||
+    low.includes("we’re reviewing the evidence") ||
+    low.includes("we're reviewing the evidence") ||
+    low.includes("will expand this section soon")
+  );
+}
+
 function isUnknown(v?: string | null) {
   const s = String(v ?? "").trim().toLowerCase();
   return !s || s === "unknown" || s === "n/a" || s === "na";
 }
 
 export default function EvidenceList({ evidence }: Props) {
-  const list = (evidence ?? []).filter(Boolean);
+  const list = (evidence ?? []).filter(Boolean).filter((e: any) => {
+    const hay = [e?.title, e?.url, e?.notes].filter(Boolean).join(' ');
+    return !isPendingText(hay);
+  });
 
   // Empty state (don’t disappear; be honest)
   if (!list.length) {
     return (
-      <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-        <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Evidence</h2>
-        <div style={{ marginTop: 10, fontSize: 13, opacity: 0.85, lineHeight: 1.45 }}>
+      <section className="pt-card">
+        <h2 className="pt-card-title">Evidence</h2>
+        <div className="pt-item-note" style={{ marginTop: 10 }}>
           No curated human clinical sources have been added yet.
         </div>
       </section>
@@ -46,10 +61,10 @@ export default function EvidenceList({ evidence }: Props) {
   }
 
   return (
-    <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>Evidence</h2>
+    <section className="pt-card">
+      <h2 className="pt-card-title">Evidence</h2>
 
-      <div style={{ marginTop: 12, display: "grid", gap: 12 }}>
+      <div className="pt-stack">
         {list.map((e) => {
           const pmid = extractPmid(e);
           const inferredUrl =
@@ -70,7 +85,7 @@ export default function EvidenceList({ evidence }: Props) {
           ].filter(Boolean);
 
           return (
-            <div key={e.id} style={{ padding: 14, borderRadius: 14, background: "rgba(0,0,0,0.03)" }}>
+            <div key={e.id} className="pt-item">
               <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                 <div style={{ fontSize: 13, fontWeight: 900 }}>
                   {idLabel || ""}
@@ -78,7 +93,7 @@ export default function EvidenceList({ evidence }: Props) {
                 {metaParts.length ? <div style={{ fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
               </div>
 
-              <div style={{ marginTop: 8, fontSize: 14, fontWeight: 800 }}>{e.title}</div>
+              <div style={{ marginTop: 8, fontSize: 14, fontWeight: 800, lineHeight: 1.35 }}>{e.title}</div>
 
               {inferredUrl ? (
                 <div style={{ marginTop: 6, fontSize: 12 }}>
@@ -88,7 +103,7 @@ export default function EvidenceList({ evidence }: Props) {
                 </div>
               ) : null}
 
-              {e.notes ? <div style={{ marginTop: 8, fontSize: 13, opacity: 0.85, lineHeight: 1.45 }}>{e.notes}</div> : null}
+              {e.notes ? <div className="pt-item-note">{e.notes}</div> : null}
             </div>
           );
         })}

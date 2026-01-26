@@ -27,17 +27,50 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   const outlookText = "";
 
   // Keep any formal disclaimers out of the narrative flow; show them in DisclaimerSection only.
-  const disclaimerText = [p?.status?.human_use_note, p?.classification?.notes].filter(Boolean).join(" ");
+  function isPendingText(s?: string | null): boolean {
+    const t = String(s ?? "").trim();
+    if (!t) return false;
+    const low = t.toLowerCase();
+    return (
+      low.includes("pep-talk curation pending") ||
+      low.includes("we’re reviewing the evidence") ||
+      low.includes("we're reviewing the evidence") ||
+      low.includes("will expand this section soon")
+    );
+  }
+
+  function uniqSentences(text: string): string {
+    const parts = String(text || "")
+      .split(/(?<=[.!?])\s+/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const seen = new Set();
+    const out: string[] = [];
+    for (const s of parts) {
+      const key = s.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(s);
+    }
+    return out.join(" ");
+  }
+
+  const disclaimerTextRaw = [p?.status?.human_use_note, p?.classification?.notes].filter(Boolean).join(" ");
+  const disclaimerText = uniqSentences(
+    disclaimerTextRaw
+      .split(/\s+/).join(" ")
+  );
+  const disclaimerTextClean = isPendingText(disclaimerText) ? "" : disclaimerText;
 
   const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
   return (
-    <main style={{ padding: 24, maxWidth: 980, margin: "0 auto" }}>
-      <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+    <main className="pt-page">
+      <div className="pt-hero">
         <VialImage kind="peptide" slug={slug} alt={`${p?.canonical_name ?? slug} vial`} />
         <div>
-          <h1 style={{ fontSize: 30, fontWeight: 900, margin: 0 }}>{p?.canonical_name ?? slug}</h1>
-          <p style={{ opacity: 0.75, marginTop: 6 }}>Educational resource. Not medical advice. No dosing or instructions.</p>
+          <h1>{p?.canonical_name ?? slug}</h1>
+          <p>Educational resource. Not medical advice. No dosing or instructions.</p>
         </div>
       </div>
 
@@ -49,9 +82,17 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
       {/* Put practical summary early (what people actually want) */}
       {doc?.practical ? (
-        <section className="mt-6 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
-          <h2 className="text-lg font-semibold">Practical summary</h2>
-          <p className="mt-2 text-sm text-neutral-700">{String(doc.practical.bottom_line || "").trim()}</p>
+        <section className="pt-card">
+          <h2 className="pt-card-title">Practical summary</h2>
+          <p className="pt-card-subtext">
+  {(() => {
+    const t = String(doc.practical.bottom_line || "").trim();
+    if (!t || isPendingText(t)) {
+      return "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed.";
+    }
+    return t;
+  })()}
+</p>
 
           {Array.isArray(doc.practical.benefits) && doc.practical.benefits.length ? (
             <div className="mt-4">
@@ -62,7 +103,12 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 ))}
               </ul>
             </div>
-          ) : null}
+          ) : (
+        <section className="pt-card">
+          <h2 className="pt-card-title">Practical summary</h2>
+          <p className="pt-card-subtext">Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed.</p>
+        </section>
+      )}
 
           {Array.isArray(doc.practical.side_effects_common) && doc.practical.side_effects_common.length ? (
             <div className="mt-4">
@@ -101,7 +147,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       ) : null}
 
       {/* Overview should be real content blocks (not metadata leaks) */}
-      <ContentBlocks heading="Overview" blocks={sections?.overview ?? null} />
+      <ContentBlocks heading="Overview" blocks={sections?.overview ?? null} showEmpty emptyText="No overview has been added yet." />
 
       <OutlookSection
         outlookText={outlookText}
@@ -128,11 +174,11 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         aminoAcidSeq={p?.structure?.amino_acid_seq}
       />
 
-      <ContentBlocks heading="Developmental / adolescent risk" blocks={sections?.developmental_risk_block ?? null} />
+      <ContentBlocks heading="Developmental / adolescent risk" blocks={sections?.developmental_risk_block ?? null} showEmpty emptyText="No developmental/adolescent risk notes have been added yet." />
 
       <EvidenceList evidence={p?.evidence ?? []} />
 
-      <DisclaimerSection text={disclaimerText} />
+      <DisclaimerSection text={disclaimerTextClean} />
 
       {DEBUG && riskHit && <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" />}
     </main>

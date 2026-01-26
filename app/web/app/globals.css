@@ -33,3 +33,86 @@ body {
   .desktop-nav { display: none; }
   .mobile-menu-btn { display: block; }
 }
+
+/* Pep-Talk layout utilities */
+.pt-page {
+  padding: 24px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.pt-hero {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.pt-hero h1 {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.pt-hero p {
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.pt-card {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.pt-card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.pt-card-subtext {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: 0.82;
+  line-height: 1.5;
+}
+
+.pt-stack {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.pt-item {
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.03);
+}
+
+.pt-item-title {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.pt-item-text {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pt-item-note {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.pt-meta {
+  margin-top: 6px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+

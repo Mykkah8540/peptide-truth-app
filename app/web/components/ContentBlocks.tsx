@@ -11,19 +11,62 @@ type Block = {
 type Props = {
   heading: string;
   blocks?: Block[] | null;
+  showEmpty?: boolean;
+  emptyText?: string;
 };
 
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
-export default function ContentBlocks({ heading, blocks }: Props) {
+function isPendingText(s?: string | null): boolean {
+  const t = String(s ?? "").trim();
+  if (!t) return false;
+  const low = t.toLowerCase();
+  return (
+    low.includes("pep-talk curation pending") ||
+    low.includes("we’re reviewing the evidence") ||
+    low.includes("we're reviewing the evidence") ||
+    low.includes("will expand this section soon")
+  );
+}
+
+function isPendingBlock(b: any): boolean {
+  const text = String(b?.text ?? "").trim();
+  return isPendingText(text);
+}
+
+
+export default function ContentBlocks({ heading, blocks, showEmpty = false, emptyText }: Props) {
   const list = (blocks ?? []).filter(Boolean);
-  if (!list.length) return null;
+  const allPending = list.length > 0 && list.every((b) => isPendingBlock(b));
+  if (!list.length) {
+    const shouldRenderEmpty = showEmpty && String(heading || "").trim().length > 0;
+    if (!shouldRenderEmpty) return null;
+    return (
+      <section className="pt-card">
+        <h2 className="pt-card-title">{heading}</h2>
+        <div className="pt-item-note" style={{ marginTop: 10 }}>
+          {String(emptyText || "No content has been added yet.")}
+        </div>
+      </section>
+    );
+  }
+  if (allPending) {
+    return (
+      <section className="pt-card">
+        <h2 className="pt-card-title">{heading}</h2>
+        <div className="pt-item-note" style={{ marginTop: 10 }}>
+          {String(emptyText || "Pep-Talk curation pending. We avoid speculative claims; this section will be populated as evidence is reviewed.")}
+        </div>
+      </section>
+    );
+  }
+
 
   return (
-    <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>{heading}</h2>
+    <section className="pt-card">
+      <h2 className="pt-card-title">{heading}</h2>
 
-      <div style={{ marginTop: 12, display: "grid", gap: 12 }}>
+      <div className="pt-stack">
         {list.map((b, idx) => {
           const title = (b.title || "").trim();
           const text = (b.text || "").trim();
@@ -33,11 +76,11 @@ export default function ContentBlocks({ heading, blocks }: Props) {
           const refs = Array.isArray(b.evidence_refs) ? b.evidence_refs.filter(Boolean) : [];
 
           return (
-            <div key={`${heading}-${idx}`} style={{ padding: 14, borderRadius: 14, background: "rgba(0,0,0,0.03)" }}>
-              {title ? <div style={{ fontSize: 14, fontWeight: 900 }}>{title}</div> : null}
-              {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
-              {text ? <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.5 }}>{text}</div> : null}
-              {refs.length ? <div style={{ marginTop: 10, fontSize: 12, opacity: 0.75 }}>Refs: {refs.join(", ")}</div> : null}
+            <div key={`${heading}-${idx}`} className="pt-item">
+              {title ? <div className="pt-item-title">{title}</div> : null}
+              {metaParts.length ? <div className="pt-meta">{metaParts.join(" · ")}</div> : null}
+              {text ? <div className="pt-item-text">{text}</div> : null}
+              {refs.length ? <div className="pt-meta">Refs: {refs.join(", ")}</div> : null}
             </div>
           );
         })}
