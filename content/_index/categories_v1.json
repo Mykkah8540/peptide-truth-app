@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "updated_at": "2026-01-25",
+  "updated_at": "2026-01-26",
   "notes": "Deterministic Explore-by-Category index built from taxonomy + governance + entities + blends registry.",
   "mapping": {
     "peptide_key_to_blend_keys": {
