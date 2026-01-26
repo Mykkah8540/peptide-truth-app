@@ -120,7 +120,35 @@
         "topic_muscle_recovery"
       ]
     },
-    "slug": "thymosin-beta-4"
+    "slug": "thymosin-beta-4",
+    "practical": {
+      "schema_version": "practical_block_v1",
+      "bottom_line": "Thymosin beta-4 is discussed for tissue repair and recovery, with most supportive data coming from preclinical models and limited human research. In real-world use discussions, it is often framed around injury recovery and return-to-training timelines. Product labeling and market naming can be confusing, so identity and sourcing are major practical risks.",
+      "benefits": [
+        "Soft-tissue recovery interest after overuse or injury",
+        "Skin and wound recovery interest in research contexts",
+        "Joint comfort and mobility support interest during rehab periods",
+        "Interest in repair-pathway signaling in sports medicine discussions"
+      ],
+      "side_effects_common": [
+        "Injection-site irritation or discomfort",
+        "Headache",
+        "Nausea",
+        "Fatigue"
+      ],
+      "side_effects_serious": [
+        "Allergic reaction with hives, facial swelling, or trouble breathing",
+        "Chest pain, fainting, or severe shortness of breath",
+        "Severe swelling, rapidly spreading redness, or drainage at an injection site"
+      ],
+      "who_should_be_cautious": [
+        "Active cancer or recent cancer treatment",
+        "People using anticoagulants or antiplatelets",
+        "Bleeding disorders",
+        "Pregnancy or breastfeeding",
+        "Children and adolescents"
+      ]
+    }
   },
   "canonical_name": "Thymosin Beta-4",
   "interactions": {
@@ -133,28 +161,30 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "Thymosin beta-4 is discussed for tissue repair and recovery. Human evidence is limited in many wellness use cases; practical risk is driven by unregulated sourcing and non-medical administration.",
+    "bottom_line": "Thymosin beta-4 is discussed for tissue repair and recovery, with most supportive data coming from preclinical models and limited human research. In real-world use discussions, it is often framed around injury recovery and return-to-training timelines. Product labeling and market naming can be confusing, so identity and sourcing are major practical risks.",
     "benefits": [
-      "Soft tissue recovery interest (community use)",
-      "Interest in wound or injury recovery support (community use)",
-      "Interest in training continuity during rehab (community use)"
+      "Soft-tissue recovery interest after overuse or injury",
+      "Skin and wound recovery interest in research contexts",
+      "Joint comfort and mobility support interest during rehab periods",
+      "Interest in repair-pathway signaling in sports medicine discussions"
     ],
     "side_effects_common": [
-      "Injection-site irritation (if injected)",
-      "Fatigue",
+      "Injection-site irritation or discomfort",
       "Headache",
-      "Nausea"
+      "Nausea",
+      "Fatigue"
     ],
     "side_effects_serious": [
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)",
-      "Fever, chills, spreading redness, or drainage at injection site",
-      "Severe dizziness, fainting, or chest pain"
+      "Allergic reaction with hives, facial swelling, or trouble breathing",
+      "Chest pain, fainting, or severe shortness of breath",
+      "Severe swelling, rapidly spreading redness, or drainage at an injection site"
     ],
     "who_should_be_cautious": [
-      "People with active cancer or recent cancer treatment",
-      "People with immune suppression or active infection",
-      "Pregnant or breastfeeding individuals",
-      "Anyone under 18"
+      "Active cancer or recent cancer treatment",
+      "People using anticoagulants or antiplatelets",
+      "Bleeding disorders",
+      "Pregnancy or breastfeeding",
+      "Children and adolescents"
     ]
   }
 }
