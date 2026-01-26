@@ -1,15 +1,29 @@
-UI Risk Badge Integration (TODO)
+# Risk UI (Pep-Talk)
 
-Data source:
-- content/_index/risk_index_v1.json
+This folder documents the Risk UI surface area.
 
-Required behavior:
-- Show risk badge (1–10) on:
-  - Peptide PDP
-  - Blend PDP
-  - Topic / Stack pages
-- Link safety_links to safety pages
-- No dosing or instructions
+## Status
 
-Status:
-- Not implemented
+Risk badge rendering is implemented in the Next.js app.
+
+### Data Source
+- `content/_index/risk_index_v1.json`
+
+### Loader / Access
+- `app/web/lib/riskIndex.ts`
+
+### UI Component
+- `app/web/components/RiskBadge.tsx`
+
+### PDP Integration
+- Peptide PDP: `app/web/app/peptide/[slug]/page.tsx`
+- Blend PDP: `app/web/app/blend/[slug]/page.tsx`
+- Badge is rendered via `IdentityPanel` when risk info is present.
+
+## Governance
+
+Risk presentation must:
+- stay neutral and non-hyped
+- avoid “medical report” clutter
+- illuminate risk without fear framing
+- never imply dosing, protocols, or medical authority
