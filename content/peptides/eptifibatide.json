@@ -126,11 +126,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Eptifibatide is a potent antiplatelet medication used in hospital settings to reduce clotting during acute coronary care. It is not a wellness peptide; bleeding risk is high.",
+    "benefits": [
+      "clinical relevance in acute coronary syndrome/PCI settings (medical supervision)",
+      "mechanistic relevance in platelet aggregation (GP IIb/IIIa) discussions"
+    ],
+    "side_effects_common": [
+      "bruising",
+      "nosebleeds or gum bleeding",
+      "nausea"
+    ],
+    "side_effects_serious": [
+      "serious bleeding (GI bleed, intracranial bleed, uncontrolled bleeding)",
+      "black/tarry stools or vomiting blood",
+      "sudden severe headache, weakness, or vision changes (emergency evaluation)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "anyone not under direct medical supervision for a cardiovascular indication",
+      "people on anticoagulants/antiplatelets or with bleeding disorders",
+      "people with recent surgery, ulcers, or stroke history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence plus inappropriate for non-clinical use)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
