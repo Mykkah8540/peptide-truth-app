@@ -65,8 +65,7 @@ def add_term_map(term_map: dict, term: str, route: dict, source: str) -> None:
                 already = True
                 break
     if not already:
-        entry['routes'].append(route)
-        entry["routes"].append(route)
+          entry['routes'].append(route)
     if source not in entry["sources"]:
         entry["sources"].append(source)
 

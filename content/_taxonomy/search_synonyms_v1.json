@@ -4,105 +4,9 @@
   "notes": "Internal search synonym map. Additive only; never overrides exact entity matches.",
   "entity_synonyms": [
     {
-      "term": "pt141",
+      "term": "1mq",
       "slugs": [
-        "bremelanotide"
-      ]
-    },
-    {
-      "term": "pt-141",
-      "slugs": [
-        "bremelanotide"
-      ]
-    },
-    {
-      "term": "pt 141",
-      "slugs": [
-        "bremelanotide"
-      ]
-    },
-    {
-      "term": "bpc157",
-      "slugs": [
-        "bpc-157"
-      ]
-    },
-    {
-      "term": "bpc 157",
-      "slugs": [
-        "bpc-157"
-      ]
-    },
-    {
-      "term": "tb500",
-      "slugs": [
-        "tb-500"
-      ]
-    },
-    {
-      "term": "tb 500",
-      "slugs": [
-        "tb-500"
-      ]
-    },
-    {
-      "term": "ghkcu",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "ghk cu",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "ta1",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "thymosin a1",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "t\u03b24",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "tb4",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "thymosin b4",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "dsip peptide",
-      "slugs": [
-        "dsip"
-      ]
-    },
-    {
-      "term": "nad+",
-      "slugs": [
-        "nad-plus"
-      ]
-    },
-    {
-      "term": "nad plus",
-      "slugs": [
-        "nad-plus"
+        "5-amino-1mq"
       ]
     },
     {
@@ -118,193 +22,9 @@
       ]
     },
     {
-      "term": "mk677",
+      "term": "5amino",
       "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "mk 677",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "melanotan 2",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "melanotan ii",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "melanotan 1",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "melanotan i",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "ss-31",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "elamipretide",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "amylin analog",
-      "route": "peptide:cagrilintide",
-      "sources": [
-        "qa_fix"
-      ],
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "cjc-1295 dac",
-      "route": "peptide:cjc-1295-dac",
-      "sources": [
-        "qa_fix"
-      ],
-      "slugs": [
-        "cjc-1295-dac"
-      ]
-    },
-    {
-      "term": "glp-1 glucagon dual agonist",
-      "route": "peptide:mazdutide",
-      "sources": [
-        "qa_fix"
-      ],
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "glp1 glucagon",
-      "route": "peptide:mazdutide",
-      "sources": [
-        "qa_fix"
-      ],
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "palmitoyl tripeptide 1",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "palmitoyl-tripeptide-1",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "palmitoyltripeptide1",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "mazdutide",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "ipamorelin",
-      "slugs": [
-        "ipamorelin"
-      ]
-    },
-    {
-      "term": "ara 290",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "ara-290",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "ara290",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "cjc 1295",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "cjc-1295",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "cjc1295",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "bpc 157 arginate",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "bpc-157-arginate",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "bpc157arginate",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "thymosin beta 4",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "thymosin-beta-4",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "thymosinbeta4",
-      "slugs": [
-        "thymosin-beta-4"
+        "5-amino-1mq"
       ]
     },
     {
@@ -314,1905 +34,9 @@
       ]
     },
     {
-      "term": "bivalirudin",
-      "slugs": [
-        "bivalirudin"
-      ]
-    },
-    {
-      "term": "substance p",
-      "slugs": [
-        "substance-p"
-      ]
-    },
-    {
-      "term": "substance-p",
-      "slugs": [
-        "substance-p"
-      ]
-    },
-    {
-      "term": "substancep",
-      "slugs": [
-        "substance-p"
-      ]
-    },
-    {
-      "term": "mots c",
-      "slugs": [
-        "mots-c"
-      ]
-    },
-    {
-      "term": "mots-c",
-      "slugs": [
-        "mots-c"
-      ]
-    },
-    {
-      "term": "motsc",
-      "slugs": [
-        "mots-c"
-      ]
-    },
-    {
-      "term": "exenatide",
-      "slugs": [
-        "exenatide"
-      ]
-    },
-    {
-      "term": "gonadorelin",
-      "slugs": [
-        "gonadorelin"
-      ]
-    },
-    {
-      "term": "tirzepatide",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "kpv",
-      "slugs": [
-        "kpv"
-      ]
-    },
-    {
-      "term": "glucagon",
-      "slugs": [
-        "glucagon"
-      ]
-    },
-    {
-      "term": "eptifibatide",
-      "slugs": [
-        "eptifibatide"
-      ]
-    },
-    {
-      "term": "vasopressin",
-      "slugs": [
-        "vasopressin"
-      ]
-    },
-    {
-      "term": "brain natriuretic peptide",
-      "slugs": [
-        "brain-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "brain-natriuretic-peptide",
-      "slugs": [
-        "brain-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "brainnatriureticpeptide",
-      "slugs": [
-        "brain-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "shlp 2",
-      "slugs": [
-        "shlp-2"
-      ]
-    },
-    {
-      "term": "shlp-2",
-      "slugs": [
-        "shlp-2"
-      ]
-    },
-    {
-      "term": "shlp2",
-      "slugs": [
-        "shlp-2"
-      ]
-    },
-    {
-      "term": "ghk-cu",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "peg mgf",
-      "slugs": [
-        "peg-mgf"
-      ]
-    },
-    {
-      "term": "peg-mgf",
-      "slugs": [
-        "peg-mgf"
-      ]
-    },
-    {
-      "term": "pegmgf",
-      "slugs": [
-        "peg-mgf"
-      ]
-    },
-    {
-      "term": "desmopressin",
-      "slugs": [
-        "desmopressin"
-      ]
-    },
-    {
-      "term": "octreotide",
-      "slugs": [
-        "octreotide"
-      ]
-    },
-    {
-      "term": "hexarelin",
-      "slugs": [
-        "hexarelin"
-      ]
-    },
-    {
-      "term": "palmitoyl pentapeptide 4",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "palmitoyl-pentapeptide-4",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "palmitoylpentapeptide4",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "carbetocin",
-      "slugs": [
-        "carbetocin"
-      ]
-    },
-    {
-      "term": "ziconotide",
-      "slugs": [
-        "ziconotide"
-      ]
-    },
-    {
-      "term": "melanotan-i",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "melanotani",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "ss 31",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "ss31",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "motilin",
-      "slugs": [
-        "motilin"
-      ]
-    },
-    {
-      "term": "survodutide",
-      "slugs": [
-        "survodutide"
-      ]
-    },
-    {
-      "term": "igf 1 lr3",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "igf-1-lr3",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "igf1lr3",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "epitalon",
-      "slugs": [
-        "epitalon"
-      ]
-    },
-    {
-      "term": "dsip",
-      "slugs": [
-        "dsip"
-      ]
-    },
-    {
-      "term": "igf 1",
-      "slugs": [
-        "igf-1"
-      ]
-    },
-    {
-      "term": "igf-1",
-      "slugs": [
-        "igf-1"
-      ]
-    },
-    {
-      "term": "igf1",
-      "slugs": [
-        "igf-1"
-      ]
-    },
-    {
-      "term": "teriparatide",
-      "slugs": [
-        "teriparatide"
-      ]
-    },
-    {
-      "term": "linaclotide",
-      "slugs": [
-        "linaclotide"
-      ]
-    },
-    {
-      "term": "triptorelin",
-      "slugs": [
-        "triptorelin"
-      ]
-    },
-    {
-      "term": "pentagastrin",
-      "slugs": [
-        "pentagastrin"
-      ]
-    },
-    {
-      "term": "cagrilintide",
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "selank",
-      "slugs": [
-        "selank"
-      ]
-    },
-    {
-      "term": "ll 37",
-      "slugs": [
-        "ll-37"
-      ]
-    },
-    {
-      "term": "ll-37",
-      "slugs": [
-        "ll-37"
-      ]
-    },
-    {
-      "term": "ll37",
-      "slugs": [
-        "ll-37"
-      ]
-    },
-    {
-      "term": "aod 9604",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "aod-9604",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "aod9604",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "secretin",
-      "slugs": [
-        "secretin"
-      ]
-    },
-    {
-      "term": "ghrp 2",
-      "slugs": [
-        "ghrp-2"
-      ]
-    },
-    {
-      "term": "ghrp-2",
-      "slugs": [
-        "ghrp-2"
-      ]
-    },
-    {
-      "term": "ghrp2",
-      "slugs": [
-        "ghrp-2"
-      ]
-    },
-    {
-      "term": "bremelanotide",
-      "slugs": [
-        "bremelanotide"
-      ]
-    },
-    {
-      "term": "melanotan-ii",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "melanotanii",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "calcitonin",
-      "slugs": [
-        "calcitonin"
-      ]
-    },
-    {
-      "term": "orexin a",
-      "slugs": [
-        "orexin-a"
-      ]
-    },
-    {
-      "term": "orexin-a",
-      "slugs": [
-        "orexin-a"
-      ]
-    },
-    {
-      "term": "orexina",
-      "slugs": [
-        "orexin-a"
-      ]
-    },
-    {
-      "term": "vip",
-      "slugs": [
-        "vip"
-      ]
-    },
-    {
-      "term": "semax",
-      "slugs": [
-        "semax"
-      ]
-    },
-    {
-      "term": "neuropeptide y",
-      "slugs": [
-        "neuropeptide-y"
-      ]
-    },
-    {
-      "term": "neuropeptide-y",
-      "slugs": [
-        "neuropeptide-y"
-      ]
-    },
-    {
-      "term": "neuropeptidey",
-      "slugs": [
-        "neuropeptide-y"
-      ]
-    },
-    {
-      "term": "kisspeptin",
-      "slugs": [
-        "kisspeptin"
-      ]
-    },
-    {
       "term": "abaloparatide",
       "slugs": [
         "abaloparatide"
-      ]
-    },
-    {
-      "term": "afamelanotide",
-      "slugs": [
-        "afamelanotide"
-      ]
-    },
-    {
-      "term": "nesiritide",
-      "slugs": [
-        "nesiritide"
-      ]
-    },
-    {
-      "term": "lanreotide",
-      "slugs": [
-        "lanreotide"
-      ]
-    },
-    {
-      "term": "tb-500",
-      "slugs": [
-        "tb-500"
-      ]
-    },
-    {
-      "term": "nad-plus",
-      "slugs": [
-        "nad-plus"
-      ]
-    },
-    {
-      "term": "nadplus",
-      "slugs": [
-        "nad-plus"
-      ]
-    },
-    {
-      "term": "humanin",
-      "slugs": [
-        "humanin"
-      ]
-    },
-    {
-      "term": "snap 8",
-      "slugs": [
-        "snap-8"
-      ]
-    },
-    {
-      "term": "snap-8",
-      "slugs": [
-        "snap-8"
-      ]
-    },
-    {
-      "term": "snap8",
-      "slugs": [
-        "snap-8"
-      ]
-    },
-    {
-      "term": "bradykinin",
-      "slugs": [
-        "bradykinin"
-      ]
-    },
-    {
-      "term": "angiotensin ii",
-      "slugs": [
-        "angiotensin-ii"
-      ]
-    },
-    {
-      "term": "angiotensin-ii",
-      "slugs": [
-        "angiotensin-ii"
-      ]
-    },
-    {
-      "term": "angiotensinii",
-      "slugs": [
-        "angiotensin-ii"
-      ]
-    },
-    {
-      "term": "atrial natriuretic peptide",
-      "slugs": [
-        "atrial-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "atrial-natriuretic-peptide",
-      "slugs": [
-        "atrial-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "atrialnatriureticpeptide",
-      "slugs": [
-        "atrial-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "hcg",
-      "slugs": [
-        "hcg"
-      ]
-    },
-    {
-      "term": "tesamorelin",
-      "slugs": [
-        "tesamorelin"
-      ]
-    },
-    {
-      "term": "semaglutide",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "thymulin",
-      "slugs": [
-        "thymulin"
-      ]
-    },
-    {
-      "term": "thymosin beta 4 full",
-      "slugs": [
-        "thymosin-beta-4-full"
-      ]
-    },
-    {
-      "term": "thymosin-beta-4-full",
-      "slugs": [
-        "thymosin-beta-4-full"
-      ]
-    },
-    {
-      "term": "thymosinbeta4full",
-      "slugs": [
-        "thymosin-beta-4-full"
-      ]
-    },
-    {
-      "term": "sermorelin",
-      "slugs": [
-        "sermorelin"
-      ]
-    },
-    {
-      "term": "liraglutide",
-      "slugs": [
-        "liraglutide"
-      ]
-    },
-    {
-      "term": "neuropeptide s",
-      "slugs": [
-        "neuropeptide-s"
-      ]
-    },
-    {
-      "term": "neuropeptide-s",
-      "slugs": [
-        "neuropeptide-s"
-      ]
-    },
-    {
-      "term": "neuropeptides",
-      "slugs": [
-        "neuropeptide-s"
-      ]
-    },
-    {
-      "term": "adipotide",
-      "slugs": [
-        "adipotide"
-      ]
-    },
-    {
-      "term": "ghrp 6",
-      "slugs": [
-        "ghrp-6"
-      ]
-    },
-    {
-      "term": "ghrp-6",
-      "slugs": [
-        "ghrp-6"
-      ]
-    },
-    {
-      "term": "ghrp6",
-      "slugs": [
-        "ghrp-6"
-      ]
-    },
-    {
-      "term": "mk-677",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "endothelin 1",
-      "slugs": [
-        "endothelin-1"
-      ]
-    },
-    {
-      "term": "endothelin-1",
-      "slugs": [
-        "endothelin-1"
-      ]
-    },
-    {
-      "term": "endothelin1",
-      "slugs": [
-        "endothelin-1"
-      ]
-    },
-    {
-      "term": "thymosin alpha 1",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "thymosin-alpha-1",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "thymosinalpha1",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "plecanatide",
-      "slugs": [
-        "plecanatide"
-      ]
-    },
-    {
-      "term": "bpc-157",
-      "slugs": [
-        "bpc-157"
-      ]
-    },
-    {
-      "term": "somatostatin",
-      "slugs": [
-        "somatostatin"
-      ]
-    },
-    {
-      "term": "glutathione",
-      "slugs": [
-        "glutathione"
-      ]
-    },
-    {
-      "term": "retatrutide",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "follistatin 344",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "follistatin-344",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "follistatin344",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "cgrp",
-      "slugs": [
-        "cgrp"
-      ]
-    },
-    {
-      "term": "acetyl hexapeptide 8",
-      "slugs": [
-        "acetyl-hexapeptide-8"
-      ]
-    },
-    {
-      "term": "acetyl-hexapeptide-8",
-      "slugs": [
-        "acetyl-hexapeptide-8"
-      ]
-    },
-    {
-      "term": "acetylhexapeptide8",
-      "slugs": [
-        "acetyl-hexapeptide-8"
-      ]
-    },
-    {
-      "term": "pramlintide",
-      "slugs": [
-        "pramlintide"
-      ]
-    },
-    {
-      "term": "cjc 1295 dac",
-      "slugs": [
-        "cjc-1295-dac"
-      ]
-    },
-    {
-      "term": "cjc-1295-dac",
-      "slugs": [
-        "cjc-1295-dac"
-      ]
-    },
-    {
-      "term": "cjc1295",
-      "slugs": [
-        "cjc-1295-dac"
-      ]
-    },
-    {
-      "term": "cjc1295dac",
-      "slugs": [
-        "cjc-1295-dac"
-      ]
-    },
-    {
-      "term": "oxytocin",
-      "slugs": [
-        "oxytocin"
-      ]
-    },
-    {
-      "term": "amylin",
-      "slugs": [
-        "amylin"
-      ]
-    },
-    {
-      "term": "leuprolide",
-      "slugs": [
-        "leuprolide"
-      ]
-    },
-    {
-      "term": "prolactin releasing peptide",
-      "slugs": [
-        "prolactin-releasing-peptide"
-      ]
-    },
-    {
-      "term": "prolactin-releasing-peptide",
-      "slugs": [
-        "prolactin-releasing-peptide"
-      ]
-    },
-    {
-      "term": "prolactinreleasingpeptide",
-      "slugs": [
-        "prolactin-releasing-peptide"
-      ]
-    },
-    {
-      "term": "palmitoyl",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "palmitoyltripeptide",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "matrixyl 3000",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "pal ghk",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "pal-ghk",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "palmitoyl ghk",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "palmitoyl tripeptide-1",
-      "slugs": [
-        "palmitoyl-tripeptide-1"
-      ]
-    },
-    {
-      "term": "ibi 362",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "ibi-362",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "ibi362",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "ly 3305677",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "ly-3305677",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "ly3305677",
-      "slugs": [
-        "mazdutide"
-      ]
-    },
-    {
-      "term": "cibinetide",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "phbsp",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "pyroglutamate hbsp",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "pyroglutamate helix b surface peptide",
-      "slugs": [
-        "ara-290"
-      ]
-    },
-    {
-      "term": "cjc 1295 no dac",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "cjc no dac",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "cjc-1295 no dac",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "cjc1295 no dac",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "cjc1295 nodac",
-      "slugs": [
-        "cjc-1295"
-      ]
-    },
-    {
-      "term": "bpc157",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "bpc arginate",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "bpc-157 arginate",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "bpc157 arginate",
-      "slugs": [
-        "bpc-157-arginate"
-      ]
-    },
-    {
-      "term": "thymosinbeta",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "tb-4",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "thymosin beta-4",
-      "slugs": [
-        "thymosin-beta-4"
-      ]
-    },
-    {
-      "term": "5amino",
-      "slugs": [
-        "5-amino-1mq"
-      ]
-    },
-    {
-      "term": "1mq",
-      "slugs": [
-        "5-amino-1mq"
-      ]
-    },
-    {
-      "term": "angiomax",
-      "slugs": [
-        "bivalirudin"
-      ]
-    },
-    {
-      "term": "bydureon",
-      "slugs": [
-        "exenatide"
-      ]
-    },
-    {
-      "term": "byetta",
-      "slugs": [
-        "exenatide"
-      ]
-    },
-    {
-      "term": "exendin-4",
-      "slugs": [
-        "exenatide"
-      ]
-    },
-    {
-      "term": "exendin 4",
-      "slugs": [
-        "exenatide"
-      ]
-    },
-    {
-      "term": "gip glp-1",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "gip/glp-1",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "ly 3298176",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "ly-3298176",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "ly3298176",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "mounjaro",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "zepbound",
-      "slugs": [
-        "tirzepatide"
-      ]
-    },
-    {
-      "term": "lys-pro-val",
-      "slugs": [
-        "kpv"
-      ]
-    },
-    {
-      "term": "lys pro val",
-      "slugs": [
-        "kpv"
-      ]
-    },
-    {
-      "term": "integrilin",
-      "slugs": [
-        "eptifibatide"
-      ]
-    },
-    {
-      "term": "arginine vasopressin",
-      "slugs": [
-        "vasopressin"
-      ]
-    },
-    {
-      "term": "brainnatriuretic",
-      "slugs": [
-        "brain-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "copper peptide",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "copper tripeptide",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "copper tripeptide-1",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "ghk copper",
-      "slugs": [
-        "ghk-cu"
-      ]
-    },
-    {
-      "term": "igf-1ec",
-      "slugs": [
-        "peg-mgf"
-      ]
-    },
-    {
-      "term": "mechano growth factor",
-      "slugs": [
-        "peg-mgf"
-      ]
-    },
-    {
-      "term": "ddavp",
-      "slugs": [
-        "desmopressin"
-      ]
-    },
-    {
-      "term": "longastatin",
-      "slugs": [
-        "octreotide"
-      ]
-    },
-    {
-      "term": "sandostatin",
-      "slugs": [
-        "octreotide"
-      ]
-    },
-    {
-      "term": "sandostatin lar",
-      "slugs": [
-        "octreotide"
-      ]
-    },
-    {
-      "term": "sms 201-995",
-      "slugs": [
-        "octreotide"
-      ]
-    },
-    {
-      "term": "sms-201-995",
-      "slugs": [
-        "octreotide"
-      ]
-    },
-    {
-      "term": "palmitoyl",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "palmitoylpentapeptide",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "matrixyl",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "pal kttks",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "pal-kttks",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "palmitoyl kttks",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "palmitoyl pentapeptide 3",
-      "slugs": [
-        "palmitoyl-pentapeptide-4"
-      ]
-    },
-    {
-      "term": "duratocin",
-      "slugs": [
-        "carbetocin"
-      ]
-    },
-    {
-      "term": "prialt",
-      "slugs": [
-        "ziconotide"
-      ]
-    },
-    {
-      "term": "melanotan",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "melanotan1",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "mt1",
-      "slugs": [
-        "melanotan-i"
-      ]
-    },
-    {
-      "term": "bendavia",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "mtp 131",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "mtp-131",
-      "slugs": [
-        "ss-31"
-      ]
-    },
-    {
-      "term": "bi 456906",
-      "slugs": [
-        "survodutide"
-      ]
-    },
-    {
-      "term": "bi-456906",
-      "slugs": [
-        "survodutide"
-      ]
-    },
-    {
-      "term": "bi456906",
-      "slugs": [
-        "survodutide"
-      ]
-    },
-    {
-      "term": "igf1",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "igf-1 lr3",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "igf1 lr3",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "long r3 igf-1",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "longr3 igf-1",
-      "slugs": [
-        "igf-1-lr3"
-      ]
-    },
-    {
-      "term": "epithalon",
-      "slugs": [
-        "epitalon"
-      ]
-    },
-    {
-      "term": "delta sleep inducing peptide",
-      "slugs": [
-        "dsip"
-      ]
-    },
-    {
-      "term": "delta-sleep inducing peptide",
-      "slugs": [
-        "dsip"
-      ]
-    },
-    {
-      "term": "insulin-like growth factor 1",
-      "slugs": [
-        "igf-1"
-      ]
-    },
-    {
-      "term": "insulin like growth factor 1",
-      "slugs": [
-        "igf-1"
-      ]
-    },
-    {
-      "term": "forteo",
-      "slugs": [
-        "teriparatide"
-      ]
-    },
-    {
-      "term": "linzess",
-      "slugs": [
-        "linaclotide"
-      ]
-    },
-    {
-      "term": "decapeptyl",
-      "slugs": [
-        "triptorelin"
-      ]
-    },
-    {
-      "term": "trelstar",
-      "slugs": [
-        "triptorelin"
-      ]
-    },
-    {
-      "term": "am 833",
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "am-833",
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "am833",
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "nn0174-0833",
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "nn 0174-0833",
-      "slugs": [
-        "cagrilintide"
-      ]
-    },
-    {
-      "term": "cathelicidin",
-      "slugs": [
-        "ll-37"
-      ]
-    },
-    {
-      "term": "hcap18",
-      "slugs": [
-        "ll-37"
-      ]
-    },
-    {
-      "term": "fragment 176-191",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "fragment 176 191",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "hgh fragment 176-191",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "hgh fragment 176 191",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "pralmorelin",
-      "slugs": [
-        "ghrp-2"
-      ]
-    },
-    {
-      "term": "rekynda",
-      "slugs": [
-        "bremelanotide"
-      ]
-    },
-    {
-      "term": "vyleesi",
-      "slugs": [
-        "bremelanotide"
-      ]
-    },
-    {
-      "term": "melanotan",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "melanotan2",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "mt2",
-      "slugs": [
-        "melanotan-ii"
-      ]
-    },
-    {
-      "term": "fortical",
-      "slugs": [
-        "calcitonin"
-      ]
-    },
-    {
-      "term": "miacalcin",
-      "slugs": [
-        "calcitonin"
-      ]
-    },
-    {
-      "term": "salmon calcitonin",
-      "slugs": [
-        "calcitonin"
-      ]
-    },
-    {
-      "term": "hypocretin 1",
-      "slugs": [
-        "orexin-a"
-      ]
-    },
-    {
-      "term": "hypocretin-1",
-      "slugs": [
-        "orexin-a"
-      ]
-    },
-    {
-      "term": "vasoactive intestinal peptide",
-      "slugs": [
-        "vip"
-      ]
-    },
-    {
-      "term": "acth 4-7 pgp",
-      "slugs": [
-        "semax"
-      ]
-    },
-    {
-      "term": "acth(4-7) pgp",
-      "slugs": [
-        "semax"
-      ]
-    },
-    {
-      "term": "neuropeptide",
-      "slugs": [
-        "neuropeptide-y"
-      ]
-    },
-    {
-      "term": "kiss-10",
-      "slugs": [
-        "kisspeptin"
-      ]
-    },
-    {
-      "term": "kisspeptin 10",
-      "slugs": [
-        "kisspeptin"
-      ]
-    },
-    {
-      "term": "kisspeptin-10",
-      "slugs": [
-        "kisspeptin"
-      ]
-    },
-    {
-      "term": "metastin",
-      "slugs": [
-        "kisspeptin"
-      ]
-    },
-    {
-      "term": "tymlos",
-      "slugs": [
-        "abaloparatide"
-      ]
-    },
-    {
-      "term": "scenesse",
-      "slugs": [
-        "afamelanotide"
-      ]
-    },
-    {
-      "term": "natrecor",
-      "slugs": [
-        "nesiritide"
-      ]
-    },
-    {
-      "term": "bim 23014",
-      "slugs": [
-        "lanreotide"
-      ]
-    },
-    {
-      "term": "bim-23014",
-      "slugs": [
-        "lanreotide"
-      ]
-    },
-    {
-      "term": "somatuline",
-      "slugs": [
-        "lanreotide"
-      ]
-    },
-    {
-      "term": "tb 500 peptide",
-      "slugs": [
-        "tb-500"
-      ]
-    },
-    {
-      "term": "nicotinamide adenine dinucleotide",
-      "slugs": [
-        "nad-plus"
-      ]
-    },
-    {
-      "term": "acetyl octapeptide-3",
-      "slugs": [
-        "snap-8"
-      ]
-    },
-    {
-      "term": "angiotensin",
-      "slugs": [
-        "angiotensin-ii"
-      ]
-    },
-    {
-      "term": "ang ii",
-      "slugs": [
-        "angiotensin-ii"
-      ]
-    },
-    {
-      "term": "atrialnatriuretic",
-      "slugs": [
-        "atrial-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "chorionic gonadotropin",
-      "slugs": [
-        "hcg"
-      ]
-    },
-    {
-      "term": "choriogonadotropin",
-      "slugs": [
-        "hcg"
-      ]
-    },
-    {
-      "term": "human chorionic gonadotropin",
-      "slugs": [
-        "hcg"
-      ]
-    },
-    {
-      "term": "novarel",
-      "slugs": [
-        "hcg"
-      ]
-    },
-    {
-      "term": "pregnyl",
-      "slugs": [
-        "hcg"
-      ]
-    },
-    {
-      "term": "egrifta",
-      "slugs": [
-        "tesamorelin"
-      ]
-    },
-    {
-      "term": "egrifta sv",
-      "slugs": [
-        "tesamorelin"
-      ]
-    },
-    {
-      "term": "nn 9536",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "nn-9536",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "nn9536",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "ozempic",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "rybelsus",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "wegovy",
-      "slugs": [
-        "semaglutide"
-      ]
-    },
-    {
-      "term": "thymosinbeta",
-      "slugs": [
-        "thymosin-beta-4-full"
-      ]
-    },
-    {
-      "term": "tb4 full",
-      "slugs": [
-        "thymosin-beta-4-full"
-      ]
-    },
-    {
-      "term": "saxenda",
-      "slugs": [
-        "liraglutide"
-      ]
-    },
-    {
-      "term": "victoza",
-      "slugs": [
-        "liraglutide"
-      ]
-    },
-    {
-      "term": "neuropeptide",
-      "slugs": [
-        "neuropeptide-s"
-      ]
-    },
-    {
-      "term": "ibutamoren",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "l-163,191",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "l163191",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "mk 0677",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "mk-0677",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "oratrope",
-      "slugs": [
-        "mk-677"
-      ]
-    },
-    {
-      "term": "endothelin",
-      "slugs": [
-        "endothelin-1"
-      ]
-    },
-    {
-      "term": "et-1",
-      "slugs": [
-        "endothelin-1"
-      ]
-    },
-    {
-      "term": "thymosinalpha",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "talpha1",
-      "slugs": [
-        "thymosin-alpha-1"
-      ]
-    },
-    {
-      "term": "trulance",
-      "slugs": [
-        "plecanatide"
-      ]
-    },
-    {
-      "term": "l-glutathione",
-      "slugs": [
-        "glutathione"
-      ]
-    },
-    {
-      "term": "reduced glutathione",
-      "slugs": [
-        "glutathione"
-      ]
-    },
-    {
-      "term": "glp 3",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "glp-3",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "glp3",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "ly 3437943",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "ly-3437943",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "ly3437943",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "triple agonist",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "triple g",
-      "slugs": [
-        "retatrutide"
-      ]
-    },
-    {
-      "term": "follistatin",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "fs 344",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "fs-344",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "fs344",
-      "slugs": [
-        "follistatin-344"
-      ]
-    },
-    {
-      "term": "calcitonin gene-related peptide",
-      "slugs": [
-        "cgrp"
       ]
     },
     {
@@ -2222,13 +46,13 @@
       ]
     },
     {
-      "term": "acetylhexapeptide",
+      "term": "acetyl hexapeptide 3",
       "slugs": [
         "acetyl-hexapeptide-8"
       ]
     },
     {
-      "term": "acetyl hexapeptide 3",
+      "term": "acetyl hexapeptide 8",
       "slugs": [
         "acetyl-hexapeptide-8"
       ]
@@ -2252,9 +76,2173 @@
       ]
     },
     {
+      "term": "acetyl octapeptide-3",
+      "slugs": [
+        "snap-8"
+      ]
+    },
+    {
+      "term": "acetyl-hexapeptide-8",
+      "slugs": [
+        "acetyl-hexapeptide-8"
+      ]
+    },
+    {
+      "term": "acetylhexapeptide",
+      "slugs": [
+        "acetyl-hexapeptide-8"
+      ]
+    },
+    {
+      "term": "acetylhexapeptide8",
+      "slugs": [
+        "acetyl-hexapeptide-8"
+      ]
+    },
+    {
+      "term": "acth 4-7 pgp",
+      "slugs": [
+        "semax"
+      ]
+    },
+    {
+      "term": "acth(4-7) pgp",
+      "slugs": [
+        "semax"
+      ]
+    },
+    {
+      "term": "adh",
+      "slugs": [
+        "vasopressin"
+      ]
+    },
+    {
+      "term": "adipotide",
+      "slugs": [
+        "adipotide"
+      ]
+    },
+    {
+      "term": "afamelanotide",
+      "slugs": [
+        "afamelanotide"
+      ]
+    },
+    {
+      "term": "am 833",
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "am-833",
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "am833",
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "amylin",
+      "slugs": [
+        "amylin"
+      ]
+    },
+    {
+      "term": "amylin analog",
+      "route": "peptide:cagrilintide",
+      "sources": [
+        "qa_fix"
+      ],
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "ang ii",
+      "slugs": [
+        "angiotensin-ii"
+      ]
+    },
+    {
+      "term": "angiomax",
+      "slugs": [
+        "bivalirudin"
+      ]
+    },
+    {
+      "term": "angiotensin",
+      "slugs": [
+        "angiotensin-ii"
+      ]
+    },
+    {
+      "term": "angiotensin ii",
+      "slugs": [
+        "angiotensin-ii"
+      ]
+    },
+    {
+      "term": "angiotensin-ii",
+      "slugs": [
+        "angiotensin-ii"
+      ]
+    },
+    {
+      "term": "angiotensinii",
+      "slugs": [
+        "angiotensin-ii"
+      ]
+    },
+    {
+      "term": "anp",
+      "slugs": [
+        "atrial-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "aod",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "aod 9604",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "aod-9604",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "aod9604",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "ara",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "ara 290",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "ara-290",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "ara290",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "arginine vasopressin",
+      "slugs": [
+        "vasopressin"
+      ]
+    },
+    {
       "term": "argireline",
       "slugs": [
         "acetyl-hexapeptide-8"
+      ]
+    },
+    {
+      "term": "atrial natriuretic peptide",
+      "slugs": [
+        "atrial-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "atrial-natriuretic-peptide",
+      "slugs": [
+        "atrial-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "atrialnatriuretic",
+      "slugs": [
+        "atrial-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "atrialnatriureticpeptide",
+      "slugs": [
+        "atrial-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "avp",
+      "slugs": [
+        "vasopressin"
+      ]
+    },
+    {
+      "term": "bendavia",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "bi 456906",
+      "slugs": [
+        "survodutide"
+      ]
+    },
+    {
+      "term": "bi-456906",
+      "slugs": [
+        "survodutide"
+      ]
+    },
+    {
+      "term": "bi456906",
+      "slugs": [
+        "survodutide"
+      ]
+    },
+    {
+      "term": "bim 23014",
+      "slugs": [
+        "lanreotide"
+      ]
+    },
+    {
+      "term": "bim-23014",
+      "slugs": [
+        "lanreotide"
+      ]
+    },
+    {
+      "term": "bivalirudin",
+      "slugs": [
+        "bivalirudin"
+      ]
+    },
+    {
+      "term": "bnp",
+      "slugs": [
+        "brain-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "bpc",
+      "slugs": [
+        "bpc-157"
+      ]
+    },
+    {
+      "term": "bpc 157",
+      "slugs": [
+        "bpc-157"
+      ]
+    },
+    {
+      "term": "bpc 157 arginate",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bpc arginate",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bpc-157",
+      "slugs": [
+        "bpc-157"
+      ]
+    },
+    {
+      "term": "bpc-157 arginate",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bpc-157-arginate",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bpc157",
+      "slugs": [
+        "bpc-157"
+      ]
+    },
+    {
+      "term": "bpc157",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bpc157 arginate",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bpc157arginate",
+      "slugs": [
+        "bpc-157-arginate"
+      ]
+    },
+    {
+      "term": "bradykinin",
+      "slugs": [
+        "bradykinin"
+      ]
+    },
+    {
+      "term": "brain natriuretic peptide",
+      "slugs": [
+        "brain-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "brain-natriuretic-peptide",
+      "slugs": [
+        "brain-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "brainnatriuretic",
+      "slugs": [
+        "brain-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "brainnatriureticpeptide",
+      "slugs": [
+        "brain-natriuretic-peptide"
+      ]
+    },
+    {
+      "term": "bremelanotide",
+      "slugs": [
+        "bremelanotide"
+      ]
+    },
+    {
+      "term": "bydureon",
+      "slugs": [
+        "exenatide"
+      ]
+    },
+    {
+      "term": "byetta",
+      "slugs": [
+        "exenatide"
+      ]
+    },
+    {
+      "term": "cagrilintide",
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "calcitonin",
+      "slugs": [
+        "calcitonin"
+      ]
+    },
+    {
+      "term": "calcitonin gene-related peptide",
+      "slugs": [
+        "cgrp"
+      ]
+    },
+    {
+      "term": "carbetocin",
+      "slugs": [
+        "carbetocin"
+      ]
+    },
+    {
+      "term": "cathelicidin",
+      "slugs": [
+        "ll-37"
+      ]
+    },
+    {
+      "term": "cgrp",
+      "slugs": [
+        "cgrp"
+      ]
+    },
+    {
+      "term": "choriogonadotropin",
+      "slugs": [
+        "hcg"
+      ]
+    },
+    {
+      "term": "chorionic gonadotropin",
+      "slugs": [
+        "hcg"
+      ]
+    },
+    {
+      "term": "cibinetide",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "cjc",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc 1295",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc 1295 dac",
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "cjc 1295 no dac",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc dac",
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "cjc no dac",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc-1295",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc-1295 dac",
+      "route": "peptide:cjc-1295-dac",
+      "sources": [
+        "qa_fix"
+      ],
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "cjc-1295 no dac",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc-1295-dac",
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "cjc1295",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc1295",
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "cjc1295 dac",
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "cjc1295 no dac",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc1295 nodac",
+      "slugs": [
+        "cjc-1295"
+      ]
+    },
+    {
+      "term": "cjc1295dac",
+      "slugs": [
+        "cjc-1295-dac"
+      ]
+    },
+    {
+      "term": "copper peptide",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "copper tripeptide",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "copper tripeptide-1",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "ddavp",
+      "slugs": [
+        "desmopressin"
+      ]
+    },
+    {
+      "term": "decapeptyl",
+      "slugs": [
+        "triptorelin"
+      ]
+    },
+    {
+      "term": "delta sleep inducing peptide",
+      "slugs": [
+        "dsip"
+      ]
+    },
+    {
+      "term": "delta-sleep inducing peptide",
+      "slugs": [
+        "dsip"
+      ]
+    },
+    {
+      "term": "desmopressin",
+      "slugs": [
+        "desmopressin"
+      ]
+    },
+    {
+      "term": "dsip",
+      "slugs": [
+        "dsip"
+      ]
+    },
+    {
+      "term": "dsip peptide",
+      "slugs": [
+        "dsip"
+      ]
+    },
+    {
+      "term": "duratocin",
+      "slugs": [
+        "carbetocin"
+      ]
+    },
+    {
+      "term": "egrifta",
+      "slugs": [
+        "tesamorelin"
+      ]
+    },
+    {
+      "term": "egrifta sv",
+      "slugs": [
+        "tesamorelin"
+      ]
+    },
+    {
+      "term": "elamipretide",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "eligard",
+      "slugs": [
+        "leuprolide"
+      ]
+    },
+    {
+      "term": "endothelin",
+      "slugs": [
+        "endothelin-1"
+      ]
+    },
+    {
+      "term": "endothelin 1",
+      "slugs": [
+        "endothelin-1"
+      ]
+    },
+    {
+      "term": "endothelin-1",
+      "slugs": [
+        "endothelin-1"
+      ]
+    },
+    {
+      "term": "endothelin1",
+      "slugs": [
+        "endothelin-1"
+      ]
+    },
+    {
+      "term": "epitalon",
+      "slugs": [
+        "epitalon"
+      ]
+    },
+    {
+      "term": "epithalon",
+      "slugs": [
+        "epitalon"
+      ]
+    },
+    {
+      "term": "eptifibatide",
+      "slugs": [
+        "eptifibatide"
+      ]
+    },
+    {
+      "term": "et-1",
+      "slugs": [
+        "endothelin-1"
+      ]
+    },
+    {
+      "term": "exenatide",
+      "slugs": [
+        "exenatide"
+      ]
+    },
+    {
+      "term": "exendin 4",
+      "slugs": [
+        "exenatide"
+      ]
+    },
+    {
+      "term": "exendin-4",
+      "slugs": [
+        "exenatide"
+      ]
+    },
+    {
+      "term": "follistatin",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "follistatin 344",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "follistatin-344",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "follistatin344",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "forteo",
+      "slugs": [
+        "teriparatide"
+      ]
+    },
+    {
+      "term": "fortical",
+      "slugs": [
+        "calcitonin"
+      ]
+    },
+    {
+      "term": "fragment 176 191",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "fragment 176-191",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "fs 344",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "fs-344",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "fs344",
+      "slugs": [
+        "follistatin-344"
+      ]
+    },
+    {
+      "term": "ghk",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "ghk copper",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "ghk cu",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "ghk-cu",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "ghkcu",
+      "slugs": [
+        "ghk-cu"
+      ]
+    },
+    {
+      "term": "ghrp 2",
+      "slugs": [
+        "ghrp-2"
+      ]
+    },
+    {
+      "term": "ghrp 6",
+      "slugs": [
+        "ghrp-6"
+      ]
+    },
+    {
+      "term": "ghrp-2",
+      "slugs": [
+        "ghrp-2"
+      ]
+    },
+    {
+      "term": "ghrp-6",
+      "slugs": [
+        "ghrp-6"
+      ]
+    },
+    {
+      "term": "ghrp2",
+      "slugs": [
+        "ghrp-2"
+      ]
+    },
+    {
+      "term": "ghrp6",
+      "slugs": [
+        "ghrp-6"
+      ]
+    },
+    {
+      "term": "gih",
+      "slugs": [
+        "somatostatin"
+      ]
+    },
+    {
+      "term": "gip glp-1",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "gip/glp-1",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "glp 3",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "glp-1",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "glp-1 glucagon dual agonist",
+      "route": "peptide:mazdutide",
+      "sources": [
+        "qa_fix"
+      ],
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "glp-2",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "glp-3",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "glp1",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "glp1 glucagon",
+      "route": "peptide:mazdutide",
+      "sources": [
+        "qa_fix"
+      ],
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "glp2",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "glp3",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "glucagon",
+      "slugs": [
+        "glucagon"
+      ]
+    },
+    {
+      "term": "glutathione",
+      "slugs": [
+        "glutathione"
+      ]
+    },
+    {
+      "term": "gnrh",
+      "slugs": [
+        "gonadorelin"
+      ]
+    },
+    {
+      "term": "gonadorelin",
+      "slugs": [
+        "gonadorelin"
+      ]
+    },
+    {
+      "term": "gsh",
+      "slugs": [
+        "glutathione"
+      ]
+    },
+    {
+      "term": "hbsp",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "hcap18",
+      "slugs": [
+        "ll-37"
+      ]
+    },
+    {
+      "term": "hcg",
+      "slugs": [
+        "hcg"
+      ]
+    },
+    {
+      "term": "hexa",
+      "slugs": [
+        "hexarelin"
+      ]
+    },
+    {
+      "term": "hexarelin",
+      "slugs": [
+        "hexarelin"
+      ]
+    },
+    {
+      "term": "hgh fragment 176 191",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "hgh fragment 176-191",
+      "slugs": [
+        "aod-9604"
+      ]
+    },
+    {
+      "term": "hn",
+      "slugs": [
+        "humanin"
+      ]
+    },
+    {
+      "term": "human chorionic gonadotropin",
+      "slugs": [
+        "hcg"
+      ]
+    },
+    {
+      "term": "humanin",
+      "slugs": [
+        "humanin"
+      ]
+    },
+    {
+      "term": "hypocretin 1",
+      "slugs": [
+        "orexin-a"
+      ]
+    },
+    {
+      "term": "hypocretin-1",
+      "slugs": [
+        "orexin-a"
+      ]
+    },
+    {
+      "term": "iapp",
+      "slugs": [
+        "amylin"
+      ]
+    },
+    {
+      "term": "ibi 362",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "ibi-362",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "ibi362",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "ibutamoren",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "igf 1",
+      "slugs": [
+        "igf-1"
+      ]
+    },
+    {
+      "term": "igf 1 lr3",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "igf-1",
+      "slugs": [
+        "igf-1"
+      ]
+    },
+    {
+      "term": "igf-1 lr3",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "igf-1-lr3",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "igf-1ec",
+      "slugs": [
+        "peg-mgf"
+      ]
+    },
+    {
+      "term": "igf1",
+      "slugs": [
+        "igf-1"
+      ]
+    },
+    {
+      "term": "igf1",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "igf1 lr3",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "igf1lr3",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "insulin like growth factor 1",
+      "slugs": [
+        "igf-1"
+      ]
+    },
+    {
+      "term": "insulin-like growth factor 1",
+      "slugs": [
+        "igf-1"
+      ]
+    },
+    {
+      "term": "integrilin",
+      "slugs": [
+        "eptifibatide"
+      ]
+    },
+    {
+      "term": "ipa",
+      "slugs": [
+        "ipamorelin"
+      ]
+    },
+    {
+      "term": "ipamorelin",
+      "slugs": [
+        "ipamorelin"
+      ]
+    },
+    {
+      "term": "islet amyloid polypeptide",
+      "slugs": [
+        "amylin"
+      ]
+    },
+    {
+      "term": "kiss",
+      "slugs": [
+        "kisspeptin"
+      ]
+    },
+    {
+      "term": "kiss-10",
+      "slugs": [
+        "kisspeptin"
+      ]
+    },
+    {
+      "term": "kisspeptin",
+      "slugs": [
+        "kisspeptin"
+      ]
+    },
+    {
+      "term": "kisspeptin 10",
+      "slugs": [
+        "kisspeptin"
+      ]
+    },
+    {
+      "term": "kisspeptin-10",
+      "slugs": [
+        "kisspeptin"
+      ]
+    },
+    {
+      "term": "kpv",
+      "slugs": [
+        "kpv"
+      ]
+    },
+    {
+      "term": "l-163,191",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "l-glutathione",
+      "slugs": [
+        "glutathione"
+      ]
+    },
+    {
+      "term": "l163191",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "lanreotide",
+      "slugs": [
+        "lanreotide"
+      ]
+    },
+    {
+      "term": "leuprolide",
+      "slugs": [
+        "leuprolide"
+      ]
+    },
+    {
+      "term": "lhrh",
+      "slugs": [
+        "gonadorelin"
+      ]
+    },
+    {
+      "term": "linaclotide",
+      "slugs": [
+        "linaclotide"
+      ]
+    },
+    {
+      "term": "linzess",
+      "slugs": [
+        "linaclotide"
+      ]
+    },
+    {
+      "term": "liraglutide",
+      "slugs": [
+        "liraglutide"
+      ]
+    },
+    {
+      "term": "ll 37",
+      "slugs": [
+        "ll-37"
+      ]
+    },
+    {
+      "term": "ll-37",
+      "slugs": [
+        "ll-37"
+      ]
+    },
+    {
+      "term": "ll37",
+      "slugs": [
+        "ll-37"
+      ]
+    },
+    {
+      "term": "long r3 igf-1",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "longastatin",
+      "slugs": [
+        "octreotide"
+      ]
+    },
+    {
+      "term": "longr3 igf-1",
+      "slugs": [
+        "igf-1-lr3"
+      ]
+    },
+    {
+      "term": "lupron",
+      "slugs": [
+        "leuprolide"
+      ]
+    },
+    {
+      "term": "ly 3298176",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "ly 3305677",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "ly 3437943",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "ly-3298176",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "ly-3305677",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "ly-3437943",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "ly3298176",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "ly3305677",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "ly3437943",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "lys pro val",
+      "slugs": [
+        "kpv"
+      ]
+    },
+    {
+      "term": "lys-pro-val",
+      "slugs": [
+        "kpv"
+      ]
+    },
+    {
+      "term": "matrixyl",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "matrixyl 3000",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "mazdutide",
+      "slugs": [
+        "mazdutide"
+      ]
+    },
+    {
+      "term": "mechano growth factor",
+      "slugs": [
+        "peg-mgf"
+      ]
+    },
+    {
+      "term": "melanotan",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "melanotan",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "melanotan 1",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "melanotan 2",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "melanotan i",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "melanotan ii",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "melanotan-i",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "melanotan-ii",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "melanotan1",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "melanotan2",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "melanotani",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "melanotanii",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "metastin",
+      "slugs": [
+        "kisspeptin"
+      ]
+    },
+    {
+      "term": "mgf",
+      "slugs": [
+        "peg-mgf"
+      ]
+    },
+    {
+      "term": "miacalcin",
+      "slugs": [
+        "calcitonin"
+      ]
+    },
+    {
+      "term": "mk 0677",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "mk 677",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "mk-0677",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "mk-677",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "mk677",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "motilin",
+      "slugs": [
+        "motilin"
+      ]
+    },
+    {
+      "term": "mots c",
+      "slugs": [
+        "mots-c"
+      ]
+    },
+    {
+      "term": "mots-c",
+      "slugs": [
+        "mots-c"
+      ]
+    },
+    {
+      "term": "motsc",
+      "slugs": [
+        "mots-c"
+      ]
+    },
+    {
+      "term": "mounjaro",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "mt1",
+      "slugs": [
+        "melanotan-i"
+      ]
+    },
+    {
+      "term": "mt2",
+      "slugs": [
+        "melanotan-ii"
+      ]
+    },
+    {
+      "term": "mtp 131",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "mtp-131",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "nad plus",
+      "slugs": [
+        "nad-plus"
+      ]
+    },
+    {
+      "term": "nad+",
+      "slugs": [
+        "nad-plus"
+      ]
+    },
+    {
+      "term": "nad-plus",
+      "slugs": [
+        "nad-plus"
+      ]
+    },
+    {
+      "term": "nadplus",
+      "slugs": [
+        "nad-plus"
+      ]
+    },
+    {
+      "term": "natrecor",
+      "slugs": [
+        "nesiritide"
+      ]
+    },
+    {
+      "term": "nesiritide",
+      "slugs": [
+        "nesiritide"
+      ]
+    },
+    {
+      "term": "neuropeptide",
+      "slugs": [
+        "neuropeptide-y"
+      ]
+    },
+    {
+      "term": "neuropeptide",
+      "slugs": [
+        "neuropeptide-s"
+      ]
+    },
+    {
+      "term": "neuropeptide s",
+      "slugs": [
+        "neuropeptide-s"
+      ]
+    },
+    {
+      "term": "neuropeptide y",
+      "slugs": [
+        "neuropeptide-y"
+      ]
+    },
+    {
+      "term": "neuropeptide-s",
+      "slugs": [
+        "neuropeptide-s"
+      ]
+    },
+    {
+      "term": "neuropeptide-y",
+      "slugs": [
+        "neuropeptide-y"
+      ]
+    },
+    {
+      "term": "neuropeptides",
+      "slugs": [
+        "neuropeptide-s"
+      ]
+    },
+    {
+      "term": "neuropeptidey",
+      "slugs": [
+        "neuropeptide-y"
+      ]
+    },
+    {
+      "term": "nicotinamide adenine dinucleotide",
+      "slugs": [
+        "nad-plus"
+      ]
+    },
+    {
+      "term": "nn 0174-0833",
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "nn 9536",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "nn-9536",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "nn0174-0833",
+      "slugs": [
+        "cagrilintide"
+      ]
+    },
+    {
+      "term": "nn9536",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "novarel",
+      "slugs": [
+        "hcg"
+      ]
+    },
+    {
+      "term": "nps",
+      "slugs": [
+        "neuropeptide-s"
+      ]
+    },
+    {
+      "term": "npy",
+      "slugs": [
+        "neuropeptide-y"
+      ]
+    },
+    {
+      "term": "octreotide",
+      "slugs": [
+        "octreotide"
+      ]
+    },
+    {
+      "term": "oratrope",
+      "slugs": [
+        "mk-677"
+      ]
+    },
+    {
+      "term": "orexin a",
+      "slugs": [
+        "orexin-a"
+      ]
+    },
+    {
+      "term": "orexin-a",
+      "slugs": [
+        "orexin-a"
+      ]
+    },
+    {
+      "term": "orexina",
+      "slugs": [
+        "orexin-a"
+      ]
+    },
+    {
+      "term": "oxytocin",
+      "slugs": [
+        "oxytocin"
+      ]
+    },
+    {
+      "term": "ozempic",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "pal ghk",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "pal kttks",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "pal-ghk",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "pal-kttks",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyl",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "palmitoyl",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyl ghk",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "palmitoyl kttks",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyl pentapeptide 3",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyl pentapeptide 4",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyl tripeptide 1",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "palmitoyl tripeptide-1",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "palmitoyl-pentapeptide-4",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyl-tripeptide-1",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "palmitoylpentapeptide",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoylpentapeptide4",
+      "slugs": [
+        "palmitoyl-pentapeptide-4"
+      ]
+    },
+    {
+      "term": "palmitoyltripeptide",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "palmitoyltripeptide1",
+      "slugs": [
+        "palmitoyl-tripeptide-1"
+      ]
+    },
+    {
+      "term": "peg mgf",
+      "slugs": [
+        "peg-mgf"
+      ]
+    },
+    {
+      "term": "peg-mgf",
+      "slugs": [
+        "peg-mgf"
+      ]
+    },
+    {
+      "term": "pegmgf",
+      "slugs": [
+        "peg-mgf"
+      ]
+    },
+    {
+      "term": "pentagastrin",
+      "slugs": [
+        "pentagastrin"
+      ]
+    },
+    {
+      "term": "phbsp",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "pitocin",
+      "slugs": [
+        "oxytocin"
+      ]
+    },
+    {
+      "term": "plecanatide",
+      "slugs": [
+        "plecanatide"
+      ]
+    },
+    {
+      "term": "pralmorelin",
+      "slugs": [
+        "ghrp-2"
+      ]
+    },
+    {
+      "term": "pramlintide",
+      "slugs": [
+        "pramlintide"
+      ]
+    },
+    {
+      "term": "pregnyl",
+      "slugs": [
+        "hcg"
+      ]
+    },
+    {
+      "term": "prialt",
+      "slugs": [
+        "ziconotide"
+      ]
+    },
+    {
+      "term": "prolactin",
+      "slugs": [
+        "prolactin-releasing-peptide"
+      ]
+    },
+    {
+      "term": "prolactin releasing peptide",
+      "slugs": [
+        "prolactin-releasing-peptide"
+      ]
+    },
+    {
+      "term": "prolactin-releasing-peptide",
+      "slugs": [
+        "prolactin-releasing-peptide"
+      ]
+    },
+    {
+      "term": "prolactinreleasing",
+      "slugs": [
+        "prolactin-releasing-peptide"
+      ]
+    },
+    {
+      "term": "prolactinreleasingpeptide",
+      "slugs": [
+        "prolactin-releasing-peptide"
+      ]
+    },
+    {
+      "term": "prp",
+      "slugs": [
+        "prolactin-releasing-peptide"
+      ]
+    },
+    {
+      "term": "pt 141",
+      "slugs": [
+        "bremelanotide"
+      ]
+    },
+    {
+      "term": "pt-141",
+      "slugs": [
+        "bremelanotide"
+      ]
+    },
+    {
+      "term": "pt141",
+      "slugs": [
+        "bremelanotide"
+      ]
+    },
+    {
+      "term": "pyroglutamate hbsp",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "pyroglutamate helix b surface peptide",
+      "slugs": [
+        "ara-290"
+      ]
+    },
+    {
+      "term": "quad agonist",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "quad-agonist",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "reduced glutathione",
+      "slugs": [
+        "glutathione"
+      ]
+    },
+    {
+      "term": "rekynda",
+      "slugs": [
+        "bremelanotide"
+      ]
+    },
+    {
+      "term": "reta",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "retatrutide",
+      "slugs": [
+        "retatrutide"
+      ]
+    },
+    {
+      "term": "rybelsus",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "salmon calcitonin",
+      "slugs": [
+        "calcitonin"
+      ]
+    },
+    {
+      "term": "sandostatin",
+      "slugs": [
+        "octreotide"
+      ]
+    },
+    {
+      "term": "sandostatin lar",
+      "slugs": [
+        "octreotide"
+      ]
+    },
+    {
+      "term": "saxenda",
+      "slugs": [
+        "liraglutide"
+      ]
+    },
+    {
+      "term": "scenesse",
+      "slugs": [
+        "afamelanotide"
+      ]
+    },
+    {
+      "term": "secretin",
+      "slugs": [
+        "secretin"
+      ]
+    },
+    {
+      "term": "selank",
+      "slugs": [
+        "selank"
+      ]
+    },
+    {
+      "term": "sema",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "semaglutide",
+      "slugs": [
+        "semaglutide"
+      ]
+    },
+    {
+      "term": "semax",
+      "slugs": [
+        "semax"
+      ]
+    },
+    {
+      "term": "sermorelin",
+      "slugs": [
+        "sermorelin"
+      ]
+    },
+    {
+      "term": "shlp",
+      "slugs": [
+        "shlp-2"
+      ]
+    },
+    {
+      "term": "shlp 2",
+      "slugs": [
+        "shlp-2"
+      ]
+    },
+    {
+      "term": "shlp-2",
+      "slugs": [
+        "shlp-2"
+      ]
+    },
+    {
+      "term": "shlp2",
+      "slugs": [
+        "shlp-2"
+      ]
+    },
+    {
+      "term": "sms 201-995",
+      "slugs": [
+        "octreotide"
+      ]
+    },
+    {
+      "term": "sms-201-995",
+      "slugs": [
+        "octreotide"
+      ]
+    },
+    {
+      "term": "snap",
+      "slugs": [
+        "snap-8"
+      ]
+    },
+    {
+      "term": "snap 8",
+      "slugs": [
+        "snap-8"
+      ]
+    },
+    {
+      "term": "snap-8",
+      "slugs": [
+        "snap-8"
+      ]
+    },
+    {
+      "term": "snap8",
+      "slugs": [
+        "snap-8"
+      ]
+    },
+    {
+      "term": "somatostatin",
+      "slugs": [
+        "somatostatin"
+      ]
+    },
+    {
+      "term": "somatuline",
+      "slugs": [
+        "lanreotide"
+      ]
+    },
+    {
+      "term": "ss 31",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "ss-31",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "ss31",
+      "slugs": [
+        "ss-31"
+      ]
+    },
+    {
+      "term": "substance p",
+      "slugs": [
+        "substance-p"
+      ]
+    },
+    {
+      "term": "substance-p",
+      "slugs": [
+        "substance-p"
+      ]
+    },
+    {
+      "term": "substancep",
+      "slugs": [
+        "substance-p"
+      ]
+    },
+    {
+      "term": "survodutide",
+      "slugs": [
+        "survodutide"
       ]
     },
     {
@@ -2270,203 +2258,299 @@
       ]
     },
     {
-      "term": "cjc dac",
+      "term": "ta1",
       "slugs": [
-        "cjc-1295-dac"
+        "thymosin-alpha-1"
       ]
     },
     {
-      "term": "cjc1295 dac",
+      "term": "talpha1",
       "slugs": [
-        "cjc-1295-dac"
+        "thymosin-alpha-1"
       ]
     },
     {
-      "term": "pitocin",
+      "term": "tb",
       "slugs": [
-        "oxytocin"
+        "tb-500"
       ]
     },
     {
-      "term": "islet amyloid polypeptide",
+      "term": "tb 500",
       "slugs": [
-        "amylin"
+        "tb-500"
       ]
     },
     {
-      "term": "eligard",
+      "term": "tb 500 peptide",
       "slugs": [
-        "leuprolide"
+        "tb-500"
       ]
     },
     {
-      "term": "lupron",
+      "term": "tb-4",
       "slugs": [
-        "leuprolide"
+        "thymosin-beta-4"
       ]
     },
     {
-      "term": "prolactin",
+      "term": "tb-500",
       "slugs": [
-        "prolactin-releasing-peptide"
+        "tb-500"
       ]
     },
     {
-      "term": "prolactinreleasing",
+      "term": "tb4",
       "slugs": [
-        "prolactin-releasing-peptide"
+        "thymosin-beta-4"
       ]
     },
     {
-      "term": "reta",
+      "term": "tb4 full",
+      "slugs": [
+        "thymosin-beta-4-full"
+      ]
+    },
+    {
+      "term": "tb500",
+      "slugs": [
+        "tb-500"
+      ]
+    },
+    {
+      "term": "teriparatide",
+      "slugs": [
+        "teriparatide"
+      ]
+    },
+    {
+      "term": "tesamorelin",
+      "slugs": [
+        "tesamorelin"
+      ]
+    },
+    {
+      "term": "thymosin a1",
+      "slugs": [
+        "thymosin-alpha-1"
+      ]
+    },
+    {
+      "term": "thymosin alpha 1",
+      "slugs": [
+        "thymosin-alpha-1"
+      ]
+    },
+    {
+      "term": "thymosin b4",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "thymosin beta 4",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "thymosin beta 4 full",
+      "slugs": [
+        "thymosin-beta-4-full"
+      ]
+    },
+    {
+      "term": "thymosin beta-4",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "thymosin-alpha-1",
+      "slugs": [
+        "thymosin-alpha-1"
+      ]
+    },
+    {
+      "term": "thymosin-beta-4",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "thymosin-beta-4-full",
+      "slugs": [
+        "thymosin-beta-4-full"
+      ]
+    },
+    {
+      "term": "thymosinalpha",
+      "slugs": [
+        "thymosin-alpha-1"
+      ]
+    },
+    {
+      "term": "thymosinalpha1",
+      "slugs": [
+        "thymosin-alpha-1"
+      ]
+    },
+    {
+      "term": "thymosinbeta",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "thymosinbeta",
+      "slugs": [
+        "thymosin-beta-4-full"
+      ]
+    },
+    {
+      "term": "thymosinbeta4",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "thymosinbeta4full",
+      "slugs": [
+        "thymosin-beta-4-full"
+      ]
+    },
+    {
+      "term": "thymulin",
+      "slugs": [
+        "thymulin"
+      ]
+    },
+    {
+      "term": "tirz",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "tirzepatide",
+      "slugs": [
+        "tirzepatide"
+      ]
+    },
+    {
+      "term": "trelstar",
+      "slugs": [
+        "triptorelin"
+      ]
+    },
+    {
+      "term": "triple agonist",
       "slugs": [
         "retatrutide"
       ]
     },
     {
-      "term": "ipa",
+      "term": "triple g",
       "slugs": [
-        "ipamorelin"
+        "retatrutide"
       ]
     },
     {
-      "term": "ara",
+      "term": "triptorelin",
       "slugs": [
-        "ara-290"
+        "triptorelin"
       ]
     },
     {
-      "term": "hbsp",
+      "term": "trulance",
       "slugs": [
-        "ara-290"
+        "plecanatide"
       ]
     },
     {
-      "term": "gnrh",
+      "term": "trz",
       "slugs": [
-        "gonadorelin"
+        "tirzepatide"
       ]
     },
     {
-      "term": "lhrh",
+      "term": "tymlos",
       "slugs": [
-        "gonadorelin"
+        "abaloparatide"
       ]
     },
     {
-      "term": "adh",
+      "term": "tβ4",
+      "slugs": [
+        "thymosin-beta-4"
+      ]
+    },
+    {
+      "term": "vasoactive intestinal peptide",
+      "slugs": [
+        "vip"
+      ]
+    },
+    {
+      "term": "vasopressin",
       "slugs": [
         "vasopressin"
       ]
     },
     {
-      "term": "avp",
+      "term": "victoza",
       "slugs": [
-        "vasopressin"
+        "liraglutide"
       ]
     },
     {
-      "term": "bnp",
+      "term": "vip",
       "slugs": [
-        "brain-natriuretic-peptide"
+        "vip"
       ]
     },
     {
-      "term": "shlp",
+      "term": "vyleesi",
       "slugs": [
-        "shlp-2"
+        "bremelanotide"
       ]
     },
     {
-      "term": "ghk",
+      "term": "wegovy",
       "slugs": [
-        "ghk-cu"
+        "semaglutide"
       ]
     },
     {
-      "term": "mgf",
+      "term": "zepbound",
       "slugs": [
-        "peg-mgf"
+        "tirzepatide"
       ]
     },
     {
-      "term": "hexa",
+      "term": "ziconotide",
       "slugs": [
-        "hexarelin"
-      ]
-    },
-    {
-      "term": "aod",
-      "slugs": [
-        "aod-9604"
-      ]
-    },
-    {
-      "term": "npy",
-      "slugs": [
-        "neuropeptide-y"
-      ]
-    },
-    {
-      "term": "kiss",
-      "slugs": [
-        "kisspeptin"
-      ]
-    },
-    {
-      "term": "hn",
-      "slugs": [
-        "humanin"
-      ]
-    },
-    {
-      "term": "snap",
-      "slugs": [
-        "snap-8"
-      ]
-    },
-    {
-      "term": "anp",
-      "slugs": [
-        "atrial-natriuretic-peptide"
-      ]
-    },
-    {
-      "term": "nps",
-      "slugs": [
-        "neuropeptide-s"
-      ]
-    },
-    {
-      "term": "gih",
-      "slugs": [
-        "somatostatin"
-      ]
-    },
-    {
-      "term": "gsh",
-      "slugs": [
-        "glutathione"
-      ]
-    },
-    {
-      "term": "iapp",
-      "slugs": [
-        "amylin"
-      ]
-    },
-    {
-      "term": "prp",
-      "slugs": [
-        "prolactin-releasing-peptide"
+        "ziconotide"
       ]
     }
   ],
   "category_synonyms": [
     {
-      "term": "weight loss",
+      "term": "aging",
       "taxonomy_keys": [
-        "metabolic_weight"
+        "mitochondrial_longevity"
+      ]
+    },
+    {
+      "term": "cosmetic",
+      "taxonomy_keys": [
+        "cosmetic_topical"
+      ]
+    },
+    {
+      "term": "erectile",
+      "taxonomy_keys": [
+        "sexual_health_reproduction"
       ]
     },
     {
@@ -2476,31 +2560,7 @@
       ]
     },
     {
-      "term": "metabolic",
-      "taxonomy_keys": [
-        "metabolic_weight"
-      ]
-    },
-    {
-      "term": "recovery",
-      "taxonomy_keys": [
-        "regenerative_repair"
-      ]
-    },
-    {
       "term": "healing",
-      "taxonomy_keys": [
-        "regenerative_repair"
-      ]
-    },
-    {
-      "term": "injury",
-      "taxonomy_keys": [
-        "regenerative_repair"
-      ]
-    },
-    {
-      "term": "repair",
       "taxonomy_keys": [
         "regenerative_repair"
       ]
@@ -2524,6 +2584,72 @@
       ]
     },
     {
+      "term": "injury",
+      "taxonomy_keys": [
+        "regenerative_repair"
+      ]
+    },
+    {
+      "term": "libido",
+      "taxonomy_keys": [
+        "sexual_health_reproduction"
+      ]
+    },
+    {
+      "term": "longevity",
+      "taxonomy_keys": [
+        "mitochondrial_longevity"
+      ]
+    },
+    {
+      "term": "metabolic",
+      "taxonomy_keys": [
+        "metabolic_weight"
+      ]
+    },
+    {
+      "term": "mitochondria",
+      "taxonomy_keys": [
+        "mitochondrial_longevity"
+      ]
+    },
+    {
+      "term": "muscle",
+      "taxonomy_keys": [
+        "muscle_performance"
+      ]
+    },
+    {
+      "term": "performance",
+      "taxonomy_keys": [
+        "muscle_performance"
+      ]
+    },
+    {
+      "term": "recovery",
+      "taxonomy_keys": [
+        "regenerative_repair"
+      ]
+    },
+    {
+      "term": "repair",
+      "taxonomy_keys": [
+        "regenerative_repair"
+      ]
+    },
+    {
+      "term": "sexual",
+      "taxonomy_keys": [
+        "sexual_health_reproduction"
+      ]
+    },
+    {
+      "term": "skin",
+      "taxonomy_keys": [
+        "cosmetic_topical"
+      ]
+    },
+    {
       "term": "sleep",
       "taxonomy_keys": [
         "sleep_circadian"
@@ -2536,33 +2662,15 @@
       ]
     },
     {
-      "term": "longevity",
+      "term": "training",
       "taxonomy_keys": [
-        "mitochondrial_longevity"
+        "muscle_performance"
       ]
     },
     {
-      "term": "mitochondria",
+      "term": "weight loss",
       "taxonomy_keys": [
-        "mitochondrial_longevity"
-      ]
-    },
-    {
-      "term": "aging",
-      "taxonomy_keys": [
-        "mitochondrial_longevity"
-      ]
-    },
-    {
-      "term": "skin",
-      "taxonomy_keys": [
-        "cosmetic_topical"
-      ]
-    },
-    {
-      "term": "cosmetic",
-      "taxonomy_keys": [
-        "cosmetic_topical"
+        "metabolic_weight"
       ]
     },
     {
@@ -2570,59 +2678,11 @@
       "taxonomy_keys": [
         "cosmetic_topical"
       ]
-    },
-    {
-      "term": "libido",
-      "taxonomy_keys": [
-        "sexual_health_reproduction"
-      ]
-    },
-    {
-      "term": "sexual",
-      "taxonomy_keys": [
-        "sexual_health_reproduction"
-      ]
-    },
-    {
-      "term": "erectile",
-      "taxonomy_keys": [
-        "sexual_health_reproduction"
-      ]
-    },
-    {
-      "term": "performance",
-      "taxonomy_keys": [
-        "muscle_performance"
-      ]
-    },
-    {
-      "term": "muscle",
-      "taxonomy_keys": [
-        "muscle_performance"
-      ]
-    },
-    {
-      "term": "training",
-      "taxonomy_keys": [
-        "muscle_performance"
-      ]
     }
   ],
   "blend_synonyms": [
     {
-      "term": "glow",
-      "blend_slugs": [
-        "glow"
-      ]
-    },
-    {
-      "term": "klow",
-      "blend_slugs": [
-        "klow"
-      ]
-    },
-    {
-      "term": "bpc/tb",
+      "term": "bpc tb",
       "blend_slugs": [
         "bpc-157-tb-500"
       ]
@@ -2634,31 +2694,13 @@
       ]
     },
     {
-      "term": "bpc tb",
+      "term": "bpc/tb",
       "blend_slugs": [
         "bpc-157-tb-500"
       ]
     },
     {
-      "term": "cjc/ipa",
-      "blend_slugs": [
-        "cjc-ipamorelin"
-      ]
-    },
-    {
-      "term": "cjc+ipa",
-      "blend_slugs": [
-        "cjc-ipamorelin"
-      ]
-    },
-    {
-      "term": "cjc ipa",
-      "blend_slugs": [
-        "cjc-ipamorelin"
-      ]
-    },
-    {
-      "term": "cagri/sema",
+      "term": "cagri sema",
       "blend_slugs": [
         "cagri-sema"
       ]
@@ -2670,27 +2712,63 @@
       ]
     },
     {
-      "term": "cagri sema",
+      "term": "cagri-sema",
       "blend_slugs": [
         "cagri-sema"
       ]
     },
     {
-      "term": "glp3 reta",
+      "term": "cagri/sema",
       "blend_slugs": [
-        "glp3-reta"
+        "cagri-sema"
       ]
     },
     {
-      "term": "glp-3 reta",
+      "term": "cjc ipa",
       "blend_slugs": [
-        "glp3-reta"
+        "cjc-ipamorelin"
       ]
     },
     {
-      "term": "glp2 trz",
+      "term": "cjc ipamorelin",
       "blend_slugs": [
-        "glp2-trz"
+        "cjc-ipamorelin"
+      ]
+    },
+    {
+      "term": "cjc+ipa",
+      "blend_slugs": [
+        "cjc-ipamorelin"
+      ]
+    },
+    {
+      "term": "cjc-ipa",
+      "blend_slugs": [
+        "cjc-ipamorelin"
+      ]
+    },
+    {
+      "term": "cjc/ipa",
+      "blend_slugs": [
+        "cjc-ipamorelin"
+      ]
+    },
+    {
+      "term": "g l o w",
+      "blend_slugs": [
+        "glow"
+      ]
+    },
+    {
+      "term": "glow",
+      "blend_slugs": [
+        "glow"
+      ]
+    },
+    {
+      "term": "glp-1 sma",
+      "blend_slugs": [
+        "glp1-sma"
       ]
     },
     {
@@ -2700,15 +2778,39 @@
       ]
     },
     {
+      "term": "glp-3 reta",
+      "blend_slugs": [
+        "glp3-reta"
+      ]
+    },
+    {
       "term": "glp1 sma",
       "blend_slugs": [
         "glp1-sma"
       ]
     },
     {
-      "term": "glp-1 sma",
+      "term": "glp2 trz",
       "blend_slugs": [
-        "glp1-sma"
+        "glp2-trz"
+      ]
+    },
+    {
+      "term": "glp3 reta",
+      "blend_slugs": [
+        "glp3-reta"
+      ]
+    },
+    {
+      "term": "k low",
+      "blend_slugs": [
+        "klow"
+      ]
+    },
+    {
+      "term": "klow",
+      "blend_slugs": [
+        "klow"
       ]
     }
   ]
