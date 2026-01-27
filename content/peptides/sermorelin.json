@@ -126,7 +126,9 @@
   },
   "canonical_name": "Sermorelin",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "endocrine-axis-modulation-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

@@ -116,7 +116,9 @@
     "slug": "triptorelin"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "endocrine-axis-modulation-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

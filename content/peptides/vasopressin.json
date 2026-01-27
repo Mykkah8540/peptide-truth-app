@@ -122,7 +122,8 @@
   "interactions": {
     "drug_classes": [
       "neuropeptide-cns-context",
-      "cardiovascular-physiology-context"
+      "cardiovascular-physiology-context",
+      "endocrine-axis-modulation-context"
     ],
     "supplement_classes": [],
     "peptides": []
