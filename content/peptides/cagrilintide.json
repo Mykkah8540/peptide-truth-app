@@ -140,11 +140,30 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Cagrilintide is discussed for appetite control and weight-loss support, often alongside GLP-1 medications. It can strongly affect appetite and GI tolerance, and misuse risks are real.",
+    "benefits": [
+      "appetite control and reduced food noise discussions",
+      "weight-loss support discussions, often in combo with GLP-1s",
+      "sometimes discussed for “portion control” and adherence to calorie targets"
+    ],
+    "side_effects_common": [
+      "nausea",
+      "vomiting or stomach upset",
+      "constipation or diarrhea",
+      "reduced appetite that can overshoot into under-eating"
+    ],
+    "side_effects_serious": [
+      "severe persistent vomiting or dehydration",
+      "severe abdominal pain (urgent evaluation)",
+      "fainting or collapse from poor intake or dehydration"
+    ],
+    "who_should_be_cautious": [
+      "people with a history of pancreatitis or severe GI disease",
+      "people with eating disorder history or extreme appetite suppression risk",
+      "people on diabetes medications (hypoglycemia risk context when combined)",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high-consequence metabolic manipulation plus limited evidence)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

@@ -251,31 +251,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "bottom_line": "Melanotan II is discussed for tanning and melanocortin-related effects, including libido-related discussions in some communities. Real-world risk is driven by unregulated sourcing, unpredictable pigmentation changes, and systemic side effects.",
+    "bottom_line": "Melanotan II is used for tanning and is also known for libido-related effects. Risks are real: nausea is common, pigmentation changes can be lasting, and sourcing/quality problems are widespread.",
     "benefits": [
-      "Tanning and pigmentation interest in appearance-focused communities",
-      "Cosmetic skin tone interest for photos and events",
-      "Libido-related interest in some user communities"
+      "increased tanning response and reduced sunburn tendency discussions",
+      "libido effects are commonly reported (unpredictable)",
+      "sometimes discussed for appetite suppression (variable)"
     ],
     "side_effects_common": [
-      "Nausea",
-      "Flushing",
-      "Headache",
-      "Reduced appetite",
-      "Darkening of existing freckles or moles"
+      "nausea",
+      "flushing",
+      "yawning or fatigue",
+      "increased freckles or darkening of existing moles"
     ],
     "side_effects_serious": [
-      "Allergic reaction with hives, facial swelling, or trouble breathing",
-      "New or changing mole with rapid change in size, shape, or color",
-      "Severe dizziness, fainting, or chest pain"
+      "rapidly changing mole or new irregular pigmented lesion",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "severe blood pressure symptoms (fainting, collapse)"
     ],
     "who_should_be_cautious": [
-      "Personal history of melanoma or high-risk skin cancer history",
-      "Multiple atypical moles or strong family history of melanoma",
-      "Pregnancy or breastfeeding",
-      "Children and adolescents",
-      "People with significant cardiovascular disease"
-    ]
+      "people with many moles, atypical moles, or melanoma history (pigment-risk context)",
+      "people with uncontrolled hypertension or cardiovascular disease",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic-driven use with meaningful long-term uncertainty)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

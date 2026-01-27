@@ -187,11 +187,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "MOTS-c is discussed for metabolic health and exercise performance themes, often framed as “mitochondrial support.” Human evidence is limited, so expectations should be conservative.",
+    "benefits": [
+      "metabolic health curiosity (early-stage evidence)",
+      "exercise tolerance and recovery discussions (mixed, often overstated)",
+      "sometimes discussed for insulin sensitivity themes (uncertain outcomes)"
+    ],
+    "side_effects_common": [
+      "headache",
+      "nausea",
+      "fatigue"
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "chest pain, fainting, or severe shortness of breath"
+    ],
+    "who_should_be_cautious": [
+      "people with diabetes or unstable blood sugar control",
+      "people with significant cardiovascular disease",
+      "pregnant or breastfeeding individuals",
+      "adolescents (limited human evidence and endocrine/metabolic uncertainty)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

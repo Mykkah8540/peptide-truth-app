@@ -152,26 +152,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Acetyl hexapeptide-8 (often marketed as Argireline) is used topically for cosmetic “expression line” smoothing. Effects are subtle and depend on formulation and consistent use.",
+    "bottom_line": "Acetyl hexapeptide-8 is a cosmetic peptide best known as “Argireline,” used for the look of expression lines. It is primarily a topical ingredient; systemic use is higher-risk with little upside.",
     "benefits": [
-      "cosmetic interest for mild, temporary smoothing of expression lines",
-      "used in skincare routines as a non-procedure option (anecdotal)",
-      "often paired with hydration-focused skincare for appearance goals"
+      "cosmetic interest for fine lines and skin texture (topical use common)",
+      "often used in skincare routines as a “Botox-like” cosmetic claim (marketing heavy)",
+      "best framed as appearance-focused, not health-focused"
     ],
     "side_effects_common": [
-      "skin irritation or redness, especially on sensitive skin",
-      "dryness or mild peeling depending on the product base",
-      "eye-area irritation if applied too close to eyes"
+      "skin irritation or redness (topical)",
+      "itching or rash",
+      "dryness or sensitivity"
     ],
     "side_effects_serious": [
-      "severe rash or swelling suggesting allergic contact dermatitis",
-      "eye pain or vision changes after accidental exposure to eyes"
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "widespread rash or swelling that escalates quickly"
     ],
     "who_should_be_cautious": [
-      "people with a history of severe skin allergies or eczema flares",
-      "people using strong actives (retinoids, acids) who frequently react",
-      "pregnant or breastfeeding individuals (safety data is limited)",
-      "adolescents (cosmetic use is generally low priority; data limited)"
+      "people with very reactive skin or severe dermatitis history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic use still has limited long-term data)",
+      "anyone combining many strong skincare actives (irritation stacking)"
     ],
     "schema_version": "practical_block_v1"
   }
