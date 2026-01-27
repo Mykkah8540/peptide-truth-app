@@ -122,28 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Orexin-A (hypocretin-1) is a brain peptide central to wakefulness and arousal regulation. Human use outside research is high-risk; sleep, anxiety, and cardiovascular symptoms can be meaningful.",
+    "bottom_line": "Orexin-A is a neuropeptide central to wakefulness and arousal. It is not a wellness peptide; messing with orexin signaling can meaningfully affect sleep, anxiety, and cardiovascular tone.",
     "benefits": [
-      "physiology relevance in wakefulness and sleep-wake stability (narcolepsy biology)",
-      "research relevance in arousal, motivation, and appetite-related circuitry"
+      "physiology relevance in wakefulness and narcolepsy biology",
+      "research relevance in appetite, arousal, and autonomic regulation",
+      "sometimes discussed for daytime alertness themes (non-clinical context is risky)"
     ],
     "side_effects_common": [
-      "insomnia or sleep disruption",
-      "restlessness",
+      "insomnia or sleep fragmentation",
+      "anxiety or jitteriness",
       "headache",
-      "nausea"
+      "increased heart rate or palpitations"
     ],
     "side_effects_serious": [
-      "severe anxiety, agitation, or panic symptoms",
+      "severe agitation, panic, or confusion",
       "chest pain, fainting, or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with insomnia, panic disorder, or severe anxiety history",
-      "people with cardiovascular disease or uncontrolled blood pressure",
-      "people taking stimulants or other CNS-active prescriptions",
+      "people with anxiety disorders or bipolar disorder (arousal pathway sensitivity)",
+      "people with cardiovascular disease or arrhythmia history",
+      "people with severe sleep disorders under medical management",
       "pregnant or breastfeeding individuals",
-      "adolescents (neurodevelopment uncertainty plus limited human evidence)"
+      "adolescents (neurodevelopment risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

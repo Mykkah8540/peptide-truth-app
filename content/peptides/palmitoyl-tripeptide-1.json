@@ -121,11 +121,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Palmitoyl tripeptide-1 is a cosmetic peptide used topically for skin appearance and barrier support, often associated with “Matrixyl” blends. It’s mainly a skincare ingredient; systemic use is higher-risk with little upside.",
+    "benefits": [
+      "cosmetic interest for fine lines and skin texture (topical use common)",
+      "often included in multi-peptide skincare formulas (effects depend on formulation)",
+      "best framed as appearance-focused, not health-focused"
+    ],
+    "side_effects_common": [
+      "skin irritation or redness (topical)",
+      "itching or rash",
+      "dryness or sensitivity"
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "widespread rash or swelling that escalates quickly"
+    ],
+    "who_should_be_cautious": [
+      "people with very reactive skin or severe dermatitis history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic use still has limited long-term data)",
+      "anyone combining many strong skincare actives (irritation stacking)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

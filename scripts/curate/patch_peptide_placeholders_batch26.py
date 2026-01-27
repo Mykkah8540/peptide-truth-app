@@ -9,52 +9,26 @@ ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 
 BATCH = [
-  "nesiritide",
-  "neuropeptide-s",
-  "neuropeptide-y",
-  "octreotide",
   "orexin-a",
+  "palmitoyl-pentapeptide-4",
+  "palmitoyl-tripeptide-1",
+  "peg-mgf",
+  "pentagastrin",
 ]
 
 PATCH = {
-  "nesiritide": {
-    "bottom_line": "Nesiritide is a prescription form of BNP used in acute heart failure care in monitored settings. It is not a wellness peptide; blood pressure and kidney effects can be dangerous without supervision.",
+  "orexin-a": {
+    "bottom_line": "Orexin-A is a neuropeptide central to wakefulness and arousal. It is not a wellness peptide; messing with orexin signaling can meaningfully affect sleep, anxiety, and cardiovascular tone.",
     "benefits": [
-      "clinical relevance in acute decompensated heart failure contexts (monitored care)",
-      "physiology relevance in natriuresis and vasodilation pathways",
+      "physiology relevance in wakefulness and narcolepsy biology",
+      "research relevance in appetite, arousal, and autonomic regulation",
+      "sometimes discussed for daytime alertness themes (non-clinical context is risky)",
     ],
     "side_effects_common": [
-      "low blood pressure symptoms (lightheadedness, dizziness)",
+      "insomnia or sleep fragmentation",
+      "anxiety or jitteriness",
       "headache",
-      "nausea",
-    ],
-    "side_effects_serious": [
-      "fainting or collapse from hypotension",
-      "dangerous low blood pressure symptoms (confusion, severe weakness)",
-      "worsening kidney function signs (reduced urination, swelling, confusion)",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-    ],
-    "who_should_be_cautious": [
-      "anyone not under direct medical supervision for acute heart failure care",
-      "people with low blood pressure or on vasodilators/blood pressure meds",
-      "people with kidney disease or unstable fluid balance",
-      "pregnant or breastfeeding individuals",
-      "adolescents (high consequence plus inappropriate for non-clinical use)",
-    ],
-  },
-
-  "neuropeptide-s": {
-    "bottom_line": "Neuropeptide S is a brain signaling peptide studied for arousal, anxiety-related pathways, and sleep-wake regulation. Human evidence is limited; effects are unpredictable and CNS-active risk is real.",
-    "benefits": [
-      "research relevance in arousal and anxiety-related circuitry",
-      "sleep-wake regulation interest (evidence limited, often overstated)",
-      "sometimes discussed for “alert calm” themes (anecdotal)",
-    ],
-    "side_effects_common": [
-      "restlessness or jittery feeling",
-      "headache",
-      "sleep disruption",
-      "nausea",
+      "increased heart rate or palpitations",
     ],
     "side_effects_serious": [
       "severe agitation, panic, or confusion",
@@ -62,90 +36,110 @@ PATCH = {
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
     ],
     "who_should_be_cautious": [
-      "people with anxiety disorders, panic disorder, or bipolar disorder history",
-      "people taking stimulants, antidepressants, or other CNS-active prescriptions",
-      "people with seizure disorders",
+      "people with anxiety disorders or bipolar disorder (arousal pathway sensitivity)",
+      "people with cardiovascular disease or arrhythmia history",
+      "people with severe sleep disorders under medical management",
       "pregnant or breastfeeding individuals",
-      "adolescents (neurodevelopment uncertainty plus limited human evidence)",
+      "adolescents (neurodevelopment risk plus inappropriate use context)",
     ],
   },
 
-  "neuropeptide-y": {
-    "bottom_line": "Neuropeptide Y is a widely distributed neuropeptide involved in appetite, stress resilience, and cardiovascular regulation. It is not a simple wellness peptide; systemic effects are broad and human outcomes are uncertain.",
+  "palmitoyl-pentapeptide-4": {
+    "bottom_line": "Palmitoyl pentapeptide-4 is a cosmetic peptide used topically for skin texture and fine lines, often known as “Matrixyl.” It’s primarily a skincare ingredient; systemic use is higher-risk with little upside.",
     "benefits": [
-      "physiology relevance in appetite and stress-response pathways",
-      "research relevance in anxiety, PTSD resilience, and metabolic signaling",
+      "cosmetic interest for skin texture and fine lines (topical use common)",
+      "often used in skincare as a collagen-support marketing claim (evidence varies by formulation)",
+      "best framed as appearance-focused, not health-focused",
+    ],
+    "side_effects_common": [
+      "skin irritation or redness (topical)",
+      "itching or rash",
+      "dryness or sensitivity",
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "widespread rash or swelling that escalates quickly",
+    ],
+    "who_should_be_cautious": [
+      "people with very reactive skin or severe dermatitis history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic use still has limited long-term data)",
+      "anyone combining many strong skincare actives (irritation stacking)",
+    ],
+  },
+
+  "palmitoyl-tripeptide-1": {
+    "bottom_line": "Palmitoyl tripeptide-1 is a cosmetic peptide used topically for skin appearance and barrier support, often associated with “Matrixyl” blends. It’s mainly a skincare ingredient; systemic use is higher-risk with little upside.",
+    "benefits": [
+      "cosmetic interest for fine lines and skin texture (topical use common)",
+      "often included in multi-peptide skincare formulas (effects depend on formulation)",
+      "best framed as appearance-focused, not health-focused",
+    ],
+    "side_effects_common": [
+      "skin irritation or redness (topical)",
+      "itching or rash",
+      "dryness or sensitivity",
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "widespread rash or swelling that escalates quickly",
+    ],
+    "who_should_be_cautious": [
+      "people with very reactive skin or severe dermatitis history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic use still has limited long-term data)",
+      "anyone combining many strong skincare actives (irritation stacking)",
+    ],
+  },
+
+  "peg-mgf": {
+    "bottom_line": "PEG-MGF is discussed in performance and muscle-building circles as a modified growth-factor fragment. Human outcomes and safety are not well-established, and contamination/mislabeling risk is high.",
+    "benefits": [
+      "muscle-building and recovery discussions (largely anecdotal)",
+      "often marketed around satellite cells and muscle repair narratives (claims frequently exceed evidence)",
+      "performance-oriented interest in bodybuilding communities (high variability)",
     ],
     "side_effects_common": [
       "headache",
-      "nausea",
       "fatigue",
-      "changes in appetite",
+      "injection site irritation",
     ],
     "side_effects_serious": [
-      "significant blood pressure or heart-rate symptoms (chest pain, fainting)",
-      "severe anxiety, agitation, or confusion",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-    ],
-    "who_should_be_cautious": [
-      "people with cardiovascular disease or uncontrolled blood pressure",
-      "people with significant psychiatric history where arousal/anxiety shifts are risky",
-      "pregnant or breastfeeding individuals",
-      "adolescents (limited human evidence and broad systemic signaling)",
-    ],
-  },
-
-  "octreotide": {
-    "bottom_line": "Octreotide is a prescription somatostatin analog used in endocrine, GI, and bleeding-related indications in clinical care. It is not a wellness peptide; hormone, glucose, and GI effects can be significant.",
-    "benefits": [
-      "clinical relevance in acromegaly and certain neuroendocrine tumors (specialist care)",
-      "clinical relevance in specific GI bleeding/variceal settings (medical supervision)",
-      "physiology relevance in suppressing hormone secretion pathways",
-    ],
-    "side_effects_common": [
-      "diarrhea or loose stools",
-      "abdominal pain or cramping",
-      "nausea",
-      "injection-site pain (prescription context)",
-    ],
-    "side_effects_serious": [
-      "severe abdominal pain (urgent evaluation)",
-      "signs of gallbladder disease (right-upper belly pain, fever, jaundice)",
-      "dangerous blood sugar changes (confusion, fainting)",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-    ],
-    "who_should_be_cautious": [
-      "anyone not under specialist medical supervision for a clear indication",
-      "people with gallbladder disease history",
-      "people with diabetes or blood sugar instability",
-      "pregnant or breastfeeding individuals",
-      "adolescents (high consequence endocrine manipulation plus inappropriate context)",
-    ],
-  },
-
-  "orexin-a": {
-    "bottom_line": "Orexin-A (hypocretin-1) is a brain peptide central to wakefulness and arousal regulation. Human use outside research is high-risk; sleep, anxiety, and cardiovascular symptoms can be meaningful.",
-    "benefits": [
-      "physiology relevance in wakefulness and sleep-wake stability (narcolepsy biology)",
-      "research relevance in arousal, motivation, and appetite-related circuitry",
-    ],
-    "side_effects_common": [
-      "insomnia or sleep disruption",
-      "restlessness",
-      "headache",
-      "nausea",
-    ],
-    "side_effects_serious": [
-      "severe anxiety, agitation, or panic symptoms",
+      "abnormal swelling or severe pain at injection site",
       "chest pain, fainting, or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
     ],
     "who_should_be_cautious": [
-      "people with insomnia, panic disorder, or severe anxiety history",
-      "people with cardiovascular disease or uncontrolled blood pressure",
-      "people taking stimulants or other CNS-active prescriptions",
+      "people with cancer history or active malignancy concern (growth signaling context)",
+      "people with diabetes or unstable blood sugar control",
+      "people with cardiovascular disease",
       "pregnant or breastfeeding individuals",
-      "adolescents (neurodevelopment uncertainty plus limited human evidence)",
+      "adolescents (developmental risk plus inappropriate use context)",
+    ],
+  },
+
+  "pentagastrin": {
+    "bottom_line": "Pentagastrin is a diagnostic/physiology tool that stimulates gastric acid secretion. It is not a wellness peptide; non-medical use can provoke severe GI symptoms and dangerous complications in susceptible people.",
+    "benefits": [
+      "clinical/diagnostic relevance in gastric physiology contexts (supervised use)",
+      "research relevance in acid secretion and GI hormone signaling",
+    ],
+    "side_effects_common": [
+      "abdominal cramping",
+      "nausea",
+      "flushing",
+      "diarrhea",
+    ],
+    "side_effects_serious": [
+      "severe abdominal pain with persistent vomiting",
+      "black/tarry stools or vomiting blood (GI bleeding signs)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+    ],
+    "who_should_be_cautious": [
+      "people with ulcers, GI bleeding history, or severe reflux disease",
+      "people with inflammatory bowel disease or severe GI instability",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence plus inappropriate for non-clinical use)",
     ],
   },
 }
