@@ -121,26 +121,27 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Carbetocin is an oxytocin-receptor agonist used clinically for uterine contraction in obstetric settings. It is not a wellness peptide; unsupervised use is dangerous.",
+    "bottom_line": "Carbetocin is an oxytocin-analog medication used in obstetric care to help control uterine bleeding after delivery. It is not a wellness peptide; non-medical use is high-risk.",
     "benefits": [
-      "clinical relevance in postpartum uterine tone management (medical setting)",
-      "physiology relevance for oxytocin/uterine signaling discussions"
+      "clinical relevance in postpartum uterine atony prevention/treatment (medical setting)",
+      "physiology relevance in uterine contraction signaling"
     ],
     "side_effects_common": [
-      "headache",
       "nausea",
-      "flushing",
-      "dizziness"
+      "headache",
+      "flushing"
     ],
     "side_effects_serious": [
-      "chest pain, severe shortness of breath, or collapse",
-      "severe low blood pressure symptoms (fainting, confusion)",
+      "dangerous blood pressure symptoms (fainting, collapse, severe dizziness)",
+      "chest pain, severe shortness of breath, or severe palpitations",
+      "signs of water/electrolyte imbalance (confusion, severe weakness, seizures)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "anyone not under direct medical supervision for an obstetric indication",
-      "people with cardiovascular disease or unstable blood pressure",
-      "pregnant or breastfeeding individuals (outside appropriate clinical use)",
+      "anyone not under obstetric/medical supervision for a clear indication",
+      "people with cardiovascular disease or significant blood pressure instability",
+      "people with kidney disease or electrolyte disorders",
+      "pregnant or breastfeeding individuals (context-specific drug; do not self-administer)",
       "adolescents (high consequence plus inappropriate for non-clinical use)"
     ],
     "schema_version": "practical_block_v1"

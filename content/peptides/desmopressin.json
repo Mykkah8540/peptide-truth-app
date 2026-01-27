@@ -121,28 +121,27 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Desmopressin (DDAVP) is a prescription peptide used to reduce urine output and treat specific bleeding disorders. It is not a wellness peptide; electrolyte and fluid-balance risk is significant.",
+    "bottom_line": "Desmopressin (DDAVP) is a prescription drug that changes water balance and can also affect clotting factors in specific conditions. It is not a wellness peptide; the major danger is hyponatremia (dangerously low sodium).",
     "benefits": [
-      "prescription relevance for diabetes insipidus and nocturia contexts (medical use)",
-      "prescription relevance for select bleeding disorders (medical supervision)",
-      "physiology relevance for vasopressin signaling and water balance"
+      "clinical use in diabetes insipidus and certain nighttime urination disorders (medical supervision)",
+      "clinical use in specific bleeding disorders (von Willebrand/hemophilia A contexts) under supervision",
+      "physiology relevance in vasopressin signaling and water balance"
     ],
     "side_effects_common": [
       "headache",
       "nausea",
-      "fluid retention or swelling"
+      "water retention or swelling"
     ],
     "side_effects_serious": [
-      "hyponatremia symptoms (confusion, severe weakness, seizures)",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "dangerous blood pressure symptoms (fainting, collapse)"
+      "hyponatremia symptoms (confusion, severe headache, vomiting)",
+      "seizure or loss of consciousness (emergency)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with kidney disease or unstable fluid balance",
-      "people with low sodium history or seizure risk",
-      "people on diuretics or medications affecting sodium/water balance",
-      "pregnant or breastfeeding individuals (requires clinician context)",
-      "adolescents (high consequence electrolyte risk outside medical supervision)"
+      "people with low sodium history, heart failure, or kidney disease",
+      "people taking diuretics or medications that affect sodium/water balance",
+      "pregnant or breastfeeding individuals",
+      "adolescents (prescription-only context; high consequence if misused)"
     ],
     "schema_version": "practical_block_v1"
   }

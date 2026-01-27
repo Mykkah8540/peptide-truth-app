@@ -122,29 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "CJC-1295 with DAC is a long-acting growth-hormone axis peptide discussed for body composition and recovery goals. Growth-hormone pathway manipulation carries real tradeoffs and requires serious caution.",
+    "bottom_line": "CJC-1295 with DAC is discussed for growth hormone and IGF-1 signaling goals. It is endocrine-active; side effects and downstream risks are real, and long-term outcomes for non-medical use are not established.",
     "benefits": [
-      "recovery and performance discussions via GH/IGF-1 pathway interest",
-      "body composition discussions in fitness communities (claims vary)",
-      "sleep and well-being discussions in some users (variable)"
+      "GH/IGF-1 signaling interest for body composition and recovery themes (claims often exceed evidence)",
+      "sometimes discussed for sleep and training recovery (variable)",
+      "often used in “growth” stacking conversations (anecdotal)"
     ],
     "side_effects_common": [
       "water retention or swelling",
       "increased appetite",
       "headache",
-      "tingling or numbness in hands (carpal-tunnel-like symptoms)"
+      "tingling or numbness sensations"
     ],
     "side_effects_serious": [
+      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
       "severe swelling, shortness of breath, or chest pain",
-      "significant blood sugar problems (new or worsening hyperglycemia symptoms)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with diabetes or insulin resistance",
-      "people with cancer history or active malignancy concern (growth signaling context)",
-      "people with uncontrolled blood pressure, heart failure, or significant edema",
+      "people with diabetes, prediabetes, or metabolic syndrome",
+      "people with active cancer or cancer history concerns (growth signaling context)",
+      "people with cardiovascular disease or uncontrolled blood pressure",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine growth axis manipulation plus long-term uncertainty)"
+      "adolescents (endocrine manipulation risk plus inappropriate context)"
     ],
     "schema_version": "practical_block_v1"
   }

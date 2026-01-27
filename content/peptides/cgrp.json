@@ -123,15 +123,15 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "CGRP (calcitonin gene-related peptide) is a key migraine and vascular signaling molecule. It is not a wellness peptide; altering CGRP pathways is clinically consequential.",
+    "bottom_line": "CGRP (calcitonin gene-related peptide) is a major signaling molecule in migraine biology and vascular regulation. It is not a wellness peptide; direct use outside research/medical contexts is high-risk because it can affect blood vessels and blood pressure.",
     "benefits": [
-      "major clinical relevance in migraine biology (targeted by approved therapies)",
-      "physiology relevance in vascular tone and pain signaling discussions",
-      "research relevance across neurovascular pathways"
+      "strong physiology relevance in migraine pathways and neurovascular signaling",
+      "clinical relevance because CGRP-targeting drugs exist (antagonists and antibodies)",
+      "research relevance in pain and vasodilation discussions"
     ],
     "side_effects_common": [
       "headache or head pressure changes",
-      "flushing",
+      "flushing or warmth",
       "lightheadedness"
     ],
     "side_effects_serious": [
@@ -140,10 +140,10 @@
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with significant cardiovascular disease or unstable blood pressure",
-      "people with complex migraine or neurologic disease under active treatment",
+      "people with cardiovascular disease, stroke history, or severe blood pressure instability",
+      "people with severe migraine symptoms requiring medical evaluation (rule-out risk)",
       "pregnant or breastfeeding individuals",
-      "adolescents (high consequence pathway manipulation)"
+      "adolescents (high consequence plus inappropriate for non-clinical use)"
     ],
     "schema_version": "practical_block_v1"
   }
