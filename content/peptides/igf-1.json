@@ -122,28 +122,31 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "IGF-1 is a powerful growth factor with real clinical relevance. It is not a casual wellness peptide; non-medical use carries meaningful risks, including glucose effects and growth signaling concerns.",
+    "bottom_line": "IGF-1 is a powerful growth factor with prescription uses in specific deficiencies. It is not a wellness peptide; misuse can carry serious risks, including metabolic and growth-related concerns.",
     "benefits": [
-      "clinical relevance in specific deficiency states (specialist context)",
-      "physiology relevance in growth and tissue signaling discussions"
+      "clinical use in rare IGF-1 deficiency contexts under specialist care",
+      "physiology relevance in growth and metabolism signaling",
+      "often discussed for muscle and recovery goals (high risk in non-medical use)"
     ],
     "side_effects_common": [
-      "water retention or swelling",
-      "joint discomfort",
+      "fluid retention",
+      "joint pain",
       "headache",
-      "low blood sugar symptoms (shakiness, sweating, hunger)"
+      "fatigue",
+      "blood sugar swings (including low blood sugar)"
     ],
     "side_effects_serious": [
       "severe hypoglycemia symptoms (confusion, fainting, seizure)",
-      "severe swelling, shortness of breath, or chest pain",
+      "chest pain, severe shortness of breath, or collapse",
+      "severe swelling or neurologic symptoms (urgent evaluation)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with diabetes or blood sugar instability",
-      "people with cancer history or elevated cancer concern (growth signaling context)",
-      "people with active proliferative eye disease (specialist context)",
+      "anyone without endocrinology supervision for a defined indication",
+      "people with diabetes or unstable blood sugar control",
+      "people with cancer history or active malignancy concern (growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (growth axis disruption risk plus inappropriate context)"
+      "adolescents (growth-axis manipulation plus high consequence)"
     ],
     "schema_version": "practical_block_v1"
   }

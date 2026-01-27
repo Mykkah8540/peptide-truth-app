@@ -121,27 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Kisspeptin is a reproductive-axis signaling peptide studied in fertility and endocrine contexts. It is not a general wellness peptide; non-medical use can disrupt hormones, mood, and fertility signaling.",
+    "bottom_line": "Kisspeptin is a hormone-regulating peptide involved in the reproductive axis and used in some fertility research/clinical contexts. It is not a casual wellness peptide; hormone disruption is the main risk outside supervision.",
     "benefits": [
-      "clinical and research relevance in fertility and reproductive endocrinology",
-      "physiology relevance in GnRH/LH/FSH axis discussions"
+      "clinical/research relevance in fertility and reproductive endocrinology",
+      "physiology relevance in GnRH/LH/FSH signaling",
+      "sometimes discussed for libido or fertility themes (should be medically guided)"
     ],
     "side_effects_common": [
       "headache",
       "nausea",
       "flushing",
-      "mood changes or irritability"
+      "mood changes"
     ],
     "side_effects_serious": [
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "fainting or collapse",
-      "severe pelvic/testicular pain or concerning swelling"
+      "severe pelvic or abdominal pain (urgent evaluation)",
+      "fainting or severe dizziness",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "anyone trying to conceive or with fertility concerns (axis disruption risk)",
-      "people with hormone-sensitive cancers or endocrine tumors (specialist context)",
+      "anyone without endocrinology/fertility specialist supervision",
+      "people with hormone-sensitive cancers or complex endocrine disorders",
       "pregnant or breastfeeding individuals",
-      "adolescents (puberty/endocrine axis disruption risk)"
+      "adolescents (developmental endocrine risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

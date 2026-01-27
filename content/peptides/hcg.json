@@ -133,27 +133,30 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "hCG is a prescription hormone used in specific fertility and endocrine contexts. It is not a general wellness peptide; misuse can disrupt hormones, fertility, and mood, and carries meaningful risk.",
+    "bottom_line": "hCG is a prescription fertility hormone with real endocrine impact. It is not a casual wellness peptide; unsupervised use can disrupt hormones and carries meaningful risks.",
     "benefits": [
-      "clinical relevance in fertility treatment and certain hypogonadism protocols (medical supervision)",
-      "physiology relevance in LH-like signaling discussions"
+      "clinical use in fertility and specific endocrine contexts (specialist care)",
+      "stimulates testicular testosterone production in certain medical scenarios",
+      "diagnostic relevance in some endocrine evaluations"
     ],
     "side_effects_common": [
-      "mood changes or irritability",
       "headache",
-      "water retention or bloating",
-      "breast tenderness or hormonal discomfort"
+      "mood changes or irritability",
+      "water retention",
+      "acne or skin changes",
+      "breast tenderness"
     ],
     "side_effects_serious": [
-      "blood clot symptoms (leg swelling/pain, sudden shortness of breath)",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe abdominal/pelvic pain or rapid swelling (urgent evaluation)"
+      "shortness of breath, chest pain, or leg swelling (urgent evaluation)",
+      "severe headache or vision changes",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with hormone-sensitive cancers or tumor risk contexts",
-      "people with clotting history or strong clot risk factors",
-      "pregnant or breastfeeding individuals (medical use only, specialist context)",
-      "adolescents (puberty/endocrine axis disruption risk)"
+      "anyone without clinician supervision for a medical indication",
+      "people with hormone-sensitive cancers or high prostate/breast risk context",
+      "people with prior blood clots or high clotting risk",
+      "pregnant or breastfeeding individuals (context-specific medical use only)",
+      "adolescents (developmental endocrine risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

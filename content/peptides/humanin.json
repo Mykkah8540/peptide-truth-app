@@ -121,11 +121,11 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Humanin is discussed for ‘mitochondrial’ and cell-protection themes. Human evidence is limited, so real-world expectations should be conservative and hype-resistant.",
+    "bottom_line": "Humanin is discussed for mitochondrial and neuroprotection themes, but robust human outcomes are not established. Treat it as early-stage science with uncertain real-world benefit.",
     "benefits": [
-      "mitochondrial and cellular stress-resilience interest (early-stage)",
-      "often discussed in longevity-adjacent communities (human outcomes uncertain)",
-      "sometimes discussed for metabolic or neuroprotection themes (speculative in humans)"
+      "research interest in cellular stress and mitochondrial signaling",
+      "neuroprotection themes in early-stage literature discussions",
+      "often framed as longevity support (claims frequently exceed evidence)"
     ],
     "side_effects_common": [
       "headache",
@@ -138,7 +138,7 @@
     ],
     "who_should_be_cautious": [
       "people with significant cardiovascular disease",
-      "people with active cancer or cancer history concerns (growth/repair signaling context)",
+      "people with cancer history or active malignancy concern (growth/survival signaling context)",
       "pregnant or breastfeeding individuals",
       "adolescents (limited human evidence and long-term uncertainty)"
     ],
