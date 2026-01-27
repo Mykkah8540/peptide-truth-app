@@ -47,6 +47,14 @@
     "meta": {
       "generated_from": "content/blends/_index.json",
       "generated_at": "2026-01-19"
+    },
+    "practical": {
+      "bottom_line": "Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red flags as evidence is reviewed.",
+      "benefits": [],
+      "common_downsides": [],
+      "serious_red_flags": [],
+      "who_should_be_cautious": [],
+      "schema_version": "blend_practical_block_v1"
     }
   }
 }

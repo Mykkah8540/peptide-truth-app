@@ -51,6 +51,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
 
   const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
+
   return (
     <main className="pt-page">
       <div className="pt-hero">
