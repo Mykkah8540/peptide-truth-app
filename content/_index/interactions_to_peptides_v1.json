@@ -147,6 +147,10 @@
         "peptide_name": "Brain Natriuretic Peptide"
       },
       {
+        "peptide_slug": "cgrp",
+        "peptide_name": "CGRP"
+      },
+      {
         "peptide_slug": "endothelin-1",
         "peptide_name": "Endothelin-1"
       },
