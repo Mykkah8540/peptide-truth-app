@@ -203,6 +203,10 @@
         "peptide_name": "Ara-290"
       },
       {
+        "peptide_slug": "glutathione",
+        "peptide_name": "Glutathione"
+      },
+      {
         "peptide_slug": "kpv",
         "peptide_name": "Kpv"
       },
@@ -227,6 +231,10 @@
       {
         "peptide_slug": "ghk-cu",
         "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "glutathione",
+        "peptide_name": "Glutathione"
       },
       {
         "peptide_slug": "kpv",
