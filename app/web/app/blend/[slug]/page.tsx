@@ -20,6 +20,23 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
   const safetyBlocks = sections?.safety ?? null;
   const claimsBlocks = sections?.claims ?? null;
 
+  const pr = b?.practical ?? null;
+
+  function isCurationPendingText(v: any): boolean {
+    const s = String(v ?? "").toLowerCase();
+    return s.includes("pep-talk curation pending");
+  }
+
+  const isPracticalPlaceholder =
+    !!pr &&
+    isCurationPendingText(pr?.bottom_line) &&
+    !(
+      (pr?.benefits ?? []).length ||
+      (pr?.side_effects_common ?? []).length ||
+      (pr?.side_effects_serious ?? []).length ||
+      (pr?.who_should_be_cautious ?? []).length
+    );
+
   const mergedAliases = Array.from(
     new Set([...(Array.isArray(b?.aliases) ? b.aliases : []), ...getAliasesForSlug(slug)])
   );
@@ -28,7 +45,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
   const evidence = Array.isArray(b?.evidence) ? b.evidence : [];
 
   const disclaimerText =
-    (typeof b?.disclaimer?.text === "string" && b.disclaimer.text.trim())
+    typeof b?.disclaimer?.text === "string" && b.disclaimer.text.trim()
       ? b.disclaimer.text.trim()
       : "Educational resource. No protocols, dosing, or instructions are provided.";
 
@@ -68,6 +85,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
 
       {/* ORDER (blend v1):
           Overview
+          Practical summary (if present)
           What's inside (components)
           Claims (if present)
           Safety / cautions
@@ -84,6 +102,61 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
           emptyText="No overview has been added yet."
         />
       </section>
+
+      {pr && !isPracticalPlaceholder ? (
+        <section className="pt-card">
+          <h2 className="pt-card-title">Practical summary</h2>
+
+          <p className="pt-card-subtext">
+            {String(pr?.bottom_line ?? "").trim() || "No practical summary has been added yet."}
+          </p>
+
+          {Array.isArray(pr?.benefits) && pr.benefits.length ? (
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-neutral-900">Why people use it</h3>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                {pr.benefits.map((x: string, i: number) => (
+                  <li key={"b" + i}>{x}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {Array.isArray(pr?.side_effects_common) && pr.side_effects_common.length ? (
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-neutral-900">Common downsides</h3>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                {pr.side_effects_common.map((x: string, i: number) => (
+                  <li key={"c" + i}>{x}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {Array.isArray(pr?.side_effects_serious) && pr.side_effects_serious.length ? (
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
+              <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                {pr.side_effects_serious.map((x: string, i: number) => (
+                  <li key={"s" + i}>{x}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {Array.isArray(pr?.who_should_be_cautious) && pr.who_should_be_cautious.length ? (
+            <div className="mt-4">
+              <h3 className="text-sm font-semibold text-neutral-900">Who should be cautious</h3>
+              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                {pr.who_should_be_cautious.map((x: string, i: number) => (
+                  <li key={"w" + i}>{x}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       <section className="pt-card">
         <h2 className="pt-card-title">What’s inside</h2>
@@ -104,9 +177,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
 
         {Array.isArray(b?.components_unresolved) && b.components_unresolved.length ? (
           <div className="mt-3">
-            <p className="pt-card-subtext">
-              Unresolved components: {b.components_unresolved.join(", ")}
-            </p>
+            <p className="pt-card-subtext">Unresolved components: {b.components_unresolved.join(", ")}</p>
           </div>
         ) : null}
       </section>
