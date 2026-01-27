@@ -122,11 +122,30 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "IGF-1 LR3 is a modified form discussed in performance circles for anabolic and recovery goals. It is high-risk due to potent growth signaling and metabolic effects, with significant uncertainty outside medical settings.",
+    "benefits": [
+      "muscle-building and recovery discussions in performance communities (anecdotal)",
+      "often discussed for nutrient partitioning themes (uncertain outcomes)",
+      "sometimes discussed for injury recovery narratives (claims often outpace evidence)"
+    ],
+    "side_effects_common": [
+      "water retention or swelling",
+      "headache",
+      "joint discomfort",
+      "low blood sugar symptoms (shakiness, sweating, hunger)"
+    ],
+    "side_effects_serious": [
+      "severe hypoglycemia symptoms (confusion, fainting, seizure)",
+      "severe swelling, shortness of breath, or chest pain",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with diabetes or blood sugar instability",
+      "people with cancer history or elevated cancer concern (growth signaling context)",
+      "people with cardiovascular disease or uncontrolled blood pressure",
+      "pregnant or breastfeeding individuals",
+      "adolescents (growth axis disruption risk plus inappropriate context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

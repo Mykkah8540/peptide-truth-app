@@ -121,11 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Kisspeptin is a reproductive-axis signaling peptide studied in fertility and endocrine contexts. It is not a general wellness peptide; non-medical use can disrupt hormones, mood, and fertility signaling.",
+    "benefits": [
+      "clinical and research relevance in fertility and reproductive endocrinology",
+      "physiology relevance in GnRH/LH/FSH axis discussions"
+    ],
+    "side_effects_common": [
+      "headache",
+      "nausea",
+      "flushing",
+      "mood changes or irritability"
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "fainting or collapse",
+      "severe pelvic/testicular pain or concerning swelling"
+    ],
+    "who_should_be_cautious": [
+      "anyone trying to conceive or with fertility concerns (axis disruption risk)",
+      "people with hormone-sensitive cancers or endocrine tumors (specialist context)",
+      "pregnant or breastfeeding individuals",
+      "adolescents (puberty/endocrine axis disruption risk)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

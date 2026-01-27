@@ -178,11 +178,30 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Hexarelin is discussed for growth hormone stimulation and performance/body-composition goals. It is endocrine-active, and non-medical use carries meaningful metabolic and long-term uncertainty.",
+    "benefits": [
+      "GH-related signaling interest for recovery/body composition themes (variable)",
+      "sometimes discussed for sleep quality and training recovery (mixed)",
+      "often compared with other GHRPs in performance communities (anecdotal)"
+    ],
+    "side_effects_common": [
+      "increased appetite",
+      "water retention or swelling",
+      "headache",
+      "tingling or numbness sensations"
+    ],
+    "side_effects_serious": [
+      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
+      "severe swelling, shortness of breath, or chest pain",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with diabetes, prediabetes, or metabolic syndrome",
+      "people with active cancer or cancer history concerns (growth signaling context)",
+      "people with cardiovascular disease or uncontrolled blood pressure",
+      "pregnant or breastfeeding individuals",
+      "adolescents (endocrine manipulation risk plus inappropriate context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

@@ -122,11 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "IGF-1 is a powerful growth factor with real clinical relevance. It is not a casual wellness peptide; non-medical use carries meaningful risks, including glucose effects and growth signaling concerns.",
+    "benefits": [
+      "clinical relevance in specific deficiency states (specialist context)",
+      "physiology relevance in growth and tissue signaling discussions"
+    ],
+    "side_effects_common": [
+      "water retention or swelling",
+      "joint discomfort",
+      "headache",
+      "low blood sugar symptoms (shakiness, sweating, hunger)"
+    ],
+    "side_effects_serious": [
+      "severe hypoglycemia symptoms (confusion, fainting, seizure)",
+      "severe swelling, shortness of breath, or chest pain",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with diabetes or blood sugar instability",
+      "people with cancer history or elevated cancer concern (growth signaling context)",
+      "people with active proliferative eye disease (specialist context)",
+      "pregnant or breastfeeding individuals",
+      "adolescents (growth axis disruption risk plus inappropriate context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
