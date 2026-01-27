@@ -122,29 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "CJC-1295 with DAC is a long-acting GHRH analog discussed for growth-hormone axis effects. Endocrine manipulation is high-consequence, and non-medical use is high-risk.",
+    "bottom_line": "CJC-1295 DAC is a long-acting GHRH analog discussed for growth-hormone axis effects. Endocrine manipulation carries real risks, and long-acting exposure can amplify side effects and monitoring needs.",
     "benefits": [
-      "growth-hormone axis interest (claims vary and are commonly overstated)",
-      "body composition and recovery discussions in performance communities (anecdotal)",
-      "sleep-related discussions tied to GH narratives (variable)"
+      "growth-hormone axis interest (variable; claims often exceed evidence)",
+      "sometimes discussed for body composition and recovery themes (anecdotal heavy)",
+      "long-acting design is a major differentiator (also increases risk if misused)"
     ],
     "side_effects_common": [
-      "headache",
-      "flushing",
       "water retention or swelling",
-      "sleep disruption in sensitive users"
+      "headache",
+      "flushing at the site or generalized warmth",
+      "sleep disruption in some users"
     ],
     "side_effects_serious": [
-      "chest pain, fainting, or severe shortness of breath",
-      "severe blood sugar symptoms (confusion, fainting)",
+      "severe swelling, shortness of breath, or chest pain",
+      "severe blood sugar changes symptoms (confusion, fainting) in susceptible users",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
       "people with diabetes or unstable blood sugar control",
-      "people with cancer history or active malignancy concern",
-      "people with endocrine disorders requiring specialist management",
+      "people with cancer history or active malignancy concerns (growth signaling context)",
+      "people with significant cardiovascular disease or uncontrolled blood pressure",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine axis disruption plus long-term uncertainty)"
+      "adolescents (developmental endocrine risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

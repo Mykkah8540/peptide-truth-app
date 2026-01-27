@@ -123,27 +123,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "CGRP is a vasoactive neuropeptide central to migraine biology and vascular tone. It is not a wellness peptide; systemic vascular effects make non-medical use high-risk.",
+    "bottom_line": "CGRP is a key neuropeptide in migraine biology and vascular signaling. Modern migraine drugs target CGRP pathways; using CGRP itself outside clinical research is not a wellness strategy and may carry vascular risks.",
     "benefits": [
-      "research relevance in migraine and trigeminal pain pathways",
-      "physiology relevance in vasodilation and neurovascular signaling"
+      "high clinical relevance in migraine pathophysiology (target of CGRP therapies)",
+      "physiology relevance in vascular tone and pain signaling pathways",
+      "research relevance across neurology and vascular biology"
     ],
     "side_effects_common": [
-      "headache changes (worsening or atypical patterns)",
       "flushing",
-      "dizziness",
+      "headache",
+      "lightheadedness",
       "nausea"
     ],
     "side_effects_serious": [
-      "fainting or collapse",
-      "chest pain, severe shortness of breath, or severe weakness",
+      "fainting or collapse from blood pressure effects",
+      "severe chest pain or shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
       "people with cardiovascular disease or unstable blood pressure",
-      "people with complex neurologic conditions requiring supervision",
+      "people with severe migraine or neurologic disease needing specialist care",
       "pregnant or breastfeeding individuals",
-      "adolescents (high consequence plus inappropriate context)"
+      "adolescents (high consequence plus inappropriate for non-clinical use)"
     ],
     "schema_version": "practical_block_v1"
   }

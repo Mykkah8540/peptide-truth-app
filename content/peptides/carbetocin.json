@@ -121,28 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Carbetocin is a prescription oxytocin analog used in obstetric care to support uterine contraction. It is not a wellness peptide; blood pressure and uterine effects make non-medical use high-risk.",
+    "bottom_line": "Carbetocin is a prescription oxytocin-analog used to prevent postpartum uterine bleeding. It is not a wellness peptide; it can affect uterine tone and blood pressure and is used in obstetric care.",
     "benefits": [
-      "clinical relevance in postpartum uterine atony prevention/treatment (medical care)",
-      "physiology relevance in uterine contractility signaling"
+      "clinical relevance in postpartum hemorrhage prevention (medical setting)",
+      "mechanistic relevance in uterine contraction signaling",
+      "used only in supervised obstetric contexts"
     ],
     "side_effects_common": [
       "nausea",
       "headache",
       "flushing",
-      "dizziness"
+      "abdominal cramping"
     ],
     "side_effects_serious": [
-      "severe blood pressure symptoms (fainting, collapse)",
+      "severe blood pressure changes, fainting, or collapse",
       "chest pain or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "pregnant individuals (outside supervised obstetric care)",
+      "anyone not in a supervised obstetric care context",
+      "pregnant individuals outside intended obstetric use (uterine risk)",
       "people with cardiovascular disease or unstable blood pressure",
-      "people with seizure disorders",
-      "breastfeeding individuals (clinical context matters)",
-      "adolescents (high consequence plus inappropriate context)"
+      "adolescents (high consequence plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

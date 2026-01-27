@@ -121,27 +121,27 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Calcitonin is a prescription hormone used for specific bone and calcium-related indications. It is not a wellness peptide; electrolyte and hormone effects can be meaningful outside medical care.",
+    "bottom_line": "Calcitonin is a prescription hormone used in select bone and calcium-related indications and sometimes for pain in specific settings. It is not a general wellness peptide; benefits depend on medical context.",
     "benefits": [
-      "clinical relevance in select bone and calcium-related indications (prescription care)",
+      "clinical relevance in certain bone/calcium disorders (prescription use)",
+      "sometimes used for short-term pain contexts in specific clinical scenarios",
       "physiology relevance in calcium regulation pathways"
     ],
     "side_effects_common": [
       "nausea",
       "flushing",
-      "injection-site irritation (prescription context)",
-      "headache"
+      "headache",
+      "nasal irritation (for nasal formulations)"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "signs of low calcium (muscle cramps, tingling, severe weakness)",
       "severe dizziness or fainting"
     ],
     "who_should_be_cautious": [
-      "anyone without clinician supervision for a clear indication",
-      "people with calcium/electrolyte disorders",
+      "anyone with allergy to salmon-derived products (relevant to some formulations)",
+      "people with low calcium or disorders of calcium regulation",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation plus inappropriate context)"
+      "adolescents (prescription-only context plus limited non-clinical rationale)"
     ],
     "schema_version": "practical_block_v1"
   }

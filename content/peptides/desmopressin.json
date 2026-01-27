@@ -121,28 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Desmopressin is a prescription vasopressin analog used for specific bleeding and urination-related conditions. It is not a wellness peptide; low sodium and fluid-balance complications are real risks.",
+    "bottom_line": "Desmopressin (DDAVP) is a prescription vasopressin analog used for diabetes insipidus, bedwetting in select cases, and certain bleeding disorders. It can cause dangerous low sodium; it is not a wellness peptide.",
     "benefits": [
-      "clinical relevance in select bleeding disorders (medical supervision)",
-      "clinical relevance in nocturnal enuresis/diabetes insipidus contexts (prescription use)",
-      "physiology relevance in water-balance signaling"
+      "clinical relevance in central diabetes insipidus (prescription use)",
+      "clinical relevance in select bleeding disorders (von Willebrand/hemophilia A contexts)",
+      "used in specific pediatric/urology contexts under medical guidance"
     ],
     "side_effects_common": [
       "headache",
       "nausea",
-      "water retention or swelling"
+      "water retention or swelling",
+      "mild abdominal cramps"
     ],
     "side_effects_serious": [
-      "dangerously low sodium symptoms (confusion, severe headache, seizures)",
-      "severe fluid overload symptoms (shortness of breath, rapid weight gain)",
+      "dangerous low sodium symptoms (confusion, seizure, severe weakness)",
+      "fainting or collapse",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "anyone without clinician supervision for a clear indication",
-      "people with heart failure or significant kidney disease",
-      "people prone to low sodium (hyponatremia) or on diuretics",
-      "pregnant or breastfeeding individuals (medical context required)",
-      "adolescents (only appropriate in supervised pediatric care)"
+      "people with a history of low sodium, seizures, or significant kidney disease",
+      "people with heart failure or unstable fluid balance",
+      "pregnant or breastfeeding individuals",
+      "adolescents unless prescribed (high consequence electrolyte risk)"
     ],
     "schema_version": "practical_block_v1"
   }
