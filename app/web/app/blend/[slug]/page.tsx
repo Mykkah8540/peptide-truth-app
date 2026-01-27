@@ -32,8 +32,8 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
     isCurationPendingText(pr?.bottom_line) &&
     !(
       (pr?.benefits ?? []).length ||
-      (pr?.side_effects_common ?? []).length ||
-      (pr?.side_effects_serious ?? []).length ||
+      (pr?.common_downsides ?? []).length ||
+      (pr?.serious_red_flags ?? []).length ||
       (pr?.who_should_be_cautious ?? []).length
     );
 
@@ -129,23 +129,23 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
             </div>
           ) : null}
 
-          {!isPracticalPlaceholder && Array.isArray(pr?.side_effects_common) && pr.side_effects_common.length ? (
+          {!isPracticalPlaceholder && Array.isArray(pr?.common_downsides) && pr.common_downsides.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Common downsides</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-                {pr.side_effects_common.map((x: string, i: number) => (
+                {pr.common_downsides.map((x: string, i: number) => (
                   <li key={"c" + i}>{x}</li>
                 ))}
               </ul>
             </div>
           ) : null}
 
-          {!isPracticalPlaceholder && Array.isArray(pr?.side_effects_serious) && pr.side_effects_serious.length ? (
+          {!isPracticalPlaceholder && Array.isArray(pr?.serious_red_flags) && pr.serious_red_flags.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
               <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-                {pr.side_effects_serious.map((x: string, i: number) => (
+                {pr.serious_red_flags.map((x: string, i: number) => (
                   <li key={"s" + i}>{x}</li>
                 ))}
               </ul>
