@@ -1,38 +1,15 @@
-import { filterByQuery, listPeptides } from "@/lib/content";
-
+import { listPeptides } from "@/lib/content";
 export const dynamic = "force-dynamic";
 
-export default async function PeptidesPage({
-  searchParams,
-}: {
-  searchParams?: Promise<{ q?: string }> | { q?: string };
-}) {
-  const sp = await Promise.resolve(searchParams ?? {}); 
-  const { q = "" } = sp as any;
+export default async function PeptidesPage() {
   const all = listPeptides();
-  const rows = filterByQuery(all, q);
-
+  const rows = all;
   return (
     <main style={{ maxWidth: 920, margin: "0 auto", padding: "24px 16px" }}>
       <h1 style={{ fontSize: 28, fontWeight: 900, marginBottom: 6 }}>Peptides</h1>
       <div style={{ color: "#666", marginBottom: 16 }}>
         Showing {rows.length} of {all.length}
       </div>
-
-      <form method="get" style={{ marginBottom: 18 }}>
-        <input
-          name="q"
-          defaultValue={q}
-          placeholder="Search peptides…"
-          style={{
-            width: "100%",
-            padding: "12px 14px",
-            borderRadius: 12,
-            border: "1px solid #e5e5e5",
-            fontSize: 16,
-          }}
-        />
-      </form>
 
       <div style={{ display: "grid", gap: 10 }}>
         {rows.map((p) => (
