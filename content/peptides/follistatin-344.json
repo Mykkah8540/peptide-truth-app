@@ -121,11 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Follistatin-344 is discussed for muscle and performance goals because it interacts with growth-related signaling (myostatin/activin pathways). Human evidence for non-medical use is limited, and theoretical long-term risks are a serious consideration.",
+    "benefits": [
+      "muscle growth and body composition interest (claims often exceed evidence)",
+      "performance and recovery discussions in enhancement communities (anecdotal)",
+      "mechanistic relevance in myostatin/activin signaling discussions"
+    ],
+    "side_effects_common": [
+      "headache",
+      "fatigue",
+      "water retention or swelling"
+    ],
+    "side_effects_serious": [
+      "chest pain, fainting, or severe shortness of breath",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "new or rapidly worsening swelling, severe weakness, or neurologic symptoms"
+    ],
+    "who_should_be_cautious": [
+      "people with cancer history or active malignancy concern (growth signaling context)",
+      "people with cardiovascular disease or clotting risk factors",
+      "pregnant or breastfeeding individuals",
+      "adolescents (growth pathway manipulation plus long-term uncertainty)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
