@@ -104,15 +104,21 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
         />
       </section>
 
-      {pr && !isPracticalPlaceholder ? (
+      {pr ? (
         <section className="pt-card">
           <h2 className="pt-card-title">Practical summary</h2>
 
           <p className="pt-card-subtext">
-            {String(pr?.bottom_line ?? "").trim() || "No practical summary has been added yet."}
+            {(() => {
+              const t = String(pr?.bottom_line ?? "").trim();
+              if (!t || isPracticalPlaceholder || isCurationPendingText(t)) {
+                return "Pep-Talk curation pending. This section will be populated with practical, real-world use patterns, common downsides, and red flags as evidence is reviewed.";
+              }
+              return t;
+            })()}
           </p>
 
-          {Array.isArray(pr?.benefits) && pr.benefits.length ? (
+          {!isPracticalPlaceholder && Array.isArray(pr?.benefits) && pr.benefits.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Why people use it</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
@@ -123,7 +129,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
             </div>
           ) : null}
 
-          {Array.isArray(pr?.side_effects_common) && pr.side_effects_common.length ? (
+          {!isPracticalPlaceholder && Array.isArray(pr?.side_effects_common) && pr.side_effects_common.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Common downsides</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
@@ -134,7 +140,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
             </div>
           ) : null}
 
-          {Array.isArray(pr?.side_effects_serious) && pr.side_effects_serious.length ? (
+          {!isPracticalPlaceholder && Array.isArray(pr?.side_effects_serious) && pr.side_effects_serious.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
               <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
@@ -146,7 +152,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
             </div>
           ) : null}
 
-          {Array.isArray(pr?.who_should_be_cautious) && pr.who_should_be_cautious.length ? (
+          {!isPracticalPlaceholder && Array.isArray(pr?.who_should_be_cautious) && pr.who_should_be_cautious.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Who should be cautious</h3>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
