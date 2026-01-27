@@ -125,7 +125,9 @@
   "canonical_name": "Ara-290",
   "interactions": {
     "drug_classes": [
-      "immune-modulation-infection-risk"
+      "immune-modulation-infection-risk",
+      "corticosteroids",
+      "immunosuppressants"
     ],
     "supplement_classes": [],
     "peptides": []

@@ -132,7 +132,9 @@
   "interactions": {
     "drug_classes": [
       "cardiovascular-physiology-context",
-      "immune-modulation-infection-risk"
+      "immune-modulation-infection-risk",
+      "corticosteroids",
+      "immunosuppressants"
     ],
     "supplement_classes": [],
     "peptides": []
