@@ -176,26 +176,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "People use GHK-Cu for skin and cosmetic goals. Real-world results depend heavily on formulation quality, irritation tolerance, and realistic expectations.",
+    "bottom_line": "GHK-Cu is best known for skin and hair/cosmetic use. It is widely discussed topically; injectable use is higher-risk with less real-world clarity.",
     "benefits": [
-      "skin appearance and texture interest",
-      "supporting cosmetic routines (topical use discussions)",
-      "general “skin repair” interest in aesthetics communities"
+      "cosmetic interest for skin appearance and texture (topical use common)",
+      "discussion around hair/scalp health in cosmetic communities (mixed evidence)",
+      "used as a general “skin support” ingredient in some formulations"
     ],
     "side_effects_common": [
-      "skin irritation or redness (topical use)",
-      "itching",
-      "dryness or burning sensation (topical use)"
+      "skin irritation or redness (topical)",
+      "itching or rash",
+      "headache in sensitive users"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe skin reaction (blistering, intense swelling, widespread rash)"
+      "widespread rash or swelling that escalates quickly"
     ],
     "who_should_be_cautious": [
-      "people with very sensitive skin, eczema, or active dermatitis",
-      "people using strong retinoids or irritant exfoliants (higher irritation load)",
-      "pregnant or breastfeeding individuals (conservative default)",
-      "adolescents (unnecessary risk for cosmetic goals)"
+      "people with copper sensitivity or severe dermatitis history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic use still has limited long-term data)",
+      "anyone prone to allergic reactions to skincare actives"
     ],
     "schema_version": "practical_block_v1"
   }

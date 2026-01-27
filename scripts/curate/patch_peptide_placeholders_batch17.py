@@ -4,13 +4,10 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Any
-
 
 ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 
-# Batch 17: practical_block_v1 for peptides that appear as blend components
 BATCH = [
   "bpc-157",
   "ghk-cu",
@@ -19,176 +16,164 @@ BATCH = [
   "tb-500",
 ]
 
-PATCH: dict[str, dict[str, Any]] = {
+PATCH = {
   "bpc-157": {
-    "bottom_line": "People use BPC-157 for injury and healing support. The practical reality is mixed quality evidence, inconsistent sourcing, and expectations that get ahead of what is proven in humans.",
+    "bottom_line": "BPC-157 is discussed for gut irritation and injury-recovery goals. Human evidence is limited; expectations should be conservative and quality/testing matters.",
     "benefits": [
-      "injury and tendon/ligament recovery interest",
-      "gut irritation and inflammation symptom interest",
-      "general “healing support” use in training communities",
+      "gut irritation and reflux symptom discussions (real-world interest, evidence limited)",
+      "soft-tissue and joint recovery discussions in training communities (anecdotal)",
+      "often framed as a \"recovery support\" peptide rather than a performance enhancer",
     ],
     "side_effects_common": [
       "headache",
       "nausea or stomach upset",
-      "fatigue",
-      "irritability or sleep disruption in sensitive users",
+      "fatigue or “off” feeling",
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "chest pain, fainting, or severe shortness of breath",
+      "persistent chest pain, fainting, or severe shortness of breath",
     ],
     "who_should_be_cautious": [
       "pregnant or breastfeeding individuals",
-      "adolescents (developmental risk plus limited human evidence)",
-      "people with complex medical conditions that require clinician oversight",
+      "adolescents (limited evidence and developmental uncertainty)",
+      "people with complex autoimmune or inflammatory disease on prescription immunomodulators",
+      "anyone using multiple unverified compounds (contamination and mislabeling risk)",
     ],
   },
 
   "ghk-cu": {
-    "bottom_line": "People use GHK-Cu for skin and cosmetic goals. Real-world results depend heavily on formulation quality, irritation tolerance, and realistic expectations.",
+    "bottom_line": "GHK-Cu is best known for skin and hair/cosmetic use. It is widely discussed topically; injectable use is higher-risk with less real-world clarity.",
     "benefits": [
-      "skin appearance and texture interest",
-      "supporting cosmetic routines (topical use discussions)",
-      "general “skin repair” interest in aesthetics communities",
+      "cosmetic interest for skin appearance and texture (topical use common)",
+      "discussion around hair/scalp health in cosmetic communities (mixed evidence)",
+      "used as a general “skin support” ingredient in some formulations",
     ],
     "side_effects_common": [
-      "skin irritation or redness (topical use)",
-      "itching",
-      "dryness or burning sensation (topical use)",
+      "skin irritation or redness (topical)",
+      "itching or rash",
+      "headache in sensitive users",
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe skin reaction (blistering, intense swelling, widespread rash)",
+      "widespread rash or swelling that escalates quickly",
     ],
     "who_should_be_cautious": [
-      "people with very sensitive skin, eczema, or active dermatitis",
-      "people using strong retinoids or irritant exfoliants (higher irritation load)",
-      "pregnant or breastfeeding individuals (conservative default)",
-      "adolescents (unnecessary risk for cosmetic goals)",
+      "people with copper sensitivity or severe dermatitis history",
+      "pregnant or breastfeeding individuals",
+      "adolescents (cosmetic use still has limited long-term data)",
+      "anyone prone to allergic reactions to skincare actives",
     ],
   },
 
   "ipamorelin": {
-    "bottom_line": "People use ipamorelin for “GH secretagogue” goals like recovery and body composition. Practical outcomes vary widely and hinge on sleep, training, and nutrition more than peptide branding.",
+    "bottom_line": "Ipamorelin is a growth-hormone secretagogue discussed for recovery, sleep, and body composition goals. It can affect appetite, fluid balance, and glucose regulation.",
     "benefits": [
-      "sleep quality and recovery interest in some users",
-      "appetite changes reported by some users (direction varies)",
-      "body composition interest in strength communities",
+      "recovery and sleep-quality discussions in training communities (subjective reports vary)",
+      "body composition interest tied to GH/IGF-1 signaling (outcomes vary)",
+      "often mentioned as a “milder” GH secretagogue compared with older options",
     ],
     "side_effects_common": [
-      "headache",
-      "water retention or bloating",
       "increased appetite",
-      "fatigue or vivid dreams",
+      "water retention or puffiness",
+      "headache or lethargy",
     ],
     "side_effects_serious": [
-      "severe swelling, rash, or breathing trouble (allergic reaction)",
-      "severe dizziness, fainting, or chest pain",
+      "worsening glucose control in susceptible users",
+      "severe swelling, shortness of breath, or chest pain",
     ],
     "who_should_be_cautious": [
-      "people with diabetes or poor glucose control",
-      "people with active malignancy or strong cancer-risk concerns",
+      "people with diabetes, prediabetes, or unstable blood sugar",
+      "people with untreated sleep apnea (GH axis and fluid shifts can matter)",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine axis risk plus non-essential use)",
+      "adolescents (endocrine-axis impact plus limited non-medical context)",
     ],
   },
 
   "cjc-1295": {
-    "bottom_line": "People use CJC-1295 for growth hormone axis stimulation and recovery goals. Real-world risk centers on endocrine disruption, sleep/appetite changes, and metabolic side effects.",
+    "bottom_line": "CJC-1295 is a GHRH analog discussed to stimulate growth-hormone signaling. It can meaningfully affect endocrine physiology, appetite, fluid balance, and glucose control.",
     "benefits": [
-      "recovery and sleep interest in some users",
-      "body composition interest in training communities",
-      "sometimes discussed alongside other GH-axis peptides",
+      "sleep and recovery interest tied to GH physiology (real-world reports vary)",
+      "body composition interest in training communities (outcomes vary)",
+      "sometimes discussed alongside other GH-axis peptides (stacking culture)",
     ],
     "side_effects_common": [
-      "headache",
+      "flushing or warmth",
       "water retention or swelling",
-      "increased appetite",
-      "flushing or injection-site irritation (when applicable)",
+      "headache",
     ],
     "side_effects_serious": [
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe dizziness, fainting, or chest pain",
+      "worsening glucose control in susceptible users",
+      "severe swelling, palpitations, or fainting",
     ],
     "who_should_be_cautious": [
-      "people with diabetes or impaired glucose tolerance",
-      "people with active malignancy or strong cancer-risk concerns",
+      "people with diabetes, prediabetes, or metabolic syndrome",
+      "people with active cancer or a high cancer-risk history (growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine axis risk plus non-essential use)",
+      "adolescents (endocrine-axis impact plus long-term uncertainty)",
     ],
   },
 
   "tb-500": {
-    "bottom_line": "People use TB-500 for injury and recovery goals based on thymosin beta-4 narratives. Practical risk centers on uncertain human outcomes, sourcing variability, and expectations that outpace evidence.",
+    "bottom_line": "TB-500 is marketed as a recovery peptide linked to thymosin beta-4 fragments. Real-world use centers on soft-tissue recovery claims; human evidence is limited.",
     "benefits": [
-      "injury recovery interest (tendon/soft tissue)",
-      "training recovery interest",
-      "general “repair” discussions in athletic communities",
+      "soft-tissue recovery discussions (anecdotal, evidence limited)",
+      "general “inflammation control” claims in some communities (often overstated)",
+      "sometimes grouped with other injury-healing compounds in recovery culture",
     ],
     "side_effects_common": [
-      "headache",
       "fatigue",
+      "headache",
       "nausea",
-      "sleep disruption in sensitive users",
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "chest pain, fainting, or severe shortness of breath",
+      "persistent chest pain, fainting, or severe shortness of breath",
     ],
     "who_should_be_cautious": [
+      "people with active cancer or a high cancer-risk history (tissue-growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (developmental risk plus limited human evidence)",
-      "people with active malignancy or strong cancer-risk concerns",
+      "adolescents (limited evidence and developmental uncertainty)",
+      "anyone using unverified sources (contamination and mislabeling risk)",
     ],
   },
 }
 
-
 def load_json(path: Path) -> dict:
-  with path.open("r", encoding="utf-8") as f:
-    return json.load(f)
-
+  return json.loads(path.read_text("utf-8"))
 
 def save_json(path: Path, data: dict) -> None:
-  with path.open("w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=2)
-    f.write("\n")
+  path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-
-def patch_one(slug: str, apply_changes: bool) -> None:
+def apply_patch(slug: str, dry_run: bool) -> None:
   fp = PEPTIDES_DIR / f"{slug}.json"
   if not fp.exists():
     raise SystemExit(f"ERROR: missing peptide file: {fp}")
 
-  if slug not in PATCH:
-    raise SystemExit(f"ERROR: missing PATCH entry for slug: {slug}")
-
-  if not apply_changes:
-    print(f"DRY-RUN: would patch {slug}")
+  if dry_run:
+    print(f"DRY-RUN OK: would patch {slug}")
     return
 
   d = load_json(fp)
-  pr = dict(PATCH[slug])
+  pr = PATCH[slug].copy()
   pr["schema_version"] = "practical_block_v1"
   d["practical"] = pr
   save_json(fp, d)
   print(f"OK: patched {slug}")
 
-
 def main() -> int:
   ap = argparse.ArgumentParser()
-  ap.add_argument("--apply", action="store_true", help="Write changes to peptide JSON files")
-  ap.add_argument("--dry-run", action="store_true", help="Show what would change (default behavior)")
+  ap.add_argument("--apply", action="store_true", help="Write changes to files")
+  ap.add_argument("--dry-run", action="store_true", help="No writes; print what would change")
   args = ap.parse_args()
 
-  # Default to dry-run unless --apply is explicitly provided
-  apply_changes = bool(args.apply)
+  dry_run = args.dry_run or (not args.apply)
 
   for slug in BATCH:
-    patch_one(slug, apply_changes=apply_changes)
+    apply_patch(slug, dry_run=dry_run)
 
+  if dry_run:
+    print("DRY-RUN COMPLETE (no files written)")
   return 0
-
 
 if __name__ == "__main__":
   raise SystemExit(main())

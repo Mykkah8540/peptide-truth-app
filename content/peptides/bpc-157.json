@@ -180,26 +180,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "People use BPC-157 for injury and healing support. The practical reality is mixed quality evidence, inconsistent sourcing, and expectations that get ahead of what is proven in humans.",
+    "bottom_line": "BPC-157 is discussed for gut irritation and injury-recovery goals. Human evidence is limited; expectations should be conservative and quality/testing matters.",
     "benefits": [
-      "injury and tendon/ligament recovery interest",
-      "gut irritation and inflammation symptom interest",
-      "general “healing support” use in training communities"
+      "gut irritation and reflux symptom discussions (real-world interest, evidence limited)",
+      "soft-tissue and joint recovery discussions in training communities (anecdotal)",
+      "often framed as a \"recovery support\" peptide rather than a performance enhancer"
     ],
     "side_effects_common": [
       "headache",
       "nausea or stomach upset",
-      "fatigue",
-      "irritability or sleep disruption in sensitive users"
+      "fatigue or “off” feeling"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "chest pain, fainting, or severe shortness of breath"
+      "persistent chest pain, fainting, or severe shortness of breath"
     ],
     "who_should_be_cautious": [
       "pregnant or breastfeeding individuals",
-      "adolescents (developmental risk plus limited human evidence)",
-      "people with complex medical conditions that require clinician oversight"
+      "adolescents (limited evidence and developmental uncertainty)",
+      "people with complex autoimmune or inflammatory disease on prescription immunomodulators",
+      "anyone using multiple unverified compounds (contamination and mislabeling risk)"
     ],
     "schema_version": "practical_block_v1"
   }

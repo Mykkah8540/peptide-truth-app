@@ -142,27 +142,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "People use CJC-1295 for growth hormone axis stimulation and recovery goals. Real-world risk centers on endocrine disruption, sleep/appetite changes, and metabolic side effects.",
+    "bottom_line": "CJC-1295 is a GHRH analog discussed to stimulate growth-hormone signaling. It can meaningfully affect endocrine physiology, appetite, fluid balance, and glucose control.",
     "benefits": [
-      "recovery and sleep interest in some users",
-      "body composition interest in training communities",
-      "sometimes discussed alongside other GH-axis peptides"
+      "sleep and recovery interest tied to GH physiology (real-world reports vary)",
+      "body composition interest in training communities (outcomes vary)",
+      "sometimes discussed alongside other GH-axis peptides (stacking culture)"
     ],
     "side_effects_common": [
-      "headache",
+      "flushing or warmth",
       "water retention or swelling",
-      "increased appetite",
-      "flushing or injection-site irritation (when applicable)"
+      "headache"
     ],
     "side_effects_serious": [
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe dizziness, fainting, or chest pain"
+      "worsening glucose control in susceptible users",
+      "severe swelling, palpitations, or fainting"
     ],
     "who_should_be_cautious": [
-      "people with diabetes or impaired glucose tolerance",
-      "people with active malignancy or strong cancer-risk concerns",
+      "people with diabetes, prediabetes, or metabolic syndrome",
+      "people with active cancer or a high cancer-risk history (growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine axis risk plus non-essential use)"
+      "adolescents (endocrine-axis impact plus long-term uncertainty)"
     ],
     "schema_version": "practical_block_v1"
   }

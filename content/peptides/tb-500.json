@@ -172,26 +172,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "People use TB-500 for injury and recovery goals based on thymosin beta-4 narratives. Practical risk centers on uncertain human outcomes, sourcing variability, and expectations that outpace evidence.",
+    "bottom_line": "TB-500 is marketed as a recovery peptide linked to thymosin beta-4 fragments. Real-world use centers on soft-tissue recovery claims; human evidence is limited.",
     "benefits": [
-      "injury recovery interest (tendon/soft tissue)",
-      "training recovery interest",
-      "general “repair” discussions in athletic communities"
+      "soft-tissue recovery discussions (anecdotal, evidence limited)",
+      "general “inflammation control” claims in some communities (often overstated)",
+      "sometimes grouped with other injury-healing compounds in recovery culture"
     ],
     "side_effects_common": [
-      "headache",
       "fatigue",
-      "nausea",
-      "sleep disruption in sensitive users"
+      "headache",
+      "nausea"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "chest pain, fainting, or severe shortness of breath"
+      "persistent chest pain, fainting, or severe shortness of breath"
     ],
     "who_should_be_cautious": [
+      "people with active cancer or a high cancer-risk history (tissue-growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (developmental risk plus limited human evidence)",
-      "people with active malignancy or strong cancer-risk concerns"
+      "adolescents (limited evidence and developmental uncertainty)",
+      "anyone using unverified sources (contamination and mislabeling risk)"
     ],
     "schema_version": "practical_block_v1"
   }

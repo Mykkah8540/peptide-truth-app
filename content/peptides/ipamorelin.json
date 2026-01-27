@@ -182,27 +182,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "People use ipamorelin for “GH secretagogue” goals like recovery and body composition. Practical outcomes vary widely and hinge on sleep, training, and nutrition more than peptide branding.",
+    "bottom_line": "Ipamorelin is a growth-hormone secretagogue discussed for recovery, sleep, and body composition goals. It can affect appetite, fluid balance, and glucose regulation.",
     "benefits": [
-      "sleep quality and recovery interest in some users",
-      "appetite changes reported by some users (direction varies)",
-      "body composition interest in strength communities"
+      "recovery and sleep-quality discussions in training communities (subjective reports vary)",
+      "body composition interest tied to GH/IGF-1 signaling (outcomes vary)",
+      "often mentioned as a “milder” GH secretagogue compared with older options"
     ],
     "side_effects_common": [
-      "headache",
-      "water retention or bloating",
       "increased appetite",
-      "fatigue or vivid dreams"
+      "water retention or puffiness",
+      "headache or lethargy"
     ],
     "side_effects_serious": [
-      "severe swelling, rash, or breathing trouble (allergic reaction)",
-      "severe dizziness, fainting, or chest pain"
+      "worsening glucose control in susceptible users",
+      "severe swelling, shortness of breath, or chest pain"
     ],
     "who_should_be_cautious": [
-      "people with diabetes or poor glucose control",
-      "people with active malignancy or strong cancer-risk concerns",
+      "people with diabetes, prediabetes, or unstable blood sugar",
+      "people with untreated sleep apnea (GH axis and fluid shifts can matter)",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine axis risk plus non-essential use)"
+      "adolescents (endocrine-axis impact plus limited non-medical context)"
     ],
     "schema_version": "practical_block_v1"
   }
