@@ -23,11 +23,22 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
     new Set([...(Array.isArray(p?.aliases) ? p.aliases : []), ...getAliasesForSlug(slug)])
   );
 
-const pr = doc?.practical ?? null;
+  const pr = doc?.practical ?? null;
+
+  function isCurationPendingText(v: any): boolean {
+    const s = String(v ?? "").toLowerCase();
+    return s.includes("pep-talk curation pending");
+  }
+
   const isPracticalPlaceholder =
     !!pr &&
     isCurationPendingText(pr?.bottom_line) &&
-    !((pr?.benefits ?? []).length || (pr?.side_effects_common ?? []).length || (pr?.side_effects_serious ?? []).length || (pr?.who_should_be_cautious ?? []).length);
+    !(
+      (pr?.benefits ?? []).length ||
+      (pr?.side_effects_common ?? []).length ||
+      (pr?.side_effects_serious ?? []).length ||
+      (pr?.who_should_be_cautious ?? []).length
+    );
 
   // We do NOT derive "outlookText" from overview (it creates duplication + weird tone).
   const outlookText = "";
@@ -50,7 +61,7 @@ const pr = doc?.practical ?? null;
       .split(/(?<=[.!?])\s+/)
       .map((s) => s.trim())
       .filter(Boolean);
-    const seen = new Set();
+    const seen = new Set<string>();
     const out: string[] = [];
     for (const s of parts) {
       const key = s.toLowerCase();
@@ -62,18 +73,10 @@ const pr = doc?.practical ?? null;
   }
 
   const disclaimerTextRaw = [p?.status?.human_use_note, p?.classification?.notes].filter(Boolean).join(" ");
-  const disclaimerText = uniqSentences(
-    disclaimerTextRaw
-      .split(/\s+/).join(" ")
-  );
+  const disclaimerText = uniqSentences(disclaimerTextRaw.split(/\s+/).join(" "));
   const disclaimerTextClean = isPendingText(disclaimerText) ? "" : disclaimerText;
 
   const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
-
-function isCurationPendingText(v: any): boolean {
-  const s = String(v ?? "").toLowerCase();
-  return s.includes("pep-talk curation pending");
-}
 
   return (
     <main className="pt-page">
@@ -91,19 +94,46 @@ function isCurationPendingText(v: any): boolean {
         </div>
       )}
 
-      {/* Put practical summary early (what people actually want) */}
+      {/* ORDER (as prescribed):
+          Overview
+          Current outlook and intended use
+          Practical summary
+          Interactions
+          Developmental / adolescent risk
+          Identity
+          Evidence
+          Disclaimer
+      */}
+
+      <section className="pt-card">
+        <ContentBlocks
+          heading="Overview"
+          blocks={sections?.overview ?? null}
+          showEmpty
+          emptyText="No overview has been added yet."
+        />
+      </section>
+
+      <section className="pt-card">
+        <OutlookSection
+          outlookText={outlookText}
+          interestBullets={sections?.current_outlook_bullets ?? null}
+          blocks={sections?.use_cases ?? null}
+        />
+      </section>
+
       {doc?.practical && !isPracticalPlaceholder ? (
         <section className="pt-card">
           <h2 className="pt-card-title">Practical summary</h2>
           <p className="pt-card-subtext">
-  {(() => {
-    const t = String(doc.practical.bottom_line || "").trim();
-    if (!t || isPendingText(t)) {
-      return "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed.";
-    }
-    return t;
-  })()}
-</p>
+            {(() => {
+              const t = String(doc.practical.bottom_line || "").trim();
+              if (!t || isPendingText(t)) {
+                return "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed.";
+              }
+              return t;
+            })()}
+          </p>
 
           {Array.isArray(doc.practical.benefits) && doc.practical.benefits.length ? (
             <div className="mt-4">
@@ -130,7 +160,7 @@ function isCurationPendingText(v: any): boolean {
           {Array.isArray(doc.practical.side_effects_serious) && doc.practical.side_effects_serious.length ? (
             <div className="mt-4">
               <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
-                  <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
+              <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
               <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
                 {doc.practical.side_effects_serious.map((b: string, i: number) => (
                   <li key={"s" + i}>{b}</li>
@@ -152,39 +182,45 @@ function isCurationPendingText(v: any): boolean {
         </section>
       ) : null}
 
-      {/* Overview should be real content blocks (not metadata leaks) */}
-      <ContentBlocks heading="Overview" blocks={sections?.overview ?? null} showEmpty emptyText="No overview has been added yet." />
+      <section className="pt-card">
+        <InteractionsSection
+          drugClasses={doc?.interactions?.drug_classes}
+          supplementClasses={doc?.interactions?.supplement_classes}
+          peptides={doc?.interactions?.peptides}
+          interactionSummaryBlocks={sections?.interaction_summary}
+        />
+      </section>
 
-      <OutlookSection
-        outlookText={outlookText}
-        interestBullets={sections?.current_outlook_bullets ?? null}
-        blocks={sections?.use_cases ?? null}
-      />
+      <section className="pt-card">
+        <ContentBlocks
+          heading="Developmental / adolescent risk"
+          blocks={sections?.developmental_risk_block ?? null}
+          showEmpty
+          emptyText="No developmental/adolescent risk notes have been added yet."
+        />
+      </section>
 
-      <InteractionsSection
-        drugClasses={doc?.interactions?.drug_classes}
-        supplementClasses={doc?.interactions?.supplement_classes}
-        peptides={doc?.interactions?.peptides}
-        interactionSummaryBlocks={sections?.interaction_summary}
-      />
+      <section className="pt-card">
+        <IdentityPanel
+          kind="peptide"
+          slug={slug}
+          riskScore={riskHit ? riskHit.risk.risk_score : null}
+          riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}
+          evidenceGradeLabel={evidenceGradeLabel(riskHit?.risk.evidence_grade ?? null)}
+          canonicalName={p?.canonical_name}
+          shortName={p?.short_name}
+          aliases={mergedAliases}
+          aminoAcidSeq={p?.structure?.amino_acid_seq}
+        />
+      </section>
 
-      <IdentityPanel
-        kind="peptide"
-        slug={slug}
-        riskScore={riskHit ? riskHit.risk.risk_score : null}
-        riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}
-        evidenceGradeLabel={evidenceGradeLabel(riskHit?.risk.evidence_grade ?? null)}
-        canonicalName={p?.canonical_name}
-        shortName={p?.short_name}
-        aliases={mergedAliases}
-        aminoAcidSeq={p?.structure?.amino_acid_seq}
-      />
+      <section className="pt-card">
+        <EvidenceList evidence={p?.evidence ?? []} />
+      </section>
 
-      <ContentBlocks heading="Developmental / adolescent risk" blocks={sections?.developmental_risk_block ?? null} showEmpty emptyText="No developmental/adolescent risk notes have been added yet." />
-
-      <EvidenceList evidence={p?.evidence ?? []} />
-
-      <DisclaimerSection text={disclaimerTextClean} />
+      <section className="pt-card">
+        <DisclaimerSection text={disclaimerTextClean} />
+      </section>
 
       {DEBUG && riskHit && <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" />}
     </main>
