@@ -137,11 +137,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "VIP (vasoactive intestinal peptide) is a potent neuropeptide affecting blood vessels, lungs, and gut function. It is not a routine wellness peptide; altering these systems outside medical oversight can be risky.",
+    "benefits": [
+      "research relevance in airway, vascular, and GI signaling",
+      "physiology relevance in smooth muscle relaxation and secretion pathways",
+      "often discussed for inflammatory or respiratory themes (claims can be speculative)"
+    ],
+    "side_effects_common": [
+      "flushing",
+      "headache",
+      "lightheadedness",
+      "nausea or diarrhea"
+    ],
+    "side_effects_serious": [
+      "fainting or collapse from blood pressure effects",
+      "severe shortness of breath or wheezing",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with low blood pressure or on vasodilators/blood pressure meds",
+      "people with significant asthma/airway reactivity or severe GI disease",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence plus inappropriate for non-clinical use)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
