@@ -3,8 +3,8 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 46,
-    "interaction_keys": 12
+    "peptides_with_any_interactions": 48,
+    "interaction_keys": 13
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -195,6 +195,10 @@
         "peptide_name": "Melanotan Ii"
       },
       {
+        "peptide_slug": "neuropeptide-s",
+        "peptide_name": "Neuropeptide S"
+      },
+      {
         "peptide_slug": "neuropeptide-y",
         "peptide_name": "Neuropeptide Y"
       },
@@ -209,6 +213,10 @@
       {
         "peptide_slug": "substance-p",
         "peptide_name": "Substance P"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
       }
     ],
     "ssri-snri-serotonergic": [
@@ -293,6 +301,12 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      }
+    ],
+    "cardiovascular-physiology-context": [
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
       }
     ]
   }
