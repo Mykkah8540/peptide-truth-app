@@ -118,7 +118,9 @@
     "slug": "cgrp"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "neuropeptide-cns-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

@@ -3,8 +3,8 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 37,
-    "interaction_keys": 10
+    "peptides_with_any_interactions": 46,
+    "interaction_keys": 12
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -181,6 +181,36 @@
         "peptide_name": "Thymosin Beta-4 (full length)"
       }
     ],
+    "neuropeptide-cns-context": [
+      {
+        "peptide_slug": "cgrp",
+        "peptide_name": "CGRP"
+      },
+      {
+        "peptide_slug": "melanotan-i",
+        "peptide_name": "Melanotan I"
+      },
+      {
+        "peptide_slug": "melanotan-ii",
+        "peptide_name": "Melanotan Ii"
+      },
+      {
+        "peptide_slug": "neuropeptide-y",
+        "peptide_name": "Neuropeptide Y"
+      },
+      {
+        "peptide_slug": "orexin-a",
+        "peptide_name": "Orexin-A"
+      },
+      {
+        "peptide_slug": "oxytocin",
+        "peptide_name": "Oxytocin"
+      },
+      {
+        "peptide_slug": "substance-p",
+        "peptide_name": "Substance P"
+      }
+    ],
     "ssri-snri-serotonergic": [
       {
         "peptide_slug": "dsip",
@@ -211,6 +241,16 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      }
+    ],
+    "endocrine-axis-modulation-context": [
+      {
+        "peptide_slug": "kisspeptin",
+        "peptide_name": "Kisspeptin"
+      },
+      {
+        "peptide_slug": "prolactin-releasing-peptide",
+        "peptide_name": "Prolactin Releasing Peptide"
       }
     ],
     "corticosteroids": [
