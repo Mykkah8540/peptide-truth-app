@@ -172,30 +172,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "bottom_line": "TB-500 is a market name often associated with thymosin beta-4–related fragments and is commonly discussed for injury recovery. Most supportive data is preclinical or indirect, and real-world risk is driven by product identity confusion and unregulated sourcing.",
+    "bottom_line": "People use TB-500 for injury and recovery goals based on thymosin beta-4 narratives. Practical risk centers on uncertain human outcomes, sourcing variability, and expectations that outpace evidence.",
     "benefits": [
-      "Soft-tissue recovery interest after overuse or injury",
-      "Return-to-training support interest during rehab periods",
-      "Joint comfort and mobility support interest in recovery discussions"
+      "injury recovery interest (tendon/soft tissue)",
+      "training recovery interest",
+      "general “repair” discussions in athletic communities"
     ],
     "side_effects_common": [
-      "Injection-site irritation or discomfort",
-      "Headache",
-      "Nausea",
-      "Fatigue"
+      "headache",
+      "fatigue",
+      "nausea",
+      "sleep disruption in sensitive users"
     ],
     "side_effects_serious": [
-      "Allergic reaction with hives, facial swelling, or trouble breathing",
-      "Chest pain, fainting, or severe shortness of breath",
-      "Severe swelling, rapidly spreading redness, or drainage at an injection site"
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "chest pain, fainting, or severe shortness of breath"
     ],
     "who_should_be_cautious": [
-      "Active cancer or recent cancer treatment",
-      "People using anticoagulants or antiplatelets",
-      "Bleeding disorders",
-      "Pregnancy or breastfeeding",
-      "Children and adolescents"
-    ]
+      "pregnant or breastfeeding individuals",
+      "adolescents (developmental risk plus limited human evidence)",
+      "people with active malignancy or strong cancer-risk concerns"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

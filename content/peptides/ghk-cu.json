@@ -176,29 +176,27 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "bottom_line": "GHK-Cu is most commonly discussed for skin and hair applications (texture, appearance, wound support). Human evidence varies by use and formulation. Real-world risk concentrates around skin irritation, allergic reactions, and inconsistent product quality.",
+    "bottom_line": "People use GHK-Cu for skin and cosmetic goals. Real-world results depend heavily on formulation quality, irritation tolerance, and realistic expectations.",
     "benefits": [
-      "skin texture and overall appearance support (cosmetic use)",
-      "support for minor skin recovery / post-procedure routines (cosmetic context)",
-      "hair and scalp interest (community-reported)",
-      "general cosmetic anti-aging interest"
+      "skin appearance and texture interest",
+      "supporting cosmetic routines (topical use discussions)",
+      "general “skin repair” interest in aesthetics communities"
     ],
     "side_effects_common": [
-      "skin irritation or burning sensation",
-      "redness or rash",
+      "skin irritation or redness (topical use)",
       "itching",
-      "acne-like breakouts"
+      "dryness or burning sensation (topical use)"
     ],
     "side_effects_serious": [
-      "severe allergic reaction symptoms (hives, facial swelling, breathing difficulty)",
-      "signs of skin infection (spreading redness, heat, pus, fever)"
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "severe skin reaction (blistering, intense swelling, widespread rash)"
     ],
     "who_should_be_cautious": [
-      "people with eczema, psoriasis, or highly reactive skin",
-      "people with known copper allergy or metal sensitivities",
-      "pregnancy or breastfeeding",
-      "anyone with a history of severe allergic reactions"
-    ]
+      "people with very sensitive skin, eczema, or active dermatitis",
+      "people using strong retinoids or irritant exfoliants (higher irritation load)",
+      "pregnant or breastfeeding individuals (conservative default)",
+      "adolescents (unnecessary risk for cosmetic goals)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

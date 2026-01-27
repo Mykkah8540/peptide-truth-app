@@ -180,25 +180,26 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "BPC-157 is mostly supported by preclinical research. Human evidence is limited. In real-world use, the biggest safety variable is unregulated sourcing and non-medical handling.",
+    "bottom_line": "People use BPC-157 for injury and healing support. The practical reality is mixed quality evidence, inconsistent sourcing, and expectations that get ahead of what is proven in humans.",
     "benefits": [
-      "Interest in tendon/ligament and soft-tissue recovery support (evidence is limited)",
-      "Interest in GI comfort / gut inflammation contexts (evidence is limited)",
-      "Used in return-to-training discussions during rehab (anecdotal)"
+      "injury and tendon/ligament recovery interest",
+      "gut irritation and inflammation symptom interest",
+      "general “healing support” use in training communities"
     ],
     "side_effects_common": [
-      "No consistent, high-quality human side-effect profile is established",
-      "Local irritation or discomfort at the site of use is commonly reported anecdotally"
+      "headache",
+      "nausea or stomach upset",
+      "fatigue",
+      "irritability or sleep disruption in sensitive users"
     ],
     "side_effects_serious": [
-      "Fever, spreading redness, swelling, drainage, or rapidly worsening pain — seek medical care",
-      "Chest pain, shortness of breath, fainting, or severe allergic symptoms — seek emergency care"
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "chest pain, fainting, or severe shortness of breath"
     ],
     "who_should_be_cautious": [
-      "Pregnant or breastfeeding people",
-      "People using anticoagulants/antiplatelets or NSAIDs",
-      "Anyone with immune suppression or a history of severe allergic reactions",
-      "Competitive athletes (anti-doping rules can prohibit use)"
+      "pregnant or breastfeeding individuals",
+      "adolescents (developmental risk plus limited human evidence)",
+      "people with complex medical conditions that require clinician oversight"
     ],
     "schema_version": "practical_block_v1"
   }

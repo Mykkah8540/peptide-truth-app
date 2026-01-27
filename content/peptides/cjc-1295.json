@@ -142,28 +142,28 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
+    "bottom_line": "People use CJC-1295 for growth hormone axis stimulation and recovery goals. Real-world risk centers on endocrine disruption, sleep/appetite changes, and metabolic side effects.",
     "benefits": [
-      "Interest in increased GH/IGF-1 signaling (body composition / recovery discussions)",
-      "Sleep and “recovery quality” anecdotes in fitness communities",
-      "Often discussed as part of GH-axis “stacking” (conceptual, not a protocol)"
+      "recovery and sleep interest in some users",
+      "body composition interest in training communities",
+      "sometimes discussed alongside other GH-axis peptides"
     ],
     "side_effects_common": [
-      "Water retention / puffiness (reported in GH-axis discussions)",
-      "Increased appetite or changes in hunger (variable reports)",
-      "Fatigue or headache (nonspecific, inconsistently reported)"
+      "headache",
+      "water retention or swelling",
+      "increased appetite",
+      "flushing or injection-site irritation (when applicable)"
     ],
     "side_effects_serious": [
-      "Signs of glucose intolerance (unusual thirst/urination, unexplained fatigue) — seek medical evaluation",
-      "Rapid swelling, shortness of breath, or chest pain (seek urgent care)",
-      "Severe allergic reaction (hives, facial swelling, trouble breathing)"
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "severe dizziness, fainting, or chest pain"
     ],
     "who_should_be_cautious": [
-      "People with diabetes or prediabetes, or strong family history of metabolic disease",
-      "Active malignancy or cancer history where growth signaling is a concern (requires clinician discussion)",
-      "Pregnancy/breastfeeding (avoid due to uncertainty)",
-      "Adolescents (avoid: growth axis manipulation + long-term uncertainty)"
+      "people with diabetes or impaired glucose tolerance",
+      "people with active malignancy or strong cancer-risk concerns",
+      "pregnant or breastfeeding individuals",
+      "adolescents (endocrine axis risk plus non-essential use)"
     ],
-    "bottom_line": "CJC-1295 is a long-acting analog of growth hormone-releasing hormone (GHRH). In real-world wellness and bodybuilding circles it’s discussed for GH/IGF-1 elevation, recovery, and body composition—but the evidence base is limited, and most use happens outside regulated medical systems."
+    "schema_version": "practical_block_v1"
   }
 }
