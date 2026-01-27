@@ -121,11 +121,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Teriparatide is a prescription parathyroid hormone analog used for osteoporosis and fracture-risk reduction. It is not a wellness peptide; it affects calcium and bone metabolism and must be medically supervised.",
+    "benefits": [
+      "bone density and fracture-risk reduction in osteoporosis contexts (prescription use)",
+      "clinical relevance in severe osteopenia/osteoporosis management",
+      "anabolic bone-building mechanism under medical supervision"
+    ],
+    "side_effects_common": [
+      "nausea",
+      "dizziness or lightheadedness",
+      "leg cramps",
+      "joint or bone pain"
+    ],
+    "side_effects_serious": [
+      "signs of high calcium (confusion, severe weakness, irregular heartbeat)",
+      "fainting or collapse",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with hypercalcemia or parathyroid disorders",
+      "people with bone cancer history, skeletal radiation history, or high bone-turnover disorders",
+      "pregnant or breastfeeding individuals",
+      "adolescents (bone growth/development risk plus inappropriate use context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
