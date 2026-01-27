@@ -3,7 +3,7 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 36,
+    "peptides_with_any_interactions": 37,
     "interaction_keys": 10
   },
   "mapping": {
@@ -153,6 +153,10 @@
       {
         "peptide_slug": "thymosin-beta-4",
         "peptide_name": "Thymosin Beta-4"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4-full",
+        "peptide_name": "Thymosin Beta-4 (full length)"
       }
     ],
     "nsaids": [
@@ -171,6 +175,10 @@
       {
         "peptide_slug": "thymosin-beta-4",
         "peptide_name": "Thymosin Beta-4"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4-full",
+        "peptide_name": "Thymosin Beta-4 (full length)"
       }
     ],
     "ssri-snri-serotonergic": [

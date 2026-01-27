@@ -145,7 +145,10 @@
     }
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "anticoagulants-antiplatelets",
+      "nsaids"
+    ],
     "supplement_classes": [],
     "peptides": []
   },
