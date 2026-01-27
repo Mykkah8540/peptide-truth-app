@@ -121,11 +121,29 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Motilin is a gut hormone involved in migrating motor complex activity and GI motility. It is not a casual wellness peptide; manipulating motility can backfire and symptoms can worsen.",
+    "benefits": [
+      "physiology relevance in GI motility and gastric emptying discussions",
+      "research relevance in prokinetic drug development and motility disorders"
+    ],
+    "side_effects_common": [
+      "abdominal cramping",
+      "diarrhea or loose stools",
+      "nausea",
+      "bloating"
+    ],
+    "side_effects_serious": [
+      "severe abdominal pain (urgent evaluation)",
+      "severe diarrhea or dehydration",
+      "fainting or collapse (dehydration/electrolyte context)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with inflammatory bowel disease, severe IBS, or unstable GI disease",
+      "people with bowel obstruction history or severe abdominal symptoms",
+      "pregnant or breastfeeding individuals",
+      "adolescents (limited context and inappropriate for non-clinical use)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

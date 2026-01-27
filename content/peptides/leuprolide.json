@@ -121,11 +121,30 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Leuprolide is a potent prescription GnRH agonist used to suppress sex hormones in specific medical conditions. It is not a wellness peptide; endocrine disruption and mental/physical side effects can be substantial.",
+    "benefits": [
+      "clinical relevance in prostate cancer, endometriosis, fibroids, and puberty suppression contexts (specialist care)",
+      "physiology relevance in HPG-axis suppression discussions"
+    ],
+    "side_effects_common": [
+      "hot flashes",
+      "fatigue",
+      "mood changes or irritability",
+      "reduced libido",
+      "headache"
+    ],
+    "side_effects_serious": [
+      "severe depression, suicidal thoughts, or extreme mood instability",
+      "chest pain, fainting, or severe shortness of breath",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "anyone not under specialist medical supervision for a clear indication",
+      "people with major depressive disorder or severe anxiety history",
+      "people with osteoporosis risk or low bone density",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence endocrine manipulation; specialist-only context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

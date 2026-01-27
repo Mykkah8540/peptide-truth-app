@@ -124,11 +124,31 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Liraglutide is a prescription GLP-1 receptor agonist used for type 2 diabetes and weight management (indication-dependent). It can strongly affect appetite and GI tolerance, and misuse risks are real.",
+    "benefits": [
+      "blood sugar control in type 2 diabetes contexts (prescription use)",
+      "appetite reduction and reduced food noise discussions (variable)",
+      "weight-loss support in approved weight-management contexts"
+    ],
+    "side_effects_common": [
+      "nausea",
+      "vomiting or stomach upset",
+      "constipation or diarrhea",
+      "reduced appetite that can overshoot into under-eating"
+    ],
+    "side_effects_serious": [
+      "severe persistent vomiting or dehydration",
+      "severe abdominal pain (urgent evaluation)",
+      "signs of low blood sugar when combined with other diabetes meds (confusion, fainting)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with a history of pancreatitis or severe GI disease",
+      "people on insulin or sulfonylureas (hypoglycemia-risk context when combined)",
+      "people with eating disorder history or extreme appetite suppression risk",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high-consequence metabolic manipulation plus limited context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
