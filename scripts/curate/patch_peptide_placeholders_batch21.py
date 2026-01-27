@@ -9,139 +9,138 @@ ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 
 BATCH = [
+  "bpc-157-arginate",
   "calcitonin",
   "carbetocin",
   "cgrp",
   "cjc-1295-dac",
-  "desmopressin",
 ]
 
 PATCH = {
-  "calcitonin": {
-    "bottom_line": "Calcitonin is a prescription hormone used in specific medical contexts (e.g., certain calcium/bone indications). It is not a wellness peptide; off-label use can disrupt calcium balance and cause meaningful harm.",
+  "bpc-157-arginate": {
+    "bottom_line": "BPC-157 arginate is a variant form discussed in injury and recovery communities. Human outcomes are not established, and product quality variation is a major real-world risk.",
     "benefits": [
-      "clinical relevance in calcium and bone metabolism physiology",
-      "prescription use in specific indications under medical supervision",
-      "research relevance in endocrine regulation discussions",
+      "injury and recovery discussions borrowed from BPC-157 narratives",
+      "often framed as a “stronger” or “more stable” version (claims exceed evidence)",
+      "used in anecdotal stacking conversations (low-quality signal)",
     ],
     "side_effects_common": [
+      "headache",
       "nausea or stomach upset",
+      "sleep disruption in sensitive users",
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "chest pain, fainting, or severe shortness of breath",
+    ],
+    "who_should_be_cautious": [
+      "people with cancer history or active malignancy concern",
+      "people with autoimmune disease on immunomodulating medications",
+      "pregnant or breastfeeding individuals",
+      "adolescents (limited evidence and long-term uncertainty)",
+    ],
+  },
+
+  "calcitonin": {
+    "bottom_line": "Calcitonin is a prescription hormone used for specific bone and calcium-related indications. It is not a wellness peptide; electrolyte and hormone effects can be meaningful outside medical care.",
+    "benefits": [
+      "clinical relevance in select bone and calcium-related indications (prescription care)",
+      "physiology relevance in calcium regulation pathways",
+    ],
+    "side_effects_common": [
+      "nausea",
       "flushing",
+      "injection-site irritation (prescription context)",
       "headache",
     ],
     "side_effects_serious": [
-      "signs of low calcium (muscle cramps, tingling, spasms)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe dizziness, fainting, or collapse",
+      "signs of low calcium (muscle cramps, tingling, severe weakness)",
+      "severe dizziness or fainting",
     ],
     "who_should_be_cautious": [
-      "people with calcium or parathyroid disorders",
-      "people with significant kidney disease or electrolyte instability",
+      "anyone without clinician supervision for a clear indication",
+      "people with calcium/electrolyte disorders",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine disruption risk plus inappropriate context)",
+      "adolescents (endocrine manipulation plus inappropriate context)",
     ],
   },
 
   "carbetocin": {
-    "bottom_line": "Carbetocin is an oxytocin-analog medication used in obstetric care to help control uterine bleeding after delivery. It is not a wellness peptide; non-medical use is high-risk.",
+    "bottom_line": "Carbetocin is a prescription oxytocin analog used in obstetric care to support uterine contraction. It is not a wellness peptide; blood pressure and uterine effects make non-medical use high-risk.",
     "benefits": [
-      "clinical relevance in postpartum uterine atony prevention/treatment (medical setting)",
-      "physiology relevance in uterine contraction signaling",
+      "clinical relevance in postpartum uterine atony prevention/treatment (medical care)",
+      "physiology relevance in uterine contractility signaling",
     ],
     "side_effects_common": [
       "nausea",
       "headache",
       "flushing",
+      "dizziness",
     ],
     "side_effects_serious": [
-      "dangerous blood pressure symptoms (fainting, collapse, severe dizziness)",
-      "chest pain, severe shortness of breath, or severe palpitations",
-      "signs of water/electrolyte imbalance (confusion, severe weakness, seizures)",
+      "severe blood pressure symptoms (fainting, collapse)",
+      "chest pain or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
     ],
     "who_should_be_cautious": [
-      "anyone not under obstetric/medical supervision for a clear indication",
-      "people with cardiovascular disease or significant blood pressure instability",
-      "people with kidney disease or electrolyte disorders",
-      "pregnant or breastfeeding individuals (context-specific drug; do not self-administer)",
-      "adolescents (high consequence plus inappropriate for non-clinical use)",
+      "pregnant individuals (outside supervised obstetric care)",
+      "people with cardiovascular disease or unstable blood pressure",
+      "people with seizure disorders",
+      "breastfeeding individuals (clinical context matters)",
+      "adolescents (high consequence plus inappropriate context)",
     ],
   },
 
   "cgrp": {
-    "bottom_line": "CGRP (calcitonin gene-related peptide) is a major signaling molecule in migraine biology and vascular regulation. It is not a wellness peptide; direct use outside research/medical contexts is high-risk because it can affect blood vessels and blood pressure.",
+    "bottom_line": "CGRP is a vasoactive neuropeptide central to migraine biology and vascular tone. It is not a wellness peptide; systemic vascular effects make non-medical use high-risk.",
     "benefits": [
-      "strong physiology relevance in migraine pathways and neurovascular signaling",
-      "clinical relevance because CGRP-targeting drugs exist (antagonists and antibodies)",
-      "research relevance in pain and vasodilation discussions",
+      "research relevance in migraine and trigeminal pain pathways",
+      "physiology relevance in vasodilation and neurovascular signaling",
     ],
     "side_effects_common": [
-      "headache or head pressure changes",
-      "flushing or warmth",
-      "lightheadedness",
+      "headache changes (worsening or atypical patterns)",
+      "flushing",
+      "dizziness",
+      "nausea",
     ],
     "side_effects_serious": [
       "fainting or collapse",
-      "severe chest pain or severe shortness of breath",
+      "chest pain, severe shortness of breath, or severe weakness",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
     ],
     "who_should_be_cautious": [
-      "people with cardiovascular disease, stroke history, or severe blood pressure instability",
-      "people with severe migraine symptoms requiring medical evaluation (rule-out risk)",
+      "people with cardiovascular disease or unstable blood pressure",
+      "people with complex neurologic conditions requiring supervision",
       "pregnant or breastfeeding individuals",
-      "adolescents (high consequence plus inappropriate for non-clinical use)",
+      "adolescents (high consequence plus inappropriate context)",
     ],
   },
 
   "cjc-1295-dac": {
-    "bottom_line": "CJC-1295 with DAC is discussed for growth hormone and IGF-1 signaling goals. It is endocrine-active; side effects and downstream risks are real, and long-term outcomes for non-medical use are not established.",
+    "bottom_line": "CJC-1295 with DAC is a long-acting GHRH analog discussed for growth-hormone axis effects. Endocrine manipulation is high-consequence, and non-medical use is high-risk.",
     "benefits": [
-      "GH/IGF-1 signaling interest for body composition and recovery themes (claims often exceed evidence)",
-      "sometimes discussed for sleep and training recovery (variable)",
-      "often used in “growth” stacking conversations (anecdotal)",
-    ],
-    "side_effects_common": [
-      "water retention or swelling",
-      "increased appetite",
-      "headache",
-      "tingling or numbness sensations",
-    ],
-    "side_effects_serious": [
-      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
-      "severe swelling, shortness of breath, or chest pain",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-    ],
-    "who_should_be_cautious": [
-      "people with diabetes, prediabetes, or metabolic syndrome",
-      "people with active cancer or cancer history concerns (growth signaling context)",
-      "people with cardiovascular disease or uncontrolled blood pressure",
-      "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation risk plus inappropriate context)",
-    ],
-  },
-
-  "desmopressin": {
-    "bottom_line": "Desmopressin (DDAVP) is a prescription drug that changes water balance and can also affect clotting factors in specific conditions. It is not a wellness peptide; the major danger is hyponatremia (dangerously low sodium).",
-    "benefits": [
-      "clinical use in diabetes insipidus and certain nighttime urination disorders (medical supervision)",
-      "clinical use in specific bleeding disorders (von Willebrand/hemophilia A contexts) under supervision",
-      "physiology relevance in vasopressin signaling and water balance",
+      "growth-hormone axis interest (claims vary and are commonly overstated)",
+      "body composition and recovery discussions in performance communities (anecdotal)",
+      "sleep-related discussions tied to GH narratives (variable)",
     ],
     "side_effects_common": [
       "headache",
-      "nausea",
+      "flushing",
       "water retention or swelling",
+      "sleep disruption in sensitive users",
     ],
     "side_effects_serious": [
-      "hyponatremia symptoms (confusion, severe headache, vomiting)",
-      "seizure or loss of consciousness (emergency)",
+      "chest pain, fainting, or severe shortness of breath",
+      "severe blood sugar symptoms (confusion, fainting)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
     ],
     "who_should_be_cautious": [
-      "people with low sodium history, heart failure, or kidney disease",
-      "people taking diuretics or medications that affect sodium/water balance",
+      "people with diabetes or unstable blood sugar control",
+      "people with cancer history or active malignancy concern",
+      "people with endocrine disorders requiring specialist management",
       "pregnant or breastfeeding individuals",
-      "adolescents (prescription-only context; high consequence if misused)",
+      "adolescents (endocrine axis disruption plus long-term uncertainty)",
     ],
   },
 }

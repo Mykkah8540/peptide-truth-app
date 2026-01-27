@@ -121,28 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Carbetocin is an oxytocin-analog medication used in obstetric care to help control uterine bleeding after delivery. It is not a wellness peptide; non-medical use is high-risk.",
+    "bottom_line": "Carbetocin is a prescription oxytocin analog used in obstetric care to support uterine contraction. It is not a wellness peptide; blood pressure and uterine effects make non-medical use high-risk.",
     "benefits": [
-      "clinical relevance in postpartum uterine atony prevention/treatment (medical setting)",
-      "physiology relevance in uterine contraction signaling"
+      "clinical relevance in postpartum uterine atony prevention/treatment (medical care)",
+      "physiology relevance in uterine contractility signaling"
     ],
     "side_effects_common": [
       "nausea",
       "headache",
-      "flushing"
+      "flushing",
+      "dizziness"
     ],
     "side_effects_serious": [
-      "dangerous blood pressure symptoms (fainting, collapse, severe dizziness)",
-      "chest pain, severe shortness of breath, or severe palpitations",
-      "signs of water/electrolyte imbalance (confusion, severe weakness, seizures)",
+      "severe blood pressure symptoms (fainting, collapse)",
+      "chest pain or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "anyone not under obstetric/medical supervision for a clear indication",
-      "people with cardiovascular disease or significant blood pressure instability",
-      "people with kidney disease or electrolyte disorders",
-      "pregnant or breastfeeding individuals (context-specific drug; do not self-administer)",
-      "adolescents (high consequence plus inappropriate for non-clinical use)"
+      "pregnant individuals (outside supervised obstetric care)",
+      "people with cardiovascular disease or unstable blood pressure",
+      "people with seizure disorders",
+      "breastfeeding individuals (clinical context matters)",
+      "adolescents (high consequence plus inappropriate context)"
     ],
     "schema_version": "practical_block_v1"
   }

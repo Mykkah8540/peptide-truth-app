@@ -122,29 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "CJC-1295 with DAC is discussed for growth hormone and IGF-1 signaling goals. It is endocrine-active; side effects and downstream risks are real, and long-term outcomes for non-medical use are not established.",
+    "bottom_line": "CJC-1295 with DAC is a long-acting GHRH analog discussed for growth-hormone axis effects. Endocrine manipulation is high-consequence, and non-medical use is high-risk.",
     "benefits": [
-      "GH/IGF-1 signaling interest for body composition and recovery themes (claims often exceed evidence)",
-      "sometimes discussed for sleep and training recovery (variable)",
-      "often used in “growth” stacking conversations (anecdotal)"
+      "growth-hormone axis interest (claims vary and are commonly overstated)",
+      "body composition and recovery discussions in performance communities (anecdotal)",
+      "sleep-related discussions tied to GH narratives (variable)"
     ],
     "side_effects_common": [
-      "water retention or swelling",
-      "increased appetite",
       "headache",
-      "tingling or numbness sensations"
+      "flushing",
+      "water retention or swelling",
+      "sleep disruption in sensitive users"
     ],
     "side_effects_serious": [
-      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
-      "severe swelling, shortness of breath, or chest pain",
+      "chest pain, fainting, or severe shortness of breath",
+      "severe blood sugar symptoms (confusion, fainting)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with diabetes, prediabetes, or metabolic syndrome",
-      "people with active cancer or cancer history concerns (growth signaling context)",
-      "people with cardiovascular disease or uncontrolled blood pressure",
+      "people with diabetes or unstable blood sugar control",
+      "people with cancer history or active malignancy concern",
+      "people with endocrine disorders requiring specialist management",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation risk plus inappropriate context)"
+      "adolescents (endocrine axis disruption plus long-term uncertainty)"
     ],
     "schema_version": "practical_block_v1"
   }
