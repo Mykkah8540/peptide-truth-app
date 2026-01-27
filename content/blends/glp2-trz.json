@@ -7,10 +7,10 @@
     "taxonomy_keys": [
       "metabolic_weight_blend"
     ],
-    "components": [],
-    "components_unresolved": [
+    "components": [
       "tirzepatide"
     ],
+    "components_unresolved": [],
     "sections": {
       "overview": [
         {

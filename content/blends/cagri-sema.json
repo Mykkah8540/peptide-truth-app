@@ -8,11 +8,10 @@
       "metabolic_weight_blend"
     ],
     "components": [
-      "cagrilintide"
-    ],
-    "components_unresolved": [
+      "cagrilintide",
       "semaglutide"
     ],
+    "components_unresolved": [],
     "sections": {
       "overview": [
         {

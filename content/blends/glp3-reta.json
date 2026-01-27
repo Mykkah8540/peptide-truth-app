@@ -7,10 +7,10 @@
     "taxonomy_keys": [
       "metabolic_weight_blend"
     ],
-    "components": [],
-    "components_unresolved": [
+    "components": [
       "retatrutide"
     ],
+    "components_unresolved": [],
     "sections": {
       "overview": [
         {

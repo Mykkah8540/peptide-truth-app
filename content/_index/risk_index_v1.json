@@ -1884,7 +1884,8 @@
         "unknowns_penalty": true,
         "computed_from_components": true,
         "component_slugs": [
-          "cagrilintide"
+          "cagrilintide",
+          "semaglutide"
         ]
       },
       "safety_links": [
@@ -1952,15 +1953,20 @@
       "risk": {
         "risk_score": 5,
         "risk_tier": "moderate",
-        "severity": null,
-        "likelihood": null,
-        "evidence_grade": null,
-        "developmental_risk": false,
-        "unknowns_penalty": false,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "unknown",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
         "computed_from_components": true,
-        "component_slugs": []
+        "component_slugs": [
+          "semaglutide"
+        ]
       },
       "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
         "safety_risk_scoring"
       ]
     },
@@ -1971,15 +1977,20 @@
       "risk": {
         "risk_score": 5,
         "risk_tier": "moderate",
-        "severity": null,
-        "likelihood": null,
-        "evidence_grade": null,
-        "developmental_risk": false,
-        "unknowns_penalty": false,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "unknown",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
         "computed_from_components": true,
-        "component_slugs": []
+        "component_slugs": [
+          "tirzepatide"
+        ]
       },
       "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
         "safety_risk_scoring"
       ]
     },
@@ -1990,15 +2001,20 @@
       "risk": {
         "risk_score": 5,
         "risk_tier": "moderate",
-        "severity": null,
-        "likelihood": null,
-        "evidence_grade": null,
-        "developmental_risk": false,
-        "unknowns_penalty": false,
+        "severity": "moderate",
+        "likelihood": "possible",
+        "evidence_grade": "unknown",
+        "developmental_risk": true,
+        "unknowns_penalty": true,
         "computed_from_components": true,
-        "component_slugs": []
+        "component_slugs": [
+          "retatrutide"
+        ]
       },
       "safety_links": [
+        "safety_adolescents_development",
+        "safety_endocrine_axes",
+        "safety_evidence_grades",
         "safety_risk_scoring"
       ]
     },

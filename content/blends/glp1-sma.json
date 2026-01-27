@@ -7,10 +7,11 @@
     "taxonomy_keys": [
       "metabolic_weight_blend"
     ],
-    "components": [],
-    "components_unresolved": [
-      "amylin",
+    "components": [
       "semaglutide"
+    ],
+    "components_unresolved": [
+      "amylin"
     ],
     "sections": {
       "overview": [

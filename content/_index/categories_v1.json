@@ -257,11 +257,10 @@
               "metabolic_weight_blend"
             ],
             "components": [
-              "cagrilintide"
-            ],
-            "components_unresolved": [
+              "cagrilintide",
               "semaglutide"
-            ]
+            ],
+            "components_unresolved": []
           },
           {
             "kind": "blend",
@@ -270,10 +269,11 @@
             "taxonomy_keys": [
               "metabolic_weight_blend"
             ],
-            "components": [],
-            "components_unresolved": [
-              "amylin",
+            "components": [
               "semaglutide"
+            ],
+            "components_unresolved": [
+              "amylin"
             ]
           },
           {
@@ -283,10 +283,10 @@
             "taxonomy_keys": [
               "metabolic_weight_blend"
             ],
-            "components": [],
-            "components_unresolved": [
+            "components": [
               "tirzepatide"
-            ]
+            ],
+            "components_unresolved": []
           },
           {
             "kind": "blend",
@@ -295,10 +295,10 @@
             "taxonomy_keys": [
               "metabolic_weight_blend"
             ],
-            "components": [],
-            "components_unresolved": [
+            "components": [
               "retatrutide"
-            ]
+            ],
+            "components_unresolved": []
           }
         ]
       }

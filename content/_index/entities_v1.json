@@ -1065,11 +1065,10 @@
         "metabolic_weight_blend"
       ],
       "components": [
-        "cagrilintide"
-      ],
-      "components_unresolved": [
+        "cagrilintide",
         "semaglutide"
       ],
+      "components_unresolved": [],
       "evidence_count": 0,
       "source_path": "content/blends/cagri-sema.json"
     },
@@ -1111,10 +1110,11 @@
       "taxonomy_keys": [
         "metabolic_weight_blend"
       ],
-      "components": [],
-      "components_unresolved": [
-        "amylin",
+      "components": [
         "semaglutide"
+      ],
+      "components_unresolved": [
+        "amylin"
       ],
       "evidence_count": 0,
       "source_path": "content/blends/glp1-sma.json"
@@ -1126,10 +1126,10 @@
       "taxonomy_keys": [
         "metabolic_weight_blend"
       ],
-      "components": [],
-      "components_unresolved": [
+      "components": [
         "tirzepatide"
       ],
+      "components_unresolved": [],
       "evidence_count": 0,
       "source_path": "content/blends/glp2-trz.json"
     },
@@ -1140,10 +1140,10 @@
       "taxonomy_keys": [
         "metabolic_weight_blend"
       ],
-      "components": [],
-      "components_unresolved": [
+      "components": [
         "retatrutide"
       ],
+      "components_unresolved": [],
       "evidence_count": 0,
       "source_path": "content/blends/glp3-reta.json"
     },
