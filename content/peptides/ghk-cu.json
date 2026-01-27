@@ -170,7 +170,8 @@
     "drug_classes": [
       "anticoagulants-antiplatelets",
       "nsaids",
-      "immunosuppressants"
+      "immunosuppressants",
+      "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],
     "peptides": []
