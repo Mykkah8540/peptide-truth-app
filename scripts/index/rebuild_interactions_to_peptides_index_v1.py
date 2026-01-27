@@ -252,7 +252,6 @@ def main() -> int:
 
     out = {
         "schema_version": "interactions_to_peptides_index_v1",
-        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "stats": {
             "total_governed_peptides": len(ents),
             "total_peptides_loaded": scanned,
