@@ -3,7 +3,7 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 64,
+    "peptides_with_any_interactions": 65,
     "interaction_keys": 12
   },
   "mapping": {
@@ -191,6 +191,10 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      },
+      {
+        "peptide_slug": "thymulin",
+        "peptide_name": "Thymulin"
       },
       {
         "peptide_slug": "vip",
