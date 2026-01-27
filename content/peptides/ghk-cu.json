@@ -169,7 +169,6 @@
   "interactions": {
     "drug_classes": [
       "anticoagulants-antiplatelets",
-      "nsaids",
       "immunosuppressants",
       "immune-modulation-infection-risk"
     ],

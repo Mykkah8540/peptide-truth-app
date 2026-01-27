@@ -165,8 +165,7 @@
   "canonical_name": "Tb-500",
   "interactions": {
     "drug_classes": [
-      "anticoagulants-antiplatelets",
-      "nsaids"
+      "anticoagulants-antiplatelets"
     ],
     "supplement_classes": [],
     "peptides": []

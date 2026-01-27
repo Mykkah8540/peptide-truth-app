@@ -153,8 +153,7 @@
   "canonical_name": "Thymosin Beta-4",
   "interactions": {
     "drug_classes": [
-      "anticoagulants-antiplatelets",
-      "nsaids"
+      "anticoagulants-antiplatelets"
     ],
     "supplement_classes": [],
     "peptides": []
