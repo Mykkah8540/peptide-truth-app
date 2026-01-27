@@ -9,14 +9,40 @@ ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 
 BATCH = [
+  "desmopressin",
   "endothelin-1",
   "eptifibatide",
   "exenatide",
   "follistatin-344",
-  "ghrp-2",
 ]
 
 PATCH = {
+  "desmopressin": {
+    "bottom_line": "Desmopressin is a prescription vasopressin analog used for specific bleeding and urination-related conditions. It is not a wellness peptide; low sodium and fluid-balance complications are real risks.",
+    "benefits": [
+      "clinical relevance in select bleeding disorders (medical supervision)",
+      "clinical relevance in nocturnal enuresis/diabetes insipidus contexts (prescription use)",
+      "physiology relevance in water-balance signaling",
+    ],
+    "side_effects_common": [
+      "headache",
+      "nausea",
+      "water retention or swelling",
+    ],
+    "side_effects_serious": [
+      "dangerously low sodium symptoms (confusion, severe headache, seizures)",
+      "severe fluid overload symptoms (shortness of breath, rapid weight gain)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+    ],
+    "who_should_be_cautious": [
+      "anyone without clinician supervision for a clear indication",
+      "people with heart failure or significant kidney disease",
+      "people prone to low sodium (hyponatremia) or on diuretics",
+      "pregnant or breastfeeding individuals (medical context required)",
+      "adolescents (only appropriate in supervised pediatric care)",
+    ],
+  },
+
   "endothelin-1": {
     "bottom_line": "Endothelin-1 is a vasoconstrictor involved in blood pressure regulation and vascular disease biology. It is not a wellness peptide; non-medical use is high-risk.",
     "benefits": [
@@ -96,54 +122,27 @@ PATCH = {
   },
 
   "follistatin-344": {
-    "bottom_line": "Follistatin-344 is discussed for muscle and performance goals because it interacts with growth-related signaling (myostatin/activin pathways). Human evidence for non-medical use is limited, and theoretical long-term risks are a serious consideration.",
+    "bottom_line": "Follistatin-344 is discussed for muscle-growth goals via myostatin signaling narratives. Human safety and outcomes are not established, and endocrine effects make non-medical use high-risk.",
     "benefits": [
-      "muscle growth and body composition interest (claims often exceed evidence)",
-      "performance and recovery discussions in enhancement communities (anecdotal)",
-      "mechanistic relevance in myostatin/activin signaling discussions",
+      "muscle-building interest driven by myostatin-related claims (evidence limited)",
+      "performance-community discussions around strength and physique (anecdotal)",
+      "often marketed with aggressive promises (high hype-to-evidence gap)",
     ],
     "side_effects_common": [
       "headache",
       "fatigue",
-      "water retention or swelling",
+      "sleep disruption in sensitive users",
     ],
     "side_effects_serious": [
       "chest pain, fainting, or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "new or rapidly worsening swelling, severe weakness, or neurologic symptoms",
+      "new severe swelling, weakness, or neurologic symptoms (urgent evaluation)",
     ],
     "who_should_be_cautious": [
       "people with cancer history or active malignancy concern (growth signaling context)",
-      "people with cardiovascular disease or clotting risk factors",
+      "people with endocrine disorders or fertility concerns",
       "pregnant or breastfeeding individuals",
-      "adolescents (growth pathway manipulation plus long-term uncertainty)",
-    ],
-  },
-
-  "ghrp-2": {
-    "bottom_line": "GHRP-2 is discussed for growth hormone stimulation and related body composition goals. It is endocrine-active; appetite changes and water retention are common discussion points, and long-term outcomes for non-medical use are not established.",
-    "benefits": [
-      "GH-related signaling interest for recovery and body composition themes (variable)",
-      "sleep and training recovery discussions (mixed, often overstated)",
-      "sometimes discussed for appetite stimulation (context-dependent)",
-    ],
-    "side_effects_common": [
-      "increased appetite",
-      "water retention or swelling",
-      "headache",
-      "tingling or numbness sensations",
-    ],
-    "side_effects_serious": [
-      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
-      "severe swelling, shortness of breath, or chest pain",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-    ],
-    "who_should_be_cautious": [
-      "people with diabetes, prediabetes, or metabolic syndrome",
-      "people with active cancer or cancer history concerns (growth signaling context)",
-      "people with cardiovascular disease or uncontrolled blood pressure",
-      "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation risk plus inappropriate context)",
+      "adolescents (growth axis manipulation plus long-term uncertainty)",
     ],
   },
 }

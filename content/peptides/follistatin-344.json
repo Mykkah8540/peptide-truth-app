@@ -121,27 +121,27 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Follistatin-344 is discussed for muscle and performance goals because it interacts with growth-related signaling (myostatin/activin pathways). Human evidence for non-medical use is limited, and theoretical long-term risks are a serious consideration.",
+    "bottom_line": "Follistatin-344 is discussed for muscle-growth goals via myostatin signaling narratives. Human safety and outcomes are not established, and endocrine effects make non-medical use high-risk.",
     "benefits": [
-      "muscle growth and body composition interest (claims often exceed evidence)",
-      "performance and recovery discussions in enhancement communities (anecdotal)",
-      "mechanistic relevance in myostatin/activin signaling discussions"
+      "muscle-building interest driven by myostatin-related claims (evidence limited)",
+      "performance-community discussions around strength and physique (anecdotal)",
+      "often marketed with aggressive promises (high hype-to-evidence gap)"
     ],
     "side_effects_common": [
       "headache",
       "fatigue",
-      "water retention or swelling"
+      "sleep disruption in sensitive users"
     ],
     "side_effects_serious": [
       "chest pain, fainting, or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "new or rapidly worsening swelling, severe weakness, or neurologic symptoms"
+      "new severe swelling, weakness, or neurologic symptoms (urgent evaluation)"
     ],
     "who_should_be_cautious": [
       "people with cancer history or active malignancy concern (growth signaling context)",
-      "people with cardiovascular disease or clotting risk factors",
+      "people with endocrine disorders or fertility concerns",
       "pregnant or breastfeeding individuals",
-      "adolescents (growth pathway manipulation plus long-term uncertainty)"
+      "adolescents (growth axis manipulation plus long-term uncertainty)"
     ],
     "schema_version": "practical_block_v1"
   }

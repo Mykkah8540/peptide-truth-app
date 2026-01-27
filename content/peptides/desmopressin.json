@@ -121,11 +121,11 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Desmopressin (DDAVP) is a prescription drug that changes water balance and can also affect clotting factors in specific conditions. It is not a wellness peptide; the major danger is hyponatremia (dangerously low sodium).",
+    "bottom_line": "Desmopressin is a prescription vasopressin analog used for specific bleeding and urination-related conditions. It is not a wellness peptide; low sodium and fluid-balance complications are real risks.",
     "benefits": [
-      "clinical use in diabetes insipidus and certain nighttime urination disorders (medical supervision)",
-      "clinical use in specific bleeding disorders (von Willebrand/hemophilia A contexts) under supervision",
-      "physiology relevance in vasopressin signaling and water balance"
+      "clinical relevance in select bleeding disorders (medical supervision)",
+      "clinical relevance in nocturnal enuresis/diabetes insipidus contexts (prescription use)",
+      "physiology relevance in water-balance signaling"
     ],
     "side_effects_common": [
       "headache",
@@ -133,15 +133,16 @@
       "water retention or swelling"
     ],
     "side_effects_serious": [
-      "hyponatremia symptoms (confusion, severe headache, vomiting)",
-      "seizure or loss of consciousness (emergency)",
+      "dangerously low sodium symptoms (confusion, severe headache, seizures)",
+      "severe fluid overload symptoms (shortness of breath, rapid weight gain)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with low sodium history, heart failure, or kidney disease",
-      "people taking diuretics or medications that affect sodium/water balance",
-      "pregnant or breastfeeding individuals",
-      "adolescents (prescription-only context; high consequence if misused)"
+      "anyone without clinician supervision for a clear indication",
+      "people with heart failure or significant kidney disease",
+      "people prone to low sodium (hyponatremia) or on diuretics",
+      "pregnant or breastfeeding individuals (medical context required)",
+      "adolescents (only appropriate in supervised pediatric care)"
     ],
     "schema_version": "practical_block_v1"
   }
