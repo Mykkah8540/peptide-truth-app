@@ -135,27 +135,27 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Glutathione is discussed for antioxidant and skin-brightening themes. Oral and topical use are common; injectable use is higher-risk largely due to sourcing/quality and allergy risk, and outcomes vary widely.",
+    "bottom_line": "Glutathione is discussed for antioxidant and skin-brightening goals, but outcomes vary and product quality matters. It’s best treated as supportive at best, not a dramatic fix.",
     "benefits": [
-      "antioxidant and oxidative stress discussions (outcomes variable)",
-      "skin tone/brightening claims are common (evidence mixed and often overstated)",
-      "sometimes discussed for liver support themes (context-dependent)"
+      "antioxidant support discussions (evidence varies by context)",
+      "skin tone/brightening discussions (high hype-to-evidence gap in marketing)",
+      "sometimes discussed for liver or toxin-exposure themes (context-dependent)"
     ],
     "side_effects_common": [
-      "nausea or stomach upset",
       "headache",
-      "skin rash or itching"
+      "nausea or stomach upset",
+      "rash or itching"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "wheezing or severe bronchospasm symptoms in susceptible people",
-      "severe rash or swelling that escalates quickly"
+      "wheezing or bronchospasm in sensitive individuals",
+      "severe dizziness, fainting, or collapse"
     ],
     "who_should_be_cautious": [
       "people with asthma or airway reactivity",
-      "people with multiple medication allergies or prior anaphylaxis",
+      "people with multiple medication allergies or prior severe reactions",
       "pregnant or breastfeeding individuals",
-      "adolescents (cosmetic-driven use with limited long-term data)"
+      "adolescents (limited long-term data for cosmetic-driven use)"
     ],
     "schema_version": "practical_block_v1"
   }

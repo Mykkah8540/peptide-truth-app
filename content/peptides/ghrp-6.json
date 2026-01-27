@@ -122,29 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "GHRP-6 is discussed for growth hormone stimulation and is well-known for strong hunger signals. It is endocrine-active, and non-medical use carries real metabolic and long-term uncertainty.",
+    "bottom_line": "GHRP-6 is a growth hormone secretagogue known for strong hunger effects and discussed for recovery/body-composition goals. Appetite changes and endocrine effects are common; non-medical use is high-uncertainty.",
     "benefits": [
-      "GH-related signaling interest for recovery and body composition themes (variable)",
-      "sometimes discussed for sleep and training recovery (mixed, often overstated)",
-      "appetite stimulation is commonly reported (context-dependent)"
+      "recovery and sleep discussions in some communities (variable)",
+      "body-composition interest via growth-hormone signaling narratives (mixed evidence)",
+      "appetite stimulation is commonly reported (can be a downside for many)"
     ],
     "side_effects_common": [
-      "increased appetite",
-      "water retention or swelling",
-      "headache",
-      "tingling or numbness sensations"
+      "increased hunger (often pronounced)",
+      "water retention or puffiness",
+      "fatigue or sleepiness",
+      "headache"
     ],
     "side_effects_serious": [
-      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
-      "severe swelling, shortness of breath, or chest pain",
+      "chest pain, fainting, or severe shortness of breath",
+      "severe swelling, numbness/tingling, or sudden weakness (urgent evaluation)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with diabetes, prediabetes, or metabolic syndrome",
-      "people with active cancer or cancer history concerns (growth signaling context)",
-      "people with cardiovascular disease or uncontrolled blood pressure",
+      "people with diabetes or unstable blood sugar control",
+      "people with eating disorder history or problematic overeating patterns",
+      "people with cancer history or active malignancy concern (growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation risk plus inappropriate context)"
+      "adolescents (endocrine manipulation plus long-term uncertainty)"
     ],
     "schema_version": "practical_block_v1"
   }

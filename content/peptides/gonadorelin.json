@@ -121,27 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Gonadorelin (GnRH) is used clinically to test or influence reproductive hormone signaling. It is not a casual wellness peptide; non-medical use can disrupt fertility hormones and mood.",
+    "bottom_line": "Gonadorelin is a prescription GnRH analog used in fertility and endocrine testing contexts. It is not a wellness peptide; hormone-axis disruption is the core risk in non-medical use.",
     "benefits": [
-      "clinical relevance in diagnostic testing and specific endocrine indications",
-      "physiology relevance in LH/FSH and reproductive axis discussions"
+      "clinical relevance in diagnostic testing of pituitary-gonadal function",
+      "clinical relevance in fertility-related protocols under specialist care",
+      "physiology relevance in LH/FSH signaling"
     ],
     "side_effects_common": [
       "headache",
       "nausea",
-      "flushing",
-      "mood changes or irritability"
+      "hot flashes or flushing",
+      "mood changes"
     ],
     "side_effects_serious": [
+      "severe pelvic or abdominal pain (urgent evaluation)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe pelvic/testicular pain or concerning swelling",
-      "fainting or collapse"
+      "fainting or severe dizziness"
     ],
     "who_should_be_cautious": [
-      "anyone trying to conceive or with fertility concerns (axis disruption risk)",
-      "people with hormone-sensitive cancers or endocrine tumors (specialist context)",
+      "anyone without endocrinology/fertility specialist supervision",
+      "people with hormone-sensitive cancers or complex endocrine disease",
       "pregnant or breastfeeding individuals",
-      "adolescents (puberty/endocrine axis disruption risk)"
+      "adolescents (developmental endocrine risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

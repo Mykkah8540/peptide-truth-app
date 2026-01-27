@@ -123,28 +123,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Glucagon is a prescription hormone used to raise blood sugar in severe hypoglycemia and has other clinical uses. It is not a wellness peptide; non-medical use can cause dangerous glucose and cardiovascular effects.",
+    "bottom_line": "Glucagon is a prescription rescue hormone used to treat severe hypoglycemia. It is not a wellness peptide; it can meaningfully shift blood sugar and cardiovascular stress responses.",
     "benefits": [
-      "clinical relevance for severe hypoglycemia rescue (medical supervision)",
-      "physiology relevance in glucose regulation discussions"
+      "life-saving clinical use for severe low blood sugar (emergency context)",
+      "physiology relevance in glucose regulation and counter-regulatory signaling",
+      "clinical relevance in diagnostic settings (medical supervision)"
     ],
     "side_effects_common": [
       "nausea",
       "vomiting",
       "headache",
-      "fast heartbeat or jittery feeling"
+      "temporary increased heart rate"
     ],
     "side_effects_serious": [
-      "severe high blood sugar symptoms (confusion, dehydration, fainting)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe chest pain or collapse"
+      "severe or persistent vomiting with dehydration",
+      "severe chest pain, fainting, or collapse"
     ],
     "who_should_be_cautious": [
-      "people with diabetes who are not under medical supervision",
-      "people with pheochromocytoma or insulinoma history (special-risk contexts)",
+      "anyone without clinician direction for an approved indication",
+      "people with pheochromocytoma or insulinoma (specialist-only context)",
       "people with significant cardiovascular disease",
-      "pregnant or breastfeeding individuals",
-      "adolescents (high consequence endocrine manipulation plus inappropriate context)"
+      "pregnant or breastfeeding individuals (medical context required)",
+      "adolescents (only appropriate in supervised medical care)"
     ],
     "schema_version": "practical_block_v1"
   }

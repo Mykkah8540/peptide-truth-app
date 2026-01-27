@@ -9,139 +9,143 @@ ROOT = Path(__file__).resolve().parents[2]
 PEPTIDES_DIR = ROOT / "content" / "peptides"
 
 BATCH = [
+  "ghrp-2",
   "ghrp-6",
   "glucagon",
   "glutathione",
   "gonadorelin",
-  "hcg",
 ]
 
 PATCH = {
-  "ghrp-6": {
-    "bottom_line": "GHRP-6 is discussed for growth hormone stimulation and is well-known for strong hunger signals. It is endocrine-active, and non-medical use carries real metabolic and long-term uncertainty.",
+  "ghrp-2": {
+    "bottom_line": "GHRP-2 is a growth hormone secretagogue discussed for recovery and body-composition goals. It can influence appetite and endocrine signaling, and long-term safety in non-medical use is not established.",
     "benefits": [
-      "GH-related signaling interest for recovery and body composition themes (variable)",
-      "sometimes discussed for sleep and training recovery (mixed, often overstated)",
-      "appetite stimulation is commonly reported (context-dependent)",
+      "recovery and sleep-quality discussions in performance communities (variable)",
+      "body-composition interest via growth-hormone signaling narratives (evidence mixed)",
+      "sometimes discussed for appetite effects (can increase hunger)",
     ],
     "side_effects_common": [
-      "increased appetite",
-      "water retention or swelling",
+      "increased hunger",
+      "water retention or puffiness",
+      "fatigue or sleepiness",
       "headache",
-      "tingling or numbness sensations",
     ],
     "side_effects_serious": [
-      "significant blood sugar worsening symptoms (extreme thirst, confusion, fainting)",
-      "severe swelling, shortness of breath, or chest pain",
+      "chest pain, fainting, or severe shortness of breath",
+      "severe swelling, numbness/tingling, or sudden weakness (urgent evaluation)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
     ],
     "who_should_be_cautious": [
-      "people with diabetes, prediabetes, or metabolic syndrome",
-      "people with active cancer or cancer history concerns (growth signaling context)",
-      "people with cardiovascular disease or uncontrolled blood pressure",
+      "people with diabetes or unstable blood sugar control",
+      "people with cancer history or active malignancy concern (growth signaling context)",
+      "people with significant cardiovascular disease or uncontrolled blood pressure",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation risk plus inappropriate context)",
+      "adolescents (endocrine manipulation plus long-term uncertainty)",
+    ],
+  },
+
+  "ghrp-6": {
+    "bottom_line": "GHRP-6 is a growth hormone secretagogue known for strong hunger effects and discussed for recovery/body-composition goals. Appetite changes and endocrine effects are common; non-medical use is high-uncertainty.",
+    "benefits": [
+      "recovery and sleep discussions in some communities (variable)",
+      "body-composition interest via growth-hormone signaling narratives (mixed evidence)",
+      "appetite stimulation is commonly reported (can be a downside for many)",
+    ],
+    "side_effects_common": [
+      "increased hunger (often pronounced)",
+      "water retention or puffiness",
+      "fatigue or sleepiness",
+      "headache",
+    ],
+    "side_effects_serious": [
+      "chest pain, fainting, or severe shortness of breath",
+      "severe swelling, numbness/tingling, or sudden weakness (urgent evaluation)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+    ],
+    "who_should_be_cautious": [
+      "people with diabetes or unstable blood sugar control",
+      "people with eating disorder history or problematic overeating patterns",
+      "people with cancer history or active malignancy concern (growth signaling context)",
+      "pregnant or breastfeeding individuals",
+      "adolescents (endocrine manipulation plus long-term uncertainty)",
     ],
   },
 
   "glucagon": {
-    "bottom_line": "Glucagon is a prescription hormone used to raise blood sugar in severe hypoglycemia and has other clinical uses. It is not a wellness peptide; non-medical use can cause dangerous glucose and cardiovascular effects.",
+    "bottom_line": "Glucagon is a prescription rescue hormone used to treat severe hypoglycemia. It is not a wellness peptide; it can meaningfully shift blood sugar and cardiovascular stress responses.",
     "benefits": [
-      "clinical relevance for severe hypoglycemia rescue (medical supervision)",
-      "physiology relevance in glucose regulation discussions",
+      "life-saving clinical use for severe low blood sugar (emergency context)",
+      "physiology relevance in glucose regulation and counter-regulatory signaling",
+      "clinical relevance in diagnostic settings (medical supervision)",
     ],
     "side_effects_common": [
       "nausea",
       "vomiting",
       "headache",
-      "fast heartbeat or jittery feeling",
+      "temporary increased heart rate",
     ],
     "side_effects_serious": [
-      "severe high blood sugar symptoms (confusion, dehydration, fainting)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe chest pain or collapse",
+      "severe or persistent vomiting with dehydration",
+      "severe chest pain, fainting, or collapse",
     ],
     "who_should_be_cautious": [
-      "people with diabetes who are not under medical supervision",
-      "people with pheochromocytoma or insulinoma history (special-risk contexts)",
+      "anyone without clinician direction for an approved indication",
+      "people with pheochromocytoma or insulinoma (specialist-only context)",
       "people with significant cardiovascular disease",
-      "pregnant or breastfeeding individuals",
-      "adolescents (high consequence endocrine manipulation plus inappropriate context)",
+      "pregnant or breastfeeding individuals (medical context required)",
+      "adolescents (only appropriate in supervised medical care)",
     ],
   },
 
   "glutathione": {
-    "bottom_line": "Glutathione is discussed for antioxidant and skin-brightening themes. Oral and topical use are common; injectable use is higher-risk largely due to sourcing/quality and allergy risk, and outcomes vary widely.",
+    "bottom_line": "Glutathione is discussed for antioxidant and skin-brightening goals, but outcomes vary and product quality matters. It’s best treated as supportive at best, not a dramatic fix.",
     "benefits": [
-      "antioxidant and oxidative stress discussions (outcomes variable)",
-      "skin tone/brightening claims are common (evidence mixed and often overstated)",
-      "sometimes discussed for liver support themes (context-dependent)",
+      "antioxidant support discussions (evidence varies by context)",
+      "skin tone/brightening discussions (high hype-to-evidence gap in marketing)",
+      "sometimes discussed for liver or toxin-exposure themes (context-dependent)",
     ],
     "side_effects_common": [
-      "nausea or stomach upset",
       "headache",
-      "skin rash or itching",
+      "nausea or stomach upset",
+      "rash or itching",
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "wheezing or severe bronchospasm symptoms in susceptible people",
-      "severe rash or swelling that escalates quickly",
+      "wheezing or bronchospasm in sensitive individuals",
+      "severe dizziness, fainting, or collapse",
     ],
     "who_should_be_cautious": [
       "people with asthma or airway reactivity",
-      "people with multiple medication allergies or prior anaphylaxis",
+      "people with multiple medication allergies or prior severe reactions",
       "pregnant or breastfeeding individuals",
-      "adolescents (cosmetic-driven use with limited long-term data)",
+      "adolescents (limited long-term data for cosmetic-driven use)",
     ],
   },
 
   "gonadorelin": {
-    "bottom_line": "Gonadorelin (GnRH) is used clinically to test or influence reproductive hormone signaling. It is not a casual wellness peptide; non-medical use can disrupt fertility hormones and mood.",
+    "bottom_line": "Gonadorelin is a prescription GnRH analog used in fertility and endocrine testing contexts. It is not a wellness peptide; hormone-axis disruption is the core risk in non-medical use.",
     "benefits": [
-      "clinical relevance in diagnostic testing and specific endocrine indications",
-      "physiology relevance in LH/FSH and reproductive axis discussions",
+      "clinical relevance in diagnostic testing of pituitary-gonadal function",
+      "clinical relevance in fertility-related protocols under specialist care",
+      "physiology relevance in LH/FSH signaling",
     ],
     "side_effects_common": [
       "headache",
       "nausea",
-      "flushing",
-      "mood changes or irritability",
+      "hot flashes or flushing",
+      "mood changes",
     ],
     "side_effects_serious": [
+      "severe pelvic or abdominal pain (urgent evaluation)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe pelvic/testicular pain or concerning swelling",
-      "fainting or collapse",
+      "fainting or severe dizziness",
     ],
     "who_should_be_cautious": [
-      "anyone trying to conceive or with fertility concerns (axis disruption risk)",
-      "people with hormone-sensitive cancers or endocrine tumors (specialist context)",
+      "anyone without endocrinology/fertility specialist supervision",
+      "people with hormone-sensitive cancers or complex endocrine disease",
       "pregnant or breastfeeding individuals",
-      "adolescents (puberty/endocrine axis disruption risk)",
-    ],
-  },
-
-  "hcg": {
-    "bottom_line": "hCG is a prescription hormone used in specific fertility and endocrine contexts. It is not a general wellness peptide; misuse can disrupt hormones, fertility, and mood, and carries meaningful risk.",
-    "benefits": [
-      "clinical relevance in fertility treatment and certain hypogonadism protocols (medical supervision)",
-      "physiology relevance in LH-like signaling discussions",
-    ],
-    "side_effects_common": [
-      "mood changes or irritability",
-      "headache",
-      "water retention or bloating",
-      "breast tenderness or hormonal discomfort",
-    ],
-    "side_effects_serious": [
-      "blood clot symptoms (leg swelling/pain, sudden shortness of breath)",
-      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe abdominal/pelvic pain or rapid swelling (urgent evaluation)",
-    ],
-    "who_should_be_cautious": [
-      "people with hormone-sensitive cancers or tumor risk contexts",
-      "people with clotting history or strong clot risk factors",
-      "pregnant or breastfeeding individuals (medical use only, specialist context)",
-      "adolescents (puberty/endocrine axis disruption risk)",
+      "adolescents (developmental endocrine risk plus inappropriate use context)",
     ],
   },
 }
