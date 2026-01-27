@@ -124,7 +124,7 @@
       "antidiabetics-insulin-glp1"
     ],
     "supplement_classes": [],
-    "peptides": []
+    "notes": []
   },
   "practical": {
     "schema_version": "practical_block_v1",
