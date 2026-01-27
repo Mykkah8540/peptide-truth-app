@@ -139,11 +139,28 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "LL-37 is a human antimicrobial peptide studied in immunity and inflammation. Outside of clinical research, product claims often outpace evidence and quality control is a major concern.",
+    "benefits": [
+      "research relevance in innate immunity and antimicrobial activity",
+      "inflammation and skin-related discussions in some communities (evidence mixed)",
+      "sometimes discussed in chronic infection or biofilm narratives (claims often exceed data)"
+    ],
+    "side_effects_common": [
+      "injection or site irritation (when used improperly)",
+      "headache",
+      "fatigue"
+    ],
+    "side_effects_serious": [
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
+      "rapidly worsening inflammatory symptoms or severe swelling",
+      "chest pain, fainting, or severe shortness of breath"
+    ],
+    "who_should_be_cautious": [
+      "people with autoimmune disease or immune dysregulation",
+      "people on prescription immunosuppressants or immunomodulators",
+      "pregnant or breastfeeding individuals",
+      "adolescents (limited evidence and immune-development uncertainty)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
