@@ -121,11 +121,11 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Follistatin-344 is discussed for muscle-growth goals via myostatin signaling narratives. Human safety and outcomes are not established, and endocrine effects make non-medical use high-risk.",
+    "bottom_line": "Follistatin-344 is discussed for muscle growth and myostatin-related themes, but the real-world evidence base is weak and the biology intersects with growth signaling. Treat hype as a red flag and risk as non-trivial.",
     "benefits": [
-      "muscle-building interest driven by myostatin-related claims (evidence limited)",
-      "performance-community discussions around strength and physique (anecdotal)",
-      "often marketed with aggressive promises (high hype-to-evidence gap)"
+      "muscle growth and body composition discussions (evidence limited, hype-heavy)",
+      "myostatin pathway interest (mechanistic framing often outruns data)",
+      "sometimes discussed in performance communities (anecdotal, high variance)"
     ],
     "side_effects_common": [
       "headache",
@@ -135,13 +135,13 @@
     "side_effects_serious": [
       "chest pain, fainting, or severe shortness of breath",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "new severe swelling, weakness, or neurologic symptoms (urgent evaluation)"
+      "unexpected swelling or rapidly worsening symptoms"
     ],
     "who_should_be_cautious": [
-      "people with cancer history or active malignancy concern (growth signaling context)",
-      "people with endocrine disorders or fertility concerns",
+      "people with cancer history or active malignancy concerns (growth signaling context)",
+      "people with cardiovascular disease or uncontrolled blood pressure",
       "pregnant or breastfeeding individuals",
-      "adolescents (growth axis manipulation plus long-term uncertainty)"
+      "adolescents (developmental risk plus high uncertainty)"
     ],
     "schema_version": "practical_block_v1"
   }

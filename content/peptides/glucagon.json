@@ -123,29 +123,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Glucagon is a prescription rescue hormone used to treat severe hypoglycemia. It is not a wellness peptide; it can meaningfully shift blood sugar and cardiovascular stress responses.",
+    "bottom_line": "Glucagon is a prescription hormone used to treat severe hypoglycemia and in certain medical procedures. It can meaningfully raise blood sugar and affect heart rate; it is not a wellness peptide.",
     "benefits": [
-      "life-saving clinical use for severe low blood sugar (emergency context)",
-      "physiology relevance in glucose regulation and counter-regulatory signaling",
-      "clinical relevance in diagnostic settings (medical supervision)"
+      "life-saving clinical relevance for severe hypoglycemia (medical use)",
+      "used in specific diagnostic/procedural settings under supervision",
+      "physiology relevance in glucose regulation"
     ],
     "side_effects_common": [
       "nausea",
       "vomiting",
       "headache",
-      "temporary increased heart rate"
+      "fast heart rate or palpitations"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "severe or persistent vomiting with dehydration",
-      "severe chest pain, fainting, or collapse"
+      "severe chest pain, fainting, or collapse",
+      "severe or persistent vomiting with dehydration"
     ],
     "who_should_be_cautious": [
-      "anyone without clinician direction for an approved indication",
-      "people with pheochromocytoma or insulinoma (specialist-only context)",
+      "anyone not in a prescription emergency/medical context",
+      "people with pheochromocytoma or certain endocrine tumors (high-risk context)",
       "people with significant cardiovascular disease",
-      "pregnant or breastfeeding individuals (medical context required)",
-      "adolescents (only appropriate in supervised medical care)"
+      "pregnant or breastfeeding individuals",
+      "adolescents unless prescribed (high consequence metabolic effects)"
     ],
     "schema_version": "practical_block_v1"
   }

@@ -122,29 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "GHRP-6 is a growth hormone secretagogue known for strong hunger effects and discussed for recovery/body-composition goals. Appetite changes and endocrine effects are common; non-medical use is high-uncertainty.",
+    "bottom_line": "GHRP-6 is discussed for growth-hormone axis effects and is especially known for strong hunger signals. Appetite and metabolic effects can be significant; endocrine manipulation is not low-risk.",
     "benefits": [
-      "recovery and sleep discussions in some communities (variable)",
-      "body-composition interest via growth-hormone signaling narratives (mixed evidence)",
-      "appetite stimulation is commonly reported (can be a downside for many)"
+      "growth-hormone axis interest (variable; evidence mixed)",
+      "appetite stimulation is commonly reported (can be extreme)",
+      "sometimes discussed for recovery themes (anecdotal)"
     ],
     "side_effects_common": [
-      "increased hunger (often pronounced)",
-      "water retention or puffiness",
-      "fatigue or sleepiness",
-      "headache"
+      "strong hunger or overeating risk",
+      "water retention or swelling",
+      "headache",
+      "sleep disruption in some users"
     ],
     "side_effects_serious": [
+      "severe blood sugar symptoms (confusion, fainting) in susceptible users",
       "chest pain, fainting, or severe shortness of breath",
-      "severe swelling, numbness/tingling, or sudden weakness (urgent evaluation)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
       "people with diabetes or unstable blood sugar control",
-      "people with eating disorder history or problematic overeating patterns",
-      "people with cancer history or active malignancy concern (growth signaling context)",
+      "people with obesity or eating disorder history (appetite dysregulation risk)",
+      "people with cancer history or active malignancy concerns (growth signaling context)",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation plus long-term uncertainty)"
+      "adolescents (developmental endocrine risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

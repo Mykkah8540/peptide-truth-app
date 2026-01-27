@@ -122,29 +122,29 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "GHRP-2 is a growth hormone secretagogue discussed for recovery and body-composition goals. It can influence appetite and endocrine signaling, and long-term safety in non-medical use is not established.",
+    "bottom_line": "GHRP-2 is discussed for growth-hormone axis effects, appetite changes, and recovery themes. Endocrine manipulation carries real risks and outcomes vary widely; expectations should be conservative.",
     "benefits": [
-      "recovery and sleep-quality discussions in performance communities (variable)",
-      "body-composition interest via growth-hormone signaling narratives (evidence mixed)",
-      "sometimes discussed for appetite effects (can increase hunger)"
+      "growth-hormone axis interest (variable; claims often exceed evidence)",
+      "recovery and sleep discussions in some communities (anecdotal)",
+      "appetite effects are sometimes reported (unpredictable)"
     ],
     "side_effects_common": [
-      "increased hunger",
-      "water retention or puffiness",
-      "fatigue or sleepiness",
-      "headache"
+      "increased appetite or hunger swings",
+      "water retention or swelling",
+      "headache",
+      "sleep disruption in some users"
     ],
     "side_effects_serious": [
       "chest pain, fainting, or severe shortness of breath",
-      "severe swelling, numbness/tingling, or sudden weakness (urgent evaluation)",
+      "severe blood sugar symptoms (confusion, fainting) in susceptible users",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
       "people with diabetes or unstable blood sugar control",
-      "people with cancer history or active malignancy concern (growth signaling context)",
+      "people with cancer history or active malignancy concerns (growth signaling context)",
       "people with significant cardiovascular disease or uncontrolled blood pressure",
       "pregnant or breastfeeding individuals",
-      "adolescents (endocrine manipulation plus long-term uncertainty)"
+      "adolescents (developmental endocrine risk plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

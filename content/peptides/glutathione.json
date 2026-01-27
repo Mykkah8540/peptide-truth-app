@@ -135,27 +135,27 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Glutathione is discussed for antioxidant and skin-brightening goals, but outcomes vary and product quality matters. It’s best treated as supportive at best, not a dramatic fix.",
+    "bottom_line": "Glutathione is an antioxidant discussed for ‘detox’ and skin-brightening claims, but real-world outcomes are inconsistent and marketing is heavy. Focus on realistic expectations and product quality.",
     "benefits": [
-      "antioxidant support discussions (evidence varies by context)",
-      "skin tone/brightening discussions (high hype-to-evidence gap in marketing)",
-      "sometimes discussed for liver or toxin-exposure themes (context-dependent)"
+      "antioxidant biology relevance (mechanistic)",
+      "common discussions around general wellness and recovery (evidence mixed)",
+      "skin tone/brightening claims are common but often overstated"
     ],
     "side_effects_common": [
-      "headache",
       "nausea or stomach upset",
+      "headache",
       "rash or itching"
     ],
     "side_effects_serious": [
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)",
-      "wheezing or bronchospasm in sensitive individuals",
-      "severe dizziness, fainting, or collapse"
+      "wheezing or severe shortness of breath in susceptible users",
+      "rapidly worsening rash or swelling"
     ],
     "who_should_be_cautious": [
       "people with asthma or airway reactivity",
-      "people with multiple medication allergies or prior severe reactions",
+      "people with significant medication regimens where interactions are a concern",
       "pregnant or breastfeeding individuals",
-      "adolescents (limited long-term data for cosmetic-driven use)"
+      "adolescents (limited evidence and unnecessary risk for cosmetic goals)"
     ],
     "schema_version": "practical_block_v1"
   }
