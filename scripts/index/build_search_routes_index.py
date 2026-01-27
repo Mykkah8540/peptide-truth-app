@@ -54,20 +54,25 @@ def add_term_map(term_map: dict, term: str, route: dict, source: str) -> None:
     t = norm_term(term)
     if not t:
         return
+
     entry = term_map.setdefault(t, {"term": t, "routes": [], "sources": []})
-    # avoid duplicate routes
-    # de-dupe routes by the 'route' string (more robust than dict equality)
-    route_key = route.get('route') if isinstance(route, dict) else None
-    already = False
+
+    # De-dupe routes by the stable 'route' string.
+    route_key = route.get("route") if isinstance(route, dict) else None
     if isinstance(route_key, str) and route_key.strip():
-        for r in entry['routes']:
-            if isinstance(r, dict) and r.get('route') == route_key:
-                already = True
+        for r in entry["routes"]:
+            if isinstance(r, dict) and r.get("route") == route_key:
                 break
-    if not already:
-          entry['routes'].append(route)
+        else:
+            entry["routes"].append(route)
+    else:
+        # If route has no route_key, fall back to dict-equality de-dupe.
+        if route not in entry["routes"]:
+            entry["routes"].append(route)
+
     if source not in entry["sources"]:
         entry["sources"].append(source)
+
 
 
 def main() -> int:
