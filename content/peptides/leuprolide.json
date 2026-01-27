@@ -121,29 +121,30 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Leuprolide is a potent prescription GnRH agonist used to suppress sex hormones in specific medical conditions. It is not a wellness peptide; endocrine disruption and mental/physical side effects can be substantial.",
+    "bottom_line": "Leuprolide is a prescription GnRH agonist used to suppress sex hormones in conditions like prostate cancer, endometriosis, and puberty disorders. It is not a wellness peptide; hormone suppression has major consequences.",
     "benefits": [
-      "clinical relevance in prostate cancer, endometriosis, fibroids, and puberty suppression contexts (specialist care)",
-      "physiology relevance in HPG-axis suppression discussions"
+      "clinical use in hormone-sensitive cancers and specific gynecologic conditions (specialist care)",
+      "clinical use in central precocious puberty under pediatric endocrinology care",
+      "mechanistic relevance in GnRH/LH/FSH signaling discussions"
     ],
     "side_effects_common": [
       "hot flashes",
+      "mood changes",
       "fatigue",
-      "mood changes or irritability",
-      "reduced libido",
-      "headache"
+      "headache",
+      "reduced libido"
     ],
     "side_effects_serious": [
-      "severe depression, suicidal thoughts, or extreme mood instability",
-      "chest pain, fainting, or severe shortness of breath",
+      "severe depression or suicidal thoughts",
+      "chest pain, shortness of breath, or fainting",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "anyone not under specialist medical supervision for a clear indication",
-      "people with major depressive disorder or severe anxiety history",
-      "people with osteoporosis risk or low bone density",
+      "anyone without endocrinology/oncology supervision",
+      "people with severe depression history or psychiatric instability",
+      "people with cardiovascular disease or high stroke risk",
       "pregnant or breastfeeding individuals",
-      "adolescents (high consequence endocrine manipulation; specialist-only context)"
+      "adolescents (only appropriate under pediatric endocrine care for specific indications)"
     ],
     "schema_version": "practical_block_v1"
   }

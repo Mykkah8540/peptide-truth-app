@@ -121,28 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Linaclotide is a prescription GI peptide used for IBS-C and chronic constipation. It can be effective for constipation and abdominal discomfort, but diarrhea and dehydration risks are real.",
+    "bottom_line": "Linaclotide is a prescription peptide used for IBS-C and chronic constipation. It is not a general wellness supplement; the main real-world risk is severe diarrhea and dehydration.",
     "benefits": [
-      "improved bowel movement frequency in constipation contexts (prescription use)",
-      "reduced abdominal discomfort in IBS-C contexts for some people"
+      "clinical use for IBS with constipation (IBS-C) symptom relief (prescription context)",
+      "clinical use for chronic idiopathic constipation (prescription context)",
+      "reduces constipation-related discomfort for some patients"
     ],
     "side_effects_common": [
       "diarrhea",
-      "abdominal cramping",
-      "bloating or gas",
-      "nausea"
+      "abdominal pain or cramping",
+      "bloating",
+      "gas"
     ],
     "side_effects_serious": [
-      "severe diarrhea or dehydration",
-      "fainting or collapse (dehydration/electrolyte context)",
-      "signs of electrolyte imbalance (severe weakness, palpitations)",
+      "severe diarrhea or dehydration (dizziness, fainting, weakness)",
+      "severe abdominal pain with persistent vomiting",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "people with frequent diarrhea or inflammatory bowel disease flares",
-      "people with dehydration risk or kidney disease",
-      "pregnant or breastfeeding individuals (risk/benefit is clinical)",
-      "adolescents and children (age-specific prescribing considerations)"
+      "people who get dehydrated easily or have kidney disease",
+      "people with bowel obstruction risk or severe GI disease",
+      "pregnant or breastfeeding individuals",
+      "adolescents and children (age restrictions and safety considerations)"
     ],
     "schema_version": "practical_block_v1"
   }

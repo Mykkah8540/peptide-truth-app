@@ -121,29 +121,31 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Lanreotide is a prescription somatostatin analog used for specific endocrine and neuroendocrine tumor conditions. It is not a wellness peptide; hormone and GI effects can be significant.",
+    "bottom_line": "Lanreotide is a prescription somatostatin analog used for specific tumors and endocrine conditions. It is not a wellness peptide; non-medical use carries real endocrine and gallbladder risks.",
     "benefits": [
-      "clinical relevance for acromegaly and certain neuroendocrine tumors (specialist care)",
-      "physiology relevance in suppressing specific hormone secretion pathways"
+      "clinical use in acromegaly and certain neuroendocrine tumors (specialist care)",
+      "reduces hormone secretion in specific medical contexts",
+      "symptom control in supervised endocrine/oncology settings"
     ],
     "side_effects_common": [
       "diarrhea or loose stools",
-      "abdominal pain or cramping",
+      "abdominal pain",
       "nausea",
-      "injection-site pain or lumps (prescription context)"
+      "injection site reactions",
+      "fatigue"
     ],
     "side_effects_serious": [
-      "severe abdominal pain (urgent evaluation)",
-      "signs of gallbladder disease (right-upper belly pain, fever, jaundice)",
-      "dangerous blood sugar changes (confusion, fainting)",
+      "gallbladder problems (severe right-upper abdominal pain, fever, jaundice)",
+      "severe blood sugar disturbances (high or low blood sugar symptoms)",
+      "slow heart rate symptoms (fainting, severe dizziness)",
       "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
     ],
     "who_should_be_cautious": [
-      "anyone not under specialist medical supervision for a clear indication",
+      "anyone without specialist supervision for a defined indication",
+      "people with diabetes or unstable blood sugar control",
       "people with gallbladder disease history",
-      "people with diabetes or blood sugar instability",
       "pregnant or breastfeeding individuals",
-      "adolescents (high consequence endocrine manipulation plus inappropriate context)"
+      "adolescents (high-consequence endocrine manipulation plus inappropriate use context)"
     ],
     "schema_version": "practical_block_v1"
   }

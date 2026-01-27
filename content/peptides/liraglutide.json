@@ -124,11 +124,11 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "Liraglutide is a prescription GLP-1 receptor agonist used for type 2 diabetes and weight management (indication-dependent). It can strongly affect appetite and GI tolerance, and misuse risks are real.",
+    "bottom_line": "Liraglutide is a prescription GLP-1 receptor agonist used for type 2 diabetes and weight management in specific indications. It can strongly affect appetite and GI tolerance, and non-medical use is high-risk.",
     "benefits": [
       "blood sugar control in type 2 diabetes contexts (prescription use)",
-      "appetite reduction and reduced food noise discussions (variable)",
-      "weight-loss support in approved weight-management contexts"
+      "weight-loss support in indicated patients (prescription programs)",
+      "appetite reduction and reduced food noise discussions (variable)"
     ],
     "side_effects_common": [
       "nausea",
@@ -147,7 +147,7 @@
       "people on insulin or sulfonylureas (hypoglycemia-risk context when combined)",
       "people with eating disorder history or extreme appetite suppression risk",
       "pregnant or breastfeeding individuals",
-      "adolescents (high-consequence metabolic manipulation plus limited context)"
+      "adolescents (only appropriate in defined indications under medical care)"
     ],
     "schema_version": "practical_block_v1"
   }
