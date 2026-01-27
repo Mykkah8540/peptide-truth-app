@@ -121,11 +121,28 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Neuropeptide Y is a widely distributed neuropeptide involved in appetite, stress resilience, and cardiovascular regulation. It is not a simple wellness peptide; systemic effects are broad and human outcomes are uncertain.",
+    "benefits": [
+      "physiology relevance in appetite and stress-response pathways",
+      "research relevance in anxiety, PTSD resilience, and metabolic signaling"
+    ],
+    "side_effects_common": [
+      "headache",
+      "nausea",
+      "fatigue",
+      "changes in appetite"
+    ],
+    "side_effects_serious": [
+      "significant blood pressure or heart-rate symptoms (chest pain, fainting)",
+      "severe anxiety, agitation, or confusion",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with cardiovascular disease or uncontrolled blood pressure",
+      "people with significant psychiatric history where arousal/anxiety shifts are risky",
+      "pregnant or breastfeeding individuals",
+      "adolescents (limited human evidence and broad systemic signaling)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

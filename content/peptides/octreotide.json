@@ -121,11 +121,31 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Octreotide is a prescription somatostatin analog used in endocrine, GI, and bleeding-related indications in clinical care. It is not a wellness peptide; hormone, glucose, and GI effects can be significant.",
+    "benefits": [
+      "clinical relevance in acromegaly and certain neuroendocrine tumors (specialist care)",
+      "clinical relevance in specific GI bleeding/variceal settings (medical supervision)",
+      "physiology relevance in suppressing hormone secretion pathways"
+    ],
+    "side_effects_common": [
+      "diarrhea or loose stools",
+      "abdominal pain or cramping",
+      "nausea",
+      "injection-site pain (prescription context)"
+    ],
+    "side_effects_serious": [
+      "severe abdominal pain (urgent evaluation)",
+      "signs of gallbladder disease (right-upper belly pain, fever, jaundice)",
+      "dangerous blood sugar changes (confusion, fainting)",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "anyone not under specialist medical supervision for a clear indication",
+      "people with gallbladder disease history",
+      "people with diabetes or blood sugar instability",
+      "pregnant or breastfeeding individuals",
+      "adolescents (high consequence endocrine manipulation plus inappropriate context)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }

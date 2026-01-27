@@ -122,11 +122,30 @@
     "peptides": []
   },
   "practical": {
-    "schema_version": "practical_block_v1",
-    "benefits": [],
-    "side_effects_common": [],
-    "side_effects_serious": [],
-    "who_should_be_cautious": [],
-    "bottom_line": "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed."
+    "bottom_line": "Neuropeptide S is a brain signaling peptide studied for arousal, anxiety-related pathways, and sleep-wake regulation. Human evidence is limited; effects are unpredictable and CNS-active risk is real.",
+    "benefits": [
+      "research relevance in arousal and anxiety-related circuitry",
+      "sleep-wake regulation interest (evidence limited, often overstated)",
+      "sometimes discussed for “alert calm” themes (anecdotal)"
+    ],
+    "side_effects_common": [
+      "restlessness or jittery feeling",
+      "headache",
+      "sleep disruption",
+      "nausea"
+    ],
+    "side_effects_serious": [
+      "severe agitation, panic, or confusion",
+      "chest pain, fainting, or severe shortness of breath",
+      "severe allergic reaction symptoms (hives, facial swelling, trouble breathing)"
+    ],
+    "who_should_be_cautious": [
+      "people with anxiety disorders, panic disorder, or bipolar disorder history",
+      "people taking stimulants, antidepressants, or other CNS-active prescriptions",
+      "people with seizure disorders",
+      "pregnant or breastfeeding individuals",
+      "adolescents (neurodevelopment uncertainty plus limited human evidence)"
+    ],
+    "schema_version": "practical_block_v1"
   }
 }
