@@ -294,7 +294,14 @@
         "preworkout",
         "stimulant supplements"
       ],
-      "notes": "HR/BP and anxiety/insomnia context."
+      "notes": "HR/BP and anxiety/insomnia context.",
+      "label": "CNS stimulants",
+      "definition": "Context bucket for substances used for stimulation/alertness that can meaningfully affect arousal, sleep, anxiety, heart rate, or blood pressure (e.g., stimulant-style nootropics). This bucket flags possible additive physiologic effects, not a proven drug interaction.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when stimulation/arousal is a primary intended effect and could plausibly stack with other stimulants.",
+        "Avoid for mild or indirect effects unless stimulation is a core user-reported purpose."
+      ]
     },
     {
       "slug": "serotonergic-supplements",
@@ -304,7 +311,14 @@
         "5-htp",
         "tryptophan"
       ],
-      "notes": "Serotonin syndrome context."
+      "notes": "Serotonin syndrome context.",
+      "label": "Serotonergic supplements",
+      "definition": "Context bucket for supplements discussed as increasing serotonin signaling or serotonin precursor availability. This flags potential serotonergic stacking alongside SSRIs/SNRIs/MAOIs or other serotonergic agents; it does not assert that serotonin syndrome risk is established.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use for supplements whose primary mechanism/marketing is serotonergic or serotonin-precursor based.",
+        "Avoid if serotonergic linkage is remote, disputed, or not central to the supplement’s use."
+      ]
     },
     {
       "slug": "anticoagulant-herbs",
@@ -315,7 +329,15 @@
         "garlic",
         "turmeric"
       ],
-      "notes": "Bleeding risk context."
+      "notes": "Bleeding risk context.",
+      "label": "Anticoagulant herbs / supplements",
+      "definition": "Context bucket for supplements commonly discussed as affecting coagulation, platelet activity, or bleeding tendency (e.g., ‘blood-thinning’ supplements). This is a cautionary context label, not proof of clinically meaningful interaction.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when a supplement is widely recognized in consumer/clinical discussion as influencing bleeding/clotting risk.",
+        "Do not use to imply equivalence to prescription anticoagulants/antiplatelets.",
+        "Avoid unless the supplement’s bleeding/clotting relevance is central and repeatably cited across credible references."
+      ]
     },
     {
       "slug": "glucose-lowering-supplements",
@@ -325,7 +347,14 @@
         "alpha lipoic acid",
         "chromium"
       ],
-      "notes": "Hypoglycemia risk context."
+      "notes": "Hypoglycemia risk context.",
+      "label": "Glucose-lowering supplements",
+      "definition": "Context bucket for supplements commonly used to support glycemic control (fasting glucose, post-meal glucose, insulin sensitivity). This signals potential additive effects with glucose-lowering medications, not a guarantee of clinically significant interaction.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when a supplement’s primary intent is glycemic control or insulin sensitivity support.",
+        "Avoid if glucose effects are speculative, incidental, or weakly supported."
+      ]
     }
   ]
 }
