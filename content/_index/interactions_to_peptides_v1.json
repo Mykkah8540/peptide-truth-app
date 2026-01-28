@@ -4,7 +4,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 65,
-    "interaction_keys": 13
+    "interaction_keys": 12
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -125,36 +125,6 @@
       {
         "peptide_slug": "ghk-cu",
         "peptide_name": "Ghk Cu"
-      },
-      {
-        "peptide_slug": "glutathione",
-        "peptide_name": "Glutathione"
-      },
-      {
-        "peptide_slug": "kpv",
-        "peptide_name": "Kpv"
-      },
-      {
-        "peptide_slug": "ll-37",
-        "peptide_name": "LL-37"
-      },
-      {
-        "peptide_slug": "thymosin-alpha-1",
-        "peptide_name": "Thymosin Alpha-1"
-      },
-      {
-        "peptide_slug": "thymulin",
-        "peptide_name": "Thymulin"
-      },
-      {
-        "peptide_slug": "vip",
-        "peptide_name": "VIP"
-      }
-    ],
-    "corticosteroids": [
-      {
-        "peptide_slug": "ara-290",
-        "peptide_name": "Ara-290"
       },
       {
         "peptide_slug": "glutathione",

@@ -72,21 +72,6 @@
       ]
     },
     {
-      "slug": "corticosteroids",
-      "title": "Corticosteroids",
-      "aka": [
-        "prednisone",
-        "steroids"
-      ],
-      "notes": "Immune/metabolic and wound-healing context.",
-      "label": "Corticosteroids",
-      "definition": "Context bucket for peptides that modulate inflammatory or immune pathways that could overlap with, or be affected by, corticosteroid use.",
-      "strictness": "context",
-      "tagging_rules": [
-        "Use when immune/inflammatory modulation is a core feature."
-      ]
-    },
-    {
       "slug": "antidiabetics-insulin-glp1",
       "title": "Antidiabetics (Insulin/GLP-1 and related)",
       "aka": [
@@ -322,5 +307,6 @@
         "Avoid unless the supplement’s bleeding/clotting relevance is central and repeatably cited across credible references."
       ]
     }
-  ]
+  ],
+  "by_drug_class_name": {}
 }

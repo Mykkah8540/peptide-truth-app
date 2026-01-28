@@ -512,5 +512,8 @@
     ]
   },
   "supplement_classes": {},
-  "peptides": {}
+  "peptides": {},
+  "by_drug_class_name": {},
+  "by_supplement_class_name": {},
+  "by_peptide_name": {}
 }

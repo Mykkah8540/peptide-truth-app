@@ -118,7 +118,6 @@
   "interactions": {
     "drug_classes": [
       "anti-infectives-antimicrobials",
-      "corticosteroids",
       "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],

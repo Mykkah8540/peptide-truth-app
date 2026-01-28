@@ -130,7 +130,6 @@
   "canonical_name": "Ll-37",
   "interactions": {
     "drug_classes": [
-      "corticosteroids",
       "immunosuppressants",
       "anti-infectives-antimicrobials",
       "immune-modulation-infection-risk"
