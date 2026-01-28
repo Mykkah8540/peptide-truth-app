@@ -121,10 +121,10 @@
   },
   "interactions": {
     "drug_classes": [
-      "neuropeptide-cns-context",
+      "antihypertensives",
       "cardiovascular-physiology-context",
       "endocrine-axis-modulation-context",
-      "antihypertensives"
+      "neuropeptide-cns-context"
     ],
     "supplement_classes": [],
     "peptides": []

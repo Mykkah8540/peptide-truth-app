@@ -131,11 +131,11 @@
   "canonical_name": "Vip",
   "interactions": {
     "drug_classes": [
+      "antihypertensives",
       "cardiovascular-physiology-context",
-      "immune-modulation-infection-risk",
       "corticosteroids",
-      "immunosuppressants",
-      "antihypertensives"
+      "immune-modulation-infection-risk",
+      "immunosuppressants"
     ],
     "supplement_classes": [],
     "peptides": []
