@@ -171,7 +171,6 @@
   "canonical_name": "Hexarelin",
   "interactions": {
     "drug_classes": [
-      "diabetes-glucose-lowering",
       "endocrine-axis-modulation-context"
     ],
     "supplement_classes": [],
