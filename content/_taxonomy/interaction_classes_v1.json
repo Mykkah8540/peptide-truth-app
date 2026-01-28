@@ -29,7 +29,7 @@
         "arbs",
         "beta blockers"
       ],
-      "notes": "Blood pressure effects and orthostatic risk context.",
+      "notes": "Use this class for peptides that can materially shift blood pressure via vascular tone or fluid balance. This is interaction-relevance for people on BP-lowering drugs, not a claim the peptide is an antihypertensive medication.",
       "label": "Antihypertensives",
       "definition": "Context bucket for peptides that may influence blood pressure or vascular resistance in a way that could matter alongside antihypertensive medications.",
       "strictness": "context",
