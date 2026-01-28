@@ -185,40 +185,6 @@
         "peptide_name": "Tirzepatide"
       }
     ],
-    "antihypertensives": [
-      {
-        "peptide_slug": "angiotensin-ii",
-        "peptide_name": "Angiotensin II"
-      },
-      {
-        "peptide_slug": "atrial-natriuretic-peptide",
-        "peptide_name": "Atrial Natriuretic Peptide"
-      },
-      {
-        "peptide_slug": "bradykinin",
-        "peptide_name": "Bradykinin"
-      },
-      {
-        "peptide_slug": "brain-natriuretic-peptide",
-        "peptide_name": "Brain Natriuretic Peptide"
-      },
-      {
-        "peptide_slug": "endothelin-1",
-        "peptide_name": "Endothelin-1"
-      },
-      {
-        "peptide_slug": "nesiritide",
-        "peptide_name": "Nesiritide"
-      },
-      {
-        "peptide_slug": "vasopressin",
-        "peptide_name": "Vasopressin"
-      },
-      {
-        "peptide_slug": "vip",
-        "peptide_name": "VIP"
-      }
-    ],
     "cardiovascular-physiology-context": [
       {
         "peptide_slug": "angiotensin-ii",
@@ -549,6 +515,16 @@
       {
         "peptide_slug": "thymulin",
         "peptide_name": "Thymulin"
+      }
+    ],
+    "antihypertensives": [
+      {
+        "peptide_slug": "nesiritide",
+        "peptide_name": "Nesiritide"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
       }
     ]
   }
