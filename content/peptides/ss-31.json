@@ -86,7 +86,7 @@
   "canonical_name": "Ss-31",
   "interactions": {
     "drug_classes": [],
-    "supplement_classes": null,
+    "supplement_classes": [],
     "peptides": null
   },
   "practical": {
