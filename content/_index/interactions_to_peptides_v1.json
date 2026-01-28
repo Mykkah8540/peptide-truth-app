@@ -4,7 +4,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 65,
-    "interaction_keys": 16
+    "interaction_keys": 15
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -318,16 +318,6 @@
       }
     ],
     "anticoagulants-antiplatelets": [
-      {
-        "peptide_slug": "bivalirudin",
-        "peptide_name": "Bivalirudin"
-      },
-      {
-        "peptide_slug": "eptifibatide",
-        "peptide_name": "Eptifibatide"
-      }
-    ],
-    "nsaids": [
       {
         "peptide_slug": "bivalirudin",
         "peptide_name": "Bivalirudin"
