@@ -4,7 +4,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 65,
-    "interaction_keys": 14
+    "interaction_keys": 13
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -388,20 +388,6 @@
       }
     ],
     "ssri-snri-serotonergic": [
-      {
-        "peptide_slug": "dsip",
-        "peptide_name": "Dsip"
-      },
-      {
-        "peptide_slug": "selank",
-        "peptide_name": "Selank"
-      },
-      {
-        "peptide_slug": "semax",
-        "peptide_name": "Semax"
-      }
-    ],
-    "serotonergic-supplements": [
       {
         "peptide_slug": "dsip",
         "peptide_name": "Dsip"

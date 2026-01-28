@@ -304,23 +304,6 @@
       ]
     },
     {
-      "slug": "serotonergic-supplements",
-      "title": "Serotonergic supplements",
-      "aka": [
-        "st johns wort",
-        "5-htp",
-        "tryptophan"
-      ],
-      "notes": "Serotonin syndrome context.",
-      "label": "Serotonergic supplements",
-      "definition": "Context bucket for supplements discussed as increasing serotonin signaling or serotonin precursor availability. This flags potential serotonergic stacking alongside SSRIs/SNRIs/MAOIs or other serotonergic agents; it does not assert that serotonin syndrome risk is established.",
-      "strictness": "context",
-      "tagging_rules": [
-        "Use for supplements whose primary mechanism/marketing is serotonergic or serotonin-precursor based.",
-        "Avoid if serotonergic linkage is remote, disputed, or not central to the supplement’s use."
-      ]
-    },
-    {
       "slug": "anticoagulant-herbs",
       "title": "Anticoagulant / antiplatelet herbs",
       "aka": [
