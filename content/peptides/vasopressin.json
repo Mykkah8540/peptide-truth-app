@@ -123,7 +123,8 @@
     "drug_classes": [
       "neuropeptide-cns-context",
       "cardiovascular-physiology-context",
-      "endocrine-axis-modulation-context"
+      "endocrine-axis-modulation-context",
+      "antihypertensives"
     ],
     "supplement_classes": [],
     "peptides": []

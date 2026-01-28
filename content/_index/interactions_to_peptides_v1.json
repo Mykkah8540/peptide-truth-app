@@ -189,6 +189,14 @@
       {
         "peptide_slug": "nesiritide",
         "peptide_name": "Nesiritide"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
       }
     ],
     "cardiovascular-physiology-context": [
