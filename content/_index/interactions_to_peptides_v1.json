@@ -565,6 +565,10 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      },
+      {
+        "peptide_slug": "thymulin",
+        "peptide_name": "Thymulin"
       }
     ]
   }
