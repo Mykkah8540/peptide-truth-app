@@ -172,7 +172,6 @@
   "interactions": {
     "drug_classes": [
       "diabetes-glucose-lowering",
-      "antidiabetics-insulin-glp1",
       "endocrine-axis-modulation-context"
     ],
     "supplement_classes": [],
