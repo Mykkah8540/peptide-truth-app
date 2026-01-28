@@ -145,9 +145,7 @@
     }
   },
   "interactions": {
-    "drug_classes": [
-      "anticoagulants-antiplatelets"
-    ],
+    "drug_classes": [],
     "supplement_classes": [
       "anticoagulant-herbs"
     ],
