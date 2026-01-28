@@ -133,8 +133,7 @@
     "drug_classes": [
       "antihypertensives",
       "cardiovascular-physiology-context",
-      "immune-modulation-infection-risk",
-      "immunosuppressants"
+      "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],
     "peptides": []

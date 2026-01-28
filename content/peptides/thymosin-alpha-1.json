@@ -195,7 +195,6 @@
   "canonical_name": "Thymosin Alpha-1",
   "interactions": {
     "drug_classes": [
-      "immunosuppressants",
       "anti-infectives-antimicrobials",
       "immune-modulation-infection-risk"
     ],

@@ -126,7 +126,6 @@
   "canonical_name": "Kpv",
   "interactions": {
     "drug_classes": [
-      "immunosuppressants",
       "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],

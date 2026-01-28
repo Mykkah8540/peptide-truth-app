@@ -168,8 +168,7 @@
   "canonical_name": "Ghk Cu",
   "interactions": {
     "drug_classes": [
-      "immune-modulation-infection-risk",
-      "immunosuppressants"
+      "immune-modulation-infection-risk"
     ],
     "supplement_classes": [
       "anticoagulant-herbs"

@@ -57,21 +57,6 @@
       ]
     },
     {
-      "slug": "immunosuppressants",
-      "title": "Immunosuppressants / immune-modulating drugs",
-      "aka": [
-        "biologics",
-        "immunosuppressants"
-      ],
-      "notes": "Immune modulation/infection risk context.",
-      "label": "Immunosuppressants",
-      "definition": "Context bucket for peptides that meaningfully modulate immune signaling or immune cell activity in a way that could matter alongside immunosuppressive therapies.",
-      "strictness": "context",
-      "tagging_rules": [
-        "Use when immune modulation is central (not vague “immune support”)."
-      ]
-    },
-    {
       "slug": "antidiabetics-insulin-glp1",
       "title": "Antidiabetics (Insulin/GLP-1 and related)",
       "aka": [
