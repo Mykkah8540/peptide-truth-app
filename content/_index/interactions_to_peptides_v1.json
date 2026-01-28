@@ -313,6 +313,10 @@
         "peptide_name": "Thymosin Alpha-1"
       },
       {
+        "peptide_slug": "thymulin",
+        "peptide_name": "Thymulin"
+      },
+      {
         "peptide_slug": "vip",
         "peptide_name": "VIP"
       }
