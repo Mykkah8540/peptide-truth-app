@@ -44,8 +44,24 @@ export type TopicPageDocV1 = {
 };
 
 function repoRoot(): string {
-  // Next runtime cwd is typically app/web. Repo root is two levels up.
-  return path.resolve(process.cwd(), "..", "..");
+  // Next can run with cwd at repo root OR app/web depending on phase.
+  // Find the repo root by walking upward until we see content/_index/entities_v1.json.
+  const cwd = process.cwd();
+  const candidates = [
+    cwd,
+    path.resolve(cwd, ".."),
+    path.resolve(cwd, "..", ".."),
+    path.resolve(cwd, "..", "..", ".."),
+    path.resolve(cwd, "..", "..", "..", ".."),
+  ];
+
+  for (const base of candidates) {
+    const marker = path.join(base, "content", "_index", "entities_v1.json");
+    if (existsSync(marker)) return base;
+  }
+
+  // Fallback: previous behavior (best guess)
+  return path.resolve(cwd, "..", "..");
 }
 
 function readJson<T>(fp: string): T {
