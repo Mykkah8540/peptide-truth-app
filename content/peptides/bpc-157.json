@@ -175,7 +175,9 @@
     "drug_classes": [
       "anticoagulants-antiplatelets"
     ],
-    "supplement_classes": [],
+    "supplement_classes": [
+      "anticoagulant-herbs"
+    ],
     "peptides": []
   },
   "practical": {

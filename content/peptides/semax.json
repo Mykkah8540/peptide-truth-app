@@ -169,7 +169,9 @@
     "drug_classes": [
       "ssri-snri-serotonergic"
     ],
-    "supplement_classes": [],
+    "supplement_classes": [
+      "serotonergic-supplements"
+    ],
     "peptides": []
   },
   "practical": {

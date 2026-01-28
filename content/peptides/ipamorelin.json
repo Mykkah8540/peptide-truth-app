@@ -179,7 +179,9 @@
       "antidiabetics-insulin-glp1",
       "endocrine-axis-modulation-context"
     ],
-    "supplement_classes": [],
+    "supplement_classes": [
+      "glucose-lowering-supplements"
+    ],
     "peptides": []
   },
   "practical": {

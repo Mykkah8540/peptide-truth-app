@@ -172,7 +172,9 @@
       "immunosuppressants",
       "immune-modulation-infection-risk"
     ],
-    "supplement_classes": [],
+    "supplement_classes": [
+      "anticoagulant-herbs"
+    ],
     "peptides": []
   },
   "practical": {

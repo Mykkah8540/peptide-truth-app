@@ -4,7 +4,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 65,
-    "interaction_keys": 12
+    "interaction_keys": 15
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -42,6 +42,68 @@
       }
     ],
     "antidiabetics-insulin-glp1": [
+      {
+        "peptide_slug": "amylin",
+        "peptide_name": "Amylin"
+      },
+      {
+        "peptide_slug": "aod-9604",
+        "peptide_name": "Aod-9604"
+      },
+      {
+        "peptide_slug": "cagrilintide",
+        "peptide_name": "Cagrilintide"
+      },
+      {
+        "peptide_slug": "exenatide",
+        "peptide_name": "Exenatide"
+      },
+      {
+        "peptide_slug": "glucagon",
+        "peptide_name": "Glucagon"
+      },
+      {
+        "peptide_slug": "hexarelin",
+        "peptide_name": "Hexarelin"
+      },
+      {
+        "peptide_slug": "ipamorelin",
+        "peptide_name": "Ipamorelin"
+      },
+      {
+        "peptide_slug": "liraglutide",
+        "peptide_name": "Liraglutide"
+      },
+      {
+        "peptide_slug": "mazdutide",
+        "peptide_name": "Mazdutide"
+      },
+      {
+        "peptide_slug": "mots-c",
+        "peptide_name": "Mots C"
+      },
+      {
+        "peptide_slug": "pramlintide",
+        "peptide_name": "Pramlintide"
+      },
+      {
+        "peptide_slug": "retatrutide",
+        "peptide_name": "Retatrutide"
+      },
+      {
+        "peptide_slug": "semaglutide",
+        "peptide_name": "Semaglutide"
+      },
+      {
+        "peptide_slug": "survodutide",
+        "peptide_name": "Survodutide"
+      },
+      {
+        "peptide_slug": "tirzepatide",
+        "peptide_name": "Tirzepatide"
+      }
+    ],
+    "glucose-lowering-supplements": [
       {
         "peptide_slug": "amylin",
         "peptide_name": "Amylin"
@@ -287,6 +349,28 @@
         "peptide_name": "Thymosin Beta-4 (full length)"
       }
     ],
+    "anticoagulant-herbs": [
+      {
+        "peptide_slug": "bpc-157",
+        "peptide_name": "Bpc-157"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "tb-500",
+        "peptide_name": "Tb-500"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4",
+        "peptide_name": "Thymosin Beta-4"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4-full",
+        "peptide_name": "Thymosin Beta-4 (full length)"
+      }
+    ],
     "neuropeptide-cns-context": [
       {
         "peptide_slug": "cgrp",
@@ -404,6 +488,20 @@
       }
     ],
     "ssri-snri-serotonergic": [
+      {
+        "peptide_slug": "dsip",
+        "peptide_name": "Dsip"
+      },
+      {
+        "peptide_slug": "selank",
+        "peptide_name": "Selank"
+      },
+      {
+        "peptide_slug": "semax",
+        "peptide_name": "Semax"
+      }
+    ],
+    "serotonergic-supplements": [
       {
         "peptide_slug": "dsip",
         "peptide_name": "Dsip"
