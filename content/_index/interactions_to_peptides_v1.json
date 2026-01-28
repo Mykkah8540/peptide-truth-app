@@ -4,7 +4,7 @@
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
     "peptides_with_any_interactions": 65,
-    "interaction_keys": 15
+    "interaction_keys": 14
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -62,68 +62,6 @@
       }
     ],
     "antidiabetics-insulin-glp1": [
-      {
-        "peptide_slug": "amylin",
-        "peptide_name": "Amylin"
-      },
-      {
-        "peptide_slug": "aod-9604",
-        "peptide_name": "Aod-9604"
-      },
-      {
-        "peptide_slug": "cagrilintide",
-        "peptide_name": "Cagrilintide"
-      },
-      {
-        "peptide_slug": "exenatide",
-        "peptide_name": "Exenatide"
-      },
-      {
-        "peptide_slug": "glucagon",
-        "peptide_name": "Glucagon"
-      },
-      {
-        "peptide_slug": "hexarelin",
-        "peptide_name": "Hexarelin"
-      },
-      {
-        "peptide_slug": "ipamorelin",
-        "peptide_name": "Ipamorelin"
-      },
-      {
-        "peptide_slug": "liraglutide",
-        "peptide_name": "Liraglutide"
-      },
-      {
-        "peptide_slug": "mazdutide",
-        "peptide_name": "Mazdutide"
-      },
-      {
-        "peptide_slug": "mots-c",
-        "peptide_name": "Mots C"
-      },
-      {
-        "peptide_slug": "pramlintide",
-        "peptide_name": "Pramlintide"
-      },
-      {
-        "peptide_slug": "retatrutide",
-        "peptide_name": "Retatrutide"
-      },
-      {
-        "peptide_slug": "semaglutide",
-        "peptide_name": "Semaglutide"
-      },
-      {
-        "peptide_slug": "survodutide",
-        "peptide_name": "Survodutide"
-      },
-      {
-        "peptide_slug": "tirzepatide",
-        "peptide_name": "Tirzepatide"
-      }
-    ],
-    "glucose-lowering-supplements": [
       {
         "peptide_slug": "amylin",
         "peptide_name": "Amylin"

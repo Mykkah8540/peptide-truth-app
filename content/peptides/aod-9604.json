@@ -152,9 +152,7 @@
       "diabetes-glucose-lowering",
       "antidiabetics-insulin-glp1"
     ],
-    "supplement_classes": [
-      "glucose-lowering-supplements"
-    ],
+    "supplement_classes": [],
     "peptides": []
   },
   "practical": {
