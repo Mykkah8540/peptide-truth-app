@@ -338,23 +338,6 @@
         "Do not use to imply equivalence to prescription anticoagulants/antiplatelets.",
         "Avoid unless the supplement’s bleeding/clotting relevance is central and repeatably cited across credible references."
       ]
-    },
-    {
-      "slug": "glucose-lowering-supplements",
-      "title": "Glucose-lowering supplements",
-      "aka": [
-        "berberine",
-        "alpha lipoic acid",
-        "chromium"
-      ],
-      "notes": "Hypoglycemia risk context.",
-      "label": "Glucose-lowering supplements",
-      "definition": "Context bucket for supplements commonly used to support glycemic control (fasting glucose, post-meal glucose, insulin sensitivity). This signals potential additive effects with glucose-lowering medications, not a guarantee of clinically significant interaction.",
-      "strictness": "context",
-      "tagging_rules": [
-        "Use when a supplement’s primary intent is glycemic control or insulin sensitivity support.",
-        "Avoid if glucose effects are speculative, incidental, or weakly supported."
-      ]
     }
   ]
 }
