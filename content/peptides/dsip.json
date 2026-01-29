@@ -56,7 +56,8 @@
       ],
       "use_cases": [
         {
-          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety)."
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+          "title": "Use cases (real-world)"
         },
         {
           "text": "• sleep onset and sleep quality discussions (variable)"
@@ -101,7 +102,8 @@
       ],
       "interaction_summary": [
         {
-          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
         },
         {
           "text": "Drug-class flags to review:"

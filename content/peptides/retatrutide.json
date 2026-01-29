@@ -131,7 +131,8 @@
       ],
       "interaction_summary": [
         {
-          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
         },
         {
           "text": "Drug-class flags to review:"
