@@ -49,7 +49,20 @@
           ]
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety)."
+        },
+        {
+          "text": "• Social bonding and connection interest in some communities"
+        },
+        {
+          "text": "• Stress and mood support interest in some communities"
+        },
+        {
+          "text": "• Clinical relevance in obstetric care contexts"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -81,7 +94,20 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "• neuropeptide-cns-context"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "a bioactive compound discussed in research and/or clinical contexts",
         "this entry summarizes what it is, what it is studied for, and key evidence limitations without providing protocols",

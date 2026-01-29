@@ -52,7 +52,20 @@
           ]
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety)."
+        },
+        {
+          "text": "• metabolic health curiosity (early-stage evidence)"
+        },
+        {
+          "text": "• exercise tolerance and recovery discussions (mixed, often overstated)"
+        },
+        {
+          "text": "• sometimes discussed for insulin sensitivity themes (uncertain outcomes)"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -84,7 +97,20 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "• diabetes-glucose-lowering"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "studied are summarized here in a conservative, evidence-bounded way",
         "general recovery and resilience interest (anecdotal)",

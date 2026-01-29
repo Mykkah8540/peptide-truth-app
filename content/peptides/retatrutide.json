@@ -129,7 +129,20 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "• antidiabetics-insulin-glp1"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "strong appetite control / less “food noise”",
         "fat loss and body-composition goals",

@@ -56,7 +56,20 @@
           ]
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety)."
+        },
+        {
+          "text": "• cosmetic interest for skin appearance and texture (topical use common)"
+        },
+        {
+          "text": "• discussion around hair/scalp health in cosmetic communities (mixed evidence)"
+        },
+        {
+          "text": "• used as a general “skin support” ingredient in some formulations"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -92,7 +105,26 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "• immune-modulation-infection-risk"
+        },
+        {
+          "text": "Supplement / OTC flags to review:"
+        },
+        {
+          "text": "• anticoagulant-herbs"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "copper Tripeptide-1 (GHK-Cu) is a copper-binding peptide complex used in topical products for skin appearance and barrier-related goals",
         "evidence includes small human studies and broader reviews; results may depend on formulation and delivery to target layers",
