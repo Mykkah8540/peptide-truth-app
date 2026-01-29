@@ -2,18 +2,46 @@
 
 import Link from "next/link";
 
-type Item = { label: string; href: string };
+type Item = {
+  label: string;
+  href: string;
+  pro?: boolean;
+};
 
-export default function MobileMenu({
-  open,
-  onClose,
-  items,
-}: {
+function ProPill() {
+  return (
+    <span
+      aria-label="Pro"
+      title="Pro"
+      style={{
+        marginLeft: 8,
+        display: "inline-flex",
+        alignItems: "center",
+        border: "1px solid rgba(0,0,0,0.18)",
+        borderRadius: 999,
+        padding: "2px 8px",
+        fontSize: 10,
+        fontWeight: 900,
+        letterSpacing: 0.9,
+        lineHeight: 1,
+        opacity: 0.92,
+      }}
+    >
+      PRO
+    </span>
+  );
+}
+
+export default function MobileMenu(props: {
   open: boolean;
   onClose: () => void;
   items: Item[];
 }) {
-  if (!open) return null;
+  const { open, onClose, items } = props;
+
+  if (!open) {
+    return null;
+  }
 
   return (
     <div
@@ -61,9 +89,12 @@ export default function MobileMenu({
                 fontWeight: 800,
                 textDecoration: "none",
                 color: "#000",
+                display: "inline-flex",
+                alignItems: "center",
               }}
             >
-              {item.label}
+              <span>{item.label}</span>
+              {item.pro ? <ProPill /> : null}
             </Link>
           ))}
         </nav>
