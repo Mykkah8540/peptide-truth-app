@@ -9,11 +9,13 @@ import type { EntityListItem, TopicListItem } from "@/lib/content";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Peptides", href: "/peptides" },
-  { label: "Blends", href: "/blends" },
-  { label: "Interactions", href: "/interactions" },
   { label: "Resources", href: "/resources" },
-  { label: "Topics", href: "/topics" },
-  { label: "Stack Builder", href: "/stack-builder" },
+
+  // Pro
+  { label: "Blends (Pro)", href: "/blends" },
+  { label: "Browse Stacks (Pro)", href: "/stacks" },
+  { label: "Browse Categories (Pro)", href: "/categories" },
+  { label: "My Peps (Pro)", href: "/my-peps" },
 ];
 
 export default function NavBar(props: {
@@ -42,7 +44,11 @@ export default function NavBar(props: {
           {/* Desktop nav */}
           <nav className="desktop-nav" style={{ display: "none", gap: 14, flexWrap: "wrap" }}>
             {NAV_ITEMS.slice(1).map((item) => (
-              <Link key={item.href} href={item.href} style={{ textDecoration: "none", color: "inherit", opacity: 0.85, fontWeight: 700, fontSize: 14 }}>
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{ textDecoration: "none", color: "inherit", opacity: 0.85, fontWeight: 700, fontSize: 14 }}
+              >
                 {item.label}
               </Link>
             ))}
