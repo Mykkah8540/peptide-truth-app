@@ -1,4 +1,8 @@
+import { getSponsors } from "@/lib/sponsors";
+import SponsorBanner from "@/components/SponsorBanner";
+
 export default function Home() {
+  const sponsors = getSponsors();
   return (
     <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
       <main className="mx-auto w-full max-w-3xl px-4 py-10">
@@ -96,7 +100,11 @@ export default function Home() {
               Educational content remains free. Pro unlocks discovery tools and personal organization.
             </p>
           </section>
-        </div>
+
+            <div style={{ marginTop: 14 }}>
+              <SponsorBanner sponsors={sponsors} rotateMs={3000} />
+              </div>
+              </div>
       </main>
     </div>
   );
