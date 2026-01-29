@@ -1,8 +1,15 @@
+import BackHomeLink from "@/components/BackHomeLink";
+
 export default function StacksPage() {
   return (
     <main className="pt-page">
       <section className="pt-card">
+        <div style={{ marginBottom: 10 }}>
+          <BackHomeLink />
+        </div>
+
         <h1 className="pt-card-title">Browse Stacks</h1>
+
         <p className="pt-card-subtext">
           Stacks are curated combinations of peptides built around specific goals —
           such as recovery, metabolic health, or cognitive support.
