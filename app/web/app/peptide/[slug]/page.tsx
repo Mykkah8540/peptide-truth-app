@@ -179,13 +179,15 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         </section>
       ) : null}
 
-      <section className="pt-card">\n      <InteractionsSection
+      <section className="pt-card">
+      <InteractionsSection
           drugClasses={doc?.interactions?.drug_classes}
           supplementClasses={doc?.interactions?.supplement_classes}
           peptides={doc?.interactions?.peptides}
           interactionSummaryBlocks={sections?.interaction_summary}
         />
-      </section>\n
+      </section>
+
       <section className="pt-card">
         <ContentBlocks
         heading="Developmental / adolescent risk"
