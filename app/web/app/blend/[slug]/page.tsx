@@ -5,6 +5,7 @@ import VialImage from "@/components/VialImage";
 import AliasSequenceMini from "@/components/AliasSequenceMini";
 import ContentBlocks from "@/components/ContentBlocks";
 import DisclaimerSection from "@/components/DisclaimerSection";
+import FavoriteButton from "@/components/FavoriteButton";
 import EvidenceList from "@/components/EvidenceList";
 import { loadBlendBySlug, getAliasesForSlug } from "@/lib/content";
 import { requirePaid } from "@/lib/gate";

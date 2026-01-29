@@ -10,6 +10,7 @@ import EvidenceList from "@/components/EvidenceList";
 import OutlookSection from "@/components/OutlookSection";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import InteractionsSection from "@/components/InteractionsSection";
+import FavoriteButton from "@/components/FavoriteButton";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
