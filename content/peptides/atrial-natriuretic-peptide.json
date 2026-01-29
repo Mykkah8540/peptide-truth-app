@@ -52,10 +52,10 @@
           "title": "Use cases (real-world)"
         },
         {
-          "text": "• physiology relevance for vascular tone and natriuresis"
+          "text": "physiology relevance for vascular tone and natriuresis"
         },
         {
-          "text": "• clinical and research relevance in cardiovascular regulation"
+          "text": "clinical and research relevance in cardiovascular regulation"
         }
       ],
       "mechanism": [],
@@ -98,7 +98,7 @@
           "text": "Drug-class flags to review:"
         },
         {
-          "text": "• cardiovascular-physiology-context"
+          "text": "cardiovascular-physiology-context"
         },
         {
           "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."

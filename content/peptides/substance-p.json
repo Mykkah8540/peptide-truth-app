@@ -50,13 +50,13 @@
           "title": "Use cases (real-world)"
         },
         {
-          "text": "• research relevance in pain and neuroinflammation pathways"
+          "text": "research relevance in pain and neuroinflammation pathways"
         },
         {
-          "text": "• physiology relevance in nausea and sensory signaling"
+          "text": "physiology relevance in nausea and sensory signaling"
         },
         {
-          "text": "• often mentioned in inflammation/pain discussions (claims can be speculative)"
+          "text": "often mentioned in inflammation/pain discussions (claims can be speculative)"
         }
       ],
       "mechanism": [],
@@ -99,7 +99,7 @@
           "text": "Drug-class flags to review:"
         },
         {
-          "text": "• neuropeptide-cns-context"
+          "text": "neuropeptide-cns-context"
         },
         {
           "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
