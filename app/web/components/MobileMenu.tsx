@@ -32,6 +32,23 @@ function ProPill() {
   );
 }
 
+function SectionLabel(props: { children: string }) {
+  return (
+    <div
+      style={{
+        marginTop: 6,
+        marginBottom: 6,
+        fontSize: 11,
+        fontWeight: 900,
+        letterSpacing: 0.9,
+        opacity: 0.6,
+      }}
+    >
+      {props.children}
+    </div>
+  );
+}
+
 export default function MobileMenu(props: {
   open: boolean;
   onClose: () => void;
@@ -42,6 +59,9 @@ export default function MobileMenu(props: {
   if (!open) {
     return null;
   }
+
+  const publicItems = items.filter((i) => !i.pro);
+  const proItems = items.filter((i) => i.pro);
 
   return (
     <div
@@ -79,7 +99,7 @@ export default function MobileMenu(props: {
         </button>
 
         <nav style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          {items.map((item) => (
+          {publicItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -94,9 +114,36 @@ export default function MobileMenu(props: {
               }}
             >
               <span>{item.label}</span>
-              {item.pro ? <ProPill /> : null}
             </Link>
           ))}
+
+          {proItems.length ? (
+            <div style={{ marginTop: 6 }}>
+              <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
+              <SectionLabel>PRO</SectionLabel>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
+                {proItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={onClose}
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 800,
+                      textDecoration: "none",
+                      color: "#000",
+                      display: "inline-flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span>{item.label}</span>
+                    <ProPill />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </nav>
       </div>
     </div>
