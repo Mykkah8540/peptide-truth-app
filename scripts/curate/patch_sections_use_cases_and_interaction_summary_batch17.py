@@ -42,9 +42,11 @@ def detect_block_shape() -> Dict[str, Any]:
     ordered = [text_key] + [k for k in keys if k != text_key]
     return {"keys": ordered, "text_key": text_key}
 
-def make_block(schema: Dict[str, Any], text: str) -> Dict[str, Any]:
+def make_block(schema: Dict[str, Any], text: str, title: Optional[str]=None) -> Dict[str, Any]:
     out = {k: None for k in schema["keys"]}
     out[schema["text_key"]] = text
+    if title and "title" in schema["keys"]:
+        out["title"] = title
     # Drop Nones for cleanliness (unless template uses explicit nulls)
     return {k: v for k, v in out.items() if v is not None}
 
@@ -77,7 +79,8 @@ def build_use_cases_blocks(schema: Dict[str, Any], practical: Dict[str, Any]) ->
 
     # short framing paragraph (non-dosing, no instructions)
     blocks.append(make_block(schema,
-        "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety)."
+        "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+        title="Use cases (high-level)"
     ))
 
     if benefits:
@@ -97,7 +100,8 @@ def build_interaction_summary_blocks(schema: Dict[str, Any], interactions: Dict[
 
     blocks: List[Dict[str, Any]] = []
     blocks.append(make_block(schema,
-        "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide."
+        "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+        title="Interaction flags (how to read this)"
     ))
 
     if drug:
