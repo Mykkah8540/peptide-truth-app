@@ -9,6 +9,7 @@ export default function Home() {
             <a href="/peptides" style={{ border: "1px solid #e5e5e5", padding: "10px 12px", borderRadius: 12, fontWeight: 800, textDecoration: "none" }}>Browse Peptides</a>
             <a href="/blends" style={{ border: "1px solid #e5e5e5", padding: "10px 12px", borderRadius: 12, fontWeight: 800, textDecoration: "none" }}>Browse Stacks / Blends</a>
             <a href="/topics" style={{ border: "1px solid #e5e5e5", padding: "10px 12px", borderRadius: 12, fontWeight: 800, textDecoration: "none" }}>Browse Topics</a>
+            <a href="/resources" style={{ border: "1px solid #e5e5e5", padding: "10px 12px", borderRadius: 12, fontWeight: 800, textDecoration: "none" }}>Resources</a>
             <a href="/stack-builder" style={{ border: "1px solid #e5e5e5", padding: "10px 12px", borderRadius: 12, fontWeight: 800, textDecoration: "none" }}>Stack Builder</a>
           </div>
 </div>

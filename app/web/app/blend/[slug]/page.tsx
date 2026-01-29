@@ -2,7 +2,7 @@ import { getRiskForBlend, evidenceGradeLabel } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
-import IdentityPanel from "@/components/IdentityPanel";
+import AliasSequenceMini from "@/components/AliasSequenceMini";
 import ContentBlocks from "@/components/ContentBlocks";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import EvidenceList from "@/components/EvidenceList";
@@ -205,19 +205,6 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
       </section>
 
       <section className="pt-card">
-        <IdentityPanel
-          kind="blend"
-          slug={slug}
-          riskScore={riskHit ? riskHit.risk.risk_score : null}
-          riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}
-          evidenceGradeLabel={evidenceGradeLabel(riskHit?.risk.evidence_grade ?? null)}
-          canonicalName={b?.canonical_name ?? null}
-          shortName={b?.short_name ?? null}
-          aliases={mergedAliases}
-          aminoAcidSeq={null}
-          molecularFormula={null}
-          molecularWeight={null}
-        />
       </section>
 
       {evidence.length ? (

@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { label: "Peptides", href: "/peptides" },
   { label: "Blends", href: "/blends" },
   { label: "Interactions", href: "/interactions" },
+  { label: "Resources", href: "/resources" },
   { label: "Topics", href: "/topics" },
   { label: "Stack Builder", href: "/stack-builder" },
 ];

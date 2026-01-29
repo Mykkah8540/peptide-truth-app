@@ -141,14 +141,14 @@ export default function InteractionsSection({
 
   return (
     <section className="pt-card">
-      <h2 className="pt-card-title">{heading}</h2>
+<h2 className="pt-card-title">{heading}</h2>
       <p className="pt-card-subtext">
-        This section lists interaction considerations that have been added for this peptide. If nothing appears here, it usually means there isn’t curated interaction info in the database yet.
+        Interactions summarize known or plausible ways this peptide may intersect with medications, supplements, or physiologic states. Use this as a risk-awareness map: what to ask about, what to watch for, and what deserves a clinician conversation.
       </p>
 
       {(interactionSummaryBlocks ?? []).length ? (
         <div style={{ marginTop: 12 }}>
-          <ContentBlocks heading="" blocks={interactionSummaryBlocks ?? null} />
+          <ContentBlocks heading="" blocks={interactionSummaryBlocks ?? null} wrapCard={false} />
         </div>
       ) : null}
 

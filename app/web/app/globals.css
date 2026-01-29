@@ -39,6 +39,7 @@ body {
   padding: 24px;
   max-width: 980px;
   margin: 0 auto;
+  gap: 16px;
 }
 
 .pt-hero {
@@ -116,3 +117,9 @@ body {
   opacity: 0.75;
 }
 
+
+.pt-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

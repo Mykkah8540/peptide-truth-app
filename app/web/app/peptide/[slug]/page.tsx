@@ -2,7 +2,7 @@ import { getRiskForPeptide, evidenceGradeLabel } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
-import IdentityPanel from "@/components/IdentityPanel";
+import AliasSequenceMini from "@/components/AliasSequenceMini";
 import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 
 import ContentBlocks from "@/components/ContentBlocks";
@@ -81,20 +81,23 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   return (
     <main className="pt-page">
       <div className="pt-hero">
-        <VialImage kind="peptide" slug={slug} alt={`${p?.canonical_name ?? slug} vial`} />
+  <VialImage kind="peptide" slug={slug} alt={`${p?.canonical_name ?? slug} vial`} />
+  <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <div>
+      <h1>{p?.canonical_name ?? slug}</h1>
+      <p>Educational resource. Not medical advice. No dosing or instructions.</p>
+    </div>
+    <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
+      {riskHit ? (
         <div>
-          <h1>{p?.canonical_name ?? slug}</h1>
-          <p>Educational resource. Not medical advice. No dosing or instructions.</p>
-        </div>
-      </div>
-
-      {riskHit && (
-        <div style={{ marginTop: 16 }}>
           <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
         </div>
-      )}
-
-      {/* ORDER (as prescribed):
+      ) : null}
+      <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
+    </div>
+  </div>
+</div>
+{/* ORDER (as prescribed):
           Overview
           Current outlook and intended use
           Practical summary
@@ -105,23 +108,17 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           Disclaimer
       */}
 
-      <section className="pt-card">
-        <ContentBlocks
-          heading="Overview"
-          blocks={sections?.overview ?? null}
-          showEmpty
-          emptyText="No overview has been added yet."
-        />
-      </section>
-
-      <section className="pt-card">
-        <OutlookSection
+      <ContentBlocks
+        heading="Overview"
+        blocks={sections?.overview ?? null}
+        showEmpty
+        emptyText="No overview has been added yet."
+      />
+      <OutlookSection
           outlookText={outlookText}
           interestBullets={sections?.current_outlook_bullets ?? null}
           blocks={sections?.use_cases ?? null}
         />
-      </section>
-
       {doc?.practical && !isPracticalPlaceholder ? (
         <section className="pt-card">
           <h2 className="pt-card-title">Practical summary</h2>
@@ -129,7 +126,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             {(() => {
               const t = String(doc.practical.bottom_line || "").trim();
               if (!t || isPendingText(t)) {
-                return "Pep-Talk curation pending. We avoid speculative claims; this section will be populated with practical, real-world benefits and known side effects as evidence is reviewed.";
+                return "A quick, real-world orientation: why people use it, what they report, what to watch for, and how to avoid the most common avoidable mistakes (quality/testing + use context).";
               }
               return t;
             })()}
@@ -189,38 +186,23 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           peptides={doc?.interactions?.peptides}
           interactionSummaryBlocks={sections?.interaction_summary}
         />
-      </section>
+        </section>
 
       <section className="pt-card">
         <ContentBlocks
-          heading="Developmental / adolescent risk"
-          blocks={sections?.developmental_risk_block ?? null}
-          showEmpty
-          emptyText="No developmental/adolescent risk notes have been added yet."
+        heading="Developmental / adolescent risk"
+        blocks={sections?.developmental_risk_block ?? null}
+        showEmpty
+        emptyText="No developmental/adolescent risk notes have been added yet."
+        wrapCard={false}
         />
       </section>
 
-      <section className="pt-card">
-        <IdentityPanel
-          kind="peptide"
-          slug={slug}
-          riskScore={riskHit ? riskHit.risk.risk_score : null}
-          riskTier={riskHit ? riskHit.risk.risk_tier ?? null : null}
-          evidenceGradeLabel={evidenceGradeLabel(riskHit?.risk.evidence_grade ?? null)}
-          canonicalName={p?.canonical_name}
-          shortName={p?.short_name}
-          aliases={mergedAliases}
-          aminoAcidSeq={p?.structure?.amino_acid_seq}
-        />
-      </section>
 
       <section className="pt-card">
-        <EvidenceList evidence={p?.evidence ?? []} />
+        <EvidenceList evidence={p?.evidence ?? []}  wrapCard={false} />
       </section>
-
-      <section className="pt-card">
-        <DisclaimerSection text={disclaimerTextClean} />
-      </section>
+      <DisclaimerSection text={disclaimerTextClean} />
 
       {DEBUG && riskHit && <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" />}
     </main>
