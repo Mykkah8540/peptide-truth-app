@@ -1,6 +1,10 @@
+import BackHomeLink from "@/components/BackHomeLink";
 export default function CategoriesPage() {
   return (
     <main className="pt-page">
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14 }}>
+        <BackHomeLink />
+      </div>
       <section className="pt-card">
         <h1 className="pt-card-title">Browse Categories</h1>
         <p className="pt-card-subtext">
