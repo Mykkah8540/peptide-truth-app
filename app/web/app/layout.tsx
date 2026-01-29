@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { listPeptides, listBlends, listTopics } from "@/lib/content";
 import HomeSearch from "@/components/HomeSearch";
 import NavBar from "@/components/NavBar";
+import AppOverlays from "@/components/AppOverlays";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -35,6 +36,8 @@ return (
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar peptides={peptides} blends={blends} topics={topics} />
+
+        <AppOverlays />
 
 {children}
       </body>
