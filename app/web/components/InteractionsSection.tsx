@@ -140,7 +140,7 @@ export default function InteractionsSection({
     (interactionSummaryBlocks ?? []).length > 0;
 
   return (
-    <section className="pt-card">
+      <>
 <h2 className="pt-card-title">{heading}</h2>
       <p className="pt-card-subtext">
         Interactions summarize known or plausible ways this peptide may intersect with medications, supplements, or physiologic states. Use this as a risk-awareness map: what to ask about, what to watch for, and what deserves a clinician conversation.
@@ -161,6 +161,5 @@ export default function InteractionsSection({
           No interaction details have been added yet.
         </div>
       ) : null}
-    </section>
-  );
-}
+      </>
+    );}
