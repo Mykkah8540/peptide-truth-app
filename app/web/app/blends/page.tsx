@@ -1,7 +1,10 @@
 import { listBlends } from "@/lib/content";
+import { requirePaid } from "@/lib/gate";
 export const dynamic = "force-dynamic";
 
 export default async function BlendsPage() {
+  await requirePaid();
+
   const all = listBlends();
   const rows = all;
   return (

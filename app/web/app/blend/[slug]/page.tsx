@@ -7,6 +7,7 @@ import ContentBlocks from "@/components/ContentBlocks";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import EvidenceList from "@/components/EvidenceList";
 import { loadBlendBySlug, getAliasesForSlug } from "@/lib/content";
+import { requirePaid } from "@/lib/gate";
 
 export default async function BlendPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
