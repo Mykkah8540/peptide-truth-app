@@ -101,7 +101,8 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
           blocks={overviewBlocks}
           showEmpty
           emptyText="No overview has been added yet."
-        / wrapCard={false} >
+       wrapCard={false}
+          />
       </section>
 
       {pr ? (
@@ -191,7 +192,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
 
       {Array.isArray(claimsBlocks) && claimsBlocks.length ? (
         <section className="pt-card">
-          <ContentBlocks heading="Claims (needs evidence)" blocks={claimsBlocks} showEmpty={false} / wrapCard={false} >
+          <ContentBlocks heading="Claims (needs evidence)" blocks={claimsBlocks} showEmpty={false} wrapCard={false} />
         </section>
       ) : null}
 
@@ -201,12 +202,9 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
           blocks={safetyBlocks}
           showEmpty
           emptyText="No safety notes have been added yet."
-        / wrapCard={false} >
+       wrapCard={false}
+          />
       </section>
-
-      <section className="pt-card">
-      </section>
-
       {evidence.length ? (
         <section className="pt-card">
           <EvidenceList evidence={evidence} wrapCard={false} />
