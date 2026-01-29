@@ -97,23 +97,35 @@ export default function NavBar(props: {
 
           {/* Desktop nav */}
           <nav className="desktop-nav" style={{ display: "none", gap: 14, flexWrap: "wrap" }}>
-            {NAV_ITEMS.slice(1).map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  opacity: 0.85,
-                  fontWeight: 700,
-                  fontSize: 14,
-                  display: "inline-flex",
-                  alignItems: "center",
-                }}
-              >
-                <span>{item.label}</span>
-                {item.pro ? <ProPill /> : null}
-              </Link>
+            {NAV_ITEMS.slice(1).map((item, idx) => (
+              <span key={item.href} style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
+                {item.pro && idx === 3 ? (
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      width: 1,
+                      height: 18,
+                      background: "rgba(0,0,0,0.12)",
+                    }}
+                  />
+                ) : null}
+
+                <Link
+                  href={item.href}
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    opacity: 0.85,
+                    fontWeight: 700,
+                    fontSize: 14,
+                    display: "inline-flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <span>{item.label}</span>
+                  {item.pro ? <ProPill /> : null}
+                </Link>
+              </span>
             ))}
           </nav>
 
