@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { loadInteractionsIndexV1 } from "@/lib/content";
+import { requirePaid } from "@/lib/gate";
 
 export const dynamic = "force-dynamic";
 

@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { listInteractions, loadInteractionsToPeptidesIndexV1 } from "@/lib/content";
 import InteractionsClient from "@/components/InteractionsClient";
+import { requirePaid } from "@/lib/gate";
 
-export default function InteractionsPage() {
+export default async function InteractionsPage() {
+  await requirePaid();
+
   const rawList = listInteractions();
   const rev = loadInteractionsToPeptidesIndexV1();
   const mapping = (rev && typeof rev === "object" && (rev as any).mapping && typeof (rev as any).mapping === "object")
