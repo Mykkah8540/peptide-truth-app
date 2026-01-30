@@ -126,7 +126,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
       {doc?.practical && !isPracticalPlaceholder ? (
         <section className="pt-card">
-          <CollapsibleSection title="Practical summary" defaultCollapsedMobile>
+          <CollapsibleSection title="Practical summary" defaultCollapsedMobile={false}>
             <p className="pt-card-subtext">
               {(() => {
                 const t = String(doc.practical.bottom_line || "").trim();

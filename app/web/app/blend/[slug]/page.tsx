@@ -168,7 +168,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
       ) : null}
 
       <section className="pt-card">
-        <CollapsibleSection title="What’s inside" defaultCollapsedMobile>
+        <CollapsibleSection title="What’s inside" defaultCollapsedMobile={false}>
           {Array.isArray(b?.components) && b.components.length ? (
             <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
               {b.components.map((c: string) => (
