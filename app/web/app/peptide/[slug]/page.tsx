@@ -1,4 +1,4 @@
-import { getRiskForPeptide, evidenceGradeLabel } from "@/lib/riskIndex";
+import { getRiskForPeptide } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
@@ -11,6 +11,7 @@ import OutlookSection from "@/components/OutlookSection";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import InteractionsSection from "@/components/InteractionsSection";
 import FavoriteButton from "@/components/FavoriteButton";
+import CollapsibleSection from "@/components/CollapsibleSection";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -82,23 +83,24 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   return (
     <main className="pt-page">
       <div className="pt-hero">
-  <VialImage kind="peptide" slug={slug} alt={`${p?.canonical_name ?? slug} vial`} />
-  <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-    <div>
-      <h1>{p?.canonical_name ?? slug}</h1>
-      <p>Educational resource. Not medical advice. No dosing or instructions.</p>
-    </div>
-    <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
-      {riskHit ? (
-        <div>
-          <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
+        <VialImage kind="peptide" slug={slug} alt={`${p?.canonical_name ?? slug} vial`} />
+        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h1>{p?.canonical_name ?? slug}</h1>
+            <p>Educational resource. Not medical advice. No dosing or instructions.</p>
+          </div>
+          <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
+            {riskHit ? (
+              <div>
+                <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
+              </div>
+            ) : null}
+            <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
+          </div>
         </div>
-      ) : null}
-      <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
-    </div>
-  </div>
-</div>
-{/* ORDER (as prescribed):
+      </div>
+
+      {/* ORDER (as prescribed):
           Overview
           Current outlook and intended use
           Practical summary
@@ -115,97 +117,106 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         showEmpty
         emptyText="No overview has been added yet."
       />
+
       <OutlookSection
-          outlookText={outlookText}
-          interestBullets={sections?.current_outlook_bullets ?? null}
-          blocks={sections?.use_cases ?? null}
-        />
+        outlookText={outlookText}
+        interestBullets={sections?.current_outlook_bullets ?? null}
+        blocks={sections?.use_cases ?? null}
+      />
+
       {doc?.practical && !isPracticalPlaceholder ? (
         <section className="pt-card">
-          <h2 className="pt-card-title">Practical summary</h2>
-          <p className="pt-card-subtext">
-            {(() => {
-              const t = String(doc.practical.bottom_line || "").trim();
-              if (!t || isPendingText(t)) {
-                return "A quick, real-world orientation: why people use it, what they report, what to watch for, and how to avoid the most common avoidable mistakes (quality/testing + use context).";
-              }
-              return t;
-            })()}
-          </p>
+          <CollapsibleSection title="Practical summary" defaultCollapsedMobile>
+            <p className="pt-card-subtext">
+              {(() => {
+                const t = String(doc.practical.bottom_line || "").trim();
+                if (!t || isPendingText(t)) {
+                  return "A quick, real-world orientation: why people use it, what they report, what to watch for, and how to avoid the most common avoidable mistakes (quality/testing + use context).";
+                }
+                return t;
+              })()}
+            </p>
 
-          {Array.isArray(doc.practical.benefits) && doc.practical.benefits.length ? (
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold text-neutral-900">Common reasons people consider it</h3>
-              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-                {doc.practical.benefits.map((b: string, i: number) => (
-                  <li key={"b" + i}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+            {Array.isArray(doc.practical.benefits) && doc.practical.benefits.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Common reasons people consider it</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.benefits.map((b: string, i: number) => (
+                    <li key={"b" + i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
-          {Array.isArray(doc.practical.side_effects_common) && doc.practical.side_effects_common.length ? (
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold text-neutral-900">Most commonly reported downsides</h3>
-              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-                {doc.practical.side_effects_common.map((b: string, i: number) => (
-                  <li key={"c" + i}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+            {Array.isArray(doc.practical.side_effects_common) && doc.practical.side_effects_common.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Most commonly reported downsides</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.side_effects_common.map((b: string, i: number) => (
+                    <li key={"c" + i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
-          {Array.isArray(doc.practical.side_effects_serious) && doc.practical.side_effects_serious.length ? (
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
-              <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
-              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-                {doc.practical.side_effects_serious.map((b: string, i: number) => (
-                  <li key={"s" + i}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+            {Array.isArray(doc.practical.side_effects_serious) && doc.practical.side_effects_serious.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
+                <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.side_effects_serious.map((b: string, i: number) => (
+                    <li key={"s" + i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
-          {Array.isArray(doc.practical.who_should_be_cautious) && doc.practical.who_should_be_cautious.length ? (
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold text-neutral-900">Who should be cautious</h3>
-              <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-                {doc.practical.who_should_be_cautious.map((b: string, i: number) => (
-                  <li key={"w" + i}>{b}</li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+            {Array.isArray(doc.practical.who_should_be_cautious) && doc.practical.who_should_be_cautious.length ? (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">Who should be cautious</h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {doc.practical.who_should_be_cautious.map((b: string, i: number) => (
+                    <li key={"w" + i}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </CollapsibleSection>
         </section>
       ) : null}
 
       <section className="pt-card">
-      <InteractionsSection
-          drugClasses={doc?.interactions?.drug_classes}
-          supplementClasses={doc?.interactions?.supplement_classes}
-          peptides={doc?.interactions?.peptides}
-          interactionSummaryBlocks={sections?.interaction_summary}
-        />
+        <CollapsibleSection title="Interactions" defaultCollapsedMobile>
+          <InteractionsSection
+            drugClasses={doc?.interactions?.drug_classes}
+            supplementClasses={doc?.interactions?.supplement_classes}
+            peptides={doc?.interactions?.peptides}
+            interactionSummaryBlocks={sections?.interaction_summary}
+          />
+        </CollapsibleSection>
       </section>
 
       <section className="pt-card">
-        <ContentBlocks
-        heading="Developmental / adolescent risk"
-        blocks={sections?.developmental_risk_block ?? null}
-        showEmpty
-        emptyText="No developmental/adolescent risk notes have been added yet."
-        wrapCard={false}
-        />
+        <CollapsibleSection title="Developmental / adolescent risk" defaultCollapsedMobile>
+          <ContentBlocks
+            heading=""
+            blocks={sections?.developmental_risk_block ?? null}
+            showEmpty
+            emptyText="No developmental/adolescent risk notes have been added yet."
+            wrapCard={false}
+          />
+        </CollapsibleSection>
       </section>
-
 
       <section className="pt-card">
-        <EvidenceList evidence={p?.evidence ?? []}  wrapCard={false} />
+        <CollapsibleSection title="Evidence" defaultCollapsedMobile>
+          <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+        </CollapsibleSection>
       </section>
+
       <DisclaimerSection text={disclaimerTextClean} />
 
-      {DEBUG && riskHit && <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" />}
+      {DEBUG && riskHit ? <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" /> : null}
     </main>
   );
 }
