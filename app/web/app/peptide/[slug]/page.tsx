@@ -111,18 +111,22 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           Disclaimer
       */}
 
-      <ContentBlocks
-        heading="Overview"
-        blocks={sections?.overview ?? null}
-        showEmpty
-        emptyText="No overview has been added yet."
-      />
+      <CollapsibleSection title="Overview" defaultCollapsedMobile>
+        <ContentBlocks
+          heading="Overview"
+          blocks={sections?.overview ?? null}
+          showEmpty
+          emptyText="No overview has been added yet."
+        />
+      </CollapsibleSection>
 
-      <OutlookSection
-        outlookText={outlookText}
-        interestBullets={sections?.current_outlook_bullets ?? null}
-        blocks={sections?.use_cases ?? null}
-      />
+      <CollapsibleSection title="Current outlook and intended use" defaultCollapsedMobile>
+        <OutlookSection
+          outlookText={outlookText}
+          interestBullets={sections?.current_outlook_bullets ?? null}
+          blocks={sections?.use_cases ?? null}
+        />
+      </CollapsibleSection>
 
       {doc?.practical && !isPracticalPlaceholder ? (
         <section className="pt-card">
