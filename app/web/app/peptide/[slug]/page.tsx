@@ -192,6 +192,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       <section className="pt-card">
         <CollapsibleSection title="Interactions" defaultCollapsedMobile>
           <InteractionsSection
+              hideHeading
             drugClasses={doc?.interactions?.drug_classes}
             supplementClasses={doc?.interactions?.supplement_classes}
             peptides={doc?.interactions?.peptides}

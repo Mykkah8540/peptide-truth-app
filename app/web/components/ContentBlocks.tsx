@@ -16,6 +16,7 @@ type Props = {
   showEmpty?: boolean;
   emptyText?: string;
   wrapCard?: boolean;
+  hideHeading?: boolean;
 };
 
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
@@ -85,7 +86,7 @@ function isPendingBlock(b: any): boolean {
 }
 
 
-export default function ContentBlocks({ heading, blocks, showEmpty = false, emptyText, wrapCard = true }: Props) {
+export default function ContentBlocks({ heading, blocks, showEmpty = false, emptyText, wrapCard = true, hideHeading = false }: Props) {
   const Wrapper: any = wrapCard ? "section" : "div";
   const wrapperProps = wrapCard ? { className: "pt-card" } : {};
   const list = (blocks ?? []).filter(Boolean).filter((b) => !isPlaceholderBlock(b));
@@ -95,7 +96,7 @@ export default function ContentBlocks({ heading, blocks, showEmpty = false, empt
     if (!shouldRenderEmpty) return null;
     return (
       <div>
-        <h2 className="pt-card-title">{heading}</h2>
+        {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
         <div className="pt-item-note" style={{ marginTop: 10 }}>
           {String(emptyText || "No content has been added yet.")}
         </div>
@@ -105,7 +106,7 @@ export default function ContentBlocks({ heading, blocks, showEmpty = false, empt
   if (allPending) {
     return (
       <div>
-        <h2 className="pt-card-title">{heading}</h2>
+        {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
         <div className="pt-item-note" style={{ marginTop: 10 }}>
           {String(emptyText || "Pep-Talk curation pending. We avoid speculative claims; this section will be populated as evidence is reviewed.")}
         </div>
@@ -116,7 +117,7 @@ export default function ContentBlocks({ heading, blocks, showEmpty = false, empt
 
   return (
     <div>
-      <h2 className="pt-card-title">{heading}</h2>
+      {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
 
       <div className="pt-stack">
         {list.map((b, idx) => {

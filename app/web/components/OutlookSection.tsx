@@ -13,16 +13,21 @@ type Props = {
   blocks?: Block[] | null;
   outlookText?: string | null;
   interestBullets?: string[] | null;
+  wrapCard?: boolean;
+  hideTitle?: boolean;
 };
 
-export default function OutlookSection({ blocks, outlookText, interestBullets }: Props) {
+export default function OutlookSection({ blocks, outlookText, interestBullets, wrapCard = true, hideTitle = false }: Props) {
   const list = (blocks ?? []).filter(Boolean);
   const t = (outlookText ?? "").trim();
   const bullets = (interestBullets ?? []).filter(Boolean);
 
+  const Wrapper: any = wrapCard ? "section" : "div";
+  const wrapperProps = wrapCard ? { className: "pt-card" } : {};
+
   return (
-    <section className="pt-card">
-      <h2 className="pt-card-title">Current outlook and intended use</h2>
+    <Wrapper {...wrapperProps}>
+      {!hideTitle ? <h2 className="pt-card-title">Current outlook and intended use</h2> : null}
 
       <p className="pt-card-subtext">Why people are interested in this peptide and how it is commonly discussed in real-world wellness, rehabilitation, and athletic communities.</p>
 
@@ -53,9 +58,9 @@ export default function OutlookSection({ blocks, outlookText, interestBullets }:
 
       {list.length ? (
         <div style={{ marginTop: 14 }}>
-          <ContentBlocks heading="" blocks={list} wrapCard={false} />
+          <ContentBlocks heading="" blocks={list} wrapCard={false} hideHeading />
         </div>
       ) : null}
-    </section>
+    </Wrapper>
   );
 }

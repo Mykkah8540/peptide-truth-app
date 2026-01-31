@@ -19,6 +19,7 @@ type Props = {
   supplementClasses?: Item[] | null;
   peptides?: Item[] | null;
   interactionSummaryBlocks?: any[] | null;
+  hideHeading?: boolean;
 };
 
 
@@ -64,6 +65,32 @@ function resolveInteractionHref(it: any): string | null {
   return `/interaction/${slugify(name)}`;
 }
 
+function prettyInteractionLabel(s: string): string {
+    const raw = String(s || "").trim();
+    if (!raw) return raw;
+
+    // Only “pretty” things that look like slugs (no spaces + has -/_)
+    const hasSpaces = /\s/.test(raw);
+    const looksSluggy = /[-_]/.test(raw) && !hasSpaces;
+    if (!looksSluggy) return raw;
+
+    const lower = raw.toLowerCase();
+
+    // Common patterns
+    if (lower.includes("ssris") && lower.includes("snris")) return "SSRIs / SNRIs";
+
+    // Generic slug -> title-case
+    const parts = lower.replace(/[-_]+/g, " ").split(" ").filter(Boolean);
+    const acr = new Set(["ssri","snri","hiv","cns","gi","bp","hpa","hpt","hpg","cyp"]);
+    const tc = (w: string) => {
+      if (acr.has(w)) return w.toUpperCase();
+      if (w.startsWith("glp")) return w.toUpperCase();
+      return w ? w[0].toUpperCase() + w.slice(1) : w;
+    };
+
+    return parts.map(tc).join(" ");
+  }
+
 function renderList(label: string, items?: Item[] | null, opts?: { showNone?: boolean }) {
     const raw = (items ?? []).filter(Boolean);
 
@@ -103,7 +130,7 @@ function renderList(label: string, items?: Item[] | null, opts?: { showNone?: bo
                 {(() => {
                   const href = resolveInteractionHref(it);
                   // If we have no name, don't show a fake label; just show the note.
-                  const display = name || null;
+                  const display = name ? prettyInteractionLabel(name) : null;
                   return display ? (
                     href ? (
                       <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
@@ -132,6 +159,7 @@ export default function InteractionsSection({
   supplementClasses,
   peptides,
   interactionSummaryBlocks,
+    hideHeading = false,
 }: Props) {
   const hasStructured =
     (drugClasses ?? []).length > 0 ||
@@ -141,14 +169,14 @@ export default function InteractionsSection({
 
   return (
       <>
-<h2 className="pt-card-title">{heading}</h2>
+{!hideHeading ? <h2 className="pt-card-title">{heading}</h2> : null}
       <p className="pt-card-subtext">
         Interactions summarize known or plausible ways this peptide may intersect with medications, supplements, or physiologic states. Use this as a risk-awareness map: what to ask about, what to watch for, and what deserves a clinician conversation.
       </p>
 
       {(interactionSummaryBlocks ?? []).length ? (
         <div style={{ marginTop: 12 }}>
-          <ContentBlocks heading="" blocks={interactionSummaryBlocks ?? null} wrapCard={false} />
+          <ContentBlocks heading="" blocks={interactionSummaryBlocks ?? null} wrapCard={false} hideHeading />
         </div>
       ) : null}
 

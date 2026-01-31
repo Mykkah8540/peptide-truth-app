@@ -8,9 +8,21 @@ export default function AliasSequenceMini({
   aminoAcidSeq?: string | null;
 }) {
   const a = Array.isArray(aliases) ? aliases.map((s) => String(s || "").trim()).filter(Boolean) : [];
-  const seq = String(aminoAcidSeq || "").trim();
+  const rawSeq = String(aminoAcidSeq || "").trim();
 
-  if (!a.length && !seq) return null;
+  function isPendingText(v: any): boolean {
+    const x = String(v ?? "").trim().toLowerCase();
+    if (!x) return false;
+    return (
+      x.includes("pep-talk curation pending") ||
+      x.includes("we’re reviewing the evidence") ||
+      x.includes("we're reviewing the evidence") ||
+      x.includes("will expand this section soon")
+    );
+  }
+
+  const seq = isPendingText(rawSeq) ? "" : rawSeq;
+if (!a.length && !seq) return null;
 
   return (
     <div className="rounded-xl border border-neutral-200 bg-white p-3 shadow-sm">
