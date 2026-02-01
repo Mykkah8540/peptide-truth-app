@@ -72,6 +72,7 @@ def summarize_peptide(doc: dict):
   }
 
 def summarize_blend(doc: dict):
+  root = (doc or {}).get("blend") if isinstance((doc or {}).get("blend"), dict) else (doc or {})
   sections = (doc or {}).get("sections") or {}
   overview = sections.get("overview") or []
   safety = sections.get("safety") or []
