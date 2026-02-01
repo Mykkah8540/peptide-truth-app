@@ -61,8 +61,9 @@ def summarize_peptide(doc: dict):
   overview = sections.get("overview") or []
   use_cases = sections.get("use_cases") or []
   outlook = sections.get("current_outlook_bullets") or []
-  practical = (root or {}).get("practical")
-  aa_seq = (root or {}).get("amino_acid_sequence")
+  practical = sections.get("interaction_summary")
+  st = (root or {}).get("structure") or {}
+  aa_seq = (st.get("amino_acid_seq") or st.get("sequence_oneletter") or "")
   return {
     "has_overview": bool(overview),
     "has_use_cases": bool(use_cases),
@@ -77,7 +78,7 @@ def summarize_blend(doc: dict):
   overview = sections.get("overview") or []
   safety = sections.get("safety") or []
   claims = sections.get("claims") or []
-  practical = (root or {}).get("practical")
+  practical = sections.get("interaction_summary")
   return {
     "has_overview": bool(overview),
     "has_safety": bool(safety),
