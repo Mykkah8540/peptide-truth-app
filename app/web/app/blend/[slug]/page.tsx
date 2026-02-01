@@ -7,6 +7,7 @@ import DisclaimerSection from "@/components/DisclaimerSection";
 import EvidenceList from "@/components/EvidenceList";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import { loadBlendBySlug, getAliasesForSlug } from "@/lib/content";
+import { isPendingText } from "@/lib/isPendingText";
 import { requirePaid } from "@/lib/gate";
 
 export default async function BlendPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,14 +26,9 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
 
   const pr = b?.practical ?? null;
 
-  function isCurationPendingText(v: any): boolean {
-    const s = String(v ?? "").toLowerCase();
-    return s.includes("pep-talk curation pending");
-  }
-
   const isPracticalPlaceholder =
     !!pr &&
-    isCurationPendingText(pr?.bottom_line) &&
+    isPendingText(pr?.bottom_line) &&
     !(
       (pr?.benefits ?? []).length ||
       (pr?.common_downsides ?? []).length ||
@@ -115,7 +111,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
             <p className="pt-card-subtext">
               {(() => {
                 const t = String(pr?.bottom_line ?? "").trim();
-                if (!t || isPracticalPlaceholder || isCurationPendingText(t)) {
+                if (!t || isPracticalPlaceholder || isPendingText(t)) {
                   return "Not available yet.";
                 }
                 return t;

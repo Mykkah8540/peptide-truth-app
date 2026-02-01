@@ -1,4 +1,5 @@
 import React from "react";
+import { isPendingText } from "@/lib/isPendingText";
 
 export default function AliasSequenceMini({
   aliases,
