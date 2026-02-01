@@ -27,6 +27,8 @@ def load_json(p: Path):
 
 def is_entity_file(p: Path) -> bool:
   name = p.name.lower()
+  if name.startswith("_"):
+    return False
   if name in {"_index.json", "index.json"}:
     return False
   return p.suffix.lower() == ".json"
@@ -54,12 +56,13 @@ def find_pending_paths(obj, path="$"):
   return hits
 
 def summarize_peptide(doc: dict):
-  sections = (doc or {}).get("sections") or {}
+  root = (doc or {}).get("peptide") if isinstance((doc or {}).get("peptide"), dict) else (doc or {})
+  sections = (root or {}).get("sections") or {}
   overview = sections.get("overview") or []
   use_cases = sections.get("use_cases") or []
   outlook = sections.get("current_outlook_bullets") or []
-  practical = (doc or {}).get("practical")
-  aa_seq = (doc or {}).get("amino_acid_sequence")
+  practical = (root or {}).get("practical")
+  aa_seq = (root or {}).get("amino_acid_sequence")
   return {
     "has_overview": bool(overview),
     "has_use_cases": bool(use_cases),
@@ -73,7 +76,7 @@ def summarize_blend(doc: dict):
   overview = sections.get("overview") or []
   safety = sections.get("safety") or []
   claims = sections.get("claims") or []
-  practical = (doc or {}).get("practical")
+  practical = (root or {}).get("practical")
   return {
     "has_overview": bool(overview),
     "has_safety": bool(safety),
