@@ -6,7 +6,8 @@ import ContentBlocks from "@/components/ContentBlocks";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import EvidenceList from "@/components/EvidenceList";
 import CollapsibleSection from "@/components/CollapsibleSection";
-import { loadBlendBySlug, getAliasesForSlug } from "@/lib/content";
+import { loadBlendBySlug, loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
+import { synthesizeBlendFromComponents } from "@/lib/blendSynthesis";
 import { isPendingText } from "@/lib/isPendingText";
 import { requirePaid } from "@/lib/gate";
 
@@ -20,11 +21,20 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
   const b = doc?.blend ?? {};
 
   const sections = b?.sections ?? {};
-  const overviewBlocks = sections?.overview ?? null;
-  const safetyBlocks = sections?.safety ?? null;
-  const claimsBlocks = sections?.claims ?? null;
+const overviewBlocks = (Array.isArray(sections?.overview) && sections.overview.length) ? sections.overview : (synth?.overviewBlocks ?? null);
+const safetyBlocks = (Array.isArray(sections?.safety) && sections.safety.length) ? sections.safety : (synth?.safetyBlocks ?? null);
+const claimsBlocks = (Array.isArray(sections?.claims) && sections.claims.length) ? sections.claims : (synth?.claimsBlocks ?? null);
 
-  const pr = b?.practical ?? null;
+  const pr = b?.practical ?? synth?.practical ?? null;
+
+  // If the blend has little/no authored content, synthesize a blend-level rationale
+  // from component peptide practical blocks + topics. This is conservative and avoids
+  // claiming “synergy” without evidence.
+  const components = Array.isArray(b?.components) ? b.components : [];
+  const synth = components.length
+    ? await synthesizeBlendFromComponents({ blendSlug: slug, components, loadPeptideBySlug })
+    : null;
+
 
   const isPracticalPlaceholder =
     !!pr &&
