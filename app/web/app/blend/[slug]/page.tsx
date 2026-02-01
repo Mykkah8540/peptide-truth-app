@@ -97,14 +97,17 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
       */}
 
       <section className="pt-card">
-        <ContentBlocks
-          heading="Overview"
-          blocks={overviewBlocks}
-          showEmpty
-          emptyText="No overview has been added yet."
-          wrapCard={false}
-        />
-      </section>
+          <CollapsibleSection title="Overview" defaultCollapsedMobile>
+            <ContentBlocks
+              heading="Overview"
+              blocks={overviewBlocks}
+              showEmpty
+              emptyText="No overview has been added yet."
+              wrapCard={false}
+              hideHeading
+            />
+          </CollapsibleSection>
+        </section>
 
       {pr ? (
         <section className="pt-card">
@@ -113,7 +116,7 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
               {(() => {
                 const t = String(pr?.bottom_line ?? "").trim();
                 if (!t || isPracticalPlaceholder || isCurationPendingText(t)) {
-                  return "Pep-Talk curation pending. This section will be populated with practical, real-world use patterns, common downsides, and red flags as evidence is reviewed.";
+                  return "Not available yet.";
                 }
                 return t;
               })()}
