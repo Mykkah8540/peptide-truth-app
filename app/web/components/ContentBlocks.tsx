@@ -92,7 +92,7 @@ export default function ContentBlocks({ heading, blocks, showEmpty = false, empt
   const list = (blocks ?? []).filter(Boolean).filter((b) => !isPlaceholderBlock(b));
   const allPending = list.length > 0 && list.every((b) => isPendingBlock(b));
   if (!list.length) {
-    const shouldRenderEmpty = showEmpty && String(heading || "").trim().length > 0;
+    const shouldRenderEmpty = !!showEmpty;
     if (!shouldRenderEmpty) return null;
     return (
       <div>
@@ -104,15 +104,18 @@ export default function ContentBlocks({ heading, blocks, showEmpty = false, empt
     );
   }
   if (allPending) {
-    return (
-      <div>
-        {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
-        <div className="pt-item-note" style={{ marginTop: 10 }}>
-          {String(emptyText || "Pep-Talk curation pending. We avoid speculative claims; this section will be populated as evidence is reviewed.")}
-        </div>
+  const shouldRenderEmpty = !!showEmpty;
+  if (!shouldRenderEmpty) return null;
+  return (
+    <div>
+      {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
+      <div className="pt-item-note" style={{ marginTop: 10 }}>
+        {String(emptyText || "No content has been added yet.")}
       </div>
-    );
-  }
+    </div>
+  );
+}
+
 
 
   return (
