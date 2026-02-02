@@ -9,6 +9,39 @@ import CollapsibleSection from "@/components/CollapsibleSection";
 import { loadBlendBySlug, loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 import { synthesizeBlendFromComponents } from "@/lib/blendSynthesis";
 import { isPendingText } from "@/lib/isPendingText";
+
+function pickBlocks(authored: any, synthesized: any) {
+  const list = Array.isArray(authored) ? authored.filter(Boolean) : [];
+  if (!list.length) return synthesized ?? null;
+
+  const hasReal = list.some((b: any) => {
+    const t = String(b?.text ?? b?.body ?? "").trim();
+    const title = String(b?.title ?? b?.heading ?? "").trim();
+    const joined = (title + "\n" + t).trim();
+    if (!joined) return false;
+    return !isPendingText(joined);
+  });
+
+  return hasReal ? list : (synthesized ?? null);
+}
+
+function pickPractical(authored: any, synthesized: any) {
+  const pr = (authored && typeof authored === "object") ? authored : null;
+  const synth = (synthesized && typeof synthesized === "object") ? synthesized : null;
+  if (!pr) return synth;
+
+  const bottom = String(pr?.bottom_line ?? "").trim();
+  const pendingBottom = !!bottom && isPendingText(bottom);
+
+  const hasAnyList =
+    (Array.isArray(pr?.benefits) && pr.benefits.length) ||
+    (Array.isArray(pr?.common_downsides) && pr.common_downsides.length) ||
+    (Array.isArray(pr?.serious_red_flags) && pr.serious_red_flags.length) ||
+    (Array.isArray(pr?.who_should_be_cautious) && pr.who_should_be_cautious.length);
+
+  if ((!bottom || pendingBottom) && !hasAnyList) return synth;
+  return pr;
+}
 import { requirePaid } from "@/lib/gate";
 
 export default async function BlendPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -21,22 +54,24 @@ export default async function BlendPage({ params }: { params: Promise<{ slug: st
   const b = doc?.blend ?? {};
 
   const sections = b?.sections ?? {};
-const overviewBlocks = (Array.isArray(sections?.overview) && sections.overview.length) ? sections.overview : (synth?.overviewBlocks ?? null);
-const safetyBlocks = (Array.isArray(sections?.safety) && sections.safety.length) ? sections.safety : (synth?.safetyBlocks ?? null);
-const claimsBlocks = (Array.isArray(sections?.claims) && sections.claims.length) ? sections.claims : (synth?.claimsBlocks ?? null);
 
-  const pr = b?.practical ?? synth?.practical ?? null;
+// If the blend has little/no authored content, synthesize a blend-level rationale
+// from component peptide practical blocks + topics. This is conservative and avoids
+// claiming “synergy” without evidence.
+const components = Array.isArray(b?.components) ? b.components : [];
+const synth = components.length
+  ? await synthesizeBlendFromComponents({ blendSlug: slug, components, loadPeptideBySlug })
+  : null;
 
-  // If the blend has little/no authored content, synthesize a blend-level rationale
-  // from component peptide practical blocks + topics. This is conservative and avoids
-  // claiming “synergy” without evidence.
-  const components = Array.isArray(b?.components) ? b.components : [];
-  const synth = components.length
-    ? await synthesizeBlendFromComponents({ blendSlug: slug, components, loadPeptideBySlug })
-    : null;
+// Prefer authored blocks if they contain real content; otherwise fall back to synthesized blocks.
+const overviewBlocks = pickBlocks(sections?.overview, synth?.overviewBlocks);
+const safetyBlocks = pickBlocks(sections?.safety, synth?.safetyBlocks);
+const claimsBlocks = pickBlocks(sections?.claims, synth?.claimsBlocks);
 
+// Prefer authored practical if it contains real content; otherwise fall back to synthesized practical.
+const pr = pickPractical(b?.practical, synth?.practical);
 
-  const isPracticalPlaceholder =
+const isPracticalPlaceholder =
     !!pr &&
     isPendingText(pr?.bottom_line) &&
     !(
