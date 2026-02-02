@@ -220,8 +220,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           />
         </CollapsibleSection>
       </section>
-
-      <section className="pt-card">
+        <section className="pt-card">
         <CollapsibleSection title="Evidence" defaultCollapsedMobile>
           <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
         </CollapsibleSection>

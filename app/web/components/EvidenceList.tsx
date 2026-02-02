@@ -60,8 +60,7 @@ export default function EvidenceList({ evidence, wrapCard = true }: Props) {
   if (!list.length) {
     return (
       <Wrapper {...wrapperProps}>
-        <h2 className="pt-card-title">Evidence</h2>
-        <div className="pt-item-note" style={{ marginTop: 10 }}>
+                <div className="pt-item-note" style={{ marginTop: 10 }}>
           No curated human clinical sources have been added yet.
         </div>
       </Wrapper>
@@ -70,8 +69,7 @@ export default function EvidenceList({ evidence, wrapCard = true }: Props) {
 
   return (
     <Wrapper {...wrapperProps}>
-      <h2 className="pt-card-title">Evidence</h2>
-
+      
       <div className="pt-stack">
         {list.map((e) => {
           const pmid = extractPmid(e);
