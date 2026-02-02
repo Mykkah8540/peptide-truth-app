@@ -76,7 +76,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
   const disclaimerTextRaw = [p?.status?.human_use_note, p?.classification?.notes].filter(Boolean).join(" ");
   const disclaimerText = uniqSentences(disclaimerTextRaw.split(/\s+/).join(" "));
-  const disclaimerTextClean = isPendingText(disclaimerText) ? "" : disclaimerText;
+  const disclaimerTextClean = disclaimerText;
 
   const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
@@ -136,13 +136,13 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           </CollapsibleSection>
         </section>
 
-      {doc?.practical && !isPracticalPlaceholder ? (
+      {doc?.practical ? (
         <section className="pt-card">
           <CollapsibleSection title="Practical summary" defaultCollapsedMobile={false}>
             <p className="pt-card-subtext">
               {(() => {
                 const t = String(doc.practical.bottom_line || "").trim();
-                if (!t || isPendingText(t)) {
+                if (!t) {
                   return "A quick, real-world orientation: why people use it, what they report, what to watch for, and how to avoid the most common avoidable mistakes (quality/testing + use context).";
                 }
                 return t;
