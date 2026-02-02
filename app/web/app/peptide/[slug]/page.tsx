@@ -12,6 +12,7 @@ import DisclaimerSection from "@/components/DisclaimerSection";
 import InteractionsSection from "@/components/InteractionsSection";
 import FavoriteButton from "@/components/FavoriteButton";
 import CollapsibleSection from "@/components/CollapsibleSection";
+import UgcNotesSection from "@/components/UgcNotesSection";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -228,7 +229,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
       <DisclaimerSection text={disclaimerTextClean} />
 
-      {DEBUG && riskHit ? <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" /> : null}
+              <UgcNotesSection type="peptide" slug={slug} />
+
+{DEBUG && riskHit ? <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" /> : null}
     </main>
   );
 }

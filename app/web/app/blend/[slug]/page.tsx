@@ -6,6 +6,7 @@ import ContentBlocks from "@/components/ContentBlocks";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import EvidenceList from "@/components/EvidenceList";
 import CollapsibleSection from "@/components/CollapsibleSection";
+import UgcNotesSection from "@/components/UgcNotesSection";
 import { loadBlendBySlug, loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 import { synthesizeBlendFromComponents } from "@/lib/blendSynthesis";
 import { isPendingText } from "@/lib/isPendingText";
@@ -263,7 +264,9 @@ const isPracticalPlaceholder =
         </section>
       ) : null}
 
-      <DisclaimerSection text={disclaimerText} />
+              <UgcNotesSection type="blend" slug={slug} />
+
+<DisclaimerSection text={disclaimerText} />
     </main>
   );
 }
