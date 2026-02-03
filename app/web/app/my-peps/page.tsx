@@ -1,6 +1,6 @@
 import { listPeptides, listBlends } from "@/lib/content";
 import MyPepsClient from "@/components/MyPepsClient";
-
+import SavedStacksSection from "@/components/SavedStacksSection";
 export default function MyPepsPage() {
   return (
     <main className="pt-page">
@@ -17,10 +17,12 @@ export default function MyPepsPage() {
       </section>
 
       <section className="pt-card">
-        <p className="pt-card-subtext">
-          <MyPepsClient peptides={listPeptides()} blends={listBlends()} />
-        </p>
-      </section>
+  <MyPepsClient peptides={listPeptides()} blends={listBlends()} />
+</section>
+
+<section className="pt-card">
+  <SavedStacksSection />
+</section>
     </main>
   );
 }
