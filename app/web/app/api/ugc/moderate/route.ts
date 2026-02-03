@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listPending, moderatePost } from "@/lib/ugc/store";
+import { listPending, listByStatus, moderatePost } from "@/lib/ugc/store";
 
 function isAuthed(req: Request): boolean {
   const token = process.env.PEP_TALK_ADMIN_TOKEN || "";
@@ -9,8 +9,10 @@ function isAuthed(req: Request): boolean {
 }
 
 export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const status = String(searchParams.get("status") || "pending").trim();
   if (!isAuthed(req)) return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
-  const posts = listPending(200);
+  const posts = listByStatus ? listByStatus(status as any, 200) : listPending(200);
   return NextResponse.json({ ok: true, posts });
 }
 
@@ -22,7 +24,7 @@ export async function POST(req: Request) {
   const status = String(body?.status || "").trim();
   const reason = body?.reason ? String(body.reason).trim() : null;
 
-  if (!id || (status !== "approved" && status !== "rejected")) {
+  if (!id || (status !== "approved" && status !== "rejected" && status !== "archived" && status !== "trash" && status !== "flagged" && status !== "pending")) {
     return NextResponse.json({ ok: false, error: "invalid payload" }, { status: 400 });
   }
 
