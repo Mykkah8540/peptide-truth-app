@@ -1,7 +1,7 @@
 # Pep-Talk Current State (Authoritative)
 
-Date: 2026-01-25
-Branch: (see `git rev-parse --abbrev-ref HEAD`)
+Date: 2026-02-03
+Branch: interactions-glp-batch1-20260127
 
 ## System Health
 
@@ -25,18 +25,43 @@ PDP rendering is aligned with mission:
 - Practical risks phrasing avoids fear framing and signals rarity appropriately
 - Interactions and Evidence sections behave deterministically with sane empty states
 
+### UGC → Supabase Postgres (LIVE)
+UGC storage has been migrated from file-based JSON to Supabase-hosted Postgres and is verified end-to-end:
+
+- Database: Supabase Postgres (pooler) via `UGC_DATABASE_URL` (fallback: `DATABASE_URL`)
+- Schema: `public.ugc_posts` exists with statuses: `pending|approved|rejected|archived|trash`
+- Runtime verification: submit → moderate(approve) → list(approved) confirmed working against DB
+- Admin auth: protected endpoints require header `x-admin-token` matching `PEP_TALK_ADMIN_TOKEN`
+- Seen/unseen: admin selection marks `seen_at` in DB via `/api/ugc/seen`
+
+Code locations (authoritative):
+- DB pool: `app/web/lib/ugc/db.ts`
+- Store: `app/web/lib/ugc/store.ts`
+- Routes: `app/web/app/api/ugc/{submit,list,moderate,seen}/route.ts`
+- Admin UI: `app/web/app/admin/ugc/page.tsx`
+
+API contracts (verified):
+- Submit: `POST /api/ugc/submit`
+  Body: `{ "type":"peptide|blend", "slug":"...", "username":"...", "text":"...", "ack_no_dosing": true }`
+- List approved: `GET /api/ugc/list?type=peptide|blend&slug=...`
+- Moderate (admin): `GET /api/ugc/moderate?status=pending|approved|...&limit=...` (header `x-admin-token`)
+  `POST /api/ugc/moderate` body: `{ "id":"...", "status":"approved|rejected|archived|trash|pending", "reason": null|string }`
+- Seen (admin): `POST /api/ugc/seen` body `{ "id":"..." }` (header `x-admin-token`)
+
+TLS behavior (explicit):
+- Dev: Node pg pool uses TLS with `rejectUnauthorized: false` to avoid local cert-chain issues.
+- Prod: pool enforces verification with `rejectUnauthorized: true` (requires proper CA trust in deployment).
+
 ## Known Stale Docs (Fixed in repo when updated)
 If any doc claims “risk badge not implemented” or “next action is integrate risk badge,” it is stale.
 
 ## NEXT SINGLE ACTION (Strict Scope)
 
-PDP UX polish (consistency + rhythm) with zero drift:
-- Improve mobile hierarchy and spacing
-- Reduce density without hiding information
-- Keep tone unchanged
-- No new features, no new schemas, no data expansion
+UGC production hardening (no feature creep):
+- Keep UGC working in dev + production (TLS verification plan for prod)
+- Confirm admin UGC UI marks `seen_at` and counts align with DB truth
+- Improve UGC error reporting + empty states (no new schemas)
 - Run gates and commit small, scoped changes
-
 ## Guardrails (Non-Negotiable)
 
 - Repo is truth, not chat
