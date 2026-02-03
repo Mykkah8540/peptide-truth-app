@@ -13,9 +13,12 @@ export async function POST(req: Request) {
   if (!entityType || !entitySlug || !username || !text) {
     return NextResponse.json({ ok: false, error: "missing fields" }, { status: 400 });
   }
-  if (entityType !== "peptide" && entityType !== "blend" && entityType !== "stack") {
+
+  // DB currently supports peptide+blend only
+  if (entityType !== "peptide" && entityType !== "blend") {
     return NextResponse.json({ ok: false, error: "invalid type" }, { status: 400 });
   }
+
   if (!ack) {
     return NextResponse.json({ ok: false, error: "ack_required" }, { status: 400 });
   }
@@ -28,7 +31,7 @@ export async function POST(req: Request) {
     );
   }
 
-  const post = submitPost({
+  const post = await submitPost({
     entityType,
     entitySlug,
     username,

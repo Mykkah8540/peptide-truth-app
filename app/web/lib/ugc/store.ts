@@ -1,9 +1,7 @@
-import fs from "fs";
-import path from "path";
+import { ugcPool } from "@/lib/ugc/db";
 
-export type UgcEntityType = "peptide" | "blend" | "stack";
-
-export type UgcPostStatus = "pending" | "approved" | "rejected";
+export type UgcEntityType = "peptide" | "blend"; // DB constraint currently matches this
+export type UgcPostStatus = "pending" | "approved" | "rejected" | "archived" | "trash";
 
 export type UgcPost = {
   id: string;
@@ -11,178 +9,135 @@ export type UgcPost = {
   entitySlug: string;
   username: string;
   text: string;
-  createdAt: string;
-  seenAt?: number | null; // ISO
+
   status: UgcPostStatus;
   statusReason?: string | null;
-  flags?: {
-    possibleDosing?: boolean;
+
+  flags?: Record<string, any>;
+
+  createdAt: string;       // ISO string
+  updatedAt?: string | null;
+  seenAt?: string | null;
+};
+
+function rowToPost(r: any): UgcPost {
+  return {
+    id: String(r.id),
+    entityType: String(r.entity_type) as UgcEntityType,
+    entitySlug: String(r.entity_slug),
+    username: String(r.username),
+    text: String(r.text),
+    status: String(r.status) as UgcPostStatus,
+    statusReason: r.status_reason ?? null,
+    flags: r.flags ?? {},
+    createdAt: (r.created_at instanceof Date ? r.created_at.toISOString() : String(r.created_at)),
+    updatedAt: r.updated_at ? (r.updated_at instanceof Date ? r.updated_at.toISOString() : String(r.updated_at)) : null,
+    seenAt: r.seen_at ? (r.seen_at instanceof Date ? r.seen_at.toISOString() : String(r.seen_at)) : null,
   };
-};
-
-type UgcDb = {
-  posts: UgcPost[];
-};
-
-function repoRootFromHere(): string {
-  // app/web/lib/ugc/store.ts -> app/web -> repo root
-  return path.resolve(process.cwd(), "..", "..");
 }
 
-function ugcPath(): string {
-  const root = repoRootFromHere();
-  return path.join(root, "data", "ugc", "ugc_v1.json");
+export async function listApproved(entityType: UgcEntityType, entitySlug: string): Promise<UgcPost[]> {
+  const pool = ugcPool();
+  const res = await pool.query(
+    `
+      select id, entity_type, entity_slug, username, text, status, status_reason, flags, created_at, updated_at, seen_at
+      from public.ugc_posts
+      where entity_type = $1 and entity_slug = $2 and status = 'approved'
+      order by created_at desc
+      limit 200
+    `,
+    [entityType, entitySlug]
+  );
+  return res.rows.map(rowToPost);
 }
 
-function ensureDir() {
-  const p = ugcPath();
-  fs.mkdirSync(path.dirname(p), { recursive: true });
-}
-
-function readDb(): UgcDb {
-  ensureDir();
-  const p = ugcPath();
-  if (!fs.existsSync(p)) return { posts: [] };
-  const raw = fs.readFileSync(p, "utf-8");
-  try {
-    const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== "object" || !Array.isArray(parsed.posts)) return { posts: [] };
-    return { posts: parsed.posts as UgcPost[] };
-  } catch {
-    return { posts: [] };
-  }
-}
-
-function writeDb(db: UgcDb) {
-  ensureDir();
-  const p = ugcPath();
-  fs.writeFileSync(p, JSON.stringify(db, null, 2) + "\n", "utf-8");
-}
-
-export function listApproved(entityType: UgcEntityType, entitySlug: string): UgcPost[] {
-  const db = readDb();
-  return db.posts
-    .filter((p) => p.entityType === entityType && p.entitySlug === entitySlug && p.status === "approved")
-    .sort((a, b) => (Date.parse(String(b.createdAt || "")) - Date.parse(String(a.createdAt || ""))));
-}
-
-export function submitPost(input: {
+export async function submitPost(input: {
   entityType: UgcEntityType;
   entitySlug: string;
   username: string;
   text: string;
-  flags?: UgcPost["flags"];
-}): UgcPost {
-  const db = readDb();
-  const now = new Date().toISOString();
+  flags?: Record<string, any>;
+}): Promise<UgcPost> {
+  const pool = ugcPool();
   const id = "ugc_" + Math.random().toString(36).slice(2) + "_" + Date.now().toString(36);
 
-  const post: UgcPost = {
-    id,
-    entityType: input.entityType,
-    entitySlug: input.entitySlug,
-    username: input.username.trim(),
-    text: input.text.trim(),
-    createdAt: now,
-    status: "pending",
-    statusReason: null,
-    flags: input.flags ?? {},
-  };
+  const entityType = input.entityType;
+  const entitySlug = input.entitySlug.trim();
+  const username = input.username.trim();
+  const text = input.text.trim();
+  const flags = input.flags ?? {};
 
-  db.posts.push(post);
-  writeDb(db);
-  return post;
+  const res = await pool.query(
+    `
+      insert into public.ugc_posts (id, entity_type, entity_slug, username, text, status, status_reason, flags)
+      values ($1, $2, $3, $4, $5, 'pending', null, $6::jsonb)
+      returning id, entity_type, entity_slug, username, text, status, status_reason, flags, created_at, updated_at, seen_at
+    `,
+    [id, entityType, entitySlug, username, text, JSON.stringify(flags)]
+  );
+
+  return rowToPost(res.rows[0]);
 }
 
-export function moderatePost(input: { id: string; status: "approved" | "rejected"; reason?: string | null }): UgcPost | null {
-  const db = readDb();
-  const idx = db.posts.findIndex((p) => p.id === input.id);
-  if (idx === -1) return null;
-  const existing = db.posts[idx];
+export async function moderatePost(input: {
+  id: string;
+  status: UgcPostStatus;
+  reason?: string | null;
+}): Promise<UgcPost | null> {
+  const pool = ugcPool();
 
-  const updated: UgcPost = {
-    ...existing,
-    status: input.status,
-    statusReason: input.reason ?? null,
-  };
+  const id = input.id.trim();
+  const status = input.status;
+  const reason = input.reason ? input.reason.trim() : null;
 
-  db.posts[idx] = updated;
-  writeDb(db);
-  return updated;
+  const res = await pool.query(
+    `
+      update public.ugc_posts
+      set status = $2,
+          status_reason = $3,
+          updated_at = now()
+      where id = $1
+      returning id, entity_type, entity_slug, username, text, status, status_reason, flags, created_at, updated_at, seen_at
+    `,
+    [id, status, reason]
+  );
+
+  if (!res.rows.length) return null;
+  return rowToPost(res.rows[0]);
 }
 
+export async function listByStatus(status: any, limit: number = 200): Promise<UgcPost[]> {
+  const st = String(status || "pending").trim() as UgcPostStatus;
+  const lim = Math.max(1, Math.min(1000, Number(limit || 200)));
 
+  const pool = ugcPool();
+  const res = await pool.query(
+    `
+      select id, entity_type, entity_slug, username, text, status, status_reason, flags, created_at, updated_at, seen_at
+      from public.ugc_posts
+      where status = $1
+      order by created_at desc
+      limit $2
+    `,
+    [st, lim]
+  );
 
-// ---- phase 1 admin inbox helpers (all-entity listings) ----
-// Intentionally simple: filter posts by status across all entities.
-
-type UgcStatusAny = "pending" | "approved" | "rejected" | "archived" | "trash";
-
-function _toMs(v: any): number {
-  if (!v) return 0;
-  if (typeof v === "number") return v;
-  const t = Date.parse(String(v));
-  return Number.isFinite(t) ? t : 0;
+  return res.rows.map(rowToPost);
 }
 
-function listByStatusAll(status: UgcStatusAny, limit = 200) {
-  // Best-effort: try common state shapes without assuming too much.
-  const anySelf: any = (globalThis as any);
-  // If this module already has an internal in-memory state, it will be referenced by functions below.
-  // We’ll try to reuse existing listPending/listApproved/etc if present; otherwise scan a best-effort store export.
-  try {
-    const fn =
-      status === "pending" ? (listPending as any) :
-      status === "approved" ? (listApproved as any) :
-      status === "rejected" ? null :
-      status === "archived" ? null :
-      status === "trash" ? null :
-      null;
-
-    if (typeof fn === "function") return fn(limit);
-  } catch {}
-
-  // Fallback: attempt to read from a common map if it exists in this module scope.
-  const modAny: any = ({} as any);
-
-  const candidates: any[] = [];
-  // If you have a module-level store like `STATE` or `db`, this won't see it directly.
-  // So we also include a very small last-resort: return empty rather than crash.
-  // (Admin UI will still load and show 0 posts.)
-  // NOTE: This fallback is deliberately conservative.
-  return candidates;
+export async function listPending(limit = 100): Promise<UgcPost[]> {
+  return listByStatus("pending", limit);
 }
 
-function listApprovedAll(limit = 200) { return listByStatusAll("approved", limit); }
-function listRejectedAll(limit = 200) { return listByStatusAll("rejected", limit); }
-function listArchivedAll(limit = 200) { return listByStatusAll("archived", limit); }
-function listTrashAll(limit = 200) { return listByStatusAll("trash", limit); }
-// ----------------------------------------------------------
-
-
-export function listByStatus(status: any, limit: number = 200): UgcPost[] {
-  const st = String(status || "pending").trim() as any;
-  const db = readDb();
-
-  return (db.posts || [])
-    .filter((p) => p.status === st)
-    .sort((a, b) => (Date.parse(String(b.createdAt || "")) - Date.parse(String(a.createdAt || ""))))
-    .slice(0, limit);
-}
-export function listPending(limit = 100): UgcPost[] {
-  const db = readDb();
-  return db.posts
-    .filter((p) => p.status === "pending")
-    .sort((a, b) => (Date.parse(String(b.createdAt || "")) - Date.parse(String(a.createdAt || ""))))
-    .slice(0, limit);
-}
-
-
-export function markSeen(id: string) {
-  const db = readDb();
-  const p: any = (db.posts || []).find((x: any) => x.id === id) || null;
-  if (!p) return null;
-  if (!p.seenAt) p.seenAt = Date.now();
-  writeDb(db);
-  return p;
+export async function markSeen(id: string): Promise<boolean> {
+  const pool = ugcPool();
+  const res = await pool.query(
+    `
+      update public.ugc_posts
+      set seen_at = coalesce(seen_at, now())
+      where id = $1
+    `,
+    [String(id || "").trim()]
+  );
+  return (res.rowCount || 0) > 0;
 }

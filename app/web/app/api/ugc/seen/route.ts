@@ -9,8 +9,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "missing id" }, { status: 400 });
   }
 
-  const post = markSeen(id);
-  if (!post) {
+  const ok = await markSeen(id);
+  if (!ok) {
     return NextResponse.json({ ok: false, error: "not found" }, { status: 404 });
   }
 

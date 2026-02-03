@@ -10,10 +10,10 @@ export async function GET(req: Request) {
     return NextResponse.json({ ok: false, error: "missing type/slug" }, { status: 400 });
   }
 
-  if (entityType !== "peptide" && entityType !== "blend" && entityType !== "stack") {
+  if (entityType !== "peptide" && entityType !== "blend") {
     return NextResponse.json({ ok: false, error: "invalid type" }, { status: 400 });
   }
 
-  const posts = listApproved(entityType, entitySlug);
+  const posts = await listApproved(entityType, entitySlug);
   return NextResponse.json({ ok: true, posts });
 }
