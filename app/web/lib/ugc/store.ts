@@ -133,9 +133,9 @@ function listByStatusAll(status: UgcStatusAny, limit = 200) {
     const fn =
       status === "pending" ? (listPending as any) :
       status === "approved" ? (listApproved as any) :
-      status === "rejected" ? ((listRejected as any) || null) :
-      status === "archived" ? ((listArchived as any) || null) :
-      status === "trash" ? ((listTrash as any) || null) :
+      status === "rejected" ? null :
+      status === "archived" ? null :
+      status === "trash" ? null :
       null;
 
     if (typeof fn === "function") return fn(limit);
