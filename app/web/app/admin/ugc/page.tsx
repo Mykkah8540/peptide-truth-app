@@ -18,7 +18,7 @@ type UgcPost = {
   reason?: string | null;
   statusReason?: string | null;
   status_reason?: string | null;
-  seenAt?: number | null;
+  seenAt?: number | string | null;
 };
 
 const QUEUES: Array<{
@@ -144,6 +144,34 @@ export default function UgcAdminPage() {
     return Array.isArray(data.posts) ? data.posts : [];
   }
 
+
+  
+  
+  function applySeenLocal(id?: string | null) {
+    if (!id) return;
+    const stamp = new Date().toISOString();
+    setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: p.seenAt || stamp } : p)));
+  }
+
+  async function markSeenRemote(id?: string | null) {
+    if (!id || !adminToken) return;
+    try {
+      await fetch("/api/ugc/seen", {
+        method: "POST",
+        headers: { "content-type": "application/json", "x-admin-token": adminToken },
+        body: JSON.stringify({ id }),
+      });
+    } catch {}
+  }
+
+  function selectPost(id?: string | null) {
+    if (!id) return;
+    setSelectedId(id);
+    markRead(id);
+    applySeenLocal(id);
+    markSeenRemote(id);
+  }
+
   async function refreshCounts() {
     if (!adminToken) return;
     const [pending, approved, rejected, archived, trash] = await Promise.all([
@@ -175,14 +203,12 @@ export default function UgcAdminPage() {
         const flagged = pending.filter((p) => hasFlags(p));
         setPosts(flagged);
         const first = flagged[0]?.id ?? null;
-        setSelectedId(first);
-        markRead(first);
+        selectPost(first);
       } else {
         const list = await apiGet(nextQueue as UgcStatus);
         setPosts(list);
         const first = list[0]?.id ?? null;
-        setSelectedId(first);
-        markRead(first);
+        selectPost(first);
       }
       await refreshCounts();
     } catch (e: any) {
@@ -191,6 +217,7 @@ export default function UgcAdminPage() {
       setLoading(false);
     }
   }
+
 
   async function moderate(status: UgcStatus, reason?: string) {
     if (!adminToken || !selected) return;
@@ -211,10 +238,10 @@ export default function UgcAdminPage() {
     // Email-style: remove from current list and auto-select next (1-by-1 triage)
     setPosts((prev) => prev.filter((p) => p.id !== selected.id));
     setSelectedId((cur) => {
-      const next = getNextId(cur, 1);
-      markRead(next);
-      return next;
-    });
+        const next = getNextId(cur, 1);
+        selectPost(next);
+        return next;
+      });
 
     refreshCounts();
   }
@@ -257,15 +284,13 @@ export default function UgcAdminPage() {
       if (e.key === "j") {
         e.preventDefault();
         const next = getNextId(selectedId, 1);
-        setSelectedId(next);
-        markRead(next);
+        selectPost(next);
         return;
       }
       if (e.key === "k") {
         e.preventDefault();
         const prev = getNextId(selectedId, -1);
-        setSelectedId(prev);
-        markRead(prev);
+        selectPost(prev);
         return;
       }
       if (e.key === "a") {
@@ -439,9 +464,8 @@ export default function UgcAdminPage() {
                       <button
                         key={p.id}
                         onClick={() => {
-                          setSelectedId(p.id);
-                          markRead(p.id);
-                        }}
+                            selectPost(p.id);
+                          }}
                         style={{
                           textAlign: "left",
                           padding: 12,
