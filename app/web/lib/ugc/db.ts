@@ -31,9 +31,12 @@ export function ugcPool(): Pool {
   const connectionString = getConnectionString();
 
   // Supabase requires TLS; sslmode=require in the URL is good, but we also set ssl here to avoid local TLS quirks.
+  const isProd = process.env.NODE_ENV === "production";
+  const ssl = isProd ? { rejectUnauthorized: true } : { rejectUnauthorized: false };
+
   const pool = new Pool({
     connectionString,
-    ssl: { rejectUnauthorized: false },
+      ssl,
     max: 10,
   });
 
