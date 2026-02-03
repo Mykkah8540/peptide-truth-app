@@ -110,6 +110,15 @@ export function moderatePost(input: { id: string; status: "approved" | "rejected
   return updated;
 }
 
+
+export function listByStatus(status: any, limit: number = 200) {
+  // Phase 1: moderator inbox is driven by pending submissions.
+  // Additional queues (approved/rejected/archived/trash/flagged) will be implemented
+  // when we persist UGC to a real datastore.
+  const st = String(status || "pending").trim();
+  if (st === "pending") return listPending(limit);
+  return [];
+}
 export function listPending(limit = 100): UgcPost[] {
   const db = readDb();
   return db.posts
