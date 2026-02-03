@@ -9,10 +9,13 @@ function isAuthed(req: Request): boolean {
 }
 
 export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const status = String(searchParams.get("status") || "pending").trim();
   if (!isAuthed(req)) return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
-  const posts = listByStatus ? listByStatus(status as any, 200) : listPending(200);
+
+  const { searchParams } = new URL(req.url);
+  const status = String(searchParams.get("status") || "pending").trim() as any;
+  const limit = Number(searchParams.get("limit") || 200);
+
+  const posts = listByStatus(status, limit);
   return NextResponse.json({ ok: true, posts });
 }
 

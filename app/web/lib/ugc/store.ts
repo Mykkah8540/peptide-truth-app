@@ -11,7 +11,8 @@ export type UgcPost = {
   entitySlug: string;
   username: string;
   text: string;
-  createdAt: string; // ISO
+  createdAt: string;
+  seenAt?: number | null; // ISO
   status: UgcPostStatus;
   statusReason?: string | null;
   flags?: {
@@ -173,4 +174,14 @@ export function listPending(limit = 100): UgcPost[] {
     .filter((p) => p.status === "pending")
     .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
     .slice(0, limit);
+}
+
+
+export function markSeen(id: string) {
+  const db = readDb();
+  const p: any = (db.posts || []).find((x: any) => x.id === id) || null;
+  if (!p) return null;
+  if (!p.seenAt) p.seenAt = Date.now();
+  writeDb(db);
+  return p;
 }

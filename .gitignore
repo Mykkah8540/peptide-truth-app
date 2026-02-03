@@ -36,3 +36,6 @@ ui_stack_audit.txt
 *.BROKEN.bak
 
 .vscode/
+
+# local ugc db (dev)
+data/ugc/
