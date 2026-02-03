@@ -12,10 +12,8 @@ type UgcPost = {
   username: string;
   text: string;
   status: UgcStatus;
-  createdAt?: string | null;
-  created_at?: number | string | null;
-  updatedAt?: string | null;
-  updated_at?: number | string | null;
+  createdAt?: number | string | null;
+  updatedAt?: number | string | null;
   flags?: Record<string, any> | null;
   reason?: string | null;
   statusReason?: string | null;
@@ -38,19 +36,29 @@ const QUEUES: Array<{
 ];
 
 function fmtTime(v: any): string {
-  if (!v) return "";
+  if (v === null || v === undefined) return "";
+
+  // numbers (ms since epoch)
+  if (typeof v === "number" && Number.isFinite(v)) {
+    const d = new Date(v);
+    return Number.isNaN(d.getTime()) ? "" : d.toLocaleString();
+  }
+
+  // ISO string dates
   if (typeof v === "string") {
     const d = new Date(v);
     return Number.isNaN(d.getTime()) ? "" : d.toLocaleString();
   }
-  const n = typeof v === "number" ? v : Number(v || 0);
+
+  // fallback
+  const n = Number(v || 0);
   if (!n) return "";
   const d = new Date(n);
   return Number.isNaN(d.getTime()) ? "" : d.toLocaleString();
 }
 
 function pickBestTime(p: UgcPost): any {
-  return p.createdAt ?? p.created_at ?? null;
+  return p.createdAt ?? null;
 }
 
 function pickBestReason(p: UgcPost): string | null {
@@ -220,7 +228,7 @@ export default function UgcAdminPage() {
   useEffect(() => {
     try {
       const t = localStorage.getItem("pt_admin_token") || "";
-      if (t) setAdminToken(t);
+      if (t) setAdminToken(String(t).trim());
       const read = localStorage.getItem("pt_ugc_read_ids") || "{}";
       const obj = JSON.parse(read);
       if (obj && typeof obj === "object") setReadIds(obj);
@@ -303,7 +311,7 @@ export default function UgcAdminPage() {
             <div style={{ fontSize: 13, fontWeight: 800, opacity: 0.8 }}>Admin token</div>
             <input
               value={adminToken}
-              onChange={(e) => setAdminToken(e.target.value)}
+              onChange={(e) => setAdminToken(e.target.value.trim())}
               placeholder="Paste PEP_TALK_ADMIN_TOKEN"
               style={{
                 flex: "1 1 320px",
