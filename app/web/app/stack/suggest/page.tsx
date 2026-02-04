@@ -17,7 +17,7 @@ export default async function SuggestStackPage() {
         </h1>
 
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-          Drop an idea for a synergy-first stack. Keep it educational — no dosing, protocols, schedules, or instructions.
+          Drop an idea for a synergy-first stack. Keep it educational — no dosing, protocols, schedules, or instructions. Submissions are moderated before appearing.
         </p>
 
         <p className="pt-card-subtext">
