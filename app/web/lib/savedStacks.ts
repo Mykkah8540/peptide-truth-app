@@ -83,7 +83,7 @@ export function readSavedStacks(): SavedStack[] {
     .filter(Boolean) as SavedStack[];
 
   // newest first
-  stacks.sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+  stacks.sort((a: any, b: any) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
   return stacks;
 }
 
@@ -142,4 +142,43 @@ export function getSavedStack(id: string): SavedStack | null {
   const rid = normalizeSlug(id);
   if (!rid) return null;
   return readSavedStacks().find((s) => s.id === rid) ?? null;
+}
+
+
+// ---- v1 helpers (appended) ----
+export function listSavedStacks(): any[] {
+  if (typeof window === "undefined") return [];
+  const items = safeParse(window.localStorage.getItem(KEY));
+  return items
+    .map((x: any) => ({ ...x, savedAt: x.savedAt || "" }))
+    .sort((a: any, b: any) => String(b.savedAt).localeCompare(String(a.savedAt)));
+}
+export function isStackSaved(slug: string): boolean {
+  if (typeof window === "undefined") return false;
+  const items = safeParse(window.localStorage.getItem(KEY));
+  return items.some((x: any) => String(x?.slug || "") === String(slug || ""));
+}
+export function saveStack(input: any) {
+  if (typeof window === "undefined") return;
+  const items = safeParse(window.localStorage.getItem(KEY));
+  const slug = String(input?.slug || "").trim();
+  if (!slug) return;
+
+  const next = items.filter((x: any) => String(x?.slug || "") !== slug);
+  next.unshift({
+    slug,
+    title: String(input?.title || slug),
+    summary: typeof input?.summary === "string" ? input.summary : "",
+    peptides: Array.isArray(input?.peptides) ? input.peptides : [],
+    blends: Array.isArray(input?.blends) ? input.blends : [],
+    savedAt: new Date().toISOString(),
+  });
+
+  window.localStorage.setItem(KEY, JSON.stringify(next.slice(0, 200)));
+}
+export function removeStack(slug: string) {
+  if (typeof window === "undefined") return;
+  const items = safeParse(window.localStorage.getItem(KEY));
+  const next = items.filter((x: any) => String(x?.slug || "") !== String(slug || ""));
+  window.localStorage.setItem(KEY, JSON.stringify(next));
 }

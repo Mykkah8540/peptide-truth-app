@@ -1,4 +1,8 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { isStackSaved, saveStack, removeStack } from "@/lib/savedStacks";
 
 type StackV1 = {
   schema_version: "stack_v1";
@@ -41,7 +45,37 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 export default function StackViewer(props: { stack: StackV1 }) {
-  const s = props.stack;
+  
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    try {
+      setSaved(isStackSaved(props.stack.slug));
+    } catch {
+      setSaved(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.stack.slug]);
+
+  function onToggleSave() {
+    try {
+      if (saved) {
+        removeStack(props.stack.slug);
+        setSaved(false);
+      } else {
+        saveStack({
+          slug: props.stack.slug,
+          title: props.stack.title,
+          summary: props.stack.summary,
+          peptides: Array.isArray(props.stack.peptides) ? props.stack.peptides : [],
+          blends: Array.isArray(props.stack.blends) ? props.stack.blends : [],
+        });
+        setSaved(true);
+      }
+    } catch {}
+  }
+
+const s = props.stack;
   const peptides = Array.isArray(s.peptides) ? s.peptides : [];
   const blends = Array.isArray(s.blends) ? s.blends : [];
   const goals = Array.isArray(s.goals) ? s.goals : [];
