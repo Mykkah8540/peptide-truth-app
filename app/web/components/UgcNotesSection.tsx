@@ -11,7 +11,7 @@ type Post = {
   createdAt: string;
 };
 
-export default function UgcNotesSection(props: { type: EntityType; slug: string }) {
+export default function UgcNotesSection(props: { type: EntityType; slug: string; hideSubmit?: boolean }) {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -180,6 +180,7 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string 
           </button>
         </div>
       </div>
+        ) : null}
     </section>
   );
 }
