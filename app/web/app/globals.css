@@ -124,6 +124,11 @@ body {
   gap: 16px;
 }
 
+
+@media (min-width: 768px) {
+  .mobile-menu-btn { display: none !important; }
+}
+
 /* pep-talk nav responsiveness */
 .desktop-nav { display: inline-flex; }
 .desktop-account { display: inline-flex; }
