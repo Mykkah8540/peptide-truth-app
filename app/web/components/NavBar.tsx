@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 import HomeSearch from "@/components/HomeSearch";
 import type { EntityListItem, TopicListItem } from "@/lib/content";
@@ -16,6 +17,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Browse Peptides", href: "/peptides" },
   { label: "Resources", href: "/resources" },
+  { label: "Account", href: "/account" },
+  { label: "Sign in", href: "/login" },
 
   // Pro
   { label: "Blends", href: "/blends", pro: true },
@@ -54,6 +57,18 @@ export default function NavBar(props: {
   topics: TopicListItem[];
 }) {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  function goBack() {
+    // Safe back: if no history, go home.
+    try {
+      if (typeof window !== "undefined" && window.history && window.history.length > 1) {
+        router.back();
+        return;
+      }
+    } catch {}
+    router.push("/");
+  }
 
   return (
     <header
@@ -83,23 +98,44 @@ export default function NavBar(props: {
             justifyContent: "space-between",
           }}
         >
-          <Link
-            href="/"
-            style={{
-              fontWeight: 900,
-              letterSpacing: -0.3,
-              textDecoration: "none",
-              color: "inherit",
-            }}
-          >
-            Pep-Talk
-          </Link>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+            {/* Back button (global) */}
+            <button
+              type="button"
+              aria-label="Back"
+              onClick={goBack}
+              style={{
+                border: "1px solid rgba(0,0,0,0.10)",
+                background: "rgba(0,0,0,0.02)",
+                borderRadius: 999,
+                padding: "6px 10px",
+                fontSize: 14,
+                fontWeight: 900,
+                cursor: "pointer",
+                lineHeight: 1,
+              }}
+            >
+              ←
+            </button>
+
+            <Link
+              href="/"
+              style={{
+                fontWeight: 900,
+                letterSpacing: -0.3,
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              Pep-Talk
+            </Link>
+          </div>
 
           {/* Desktop nav */}
-          <nav className="desktop-nav" style={{ display: "none", gap: 14, flexWrap: "wrap" }}>
+          <nav className="desktop-nav" style={{ gap: 14, flexWrap: "wrap" }}>
             {NAV_ITEMS.slice(1).map((item, idx) => (
               <span key={item.href} style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-                {item.pro && idx === 3 ? (
+                {item.pro && idx === 5 ? (
                   <span
                     aria-hidden="true"
                     style={{
