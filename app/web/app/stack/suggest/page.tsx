@@ -13,8 +13,12 @@ export default async function SuggestStackPage() {
           <BackHomeLink />
         </div>
 
-        <p className="pt-card-subtext" style={{ marginTop: 0 }}>
-          Suggest a synergy-first stack idea. Keep it educational — no dosing, protocols, schedules, or instructions.
+        <h1 className="pt-card-title" style={{ margin: 0 }}>
+          Suggest a Stack
+        </h1>
+
+        <p className="pt-card-subtext" style={{ marginTop: 10 }}>
+          Suggest a synergy-first combo. Educational only — no dosing, protocols, schedules, or instructions. Submissions are moderated before appearing.
         </p>
       </section>
 
