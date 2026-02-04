@@ -33,7 +33,147 @@ const QUEUES: Array<{
   { key: "rejected", label: "Denied", icon: "⛔", hint: "Not visible" },
   { key: "archived", label: "Archived", icon: "🗄️", hint: "Out of the way" },
   { key: "trash", label: "Trash", icon: "🗑️", hint: "Deleted / discarded" },
+
+
 ];
+
+type StackSuggestionV1 = {
+  name: string;
+  goal: string;
+  includes: Array<{ type: "peptide" | "blend"; slug: string; title: string }>;
+  description: string;
+  outcomes: string[];
+};
+
+function parseStackSuggestionV1(text: string): StackSuggestionV1 | null {
+  if (!text || !text.includes("[STACK_SUGGESTION_V1]")) return null;
+
+  const out: StackSuggestionV1 = { name: "", goal: "", includes: [], description: "", outcomes: [] };
+
+  const lines = String(text).split(/\r?\n/);
+  let mode: "none" | "includes" | "description" | "outcomes" = "none";
+
+  for (const raw of lines) {
+    const line = raw.trim();
+
+    if (line === "[STACK_SUGGESTION_V1]" || line === "[/STACK_SUGGESTION_V1]") continue;
+    if (!line) continue;
+
+    if (line.startsWith("Name:")) {
+      out.name = line.replace(/^Name:\s*/, "").trim();
+      mode = "none";
+      continue;
+    }
+    if (line.startsWith("Goal:")) {
+      out.goal = line.replace(/^Goal:\s*/, "").trim();
+      mode = "none";
+      continue;
+    }
+    if (line.startsWith("Includes:")) {
+      mode = "includes";
+      continue;
+    }
+    if (line.startsWith("Description:")) {
+      mode = "description";
+      continue;
+    }
+    if (line.startsWith("Expected outcomes")) {
+      mode = "outcomes";
+      continue;
+    }
+
+    if (mode === "includes") {
+      const mm = raw.match(/-\s*(peptide|blend)\s*:\s*([a-z0-9-_]+)\s*(?:\((.*?)\))?\s*$/i);
+      if (mm) {
+        const type = (mm[1].toLowerCase() === "blend" ? "blend" : "peptide") as "peptide" | "blend";
+        const slug = String(mm[2] || "").trim();
+        const title = String(mm[3] || "").trim();
+        if (slug) out.includes.push({ type, slug, title });
+      }
+      continue;
+    }
+
+    if (mode === "outcomes") {
+      const mm = raw.match(/^-\s*(.*)$/);
+      if (mm) {
+        const v = String(mm[1] || "").trim();
+        if (v) out.outcomes.push(v);
+      }
+      continue;
+    }
+
+    if (mode === "description") {
+      if (raw.trim()) out.description += (out.description ? "\n" : "") + raw.trim();
+      continue;
+    }
+  }
+
+  return out;
+}
+
+function renderStackSuggestionV1(parsed: StackSuggestionV1) {
+  return (
+    <div style={{ display: "grid", gap: 10 }}>
+      <div style={{ fontSize: 12, opacity: 0.75, fontWeight: 900 }}>Stack suggestion (structured)</div>
+
+      <div style={{ display: "grid", gap: 6 }}>
+        <div style={{ fontSize: 13, fontWeight: 900 }}>Name</div>
+        <div style={{ fontSize: 13, opacity: 0.9 }}>{parsed.name || "(no name provided)"}</div>
+      </div>
+
+      <div style={{ display: "grid", gap: 6 }}>
+        <div style={{ fontSize: 13, fontWeight: 900 }}>Goal</div>
+        <div style={{ fontSize: 13, opacity: 0.9 }}>{parsed.goal || "(no goal provided)"}</div>
+      </div>
+
+      <div style={{ display: "grid", gap: 6 }}>
+        <div style={{ fontSize: 13, fontWeight: 900 }}>Includes</div>
+        {parsed.includes.length ? (
+          <div style={{ display: "grid", gap: 6 }}>
+            {parsed.includes.map((x, i) => (
+              <div key={i} style={{ fontSize: 13, opacity: 0.9 }}>
+                • {x.title || x.slug} <span style={{ opacity: 0.7, fontWeight: 700 }}>({x.type}:{x.slug})</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{ fontSize: 13, opacity: 0.8 }}>(none selected)</div>
+        )}
+      </div>
+
+      {parsed.description ? (
+        <div style={{ display: "grid", gap: 6 }}>
+          <div style={{ fontSize: 13, fontWeight: 900 }}>Description</div>
+          <div style={{ fontSize: 13, opacity: 0.9, whiteSpace: "pre-wrap" }}>{parsed.description}</div>
+        </div>
+      ) : null}
+
+      {parsed.outcomes.length ? (
+        <div style={{ display: "grid", gap: 6 }}>
+          <div style={{ fontSize: 13, fontWeight: 900 }}>Expected outcomes</div>
+          <div style={{ display: "grid", gap: 6 }}>
+            {parsed.outcomes.map((v, i) => (
+              <div key={i} style={{ fontSize: 13, opacity: 0.9 }}>
+                • {v}
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+function renderUgcBody(post: any) {
+  const text = String(post?.text || "");
+  const parsed = parseStackSuggestionV1(text);
+  if (parsed && String(post?.entityType || "") === "stack" && String(post?.entitySlug || "") === "__global__") {
+    return renderStackSuggestionV1(parsed);
+  }
+  return <div style={{ whiteSpace: "pre-wrap" }}>{text}</div>;
+}
+
+
 
 function fmtTime(v: any): string {
   if (v === null || v === undefined) return "";
@@ -539,7 +679,7 @@ export default function UgcAdminPage() {
                       lineHeight: 1.5,
                     }}
                   >
-                    {selected.text}
+                    {renderUgcBody(selected)}
                   </div>
 
                   {pickBestReason(selected) ? (
