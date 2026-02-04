@@ -10,11 +10,38 @@ type EntityOption = {
   title: string;
 };
 
+type Goal =
+  | "sleep"
+  | "recovery"
+  | "focus"
+  | "energy"
+  | "metabolic"
+  | "inflammation"
+  | "gut"
+  | "skin_hair"
+  | "longevity"
+  | "performance"
+  | "other";
+
+const GOAL_LABELS: Record<Goal, string> = {
+  sleep: "Sleep / Rest",
+  recovery: "Recovery",
+  focus: "Focus / Cognition",
+  energy: "Energy / Motivation",
+  metabolic: "Metabolic support",
+  inflammation: "Inflammation / Joint support",
+  gut: "Gut / GI support",
+  skin_hair: "Skin / Hair",
+  longevity: "Longevity / Aging",
+  performance: "Performance / Training",
+  other: "Other",
+};
+
 function normalize(s: string) {
   return s.trim().toLowerCase();
 }
 
-function makeOutcomesDraft(description: string, stackName: string, selected: EntityOption[]) {
+function makeOutcomesDraft(description: string, stackName: string, selected: EntityOption[], goal: Goal) {
   // This does NOT make medical claims. It summarizes user intent only.
   const desc = description.trim();
   const name = stackName.trim();
@@ -25,6 +52,8 @@ function makeOutcomesDraft(description: string, stackName: string, selected: Ent
   if (items.length) parts.push(`(${items.join(", ")})`);
 
   const header = parts.length ? `Draft summary for ${parts.join(" ")}:` : `Draft summary:`;
+
+  const goalLine = goal ? `User-selected goal: ${GOAL_LABELS[goal]}.` : `User-selected goal: (none).`;
 
   const t = normalize(desc);
   const intents: string[] = [];
@@ -42,9 +71,9 @@ function makeOutcomesDraft(description: string, stackName: string, selected: Ent
   add("skin/hair support", /\bskin|hair|collagen|glow\b/);
 
   const intentLine =
-    intents.length ? `User-described goals: ${intents.join(", ")}.` : `User-described goals: (from the description below).`;
+    intents.length ? `Keywords detected in description: ${intents.join(", ")}.` : `Keywords detected in description: (none).`;
 
-  return [header, intentLine, `User description (verbatim): ${desc ? `"${desc}"` : "(none)"}`].join("\n");
+  return [header, goalLine, intentLine, `User description (verbatim): ${desc ? `"${desc}"` : "(none)"}`].join("\n");
 }
 
 export default function StackSuggestionForm(props: { ugcSlug: string }) {
@@ -55,14 +84,16 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
   const [ack, setAck] = useState(false);
 
   const [stackName, setStackName] = useState("");
+  const [goal, setGoal] = useState<Goal>("recovery");
+
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<EntityOption[]>([]);
   const [description, setDescription] = useState("");
 
   const [includeOutcomes, setIncludeOutcomes] = useState(false);
   const outcomesDraft = useMemo(
-    () => makeOutcomesDraft(description, stackName, selected),
-    [description, stackName, selected]
+    () => makeOutcomesDraft(description, stackName, selected, goal),
+    [description, stackName, selected, goal]
   );
 
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "ok" | "error">("idle");
@@ -136,6 +167,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
     lines.push("STACK SUGGESTION");
     lines.push("");
     lines.push(`Stack name: ${stackName.trim() || "(none)"}`);
+    lines.push(`Goal: ${GOAL_LABELS[goal]}`);
     lines.push(
       `Peptides: ${
         peptides.length ? peptides.map((p) => `${p.title} (${p.slug})`).join(", ") : "(none)"
@@ -219,6 +251,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
     setUsername("");
     setAck(false);
     setStackName("");
+    setGoal("recovery");
     setQuery("");
     setSelected([]);
     setDescription("");
@@ -264,6 +297,31 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
             fontSize: 14,
           }}
         />
+
+        <div style={{ display: "grid", gap: 8 }}>
+          <div style={{ fontSize: 13, fontWeight: 900 }}>Primary goal (required)</div>
+          <select
+            value={goal}
+            onChange={(e) => setGoal(e.target.value as Goal)}
+            style={{
+              width: "100%",
+              padding: "10px 12px",
+              borderRadius: 10,
+              border: "1px solid rgba(0,0,0,0.15)",
+              fontSize: 14,
+              background: "white",
+            }}
+          >
+            {Object.keys(GOAL_LABELS).map((k) => {
+              const key = k as Goal;
+              return (
+                <option key={key} value={key}>
+                  {GOAL_LABELS[key]}
+                </option>
+              );
+            })}
+          </select>
+        </div>
 
         <div style={{ display: "grid", gap: 8 }}>
           <div style={{ fontSize: 13, fontWeight: 900 }}>Peptides + blends in this stack (required)</div>
