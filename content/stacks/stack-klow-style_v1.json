@@ -1,0 +1,15 @@
+{
+  "schema_version": "stack_v1",
+  "stack_id": "stack_klow_style_v1",
+  "slug": "klow-style-support",
+  "title": "KLOW-style support stack",
+  "summary": "A synergistic, well-known style of combination: pairs complementary signals so the benefits stack without turning the whole plan into a high-risk pile-on. This is a concept model for how a curated stack reads: cohesive, minimal, and clickable.",
+  "goals": ["recovery", "inflammation", "general-support"],
+  "peptides": ["bpc-157", "tb-500"],
+  "blends": ["klow"],
+  "cautions": [
+    "Avoid doubling down on overlapping mechanisms without a reason.",
+    "If you are already using something that strongly overlaps (for example, another strong recovery blend), stacking may increase complexity without increasing signal."
+  ],
+  "goes_well_with": ["metabolic-foundation"]
+}

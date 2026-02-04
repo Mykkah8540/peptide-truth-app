@@ -1,4 +1,7 @@
+import Link from "next/link";
 import BackHomeLink from "@/components/BackHomeLink";
+import { listStacks } from "@/lib/content";
+import { requirePaid } from "@/lib/gate";
 
 function ProPill() {
   return (
@@ -24,7 +27,11 @@ function ProPill() {
   );
 }
 
-export default function StacksPage() {
+export default async function StacksPage() {
+  await requirePaid();
+
+  const stacks = listStacks();
+
   return (
     <main className="pt-page">
       <section className="pt-card">
@@ -40,17 +47,39 @@ export default function StacksPage() {
         </div>
 
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-          Stacks are curated combinations of peptides built around specific goals — such as recovery, metabolic health, or cognitive support.
+          Stacks are curated combinations built around a goal. This is a synergy-first exploration surface — not a document dump.
         </p>
         <p className="pt-card-subtext">
-          These are educational groupings meant to show how compounds are commonly discussed together, not instructions for use.
+          Educational only. No dosing, protocols, schedules, or instructions.
         </p>
       </section>
 
       <section className="pt-card">
-        <p className="pt-card-subtext">
-          Curated stacks will appear here as they are reviewed and published.
-        </p>
+        {stacks.length ? (
+          <div className="pt-stack">
+            {stacks.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/stack/${s.slug}`}
+                className="pt-item"
+                style={{ textDecoration: "none", color: "inherit", display: "block" }}
+              >
+                <div style={{ fontSize: 14, fontWeight: 900 }}>{s.title}</div>
+                <div className="pt-item-note" style={{ marginTop: 6 }}>
+                  Open stack →
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="pt-card-subtext">No curated stacks published yet.</p>
+        )}
+
+        <div style={{ marginTop: 14 }}>
+          <Link href="/stack-builder" style={{ textDecoration: "none", fontWeight: 900 }}>
+            Build a stack →
+          </Link>
+        </div>
       </section>
     </main>
   );
