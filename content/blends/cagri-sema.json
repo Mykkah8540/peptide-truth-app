@@ -18,7 +18,8 @@
           "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "evidence_refs": [
             "E1"
-          ]
+          ],
+          "title": "What this blend is"
         }
       ],
       "claims": [],
@@ -26,6 +27,30 @@
         {
           "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
+        }
+      ],
+      "use_cases": [
+        {
+          "title": "Use cases (real-world)",
+          "text": "Use cases are framed as intent + context, not as a recommendation."
+        },
+        {
+          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+        },
+        {
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+        }
+      ],
+      "interaction_summary": [
+        {
+          "title": "Interaction summary",
+          "text": "Interaction flags are category prompts — not dosing instructions."
+        },
+        {
+          "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
+        },
+        {
+          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },

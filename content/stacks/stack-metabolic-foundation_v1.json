@@ -1,0 +1,14 @@
+{
+  "schema_version": "stack_v1",
+  "stack_id": "stack_metabolic_foundation_v1",
+  "slug": "metabolic-foundation",
+  "title": "Metabolic foundation stack",
+  "summary": "A clean baseline stack for metabolic goals that emphasizes compatibility. Built to be a foundation you can expand — without stacking redundant signals.",
+  "goals": ["metabolic-health", "weight-management", "energy"],
+  "peptides": ["retatrutide"],
+  "cautions": [
+    "Do not stack two GLP-1 / incretin agonists together. Redundancy increases downside without adding clarity.",
+    "If appetite suppression becomes too aggressive, the stack is not “working better” — it may be working too hard."
+  ],
+  "goes_well_with": ["klow-style-support"]
+}

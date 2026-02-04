@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Block = {
   claim_type?: string;
   title?: string;
@@ -13,9 +15,52 @@ type Props = {
   blocks?: Block[] | null;
   showEmpty?: boolean;
   emptyText?: string;
+  wrapCard?: boolean;
+  hideHeading?: boolean;
 };
 
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
+
+function renderInlineText(text: string) {
+  const t = String(text || "");
+  // supports: ... [label](href) ...
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const out: any[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+
+  while ((m = re.exec(t)) !== null) {
+    const start = m.index;
+    const end = re.lastIndex;
+    if (start > last) out.push(t.slice(last, start));
+
+    const label = String(m[1] || "").trim();
+    const href = String(m[2] || "").trim();
+
+    const isInternal = href.startsWith("/");
+    if (label && href) {
+      out.push(
+        isInternal ? (
+          <Link key={out.length} href={href} style={{ textDecoration: "underline" }}>
+            {label}
+          </Link>
+        ) : (
+          <a key={out.length} href={href} target="_blank" rel="noreferrer" style={{ textDecoration: "underline" }}>
+            {label}
+          </a>
+        )
+      );
+    } else {
+      out.push(t.slice(start, end));
+    }
+
+    last = end;
+  }
+
+  if (last < t.length) out.push(t.slice(last));
+  return out;
+}
+
 
 function isPlaceholderBlock(b: any): boolean {
   const t = String(b?.title || "").toLowerCase();
@@ -41,36 +86,41 @@ function isPendingBlock(b: any): boolean {
 }
 
 
-export default function ContentBlocks({ heading, blocks, showEmpty = false, emptyText }: Props) {
+export default function ContentBlocks({ heading, blocks, showEmpty = false, emptyText, wrapCard = true, hideHeading = false }: Props) {
+  const Wrapper: any = wrapCard ? "section" : "div";
+  const wrapperProps = wrapCard ? { className: "pt-card" } : {};
   const list = (blocks ?? []).filter(Boolean).filter((b) => !isPlaceholderBlock(b));
   const allPending = list.length > 0 && list.every((b) => isPendingBlock(b));
   if (!list.length) {
-    const shouldRenderEmpty = showEmpty && String(heading || "").trim().length > 0;
+    const shouldRenderEmpty = !!showEmpty;
     if (!shouldRenderEmpty) return null;
     return (
-      <section className="pt-card">
-        <h2 className="pt-card-title">{heading}</h2>
+      <div>
+        {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
         <div className="pt-item-note" style={{ marginTop: 10 }}>
           {String(emptyText || "No content has been added yet.")}
         </div>
-      </section>
+      </div>
     );
   }
   if (allPending) {
-    return (
-      <section className="pt-card">
-        <h2 className="pt-card-title">{heading}</h2>
-        <div className="pt-item-note" style={{ marginTop: 10 }}>
-          {String(emptyText || "Pep-Talk curation pending. We avoid speculative claims; this section will be populated as evidence is reviewed.")}
-        </div>
-      </section>
-    );
-  }
+  const shouldRenderEmpty = !!showEmpty;
+  if (!shouldRenderEmpty) return null;
+  return (
+    <div>
+      {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
+      <div className="pt-item-note" style={{ marginTop: 10 }}>
+        {String(emptyText || "No content has been added yet.")}
+      </div>
+    </div>
+  );
+}
+
 
 
   return (
-    <section className="pt-card">
-      <h2 className="pt-card-title">{heading}</h2>
+    <div>
+      {!hideHeading && String(heading || "").trim() ? <h2 className="pt-card-title">{heading}</h2> : null}
 
       <div className="pt-stack">
         {list.map((b, idx) => {
@@ -85,12 +135,12 @@ export default function ContentBlocks({ heading, blocks, showEmpty = false, empt
             <div key={`${heading}-${idx}`} className="pt-item">
               {title ? <div className="pt-item-title">{title}</div> : null}
               {metaParts.length ? <div className="pt-meta">{metaParts.join(" · ")}</div> : null}
-              {text ? <div className="pt-item-text">{text}</div> : null}
+              {text ? <div className="pt-item-text">{renderInlineText(text)}</div> : null}
               {refs.length ? <div className="pt-meta">Refs: {refs.join(", ")}</div> : null}
             </div>
           );
         })}
       </div>
-    </section>
+    </div>
   );
 }

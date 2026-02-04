@@ -44,7 +44,21 @@
           "evidence_refs": []
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+          "title": "Use cases (real-world)"
+        },
+        {
+          "text": "research relevance in pain and neuroinflammation pathways"
+        },
+        {
+          "text": "physiology relevance in nausea and sensory signaling"
+        },
+        {
+          "text": "often mentioned in inflammation/pain discussions (claims can be speculative)"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -76,7 +90,21 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "neuropeptide-cns-context"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "general recovery and resilience interest (anecdotal)",
@@ -116,7 +144,9 @@
     "slug": "substance-p"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "neuropeptide-cns-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

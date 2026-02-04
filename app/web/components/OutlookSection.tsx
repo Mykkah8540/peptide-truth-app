@@ -13,23 +13,23 @@ type Props = {
   blocks?: Block[] | null;
   outlookText?: string | null;
   interestBullets?: string[] | null;
+  wrapCard?: boolean;
+  hideTitle?: boolean;
 };
 
-export default function OutlookSection({ blocks, outlookText, interestBullets }: Props) {
+export default function OutlookSection({ blocks, outlookText, interestBullets, wrapCard = true, hideTitle = false }: Props) {
   const list = (blocks ?? []).filter(Boolean);
   const t = (outlookText ?? "").trim();
   const bullets = (interestBullets ?? []).filter(Boolean);
 
-  return (
-    <section style={{ marginTop: 16, padding: 16, borderRadius: 16, border: "1px solid rgba(0,0,0,0.08)" }}>
-      <h2 style={{ margin: 0, fontSize: 16, fontWeight: 800 }}>
-        Current outlook and intended use
-      </h2>
+  const Wrapper: any = wrapCard ? "section" : "div";
+  const wrapperProps = wrapCard ? { className: "pt-card" } : {};
 
-      <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, opacity: 0.8, lineHeight: 1.45 }}>
-        Why people are interested in this peptide and how it is commonly discussed in real-world wellness,
-        rehabilitation, and athletic communities.
-      </p>
+  return (
+    <Wrapper {...wrapperProps}>
+      {!hideTitle ? <h2 className="pt-card-title">Current outlook and intended use</h2> : null}
+
+      <p className="pt-card-subtext">Why people are interested in this peptide and how it is commonly discussed in real-world wellness, rehabilitation, and athletic communities.</p>
 
       {t ? (
         <div style={{ marginTop: 12, fontSize: 14, lineHeight: 1.55 }}>
@@ -58,9 +58,9 @@ export default function OutlookSection({ blocks, outlookText, interestBullets }:
 
       {list.length ? (
         <div style={{ marginTop: 14 }}>
-          <ContentBlocks heading="" blocks={list} />
+          <ContentBlocks heading="" blocks={list} wrapCard={false} hideHeading />
         </div>
       ) : null}
-    </section>
+    </Wrapper>
   );
 }

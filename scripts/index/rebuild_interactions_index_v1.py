@@ -184,19 +184,47 @@ def main():
         return out
 
     out = {
+
         "schema_version": "interactions_index_v1",
+
         "generated_at": str(date.today()),
+
         "stats": {
+
             "total_governed_peptides": len(governed_slugs),
+
             "total_peptides_loaded": total_loaded,
+
             "peptides_with_any_interactions": peptides_with_any,
+
             "drug_class_terms": len(drug_map),
+
             "supplement_class_terms": len(supp_map),
+
             "peptide_terms": len(pep_map),
+
         },
+
+    
+
+        # validator-required lookup maps
+
+        "by_drug_class_name": finalize(drug_map),
+
+        "by_supplement_class_name": finalize(supp_map),
+
+        "by_peptide_name": finalize(pep_map),
+
+    
+
+        # legacy keys (keep for backwards compatibility)
+
         "drug_classes": finalize(drug_map),
+
         "supplement_classes": finalize(supp_map),
+
         "peptides": finalize(pep_map),
+
     }
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)

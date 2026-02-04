@@ -1,0 +1,358 @@
+# PDP conformance report
+
+Peptides found (excluding _index): 92
+Blends found (excluding _index): 8
+
+## Peptides summary
+- Overview present: 92/92
+- Use cases present: 17/92
+- Outlook bullets present: 92/92
+- Practical present: 91/92
+- AA sequence present: 90/92
+- Contains pending placeholder text: 90/92
+
+### Peptides missing AA sequence
+- retatrutide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/retatrutide.json)
+- ss-31  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ss-31.json)
+
+### Peptides missing overview
+
+### Peptides missing use cases
+- 5-amino-1mq  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/5-amino-1mq.json)
+- acetyl-hexapeptide-8  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/acetyl-hexapeptide-8.json)
+- adipotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/adipotide.json)
+- afamelanotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/afamelanotide.json)
+- amylin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/amylin.json)
+- angiotensin-ii  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/angiotensin-ii.json)
+- bivalirudin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bivalirudin.json)
+- bpc-157-arginate  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bpc-157-arginate.json)
+- bpc-157  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bpc-157.json)
+- brain-natriuretic-peptide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/brain-natriuretic-peptide.json)
+- bremelanotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bremelanotide.json)
+- cagrilintide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/cagrilintide.json)
+- calcitonin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/calcitonin.json)
+- carbetocin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/carbetocin.json)
+- cgrp  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/cgrp.json)
+- cjc-1295-dac  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/cjc-1295-dac.json)
+- desmopressin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/desmopressin.json)
+- endothelin-1  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/endothelin-1.json)
+- epitalon  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/epitalon.json)
+- eptifibatide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/eptifibatide.json)
+- exenatide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/exenatide.json)
+- follistatin-344  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/follistatin-344.json)
+- ghrp-2  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ghrp-2.json)
+- ghrp-6  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ghrp-6.json)
+- glucagon  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/glucagon.json)
+- glutathione  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/glutathione.json)
+- gonadorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/gonadorelin.json)
+- hcg  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/hcg.json)
+- hexarelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/hexarelin.json)
+- igf-1-lr3  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/igf-1-lr3.json)
+- igf-1  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/igf-1.json)
+- ipamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ipamorelin.json)
+- kisspeptin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/kisspeptin.json)
+- kpv  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/kpv.json)
+- lanreotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/lanreotide.json)
+- leuprolide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/leuprolide.json)
+- linaclotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/linaclotide.json)
+- liraglutide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/liraglutide.json)
+- ll-37  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ll-37.json)
+- mazdutide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/mazdutide.json)
+- melanotan-i  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/melanotan-i.json)
+- melanotan-ii  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/melanotan-ii.json)
+- mk-677  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/mk-677.json)
+- motilin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/motilin.json)
+- nad-plus  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/nad-plus.json)
+- nesiritide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/nesiritide.json)
+- neuropeptide-s  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/neuropeptide-s.json)
+- neuropeptide-y  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/neuropeptide-y.json)
+- octreotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/octreotide.json)
+- orexin-a  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/orexin-a.json)
+- palmitoyl-pentapeptide-4  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/palmitoyl-pentapeptide-4.json)
+- palmitoyl-tripeptide-1  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/palmitoyl-tripeptide-1.json)
+- peg-mgf  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/peg-mgf.json)
+- pentagastrin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/pentagastrin.json)
+- plecanatide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/plecanatide.json)
+- pramlintide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/pramlintide.json)
+- prolactin-releasing-peptide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/prolactin-releasing-peptide.json)
+- secretin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/secretin.json)
+- selank  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/selank.json)
+- semax  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/semax.json)
+- snap-8  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/snap-8.json)
+- somatostatin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/somatostatin.json)
+- ss-31  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ss-31.json)
+- survodutide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/survodutide.json)
+- tb-500  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/tb-500.json)
+- teriparatide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/teriparatide.json)
+- tesamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/tesamorelin.json)
+- thymosin-alpha-1  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/thymosin-alpha-1.json)
+- thymosin-beta-4-full  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/thymosin-beta-4-full.json)
+- thymosin-beta-4  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/thymosin-beta-4.json)
+- thymulin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/thymulin.json)
+- triptorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/triptorelin.json)
+- vasopressin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/vasopressin.json)
+- vip  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/vip.json)
+- ziconotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ziconotide.json)
+
+### Peptides missing outlook bullets
+
+### Peptides missing practical
+- ss-31  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ss-31.json)
+
+### Peptides with pending placeholder text (top 25 by hit count)
+- amylin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/amylin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- angiotensin-ii  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/angiotensin-ii.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- atrial-natriuretic-peptide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/atrial-natriuretic-peptide.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- bivalirudin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bivalirudin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- bradykinin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bradykinin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- brain-natriuretic-peptide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/brain-natriuretic-peptide.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- bremelanotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/bremelanotide.json)
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.molecular_formula: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.structure_image_url: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.sections.observed_exposure_ranges[0].route: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.sections.observed_exposure_ranges[0].unit: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- calcitonin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/calcitonin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- carbetocin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/carbetocin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- cgrp  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/cgrp.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- cjc-1295-dac  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/cjc-1295-dac.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- desmopressin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/desmopressin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- endothelin-1  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/endothelin-1.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- eptifibatide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/eptifibatide.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- exenatide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/exenatide.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- follistatin-344  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/follistatin-344.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- ghrp-2  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ghrp-2.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- ghrp-6  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/ghrp-6.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- glucagon  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/glucagon.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- gonadorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/gonadorelin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- humanin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/humanin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- igf-1-lr3  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/igf-1-lr3.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- igf-1  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/igf-1.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- kisspeptin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/kisspeptin.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+- lanreotide  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/peptides/lanreotide.json)
+  - $.peptide.classification.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.classification.notes: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.category: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.status.human_use_note: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.sequence_oneletter: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.peptide.structure.amino_acid_seq: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+
+## Blends summary
+- Overview present: 0/8
+- Safety present: 0/8
+- Claims present: 0/8
+- Practical present: 0/8
+- Contains pending placeholder text: 8/8
+
+### Blends missing overview
+- bpc-157-tb-500  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/bpc-157-tb-500.json)
+- cagri-sema  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cagri-sema.json)
+- cjc-ipamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cjc-ipamorelin.json)
+- glow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glow.json)
+- glp1-sma  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp1-sma.json)
+- glp2-trz  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp2-trz.json)
+- glp3-reta  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp3-reta.json)
+- klow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/klow.json)
+
+### Blends missing safety
+- bpc-157-tb-500  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/bpc-157-tb-500.json)
+- cagri-sema  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cagri-sema.json)
+- cjc-ipamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cjc-ipamorelin.json)
+- glow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glow.json)
+- glp1-sma  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp1-sma.json)
+- glp2-trz  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp2-trz.json)
+- glp3-reta  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp3-reta.json)
+- klow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/klow.json)
+
+### Blends missing claims
+- bpc-157-tb-500  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/bpc-157-tb-500.json)
+- cagri-sema  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cagri-sema.json)
+- cjc-ipamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cjc-ipamorelin.json)
+- glow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glow.json)
+- glp1-sma  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp1-sma.json)
+- glp2-trz  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp2-trz.json)
+- glp3-reta  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp3-reta.json)
+- klow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/klow.json)
+
+### Blends missing practical
+- bpc-157-tb-500  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/bpc-157-tb-500.json)
+- cagri-sema  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cagri-sema.json)
+- cjc-ipamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cjc-ipamorelin.json)
+- glow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glow.json)
+- glp1-sma  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp1-sma.json)
+- glp2-trz  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp2-trz.json)
+- glp3-reta  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp3-reta.json)
+- klow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/klow.json)
+
+### Blends with pending placeholder text
+- bpc-157-tb-500  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/bpc-157-tb-500.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- cagri-sema  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cagri-sema.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- cjc-ipamorelin  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/cjc-ipamorelin.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- glow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glow.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- glp1-sma  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp1-sma.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- glp2-trz  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp2-trz.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- glp3-reta  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/glp3-reta.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...
+- klow  (/Users/micahcarroll/SynologyDrive/Peptides Master Folder/peptide-truth-app/content/blends/klow.json)
+  - $.blend.sections.overview[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.sections.safety[0].text: Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.
+  - $.blend.practical.bottom_line: Pep-Talk curation pending: this practical summary will be expanded with real-world uses, common downsides, and red fl...

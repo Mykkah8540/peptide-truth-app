@@ -120,7 +120,11 @@
     "slug": "vasopressin"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "cardiovascular-physiology-context",
+      "endocrine-axis-modulation-context",
+      "neuropeptide-cns-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

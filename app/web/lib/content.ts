@@ -44,8 +44,24 @@ export type TopicPageDocV1 = {
 };
 
 function repoRoot(): string {
-  // Next runtime cwd is typically app/web. Repo root is two levels up.
-  return path.resolve(process.cwd(), "..", "..");
+  // Next can run with cwd at repo root OR app/web depending on phase.
+  // Find the repo root by walking upward until we see content/_index/entities_v1.json.
+  const cwd = process.cwd();
+  const candidates = [
+    cwd,
+    path.resolve(cwd, ".."),
+    path.resolve(cwd, "..", ".."),
+    path.resolve(cwd, "..", "..", ".."),
+    path.resolve(cwd, "..", "..", "..", ".."),
+  ];
+
+  for (const base of candidates) {
+    const marker = path.join(base, "content", "_index", "entities_v1.json");
+    if (existsSync(marker)) return base;
+  }
+
+  // Fallback: previous behavior (best guess)
+  return path.resolve(cwd, "..", "..");
 }
 
 function readJson<T>(fp: string): T {
@@ -478,6 +494,65 @@ type StackBuilderGoalsV1 = {
   }>;
   updated_at?: string;
 };
+
+
+/*
+  Stacks (V1)
+  Source-of-truth: content/stacks/*.json
+*/
+
+export type StackV1 = {
+  schema_version: "stack_v1";
+  stack_id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  goals: string[];
+  peptides: string[];
+  blends?: string[];
+  cautions?: string[];
+  goes_well_with?: string[];
+};
+
+export function listStacks(): Array<{ slug: string; title: string }> {
+  const root = repoRoot();
+  const dir = path.join(root, "content", "stacks");
+  try {
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+    const out: Array<{ slug: string; title: string }> = [];
+    for (const f of files) {
+      try {
+        const doc = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
+        if (doc?.schema_version !== "stack_v1") continue;
+        if (!doc?.slug || !doc?.title) continue;
+        out.push({ slug: String(doc.slug), title: String(doc.title) });
+      } catch {}
+    }
+    out.sort((a, b) => a.title.localeCompare(b.title));
+    return out;
+  } catch {
+    return [];
+  }
+}
+
+export function loadStackV1BySlug(slug: string): StackV1 | null {
+  const root = repoRoot();
+  const dir = path.join(root, "content", "stacks");
+  try {
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
+    for (const f of files) {
+      try {
+        const doc = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
+        if (doc?.schema_version !== "stack_v1") continue;
+        if (String(doc?.slug || "") !== slug) continue;
+        return doc as StackV1;
+      } catch {}
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
 
 export function loadStackBuilderGoals(): StackBuilderGoalsV1 | null {
   const root = repoRoot();

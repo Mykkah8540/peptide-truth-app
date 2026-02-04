@@ -11,6 +11,7 @@ type Evidence = {
 
 type Props = {
   evidence?: Evidence[] | null;
+  wrapCard?: boolean;
 };
 
 function extractPmid(e: any): string | null {
@@ -47,7 +48,9 @@ function isPlaceholderEvidence(e: any): boolean {
   return hay.includes("pep-talk curation pending");
 }
 
-export default function EvidenceList({ evidence }: Props) {
+export default function EvidenceList({ evidence, wrapCard = true }: Props) {
+  const Wrapper: any = wrapCard ? "section" : "div";
+  const wrapperProps = wrapCard ? { className: "pt-card" } : {};
   const list = (evidence ?? []).filter(Boolean).filter((e: any) => {
     const hay = [e?.title, e?.url, e?.notes].filter(Boolean).join(' ');
     return !isPendingText(hay);
@@ -56,19 +59,17 @@ export default function EvidenceList({ evidence }: Props) {
   // Empty state (don’t disappear; be honest)
   if (!list.length) {
     return (
-      <section className="pt-card">
-        <h2 className="pt-card-title">Evidence</h2>
-        <div className="pt-item-note" style={{ marginTop: 10 }}>
+      <Wrapper {...wrapperProps}>
+                <div className="pt-item-note" style={{ marginTop: 10 }}>
           No curated human clinical sources have been added yet.
         </div>
-      </section>
+      </Wrapper>
     );
   }
 
   return (
-    <section className="pt-card">
-      <h2 className="pt-card-title">Evidence</h2>
-
+    <Wrapper {...wrapperProps}>
+      
       <div className="pt-stack">
         {list.map((e) => {
           const pmid = extractPmid(e);
@@ -113,6 +114,6 @@ export default function EvidenceList({ evidence }: Props) {
           );
         })}
       </div>
-    </section>
+    </Wrapper>
   );
 }

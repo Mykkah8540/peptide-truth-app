@@ -1,0 +1,26 @@
+{
+  "schema_version": "stack_v1",
+  "stack_id": "tissue_recovery_v1",
+  "slug": "tissue-recovery",
+  "title": "Tissue Recovery & Repair",
+  "summary": "An educational grouping of peptides commonly discussed together in recovery contexts. This stack highlights complementary roles in inflammation modulation, connective tissue signaling, and cellular repair — without providing instructions for use.",
+  "goals": [
+    "recovery",
+    "injury_support",
+    "post_surgical_context"
+  ],
+  "peptides": [
+    "bpc-157",
+    "tb-500"
+  ],
+  "blends": [],
+  "cautions": [
+    "Not intended for acute trauma or emergency situations",
+    "Not a substitute for medical evaluation or rehabilitation"
+  ],
+  "goes_well_with": [
+    "sleep_optimization",
+    "protein_adequacy",
+    "physical_therapy_context"
+  ]
+}

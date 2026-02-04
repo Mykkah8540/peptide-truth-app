@@ -1,5 +1,6 @@
 import StackBuilderClient from "@/components/StackBuilderClient";
 import { loadStackBuilderGoals, loadTopicPageV1BySlug, listTopics } from "@/lib/content";
+import { requirePaid } from "@/lib/gate";
 
 type GoalsDoc = NonNullable<ReturnType<typeof loadStackBuilderGoals>>;
 function firstText(blocks: any): string {
@@ -9,6 +10,8 @@ function firstText(blocks: any): string {
 }
 
 export default async function StackBuilderPage() {
+  await requirePaid();
+
   const goalsDoc = loadStackBuilderGoals();
 
   const goals = ((goalsDoc?.goals ?? []) as GoalsDoc["goals"]).map((g) => ({

@@ -1,0 +1,15 @@
+{
+  "schema_version": "stack_v1",
+  "stack_id": "stack_recovery_shoulder_v1",
+  "slug": "recovery-shoulder",
+  "title": "Recovery Stack: Shoulder Repair Support",
+  "summary": "A recovery-oriented stack that combines tissue support, inflammation context, and repair signaling commonly discussed together after shoulder injury or surgery. The goal is to encourage complementary mechanisms without piling on redundant pathways. This is an educational grouping for exploration, not instructions for use.",
+  "goals": ["recovery", "soft tissue", "inflammation"],
+  "peptides": ["tb500", "bpc157"],
+  "blends": [],
+  "cautions": [
+    "If you are already using another strong anti-inflammatory approach, watch for redundancy and discuss the total plan with a clinician.",
+    "If any member of the stack is contraindicated for you personally, the stack is not a fit even if the goal matches."
+  ],
+  "goes_well_with": ["ghk-cu"]
+}

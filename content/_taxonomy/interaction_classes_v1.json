@@ -10,7 +10,14 @@
         "anticoagulants",
         "antiplatelets"
       ],
-      "notes": "Bleeding/clotting risk context."
+      "notes": "Bleeding/clotting risk context.",
+      "label": "Anticoagulants / antiplatelets",
+      "definition": "Context bucket for peptides that may plausibly influence bleeding/clotting balance, platelet function, or vascular repair in a way that could matter alongside anticoagulant or antiplatelet medications.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when bleeding/clotting pathways are meaningfully implicated.",
+        "Do not imply a proven clinical interaction; this is a cautionary context flag."
+      ]
     },
     {
       "slug": "antihypertensives",
@@ -22,7 +29,13 @@
         "arbs",
         "beta blockers"
       ],
-      "notes": "Blood pressure effects and orthostatic risk context."
+      "notes": "Use this class for peptides that can materially shift blood pressure via vascular tone or fluid balance. This is interaction-relevance for people on BP-lowering drugs, not a claim the peptide is an antihypertensive medication.",
+      "label": "Antihypertensives",
+      "definition": "Context bucket for peptides that may influence blood pressure or vascular resistance in a way that could matter alongside antihypertensive medications.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when BP modulation is plausible and non-trivial."
+      ]
     },
     {
       "slug": "diabetes-glucose-lowering",
@@ -35,25 +48,13 @@
         "glp-1",
         "glp1"
       ],
-      "notes": "Hypoglycemia risk context; appetite/gastric effects context."
-    },
-    {
-      "slug": "immunosuppressants",
-      "title": "Immunosuppressants / immune-modulating drugs",
-      "aka": [
-        "biologics",
-        "immunosuppressants"
-      ],
-      "notes": "Immune modulation/infection risk context."
-    },
-    {
-      "slug": "corticosteroids",
-      "title": "Corticosteroids",
-      "aka": [
-        "prednisone",
-        "steroids"
-      ],
-      "notes": "Immune/metabolic and wound-healing context."
+      "notes": "Hypoglycemia risk context; appetite/gastric effects context.",
+      "label": "Diabetes / glucose lowering",
+      "definition": "Context bucket for peptides that influence glucose regulation, insulin sensitivity, or glycemic control in a way that could matter alongside diabetes therapies.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when glycemic effects are relevant, especially outside GLP-1/incretin-specific mechanisms."
+      ]
     },
     {
       "slug": "antidiabetics-insulin-glp1",
@@ -69,7 +70,13 @@
         "incretin",
         "insulin"
       ],
-      "notes": "Routing/labeling class for diabetes medications (incretin/GLP-1 class, insulin and related). Educational only."
+      "notes": "Routing/labeling class for diabetes medications (incretin/GLP-1 class, insulin and related). Educational only.",
+      "label": "Antidiabetics (insulin/GLP-1 axis)",
+      "definition": "Bucket for peptides primarily acting on insulin secretion, incretin/GLP-1 signaling, or closely related glucose-control mechanisms.",
+      "strictness": "normal",
+      "tagging_rules": [
+        "Use when insulin/GLP-1/incretin mechanisms are central."
+      ]
     },
     {
       "slug": "nsaids",
@@ -86,7 +93,14 @@
         "ketorolac",
         "nsaid"
       ],
-      "notes": "Routing/labeling class for nonsteroidal anti-inflammatory drugs. Educational only."
+      "notes": "Routing/labeling class for nonsteroidal anti-inflammatory drugs. Educational only.",
+      "label": "NSAIDs",
+      "definition": "Context bucket for peptides whose primary effects overlap with inflammation signaling, tissue repair, or pathways commonly affected by NSAIDs.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when inflammation modulation or tissue repair is central to the peptide’s effects.",
+        "Avoid if overlap is incidental or purely speculative."
+      ]
     },
     {
       "slug": "ssri-snri-serotonergic",
@@ -106,7 +120,13 @@
         "duloxetine",
         "serotonin syndrome"
       ],
-      "notes": "Routing/labeling class for serotonergic antidepressants and agents. Educational only."
+      "notes": "Routing/labeling class for serotonergic antidepressants and agents. Educational only.",
+      "label": "SSRIs/SNRIs (serotonergic)",
+      "definition": "Context bucket for peptides that influence serotonergic signaling or CNS pathways in a way that could matter alongside SSRIs, SNRIs, or other serotonergic agents.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when serotonergic overlap is plausible and relevant to the peptide’s effects."
+      ]
     },
     {
       "slug": "anti-infectives-antimicrobials",
@@ -122,7 +142,14 @@
         "infection meds",
         "anti-infectives"
       ],
-      "notes": "Routing/labeling class for anti-infective medications. Educational only."
+      "notes": "Routing/labeling class for anti-infective medications. Educational only.",
+      "label": "Anti-infectives / antimicrobials",
+      "definition": "Narrow bucket for peptides with direct, widely accepted antimicrobial/anti-infective activity against pathogens (not just indirect immune modulation).",
+      "strictness": "narrow",
+      "tagging_rules": [
+        "Use only when direct pathogen-targeting activity is central and broadly supported.",
+        "Do not use for indirect immune effects or general immune modulation."
+      ]
     },
     {
       "slug": "immune-modulation-infection-risk",
@@ -134,7 +161,14 @@
         "opportunistic infection",
         "immunomodulator context"
       ],
-      "notes": "Educational grouping for peptides that frequently appear in immune/infection discussions. Not a medication class."
+      "notes": "Educational grouping for peptides that frequently appear in immune/infection discussions. Not a medication class.",
+      "label": "Immune modulation / infection risk",
+      "definition": "Context bucket for peptides that alter immune signaling or inflammatory balance in a way that could affect infection susceptibility or immune surveillance. This does not imply antimicrobial action.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use for meaningful immune modulation where infection risk is a reasonable consideration.",
+        "Do not use to imply direct antimicrobial effects."
+      ]
     },
     {
       "slug": "cardiovascular-physiology-context",
@@ -147,7 +181,13 @@
         "hemodynamics",
         "cardiac peptides"
       ],
-      "notes": "Educational context grouping for endogenous or peptide-like agents involved in cardiovascular regulation (BP, volume, vascular tone). Not a medication class."
+      "notes": "Educational context grouping for endogenous or peptide-like agents involved in cardiovascular regulation (BP, volume, vascular tone). Not a medication class.",
+      "label": "Cardiovascular physiology (context)",
+      "definition": "Bucket for peptides meaningfully involved in vascular tone, blood pressure regulation, cardiac signaling, or cardiovascular physiology.",
+      "strictness": "normal",
+      "tagging_rules": [
+        "Use when BP/vascular tone/cardiac signaling is meaningfully involved."
+      ]
     },
     {
       "slug": "endocrine-axis-modulation-context",
@@ -172,7 +212,13 @@
         "thyroid axis",
         "cortisol axis"
       ],
-      "notes": "Educational grouping for peptides/hormones that directly influence endocrine axes. Not a medication class."
+      "notes": "Educational grouping for peptides/hormones that directly influence endocrine axes. Not a medication class.",
+      "label": "Endocrine axis modulation (context)",
+      "definition": "Bucket for peptides that influence hormonal signaling and endocrine feedback loops (e.g., HPG/HPA/GH axes) in a way that can affect interpretation or interactions with hormone-based therapies.",
+      "strictness": "normal",
+      "tagging_rules": [
+        "Use when axis-level hormonal signaling or feedback is involved."
+      ]
     },
     {
       "slug": "neuropeptide-cns-context",
@@ -200,7 +246,13 @@
         "trh",
         "gnrh"
       ],
-      "notes": "Educational grouping for endogenous peptides with prominent CNS signaling roles. Not a medication class."
+      "notes": "Educational grouping for endogenous peptides with prominent CNS signaling roles. Not a medication class.",
+      "label": "Neuropeptide (CNS context)",
+      "definition": "Bucket for peptides acting primarily within neuropeptide/CNS signaling networks (e.g., mood, cognition, arousal, autonomic signaling).",
+      "strictness": "normal",
+      "tagging_rules": [
+        "Use when CNS/neuropeptide signaling is a primary mechanism/effect domain."
+      ]
     }
   ],
   "supplement_classes": [
@@ -212,17 +264,14 @@
         "preworkout",
         "stimulant supplements"
       ],
-      "notes": "HR/BP and anxiety/insomnia context."
-    },
-    {
-      "slug": "serotonergic-supplements",
-      "title": "Serotonergic supplements",
-      "aka": [
-        "st johns wort",
-        "5-htp",
-        "tryptophan"
-      ],
-      "notes": "Serotonin syndrome context."
+      "notes": "HR/BP and anxiety/insomnia context.",
+      "label": "CNS stimulants",
+      "definition": "Context bucket for substances used for stimulation/alertness that can meaningfully affect arousal, sleep, anxiety, heart rate, or blood pressure (e.g., stimulant-style nootropics). This bucket flags possible additive physiologic effects, not a proven drug interaction.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when stimulation/arousal is a primary intended effect and could plausibly stack with other stimulants.",
+        "Avoid for mild or indirect effects unless stimulation is a core user-reported purpose."
+      ]
     },
     {
       "slug": "anticoagulant-herbs",
@@ -233,17 +282,16 @@
         "garlic",
         "turmeric"
       ],
-      "notes": "Bleeding risk context."
-    },
-    {
-      "slug": "glucose-lowering-supplements",
-      "title": "Glucose-lowering supplements",
-      "aka": [
-        "berberine",
-        "alpha lipoic acid",
-        "chromium"
-      ],
-      "notes": "Hypoglycemia risk context."
+      "notes": "Bleeding risk context.",
+      "label": "Anticoagulant herbs / supplements",
+      "definition": "Context bucket for supplements commonly discussed as affecting coagulation, platelet activity, or bleeding tendency (e.g., ‘blood-thinning’ supplements). This is a cautionary context label, not proof of clinically meaningful interaction.",
+      "strictness": "context",
+      "tagging_rules": [
+        "Use when a supplement is widely recognized in consumer/clinical discussion as influencing bleeding/clotting risk.",
+        "Do not use to imply equivalence to prescription anticoagulants/antiplatelets.",
+        "Avoid unless the supplement’s bleeding/clotting relevance is central and repeatably cited across credible references."
+      ]
     }
-  ]
+  ],
+  "by_drug_class_name": {}
 }

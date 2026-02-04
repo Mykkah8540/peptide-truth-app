@@ -146,7 +146,9 @@
   },
   "interactions": {
     "drug_classes": [],
-    "supplement_classes": [],
+    "supplement_classes": [
+      "anticoagulant-herbs"
+    ],
     "peptides": []
   },
   "practical": {

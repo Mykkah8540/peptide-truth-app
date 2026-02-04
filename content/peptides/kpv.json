@@ -126,8 +126,6 @@
   "canonical_name": "Kpv",
   "interactions": {
     "drug_classes": [
-      "corticosteroids",
-      "immunosuppressants",
       "immune-modulation-infection-risk"
     ],
     "supplement_classes": [],

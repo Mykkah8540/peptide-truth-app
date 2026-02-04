@@ -49,7 +49,21 @@
           ]
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+          "title": "Use cases (real-world)"
+        },
+        {
+          "text": "neuropathic pain and nerve irritation interest (early-stage)"
+        },
+        {
+          "text": "inflammation-related symptom interest in some communities (anecdotal)"
+        },
+        {
+          "text": "sometimes discussed for small-fiber neuropathy contexts (evidence varies)"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -81,7 +95,21 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "immune-modulation-infection-risk"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "a bioactive compound discussed in research and/or clinical contexts",
         "this entry summarizes what it is, what it is studied for, and what evidence does and does not support, without providing protocols",
@@ -124,7 +152,9 @@
   },
   "canonical_name": "Ara-290",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "immune-modulation-infection-risk"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

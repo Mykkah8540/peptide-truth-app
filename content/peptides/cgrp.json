@@ -118,7 +118,10 @@
     "slug": "cgrp"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "neuropeptide-cns-context",
+      "cardiovascular-physiology-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

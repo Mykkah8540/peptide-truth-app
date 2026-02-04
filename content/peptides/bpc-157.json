@@ -42,11 +42,11 @@
       "overview": [
         {
           "title": "What it is",
-          "text": "BPC-157 is a synthetic 15-amino-acid peptide widely discussed in injury-recovery and GI contexts. Much of the optimistic literature comes from animal and cell models; human clinical evidence is limited and not definitive."
+          "text": "BPC-157 is one of the most widely discussed peptides in recovery, rehabilitation, and gut-health conversations today. People are drawn to it because of repeated discussion around connective tissue comfort, soft-tissue recovery, and gastrointestinal support—especially in situations where downtime and prolonged recovery are common concerns."
         },
         {
           "title": "What drives real-world risk",
-          "text": "The practical risk is less about a well-characterized side-effect profile and more about product quality, contamination, and non-medical injection practices in an unregulated market."
+          "text": "The practical risk is less about a well-characterized side-effect profile and more about product quality, contamination, and non-medical injection practices in an unregulated market. To better understand how purity, contamination, and testing factor into real-world safety, see our [resource on sourcing peptides more safely](/resources)."
         }
       ],
       "use_cases": [],
@@ -90,7 +90,7 @@
       ],
       "interaction_summary": [],
       "current_outlook_bullets": [
-        "a synthetic pentadecapeptide discussed in injury recovery and GI contexts",
+        "most often discussed for injury recovery support and gut-related symptoms—because of what people report and what early research explores",
         "tendon and ligament recovery support",
         "soft tissue healing after overuse or injury",
         "return-to-training support during rehab",
@@ -172,11 +172,10 @@
   },
   "canonical_name": "Bpc-157",
   "interactions": {
-    "drug_classes": [
-      "anticoagulants-antiplatelets",
-      "nsaids"
+    "drug_classes": [],
+    "supplement_classes": [
+      "anticoagulant-herbs"
     ],
-    "supplement_classes": [],
     "peptides": []
   },
   "practical": {
@@ -202,5 +201,17 @@
       "anyone using multiple unverified compounds (contamination and mislabeling risk)"
     ],
     "schema_version": "practical_block_v1"
+  },
+  "sections": {
+    "overview": [
+      {
+        "heading": "What it is",
+        "body": "BPC-157 is one of the most widely discussed peptides in recovery, rehabilitation, and gut-health conversations today. Interest has grown steadily across athletic, physical therapy, and wellness communities where people are focused on tissue recovery, resilience, and getting back to baseline after injury.\n\nRather than being viewed as a performance enhancer, BPC-157 is most often discussed as a recovery-support compound. People are drawn to it because of repeated discussion around connective tissue comfort, soft-tissue healing, and gastrointestinal support, especially in contexts where downtime and prolonged recovery are common concerns.\n\nAs peptides continue moving toward mainstream medical frameworks, BPC-157 is frequently cited as an example of why this category has generated sustained attention."
+      },
+      {
+        "heading": "What drives real-world risk",
+        "body": "In real-world use, the most meaningful risks discussed around BPC-157 are not about dramatic side effects, but about sourcing, purity, and manufacturing quality in an unregulated market.\n\nBecause peptides are often obtained outside traditional pharmaceutical supply chains, experienced users consistently emphasize the importance of independent third-party purity testing, batch verification, and avoiding products with unclear manufacturing standards. Contamination, mislabeling, and synthesis byproducts pose a greater practical risk than the peptide itself.\n\nFor this reason, understanding peptide purity standards and third-party testing is considered just as important as understanding why people are interested in BPC-157 in the first place."
+      }
+    ]
   }
 }

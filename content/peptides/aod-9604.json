@@ -55,7 +55,21 @@
           ]
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+          "title": "Use cases (real-world)"
+        },
+        {
+          "text": "fat-loss interest driven by early mechanistic claims"
+        },
+        {
+          "text": "metabolic curiosity in wellness communities (evidence limited)"
+        },
+        {
+          "text": "often discussed in weight-management stacking conversations (anecdotal)"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -89,7 +103,21 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "diabetes-glucose-lowering"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "a synthetic peptide derived from amino acids 176–191 of human growth hormone",
         "it was developed to isolate the lipolytic (fat-metabolizing) effects of hGH without stimulating growth or insulin-like growth factor pathways",
@@ -149,8 +177,7 @@
   "canonical_name": "Aod-9604",
   "interactions": {
     "drug_classes": [
-      "diabetes-glucose-lowering",
-      "antidiabetics-insulin-glp1"
+      "diabetes-glucose-lowering"
     ],
     "supplement_classes": [],
     "peptides": []

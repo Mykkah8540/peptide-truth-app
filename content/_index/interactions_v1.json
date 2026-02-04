@@ -1,29 +1,98 @@
 {
   "schema_version": "interactions_index_v1",
-  "generated_at": "2026-01-22",
+  "generated_at": "2026-01-28",
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 28,
-    "drug_class_terms": 75,
-    "supplement_class_terms": 0,
+    "peptides_with_any_interactions": 65,
+    "drug_class_terms": 112,
+    "supplement_class_terms": 6,
     "peptide_terms": 0
   },
-  "drug_classes": {
-    "Antidiabetics (Insulin/GLP-1 and related)": [
+  "by_drug_class_name": {
+    "Glucose-lowering agents": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "insulin": [
+      "5-amino-1mq",
+      "adipotide",
       "amylin",
+      "aod-9604",
       "cagrilintide",
       "exenatide",
       "glucagon",
       "liraglutide",
       "mazdutide",
+      "mots-c",
       "pramlintide",
       "retatrutide",
       "semaglutide",
       "survodutide",
       "tirzepatide"
     ],
+    "metformin": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "sulfonylureas": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "sglt2": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "glp-1": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "glp1": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
     "diabetes-glucose-lowering": [
+      "5-amino-1mq",
+      "adipotide",
+      "amylin",
+      "aod-9604",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "mots-c",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "Antidiabetics (Insulin/GLP-1 and related)": [
       "amylin",
       "cagrilintide",
       "exenatide",
@@ -127,19 +196,6 @@
       "survodutide",
       "tirzepatide"
     ],
-    "insulin": [
-      "amylin",
-      "cagrilintide",
-      "exenatide",
-      "glucagon",
-      "liraglutide",
-      "mazdutide",
-      "pramlintide",
-      "retatrutide",
-      "semaglutide",
-      "survodutide",
-      "tirzepatide"
-    ],
     "antidiabetics-insulin-glp1": [
       "amylin",
       "cagrilintide",
@@ -153,163 +209,853 @@
       "survodutide",
       "tirzepatide"
     ],
-    "Antihypertensives / BP-lowering agents": [
+    "Cardiovascular physiology / vasoactive peptide context": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
     ],
-    "bp meds": [
+    "cardiovascular physiology": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
     ],
-    "blood pressure meds": [
+    "vasoactive peptides": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
     ],
-    "ace inhibitors": [
+    "blood pressure regulation": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
     ],
-    "arbs": [
+    "vascular tone": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
     ],
-    "beta blockers": [
+    "hemodynamics": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
     ],
-    "antihypertensives": [
+    "cardiac peptides": [
       "angiotensin-ii",
       "atrial-natriuretic-peptide",
       "bradykinin",
       "brain-natriuretic-peptide",
+      "cgrp",
       "endothelin-1",
-      "nesiritide"
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "cardiovascular-physiology-context": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "Immune modulation / infection risk context": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immune modulation": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "infection risk": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immune system": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "opportunistic infection": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immunomodulator context": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immune-modulation-infection-risk": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
     ],
     "Anticoagulants / antiplatelets": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+      "bivalirudin",
+      "eptifibatide"
     ],
     "blood thinners": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+      "bivalirudin",
+      "eptifibatide"
     ],
     "anticoagulants": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+      "bivalirudin",
+      "eptifibatide"
     ],
     "antiplatelets": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+      "bivalirudin",
+      "eptifibatide"
     ],
     "anticoagulants-antiplatelets": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+      "bivalirudin",
+      "eptifibatide"
     ],
-    "NSAIDs (ibuprofen/naproxen and related)": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "Neuropeptides / CNS signaling (context)": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "ibuprofen": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "cns": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "naproxen": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "central nervous system": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "aspirin": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "neuropeptide": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "celecoxib": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "neuromodulator": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "diclofenac": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "orexin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "indomethacin": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "hypocretin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "meloxicam": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "substance p": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "toradol": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "tachykinin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "ketorolac": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "neuropeptide y": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "nsaid": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "npy": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
     ],
-    "nsaids": [
-      "bpc-157",
-      "ghk-cu",
-      "tb-500",
-      "thymosin-beta-4"
+    "oxytocin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "vasopressin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "melanocortin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "alpha msh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "msh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "endorphin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "enkephalin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "somatostatin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "crh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "trh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "gnrh": [
+      "cgrp",
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "melanotan-i",
+      "melanotan-ii",
+      "mk-677",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "substance-p",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "neuropeptide-cns-context": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "Endocrine axis modulation (HPT/HPA/HPG/GH context)": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "endocrine axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "pituitary": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hypothalamus": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hormone axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hpG axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hpA axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hpT axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "gh axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "gonadotropin": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "lh": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "fsh": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "testosterone": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "estrogen": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "growth hormone": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "igf-1": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "thyroid axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "cortisol axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "endocrine-axis-modulation-context": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
     ],
     "SSRIs/SNRIs and other serotonergic agents": [
       "dsip",
@@ -386,131 +1132,1385 @@
       "selank",
       "semax"
     ],
-    "Immunosuppressants / immune-modulating drugs": [
-      "ghk-cu",
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "biologics": [
-      "ghk-cu",
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "immunosuppressants": [
-      "ghk-cu",
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "Corticosteroids": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "prednisone": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "steroids": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "corticosteroids": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1"
-    ],
-    "Immune modulation / infection risk context": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
-    "immune modulation": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
-    "infection risk": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
-    "immune system": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
-    "opportunistic infection": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
-    "immunomodulator context": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
-    "immune-modulation-infection-risk": [
-      "kpv",
-      "ll-37",
-      "thymosin-alpha-1",
-      "vip"
-    ],
     "Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals)": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antibiotics": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antibiotic": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antimicrobials": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antimicrobial": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antibacterial": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antiviral": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "antifungal": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "infection meds": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "anti-infectives": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
     ],
     "anti-infectives-antimicrobials": [
       "ll-37",
-      "thymosin-alpha-1"
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "Antihypertensives / BP-lowering agents": [
+      "nesiritide",
+      "vip"
+    ],
+    "bp meds": [
+      "nesiritide",
+      "vip"
+    ],
+    "blood pressure meds": [
+      "nesiritide",
+      "vip"
+    ],
+    "ace inhibitors": [
+      "nesiritide",
+      "vip"
+    ],
+    "arbs": [
+      "nesiritide",
+      "vip"
+    ],
+    "beta blockers": [
+      "nesiritide",
+      "vip"
+    ],
+    "antihypertensives": [
+      "nesiritide",
+      "vip"
     ]
   },
-  "supplement_classes": {},
+  "by_supplement_class_name": {
+    "Anticoagulant / antiplatelet herbs": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "fish oil": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "ginkgo": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "garlic": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "turmeric": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "anticoagulant-herbs": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ]
+  },
+  "by_peptide_name": {},
+  "drug_classes": {
+    "Glucose-lowering agents": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "insulin": [
+      "5-amino-1mq",
+      "adipotide",
+      "amylin",
+      "aod-9604",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "mots-c",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "metformin": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "sulfonylureas": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "sglt2": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "glp-1": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "glp1": [
+      "5-amino-1mq",
+      "adipotide",
+      "aod-9604",
+      "mazdutide",
+      "mots-c",
+      "survodutide"
+    ],
+    "diabetes-glucose-lowering": [
+      "5-amino-1mq",
+      "adipotide",
+      "amylin",
+      "aod-9604",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "mots-c",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "Antidiabetics (Insulin/GLP-1 and related)": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "diabetes meds": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "glucose lowering": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "blood sugar meds": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "antidiabetics": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "GLP-1": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "GLP1": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "incretin": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "antidiabetics-insulin-glp1": [
+      "amylin",
+      "cagrilintide",
+      "exenatide",
+      "glucagon",
+      "liraglutide",
+      "mazdutide",
+      "pramlintide",
+      "retatrutide",
+      "semaglutide",
+      "survodutide",
+      "tirzepatide"
+    ],
+    "Cardiovascular physiology / vasoactive peptide context": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "cardiovascular physiology": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "vasoactive peptides": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "blood pressure regulation": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "vascular tone": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "hemodynamics": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "cardiac peptides": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "cardiovascular-physiology-context": [
+      "angiotensin-ii",
+      "atrial-natriuretic-peptide",
+      "bradykinin",
+      "brain-natriuretic-peptide",
+      "cgrp",
+      "endothelin-1",
+      "nesiritide",
+      "vasopressin",
+      "vip"
+    ],
+    "Immune modulation / infection risk context": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immune modulation": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "infection risk": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immune system": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "opportunistic infection": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immunomodulator context": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "immune-modulation-infection-risk": [
+      "ara-290",
+      "ghk-cu",
+      "glutathione",
+      "kpv",
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin",
+      "vip"
+    ],
+    "Anticoagulants / antiplatelets": [
+      "bivalirudin",
+      "eptifibatide"
+    ],
+    "blood thinners": [
+      "bivalirudin",
+      "eptifibatide"
+    ],
+    "anticoagulants": [
+      "bivalirudin",
+      "eptifibatide"
+    ],
+    "antiplatelets": [
+      "bivalirudin",
+      "eptifibatide"
+    ],
+    "anticoagulants-antiplatelets": [
+      "bivalirudin",
+      "eptifibatide"
+    ],
+    "Neuropeptides / CNS signaling (context)": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "cns": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "central nervous system": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "neuropeptide": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "neuromodulator": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "orexin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "hypocretin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "substance p": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "tachykinin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "neuropeptide y": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "npy": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "oxytocin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "vasopressin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "melanocortin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "alpha msh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "msh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "endorphin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "enkephalin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "somatostatin": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "crh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "trh": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "gnrh": [
+      "cgrp",
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "melanotan-i",
+      "melanotan-ii",
+      "mk-677",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "substance-p",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "neuropeptide-cns-context": [
+      "cgrp",
+      "melanotan-i",
+      "melanotan-ii",
+      "neuropeptide-s",
+      "neuropeptide-y",
+      "orexin-a",
+      "oxytocin",
+      "substance-p",
+      "vasopressin"
+    ],
+    "Endocrine axis modulation (HPT/HPA/HPG/GH context)": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "endocrine axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "pituitary": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hypothalamus": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hormone axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hpG axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hpA axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "hpT axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "gh axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "gonadotropin": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "lh": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "fsh": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "testosterone": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "estrogen": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "growth hormone": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "igf-1": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "thyroid axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "cortisol axis": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "endocrine-axis-modulation-context": [
+      "cjc-1295",
+      "cjc-1295-dac",
+      "ghrp-2",
+      "ghrp-6",
+      "gonadorelin",
+      "hcg",
+      "hexarelin",
+      "igf-1",
+      "igf-1-lr3",
+      "ipamorelin",
+      "kisspeptin",
+      "leuprolide",
+      "mk-677",
+      "prolactin-releasing-peptide",
+      "sermorelin",
+      "somatostatin",
+      "tesamorelin",
+      "triptorelin",
+      "vasopressin"
+    ],
+    "SSRIs/SNRIs and other serotonergic agents": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "ssri": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "snri": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonergic": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonin meds": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonin reuptake inhibitor": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "fluoxetine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "sertraline": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "escitalopram": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "citalopram": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "paroxetine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "venlafaxine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "duloxetine": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "serotonin syndrome": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "ssri-snri-serotonergic": [
+      "dsip",
+      "selank",
+      "semax"
+    ],
+    "Anti-infectives / antimicrobials (antibiotics, antivirals, antifungals)": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antibiotics": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antibiotic": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antimicrobials": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antimicrobial": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antibacterial": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antiviral": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "antifungal": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "infection meds": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "anti-infectives": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "anti-infectives-antimicrobials": [
+      "ll-37",
+      "thymosin-alpha-1",
+      "thymulin"
+    ],
+    "Antihypertensives / BP-lowering agents": [
+      "nesiritide",
+      "vip"
+    ],
+    "bp meds": [
+      "nesiritide",
+      "vip"
+    ],
+    "blood pressure meds": [
+      "nesiritide",
+      "vip"
+    ],
+    "ace inhibitors": [
+      "nesiritide",
+      "vip"
+    ],
+    "arbs": [
+      "nesiritide",
+      "vip"
+    ],
+    "beta blockers": [
+      "nesiritide",
+      "vip"
+    ],
+    "antihypertensives": [
+      "nesiritide",
+      "vip"
+    ]
+  },
+  "supplement_classes": {
+    "Anticoagulant / antiplatelet herbs": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "fish oil": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "ginkgo": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "garlic": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "turmeric": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ],
+    "anticoagulant-herbs": [
+      "bpc-157",
+      "ghk-cu",
+      "tb-500",
+      "thymosin-beta-4",
+      "thymosin-beta-4-full"
+    ]
+  },
   "peptides": {}
 }

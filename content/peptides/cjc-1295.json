@@ -51,7 +51,21 @@
           ]
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+          "title": "Use cases (real-world)"
+        },
+        {
+          "text": "sleep and recovery interest tied to GH physiology (real-world reports vary)"
+        },
+        {
+          "text": "body composition interest in training communities (outcomes vary)"
+        },
+        {
+          "text": "sometimes discussed alongside other GH-axis peptides (stacking culture)"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -87,7 +101,21 @@
           ]
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "endocrine-axis-modulation-context"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "a growth hormone releasing hormone (GHRH) analog discussed for increasing growth hormone and IGF-1 signaling",
         "controlled human research has reported endocrine changes, but long-term clinical outcomes and safety for enhancement use remain uncertain",
@@ -137,7 +165,9 @@
   },
   "canonical_name": "Cjc-1295",
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "endocrine-axis-modulation-context"
+    ],
     "supplement_classes": [],
     "peptides": []
   },

@@ -128,10 +128,7 @@
   "canonical_name": "Adipotide",
   "interactions": {
     "drug_classes": [
-      {
-        "name": "Glucose-lowering agents",
-        "interaction_slug": "diabetes-glucose-lowering"
-      }
+      "diabetes-glucose-lowering"
     ],
     "supplement_classes": [],
     "peptides": []

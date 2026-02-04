@@ -46,7 +46,21 @@
           "evidence_refs": []
         }
       ],
-      "use_cases": [],
+      "use_cases": [
+        {
+          "text": "These are the most common real-world reasons people look into this peptide, plus the context that tends to matter most (quality, expectations, and safety).",
+          "title": "Use cases (real-world)"
+        },
+        {
+          "text": "appetite regulation effects discussed in clinical contexts"
+        },
+        {
+          "text": "weight and metabolic interest in obesity-related discussions"
+        },
+        {
+          "text": "investigated effects on insulin sensitivity and glycemic control"
+        }
+      ],
       "mechanism": [],
       "human_effects": [],
       "preclinical_effects": [],
@@ -78,7 +92,21 @@
           "evidence_refs": []
         }
       ],
-      "interaction_summary": [],
+      "interaction_summary": [
+        {
+          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
+          "title": "Interaction summary"
+        },
+        {
+          "text": "Drug-class flags to review:"
+        },
+        {
+          "text": "antidiabetics-insulin-glp1"
+        },
+        {
+          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+        }
+      ],
       "current_outlook_bullets": [
         "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "general recovery and resilience interest (anecdotal)",
@@ -123,7 +151,7 @@
       "antidiabetics-insulin-glp1"
     ],
     "supplement_classes": [],
-    "peptides": []
+    "notes": []
   },
   "practical": {
     "schema_version": "practical_block_v1",

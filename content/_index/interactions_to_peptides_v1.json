@@ -3,8 +3,8 @@
   "stats": {
     "total_governed_peptides": 92,
     "total_peptides_loaded": 92,
-    "peptides_with_any_interactions": 36,
-    "interaction_keys": 10
+    "peptides_with_any_interactions": 65,
+    "interaction_keys": 11
   },
   "mapping": {
     "diabetes-glucose-lowering": [
@@ -21,24 +21,12 @@
         "peptide_name": "Aod-9604"
       },
       {
-        "peptide_slug": "hexarelin",
-        "peptide_name": "Hexarelin"
-      },
-      {
-        "peptide_slug": "ipamorelin",
-        "peptide_name": "Ipamorelin"
-      },
-      {
         "peptide_slug": "mazdutide",
         "peptide_name": "Mazdutide"
       },
       {
         "peptide_slug": "mots-c",
         "peptide_name": "Mots C"
-      },
-      {
-        "peptide_slug": "retatrutide",
-        "peptide_name": "Retatrutide"
       },
       {
         "peptide_slug": "survodutide",
@@ -49,10 +37,6 @@
       {
         "peptide_slug": "amylin",
         "peptide_name": "Amylin"
-      },
-      {
-        "peptide_slug": "aod-9604",
-        "peptide_name": "Aod-9604"
       },
       {
         "peptide_slug": "cagrilintide",
@@ -67,24 +51,12 @@
         "peptide_name": "Glucagon"
       },
       {
-        "peptide_slug": "hexarelin",
-        "peptide_name": "Hexarelin"
-      },
-      {
-        "peptide_slug": "ipamorelin",
-        "peptide_name": "Ipamorelin"
-      },
-      {
         "peptide_slug": "liraglutide",
         "peptide_name": "Liraglutide"
       },
       {
         "peptide_slug": "mazdutide",
         "peptide_name": "Mazdutide"
-      },
-      {
-        "peptide_slug": "mots-c",
-        "peptide_name": "Mots C"
       },
       {
         "peptide_slug": "pramlintide",
@@ -107,7 +79,7 @@
         "peptide_name": "Tirzepatide"
       }
     ],
-    "antihypertensives": [
+    "cardiovascular-physiology-context": [
       {
         "peptide_slug": "angiotensin-ii",
         "peptide_name": "Angiotensin II"
@@ -125,12 +97,58 @@
         "peptide_name": "Brain Natriuretic Peptide"
       },
       {
+        "peptide_slug": "cgrp",
+        "peptide_name": "CGRP"
+      },
+      {
         "peptide_slug": "endothelin-1",
         "peptide_name": "Endothelin-1"
       },
       {
         "peptide_slug": "nesiritide",
         "peptide_name": "Nesiritide"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
+      }
+    ],
+    "immune-modulation-infection-risk": [
+      {
+        "peptide_slug": "ara-290",
+        "peptide_name": "Ara-290"
+      },
+      {
+        "peptide_slug": "ghk-cu",
+        "peptide_name": "Ghk Cu"
+      },
+      {
+        "peptide_slug": "glutathione",
+        "peptide_name": "Glutathione"
+      },
+      {
+        "peptide_slug": "kpv",
+        "peptide_name": "Kpv"
+      },
+      {
+        "peptide_slug": "ll-37",
+        "peptide_name": "LL-37"
+      },
+      {
+        "peptide_slug": "thymosin-alpha-1",
+        "peptide_name": "Thymosin Alpha-1"
+      },
+      {
+        "peptide_slug": "thymulin",
+        "peptide_name": "Thymulin"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
       }
     ],
     "anticoagulants-antiplatelets": [
@@ -139,27 +157,11 @@
         "peptide_name": "Bivalirudin"
       },
       {
-        "peptide_slug": "bpc-157",
-        "peptide_name": "Bpc-157"
-      },
-      {
         "peptide_slug": "eptifibatide",
         "peptide_name": "Eptifibatide"
-      },
-      {
-        "peptide_slug": "ghk-cu",
-        "peptide_name": "Ghk Cu"
-      },
-      {
-        "peptide_slug": "tb-500",
-        "peptide_name": "Tb-500"
-      },
-      {
-        "peptide_slug": "thymosin-beta-4",
-        "peptide_name": "Thymosin Beta-4"
       }
     ],
-    "nsaids": [
+    "anticoagulant-herbs": [
       {
         "peptide_slug": "bpc-157",
         "peptide_name": "Bpc-157"
@@ -175,6 +177,126 @@
       {
         "peptide_slug": "thymosin-beta-4",
         "peptide_name": "Thymosin Beta-4"
+      },
+      {
+        "peptide_slug": "thymosin-beta-4-full",
+        "peptide_name": "Thymosin Beta-4 (full length)"
+      }
+    ],
+    "neuropeptide-cns-context": [
+      {
+        "peptide_slug": "cgrp",
+        "peptide_name": "CGRP"
+      },
+      {
+        "peptide_slug": "melanotan-i",
+        "peptide_name": "Melanotan I"
+      },
+      {
+        "peptide_slug": "melanotan-ii",
+        "peptide_name": "Melanotan Ii"
+      },
+      {
+        "peptide_slug": "neuropeptide-s",
+        "peptide_name": "Neuropeptide S"
+      },
+      {
+        "peptide_slug": "neuropeptide-y",
+        "peptide_name": "Neuropeptide Y"
+      },
+      {
+        "peptide_slug": "orexin-a",
+        "peptide_name": "Orexin-A"
+      },
+      {
+        "peptide_slug": "oxytocin",
+        "peptide_name": "Oxytocin"
+      },
+      {
+        "peptide_slug": "substance-p",
+        "peptide_name": "Substance P"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
+      }
+    ],
+    "endocrine-axis-modulation-context": [
+      {
+        "peptide_slug": "cjc-1295",
+        "peptide_name": "Cjc-1295"
+      },
+      {
+        "peptide_slug": "cjc-1295-dac",
+        "peptide_name": "CJC-1295 DAC"
+      },
+      {
+        "peptide_slug": "ghrp-2",
+        "peptide_name": "GHRP-2"
+      },
+      {
+        "peptide_slug": "ghrp-6",
+        "peptide_name": "GHRP-6"
+      },
+      {
+        "peptide_slug": "gonadorelin",
+        "peptide_name": "Gonadorelin"
+      },
+      {
+        "peptide_slug": "hcg",
+        "peptide_name": "hCG"
+      },
+      {
+        "peptide_slug": "hexarelin",
+        "peptide_name": "Hexarelin"
+      },
+      {
+        "peptide_slug": "igf-1",
+        "peptide_name": "IGF-1"
+      },
+      {
+        "peptide_slug": "igf-1-lr3",
+        "peptide_name": "IGF-1 LR3"
+      },
+      {
+        "peptide_slug": "ipamorelin",
+        "peptide_name": "Ipamorelin"
+      },
+      {
+        "peptide_slug": "kisspeptin",
+        "peptide_name": "Kisspeptin"
+      },
+      {
+        "peptide_slug": "leuprolide",
+        "peptide_name": "Leuprolide"
+      },
+      {
+        "peptide_slug": "mk-677",
+        "peptide_name": "MK-677"
+      },
+      {
+        "peptide_slug": "prolactin-releasing-peptide",
+        "peptide_name": "Prolactin Releasing Peptide"
+      },
+      {
+        "peptide_slug": "sermorelin",
+        "peptide_name": "Sermorelin"
+      },
+      {
+        "peptide_slug": "somatostatin",
+        "peptide_name": "Somatostatin"
+      },
+      {
+        "peptide_slug": "tesamorelin",
+        "peptide_name": "Tesamorelin"
+      },
+      {
+        "peptide_slug": "triptorelin",
+        "peptide_name": "Triptorelin"
+      },
+      {
+        "peptide_slug": "vasopressin",
+        "peptide_name": "Vasopressin"
       }
     ],
     "ssri-snri-serotonergic": [
@@ -191,56 +313,6 @@
         "peptide_name": "Semax"
       }
     ],
-    "immunosuppressants": [
-      {
-        "peptide_slug": "ghk-cu",
-        "peptide_name": "Ghk Cu"
-      },
-      {
-        "peptide_slug": "kpv",
-        "peptide_name": "Kpv"
-      },
-      {
-        "peptide_slug": "ll-37",
-        "peptide_name": "LL-37"
-      },
-      {
-        "peptide_slug": "thymosin-alpha-1",
-        "peptide_name": "Thymosin Alpha-1"
-      }
-    ],
-    "corticosteroids": [
-      {
-        "peptide_slug": "kpv",
-        "peptide_name": "Kpv"
-      },
-      {
-        "peptide_slug": "ll-37",
-        "peptide_name": "LL-37"
-      },
-      {
-        "peptide_slug": "thymosin-alpha-1",
-        "peptide_name": "Thymosin Alpha-1"
-      }
-    ],
-    "immune-modulation-infection-risk": [
-      {
-        "peptide_slug": "kpv",
-        "peptide_name": "Kpv"
-      },
-      {
-        "peptide_slug": "ll-37",
-        "peptide_name": "LL-37"
-      },
-      {
-        "peptide_slug": "thymosin-alpha-1",
-        "peptide_name": "Thymosin Alpha-1"
-      },
-      {
-        "peptide_slug": "vip",
-        "peptide_name": "VIP"
-      }
-    ],
     "anti-infectives-antimicrobials": [
       {
         "peptide_slug": "ll-37",
@@ -249,6 +321,20 @@
       {
         "peptide_slug": "thymosin-alpha-1",
         "peptide_name": "Thymosin Alpha-1"
+      },
+      {
+        "peptide_slug": "thymulin",
+        "peptide_name": "Thymulin"
+      }
+    ],
+    "antihypertensives": [
+      {
+        "peptide_slug": "nesiritide",
+        "peptide_name": "Nesiritide"
+      },
+      {
+        "peptide_slug": "vip",
+        "peptide_name": "VIP"
       }
     ]
   }

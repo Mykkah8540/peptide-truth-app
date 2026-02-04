@@ -94,7 +94,6 @@ def main() -> int:
     blends_registry = load_json(blends_registry_path)
     synonyms = load_json(synonyms_path)
     pep_cats = load_json(pep_cats_path)
-
     peptides = entities.get("peptides")
     blends = entities.get("blends")
     topics = entities.get("topics")
@@ -287,6 +286,7 @@ def main() -> int:
     for k in category_keys:
         add_term_map(term_map, k, {"type": "category", "taxonomy_key": k, "label": category_labels.get(k, k), "route": f"category:{k}"}, "category:key")
         add_term_map(term_map, category_labels.get(k, k), {"type": "category", "taxonomy_key": k, "label": category_labels.get(k, k), "route": f"category:{k}"}, "category:label")
+
 
     # E) Synonyms: entity/category/blend
     for row in ent_syn:

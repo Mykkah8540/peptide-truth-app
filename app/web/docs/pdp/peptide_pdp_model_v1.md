@@ -76,3 +76,23 @@ how these findings translate into approved clinical use.
 This model must remain valid before and after FDA approval.
 Only the regulatory section should materially change over time.
 
+
+## Container ownership rule (pt-card)
+
+To avoid “double card” layout regressions (extra padding/borders/blank cards), **only one layer may own the `pt-card` wrapper** for any section.
+
+Allowed patterns:
+
+- **Route-owned card:** the route wraps in `<section className="pt-card"> ... </section>` and any child component inside must render **no card wrapper** (or must be invoked with `wrapCard={false}` if supported).
+- **Component-owned card:** the component renders its own `pt-card` wrapper and the route must **not** wrap it.
+
+Hard rule:
+
+- Never wrap a component in `pt-card` if that component already renders `pt-card` internally.
+- If a section appears “bloated” or spacing doubles, first check whether both the route and the component are wrapping.
+
+Project convention (current):
+
+- Section components like `InteractionsSection`, `OutlookSection`, `DisclaimerSection`, `IdentityPanel` are expected to be **component-owned cards** unless explicitly refactored.
+- Utility renderers like `ContentBlocks` / `EvidenceList` should be invoked with `wrapCard={false}` when the route already provides the card wrapper.
+

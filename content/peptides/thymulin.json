@@ -116,7 +116,10 @@
     "slug": "thymulin"
   },
   "interactions": {
-    "drug_classes": [],
+    "drug_classes": [
+      "anti-infectives-antimicrobials",
+      "immune-modulation-infection-risk"
+    ],
     "supplement_classes": [],
     "peptides": []
   },
