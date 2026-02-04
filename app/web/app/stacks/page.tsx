@@ -80,6 +80,12 @@ export default async function StacksPage() {
             Build a stack →
           </Link>
         </div>
+        <div style={{ marginTop: 10 }}>
+          <Link href="/stack/suggest" style={{ textDecoration: "none", fontWeight: 900 }}>
+            Suggest a stack →
+          </Link>
+        </div>
+
       </section>
     </main>
   );
