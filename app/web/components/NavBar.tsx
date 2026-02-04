@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import MobileMenu from "./MobileMenu";
@@ -17,8 +17,6 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Browse Peptides", href: "/peptides" },
   { label: "Resources", href: "/resources" },
-  { label: "Account", href: "/account" },
-  { label: "Sign in", href: "/login" },
 
   // Pro
   { label: "Blends", href: "/blends", pro: true },
@@ -51,6 +49,108 @@ function ProPill() {
   );
 }
 
+function PersonIcon(props: { size?: number }) {
+  const size = props.size ?? 18;
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M12 12a4 4 0 1 0-4-4a4 4 0 0 0 4 4m0 2c-4.42 0-8 2-8 4.5V21h16v-2.5c0-2.5-3.58-4.5-8-4.5"
+      />
+    </svg>
+  );
+}
+
+function AccountMenu() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (!open) return;
+      const el = ref.current;
+      if (!el) return;
+      if (e.target instanceof Node && el.contains(e.target)) return;
+      setOpen(false);
+    }
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, [open]);
+
+  return (
+    <div ref={ref} style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
+      <button
+        type="button"
+        aria-label="Account menu"
+        onClick={() => setOpen((v) => !v)}
+        style={{
+          border: "1px solid rgba(0,0,0,0.10)",
+          background: "rgba(0,0,0,0.02)",
+          borderRadius: 999,
+          padding: "8px 10px",
+          cursor: "pointer",
+          lineHeight: 1,
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 8,
+          fontWeight: 800,
+        }}
+      >
+        <PersonIcon />
+      </button>
+
+      {open ? (
+        <div
+          role="menu"
+          aria-label="Account links"
+          style={{
+            position: "absolute",
+            right: 0,
+            top: "calc(100% + 10px)",
+            minWidth: 180,
+            background: "#fff",
+            border: "1px solid rgba(0,0,0,0.10)",
+            borderRadius: 14,
+            boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
+            padding: 10,
+            zIndex: 200,
+          }}
+        >
+          <Link
+            href="/login"
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "10px 10px",
+              borderRadius: 10,
+              textDecoration: "none",
+              color: "inherit",
+              fontWeight: 800,
+            }}
+          >
+            Sign in
+          </Link>
+          <Link
+            href="/account"
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "10px 10px",
+              borderRadius: 10,
+              textDecoration: "none",
+              color: "inherit",
+              fontWeight: 800,
+            }}
+          >
+            Account
+          </Link>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 export default function NavBar(props: {
   peptides: EntityListItem[];
   blends: EntityListItem[];
@@ -60,14 +160,19 @@ export default function NavBar(props: {
   const router = useRouter();
 
   function goBack() {
-    // Safe back: if no history, go home.
+    // Site-scoped back:
+    // - If referrer is within this site, go back.
+    // - Otherwise, return to Home instead of backing out of the site.
     try {
-      if (typeof window !== "undefined" && window.history && window.history.length > 1) {
-        router.back();
-        return;
-      }
-    } catch {}
-    router.push("/");
+      const ref = typeof document !== "undefined" ? String(document.referrer || "") : "";
+      const origin = typeof window !== "undefined" ? String(window.location.origin || "") : "";
+      const sameOrigin = !!ref && !!origin && ref.startsWith(origin);
+
+      if (sameOrigin) router.back();
+      else router.push("/");
+    } catch {
+      router.push("/");
+    }
   }
 
   return (
@@ -92,14 +197,13 @@ export default function NavBar(props: {
         <div
           style={{
             display: "flex",
-            gap: 10,
+            gap: 12,
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
           }}
         >
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-            {/* Back button (global) */}
             <button
               type="button"
               aria-label="Back"
@@ -131,54 +235,66 @@ export default function NavBar(props: {
             </Link>
           </div>
 
-          {/* Desktop nav */}
-          <nav className="desktop-nav" style={{ gap: 14, flexWrap: "wrap" }}>
-            {NAV_ITEMS.slice(1).map((item, idx) => (
-              <span key={item.href} style={{ display: "inline-flex", alignItems: "center", gap: 14 }}>
-                {item.pro && idx === 5 ? (
-                  <span
-                    aria-hidden="true"
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+            {/* Desktop nav (shown via CSS media query) */}
+            <nav className="desktop-nav" style={{ display: "none", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+              {NAV_ITEMS.slice(1).map((item, idx) => (
+                <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
+                  {item.pro && idx === 3 ? (
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        width: 1,
+                        height: 18,
+                        background: "rgba(0,0,0,0.12)",
+                        marginRight: 14,
+                      }}
+                    />
+                  ) : null}
+
+                  <Link
+                    href={item.href}
                     style={{
-                      width: 1,
-                      height: 18,
-                      background: "rgba(0,0,0,0.12)",
+                      textDecoration: "none",
+                      color: "inherit",
+                      opacity: 0.9,
+                      fontWeight: 800,
+                      fontSize: 14,
+                      display: "inline-flex",
+                      alignItems: "center",
+                      whiteSpace: "nowrap",
                     }}
-                  />
-                ) : null}
+                  >
+                    <span>{item.label}</span>
+                    {item.pro ? <ProPill /> : null}
+                  </Link>
+                </span>
+              ))}
+            </nav>
 
-                <Link
-                  href={item.href}
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    opacity: 0.85,
-                    fontWeight: 700,
-                    fontSize: 14,
-                    display: "inline-flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <span>{item.label}</span>
-                  {item.pro ? <ProPill /> : null}
-                </Link>
-              </span>
-            ))}
-          </nav>
+            {/* Desktop account icon (always visible on desktop) */}
+            <div className="desktop-account" style={{ display: "none" }}>
+              <AccountMenu />
+            </div>
 
-          {/* Mobile toggle */}
-          <button
-            className="mobile-menu-btn"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-            style={{
-              border: "none",
-              background: "transparent",
-              fontSize: 22,
-              cursor: "pointer",
-            }}
-          >
-            ☰
-          </button>
+            {/* Mobile toggle (shown via CSS media query) */}
+            <button
+              className="mobile-menu-btn"
+              aria-label="Open menu"
+              onClick={() => setOpen(true)}
+              style={{
+                border: "1px solid rgba(0,0,0,0.10)",
+                background: "rgba(0,0,0,0.02)",
+                borderRadius: 999,
+                padding: "8px 10px",
+                fontSize: 18,
+                cursor: "pointer",
+                lineHeight: 1,
+              }}
+            >
+              ☰
+            </button>
+          </div>
         </div>
 
         <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />

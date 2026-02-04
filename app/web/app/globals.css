@@ -123,3 +123,14 @@ body {
   flex-direction: column;
   gap: 16px;
 }
+
+/* pep-talk nav responsiveness */
+.desktop-nav { display: none; }
+.desktop-account { display: none; }
+.mobile-menu-btn { display: inline-flex; }
+
+@media (min-width: 768px) {
+  .desktop-nav { display: inline-flex !important; }
+  .desktop-account { display: inline-flex !important; }
+  .mobile-menu-btn { display: none !important; }
+}

@@ -90,8 +90,8 @@ export default function MobileMenu(props: {
             border: "none",
             background: "transparent",
             fontSize: 18,
-            fontWeight: 700,
-            marginBottom: 16,
+            fontWeight: 800,
+            marginBottom: 12,
             cursor: "pointer",
           }}
         >
@@ -99,6 +99,7 @@ export default function MobileMenu(props: {
         </button>
 
         <nav style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <SectionLabel>MENU</SectionLabel>
           {publicItems.map((item) => (
             <Link
               key={item.href}
@@ -106,7 +107,7 @@ export default function MobileMenu(props: {
               onClick={onClose}
               style={{
                 fontSize: 16,
-                fontWeight: 800,
+                fontWeight: 900,
                 textDecoration: "none",
                 color: "#000",
                 display: "inline-flex",
@@ -117,8 +118,40 @@ export default function MobileMenu(props: {
             </Link>
           ))}
 
+          <div style={{ marginTop: 10 }}>
+            <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
+            <SectionLabel>ACCOUNT</SectionLabel>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              <Link
+                href="/login"
+                onClick={onClose}
+                style={{
+                  fontSize: 16,
+                  fontWeight: 900,
+                  textDecoration: "none",
+                  color: "#000",
+                }}
+              >
+                Sign in
+              </Link>
+              <Link
+                href="/account"
+                onClick={onClose}
+                style={{
+                  fontSize: 16,
+                  fontWeight: 900,
+                  textDecoration: "none",
+                  color: "#000",
+                }}
+              >
+                Account
+              </Link>
+            </div>
+          </div>
+
           {proItems.length ? (
-            <div style={{ marginTop: 6 }}>
+            <div style={{ marginTop: 10 }}>
               <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
               <SectionLabel>PRO</SectionLabel>
 
@@ -130,7 +163,7 @@ export default function MobileMenu(props: {
                     onClick={onClose}
                     style={{
                       fontSize: 16,
-                      fontWeight: 800,
+                      fontWeight: 900,
                       textDecoration: "none",
                       color: "#000",
                       display: "inline-flex",
