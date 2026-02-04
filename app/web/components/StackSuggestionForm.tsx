@@ -2,133 +2,61 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type EntityKind = "peptide" | "blend";
+type EntityType = "peptide" | "blend";
 
-type EntityOption = {
-  kind: EntityKind;
-  slug: string;
-  title: string;
-};
+type Option = { slug: string; title: string };
 
-type Goal =
-  | "sleep"
-  | "recovery"
-  | "focus"
-  | "energy"
-  | "metabolic"
-  | "inflammation"
-  | "gut"
-  | "skin_hair"
-  | "longevity"
-  | "performance"
-  | "other";
-
-const GOAL_LABELS: Record<Goal, string> = {
-  sleep: "Sleep / Rest",
-  recovery: "Recovery",
-  focus: "Focus / Cognition",
-  energy: "Energy / Motivation",
-  metabolic: "Metabolic support",
-  inflammation: "Inflammation / Joint support",
-  gut: "Gut / GI support",
-  skin_hair: "Skin / Hair",
-  longevity: "Longevity / Aging",
-  performance: "Performance / Training",
-  other: "Other",
-};
-
-function normalize(s: string) {
+function norm(s: string) {
   return s.trim().toLowerCase();
 }
 
-function makeOutcomesDraft(description: string, stackName: string, selected: EntityOption[], goal: Goal) {
-  // This does NOT make medical claims. It summarizes user intent only.
-  const desc = description.trim();
-  const name = stackName.trim();
-  const items = selected.map((x) => x.title).filter(Boolean);
+function makeAutoOutcomes(goal: string, items: { type: EntityType; slug: string; title: string }[]) {
+  const g = goal.trim();
+  const names = items.map((x) => x.title || x.slug).filter(Boolean);
 
-  const parts: string[] = [];
-  if (name) parts.push(`"${name}"`);
-  if (items.length) parts.push(`(${items.join(", ")})`);
-
-  const header = parts.length ? `Draft summary for ${parts.join(" ")}:` : `Draft summary:`;
-
-  const goalLine = goal ? `User-selected goal: ${GOAL_LABELS[goal]}.` : `User-selected goal: (none).`;
-
-  const t = normalize(desc);
-  const intents: string[] = [];
-  const add = (label: string, match: RegExp) => {
-    if (match.test(t) && !intents.includes(label)) intents.push(label);
-  };
-
-  add("recovery", /\brecover|recovery|soreness|fatigue\b/);
-  add("sleep", /\bsleep|insomnia|rest\b/);
-  add("focus", /\bfocus|cognition|brain|clarity|adhd\b/);
-  add("energy", /\benergy|motivation|drive\b/);
-  add("metabolic support", /\bmetabolic|glucose|insulin|fat loss|weight\b/);
-  add("inflammation support", /\binflammation|pain|joint\b/);
-  add("gut support", /\bgut|gi|stomach|ibd|crohn|colitis\b/);
-  add("skin/hair support", /\bskin|hair|collagen|glow\b/);
-
-  const intentLine =
-    intents.length ? `Keywords detected in description: ${intents.join(", ")}.` : `Keywords detected in description: (none).`;
-
-  return [header, goalLine, intentLine, `User description (verbatim): ${desc ? `"${desc}"` : "(none)"}`].join("\n");
+  const lines: string[] = [];
+  if (g) lines.push(`Goal-aligned: ${g}`);
+  if (names.length) lines.push(`Synergy narrative: how ${names.slice(0, 5).join(", ")} may complement each other (education only).`);
+  lines.push("Expected outcomes are not guaranteed; responses vary by person and context.");
+  lines.push("No dosing, protocols, schedules, or instructions are allowed.");
+  return lines;
 }
 
 export default function StackSuggestionForm(props: { ugcSlug: string }) {
-  const [options, setOptions] = useState<EntityOption[]>([]);
-  const [loadingOptions, setLoadingOptions] = useState(true);
+  const [peptides, setPeptides] = useState<Option[]>([]);
+  const [blends, setBlends] = useState<Option[]>([]);
+  const [loadingLists, setLoadingLists] = useState(true);
+
+  const [stackName, setStackName] = useState("");
+  const [goal, setGoal] = useState("");
+  const [description, setDescription] = useState("");
+
+  const [picked, setPicked] = useState<Array<{ type: EntityType; slug: string; title: string }>>([]);
+
+  const [search, setSearch] = useState("");
+  const [includeAuto, setIncludeAuto] = useState(true);
 
   const [username, setUsername] = useState("");
   const [ack, setAck] = useState(false);
 
-  const [stackName, setStackName] = useState("");
-  const [goal, setGoal] = useState<Goal>("recovery");
-
-  const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState<EntityOption[]>([]);
-  const [description, setDescription] = useState("");
-
-  const [includeOutcomes, setIncludeOutcomes] = useState(false);
-  const outcomesDraft = useMemo(
-    () => makeOutcomesDraft(description, stackName, selected, goal),
-    [description, stackName, selected, goal]
-  );
-
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "ok" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState<string>("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     let ok = true;
-    setLoadingOptions(true);
-
-    Promise.all([fetch("/api/content/peptides").then((r) => r.json()), fetch("/api/content/blends").then((r) => r.json())])
+    setLoadingLists(true);
+    Promise.all([
+      fetch("/api/content/peptides").then((r) => r.json()).catch(() => ({})),
+      fetch("/api/content/blends").then((r) => r.json()).catch(() => ({})),
+    ])
       .then(([pj, bj]) => {
         if (!ok) return;
-
-        const peptides = (Array.isArray(pj?.peptides) ? pj.peptides : []).map((p: any) => ({
-          kind: "peptide" as const,
-          slug: String(p.slug),
-          title: String(p.title || p.slug),
-        }));
-
-        const blends = (Array.isArray(bj?.blends) ? bj.blends : []).map((b: any) => ({
-          kind: "blend" as const,
-          slug: String(b.slug),
-          title: String(b.title || b.slug),
-        }));
-
-        const merged = [...peptides, ...blends].sort((a, b) => a.title.localeCompare(b.title));
-        setOptions(merged);
-      })
-      .catch(() => {
-        if (!ok) return;
-        setOptions([]);
+        setPeptides(Array.isArray(pj?.peptides) ? pj.peptides : []);
+        setBlends(Array.isArray(bj?.blends) ? bj.blends : []);
       })
       .finally(() => {
         if (!ok) return;
-        setLoadingOptions(false);
+        setLoadingLists(false);
       });
 
     return () => {
@@ -136,56 +64,61 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
     };
   }, []);
 
-  const filtered = useMemo(() => {
-    const q = normalize(query);
-    if (!q) return options.slice(0, 50);
+  const options = useMemo(() => {
+    const q = norm(search);
+    const merged: Array<{ type: EntityType; slug: string; title: string }> = [
+      ...peptides.map((p) => ({ type: "peptide" as const, slug: p.slug, title: p.title })),
+      ...blends.map((b) => ({ type: "blend" as const, slug: b.slug, title: b.title })),
+    ];
 
-    const out = options.filter((o) => {
-      const a = normalize(o.title);
-      const b = normalize(o.slug);
-      return a.includes(q) || b.includes(q);
-    });
+    const already = new Set(picked.map((x) => `${x.type}:${x.slug}`));
 
-    return out.slice(0, 80);
-  }, [options, query]);
+    return merged
+      .filter((x) => !already.has(`${x.type}:${x.slug}`))
+      .filter((x) => {
+        if (!q) return true;
+        return norm(x.slug).includes(q) || norm(x.title).includes(q);
+      })
+      .slice(0, 30);
+  }, [search, peptides, blends, picked]);
 
-  function addItem(o: EntityOption) {
-    if (selected.some((x) => x.kind === o.kind && x.slug === o.slug)) return;
-    setSelected((prev) => [...prev, o]);
-    setQuery("");
+  const autoOutcomes = useMemo(() => makeAutoOutcomes(goal, picked), [goal, picked]);
+
+  function addItem(x: { type: EntityType; slug: string; title: string }) {
+    setPicked((prev) => [...prev, x]);
+    setSearch("");
   }
 
-  function removeItem(kind: EntityKind, slug: string) {
-    setSelected((prev) => prev.filter((x) => !(x.kind === kind && x.slug === slug)));
+  function removeItem(idx: number) {
+    setPicked((prev) => prev.filter((_, i) => i !== idx));
   }
 
-  function buildSubmissionText() {
-    const peptides = selected.filter((x) => x.kind === "peptide");
-    const blends = selected.filter((x) => x.kind === "blend");
-
+  function buildUgcText() {
     const lines: string[] = [];
-    lines.push("STACK SUGGESTION");
-    lines.push("");
-    lines.push(`Stack name: ${stackName.trim() || "(none)"}`);
-    lines.push(`Goal: ${GOAL_LABELS[goal]}`);
-    lines.push(
-      `Peptides: ${
-        peptides.length ? peptides.map((p) => `${p.title} (${p.slug})`).join(", ") : "(none)"
-      }`
-    );
-    lines.push(
-      `Blends: ${
-        blends.length ? blends.map((b) => `${b.title} (${b.slug})`).join(", ") : "(none)"
-      }`
-    );
-    lines.push("");
-    lines.push("Description:");
-    lines.push(description.trim() || "(none)");
-    if (includeOutcomes) {
-      lines.push("");
-      lines.push("Expected outcomes (user-intent draft):");
-      lines.push(outcomesDraft);
+    lines.push("[STACK_SUGGESTION_V1]");
+    lines.push(`Name: ${stackName.trim() || "(no name provided)"}`);
+    lines.push(`Goal: ${goal.trim() || "(no goal provided)"}`);
+
+    if (picked.length) {
+      lines.push("Includes:");
+      for (const x of picked) {
+        lines.push(`- ${x.type}:${x.slug} (${x.title || x.slug})`);
+      }
+    } else {
+      lines.push("Includes: (none selected)");
     }
+
+    if (description.trim()) {
+      lines.push("Description:");
+      lines.push(description.trim());
+    }
+
+    if (includeAuto) {
+      lines.push("Expected outcomes (auto-generated):");
+      for (const l of autoOutcomes) lines.push(`- ${l}`);
+    }
+
+    lines.push("[/STACK_SUGGESTION_V1]");
     return lines.join("\n");
   }
 
@@ -195,21 +128,6 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
 
     if (!username.trim()) {
       setErrorMsg("Username is required.");
-      setSubmitState("error");
-      return;
-    }
-    if (!stackName.trim()) {
-      setErrorMsg("Stack name is required.");
-      setSubmitState("error");
-      return;
-    }
-    if (!selected.length) {
-      setErrorMsg("Please select at least one peptide or blend.");
-      setSubmitState("error");
-      return;
-    }
-    if (!description.trim()) {
-      setErrorMsg("Description is required.");
       setSubmitState("error");
       return;
     }
@@ -223,7 +141,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
       type: "stack",
       slug: props.ugcSlug,
       username: username.trim(),
-      text: buildSubmissionText(),
+      text: buildUgcText(),
       ack_no_dosing: ack,
     };
 
@@ -250,32 +168,23 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
     setSubmitState("ok");
     setUsername("");
     setAck(false);
-    setStackName("");
-    setGoal("recovery");
-    setQuery("");
-    setSelected([]);
-    setDescription("");
-    setIncludeOutcomes(false);
 
+    // Keep user's typed idea visible after submit? For now: keep it so they can tweak/submit again.
     setTimeout(() => setSubmitState("idle"), 2500);
   }
 
   return (
-    <section className="pt-card">
-      <h2 className="pt-card-title" style={{ margin: 0 }}>
-        Suggest a Stack
-      </h2>
-
-      <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-        Suggest a synergy-first combo (peptides and/or blends). Educational only — no dosing, protocols, schedules, or instructions.
-        Submissions are moderated before appearing.
-      </p>
+    <section className="pt-card" style={{ marginTop: 14 }}>
+      <h2 className="pt-card-title">Your suggestion</h2>
+      <div className="pt-card-subtext" style={{ marginTop: 8 }}>
+        Build this without typing errors: pick peptides/blends from the list. Educational only (no dosing/protocols). Moderated.
+      </div>
 
       <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
         <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username (required)"
+          value={stackName}
+          onChange={(e) => setStackName(e.target.value)}
+          placeholder="Stack name (creative + searchable)"
           style={{
             width: "100%",
             padding: "10px 12px",
@@ -286,9 +195,9 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
         />
 
         <input
-          value={stackName}
-          onChange={(e) => setStackName(e.target.value)}
-          placeholder="Stack name (required) — make it searchable"
+          value={goal}
+          onChange={(e) => setGoal(e.target.value)}
+          placeholder="Goal (what is this stack trying to do?)"
           style={{
             width: "100%",
             padding: "10px 12px",
@@ -298,130 +207,96 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
           }}
         />
 
-        <div style={{ display: "grid", gap: 8 }}>
-          <div style={{ fontSize: 13, fontWeight: 900 }}>Primary goal (required)</div>
-          <select
-            value={goal}
-            onChange={(e) => setGoal(e.target.value as Goal)}
-            style={{
-              width: "100%",
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.15)",
-              fontSize: 14,
-              background: "white",
-            }}
-          >
-            {Object.keys(GOAL_LABELS).map((k) => {
-              const key = k as Goal;
-              return (
-                <option key={key} value={key}>
-                  {GOAL_LABELS[key]}
-                </option>
-              );
-            })}
-          </select>
-        </div>
+        <div>
+          <div style={{ fontSize: 13, fontWeight: 900, marginBottom: 8 }}>Peptides / blends in this stack</div>
 
-        <div style={{ display: "grid", gap: 8 }}>
-          <div style={{ fontSize: 13, fontWeight: 900 }}>Peptides + blends in this stack (required)</div>
-
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder={loadingOptions ? "Loading options…" : "Search peptides or blends by name or slug"}
-            disabled={loadingOptions}
-            style={{
-              width: "100%",
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.15)",
-              fontSize: 14,
-            }}
-          />
-
-          {query.trim() && filtered.length ? (
-            <div
-              style={{
-                border: "1px solid rgba(0,0,0,0.12)",
-                borderRadius: 10,
-                overflow: "hidden",
-                background: "rgba(0,0,0,0.02)",
-              }}
-            >
-              {filtered.map((o) => (
-                <button
-                  key={`${o.kind}:${o.slug}`}
-                  type="button"
-                  onClick={() => addItem(o)}
-                  style={{
-                    width: "100%",
-                    textAlign: "left",
-                    padding: "10px 12px",
-                    border: "none",
-                    background: "transparent",
-                    cursor: "pointer",
-                    fontSize: 13,
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
-                    <div style={{ fontWeight: 900 }}>{o.title}</div>
-                    <div style={{ fontSize: 11, fontWeight: 900, opacity: 0.8 }}>{o.kind.toUpperCase()}</div>
-                  </div>
-                  <div style={{ opacity: 0.7 }}>{o.slug}</div>
-                </button>
-              ))}
-            </div>
-          ) : null}
-
-          {selected.length ? (
-            <div className="pt-stack" style={{ marginTop: 6 }}>
-              {selected.map((o) => (
-                <div
-                  key={`${o.kind}:${o.slug}`}
-                  className="pt-item"
-                  style={{ display: "flex", justifyContent: "space-between", gap: 10 }}
-                >
-                  <div>
-                    <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-                      <div style={{ fontSize: 13, fontWeight: 900 }}>{o.title}</div>
-                      <div style={{ fontSize: 11, fontWeight: 900, opacity: 0.75 }}>{o.kind.toUpperCase()}</div>
+          <div style={{ display: "grid", gap: 10 }}>
+            {picked.length ? (
+              <div className="pt-stack">
+                {picked.map((x, i) => (
+                  <div key={`${x.type}:${x.slug}`} className="pt-item" style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 900 }}>
+                        {x.title || x.slug} <span style={{ opacity: 0.7, fontWeight: 700 }}>({x.type}:{x.slug})</span>
+                      </div>
                     </div>
-                    <div className="pt-item-note" style={{ marginTop: 4 }}>
-                      {o.slug}
-                    </div>
+                    <button
+                      onClick={() => removeItem(i)}
+                      style={{
+                        borderRadius: 10,
+                        border: "1px solid rgba(0,0,0,0.2)",
+                        background: "rgba(0,0,0,0.03)",
+                        padding: "6px 10px",
+                        fontWeight: 900,
+                        cursor: "pointer",
+                      }}
+                    >
+                      Remove
+                    </button>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => removeItem(o.kind, o.slug)}
-                    style={{
-                      padding: "8px 10px",
-                      borderRadius: 10,
-                      border: "1px solid rgba(0,0,0,0.2)",
-                      fontSize: 12,
-                      fontWeight: 900,
-                      background: "rgba(0,0,0,0.03)",
-                      cursor: "pointer",
-                      height: 36,
-                      alignSelf: "center",
-                    }}
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="pt-item-note">Nothing selected yet. Search above, then click to add.</div>
-          )}
+                ))}
+              </div>
+            ) : (
+              <div className="pt-item-note">No items added yet.</div>
+            )}
 
-          <div className="pt-item-note">Tip: add more by searching again — no typing errors.</div>
+            <div style={{ display: "grid", gap: 8 }}>
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder={loadingLists ? "Loading peptides/blends…" : "Search peptides/blends (type to filter)"}
+                disabled={loadingLists}
+                style={{
+                  width: "100%",
+                  padding: "10px 12px",
+                  borderRadius: 10,
+                  border: "1px solid rgba(0,0,0,0.15)",
+                  fontSize: 14,
+                }}
+              />
+
+              <div style={{ border: "1px solid rgba(0,0,0,0.10)", borderRadius: 12, overflow: "hidden" }}>
+                {options.length ? (
+                  <div style={{ maxHeight: 260, overflow: "auto" }}>
+                    {options.map((o) => (
+                      <button
+                        key={`${o.type}:${o.slug}`}
+                        onClick={() => addItem(o)}
+                        style={{
+                          width: "100%",
+                          textAlign: "left",
+                          border: 0,
+                          background: "transparent",
+                          padding: "10px 12px",
+                          cursor: "pointer",
+                          borderBottom: "1px solid rgba(0,0,0,0.08)",
+                        }}
+                      >
+                        <div style={{ fontSize: 13, fontWeight: 900 }}>
+                          {o.title || o.slug} <span style={{ opacity: 0.7, fontWeight: 700 }}>({o.type})</span>
+                        </div>
+                        <div style={{ fontSize: 12, opacity: 0.75 }}>{o.slug}</div>
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div style={{ padding: "10px 12px", fontSize: 12, opacity: 0.75 }}>
+                    {loadingLists ? "Loading…" : search.trim() ? "No matches." : "Type to search and add an item."}
+                  </div>
+                )}
+              </div>
+
+              <div className="pt-item-note" style={{ marginTop: 6 }}>
+                Tip: use search, then click to add. This avoids typos and keeps slugs consistent.
+              </div>
+            </div>
+          </div>
         </div>
 
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Description (required): goal, why these pair well, what you’re trying to support (no dosing/protocols)"
+          placeholder="Description (why these pair well, what context, what to watch for — no protocols)"
           rows={6}
           style={{
             width: "100%",
@@ -433,51 +308,75 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
           }}
         />
 
-        <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
-          <input type="checkbox" checked={includeOutcomes} onChange={(e) => setIncludeOutcomes(e.target.checked)} />
-          <span>Include “Expected outcomes” draft (auto-generated summary of your description).</span>
-        </label>
+        <div style={{ border: "1px solid rgba(0,0,0,0.10)", borderRadius: 12, padding: 12 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+            <div style={{ fontSize: 13, fontWeight: 900 }}>Expected outcomes (auto-generated)</div>
+            <label style={{ display: "flex", gap: 10, alignItems: "center", fontSize: 13, opacity: 0.9 }}>
+              <input type="checkbox" checked={includeAuto} onChange={(e) => setIncludeAuto(e.target.checked)} />
+              <span>Include this in submission</span>
+            </label>
+          </div>
 
-        {includeOutcomes ? (
-          <pre
-            style={{
-              whiteSpace: "pre-wrap",
-              borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.12)",
-              padding: "10px 12px",
-              background: "rgba(0,0,0,0.02)",
-              fontSize: 12,
-              lineHeight: 1.35,
-              margin: 0,
-            }}
-          >
-            {outcomesDraft}
-          </pre>
-        ) : null}
+          <div style={{ marginTop: 10 }}>
+            <ul style={{ margin: 0, paddingLeft: 18 }}>
+              {autoOutcomes.map((l, i) => (
+                <li key={i} style={{ fontSize: 13, opacity: 0.9, marginBottom: 6 }}>
+                  {l}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-        <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
-          <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} />
-          <span>I understand: dosing/protocol details are not allowed and will be rejected.</span>
-        </label>
+        <div style={{ marginTop: 4 }}>
+          <div style={{ fontSize: 13, fontWeight: 900, marginBottom: 8 }}>Submit</div>
 
-        {submitState === "ok" ? <div style={{ fontSize: 13, fontWeight: 800 }}>Submitted for review.</div> : null}
-        {submitState === "error" ? <div style={{ fontSize: 13, fontWeight: 800 }}>{errorMsg}</div> : null}
+          <div style={{ display: "grid", gap: 10 }}>
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username (required)"
+              style={{
+                width: "100%",
+                padding: "10px 12px",
+                borderRadius: 10,
+                border: "1px solid rgba(0,0,0,0.15)",
+                fontSize: 14,
+              }}
+            />
 
-        <button
-          onClick={() => submit()}
-          disabled={submitState === "submitting"}
-          style={{
-            padding: "10px 12px",
-            borderRadius: 10,
-            border: "1px solid rgba(0,0,0,0.2)",
-            fontSize: 14,
-            fontWeight: 900,
-            background: "rgba(0,0,0,0.03)",
-            cursor: "pointer",
-          }}
-        >
-          {submitState === "submitting" ? "Submitting…" : "Submit stack suggestion"}
-        </button>
+            <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
+              <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} />
+              <span>I understand: dosing/protocol details are not allowed and will be rejected.</span>
+            </label>
+
+            {submitState === "ok" ? <div style={{ fontSize: 13, fontWeight: 800 }}>Submitted for review.</div> : null}
+            {submitState === "error" ? <div style={{ fontSize: 13, fontWeight: 800 }}>{errorMsg}</div> : null}
+
+            <button
+              onClick={() => submit()}
+              disabled={submitState === "submitting"}
+              style={{
+                padding: "10px 12px",
+                borderRadius: 10,
+                border: "1px solid rgba(0,0,0,0.2)",
+                fontSize: 14,
+                fontWeight: 900,
+                background: "rgba(0,0,0,0.03)",
+                cursor: "pointer",
+              }}
+            >
+              {submitState === "submitting" ? "Submitting…" : "Submit suggestion"}
+            </button>
+
+            <details style={{ marginTop: 6 }}>
+              <summary style={{ fontSize: 12, opacity: 0.8, cursor: "pointer" }}>Preview what gets submitted</summary>
+              <pre style={{ whiteSpace: "pre-wrap", fontSize: 12, opacity: 0.9, marginTop: 10 }}>
+{buildUgcText()}
+              </pre>
+            </details>
+          </div>
+        </div>
       </div>
     </section>
   );
