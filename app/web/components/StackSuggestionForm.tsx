@@ -2,18 +2,23 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type Peptide = { slug: string; title: string };
+type EntityKind = "peptide" | "blend";
+
+type EntityOption = {
+  kind: EntityKind;
+  slug: string;
+  title: string;
+};
 
 function normalize(s: string) {
   return s.trim().toLowerCase();
 }
 
-function makeOutcomesDraft(description: string, stackName: string, selected: Peptide[]) {
-  // Important: this is NOT making medical claims. It only summarizes the user's intent.
-  // We keep it framed as "aims to support" and "user-described".
+function makeOutcomesDraft(description: string, stackName: string, selected: EntityOption[]) {
+  // This does NOT make medical claims. It summarizes user intent only.
   const desc = description.trim();
   const name = stackName.trim();
-  const items = selected.map((p) => p.title).filter(Boolean);
+  const items = selected.map((x) => x.title).filter(Boolean);
 
   const parts: string[] = [];
   if (name) parts.push(`"${name}"`);
@@ -21,7 +26,6 @@ function makeOutcomesDraft(description: string, stackName: string, selected: Pep
 
   const header = parts.length ? `Draft summary for ${parts.join(" ")}:` : `Draft summary:`;
 
-  // Extract a few intent keywords from the user's description (very light heuristic)
   const t = normalize(desc);
   const intents: string[] = [];
   const add = (label: string, match: RegExp) => {
@@ -40,50 +44,62 @@ function makeOutcomesDraft(description: string, stackName: string, selected: Pep
   const intentLine =
     intents.length ? `User-described goals: ${intents.join(", ")}.` : `User-described goals: (from the description below).`;
 
-  // Keep it concise and clearly labeled as a user-intent summary
-  return [
-    header,
-    intentLine,
-    `User description (verbatim): ${desc ? `"${desc}"` : "(none)"}`,
-  ].join("\n");
+  return [header, intentLine, `User description (verbatim): ${desc ? `"${desc}"` : "(none)"}`].join("\n");
 }
 
 export default function StackSuggestionForm(props: { ugcSlug: string }) {
-  const [peptides, setPeptides] = useState<Peptide[]>([]);
-  const [loadingPeptides, setLoadingPeptides] = useState(true);
+  const [options, setOptions] = useState<EntityOption[]>([]);
+  const [loadingOptions, setLoadingOptions] = useState(true);
 
   const [username, setUsername] = useState("");
   const [ack, setAck] = useState(false);
 
   const [stackName, setStackName] = useState("");
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState<Peptide[]>([]);
+  const [selected, setSelected] = useState<EntityOption[]>([]);
   const [description, setDescription] = useState("");
 
   const [includeOutcomes, setIncludeOutcomes] = useState(false);
-  const outcomesDraft = useMemo(() => makeOutcomesDraft(description, stackName, selected), [description, stackName, selected]);
+  const outcomesDraft = useMemo(
+    () => makeOutcomesDraft(description, stackName, selected),
+    [description, stackName, selected]
+  );
 
   const [submitState, setSubmitState] = useState<"idle" | "submitting" | "ok" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
 
   useEffect(() => {
     let ok = true;
-    setLoadingPeptides(true);
-    fetch("/api/content/peptides")
-      .then((r) => r.json())
-      .then((j) => {
+    setLoadingOptions(true);
+
+    Promise.all([fetch("/api/content/peptides").then((r) => r.json()), fetch("/api/content/blends").then((r) => r.json())])
+      .then(([pj, bj]) => {
         if (!ok) return;
-        const arr = Array.isArray(j?.peptides) ? j.peptides : [];
-        setPeptides(arr);
+
+        const peptides = (Array.isArray(pj?.peptides) ? pj.peptides : []).map((p: any) => ({
+          kind: "peptide" as const,
+          slug: String(p.slug),
+          title: String(p.title || p.slug),
+        }));
+
+        const blends = (Array.isArray(bj?.blends) ? bj.blends : []).map((b: any) => ({
+          kind: "blend" as const,
+          slug: String(b.slug),
+          title: String(b.title || b.slug),
+        }));
+
+        const merged = [...peptides, ...blends].sort((a, b) => a.title.localeCompare(b.title));
+        setOptions(merged);
       })
       .catch(() => {
         if (!ok) return;
-        setPeptides([]);
+        setOptions([]);
       })
       .finally(() => {
         if (!ok) return;
-        setLoadingPeptides(false);
+        setLoadingOptions(false);
       });
+
     return () => {
       ok = false;
     };
@@ -91,31 +107,45 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
 
   const filtered = useMemo(() => {
     const q = normalize(query);
-    if (!q) return peptides.slice(0, 40);
-    const out = peptides.filter((p) => {
-      const a = normalize(p.title);
-      const b = normalize(p.slug);
+    if (!q) return options.slice(0, 50);
+
+    const out = options.filter((o) => {
+      const a = normalize(o.title);
+      const b = normalize(o.slug);
       return a.includes(q) || b.includes(q);
     });
-    return out.slice(0, 60);
-  }, [peptides, query]);
 
-  function addPeptide(p: Peptide) {
-    if (selected.some((x) => x.slug === p.slug)) return;
-    setSelected((prev) => [...prev, p]);
+    return out.slice(0, 80);
+  }, [options, query]);
+
+  function addItem(o: EntityOption) {
+    if (selected.some((x) => x.kind === o.kind && x.slug === o.slug)) return;
+    setSelected((prev) => [...prev, o]);
     setQuery("");
   }
 
-  function removePeptide(slug: string) {
-    setSelected((prev) => prev.filter((p) => p.slug !== slug));
+  function removeItem(kind: EntityKind, slug: string) {
+    setSelected((prev) => prev.filter((x) => !(x.kind === kind && x.slug === slug)));
   }
 
   function buildSubmissionText() {
+    const peptides = selected.filter((x) => x.kind === "peptide");
+    const blends = selected.filter((x) => x.kind === "blend");
+
     const lines: string[] = [];
     lines.push("STACK SUGGESTION");
     lines.push("");
     lines.push(`Stack name: ${stackName.trim() || "(none)"}`);
-    lines.push(`Peptides: ${selected.length ? selected.map((p) => `${p.title} (${p.slug})`).join(", ") : "(none)"}`);
+    lines.push(
+      `Peptides: ${
+        peptides.length ? peptides.map((p) => `${p.title} (${p.slug})`).join(", ") : "(none)"
+      }`
+    );
+    lines.push(
+      `Blends: ${
+        blends.length ? blends.map((b) => `${b.title} (${b.slug})`).join(", ") : "(none)"
+      }`
+    );
     lines.push("");
     lines.push("Description:");
     lines.push(description.trim() || "(none)");
@@ -142,7 +172,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
       return;
     }
     if (!selected.length) {
-      setErrorMsg("Please select at least one peptide.");
+      setErrorMsg("Please select at least one peptide or blend.");
       setSubmitState("error");
       return;
     }
@@ -204,8 +234,8 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
       </h2>
 
       <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-        Drop an idea for a synergy-first stack. Educational only — no dosing, protocols, schedules, or instructions. Submissions are
-        moderated before appearing.
+        Suggest a synergy-first combo (peptides and/or blends). Educational only — no dosing, protocols, schedules, or instructions.
+        Submissions are moderated before appearing.
       </p>
 
       <div style={{ display: "grid", gap: 12, marginTop: 14 }}>
@@ -236,13 +266,13 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
         />
 
         <div style={{ display: "grid", gap: 8 }}>
-          <div style={{ fontSize: 13, fontWeight: 900 }}>Peptides in this stack (required)</div>
+          <div style={{ fontSize: 13, fontWeight: 900 }}>Peptides + blends in this stack (required)</div>
 
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={loadingPeptides ? "Loading peptides…" : "Search peptides by name or slug"}
-            disabled={loadingPeptides}
+            placeholder={loadingOptions ? "Loading options…" : "Search peptides or blends by name or slug"}
+            disabled={loadingOptions}
             style={{
               width: "100%",
               padding: "10px 12px",
@@ -261,11 +291,11 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
                 background: "rgba(0,0,0,0.02)",
               }}
             >
-              {filtered.map((p) => (
+              {filtered.map((o) => (
                 <button
-                  key={p.slug}
+                  key={`${o.kind}:${o.slug}`}
                   type="button"
-                  onClick={() => addPeptide(p)}
+                  onClick={() => addItem(o)}
                   style={{
                     width: "100%",
                     textAlign: "left",
@@ -276,8 +306,11 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
                     fontSize: 13,
                   }}
                 >
-                  <div style={{ fontWeight: 900 }}>{p.title}</div>
-                  <div style={{ opacity: 0.7 }}>{p.slug}</div>
+                  <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
+                    <div style={{ fontWeight: 900 }}>{o.title}</div>
+                    <div style={{ fontSize: 11, fontWeight: 900, opacity: 0.8 }}>{o.kind.toUpperCase()}</div>
+                  </div>
+                  <div style={{ opacity: 0.7 }}>{o.slug}</div>
                 </button>
               ))}
             </div>
@@ -285,17 +318,24 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
 
           {selected.length ? (
             <div className="pt-stack" style={{ marginTop: 6 }}>
-              {selected.map((p) => (
-                <div key={p.slug} className="pt-item" style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
+              {selected.map((o) => (
+                <div
+                  key={`${o.kind}:${o.slug}`}
+                  className="pt-item"
+                  style={{ display: "flex", justifyContent: "space-between", gap: 10 }}
+                >
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: 900 }}>{p.title}</div>
+                    <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+                      <div style={{ fontSize: 13, fontWeight: 900 }}>{o.title}</div>
+                      <div style={{ fontSize: 11, fontWeight: 900, opacity: 0.75 }}>{o.kind.toUpperCase()}</div>
+                    </div>
                     <div className="pt-item-note" style={{ marginTop: 4 }}>
-                      {p.slug}
+                      {o.slug}
                     </div>
                   </div>
                   <button
                     type="button"
-                    onClick={() => removePeptide(p.slug)}
+                    onClick={() => removeItem(o.kind, o.slug)}
                     style={{
                       padding: "8px 10px",
                       borderRadius: 10,
@@ -314,10 +354,10 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
               ))}
             </div>
           ) : (
-            <div className="pt-item-note">No peptides selected yet. Use search above, then click to add.</div>
+            <div className="pt-item-note">Nothing selected yet. Search above, then click to add.</div>
           )}
 
-          <div className="pt-item-note">Tip: add more peptides by searching again — no typing errors.</div>
+          <div className="pt-item-note">Tip: add more by searching again — no typing errors.</div>
         </div>
 
         <textarea
