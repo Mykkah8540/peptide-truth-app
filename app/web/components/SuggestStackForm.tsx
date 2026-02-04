@@ -89,7 +89,7 @@ export default function SuggestStackForm() {
                 slug: String(x?.slug || "").trim(),
                 title: String(x?.title || x?.name || x?.slug || "").trim(),
               }))
-              .filter((x) => x.slug && x.title)
+              .filter((x: Option) => Boolean(x.slug && x.title))
           : [];
 
         const blendList: Option[] = Array.isArray(blends?.items)
@@ -99,7 +99,7 @@ export default function SuggestStackForm() {
                 slug: String(x?.slug || "").trim(),
                 title: String(x?.title || x?.name || x?.slug || "").trim(),
               }))
-              .filter((x) => x.slug && x.title)
+              .filter((x: Option) => Boolean(x.slug && x.title))
           : [];
 
         // Stable sort by title

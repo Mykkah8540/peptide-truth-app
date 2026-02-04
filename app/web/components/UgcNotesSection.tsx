@@ -27,6 +27,7 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
   useEffect(() => {
     let ok = true;
     setLoading(true);
+
     fetch(`/api/ugc/list?type=${encodeURIComponent(props.type)}&slug=${encodeURIComponent(props.slug)}`)
       .then((r) => r.json())
       .then((j) => {
@@ -41,20 +42,27 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
         if (!ok) return;
         setLoading(false);
       });
+
     return () => {
       ok = false;
     };
-  }, [key]);
+  }, [key, props.type, props.slug]);
 
   async function submit() {
+    if (!username.trim() || !text.trim()) {
+      setErrorMsg("Could not submit. Check required fields.");
+      setSubmitState("error");
+      return;
+    }
+
     setSubmitState("submitting");
     setErrorMsg("");
 
     const payload = {
       type: props.type,
       slug: props.slug,
-      username,
-      text,
+      username: username.trim(),
+      text: text.trim(),
       ack_no_dosing: ack,
     };
 
@@ -103,9 +111,7 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
               <div key={p.id} className="pt-item">
                 <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
                   <div style={{ fontSize: 13, fontWeight: 900 }}>{p.username}</div>
-                  <div style={{ fontSize: 12, opacity: 0.7 }}>
-                    {new Date(p.createdAt).toLocaleDateString()}
-                  </div>
+                  <div style={{ fontSize: 12, opacity: 0.7 }}>{new Date(p.createdAt).toLocaleDateString()}</div>
                 </div>
                 <div className="pt-item-note" style={{ marginTop: 8, whiteSpace: "pre-wrap" }}>
                   {p.text}
@@ -118,69 +124,65 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
         )}
       </div>
 
-      <div style={{ marginTop: 18, borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: 14 }}>
-        <div style={{ fontSize: 13, fontWeight: 900 }}>Submit a note</div>
+      {props.hideSubmit ? null : (
+        <div style={{ marginTop: 18, borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: 14 }}>
+          <div style={{ fontSize: 13, fontWeight: 900 }}>Submit a note</div>
 
-        <div style={{ display: "grid", gap: 10, marginTop: 10 }}>
-          <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username (required)"
-            style={{
-              width: "100%",
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.15)",
-              fontSize: 14,
-            }}
-          />
+          <div style={{ display: "grid", gap: 10, marginTop: 10 }}>
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username (required)"
+              style={{
+                width: "100%",
+                padding: "10px 12px",
+                borderRadius: 10,
+                border: "1px solid rgba(0,0,0,0.15)",
+                fontSize: 14,
+              }}
+            />
 
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Your note (no dosing/protocols)"
-            rows={5}
-            style={{
-              width: "100%",
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.15)",
-              fontSize: 14,
-              resize: "vertical",
-            }}
-          />
+            <textarea
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="Your note (no dosing/protocols)"
+              rows={5}
+              style={{
+                width: "100%",
+                padding: "10px 12px",
+                borderRadius: 10,
+                border: "1px solid rgba(0,0,0,0.15)",
+                fontSize: 14,
+                resize: "vertical",
+              }}
+            />
 
-          <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
-            <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} />
-            <span>I understand: dosing/protocol details are not allowed and will be rejected.</span>
-          </label>
+            <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
+              <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} />
+              <span>I understand: dosing/protocol details are not allowed and will be rejected.</span>
+            </label>
 
-          {submitState === "ok" ? (
-            <div style={{ fontSize: 13, fontWeight: 800 }}>Submitted for review.</div>
-          ) : null}
+            {submitState === "ok" ? <div style={{ fontSize: 13, fontWeight: 800 }}>Submitted for review.</div> : null}
+            {submitState === "error" ? <div style={{ fontSize: 13, fontWeight: 800 }}>{errorMsg}</div> : null}
 
-          {submitState === "error" ? (
-            <div style={{ fontSize: 13, fontWeight: 800 }}>{errorMsg}</div>
-          ) : null}
-
-          <button
-            onClick={() => submit()}
-            disabled={submitState === "submitting"}
-            style={{
-              padding: "10px 12px",
-              borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.2)",
-              fontSize: 14,
-              fontWeight: 900,
-              background: "rgba(0,0,0,0.03)",
-              cursor: "pointer",
-            }}
-          >
-            {submitState === "submitting" ? "Submitting…" : "Submit"}
-          </button>
+            <button
+              onClick={() => submit()}
+              disabled={submitState === "submitting"}
+              style={{
+                padding: "10px 12px",
+                borderRadius: 10,
+                border: "1px solid rgba(0,0,0,0.2)",
+                fontSize: 14,
+                fontWeight: 900,
+                background: "rgba(0,0,0,0.03)",
+                cursor: "pointer",
+              }}
+            >
+              {submitState === "submitting" ? "Submitting…" : "Submit"}
+            </button>
+          </div>
         </div>
-      </div>
-        ) : null}
+      )}
     </section>
   );
 }
