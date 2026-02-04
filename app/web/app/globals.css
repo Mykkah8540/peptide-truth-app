@@ -125,12 +125,15 @@ body {
 }
 
 /* pep-talk nav responsiveness */
-.desktop-nav { display: none; }
-.desktop-account { display: none; }
+.desktop-nav { display: inline-flex; }
+.desktop-account { display: inline-flex; }
 .mobile-menu-btn { display: inline-flex; }
 
+@media (max-width: 767px) {
+  .desktop-nav { display: none !important; }
+  .desktop-account { display: none !important; }
+}
+
 @media (min-width: 768px) {
-  .desktop-nav { display: inline-flex !important; }
-  .desktop-account { display: inline-flex !important; }
   .mobile-menu-btn { display: none !important; }
 }

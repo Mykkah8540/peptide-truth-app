@@ -237,7 +237,7 @@ export default function NavBar(props: {
 
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             {/* Desktop nav (shown via CSS media query) */}
-            <nav className="desktop-nav" style={{ display: "none", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+            <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
               {NAV_ITEMS.slice(1).map((item, idx) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
                   {item.pro && idx === 3 ? (
@@ -273,7 +273,7 @@ export default function NavBar(props: {
             </nav>
 
             {/* Desktop account icon (always visible on desktop) */}
-            <div className="desktop-account" style={{ display: "none" }}>
+            <div className="desktop-account">
               <AccountMenu />
             </div>
 
