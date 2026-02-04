@@ -3,8 +3,7 @@ set +e
 set +u
 set +o pipefail
 
-REPO="${1:-$(pwd)}"
-cd "$REPO" || exit 1
+cd "${1:-$(pwd)}" || exit 1
 
 mkdir -p /tmp/pt_logs
 LOG="/tmp/pt_logs/pt_build_$(date +%Y%m%d_%H%M%S).log"
