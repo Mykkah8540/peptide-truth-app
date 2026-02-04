@@ -1,4 +1,5 @@
 import BackHomeLink from "@/components/BackHomeLink";
+import StackSuggestionForm from "@/components/StackSuggestionForm";
 import UgcNotesSection from "@/components/UgcNotesSection";
 import { requirePaid } from "@/lib/gate";
 
@@ -12,18 +13,12 @@ export default async function SuggestStackPage() {
           <BackHomeLink />
         </div>
 
-        <h1 className="pt-card-title" style={{ margin: 0 }}>
-          Suggest a Stack
-        </h1>
-
-        <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-          Drop an idea for a synergy-first stack. Keep it educational — no dosing, protocols, schedules, or instructions. Submissions are moderated before appearing.
-        </p>
-
-        <p className="pt-card-subtext">
-          Tip: include the goal, the peptides/blends you’d combine, and why they pair well.
+        <p className="pt-card-subtext" style={{ marginTop: 0 }}>
+          Suggest a synergy-first stack idea. Keep it educational — no dosing, protocols, schedules, or instructions.
         </p>
       </section>
+
+      <StackSuggestionForm ugcSlug="__global__" />
 
       <UgcNotesSection type="stack" slug="__global__" />
     </main>
