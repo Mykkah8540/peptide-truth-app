@@ -21,14 +21,6 @@ type UgcPost = {
   seenAt?: number | string | null;
 };
 
-function getAdminToken(): string {
-  try {
-    return typeof window !== "undefined" ? String(localStorage.getItem("pt_admin_token") || "") : "";
-  } catch {
-    return "";
-  }
-}
-
 
 const QUEUES: Array<{
   key: UgcStatus | "flagged";
@@ -247,8 +239,6 @@ function badgeDot(n: number) {
 }
 
 export default function UgcAdminPage() {
-  const [adminToken, setAdminToken] = useState("");
-
   const [queue, setQueue] = useState<(typeof QUEUES)[number]["key"]>("pending");
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState<UgcPost[]>([]);
@@ -260,6 +250,9 @@ export default function UgcAdminPage() {
   const [savingFlags, setSavingFlags] = useState(false);
   const [flagsMsg, setFlagsMsg] = useState<string>("");
 
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [adminGateMsg, setAdminGateMsg] = useState<string>("");
+
   const listPaneRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -269,7 +262,16 @@ export default function UgcAdminPage() {
         const r = await fetch('/api/admin/flags', { cache: 'no-store' as any });
         const j = await r.json().catch(() => null);
         if (cancelled) return;
-        if (j?.ok) setForceProOn(!!j?.flags?.force_pro_on);
+        if (j?.ok) {
+          setIsAdmin(true);
+          setAdminGateMsg("");
+          setForceProOn(!!j?.flags?.force_pro_on);
+        } else {
+          setIsAdmin(false);
+          if (r.status === 401) setAdminGateMsg("Not signed in.");
+          else if (r.status === 403) setAdminGateMsg("Admin access required.");
+          else setAdminGateMsg("");
+        }
       } catch {}
     })();
     return () => {
@@ -299,7 +301,7 @@ export default function UgcAdminPage() {
   }
 
   const selected = useMemo(() => posts.find((p) => p.id === selectedId) || null, [posts, selectedId]);
-  const canOperate = true;
+  const canOperate = isAdmin;
 
   function markRead(id?: string | null) {
     if (!id) return;
@@ -341,12 +343,12 @@ export default function UgcAdminPage() {
     setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: p.seenAt || stamp } : p)));
   }
 
-  async function markSeenRemote(id?: string | null, token?: string) {
-    if (!id || !token) return;
+  async function markSeenRemote(id?: string | null) {
+    if (!id) return;
     try {
       await fetch("/api/ugc/seen", {
         method: "POST",
-        headers: { "content-type": "application/json", "x-admin-token": token },
+        headers: { "content-type": "application/json" },
         body: JSON.stringify({ id }),
       });
     } catch {}
@@ -357,12 +359,10 @@ export default function UgcAdminPage() {
     setSelectedId(id);
     markRead(id);
     applySeenLocal(id);
-    markSeenRemote(id, (typeof window !== "undefined" ? (localStorage.getItem("pt_admin_token") || "") : ""));
+    markSeenRemote(id);
   }
 
   async function refreshCounts() {
-    const token = (typeof window !== "undefined" ? (localStorage.getItem("pt_admin_token") || "") : "");
-    if (!token) return;
     const [pending, approved, rejected, archived, trash] = await Promise.all([
       apiGet("pending"),
       apiGet("approved"),
@@ -383,8 +383,6 @@ export default function UgcAdminPage() {
   }
 
   async function loadQueue(nextQueue = queue) {
-    const token = getAdminToken();
-    if (!token) return;
     setLoading(true);
     setErrorMsg("");
     try {
@@ -410,13 +408,12 @@ export default function UgcAdminPage() {
 
 
   async function moderate(status: UgcStatus, reason?: string) {
-    const token = getAdminToken();
-    if (!token || !selected) return;
+    if (!selected) return;
     setErrorMsg("");
 
     const res = await fetch("/api/ugc/moderate", {
       method: "POST",
-      headers: { "content-type": "application/json", "x-admin-token": token },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify({ id: selected.id, status, reason: reason || null }),
     });
 
@@ -441,29 +438,6 @@ export default function UgcAdminPage() {
     const r = prompt("Reason (optional). Keep it short:");
     moderate("rejected", r || undefined);
   }
-
-  // Persist token so "enter token" actually does something across refreshes.
-  useEffect(() => {
-    try {
-      const t = localStorage.getItem("pt_admin_token") || "";
-      if (t) setAdminToken(String(t).trim());
-      const read = localStorage.getItem("pt_ugc_read_ids") || "{}";
-      const obj = JSON.parse(read);
-      if (obj && typeof obj === "object") setReadIds(obj);
-    } catch {}
-  }, []);
-
-  useEffect(() => {
-    try {
-      if (adminToken) localStorage.setItem("pt_admin_token", adminToken);
-    } catch {}
-  }, [adminToken]);
-
-  // Auto-load when token appears (first time / refresh)
-  useEffect(() => {
-    if (adminToken) loadQueue(queue);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [adminToken]);
 
   // Keyboard nav: j/k to move, a approve, d deny, r archive, t trash
   useEffect(() => {
@@ -508,7 +482,7 @@ export default function UgcAdminPage() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [canOperate, selectedId, selected, posts, adminToken, queue]);
+  }, [canOperate, selectedId, selected, posts, queue]);
 
   return (
     <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
@@ -524,19 +498,12 @@ export default function UgcAdminPage() {
 
         <section className="pt-card" style={{ marginTop: 16 }}>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-            <div style={{ fontSize: 13, fontWeight: 800, opacity: 0.8 }}>Admin access</div>
-            <input
-              value={adminToken}
-              onChange={(e) => setAdminToken(e.target.value.trim())}
-              placeholder="Paste PEP_TALK_ADMIN_TOKEN"
-              style={{
-                flex: "1 1 320px",
-                padding: "10px 12px",
-                borderRadius: 10,
-                border: "1px solid rgba(0,0,0,0.12)",
-                background: "white",
-              }}
-            />
+            <div style={{ fontSize: 13, fontWeight: 800, opacity: 0.8 }}>Admin session</div>
+            <div style={{ fontSize: 13, fontWeight: 900 }}>
+              {canOperate ? "✅ Admin access confirmed" : "⛔ Not authorized"}
+              {adminGateMsg ? <span style={{ marginLeft: 10, fontSize: 12, opacity: 0.7, fontWeight: 800 }}>{adminGateMsg}</span> : null}
+            </div>
+            <div style={{ flex: "1 1 auto" }} />
             <button
               className="pt-btn"
               onClick={() => loadQueue(queue)}
@@ -616,7 +583,7 @@ export default function UgcAdminPage() {
                       onClick={() => {
                         setQueue(q.key);
                         setSelectedId(null);
-                        if (adminToken) loadQueue(q.key);
+                        loadQueue(q.key);
                       }}
                       title={q.label}
                       disabled={!canOperate}
@@ -667,7 +634,7 @@ export default function UgcAdminPage() {
 
               <div ref={listPaneRef} style={{ padding: 10, display: "grid", gap: 8 }}>
                 {!canOperate ? (
-                  <div className="pt-item-note">Enter admin token to load submissions.</div>
+                  <div className="pt-item-note">Admin access required.</div>
                 ) : loading ? (
                   <div className="pt-item-note">Loading…</div>
                 ) : !posts.length ? (

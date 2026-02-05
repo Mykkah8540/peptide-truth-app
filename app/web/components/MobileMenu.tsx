@@ -53,15 +53,16 @@ export default function MobileMenu(props: {
   open: boolean;
   onClose: () => void;
   items: Item[];
+  showProBadges?: boolean;
 }) {
-  const { open, onClose, items } = props;
+  const { open, onClose, items, showProBadges = true } = props;
 
   if (!open) {
     return null;
   }
 
-  const publicItems = items.filter((i) => !i.pro);
-  const proItems = items.filter((i) => i.pro);
+  const publicItems = showProBadges ? items.filter((i) => !i.pro) : items;
+  const proItems = showProBadges ? items.filter((i) => i.pro) : [];
 
   return (
     <div
@@ -153,7 +154,7 @@ export default function MobileMenu(props: {
           {proItems.length ? (
             <div style={{ marginTop: 10 }}>
               <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
-              <SectionLabel>PRO</SectionLabel>
+              {showProBadges ? <SectionLabel>PRO</SectionLabel> : null}
 
               <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
                 {proItems.map((item) => (
@@ -171,7 +172,7 @@ export default function MobileMenu(props: {
                     }}
                   >
                     <span>{item.label}</span>
-                    <ProPill />
+                    {showProBadges ? <ProPill /> : null}
                   </Link>
                 ))}
               </div>

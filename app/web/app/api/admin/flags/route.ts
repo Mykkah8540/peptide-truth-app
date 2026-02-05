@@ -7,7 +7,7 @@ async function requireAdmin() {
   const user = auth?.user;
   if (!user) return { ok: false as const, res: NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 }) };
 
-  const { data: prof } = await supa.from("profiles").select("is_admin").eq("id", user.id).maybeSingle();
+  const { data: prof } = await supa.from("profiles").select("is_admin").eq("user_id", user.id).maybeSingle();
   if (prof?.is_admin !== true) return { ok: false as const, res: NextResponse.json({ ok: false, error: "forbidden" }, { status: 403 }) };
 
   return { ok: true as const };

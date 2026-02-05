@@ -64,7 +64,7 @@ function PersonIcon(props: { size?: number }) {
 
 function AccountMenu(props: { isAuthed: boolean }) {
   const [open, setOpen] = useState(false);
-  const isAuthed = props.isAuthed;
+    const isAuthed = props.isAuthed;
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -159,7 +159,29 @@ export default function NavBar(props: {
   topics: TopicListItem[];
 }) {
   const [open, setOpen] = useState(false);
+  const [showProBadges, setShowProBadges] = useState(true);
   const router = useRouter();
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const r = await fetch("/api/viewer", { cache: "no-store" as any });
+        const j = await r.json().catch(() => null);
+        if (!alive) return;
+        const isPro = !!(j?.isPro);
+        setShowProBadges(!isPro);
+      } catch {
+        // default to showing badges (marketing) if viewer check fails
+        if (!alive) return;
+        setShowProBadges(true);
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
+
 
   function goBack() {
     // Site-scoped back:
@@ -268,7 +290,7 @@ export default function NavBar(props: {
                     }}
                   >
                     <span>{item.label}</span>
-                    {item.pro ? <ProPill /> : null}
+                    {showProBadges && item.pro ? <ProPill /> : null}
                   </Link>
                 </span>
               ))}
@@ -297,7 +319,7 @@ export default function NavBar(props: {
         <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
       </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} items={NAV_ITEMS} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} items={NAV_ITEMS} showProBadges={showProBadges} />
     </header>
   );
 }
