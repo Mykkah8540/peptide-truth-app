@@ -144,15 +144,13 @@ export async function POST(req: Request) {
     // We still store the webhook event above (idempotent), but we only mutate entitlements/profiles if the user exists.
     const { data: profExists } = await supa
       .from("profiles")
-      .select("id,user_id")
-      .or(`user_id.eq.${userId},id.eq.${userId}`)
+      .select("id")
+      .eq("id", userId)
       .maybeSingle();
-    const hasProfile = !!(profExists?.user_id || profExists?.id);
+    const hasProfile = !!profExists?.id;
     if (!hasProfile) {
       return NextResponse.json({ ok: true, ignored: "unknown_user", app_user_id: appUserId });
     }
-
-    const profileMatchCol = profExists?.user_id === userId ? "user_id" : "id";
 
     // Upsert entitlement snapshot
     const { error: upErr } = await supa.from("billing_entitlements").upsert(
