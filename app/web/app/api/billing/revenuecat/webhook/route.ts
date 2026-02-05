@@ -135,6 +135,13 @@ export async function POST(req: Request) {
     // app_user_id is Supabase UUID string by design
     const userId = appUserId;
 
+    // Reliability: RevenueCat TEST events (and misconfigured app_user_id) may not map to a real Supabase user.
+    // We still store the webhook event above (idempotent), but we only mutate entitlements/profiles if the user exists.
+    const { data: profExists } = await supa.from("profiles").select("user_id").eq("user_id", userId).maybeSingle();
+    if (!profExists?.user_id) {
+      return NextResponse.json({ ok: true, ignored: "unknown_user", app_user_id: appUserId });
+    }
+
     // Upsert entitlement snapshot
     const { error: upErr } = await supa.from("billing_entitlements").upsert(
       {
