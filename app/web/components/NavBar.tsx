@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 import HomeSearch from "@/components/HomeSearch";
 import type { EntityListItem, TopicListItem } from "@/lib/content";
+import AccountChip from "@/components/AccountChip";
 
 type NavItem = {
   label: string;
@@ -61,8 +62,9 @@ function PersonIcon(props: { size?: number }) {
   );
 }
 
-function AccountMenu() {
+function AccountMenu(props: { isAuthed: boolean }) {
   const [open, setOpen] = useState(false);
+  const isAuthed = props.isAuthed;
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -270,13 +272,8 @@ export default function NavBar(props: {
                   </Link>
                 </span>
               ))}
-            </nav>
-
-            {/* Desktop account icon (always visible on desktop) */}
-            <div className="desktop-account">
-              <AccountMenu />
-            </div>
-
+              <AccountChip />
+</nav>
             {/* Mobile toggle (shown via CSS media query) */}
             <button
               className="mobile-menu-btn"

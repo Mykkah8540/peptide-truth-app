@@ -1,16 +1,17 @@
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { getViewer } from "@/lib/viewer";
 
-export async function isPaidUnlocked(): Promise<boolean> {
-  try {
-    const jar: any = await cookies();
-    return jar?.get?.("pt_gate")?.value === "1";
-  } catch {
-    return false;
+export async function requirePaid() {
+  const v = await getViewer();
+  // Not logged in -> send to login with return path
+  if (!v.user) {
+    redirect("/login?next=" + encodeURIComponent("/upgrade"));
   }
-}
 
-export async function requirePaid(): Promise<void> {
-  const ok = await isPaidUnlocked();
+  // Admin always gets access
+  if (v.profile?.is_admin) return;
+
+  // Global override OR user pro flag
+  const ok = Boolean(v.forceProOn || v.profile?.is_pro);
   if (!ok) redirect("/upgrade");
 }

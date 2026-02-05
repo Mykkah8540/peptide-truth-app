@@ -1,15 +1,30 @@
 import { NextResponse } from "next/server";
+import { supabaseServer } from "@/lib/supabase/server";
 import { listByStatus, moderatePost, type UgcPostStatus } from "@/lib/ugc/store";
 
-function isAuthed(req: Request): boolean {
+async function isAuthed(req: Request): Promise<boolean> {
+  // 1) Legacy header token support (keep for now)
   const token = process.env.PEP_TALK_ADMIN_TOKEN || "";
-  if (!token) return false;
   const got = req.headers.get("x-admin-token") || "";
-  return got === token;
+  if (token && got === token) return true;
+
+  // 2) Supabase session → profiles.is_admin
+  const supa = await supabaseServer();
+  const { data: auth } = await supa.auth.getUser();
+  const user = auth?.user;
+  if (!user) return false;
+
+  const { data: prof } = await supa
+    .from("profiles")
+    .select("is_admin")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  return prof?.is_admin === true; // replaced below
 }
 
 export async function GET(req: Request) {
-  if (!isAuthed(req)) return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
+  if (!(await isAuthed(req))) return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
 
   const { searchParams } = new URL(req.url);
   const status = String(searchParams.get("status") || "pending").trim();
@@ -20,7 +35,7 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  if (!isAuthed(req)) return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
+  if (!(await isAuthed(req))) return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
 
   const body = await req.json().catch(() => null);
   const id = String(body?.id || "").trim();
