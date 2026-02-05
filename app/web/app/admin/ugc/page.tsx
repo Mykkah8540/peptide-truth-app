@@ -21,6 +21,15 @@ type UgcPost = {
   seenAt?: number | string | null;
 };
 
+function getAdminToken(): string {
+  try {
+    return typeof window !== "undefined" ? String(localStorage.getItem("pt_admin_token") || "") : "";
+  } catch {
+    return "";
+  }
+}
+
+
 const QUEUES: Array<{
   key: UgcStatus | "flagged";
   label: string;
@@ -114,7 +123,7 @@ function parseStackSuggestionV1(text: string): StackSuggestionV1 | null {
 function renderStackSuggestionV1(parsed: StackSuggestionV1) {
   return (
     <div style={{ display: "grid", gap: 10 }}>
-      <div style={{ fontSize: 12, opacity: 0.75, fontWeight: 900 }}>Stack suggestion (structured)</div>
+                  <div style={{ fontSize: 12, opacity: 0.75, fontWeight: 900 }}>Stack suggestion (structured)</div>
 
       <div style={{ display: "grid", gap: 6 }}>
         <div style={{ fontSize: 13, fontWeight: 900 }}>Name</div>
@@ -239,6 +248,7 @@ function badgeDot(n: number) {
 
 export default function UgcAdminPage() {
   const [adminToken, setAdminToken] = useState("");
+
   const [queue, setQueue] = useState<(typeof QUEUES)[number]["key"]>("pending");
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState<UgcPost[]>([]);
@@ -246,11 +256,50 @@ export default function UgcAdminPage() {
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [readIds, setReadIds] = useState<Record<string, true>>({});
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [forceProOn, setForceProOn] = useState(false);
+  const [savingFlags, setSavingFlags] = useState(false);
+  const [flagsMsg, setFlagsMsg] = useState<string>("");
 
   const listPaneRef = useRef<HTMLDivElement | null>(null);
 
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const r = await fetch('/api/admin/flags', { cache: 'no-store' as any });
+        const j = await r.json().catch(() => null);
+        if (cancelled) return;
+        if (j?.ok) setForceProOn(!!j?.flags?.force_pro_on);
+      } catch {}
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  async function saveForceProOn(nextVal: boolean) {
+    setSavingFlags(true);
+    setFlagsMsg('');
+    try {
+      const r = await fetch('/api/admin/flags', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ force_pro_on: nextVal }),
+      });
+      const j = await r.json().catch(() => null);
+      if (!j?.ok) throw new Error(j?.error || 'save_failed');
+      setForceProOn(!!j?.flags?.force_pro_on);
+      setFlagsMsg('Saved');
+      setTimeout(() => setFlagsMsg(''), 1200);
+    } catch (e: any) {
+      setFlagsMsg(String(e?.message || 'Save failed'));
+    } finally {
+      setSavingFlags(false);
+    }
+  }
+
   const selected = useMemo(() => posts.find((p) => p.id === selectedId) || null, [posts, selectedId]);
-  const canOperate = !!adminToken;
+  const canOperate = true;
 
   function markRead(id?: string | null) {
     if (!id) return;
@@ -276,7 +325,6 @@ export default function UgcAdminPage() {
 
   async function apiGet(status: UgcStatus): Promise<UgcPost[]> {
     const res = await fetch(`/api/ugc/moderate?status=${encodeURIComponent(status)}&limit=500`, {
-      headers: { "x-admin-token": adminToken },
       cache: "no-store",
     });
     const data = await res.json().catch(() => null);
@@ -293,12 +341,12 @@ export default function UgcAdminPage() {
     setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: p.seenAt || stamp } : p)));
   }
 
-  async function markSeenRemote(id?: string | null) {
-    if (!id || !adminToken) return;
+  async function markSeenRemote(id?: string | null, token?: string) {
+    if (!id || !token) return;
     try {
       await fetch("/api/ugc/seen", {
         method: "POST",
-        headers: { "content-type": "application/json", "x-admin-token": adminToken },
+        headers: { "content-type": "application/json", "x-admin-token": token },
         body: JSON.stringify({ id }),
       });
     } catch {}
@@ -309,11 +357,12 @@ export default function UgcAdminPage() {
     setSelectedId(id);
     markRead(id);
     applySeenLocal(id);
-    markSeenRemote(id);
+    markSeenRemote(id, (typeof window !== "undefined" ? (localStorage.getItem("pt_admin_token") || "") : ""));
   }
 
   async function refreshCounts() {
-    if (!adminToken) return;
+    const token = (typeof window !== "undefined" ? (localStorage.getItem("pt_admin_token") || "") : "");
+    if (!token) return;
     const [pending, approved, rejected, archived, trash] = await Promise.all([
       apiGet("pending"),
       apiGet("approved"),
@@ -334,7 +383,8 @@ export default function UgcAdminPage() {
   }
 
   async function loadQueue(nextQueue = queue) {
-    if (!adminToken) return;
+    const token = getAdminToken();
+    if (!token) return;
     setLoading(true);
     setErrorMsg("");
     try {
@@ -360,12 +410,13 @@ export default function UgcAdminPage() {
 
 
   async function moderate(status: UgcStatus, reason?: string) {
-    if (!adminToken || !selected) return;
+    const token = getAdminToken();
+    if (!token || !selected) return;
     setErrorMsg("");
 
     const res = await fetch("/api/ugc/moderate", {
       method: "POST",
-      headers: { "content-type": "application/json", "x-admin-token": adminToken },
+      headers: { "content-type": "application/json", "x-admin-token": token },
       body: JSON.stringify({ id: selected.id, status, reason: reason || null }),
     });
 
@@ -473,7 +524,7 @@ export default function UgcAdminPage() {
 
         <section className="pt-card" style={{ marginTop: 16 }}>
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-            <div style={{ fontSize: 13, fontWeight: 800, opacity: 0.8 }}>Admin token</div>
+            <div style={{ fontSize: 13, fontWeight: 800, opacity: 0.8 }}>Admin access</div>
             <input
               value={adminToken}
               onChange={(e) => setAdminToken(e.target.value.trim())}
@@ -529,7 +580,34 @@ export default function UgcAdminPage() {
               }}
             >
               <div style={{ display: "grid", gap: 10 }}>
-                {QUEUES.map((q) => {
+      <div style={{ border: '1px solid rgba(0,0,0,0.10)', borderRadius: 14, padding: 12, background: '#fff' }}>
+        <div style={{ fontWeight: 900, marginBottom: 8 }}>Global Pro Override</div>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+          <div style={{ fontSize: 13, opacity: 0.85 }}>
+            When ON, Pro gates are treated as unlocked (for troubleshooting).
+          </div>
+          <button
+            type="button"
+            onClick={() => saveForceProOn(!forceProOn)}
+            disabled={savingFlags}
+            style={{
+              border: '1px solid rgba(0,0,0,0.12)',
+              background: forceProOn ? 'black' : 'white',
+              color: forceProOn ? 'white' : 'black',
+              borderRadius: 999,
+              padding: '8px 12px',
+              fontWeight: 900,
+              cursor: savingFlags ? 'not-allowed' : 'pointer',
+              minWidth: 110,
+            }}
+          >
+            {savingFlags ? 'Saving...' : forceProOn ? 'Pro: ON' : 'Pro: OFF'}
+          </button>
+        </div>
+        {flagsMsg ? <div style={{ marginTop: 8, fontSize: 12, opacity: 0.8 }}>{flagsMsg}</div> : null}
+      </div>
+
+                      {QUEUES.map((q) => {
                   const active = queue === q.key;
                   const n = counts[q.key] || 0;
                   return (

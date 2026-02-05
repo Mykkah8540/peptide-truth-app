@@ -3,12 +3,8 @@ import { supabaseServer } from "@/lib/supabase/server";
 import { markSeen } from "@/lib/ugc/store";
 
 async function isAuthed(req: Request): Promise<boolean> {
-  // 1) Legacy header token support (keep for now)
-  const token = process.env.PEP_TALK_ADMIN_TOKEN || "";
-  const got = req.headers.get("x-admin-token") || "";
-  if (token && got === token) return true;
 
-  // 2) Supabase session → profiles.is_admin
+  // Supabase session → profiles.is_admin
   const supa = await supabaseServer();
   const { data: auth } = await supa.auth.getUser();
   const user = auth?.user;
@@ -17,7 +13,7 @@ async function isAuthed(req: Request): Promise<boolean> {
   const { data: prof } = await supa
     .from("profiles")
     .select("is_admin")
-    .eq("id", user.id)
+    .eq("user_id", user.id)
     .maybeSingle();
 
   return prof?.is_admin === true; // replaced below
