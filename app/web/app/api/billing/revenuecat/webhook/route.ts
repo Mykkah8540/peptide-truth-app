@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  return NextResponse.json({ ok: true, route: "revenuecat_webhook" });
+  return NextResponse.json({
+    ok: true,
+    route: "revenuecat_webhook",
+    commit: process.env.VERCEL_GIT_COMMIT_SHA || null,
+    deployment: process.env.VERCEL_DEPLOYMENT_ID || null,
+  });
 }
 
 import { createClient } from "@supabase/supabase-js";
