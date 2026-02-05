@@ -39,3 +39,7 @@ ui_stack_audit.txt
 
 # local ugc db (dev)
 data/ugc/
+
+# local-only supabase temp files
+/tmp_profiles.sql
+/tmp_trigger.sql
