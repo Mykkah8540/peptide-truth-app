@@ -172,7 +172,7 @@ export async function POST(req: Request) {
     const { error: profErr } = await supa
       .from("profiles")
       .update({ is_pro: proActive })
-      .eq(profileMatchCol, userId);
+      .eq("id", userId);
 
     if (profErr) return NextResponse.json({ ok: false, error: "profile_update_failed" }, { status: 500 });
 
