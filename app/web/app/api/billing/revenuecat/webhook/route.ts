@@ -137,10 +137,17 @@ export async function POST(req: Request) {
 
     // Reliability: RevenueCat TEST events (and misconfigured app_user_id) may not map to a real Supabase user.
     // We still store the webhook event above (idempotent), but we only mutate entitlements/profiles if the user exists.
-    const { data: profExists } = await supa.from("profiles").select("user_id").eq("user_id", userId).maybeSingle();
-    if (!profExists?.user_id) {
+    const { data: profExists } = await supa
+      .from("profiles")
+      .select("id,user_id")
+      .or(`user_id.eq.${userId},id.eq.${userId}`)
+      .maybeSingle();
+    const hasProfile = !!(profExists?.user_id || profExists?.id);
+    if (!hasProfile) {
       return NextResponse.json({ ok: true, ignored: "unknown_user", app_user_id: appUserId });
     }
+
+    const profileMatchCol = profExists?.user_id === userId ? "user_id" : "id";
 
     // Upsert entitlement snapshot
     const { error: upErr } = await supa.from("billing_entitlements").upsert(
@@ -162,7 +169,7 @@ export async function POST(req: Request) {
     const { error: profErr } = await supa
       .from("profiles")
       .update({ is_pro: proActive })
-      .eq("user_id", userId);
+      .eq(profileMatchCol, userId);
 
     if (profErr) return NextResponse.json({ ok: false, error: "profile_update_failed" }, { status: 500 });
 

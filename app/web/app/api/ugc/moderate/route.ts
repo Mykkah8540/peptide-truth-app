@@ -13,7 +13,7 @@ async function isAuthed(req: Request): Promise<boolean> {
   const { data: prof } = await supa
     .from("profiles")
     .select("is_admin")
-    .eq("user_id", user.id)
+    .eq("id", user.id)
     .maybeSingle();
 
   return prof?.is_admin === true; // replaced below
