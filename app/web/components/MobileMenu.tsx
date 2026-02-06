@@ -158,7 +158,7 @@ export default function MobileMenu(props: {
           {publicItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={(item.pro && showProBadges) ? "/upgrade" : item.href}
               onClick={onClose}
               style={{
                 fontSize: 16,
@@ -241,7 +241,7 @@ export default function MobileMenu(props: {
                 {proItems.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={(item.pro && showProBadges) ? "/upgrade" : item.href}
                     onClick={onClose}
                     style={{
                       fontSize: 16,

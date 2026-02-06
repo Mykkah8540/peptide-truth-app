@@ -187,7 +187,7 @@ function goBack() {
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
 
                   <Link
-                    href={item.href}
+                    href={(item.pro && showProBadges) ? "/upgrade" : item.href}
                     style={{
                       textDecoration: "none",
                       color: "inherit",
