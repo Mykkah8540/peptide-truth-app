@@ -70,6 +70,22 @@ export default function AccountChip() {
     return () => document.removeEventListener("mousedown", onDocClick);
   }, [open]);
 
+  useEffect(() => {
+    // Track lightweight "recent activity" (paths) for the Account page.
+    // Client-only; stores route paths only.
+    if (!pathname) return;
+    try {
+      const key = "pt_recent_paths";
+      const raw = localStorage.getItem(key);
+      const arr = raw ? JSON.parse(raw) : [];
+      const now = Date.now();
+      const next = [{ path: pathname, at: now }, ...arr.filter((x: any) => x && x.path && x.path !== pathname)];
+      localStorage.setItem(key, JSON.stringify(next.slice(0, 12)));
+    } catch {
+      // ignore
+    }
+  }, [pathname]);
+
   const nextUrl = useMemo(() => {
     if (!pathname || pathname.startsWith("/login")) return "/";
     return pathname;
