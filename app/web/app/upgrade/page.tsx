@@ -1,5 +1,6 @@
 import BackHomeLink from "@/components/BackHomeLink";
 import UpgradeClient from "./upgradeClient";
+import { Suspense } from "react";
 
 export default function UpgradePage() {
   return (
@@ -22,7 +23,9 @@ export default function UpgradePage() {
           No protocols. No dosing. Education first.
         </p>
 
-        <UpgradeClient />
+        <Suspense fallback={<div className="pt-card-subtext" style={{ marginTop: 12 }}>Loading…</div>}>
+          <UpgradeClient />
+        </Suspense>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 16 }}>
           <a
