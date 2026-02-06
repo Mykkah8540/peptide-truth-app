@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { supabaseBrowser } from "@/lib/supabase/browser";
 
 type Item = {
   label: string;
@@ -56,6 +59,53 @@ export default function MobileMenu(props: {
   showProBadges?: boolean;
 }) {
   const { open, onClose, items, showProBadges = true } = props;
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const supa = supabaseBrowser();
+    let alive = true;
+
+    async function hydrate() {
+      try {
+        const { data } = await supa.auth.getUser();
+        if (!alive) return;
+        setEmail(data.user?.email ?? null);
+      } finally {
+        if (!alive) return;
+        setLoading(false);
+      }
+    }
+
+    hydrate();
+
+    const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
+      if (!alive) return;
+      setEmail(session?.user?.email ?? null);
+      // Ensure any server-derived UI updates immediately (App Router).
+      router.refresh();
+    });
+
+    return () => {
+      alive = false;
+      sub.subscription.unsubscribe();
+    };
+  }, [router]);
+
+  async function handleLogout() {
+    try {
+      const supa = supabaseBrowser();
+      await supa.auth.signOut();
+    } catch {
+      // ignore
+    } finally {
+      onClose();
+      router.replace("/");
+      router.refresh();
+    }
+  }
 
   if (!open) {
     return null;
@@ -123,32 +173,56 @@ export default function MobileMenu(props: {
             <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
             <SectionLabel>ACCOUNT</SectionLabel>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-              <Link
-                href="/login"
-                onClick={onClose}
-                style={{
-                  fontSize: 16,
-                  fontWeight: 900,
-                  textDecoration: "none",
-                  color: "#000",
-                }}
-              >
-                Sign in
-              </Link>
-              <Link
-                href="/account"
-                onClick={onClose}
-                style={{
-                  fontSize: 16,
-                  fontWeight: 900,
-                  textDecoration: "none",
-                  color: "#000",
-                }}
-              >
-                Account
-              </Link>
-            </div>
+            {loading ? (
+              <div style={{ color: "#666", fontWeight: 800 }}>Loading…</div>
+            ) : !email ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <Link
+                  href="/login"
+                  onClick={onClose}
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 900,
+                    textDecoration: "none",
+                    color: "#000",
+                  }}
+                >
+                  Sign in
+                </Link>
+              </div>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <Link
+                  href="/account"
+                  onClick={onClose}
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 900,
+                    textDecoration: "none",
+                    color: "#000",
+                  }}
+                >
+                  Account
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  style={{
+                    textAlign: "left",
+                    border: "none",
+                    background: "transparent",
+                    padding: 0,
+                    fontSize: 16,
+                    fontWeight: 900,
+                    color: "#000",
+                    cursor: "pointer",
+                  }}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
 
           {proItems.length ? (
