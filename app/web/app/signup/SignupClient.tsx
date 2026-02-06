@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabaseBrowser } from "@/lib/supabase/browser";
 
-export default function LoginClient() {
+export default function SignupClient() {
   const router = useRouter();
   const sp = useSearchParams();
 
@@ -12,7 +12,7 @@ export default function LoginClient() {
     const n = (sp.get("next") || "").trim();
     if (!n) return "/";
     if (!n.startsWith("/")) return "/";
-    if (n.startsWith("/login")) return "/";
+    if (n.startsWith("/login") || n.startsWith("/signup")) return "/";
     return n;
   }, [sp]);
 
@@ -34,13 +34,21 @@ export default function LoginClient() {
     setBusy(true);
     try {
       const supa = supabaseBrowser();
-      const { error } = await supa.auth.signInWithPassword({ email: em, password });
+      const { data, error } = await supa.auth.signUp({ email: em, password });
       if (error) {
-        setMsg(error.message || "Sign-in failed.");
+        setMsg(error.message || "Sign-up failed.");
         return;
       }
-      router.replace(nextPath);
-      router.refresh();
+
+      // Supabase may require email confirmation depending on project settings.
+      // If a session exists, proceed. Otherwise instruct the user to confirm email.
+      if (data.session) {
+        router.replace(nextPath);
+        router.refresh();
+        return;
+      }
+
+      setMsg("Check your email to confirm your account, then come back and sign in.");
     } finally {
       setBusy(false);
     }
@@ -49,9 +57,9 @@ export default function LoginClient() {
   return (
     <main style={{ maxWidth: 920, margin: "0 auto", padding: "24px 16px" }}>
       <div style={{ maxWidth: 520 }}>
-        <h1 style={{ fontSize: 28, fontWeight: 950, margin: 0 }}>Sign in</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 950, margin: 0 }}>Create account</h1>
         <div style={{ color: "#666", marginTop: 8, lineHeight: 1.35 }}>
-          Use your email + password. You’ll be redirected back after signing in.
+          Create an account with email + password. You’ll be redirected back after sign up.
         </div>
 
         <form onSubmit={onSubmit} style={{ marginTop: 18 }}>
@@ -80,7 +88,7 @@ export default function LoginClient() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
-                autoComplete="current-password"
+                autoComplete="new-password"
                 placeholder="••••••••"
                 style={{
                   width: "100%",
@@ -92,7 +100,7 @@ export default function LoginClient() {
               />
             </label>
 
-            {msg ? <div style={{ color: "#b00020", fontWeight: 800 }}>{msg}</div> : null}
+            {msg ? <div style={{ color: msg.includes("Check your email") ? "#333" : "#b00020", fontWeight: 800 }}>{msg}</div> : null}
 
             <button
               type="submit"
@@ -107,12 +115,12 @@ export default function LoginClient() {
                 cursor: busy ? "not-allowed" : "pointer",
               }}
             >
-              {busy ? "Signing in..." : "Sign in"}
+              {busy ? "Creating..." : "Create account"}
             </button>
 
             <button
               type="button"
-              onClick={() => router.push(`/signup?next=${encodeURIComponent(nextPath)}`)}
+              onClick={() => router.push(`/login?next=${encodeURIComponent(nextPath)}`)}
               style={{
                 height: 44,
                 borderRadius: 12,
@@ -122,22 +130,7 @@ export default function LoginClient() {
                 cursor: "pointer",
               }}
             >
-              Create account
-            </button>
-
-            <button
-              type="button"
-              onClick={() => router.replace(nextPath)}
-              style={{
-                height: 44,
-                borderRadius: 12,
-                border: "1px solid rgba(0,0,0,0.15)",
-                background: "white",
-                fontWeight: 900,
-                cursor: "pointer",
-              }}
-            >
-              Back
+              Back to sign in
             </button>
           </div>
         </form>
