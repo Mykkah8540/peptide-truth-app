@@ -44,14 +44,17 @@ export default function AccountChip() {
 
     const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
       if (!alive) return;
+      setOpen(false);
       setEmail(session?.user?.email ?? null);
+      // Force App Router revalidation so nav + any server-derived UI updates immediately.
+      router.refresh();
     });
 
     return () => {
       alive = false;
       sub.subscription.unsubscribe();
     };
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
