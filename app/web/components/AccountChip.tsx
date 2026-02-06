@@ -26,23 +26,30 @@ export default function AccountChip() {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const supa = supabaseBrowser();
     let alive = true;
-    (async () => {
+
+    async function hydrate() {
       try {
-        const supa = supabaseBrowser();
         const { data } = await supa.auth.getUser();
         if (!alive) return;
         setEmail(data.user?.email ?? null);
-      } catch {
-        if (!alive) return;
-        setEmail(null);
       } finally {
         if (!alive) return;
         setLoading(false);
       }
-    })();
+    }
+
+    hydrate();
+
+    const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
+      if (!alive) return;
+      setEmail(session?.user?.email ?? null);
+    });
+
     return () => {
       alive = false;
+      sub.subscription.unsubscribe();
     };
   }, []);
 
