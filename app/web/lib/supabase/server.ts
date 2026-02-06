@@ -2,12 +2,18 @@ import "server-only";
 import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/ssr";
 
+type CookieStore = {
+  get: (name: string) => { value?: string } | undefined;
+  set: (opts: any) => void;
+};
+
 export async function supabaseServer() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
   if (!url || !anon) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY");
 
-  const cookieStore = await cookies();
+  // In this Next.js version, cookies() is typed as returning a Promise.
+  const cookieStore = (await cookies()) as unknown as CookieStore;
 
   return createServerClient(url, anon, {
     cookies: {
