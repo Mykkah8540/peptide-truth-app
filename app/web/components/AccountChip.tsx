@@ -47,7 +47,9 @@ export default function AccountChip() {
       setOpen(false);
       setEmail(session?.user?.email ?? null);
       // Force App Router revalidation so nav + any server-derived UI updates immediately.
-      router.refresh();
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     });
 
     return () => {
@@ -83,7 +85,9 @@ export default function AccountChip() {
     } finally {
       // hard refresh server components / viewer checks
       router.replace("/");
-      router.refresh();
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     }
   }
 

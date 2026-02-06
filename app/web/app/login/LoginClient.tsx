@@ -40,7 +40,9 @@ export default function LoginClient() {
         return;
       }
       router.replace(nextPath);
-      router.refresh();
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     } finally {
       setBusy(false);
     }
