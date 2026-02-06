@@ -24,17 +24,20 @@ type EntitlementRow = {
   updated_at: string | null;
 };
 
+type ActivityRow = {
+  path: string;
+  at: string;
+};
+
 type AccountResponse = {
   ok: boolean;
   isAuthed: boolean;
-  user: { id: string; email: string | null; created_at: string | null } | null;
+  user: { id: string; email: string | null; created_at?: string | null } | null;
   profile: ViewerProfile | null;
-  plan: { isPro: boolean; isAdmin: boolean; forceProOn: boolean };
+  plan?: { isPro: boolean; isAdmin: boolean; forceProOn: boolean } | null;
   entitlement: EntitlementRow | null;
-  events: any[] | null;
+  activity?: ActivityRow[] | null;
 };
-
-type RecentItem = { path: string; at: number };
 
 function initialsFallback(email: string | null): string {
   const e = (email || "").trim();
@@ -47,32 +50,157 @@ function initialsFallback(email: string | null): string {
   return "ME";
 }
 
-function fmt(dt: string | null): string | null {
-  if (!dt) return null;
-  const d = new Date(dt);
-  if (!Number.isFinite(d.getTime())) return dt;
+function fmtDateTime(x: string | null | undefined): string | null {
+  if (!x) return null;
+  const d = new Date(x);
+  if (!Number.isFinite(d.getTime())) return null;
   return d.toLocaleString();
 }
 
-function readRecent(): RecentItem[] {
-  try {
-    const raw = localStorage.getItem("pt_recent_activity_v1");
-    const list = raw ? (JSON.parse(raw) as any[]) : [];
-    return (Array.isArray(list) ? list : [])
-      .map((x) => ({ path: String(x?.path || ""), at: Number(x?.at || 0) }))
-      .filter((x) => x.path.startsWith("/") && Number.isFinite(x.at) && x.at > 0)
-      .slice(0, 8);
-  } catch {
-    return [];
-  }
-}
+const S = {
+  wrap: { marginTop: 12 } as React.CSSProperties,
+
+  // Layout
+  grid2: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: 12,
+    marginTop: 12,
+  } as React.CSSProperties,
+
+  card: {
+    border: "1px solid rgba(0,0,0,0.10)",
+    borderRadius: 16,
+    background: "#fff",
+    padding: 16,
+  } as React.CSSProperties,
+
+  headerRow: {
+    display: "flex",
+    alignItems: "center",
+    gap: 12,
+    flexWrap: "wrap",
+  } as React.CSSProperties,
+
+  ident: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 2,
+    minWidth: 240,
+  } as React.CSSProperties,
+
+  name: { fontWeight: 950, fontSize: 16 } as React.CSSProperties,
+  sub: { opacity: 0.72, fontWeight: 800 } as React.CSSProperties,
+
+  avatar: {
+    width: 44,
+    height: 44,
+    borderRadius: 999,
+    border: "1px solid rgba(0,0,0,0.15)",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 950,
+    letterSpacing: 0.4,
+    background: "#fff",
+    flex: "0 0 auto",
+  } as React.CSSProperties,
+
+  badgeRow: {
+    marginLeft: "auto",
+    display: "flex",
+    gap: 8,
+    alignItems: "center",
+    flexWrap: "wrap",
+  } as React.CSSProperties,
+
+  pill: {
+    display: "inline-flex",
+    alignItems: "center",
+    border: "1px solid rgba(0,0,0,0.18)",
+    borderRadius: 999,
+    padding: "6px 10px",
+    fontSize: 12,
+    fontWeight: 950,
+    background: "#fff",
+    whiteSpace: "nowrap",
+  } as React.CSSProperties,
+
+  pillSoft: {
+    display: "inline-flex",
+    alignItems: "center",
+    border: "1px solid rgba(0,0,0,0.12)",
+    borderRadius: 999,
+    padding: "6px 10px",
+    fontSize: 12,
+    fontWeight: 900,
+    opacity: 0.78,
+    whiteSpace: "nowrap",
+    background: "transparent",
+  } as React.CSSProperties,
+
+  sectionLabel: {
+    fontWeight: 950,
+    fontSize: 12,
+    letterSpacing: 0.8,
+    opacity: 0.65,
+    marginBottom: 6,
+  } as React.CSSProperties,
+
+  sectionTitle: { fontWeight: 950, fontSize: 18, margin: 0 } as React.CSSProperties,
+  sectionText: { marginTop: 6, opacity: 0.78, fontWeight: 800 } as React.CSSProperties,
+
+  // Activity
+  activityList: { display: "flex", flexDirection: "column", gap: 10, marginTop: 10 } as React.CSSProperties,
+  activityRow: {
+    display: "flex",
+    alignItems: "baseline",
+    justifyContent: "space-between",
+    gap: 12,
+  } as React.CSSProperties,
+  activityPath: { fontWeight: 950 } as React.CSSProperties,
+  activityAt: { opacity: 0.7, fontWeight: 800, fontSize: 13, whiteSpace: "nowrap" } as React.CSSProperties,
+
+  // Actions
+  actions: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: 10,
+    marginTop: 14,
+  } as React.CSSProperties,
+
+  btnBase: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    padding: "10px 14px",
+    borderRadius: 14,
+    fontWeight: 950,
+    textDecoration: "none",
+    cursor: "pointer",
+    userSelect: "none",
+    border: "1px solid rgba(0,0,0,0.12)",
+    background: "#fff",
+    color: "inherit",
+  } as React.CSSProperties,
+
+  btnPrimary: {
+    border: "1px solid rgba(0,0,0,0.90)",
+  } as React.CSSProperties,
+
+  btnDanger: {
+    border: "1px solid rgba(0,0,0,0.12)",
+    background: "rgba(0,0,0,0.03)",
+  } as React.CSSProperties,
+
+  note: { marginTop: 12, opacity: 0.7, fontWeight: 800 } as React.CSSProperties,
+};
 
 export default function AccountClient() {
   const [data, setData] = useState<AccountResponse | null>(null);
   const [status, setStatus] = useState<string>("Loading…");
   const [error, setError] = useState<string | null>(null);
-  const [deleting, setDeleting] = useState<boolean>(false);
-  const [deleteMsg, setDeleteMsg] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -101,72 +229,26 @@ export default function AccountClient() {
   const upgradeHref = useMemo(() => `/upgrade?next=${encodeURIComponent(nextPath)}`, []);
   const loginHref = useMemo(() => `/login?next=${encodeURIComponent(nextPath)}`, []);
 
-  const recent = useMemo(() => {
-    if (typeof window === "undefined") return [];
-    return readRecent();
-  }, [data?.ok]);
-
-  async function requestDeletion() {
-    if (deleting) return;
-    setDeleteMsg(null);
-    setDeleting(true);
-    try {
-      const res = await fetch("/api/account/delete-request", { method: "POST" });
-      const j = await res.json();
-      if (!res.ok || !j?.ok) {
-        setDeleteMsg("Could not submit request. (If this is new, the Supabase table may not exist yet.)");
-        return;
-      }
-      setDeleteMsg("Request received. Support will follow up.");
-    } catch {
-      setDeleteMsg("Could not submit request.");
-    } finally {
-      setDeleting(false);
-    }
-  }
-
   if (error) return <p className="pt-card-subtext">Error: {error}</p>;
   if (!data) return <p className="pt-card-subtext">{status}</p>;
 
   if (!data.isAuthed) {
     return (
-      <>
+      <div style={S.wrap}>
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
           Sign in to view your account details and manage your subscription.
         </p>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 14 }}>
-          <Link
-            href={loginHref}
-            style={{
-              border: "1px solid #000",
-              padding: "10px 12px",
-              borderRadius: 12,
-              fontWeight: 900,
-              textDecoration: "none",
-              background: "#fff",
-              color: "inherit",
-            }}
-          >
+        <div style={S.actions}>
+          <Link href={loginHref} style={{ ...S.btnBase, ...S.btnPrimary }}>
             Sign in
           </Link>
 
-          <Link
-            href="/signup"
-            style={{
-              border: "1px solid #e5e5e5",
-              padding: "10px 12px",
-              borderRadius: 12,
-              fontWeight: 900,
-              textDecoration: "none",
-              background: "#fff",
-              color: "inherit",
-            }}
-          >
+          <Link href="/signup" style={S.btnBase}>
             Create account
           </Link>
         </div>
-      </>
+      </div>
     );
   }
 
@@ -174,197 +256,128 @@ export default function AccountClient() {
   const displayName = data.profile?.display_name ?? null;
   const initials = (data.profile?.initials ?? initialsFallback(email)).slice(0, 2).toUpperCase();
 
-  const planLabel = data.plan.isPro ? "Pep-Talk Pro" : "Free";
-  const badgeLabel = data.plan.isPro ? "PRO" : "FREE";
+  const plan = data.plan ?? { isPro: false, isAdmin: false, forceProOn: false };
+  const planLabel = plan.isPro ? "Pep-Talk Pro" : "Free";
+  const badgeLabel = plan.isPro ? "PRO" : "FREE";
 
+  const memberSince = fmtDateTime((data.user as any)?.created_at ?? null);
   const exp = data.entitlement?.pro_expires_at ?? null;
-  const expLabel = fmt(exp);
+  const expLabel = fmtDateTime(exp);
 
-  const entitlementActive = data.plan.forceProOn ? true : !!(data.entitlement?.pro_active ?? data.plan.isPro);
+  const entitlementActive = plan.forceProOn ? true : !!(data.entitlement?.pro_active ?? plan.isPro);
 
-  const memberSince = fmt(data.user?.created_at ?? null);
+  const activity = Array.isArray(data.activity) ? data.activity : [];
 
   return (
-    <div style={{ marginTop: 12 }}>
-      <div
-        style={{
-          marginTop: 6,
-          border: "1px solid rgba(0,0,0,0.10)",
-          borderRadius: 14,
-          padding: 14,
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-          <div
-            aria-label="Avatar"
-            title={email || "Account"}
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: 999,
-              border: "1px solid rgba(0,0,0,0.15)",
-              background: "#fff",
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontWeight: 950,
-              letterSpacing: 0.4,
-            }}
-          >
+    <div style={S.wrap}>
+      {/* HERO */}
+      <div style={S.card}>
+        <div style={S.headerRow}>
+          <div style={S.avatar} aria-label="Avatar" title={email || "Account"}>
             {initials}
           </div>
 
-          <div style={{ minWidth: 220 }}>
-            <div style={{ fontWeight: 950, fontSize: 16 }}>{displayName || email || "Account"}</div>
-            <div style={{ opacity: 0.7, fontWeight: 800, marginTop: 2 }}>{email || "—"}</div>
-            {memberSince ? (
-              <div style={{ opacity: 0.7, fontWeight: 800, marginTop: 2, fontSize: 12 }}>Member since: {memberSince}</div>
-            ) : null}
+          <div style={S.ident}>
+            <div style={S.name}>{displayName || email || "Account"}</div>
+            <div style={S.sub}>{email || "—"}</div>
+            {memberSince ? <div style={{ ...S.sub, opacity: 0.6 }}>Member since: {memberSince}</div> : null}
           </div>
 
-          <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                border: "1px solid rgba(0,0,0,0.18)",
-                borderRadius: 999,
-                padding: "6px 10px",
-                fontSize: 12,
-                fontWeight: 950,
-                background: "#fff",
-              }}
-              title={planLabel}
-            >
+          <div style={S.badgeRow}>
+            <span style={S.pill} title={planLabel}>
               {badgeLabel}
             </span>
-
-            {data.plan.forceProOn ? (
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  borderRadius: 999,
-                  padding: "6px 10px",
-                  fontSize: 12,
-                  fontWeight: 900,
-                  opacity: 0.75,
-                }}
-                title="Admin flag: force_pro_on"
-              >
+            {plan.forceProOn ? (
+              <span style={S.pillSoft} title="Admin flag: force_pro_on">
                 Dev unlock
               </span>
             ) : null}
-
-            {data.plan.isAdmin ? (
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  borderRadius: 999,
-                  padding: "6px 10px",
-                  fontSize: 12,
-                  fontWeight: 900,
-                  opacity: 0.75,
-                }}
-                title="Admin"
-              >
+            {plan.isAdmin ? (
+              <span style={S.pillSoft} title="Admin">
                 Admin
               </span>
             ) : null}
           </div>
         </div>
-
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 12 }}>
-          <div style={{ minWidth: 260 }}>
-            <div style={{ fontWeight: 950, fontSize: 12, letterSpacing: 0.6, opacity: 0.7 }}>SUBSCRIPTION</div>
-            <div style={{ fontWeight: 900, marginTop: 2 }}>{planLabel}</div>
-            <div className="pt-card-subtext" style={{ marginTop: 6 }}>
-              Status: {entitlementActive ? "Active" : "Inactive"}
-              {expLabel ? ` • Renews/Expires: ${expLabel}` : ""}
-            </div>
-          </div>
-
-          <div style={{ minWidth: 260 }}>
-            <div style={{ fontWeight: 950, fontSize: 12, letterSpacing: 0.6, opacity: 0.7 }}>BILLING</div>
-            <div className="pt-card-subtext" style={{ marginTop: 6 }}>
-              Purchases are handled via RevenueCat. Use “Manage subscription” to proceed.
-            </div>
-          </div>
-
-          <div style={{ minWidth: 260 }}>
-            <div style={{ fontWeight: 950, fontSize: 12, letterSpacing: 0.6, opacity: 0.7 }}>RECENT ACTIVITY</div>
-            {recent.length ? (
-              <ul style={{ marginTop: 8, paddingLeft: 18 }}>
-                {recent.slice(0, 6).map((x) => (
-                  <li key={x.path + String(x.at)} style={{ marginBottom: 4 }}>
-                    <span style={{ fontWeight: 900 }}>{x.path}</span>{" "}
-                    <span className="pt-card-subtext" style={{ marginLeft: 6 }}>
-                      {new Date(x.at).toLocaleString()}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <div className="pt-card-subtext" style={{ marginTop: 6 }}>
-                No recent activity yet.
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 14 }}>
-          <Link
-            href={upgradeHref}
-            style={{
-              border: "1px solid #000",
-              padding: "10px 12px",
-              borderRadius: 12,
-              fontWeight: 900,
-              textDecoration: "none",
-              background: "#fff",
-              color: "inherit",
-            }}
-          >
-            {data.plan.isPro ? "Manage subscription" : "Upgrade to Pro"}
-          </Link>
-
-          <Link
-            href="/logout"
-            style={{
-              border: "1px solid #e5e5e5",
-              padding: "10px 12px",
-              borderRadius: 12,
-              fontWeight: 900,
-              textDecoration: "none",
-              background: "#fff",
-              color: "inherit",
-            }}
-          >
-            Log out
-          </Link>
-
-          <button
-            type="button"
-            onClick={requestDeletion}
-            disabled={deleting}
-            style={{
-              border: "1px solid rgba(0,0,0,0.18)",
-              padding: "10px 12px",
-              borderRadius: 12,
-              fontWeight: 900,
-              background: deleting ? "#eee" : "#fff",
-              cursor: deleting ? "wait" : "pointer",
-            }}
-          >
-            {deleting ? "Submitting…" : "Request account deletion"}
-          </button>
-        </div>
-
-        {deleteMsg ? <div className="pt-card-subtext" style={{ marginTop: 10 }}>{deleteMsg}</div> : null}
       </div>
+
+      {/* INFO GRID */}
+      <div
+        style={S.grid2}
+      >
+        <div style={S.card}>
+          <div style={S.sectionLabel}>SUBSCRIPTION</div>
+          <h2 style={S.sectionTitle}>{planLabel}</h2>
+          <div style={S.sectionText}>
+            Status: {entitlementActive ? "Active" : "Inactive"}
+            {expLabel ? ` • Renews/Expires: ${expLabel}` : ""}
+          </div>
+          <div className="pt-card-subtext" style={{ marginTop: 8 }}>
+            Educational peptide information is always free. Pro unlocks discovery, organization, and synthesis tools.
+          </div>
+        </div>
+
+        <div style={S.card}>
+          <div style={S.sectionLabel}>BILLING</div>
+          <h2 style={S.sectionTitle}>RevenueCat</h2>
+          <div style={S.sectionText}>Purchases are handled via RevenueCat. Use “Manage subscription” to proceed.</div>
+          <div className="pt-card-subtext" style={{ marginTop: 8 }}>
+            If your plan doesn’t update immediately after purchase, refresh the page.
+          </div>
+        </div>
+      </div>
+
+      {/* RECENT ACTIVITY */}
+      <div style={{ ...S.card, marginTop: 12 }}>
+        <div style={S.sectionLabel}>RECENT ACTIVITY</div>
+
+        {activity.length ? (
+          <div style={S.activityList}>
+            {activity.slice(0, 8).map((a, i) => (
+              <div key={a.path + a.at + i} style={S.activityRow}>
+                <div style={S.activityPath}>{a.path}</div>
+                <div style={S.activityAt}>{fmtDateTime(a.at) || a.at}</div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="pt-card-subtext" style={{ marginTop: 6 }}>
+            No recent activity yet.
+          </div>
+        )}
+      </div>
+
+      {/* ACTIONS */}
+      <div style={S.actions}>
+        <Link href={upgradeHref} style={{ ...S.btnBase, ...S.btnPrimary }}>
+          {plan.isPro ? "Manage subscription" : "Upgrade to Pro"}
+        </Link>
+
+        <Link href="/logout" style={S.btnBase}>
+          Log out
+        </Link>
+
+        <Link href="/account/delete" style={{ ...S.btnBase, ...S.btnDanger }}>
+          Request account deletion
+        </Link>
+      </div>
+
+      <div style={S.note}>
+        Need help? Contact support if you believe your subscription state is incorrect.
+      </div>
+
+      <style jsx>{`
+        @media (min-width: 860px) {
+          .pt-page :global(.pt-card) {
+            max-width: 920px;
+          }
+        }
+        @media (min-width: 780px) {
+          div[style*="grid-template-columns: 1fr"] {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
