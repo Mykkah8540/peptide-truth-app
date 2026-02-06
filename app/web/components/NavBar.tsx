@@ -65,96 +65,6 @@ function PersonIcon(props: { size?: number }) {
   );
 }
 
-function AccountMenu(props: { isAuthed: boolean }) {
-  const [open, setOpen] = useState(false);
-    const isAuthed = props.isAuthed;
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    function onDocClick(e: MouseEvent) {
-      if (!open) return;
-      const el = ref.current;
-      if (!el) return;
-      if (e.target instanceof Node && el.contains(e.target)) return;
-      setOpen(false);
-    }
-    document.addEventListener("mousedown", onDocClick);
-    return () => document.removeEventListener("mousedown", onDocClick);
-  }, [open]);
-
-  return (
-    <div ref={ref} style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
-      <button
-        type="button"
-        aria-label="Account menu"
-        onClick={() => setOpen((v) => !v)}
-        style={{
-          border: "1px solid rgba(0,0,0,0.10)",
-          background: "rgba(0,0,0,0.02)",
-          borderRadius: 999,
-          padding: "8px 10px",
-          cursor: "pointer",
-          lineHeight: 1,
-          display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 8,
-          fontWeight: 800,
-        }}
-      >
-        <PersonIcon />
-      </button>
-
-      {open ? (
-        <div
-          role="menu"
-          aria-label="Account links"
-          style={{
-            position: "absolute",
-            right: 0,
-            top: "calc(100% + 10px)",
-            minWidth: 180,
-            background: "#fff",
-            border: "1px solid rgba(0,0,0,0.10)",
-            borderRadius: 14,
-            boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
-            padding: 10,
-            zIndex: 200,
-          }}
-        >
-          <Link
-            href="/login"
-            onClick={() => setOpen(false)}
-            style={{
-              display: "block",
-              padding: "10px 10px",
-              borderRadius: 10,
-              textDecoration: "none",
-              color: "inherit",
-              fontWeight: 800,
-            }}
-          >
-            Sign in
-          </Link>
-          <Link
-            href="/account"
-            onClick={() => setOpen(false)}
-            style={{
-              display: "block",
-              padding: "10px 10px",
-              borderRadius: 10,
-              textDecoration: "none",
-              color: "inherit",
-              fontWeight: 800,
-            }}
-          >
-            Account
-          </Link>
-        </div>
-      ) : null}
-    </div>
-  );
-}
 
 export default function NavBar(props: {
   peptides: EntityListItem[];
@@ -265,7 +175,7 @@ export default function NavBar(props: {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             {/* Desktop nav (shown via CSS media query) */}
             <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              {NAV_ITEMS.slice(1).map((item, idx) => (
+              {NAV_ITEMS.slice(1).map((item) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
 
                   <Link
