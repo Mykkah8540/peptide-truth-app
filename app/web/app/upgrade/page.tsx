@@ -1,4 +1,5 @@
 import BackHomeLink from "@/components/BackHomeLink";
+import UpgradeClient from "./upgradeClient";
 
 export default function UpgradePage() {
   return (
@@ -10,18 +11,18 @@ export default function UpgradePage() {
           Pro feature
         </h1>
 
-        <p className="pt-card-subtext">
-          This area is part of Pep-Talk Pro.
-        </p>
+        <p className="pt-card-subtext">This area is part of Pep-Talk Pro.</p>
 
         <p className="pt-card-subtext" style={{ marginTop: 12 }}>
-          Educational peptide information is always free. Pro unlocks discovery, organization, and synthesis tools — like blends,
-          stacks, categories, and saved items — designed for deeper research and comparison.
+          Educational peptide information is always free. Pro unlocks discovery, organization, and synthesis tools — like blends, stacks,
+          categories, and saved items — designed for deeper research and comparison.
         </p>
 
         <p className="pt-card-subtext" style={{ marginTop: 12 }}>
           No protocols. No dosing. Education first.
         </p>
+
+        <UpgradeClient />
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginTop: 16 }}>
           <a
