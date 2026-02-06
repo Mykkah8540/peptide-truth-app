@@ -11,7 +11,7 @@ export type ViewerProfile = {
 };
 
 export type Viewer = {
-  user: { id: string; email: string | null } | null;
+  user: { id: string; email: string | null; created_at: string | null } | null;
   profile: ViewerProfile | null;
   forceProOn: boolean;
 };
@@ -25,7 +25,7 @@ export async function getViewer(): Promise<Viewer> {
     return { user: null, profile: null, forceProOn: false };
   }
 
-  // profiles table in your project uses `id` (uuid) as the PK (not user_id)
+  // profiles table uses `id` (uuid) as PK (not user_id)
   const { data: prof } = await supa
     .from("profiles")
     .select("id,email,display_name,initials,avatar_url,is_admin,is_pro")
@@ -39,7 +39,7 @@ export async function getViewer(): Promise<Viewer> {
     .maybeSingle();
 
   return {
-    user: { id: user.id, email: user.email ?? null },
+    user: { id: user.id, email: user.email ?? null, created_at: (user as any)?.created_at ?? null },
     profile: (prof as any) ?? null,
     forceProOn: Boolean((flag as any)?.value),
   };

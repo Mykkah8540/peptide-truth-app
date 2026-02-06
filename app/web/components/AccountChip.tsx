@@ -16,6 +16,29 @@ function initialsFromEmail(email?: string | null): string {
   return "ME";
 }
 
+type RecentItem = { path: string; at: number };
+
+function recordRecent(pathname: string | null) {
+  try {
+    if (!pathname) return;
+    if (!pathname.startsWith("/")) return;
+
+    const key = "pt_recent_activity_v1";
+    const raw = localStorage.getItem(key);
+    const prev: RecentItem[] = raw ? (JSON.parse(raw) as any[]) : [];
+
+    const now = Date.now();
+    const next: RecentItem[] = [
+      { path: pathname, at: now },
+      ...prev.filter((x) => x && x.path !== pathname),
+    ].slice(0, 12);
+
+    localStorage.setItem(key, JSON.stringify(next));
+  } catch {
+    // ignore
+  }
+}
+
 export default function AccountChip() {
   const router = useRouter();
   const pathname = usePathname();
@@ -24,6 +47,11 @@ export default function AccountChip() {
   const [email, setEmail] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+
+  // Track recent page visits (client-only)
+  useEffect(() => {
+    recordRecent(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     const supa = supabaseBrowser();
@@ -46,7 +74,6 @@ export default function AccountChip() {
       if (!alive) return;
       setOpen(false);
       setEmail(session?.user?.email ?? null);
-      // Force App Router revalidation so nav + any server-derived UI updates immediately.
       setTimeout(() => {
         router.refresh();
       }, 0);
@@ -70,22 +97,6 @@ export default function AccountChip() {
     return () => document.removeEventListener("mousedown", onDocClick);
   }, [open]);
 
-  useEffect(() => {
-    // Track lightweight "recent activity" (paths) for the Account page.
-    // Client-only; stores route paths only.
-    if (!pathname) return;
-    try {
-      const key = "pt_recent_paths";
-      const raw = localStorage.getItem(key);
-      const arr = raw ? JSON.parse(raw) : [];
-      const now = Date.now();
-      const next = [{ path: pathname, at: now }, ...arr.filter((x: any) => x && x.path && x.path !== pathname)];
-      localStorage.setItem(key, JSON.stringify(next.slice(0, 12)));
-    } catch {
-      // ignore
-    }
-  }, [pathname]);
-
   const nextUrl = useMemo(() => {
     if (!pathname || pathname.startsWith("/login")) return "/";
     return pathname;
@@ -95,11 +106,10 @@ export default function AccountChip() {
     setOpen(false);
     try {
       const supa = supabaseBrowser();
-      await supa.auth.signOut(); // triggers onAuthStateChange immediately
+      await supa.auth.signOut();
     } catch {
       // ignore
     } finally {
-      // hard refresh server components / viewer checks
       router.replace("/");
       setTimeout(() => {
         router.refresh();
