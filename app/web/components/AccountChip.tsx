@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { supabaseBrowser } from "@/lib/supabase/browser";
+import Link from "next/link";
 
 function initialsFromEmail(email?: string | null): string {
   const e = (email || "").trim();
@@ -21,6 +22,8 @@ export default function AccountChip() {
 
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -42,6 +45,18 @@ export default function AccountChip() {
       alive = false;
     };
   }, []);
+
+  useEffect(() => {
+    function onDocClick(e: MouseEvent) {
+      if (!open) return;
+      const el = ref.current;
+      if (!el) return;
+      if (e.target instanceof Node && el.contains(e.target)) return;
+      setOpen(false);
+    }
+    document.addEventListener("mousedown", onDocClick);
+    return () => document.removeEventListener("mousedown", onDocClick);
+  }, [open]);
 
   const nextUrl = useMemo(() => {
     if (!pathname || pathname.startsWith("/login")) return "/";
@@ -85,26 +100,77 @@ export default function AccountChip() {
   const initials = initialsFromEmail(email);
 
   return (
-    <button
-      type="button"
-      onClick={() => router.push(`/account`)}
-      title={email || "Account"}
-      aria-label="Account"
-      style={{
-        width: 40,
-        height: 40,
-        borderRadius: 999,
-        border: "1px solid rgba(0,0,0,0.15)",
-        background: "white",
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontWeight: 950,
-        letterSpacing: 0.4,
-        cursor: "pointer",
-      }}
-    >
-      {initials}
-    </button>
+    <div ref={ref} style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        title={email || "Account"}
+        aria-label="Account"
+        style={{
+          width: 40,
+          height: 40,
+          borderRadius: 999,
+          border: "1px solid rgba(0,0,0,0.15)",
+          background: "white",
+          display: "inline-flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontWeight: 950,
+          letterSpacing: 0.4,
+          cursor: "pointer",
+        }}
+      >
+        {initials}
+      </button>
+
+      {open ? (
+        <div
+          role="menu"
+          aria-label="Account links"
+          style={{
+            position: "absolute",
+            right: 0,
+            top: "calc(100% + 10px)",
+            minWidth: 180,
+            background: "#fff",
+            border: "1px solid rgba(0,0,0,0.10)",
+            borderRadius: 14,
+            boxShadow: "0 10px 28px rgba(0,0,0,0.10)",
+            padding: 10,
+            zIndex: 200,
+          }}
+        >
+          <Link
+            href="/account"
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "10px 10px",
+              borderRadius: 10,
+              textDecoration: "none",
+              color: "inherit",
+              fontWeight: 900,
+            }}
+          >
+            Account
+          </Link>
+
+          <Link
+            href="/logout"
+            onClick={() => setOpen(false)}
+            style={{
+              display: "block",
+              padding: "10px 10px",
+              borderRadius: 10,
+              textDecoration: "none",
+              color: "inherit",
+              fontWeight: 900,
+            }}
+          >
+            Logout
+          </Link>
+        </div>
+      ) : null}
+    </div>
   );
 }
