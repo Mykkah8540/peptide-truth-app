@@ -16,13 +16,16 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
+
+  // Free
   { label: "Browse Peptides", href: "/peptides" },
+  { label: "Blends", href: "/blends" },
   { label: "Resources", href: "/resources" },
 
   // Pro
-  { label: "Blends", href: "/blends", pro: true },
-  { label: "Browse Stacks", href: "/stacks", pro: true },
-  { label: "Browse Categories", href: "/categories", pro: true },
+  { label: "Wellness Paths", href: "/categories", pro: true },
+  { label: "Stack Builder", href: "/stack-builder", pro: true },
+  { label: "Explore Stacks", href: "/stacks", pro: true },
   { label: "My Peps", href: "/my-peps", pro: true },
 ];
 
@@ -264,17 +267,6 @@ export default function NavBar(props: {
             <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
               {NAV_ITEMS.slice(1).map((item, idx) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
-                  {item.pro && idx === 3 ? (
-                    <span
-                      aria-hidden="true"
-                      style={{
-                        width: 1,
-                        height: 18,
-                        background: "rgba(0,0,0,0.12)",
-                        marginRight: 14,
-                      }}
-                    />
-                  ) : null}
 
                   <Link
                     href={item.href}
