@@ -73,6 +73,7 @@ export default function NavBar(props: {
 }) {
   const [open, setOpen] = useState(false);
   const [showProBadges, setShowProBadges] = useState(true);
+  const [isAuthed, setIsAuthed] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -83,6 +84,7 @@ export default function NavBar(props: {
         const j = await r.json().catch(() => null);
         if (!alive) return;
         const isPro = !!(j?.isPro);
+        setIsAuthed(!!j?.isAuthed);
         setShowProBadges(!isPro);
       } catch {
         // default to showing badges (marketing) if viewer check fails
@@ -96,7 +98,13 @@ export default function NavBar(props: {
   }, []);
 
 
-  function goBack() {
+  
+  const visibleItems = NAV_ITEMS.filter((item) => {
+    if (!item.pro) return true;        // Free items always visible
+    return isAuthed;                   // Pro items only when logged in
+  });
+
+function goBack() {
     // Site-scoped back:
     // - If referrer is within this site, go back.
     // - Otherwise, return to Home instead of backing out of the site.
@@ -175,7 +183,7 @@ export default function NavBar(props: {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             {/* Desktop nav (shown via CSS media query) */}
             <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              {NAV_ITEMS.slice(1).map((item) => (
+              {visibleItems.slice(1).map((item) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
 
                   <Link

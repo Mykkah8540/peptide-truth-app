@@ -85,7 +85,9 @@ export default function MobileMenu(props: {
       if (!alive) return;
       setEmail(session?.user?.email ?? null);
       // Ensure any server-derived UI updates immediately (App Router).
-      router.refresh();
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     });
 
     return () => {
@@ -103,7 +105,9 @@ export default function MobileMenu(props: {
     } finally {
       onClose();
       router.replace("/");
-      router.refresh();
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     }
   }
 
@@ -111,8 +115,8 @@ export default function MobileMenu(props: {
     return null;
   }
 
-  const publicItems = showProBadges ? items.filter((i) => !i.pro) : items;
-  const proItems = showProBadges ? items.filter((i) => i.pro) : [];
+  const publicItems = items.filter((i) => !i.pro);
+  const proItems = email ? (showProBadges ? items.filter((i) => i.pro) : []) : [];
 
   return (
     <div
@@ -188,6 +192,9 @@ export default function MobileMenu(props: {
                   }}
                 >
                   Sign in
+                </Link>
+                <Link href="/signup" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
+                  Create account
                 </Link>
               </div>
             ) : (
