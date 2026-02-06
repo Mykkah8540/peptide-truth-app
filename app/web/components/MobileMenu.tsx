@@ -116,7 +116,7 @@ export default function MobileMenu(props: {
   }
 
   const publicItems = items.filter((i) => !i.pro);
-  const proItems = email ? (showProBadges ? items.filter((i) => i.pro) : []) : [];
+  const proItems = showProBadges ? items.filter((i) => i.pro) : [];
 
   return (
     <div

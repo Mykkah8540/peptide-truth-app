@@ -229,7 +229,7 @@ function goBack() {
         <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
       </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} items={NAV_ITEMS} showProBadges={showProBadges} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} items={visibleItems} showProBadges={showProBadges} />
     </header>
   );
 }
