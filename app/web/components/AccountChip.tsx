@@ -70,6 +70,20 @@ export default function AccountChip() {
     return pathname;
   }, [pathname]);
 
+  async function handleLogout() {
+    setOpen(false);
+    try {
+      const supa = supabaseBrowser();
+      await supa.auth.signOut(); // triggers onAuthStateChange immediately
+    } catch {
+      // ignore
+    } finally {
+      // hard refresh server components / viewer checks
+      router.replace("/");
+      router.refresh();
+    }
+  }
+
   if (loading) {
     return (
       <div
@@ -162,20 +176,24 @@ export default function AccountChip() {
             Account
           </Link>
 
-          <Link
-            href="/logout"
-            onClick={() => setOpen(false)}
+          <button
+            type="button"
+            onClick={handleLogout}
             style={{
+              width: "100%",
+              textAlign: "left",
               display: "block",
               padding: "10px 10px",
               borderRadius: 10,
-              textDecoration: "none",
+              border: "none",
+              background: "transparent",
               color: "inherit",
               fontWeight: 900,
+              cursor: "pointer",
             }}
           >
             Logout
-          </Link>
+          </button>
         </div>
       ) : null}
     </div>
