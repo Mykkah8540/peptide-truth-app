@@ -43,13 +43,8 @@ function pickPractical(authored: any, synthesized: any) {
   if ((!bottom || pendingBottom) && !hasAnyList) return synth;
   return pr;
 }
-import { requirePaid } from "@/lib/gate";
-
 export default async function BlendPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-
-  await requirePaid();
-
   const riskHit = getRiskForBlend(slug);
   const doc = await loadBlendBySlug(slug);
   const b = doc?.blend ?? {};
