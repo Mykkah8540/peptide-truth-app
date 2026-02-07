@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import MobileMenu from "./MobileMenu";
@@ -23,7 +23,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Blends", href: "/blends" },
   { label: "Resources", href: "/resources" },
 
-  // Pro (always visible; pill shows if not PRO)
+  // Pro (always visible; pill shown if user is not Pro)
   { label: "Wellness Paths", href: "/categories", pro: true },
   { label: "Stack Builder", href: "/stack-builder", pro: true },
   { label: "Explore Stacks", href: "/stacks", pro: true },
@@ -61,42 +61,44 @@ export default function NavBar(props: {
 }) {
   const [open, setOpen] = useState(false);
 
-  // If true, we show PRO pills + send PRO links to /upgrade?next=...
-  // This should be TRUE for signed-out users and Free users, FALSE for PRO users.
+  // showProBadges means: user is NOT Pro, so show the PRO pill and route Pro clicks to upgrade
   const [showProBadges, setShowProBadges] = useState(true);
 
   const router = useRouter();
+  const aliveRef = useRef(true);
+
+  async function refreshViewer() {
+    try {
+      const r = await fetch("/api/viewer", { cache: "no-store" as any });
+      const j = await r.json().catch(() => null);
+      if (!aliveRef.current) return;
+      const isPro = !!j?.isPro;
+      setShowProBadges(!isPro);
+    } catch {
+      // if viewer check fails, default to showing badges (marketing + clarity)
+      if (!aliveRef.current) return;
+      setShowProBadges(true);
+    }
+  }
 
   useEffect(() => {
+    aliveRef.current = true;
+
+    // initial
+    refreshViewer();
+
+    // subscribe to auth changes so menu updates instantly after login/logout
     const supa = supabaseBrowser();
-    let alive = true;
-
-    async function syncViewer() {
-      try {
-        const r = await fetch("/api/viewer", { cache: "no-store" as any });
-        const j = await r.json().catch(() => null);
-        if (!alive) return;
-
-        const isPro = !!j?.isPro;
-        setShowProBadges(!isPro);
-      } catch {
-        // If viewer check fails, default to showing badges (marketing)
-        if (!alive) return;
-        setShowProBadges(true);
-      }
-    }
-
-    // Initial sync
-    syncViewer();
-
-    // React instantly to auth changes (login/logout) without requiring a manual refresh
     const { data: sub } = supa.auth.onAuthStateChange(() => {
-      syncViewer();
-      setTimeout(() => router.refresh(), 0);
+      refreshViewer();
+      // also revalidate any server-derived UI
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     });
 
     return () => {
-      alive = false;
+      aliveRef.current = false;
       sub.subscription.unsubscribe();
     };
   }, [router]);
@@ -116,6 +118,8 @@ export default function NavBar(props: {
       router.push("/");
     }
   }
+
+  const visibleItems = NAV_ITEMS;
 
   return (
     <header
@@ -180,7 +184,7 @@ export default function NavBar(props: {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             {/* Desktop nav (shown via CSS media query) */}
             <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              {NAV_ITEMS.slice(1).map((item) => (
+              {visibleItems.slice(1).map((item) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
                   <Link
                     href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
@@ -196,7 +200,7 @@ export default function NavBar(props: {
                     }}
                   >
                     <span>{item.label}</span>
-                    {item.pro && showProBadges ? <ProPill /> : null}
+                    {showProBadges && item.pro ? <ProPill /> : null}
                   </Link>
                 </span>
               ))}
@@ -226,7 +230,7 @@ export default function NavBar(props: {
         <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
       </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} items={NAV_ITEMS} showProBadges={showProBadges} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} items={visibleItems} showProBadges={showProBadges} />
     </header>
   );
 }

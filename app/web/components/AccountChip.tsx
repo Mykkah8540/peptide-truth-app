@@ -195,19 +195,33 @@ export default function AccountChip() {
           }}
         >
           <Link
-            href="/account"
-            onClick={() => setOpen(false)}
-            style={{
-              display: "block",
-              padding: "10px 10px",
-              borderRadius: 10,
-              textDecoration: "none",
-              color: "inherit",
-              fontWeight: 900,
-            }}
-          >
-            Account
-          </Link>
+              href="/account"
+              onClick={() => setOpen(false)}
+              style={{
+                display: "block",
+                padding: "10px 10px",
+                borderRadius: 10,
+                textDecoration: "none",
+                color: "inherit",
+                fontWeight: 900,
+              }}
+            >
+              Account
+            </Link>
+<Link
+              href="/account/subscription"
+              onClick={() => setOpen(false)}
+              style={{
+                display: "block",
+                padding: "10px 10px",
+                borderRadius: 10,
+                textDecoration: "none",
+                color: "inherit",
+                fontWeight: 900,
+              }}
+            >
+              Manage subscription
+            </Link>
 
           <button
             type="button"

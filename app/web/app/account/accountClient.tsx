@@ -226,7 +226,7 @@ export default function AccountClient() {
   }, []);
 
   const nextPath = "/account";
-  const upgradeHref = useMemo(() => `/upgrade?next=${encodeURIComponent(nextPath)}`, []);
+  const upgradeHref = useMemo(() => `/account/subscription`, []);
   const loginHref = useMemo(() => `/login?next=${encodeURIComponent(nextPath)}`, []);
 
   if (error) return <p className="pt-card-subtext">Error: {error}</p>;
@@ -355,12 +355,7 @@ export default function AccountClient() {
 
         <Link href="/logout" style={S.btnBase}>
           Log out
-        </Link>
-
-        <Link href="/account/delete" style={{ ...S.btnBase, ...S.btnDanger }}>
-          Request account deletion
-        </Link>
-      </div>
+        </Link>      </div>
 
       <div style={S.note}>
         Need help? Contact support if you believe your subscription state is incorrect.
