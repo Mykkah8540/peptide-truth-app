@@ -191,12 +191,8 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
                   Account
                 </Link>
 
-                <Link
-                  href="/account"
-                  onClick={onClose}
-                  style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
-                >
-                  Account
+                <Link href="/my-peps" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
+                  My Peps
                 </Link>
 
                 <button

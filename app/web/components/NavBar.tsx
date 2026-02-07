@@ -23,11 +23,10 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Blends", href: "/blends" },
   { label: "Resources", href: "/resources" },
 
-  // Pro (always visible; pill indicates paid when not Pro)
+  // Pro (always visible; pill indicates paid when not Pro). My Peps is in the avatar menu.
   { label: "Wellness Paths", href: "/categories", pro: true },
   { label: "Stack Builder", href: "/stack-builder", pro: true },
   { label: "Explore Stacks", href: "/stacks", pro: true },
-  { label: "My Peps", href: "/my-peps", pro: true },
 ];
 
 function ProPill() {
