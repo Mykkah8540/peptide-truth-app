@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { supabaseBrowser } from "@/lib/supabase/browser";
 import Link from "next/link";
+import { supabaseBrowser } from "@/lib/supabase/browser";
 
 function initialsFromEmail(email?: string | null): string {
   const e = (email || "").trim();
@@ -16,29 +16,6 @@ function initialsFromEmail(email?: string | null): string {
   return "ME";
 }
 
-type RecentItem = { path: string; at: number };
-
-function recordRecent(pathname: string | null) {
-  try {
-    if (!pathname) return;
-    if (!pathname.startsWith("/")) return;
-
-    const key = "pt_recent_activity_v1";
-    const raw = localStorage.getItem(key);
-    const prev: RecentItem[] = raw ? (JSON.parse(raw) as any[]) : [];
-
-    const now = Date.now();
-    const next: RecentItem[] = [
-      { path: pathname, at: now },
-      ...prev.filter((x) => x && x.path !== pathname),
-    ].slice(0, 12);
-
-    localStorage.setItem(key, JSON.stringify(next));
-  } catch {
-    // ignore
-  }
-}
-
 export default function AccountChip() {
   const router = useRouter();
   const pathname = usePathname();
@@ -48,9 +25,9 @@ export default function AccountChip() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  // Track recent page visits (client-only)
-  useEffect(() => {
-    recordRecent(pathname);
+  const nextUrl = useMemo(() => {
+    if (!pathname || pathname.startsWith("/login") || pathname.startsWith("/signup")) return "/";
+    return pathname;
   }, [pathname]);
 
   useEffect(() => {
@@ -74,6 +51,7 @@ export default function AccountChip() {
       if (!alive) return;
       setOpen(false);
       setEmail(session?.user?.email ?? null);
+      // Canonical: defer App Router refresh to avoid subtle race conditions.
       setTimeout(() => {
         router.refresh();
       }, 0);
@@ -97,16 +75,11 @@ export default function AccountChip() {
     return () => document.removeEventListener("mousedown", onDocClick);
   }, [open]);
 
-  const nextUrl = useMemo(() => {
-    if (!pathname || pathname.startsWith("/login")) return "/";
-    return pathname;
-  }, [pathname]);
-
   async function handleLogout() {
     setOpen(false);
     try {
       const supa = supabaseBrowser();
-      await supa.auth.signOut();
+      await supa.auth.signOut(); // triggers onAuthStateChange immediately
     } catch {
       // ignore
     } finally {
@@ -116,6 +89,16 @@ export default function AccountChip() {
       }, 0);
     }
   }
+
+  const menuItemStyle: React.CSSProperties = {
+    display: "block",
+    width: "100%",
+    textDecoration: "none",
+    color: "inherit",
+    fontWeight: 900,
+    padding: "10px 10px",
+    borderRadius: 10,
+  };
 
   if (loading) {
     return (
@@ -141,13 +124,11 @@ export default function AccountChip() {
           padding: "0 12px",
           borderRadius: 999,
           border: "1px solid rgba(0,0,0,0.15)",
-          background: "white",
+          background: "#fff",
           fontWeight: 900,
           cursor: "pointer",
-                lineHeight: 1.15,
-                outline: "none",
-                border: "1px solid transparent",
-              }}
+          lineHeight: 1.15,
+        }}
       >
         Sign in
       </button>
@@ -168,7 +149,7 @@ export default function AccountChip() {
           height: 40,
           borderRadius: 999,
           border: "1px solid rgba(0,0,0,0.15)",
-          background: "white",
+          background: "#fff",
           display: "inline-flex",
           alignItems: "center",
           justifyContent: "center",
@@ -188,7 +169,7 @@ export default function AccountChip() {
             position: "absolute",
             right: 0,
             top: "calc(100% + 10px)",
-            minWidth: 180,
+            minWidth: 190,
             background: "#fff",
             border: "1px solid rgba(0,0,0,0.10)",
             borderRadius: 14,
@@ -197,46 +178,22 @@ export default function AccountChip() {
             zIndex: 200,
           }}
         >
-          <Link
-              href="/account"
-              onClick={() => setOpen(false)}
-              onMouseEnter={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
-              onMouseLeave={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
-              onFocus={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
-              onBlur={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
-              style={menuItemBase}
-            >
-              Account
-            </Link>
-            <Link
-              href="/my-peps"
-              onClick={() => setOpen(false)}
-              onMouseEnter={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
-              onMouseLeave={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
-              onFocus={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
-              onBlur={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
-              style={menuItemBase}
-            >
-              My Peps
-            </Link>
+          <Link href="/account" onClick={() => setOpen(false)} style={menuItemStyle}>
+            Account
+          </Link>
 
-<button
+          <Link href="/my-peps" onClick={() => setOpen(false)} style={menuItemStyle}>
+            My Peps
+          </Link>
+
+          <button
             type="button"
             onClick={handleLogout}
-              onMouseEnter={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
-              onMouseLeave={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
-              onFocus={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
-              onBlur={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
-              style={{
-                width: "100%",
-                textAlign: "left",
-                display: "block",
-                padding: "8px 10px",
-              borderRadius: 10,
+            style={{
+              ...menuItemStyle,
+              textAlign: "left",
               border: "none",
               background: "transparent",
-              color: "inherit",
-              fontWeight: 900,
               cursor: "pointer",
             }}
           >
