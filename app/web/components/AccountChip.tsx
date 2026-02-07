@@ -144,7 +144,10 @@ export default function AccountChip() {
           background: "white",
           fontWeight: 900,
           cursor: "pointer",
-        }}
+                lineHeight: 1.15,
+                outline: "none",
+                border: "1px solid transparent",
+              }}
       >
         Sign in
       </button>
@@ -197,40 +200,38 @@ export default function AccountChip() {
           <Link
               href="/account"
               onClick={() => setOpen(false)}
-              style={{
-                display: "block",
-                padding: "10px 10px",
-                borderRadius: 10,
-                textDecoration: "none",
-                color: "inherit",
-                fontWeight: 900,
-              }}
+              onMouseEnter={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
+              onMouseLeave={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
+              onFocus={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
+              onBlur={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
+              style={menuItemBase}
             >
               Account
             </Link>
-<Link
-              href="/account/subscription"
+            <Link
+              href="/my-peps"
               onClick={() => setOpen(false)}
-              style={{
-                display: "block",
-                padding: "10px 10px",
-                borderRadius: 10,
-                textDecoration: "none",
-                color: "inherit",
-                fontWeight: 900,
-              }}
+              onMouseEnter={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
+              onMouseLeave={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
+              onFocus={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
+              onBlur={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
+              style={menuItemBase}
             >
-              Manage subscription
+              My Peps
             </Link>
 
-          <button
+<button
             type="button"
             onClick={handleLogout}
-            style={{
-              width: "100%",
-              textAlign: "left",
-              display: "block",
-              padding: "10px 10px",
+              onMouseEnter={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
+              onMouseLeave={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
+              onFocus={(e) => applyMenuHover(e.currentTarget as HTMLElement, true)}
+              onBlur={(e) => applyMenuHover(e.currentTarget as HTMLElement, false)}
+              style={{
+                width: "100%",
+                textAlign: "left",
+                display: "block",
+                padding: "8px 10px",
               borderRadius: 10,
               border: "none",
               background: "transparent",

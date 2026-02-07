@@ -39,14 +39,17 @@ function ProPill() {
         marginLeft: 8,
         display: "inline-flex",
         alignItems: "center",
+        border: "1px solid rgba(0,0,0,0.22)",
         borderRadius: 999,
-        padding: "2px 8px",
+        padding: "2px 7px",
         fontSize: 10,
-        fontWeight: 950,
-        letterSpacing: 0.9,
+        fontWeight: 900,
+        letterSpacing: 0.8,
         lineHeight: 1,
-        color: "#fff",
-        background: "linear-gradient(90deg, #00CFFF 0%, #009BFF 55%, #003EFF 100%)",
+        background: "#fff",
+        color: "#111",
+        opacity: 0.92,
+        whiteSpace: "nowrap",
       }}
     >
       PRO
@@ -134,7 +137,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
               onClick={goBack}
               style={{
                 border: "1px solid rgba(0,0,0,0.10)",
-                background: "rgba(0,0,0,0.02)",
+                background: "#fff",
                 borderRadius: 999,
                 padding: "6px 10px",
                 fontSize: 14,
@@ -190,7 +193,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
               onClick={() => setOpen(true)}
               style={{
                 border: "1px solid rgba(0,0,0,0.10)",
-                background: "rgba(0,0,0,0.02)",
+                background: "#fff",
                 borderRadius: 999,
                 padding: "8px 10px",
                 fontSize: 18,

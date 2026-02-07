@@ -20,14 +20,17 @@ function ProPill() {
         marginLeft: 8,
         display: "inline-flex",
         alignItems: "center",
+        border: "1px solid rgba(0,0,0,0.22)",
         borderRadius: 999,
-        padding: "2px 8px",
+        padding: "2px 7px",
         fontSize: 10,
-        fontWeight: 950,
-        letterSpacing: 0.9,
+        fontWeight: 900,
+        letterSpacing: 0.8,
         lineHeight: 1,
-        color: "#fff",
-        background: "linear-gradient(90deg, #00CFFF 0%, #009BFF 55%, #003EFF 100%)",
+        background: "#fff",
+        color: "#111",
+        opacity: 0.92,
+        whiteSpace: "nowrap",
       }}
     >
       PRO
@@ -118,7 +121,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(0,0,0,0.4)",
+        background: "#fff",
         zIndex: 100,
       }}
       onClick={onClose}
@@ -136,7 +139,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
           onClick={onClose}
           style={{
             border: "none",
-            background: "transparent",
+            background: "#fff",
             fontSize: 18,
             fontWeight: 800,
             marginBottom: 12,
@@ -168,7 +171,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
           ))}
 
           <div style={{ marginTop: 10 }}>
-            <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
+            <div style={{ height: 1, background: "#fff", margin: "6px 0 12px" }} />
             <SectionLabel>ACCOUNT</SectionLabel>
 
             {loading ? (
@@ -189,11 +192,11 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
                 </Link>
 
                 <Link
-                  href="/account/subscription"
+                  href="/account"
                   onClick={onClose}
                   style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
                 >
-                  Manage subscription
+                  Account
                 </Link>
 
                 <button
@@ -202,7 +205,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
                   style={{
                     textAlign: "left",
                     border: "none",
-                    background: "transparent",
+                    background: "#fff",
                     padding: 0,
                     fontSize: 16,
                     fontWeight: 900,
@@ -217,7 +220,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
           </div>
 
           <div style={{ marginTop: 10 }}>
-            <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
+            <div style={{ height: 1, background: "#fff", margin: "6px 0 12px" }} />
             <SectionLabel>{showProBadges ? "PRO FEATURES" : "FEATURES"}</SectionLabel>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
