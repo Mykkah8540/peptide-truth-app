@@ -78,7 +78,7 @@ const S: Record<string, any> = {
   },
   btnPrimary: {
     border: "1px solid #000",
-    background: "linear-gradient(180deg, rgba(0,207,255,0.10), rgba(0,62,255,0.06))",
+    background: "#fff",
   },
   btnDanger: {
     border: "1px solid rgba(0,0,0,0.12)",

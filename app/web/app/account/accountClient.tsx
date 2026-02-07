@@ -226,7 +226,7 @@ export default function AccountClient() {
   }, []);
 
   const nextPath = "/account";
-  const upgradeHref = useMemo(() => `/account/subscription`, []);
+  const manageSubHref = useMemo(() => `/account/subscription`, []);
   const loginHref = useMemo(() => `/login?next=${encodeURIComponent(nextPath)}`, []);
 
   if (error) return <p className="pt-card-subtext">Error: {error}</p>;
@@ -259,6 +259,9 @@ export default function AccountClient() {
   const plan = data.plan ?? { isPro: false, isAdmin: false, forceProOn: false };
   const planLabel = plan.isPro ? "Pep-Talk Pro" : "Free";
   const badgeLabel = plan.isPro ? "PRO" : "FREE";
+
+  const primaryCtaHref = plan.isPro ? manageSubHref : "/upgrade";
+  const primaryCtaLabel = plan.isPro ? "Manage subscription" : "Upgrade to Pro";
 
   const memberSince = fmtDateTime((data.user as any)?.created_at ?? null);
   const exp = data.entitlement?.pro_expires_at ?? null;
@@ -349,13 +352,14 @@ export default function AccountClient() {
 
       {/* ACTIONS */}
       <div style={S.actions}>
-        <Link href={upgradeHref} style={{ ...S.btnBase, ...S.btnPrimary }}>
-          {plan.isPro ? "Manage subscription" : "Upgrade to Pro"}
+        <Link href={primaryCtaHref} style={{ ...S.btnBase, ...S.btnPrimary }}>
+          {primaryCtaLabel}
         </Link>
 
         <Link href="/logout" style={S.btnBase}>
           Log out
-        </Link>      </div>
+        </Link>
+      </div>
 
       <div style={S.note}>
         Need help? Contact support if you believe your subscription state is incorrect.
