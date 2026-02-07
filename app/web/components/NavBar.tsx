@@ -23,7 +23,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Blends", href: "/blends" },
   { label: "Resources", href: "/resources" },
 
-  // Pro (always visible; pill shown if user is not Pro)
+  // Pro (always visible; pill indicates paid when not Pro)
   { label: "Wellness Paths", href: "/categories", pro: true },
   { label: "Stack Builder", href: "/stack-builder", pro: true },
   { label: "Explore Stacks", href: "/stacks", pro: true },
@@ -39,14 +39,14 @@ function ProPill() {
         marginLeft: 8,
         display: "inline-flex",
         alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.18)",
         borderRadius: 999,
         padding: "2px 8px",
         fontSize: 10,
-        fontWeight: 900,
+        fontWeight: 950,
         letterSpacing: 0.9,
         lineHeight: 1,
-        opacity: 0.92,
+        color: "#fff",
+        background: "linear-gradient(90deg, #00CFFF 0%, #009BFF 55%, #003EFF 100%)",
       }}
     >
       PRO
@@ -54,59 +54,53 @@ function ProPill() {
   );
 }
 
-export default function NavBar(props: {
-  peptides: EntityListItem[];
-  blends: EntityListItem[];
-  topics: TopicListItem[];
-}) {
+export default function NavBar(props: { peptides: EntityListItem[]; blends: EntityListItem[]; topics: TopicListItem[] }) {
   const [open, setOpen] = useState(false);
-
-  // showProBadges means: user is NOT Pro, so show the PRO pill and route Pro clicks to upgrade
   const [showProBadges, setShowProBadges] = useState(true);
-
   const router = useRouter();
-  const aliveRef = useRef(true);
 
-  async function refreshViewer() {
-    try {
-      const r = await fetch("/api/viewer", { cache: "no-store" as any });
-      const j = await r.json().catch(() => null);
-      if (!aliveRef.current) return;
-      const isPro = !!j?.isPro;
-      setShowProBadges(!isPro);
-    } catch {
-      // if viewer check fails, default to showing badges (marketing + clarity)
-      if (!aliveRef.current) return;
-      setShowProBadges(true);
-    }
-  }
+  // We must not rely on a one-time viewer fetch; the menu needs to update immediately after auth changes.
+  const mounted = useRef(true);
 
   useEffect(() => {
-    aliveRef.current = true;
+    mounted.current = true;
+    const supa = supabaseBrowser();
 
-    // initial
+    async function refreshViewer() {
+      try {
+        const r = await fetch("/api/viewer", { cache: "no-store" as any });
+        const j = await r.json().catch(() => null);
+        if (!mounted.current) return;
+
+        const isPro = !!j?.isPro;
+        // If user is Pro => hide PRO pills. Otherwise show pills (marketing + clear gating).
+        setShowProBadges(!isPro);
+      } catch {
+        // Default: show badges (marketing) if viewer check fails
+        if (!mounted.current) return;
+        setShowProBadges(true);
+      }
+    }
+
+    // Initial hydrate
     refreshViewer();
 
-    // subscribe to auth changes so menu updates instantly after login/logout
-    const supa = supabaseBrowser();
+    // Update immediately on auth changes (login/logout) so menu does not require a full page refresh.
     const { data: sub } = supa.auth.onAuthStateChange(() => {
-      refreshViewer();
-      // also revalidate any server-derived UI
+      // Refresh server-derived gate state (profiles.is_pro + dev unlock)
       setTimeout(() => {
         router.refresh();
+        refreshViewer();
       }, 0);
     });
 
     return () => {
-      aliveRef.current = false;
+      mounted.current = false;
       sub.subscription.unsubscribe();
     };
   }, [router]);
 
   function goBack() {
-    // Site-scoped back:
-    // - If referrer is within this site, go back.
-    // - Otherwise, return to Home instead of backing out of the site.
     try {
       const ref = typeof document !== "undefined" ? String(document.referrer || "") : "";
       const origin = typeof window !== "undefined" ? String(window.location.origin || "") : "";
@@ -119,7 +113,7 @@ export default function NavBar(props: {
     }
   }
 
-  const visibleItems = NAV_ITEMS;
+  const items = NAV_ITEMS; // always visible (Pro items route to /upgrade when not Pro)
 
   return (
     <header
@@ -131,24 +125,8 @@ export default function NavBar(props: {
         borderBottom: "1px solid rgba(0,0,0,0.06)",
       }}
     >
-      <div
-        style={{
-          maxWidth: 980,
-          margin: "0 auto",
-          padding: "14px 16px",
-          display: "grid",
-          gap: 10,
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            gap: 12,
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
+      <div style={{ maxWidth: 980, margin: "0 auto", padding: "14px 16px", display: "grid", gap: 10 }}>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
             <button
               type="button"
@@ -182,9 +160,8 @@ export default function NavBar(props: {
           </div>
 
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-            {/* Desktop nav (shown via CSS media query) */}
             <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-              {visibleItems.slice(1).map((item) => (
+              {items.slice(1).map((item) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
                   <Link
                     href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
@@ -207,7 +184,6 @@ export default function NavBar(props: {
               <AccountChip />
             </nav>
 
-            {/* Mobile toggle (shown via CSS media query) */}
             <button
               className="mobile-menu-btn"
               aria-label="Open menu"
@@ -230,7 +206,7 @@ export default function NavBar(props: {
         <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
       </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} items={visibleItems} showProBadges={showProBadges} />
+      <MobileMenu open={open} onClose={() => setOpen(false)} items={items} showProBadges={showProBadges} />
     </header>
   );
 }

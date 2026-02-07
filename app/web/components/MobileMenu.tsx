@@ -20,14 +20,14 @@ function ProPill() {
         marginLeft: 8,
         display: "inline-flex",
         alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.18)",
         borderRadius: 999,
         padding: "2px 8px",
         fontSize: 10,
-        fontWeight: 900,
+        fontWeight: 950,
         letterSpacing: 0.9,
         lineHeight: 1,
-        opacity: 0.92,
+        color: "#fff",
+        background: "linear-gradient(90deg, #00CFFF 0%, #009BFF 55%, #003EFF 100%)",
       }}
     >
       PRO
@@ -52,12 +52,7 @@ function SectionLabel(props: { children: string }) {
   );
 }
 
-export default function MobileMenu(props: {
-  open: boolean;
-  onClose: () => void;
-  items: Item[];
-  showProBadges?: boolean;
-}) {
+export default function MobileMenu(props: { open: boolean; onClose: () => void; items: Item[]; showProBadges?: boolean }) {
   const { open, onClose, items, showProBadges = true } = props;
 
   const router = useRouter();
@@ -84,7 +79,9 @@ export default function MobileMenu(props: {
     const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
       if (!alive) return;
       setEmail(session?.user?.email ?? null);
-      setTimeout(() => router.refresh(), 0);
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     });
 
     return () => {
@@ -96,17 +93,23 @@ export default function MobileMenu(props: {
   async function handleLogout() {
     try {
       const supa = supabaseBrowser();
+      setEmail(null); // instant UI update
       await supa.auth.signOut();
     } catch {
       // ignore
     } finally {
       onClose();
       router.replace("/");
-      setTimeout(() => router.refresh(), 0);
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
     }
   }
 
   if (!open) return null;
+
+  const publicItems = items.filter((i) => !i.pro);
+  const proItems = items.filter((i) => i.pro); // always visible; pills depend on showProBadges
 
   return (
     <div
@@ -146,10 +149,10 @@ export default function MobileMenu(props: {
         <nav style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <SectionLabel>MENU</SectionLabel>
 
-          {items.map((item) => (
+          {publicItems.map((item) => (
             <Link
               key={item.href}
-              href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+              href={item.href}
               onClick={onClose}
               style={{
                 fontSize: 16,
@@ -161,7 +164,6 @@ export default function MobileMenu(props: {
               }}
             >
               <span>{item.label}</span>
-              {item.pro && showProBadges ? <ProPill /> : null}
             </Link>
           ))}
 
@@ -173,29 +175,25 @@ export default function MobileMenu(props: {
               <div style={{ color: "#666", fontWeight: 800 }}>Loading…</div>
             ) : !email ? (
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                <Link
-                  href="/login"
-                  onClick={onClose}
-                  style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
-                >
+                <Link href="/login" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
                   Sign in
                 </Link>
-                <Link
-                  href="/signup"
-                  onClick={onClose}
-                  style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
-                >
+                <Link href="/signup" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
                   Create account
                 </Link>
               </div>
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <Link href="/account" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
+                  Account
+                </Link>
+
                 <Link
-                  href="/account"
+                  href="/account/subscription"
                   onClick={onClose}
                   style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
                 >
-                  Account
+                  Manage subscription
                 </Link>
 
                 <button
@@ -216,6 +214,32 @@ export default function MobileMenu(props: {
                 </button>
               </div>
             )}
+          </div>
+
+          <div style={{ marginTop: 10 }}>
+            <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
+            <SectionLabel>{showProBadges ? "PRO FEATURES" : "FEATURES"}</SectionLabel>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
+              {proItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+                  onClick={onClose}
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 900,
+                    textDecoration: "none",
+                    color: "#000",
+                    display: "inline-flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <span>{item.label}</span>
+                  {showProBadges && item.pro ? <ProPill /> : null}
+                </Link>
+              ))}
+            </div>
           </div>
         </nav>
       </div>
