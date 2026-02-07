@@ -84,10 +84,7 @@ export default function MobileMenu(props: {
     const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
       if (!alive) return;
       setEmail(session?.user?.email ?? null);
-      // Ensure any server-derived UI updates immediately (App Router).
-      setTimeout(() => {
-        router.refresh();
-      }, 0);
+      setTimeout(() => router.refresh(), 0);
     });
 
     return () => {
@@ -105,18 +102,11 @@ export default function MobileMenu(props: {
     } finally {
       onClose();
       router.replace("/");
-      setTimeout(() => {
-        router.refresh();
-      }, 0);
+      setTimeout(() => router.refresh(), 0);
     }
   }
 
-  if (!open) {
-    return null;
-  }
-
-  const publicItems = items.filter((i) => !i.pro);
-  const proItems = showProBadges ? items.filter((i) => i.pro) : [];
+  if (!open) return null;
 
   return (
     <div
@@ -155,10 +145,11 @@ export default function MobileMenu(props: {
 
         <nav style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <SectionLabel>MENU</SectionLabel>
-          {publicItems.map((item) => (
+
+          {items.map((item) => (
             <Link
               key={item.href}
-              href={(item.pro && showProBadges) ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+              href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
               onClick={onClose}
               style={{
                 fontSize: 16,
@@ -170,6 +161,7 @@ export default function MobileMenu(props: {
               }}
             >
               <span>{item.label}</span>
+              {item.pro && showProBadges ? <ProPill /> : null}
             </Link>
           ))}
 
@@ -184,16 +176,15 @@ export default function MobileMenu(props: {
                 <Link
                   href="/login"
                   onClick={onClose}
-                  style={{
-                    fontSize: 16,
-                    fontWeight: 900,
-                    textDecoration: "none",
-                    color: "#000",
-                  }}
+                  style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
                 >
                   Sign in
                 </Link>
-                <Link href="/signup" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
+                <Link
+                  href="/signup"
+                  onClick={onClose}
+                  style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
+                >
                   Create account
                 </Link>
               </div>
@@ -202,12 +193,7 @@ export default function MobileMenu(props: {
                 <Link
                   href="/account"
                   onClick={onClose}
-                  style={{
-                    fontSize: 16,
-                    fontWeight: 900,
-                    textDecoration: "none",
-                    color: "#000",
-                  }}
+                  style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}
                 >
                   Account
                 </Link>
@@ -231,34 +217,6 @@ export default function MobileMenu(props: {
               </div>
             )}
           </div>
-
-          {proItems.length ? (
-            <div style={{ marginTop: 10 }}>
-              <div style={{ height: 1, background: "rgba(0,0,0,0.08)", margin: "6px 0 12px" }} />
-              {showProBadges ? <SectionLabel>PRO</SectionLabel> : null}
-
-              <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
-                {proItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={(item.pro && showProBadges) ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
-                    onClick={onClose}
-                    style={{
-                      fontSize: 16,
-                      fontWeight: 900,
-                      textDecoration: "none",
-                      color: "#000",
-                      display: "inline-flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <span>{item.label}</span>
-                    {showProBadges ? <ProPill /> : null}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ) : null}
         </nav>
       </div>
     </div>
