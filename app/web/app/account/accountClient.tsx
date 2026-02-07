@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { supabaseBrowser } from "@/lib/supabase/browser";
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type ViewerProfile = {
   id: string;
@@ -198,6 +200,20 @@ const S = {
 };
 
 export default function AccountClient() {
+  const router = useRouter();
+
+  async function logoutClient() {
+    try {
+      const supa = supabaseBrowser();
+      await supa.auth.signOut();
+    } catch {
+      // ignore
+    } finally {
+      router.replace("/");
+      setTimeout(() => router.refresh(), 0);
+    }
+  }
+
   const [data, setData] = useState<AccountResponse | null>(null);
   const [status, setStatus] = useState<string>("Loading…");
   const [error, setError] = useState<string | null>(null);
@@ -356,9 +372,9 @@ export default function AccountClient() {
           {primaryCtaLabel}
         </Link>
 
-        <Link href="/logout" style={S.btnBase}>
+        <button type="button" onClick={logoutClient} style={S.btnBase}>
           Log out
-        </Link>
+        </button>
       </div>
 
       <div style={S.note}>
