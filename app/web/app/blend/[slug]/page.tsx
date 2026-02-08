@@ -3,7 +3,6 @@ import RiskBadge from "@/components/RiskBadge";
 import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
 import ContentBlocks from "@/components/ContentBlocks";
-import DisclaimerSection from "@/components/DisclaimerSection";
 import EvidenceList from "@/components/EvidenceList";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import UgcNotesSection from "@/components/UgcNotesSection";
@@ -83,11 +82,6 @@ const isPracticalPlaceholder =
 
   const evidence = Array.isArray(b?.evidence) ? b.evidence : [];
 
-  const disclaimerText =
-    typeof b?.disclaimer?.text === "string" && b.disclaimer.text.trim()
-      ? b.disclaimer.text.trim()
-      : "Educational resource. No protocols, dosing, or instructions are provided.";
-
   const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
   return (
@@ -96,9 +90,6 @@ const isPracticalPlaceholder =
         <VialImage kind="blend" slug={slug} alt={`${b?.display_name ?? slug} vial`} />
         <div>
           <h1>{b?.display_name ?? b?.canonical_name ?? `Blend: ${slug}`}</h1>
-          <p className="pt-card-subtext" style={{ marginBottom: 0 }}>
-            Educational only. No protocols, dosing, or instructions.
-          </p>
         </div>
       </div>
 
@@ -260,8 +251,6 @@ const isPracticalPlaceholder =
       ) : null}
 
               <UgcNotesSection type="blend" slug={slug} />
-
-<DisclaimerSection text={disclaimerText} />
     </main>
   );
 }
