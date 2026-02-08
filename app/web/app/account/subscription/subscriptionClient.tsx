@@ -100,8 +100,8 @@ const S: Record<string, any> = {
 export default function SubscriptionClient() {
   const [data, setData] = useState<AccountResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [dangerOpen, setDangerOpen] = useState(false);
-  const [deleteStatus, setDeleteStatus] = useState<string | null>(null);
+  const [cancelOpen, setCancelOpen] = useState(false);
+  const [cancelStatus, setCancelStatus] = useState<string | null>(null);
 
   const router = useRouter();
 
@@ -138,22 +138,20 @@ export default function SubscriptionClient() {
     }
   }
 
-  async function requestDeletion() {
-    setDeleteStatus(null);
+  async function requestCancellation() {
+    setCancelStatus(null);
     try {
-      const res = await fetch("/api/account/delete-request", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({}),
-      });
-      const j = await res.json().catch(() => ({}));
-      if (!res.ok || !j?.ok) {
-        setDeleteStatus(j?.error ? String(j.error) : "Request failed.");
-        return;
-      }
-      setDeleteStatus("Request received. Support will follow up by email.");
+      const subject = encodeURIComponent("Pep-Talk — Cancellation Request");
+      const body = encodeURIComponent(
+        "Hi Pep-Talk Support,\n\n" +
+          "Please cancel my subscription at the end of the current billing period (do not renew next month).\n\n" +
+          "Account email: " + String(data?.user?.email || "") + "\n\n" +
+          "Thank you."
+      );
+      window.location.href = `mailto:support@mykkah.com?subject=${subject}&body=${body}`;
+      setCancelStatus("Opening your email client… If it doesn’t open, email support@mykkah.com and request cancellation.");
     } catch (e: any) {
-      setDeleteStatus(String(e?.message || e));
+      setCancelStatus(String(e?.message || e));
     }
   }
 
@@ -218,10 +216,9 @@ export default function SubscriptionClient() {
         </div>
 
         <div style={{ marginTop: 12 }}>
-          <div style={S.sectionLabel}>CANCEL</div>
+          <div style={S.sectionLabel}>SUBSCRIPTION PROBLEMS</div>
           <div className="pt-card-subtext">
-            Purchases are managed through RevenueCat. If you need help canceling, contact <b>support@mykkah.com</b> and
-            we’ll walk you through the correct path for your purchase method.
+            If you’re experiencing problems with your account, access, or billing, please contact <b>support@mykkah.com</b> and we’ll help you resolve it.
           </div>
         </div>
 
@@ -240,26 +237,25 @@ export default function SubscriptionClient() {
 
       <div style={S.dangerBox}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-          <p style={S.dangerTitle}>Danger zone</p>
-          <button type="button" onClick={() => setDangerOpen((v) => !v)} style={S.btnBase}>
-            {dangerOpen ? "Hide" : "Show"}
+          <p style={S.dangerTitle}>Proceed with cancellation</p>
+          <button type="button" onClick={() => setCancelOpen((v) => !v)} style={S.btnBase}>
+            {cancelOpen ? "Hide" : "Show"}
           </button>
         </div>
 
-        {dangerOpen ? (
+        {cancelOpen ? (
           <>
             <div style={S.fine}>
-              Account deletion is irreversible. If you proceed, we’ll record your request and support will follow up by
-              email.
+              To cancel, you’ll need to request cancellation for your current billing cycle so it does not renew next month. We’ll confirm the correct path based on how you purchased (App Store / Google Play / web).
             </div>
 
             <div style={S.actions}>
-              <button type="button" onClick={requestDeletion} style={{ ...S.btnBase, ...S.btnDanger }}>
-                Request account deletion
+              <button type="button" onClick={requestCancellation} style={{ ...S.btnBase, ...S.btnDanger }}>
+                Request cancellation
               </button>
             </div>
 
-            {deleteStatus ? <div className="pt-card-subtext" style={{ marginTop: 8 }}>{deleteStatus}</div> : null}
+            {cancelStatus ? <div className="pt-card-subtext" style={{ marginTop: 8 }}>{cancelStatus}</div> : null}
           </>
         ) : null}
       </div>
