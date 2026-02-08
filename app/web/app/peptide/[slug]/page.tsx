@@ -8,7 +8,6 @@ import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
 import OutlookSection from "@/components/OutlookSection";
-import DisclaimerSection from "@/components/DisclaimerSection";
 import InteractionsSection from "@/components/InteractionsSection";
 import FavoriteButton from "@/components/FavoriteButton";
 import CollapsibleSection from "@/components/CollapsibleSection";
@@ -74,10 +73,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   }
   return out.join(" ");
  }
-
- const disclaimerTextRaw = [p?.status?.human_use_note, p?.classification?.notes].filter(Boolean).join(" ");
- const disclaimerText = uniqSentences(disclaimerTextRaw.split(/\s+/).join(" "));
- const disclaimerTextClean = disclaimerText;
 
  const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
@@ -226,9 +221,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
      <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
     </CollapsibleSection>
    </section>
-
-   <DisclaimerSection text={disclaimerTextClean} />
-
        <UgcNotesSection type="peptide" slug={slug} />
 
 {DEBUG && riskHit ? <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" /> : null}
