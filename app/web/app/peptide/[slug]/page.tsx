@@ -12,6 +12,7 @@ import InteractionsSection from "@/components/InteractionsSection";
 import FavoriteButton from "@/components/FavoriteButton";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import UgcNotesSection from "@/components/UgcNotesSection";
+import PeptideCommentsSection from "@/components/PeptideCommentsSection";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
  const { slug } = await params;
@@ -83,6 +84,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
     <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
      <div>
       <h1>{p?.canonical_name ?? slug}</h1>
+        <div style={{ marginTop: 8 }}>
+          <a href="#community" style={{ textDecoration: "none", fontWeight: 900, opacity: 0.85 }}>Community →</a>
+        </div>
       <p></p>
      </div>
      <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
