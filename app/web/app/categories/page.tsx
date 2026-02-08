@@ -9,14 +9,16 @@ function ProPill() {
         marginLeft: 10,
         display: "inline-flex",
         alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.18)",
+        border: "1px solid rgba(0,0,0,0.16)",
         borderRadius: 999,
-        padding: "2px 8px",
+        padding: "2px 6px",
         fontSize: 10,
-        fontWeight: 900,
-        letterSpacing: 0.9,
+        fontWeight: 800,
+        letterSpacing: 0.7,
         lineHeight: 1,
-        opacity: 0.92,
+        background: "rgba(255,255,255,0.9)",
+        color: "rgba(0,0,0,0.88)",
+        whiteSpace: "nowrap",
       }}
     >
       PRO
@@ -34,24 +36,19 @@ export default function CategoriesPage() {
       <section className="pt-card">
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
           <h1 className="pt-card-title" style={{ margin: 0 }}>
-            Browse Categories
+            Wellness Paths
           </h1>
           <ProPill />
         </div>
 
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-          Categories organize peptides by shared context — such as risk considerations, interaction patterns, or physiological systems —
-          to help you explore the database more intelligently than browsing one compound at a time.
+          Wellness Paths group peptides by a shared goal or theme — a simpler way to explore than one compound at a time.
         </p>
-        <p className="pt-card-subtext">
-          This view is designed for discovery and comparison, not protocols or dosing.
-        </p>
+        <p className="pt-card-subtext">Educational only. No dosing, protocols, schedules, or instructions.</p>
       </section>
 
       <section className="pt-card">
-        <p className="pt-card-subtext">
-          Category browsing will expand here as curation continues.
-        </p>
+        <p className="pt-card-subtext">More paths will appear here as curation continues.</p>
       </section>
     </main>
   );
