@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
  title: "Pep-Talk",
- 
+
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

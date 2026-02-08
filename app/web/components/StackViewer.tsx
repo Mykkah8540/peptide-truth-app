@@ -46,7 +46,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 export default function StackViewer(props: { stack: StackV1 }) {
- 
+
  const [saved, setSaved] = useState(false);
 
  useEffect(() => {
@@ -95,7 +95,7 @@ const s = props.stack;
     </div>
 
     <div className="pt-card-subtext" style={{ marginTop: 10 }}>
-     
+
     </div>
 
     {goals.length ? (

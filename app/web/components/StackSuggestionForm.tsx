@@ -177,7 +177,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
   <section className="pt-card" style={{ marginTop: 14 }}>
    <h2 className="pt-card-title">Your suggestion</h2>
    <div className="pt-card-subtext" style={{ marginTop: 8 }}>
-    
+
    </div>
 
    <div style={{ display: "grid", gap: 12, marginTop: 14 }}>

@@ -99,7 +99,7 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
   <section className="pt-card" style={{ marginTop: 18 }}>
    <h2 className="pt-card-title">Community notes</h2>
    <div className="pt-card-subtext" style={{ marginTop: 8 }}>
-    
+
    </div>
 
    <div style={{ marginTop: 14 }}>

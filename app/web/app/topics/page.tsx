@@ -12,7 +12,7 @@ export default function TopicsPage() {
   <main style={{ padding: 24, maxWidth: 980, margin: "0 auto" }}>
    <h1 style={{ fontSize: 30, fontWeight: 900, margin: 0 }}>Topics</h1>
    <p style={{ opacity: 0.75, marginTop: 8 }}>
-    Curated topic pages that group peptides and evidence by real-world goals. 
+    Curated topic pages that group peptides and evidence by real-world goals.
    </p>
 
    {cats.length ? (

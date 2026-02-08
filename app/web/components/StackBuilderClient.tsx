@@ -80,7 +80,7 @@ export default function StackBuilderClient(props: {
    <h1 style={{ fontSize: 22, fontWeight: 900, margin: 0 }}>Stack Builder</h1>
    <p style={{ opacity: 0.75, marginTop: 8 }}>
     This is an educational recommender. It routes you to topic pages + peptide groups and highlights safety context.
-    
+
    </p>
 
    <Section title="Pick a goal">

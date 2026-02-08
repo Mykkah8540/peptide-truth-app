@@ -20,7 +20,7 @@ export default function UpgradePage() {
     </p>
 
     <p className="pt-card-subtext" style={{ marginTop: 12 }}>
-     
+
     </p>
 
     <Suspense fallback={<div className="pt-card-subtext" style={{ marginTop: 12 }}>Loading…</div>}>
