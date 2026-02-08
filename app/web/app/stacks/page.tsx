@@ -51,7 +51,7 @@ export default async function StacksPage() {
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
           Stacks are curated combinations built around a goal — a fast way to explore common pairings and ideas.
         </p>
-              </section>
+        </section>
 
       <section className="pt-card">
         {stacks.length ? (
