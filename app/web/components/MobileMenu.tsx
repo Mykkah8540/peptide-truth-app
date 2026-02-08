@@ -20,16 +20,15 @@ function ProPill() {
         marginLeft: 8,
         display: "inline-flex",
         alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.22)",
+        border: "1px solid rgba(0,0,0,0.16)",
         borderRadius: 999,
-        padding: "2px 7px",
+        padding: "2px 6px",
         fontSize: 10,
-        fontWeight: 900,
-        letterSpacing: 0.8,
+        fontWeight: 800,
+        letterSpacing: 0.7,
         lineHeight: 1,
-        background: "#fff",
-        color: "#111",
-        opacity: 0.92,
+        background: "rgba(255,255,255,0.9)",
+        color: "rgba(0,0,0,0.88)",
         whiteSpace: "nowrap",
       }}
     >
@@ -189,10 +188,6 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 <Link href="/account" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
                   Account
-                </Link>
-
-                <Link href="/my-peps" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
-                  My Peps
                 </Link>
 
                 <button
