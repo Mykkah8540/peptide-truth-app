@@ -10,213 +10,213 @@ import AccountChip from "@/components/AccountChip";
 import { supabaseBrowser } from "@/lib/supabase/browser";
 
 type NavItem = {
-  label: string;
-  href: string;
-  pro?: boolean;
+ label: string;
+ href: string;
+ pro?: boolean;
 };
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "/" },
+ { label: "Home", href: "/" },
 
-  // Free
-  { label: "Peptides", href: "/peptides" },
-  { label: "Blends", href: "/blends" },
-  { label: "Resources", href: "/resources" },
+ // Free
+ { label: "Peptides", href: "/peptides" },
+ { label: "Blends", href: "/blends" },
+ { label: "Resources", href: "/resources" },
 
-  // Pro (always visible; pill indicates paid when not Pro). My Peps is in the avatar menu.
-  { label: "Wellness Paths", href: "/categories", pro: true },
-  { label: "Stack Builder", href: "/stack-builder", pro: true },
-  { label: "Explore Stacks", href: "/stacks", pro: true },
+ // Pro (always visible; pill indicates paid when not Pro). My Peps is in the avatar menu.
+ { label: "Wellness Paths", href: "/categories", pro: true },
+ { label: "Stack Builder", href: "/stack-builder", pro: true },
+ { label: "Explore Stacks", href: "/stacks", pro: true },
 ];
 
 function ProPill() {
-  return (
-    <span
-      aria-label="Pro"
-      title="Pro"
-      style={{
-        marginLeft: 8,
-        display: "inline-flex",
-        alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.16)",
-        borderRadius: 999,
-        padding: "2px 6px",
-        fontSize: 10,
-        fontWeight: 800,
-        letterSpacing: 0.7,
-        lineHeight: 1,
-        background: "rgba(255,255,255,0.9)",
-        color: "rgba(0,0,0,0.88)",
-        whiteSpace: "nowrap",
-      }}
-    >
-      PRO
-    </span>
-  );
+ return (
+  <span
+   aria-label="Pro"
+   title="Pro"
+   style={{
+    marginLeft: 8,
+    display: "inline-flex",
+    alignItems: "center",
+    border: "1px solid rgba(0,0,0,0.16)",
+    borderRadius: 999,
+    padding: "2px 6px",
+    fontSize: 10,
+    fontWeight: 800,
+    letterSpacing: 0.7,
+    lineHeight: 1,
+    background: "rgba(255,255,255,0.9)",
+    color: "rgba(0,0,0,0.88)",
+    whiteSpace: "nowrap",
+   }}
+  >
+   PRO
+  </span>
+ );
 }
 
 export default function NavBar(props: { peptides: EntityListItem[]; blends: EntityListItem[]; topics: TopicListItem[] }) {
-  const [open, setOpen] = useState(false);
-  const [showProBadges, setShowProBadges] = useState(true);
-  const router = useRouter();
+ const [open, setOpen] = useState(false);
+ const [showProBadges, setShowProBadges] = useState(true);
+ const router = useRouter();
 
-  // We must not rely on a one-time viewer fetch; the menu needs to update immediately after auth changes.
-  const mounted = useRef(true);
+ // We must not rely on a one-time viewer fetch; the menu needs to update immediately after auth changes.
+ const mounted = useRef(true);
 
-  useEffect(() => {
-    mounted.current = true;
-    const supa = supabaseBrowser();
+ useEffect(() => {
+  mounted.current = true;
+  const supa = supabaseBrowser();
 
-    async function refreshViewer() {
-      try {
-        const r = await fetch("/api/viewer", { cache: "no-store" as any });
-        const j = await r.json().catch(() => null);
-        if (!mounted.current) return;
+  async function refreshViewer() {
+   try {
+    const r = await fetch("/api/viewer", { cache: "no-store" as any });
+    const j = await r.json().catch(() => null);
+    if (!mounted.current) return;
 
-        const isPro = !!j?.isPro;
-        // If user is Pro => hide PRO pills. Otherwise show pills (marketing + clear gating).
-        setShowProBadges(!isPro);
-      } catch {
-        // Default: show badges (marketing) if viewer check fails
-        if (!mounted.current) return;
-        setShowProBadges(true);
-      }
-    }
-
-    // Initial hydrate
-    refreshViewer();
-
-    // Update immediately on auth changes (login/logout) so menu does not require a full page refresh.
-    const { data: sub } = supa.auth.onAuthStateChange(() => {
-      // Refresh server-derived gate state (profiles.is_pro + dev unlock)
-      setTimeout(() => {
-        router.refresh();
-        refreshViewer();
-      }, 0);
-    });
-
-    return () => {
-      mounted.current = false;
-      sub.subscription.unsubscribe();
-    };
-  }, [router]);
-
-  function goBack() {
-    try {
-      const ref = typeof document !== "undefined" ? String(document.referrer || "") : "";
-      const origin = typeof window !== "undefined" ? String(window.location.origin || "") : "";
-      const sameOrigin = !!ref && !!origin && ref.startsWith(origin);
-
-      if (sameOrigin) router.back();
-      else router.push("/");
-    } catch {
-      router.push("/");
-    }
+    const isPro = !!j?.isPro;
+    // If user is Pro => hide PRO pills. Otherwise show pills (marketing + clear gating).
+    setShowProBadges(!isPro);
+   } catch {
+    // Default: show badges (marketing) if viewer check fails
+    if (!mounted.current) return;
+    setShowProBadges(true);
+   }
   }
 
-  const items = NAV_ITEMS; // always visible (Pro items route to /upgrade when not Pro)
+  // Initial hydrate
+  refreshViewer();
 
-  return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
+  // Update immediately on auth changes (login/logout) so menu does not require a full page refresh.
+  const { data: sub } = supa.auth.onAuthStateChange(() => {
+   // Refresh server-derived gate state (profiles.is_pro + dev unlock)
+   setTimeout(() => {
+    router.refresh();
+    refreshViewer();
+   }, 0);
+  });
+
+  return () => {
+   mounted.current = false;
+   sub.subscription.unsubscribe();
+  };
+ }, [router]);
+
+ function goBack() {
+  try {
+   const ref = typeof document !== "undefined" ? String(document.referrer || "") : "";
+   const origin = typeof window !== "undefined" ? String(window.location.origin || "") : "";
+   const sameOrigin = !!ref && !!origin && ref.startsWith(origin);
+
+   if (sameOrigin) router.back();
+   else router.push("/");
+  } catch {
+   router.push("/");
+  }
+ }
+
+ const items = NAV_ITEMS; // always visible (Pro items route to /upgrade when not Pro)
+
+ return (
+  <header
+   style={{
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
+    background: "#fff",
+    borderBottom: "1px solid rgba(0,0,0,0.06)",
+   }}
+  >
+   <div style={{ maxWidth: 980, margin: "0 auto", padding: "14px 16px", display: "grid", gap: 10 }}>
+    <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+     <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+      <button
+       type="button"
+       aria-label="Back"
+       onClick={goBack}
+       style={{
+        border: "1px solid rgba(0,0,0,0.10)",
         background: "#fff",
-        borderBottom: "1px solid rgba(0,0,0,0.06)",
-      }}
-    >
-      <div style={{ maxWidth: 980, margin: "0 auto", padding: "14px 16px", display: "grid", gap: 10 }}>
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-            <button
-              type="button"
-              aria-label="Back"
-              onClick={goBack}
-              style={{
-                border: "1px solid rgba(0,0,0,0.10)",
-                background: "#fff",
-                borderRadius: 999,
-                padding: "6px 10px",
-                fontSize: 14,
-                fontWeight: 900,
-                cursor: "pointer",
-                lineHeight: 1,
-              }}
-            >
-              ←
-            </button>
+        borderRadius: 999,
+        padding: "6px 10px",
+        fontSize: 14,
+        fontWeight: 900,
+        cursor: "pointer",
+        lineHeight: 1,
+       }}
+      >
+       ←
+      </button>
 
-            <Link
-              href="/"
-              style={{
-                fontWeight: 900,
-                letterSpacing: -0.3,
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              Pep-Talk
-            </Link>
-          </div>
+      <Link
+       href="/"
+       style={{
+        fontWeight: 900,
+        letterSpacing: -0.3,
+        textDecoration: "none",
+        color: "inherit",
+       }}
+      >
+       Pep-Talk
+      </Link>
+     </div>
 
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-            <nav
-              className="desktop-nav"
-              style={{
-                display: "inline-flex",
-                gap: 16,
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {items.slice(1).map((item) => (
-                <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
-                  <Link
-                    href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
-                    style={{
-                      textDecoration: "none",
-                      color: "inherit",
-                      opacity: 0.92,
-                      fontWeight: 800,
-                      fontSize: 14,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      whiteSpace: "nowrap",
-                      lineHeight: 1,
-                    }}
-                  >
-                    <span>{item.label}</span>
-                    {showProBadges && item.pro ? <ProPill /> : null}
-                  </Link>
-                </span>
-              ))}
-              <AccountChip />
-            </nav>
+     <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+      <nav
+       className="desktop-nav"
+       style={{
+        display: "inline-flex",
+        gap: 16,
+        flexWrap: "wrap",
+        alignItems: "center",
+       }}
+      >
+       {items.slice(1).map((item) => (
+        <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
+         <Link
+          href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+          style={{
+           textDecoration: "none",
+           color: "inherit",
+           opacity: 0.92,
+           fontWeight: 800,
+           fontSize: 14,
+           display: "inline-flex",
+           alignItems: "center",
+           whiteSpace: "nowrap",
+           lineHeight: 1,
+          }}
+         >
+          <span>{item.label}</span>
+          {showProBadges && item.pro ? <ProPill /> : null}
+         </Link>
+        </span>
+       ))}
+       <AccountChip />
+      </nav>
 
-            <button
-              className="mobile-menu-btn"
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
-              style={{
-                border: "1px solid rgba(0,0,0,0.10)",
-                background: "#fff",
-                borderRadius: 999,
-                padding: "8px 10px",
-                fontSize: 18,
-                cursor: "pointer",
-                lineHeight: 1,
-              }}
-            >
-              ☰
-            </button>
-          </div>
-        </div>
+      <button
+       className="mobile-menu-btn"
+       aria-label="Open menu"
+       onClick={() => setOpen(true)}
+       style={{
+        border: "1px solid rgba(0,0,0,0.10)",
+        background: "#fff",
+        borderRadius: 999,
+        padding: "8px 10px",
+        fontSize: 18,
+        cursor: "pointer",
+        lineHeight: 1,
+       }}
+      >
+       ☰
+      </button>
+     </div>
+    </div>
 
-        <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
-      </div>
+    <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
+   </div>
 
-      <MobileMenu open={open} onClose={() => setOpen(false)} items={items} showProBadges={showProBadges} />
-    </header>
-  );
+   <MobileMenu open={open} onClose={() => setOpen(false)} items={items} showProBadges={showProBadges} />
+  </header>
+ );
 }

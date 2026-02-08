@@ -5,15 +5,15 @@ import SuggestStackForm from "@/components/SuggestStackForm";
 import { requirePaid } from "@/lib/gate";
 
 export default async function SuggestStackPage() {
-  await requirePaid();
+ await requirePaid();
 
-  return (
-    <main className="pt-page">
-      <SuggestStackForm />
+ return (
+  <main className="pt-page">
+   <SuggestStackForm />
 
-      <StackSuggestionForm ugcSlug="__global__" />
+   <StackSuggestionForm ugcSlug="__global__" />
 
-      <UgcNotesSection type="stack" slug="__global__" hideSubmit />
-    </main>
-  );
+   <UgcNotesSection type="stack" slug="__global__" hideSubmit />
+  </main>
+ );
 }

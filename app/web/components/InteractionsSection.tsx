@@ -3,191 +3,191 @@ import Link from "next/link";
 import { listInteractions } from "@/lib/content";
 
 type Item = {
-  title?: string;
-  name?: string;
-    slug?: string;
-  interaction_slug?: string;
+ title?: string;
+ name?: string;
+  slug?: string;
+ interaction_slug?: string;
 risk_note?: string;
-  confidence?: string;
-  evidence_grade?: string;
-  notes?: string;
+ confidence?: string;
+ evidence_grade?: string;
+ notes?: string;
 };
 
 type Props = {
-  heading?: string;
-  drugClasses?: Item[] | null;
-  supplementClasses?: Item[] | null;
-  peptides?: Item[] | null;
-  interactionSummaryBlocks?: any[] | null;
-  hideHeading?: boolean;
+ heading?: string;
+ drugClasses?: Item[] | null;
+ supplementClasses?: Item[] | null;
+ peptides?: Item[] | null;
+ interactionSummaryBlocks?: any[] | null;
+ hideHeading?: boolean;
 };
 
 
 function slugify(s: string) {
-  return (s || "")
-    .toLowerCase()
-    .trim()
-    .replace(/['"]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+ return (s || "")
+  .toLowerCase()
+  .trim()
+  .replace(/['"]/g, "")
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "");
 }
 
 const __interactionTitleToSlug = (() => {
-  try {
-    const list = listInteractions();
-    const m = new Map<string, string>();
-    for (const it of list) {
-      const slug = String((it as any)?.slug ?? "").trim();
-      const title = String((it as any)?.title ?? "").trim();
-      if (slug && title) m.set(title.toLowerCase(), slug);
-      // Also index common variants if present
-      const name = String((it as any)?.name ?? "").trim();
-      if (slug && name) m.set(name.toLowerCase(), slug);
-    }
-    return m;
-  } catch {
-    return new Map<string, string>();
+ try {
+  const list = listInteractions();
+  const m = new Map<string, string>();
+  for (const it of list) {
+   const slug = String((it as any)?.slug ?? "").trim();
+   const title = String((it as any)?.title ?? "").trim();
+   if (slug && title) m.set(title.toLowerCase(), slug);
+   // Also index common variants if present
+   const name = String((it as any)?.name ?? "").trim();
+   if (slug && name) m.set(name.toLowerCase(), slug);
   }
+  return m;
+ } catch {
+  return new Map<string, string>();
+ }
 })();
 
 function resolveInteractionHref(it: any): string | null {
-  const direct = (it?.slug || it?.interaction_slug || "").toString().trim();
-  if (direct) return `/interaction/${direct}`;
+ const direct = (it?.slug || it?.interaction_slug || "").toString().trim();
+ if (direct) return `/interaction/${direct}`;
 
-  const name = (it?.name || "").toString().trim();
-  if (!name) return null;
+ const name = (it?.name || "").toString().trim();
+ if (!name) return null;
 
-  // Prefer governed slugs from interactions index (title/name -> slug)
-  const hit = __interactionTitleToSlug.get(name.toLowerCase());
-  if (hit) return `/interaction/${hit}`;
+ // Prefer governed slugs from interactions index (title/name -> slug)
+ const hit = __interactionTitleToSlug.get(name.toLowerCase());
+ if (hit) return `/interaction/${hit}`;
 
-  // Last-resort fallback: slugify (may not match governed slugs)
-  return `/interaction/${slugify(name)}`;
+ // Last-resort fallback: slugify (may not match governed slugs)
+ return `/interaction/${slugify(name)}`;
 }
 
 function prettyInteractionLabel(s: string): string {
-    const raw = String(s || "").trim();
-    if (!raw) return raw;
+  const raw = String(s || "").trim();
+  if (!raw) return raw;
 
-    // Only “pretty” things that look like slugs (no spaces + has -/_)
-    const hasSpaces = /\s/.test(raw);
-    const looksSluggy = /[-_]/.test(raw) && !hasSpaces;
-    if (!looksSluggy) return raw;
+  // Only “pretty” things that look like slugs (no spaces + has -/_)
+  const hasSpaces = /\s/.test(raw);
+  const looksSluggy = /[-_]/.test(raw) && !hasSpaces;
+  if (!looksSluggy) return raw;
 
-    const lower = raw.toLowerCase();
+  const lower = raw.toLowerCase();
 
-    // Common patterns
-    if (lower.includes("ssris") && lower.includes("snris")) return "SSRIs / SNRIs";
+  // Common patterns
+  if (lower.includes("ssris") && lower.includes("snris")) return "SSRIs / SNRIs";
 
-    // Generic slug -> title-case
-    const parts = lower.replace(/[-_]+/g, " ").split(" ").filter(Boolean);
-    const acr = new Set(["ssri","snri","hiv","cns","gi","bp","hpa","hpt","hpg","cyp"]);
-    const tc = (w: string) => {
-      if (acr.has(w)) return w.toUpperCase();
-      if (w.startsWith("glp")) return w.toUpperCase();
-      return w ? w[0].toUpperCase() + w.slice(1) : w;
-    };
+  // Generic slug -> title-case
+  const parts = lower.replace(/[-_]+/g, " ").split(" ").filter(Boolean);
+  const acr = new Set(["ssri","snri","hiv","cns","gi","bp","hpa","hpt","hpg","cyp"]);
+  const tc = (w: string) => {
+   if (acr.has(w)) return w.toUpperCase();
+   if (w.startsWith("glp")) return w.toUpperCase();
+   return w ? w[0].toUpperCase() + w.slice(1) : w;
+  };
 
-    return parts.map(tc).join(" ");
-  }
+  return parts.map(tc).join(" ");
+ }
 
 function renderList(label: string, items?: Item[] | null, opts?: { showNone?: boolean }) {
-    const raw = (items ?? []).filter(Boolean);
+  const raw = (items ?? []).filter(Boolean);
 
-    // Normalize strings into { name } items, and filter out items with no usable label.
-    const list: Item[] = raw
-      .map((it: any) => (typeof it === "string" ? ({ name: it } as any) : it))
-      .filter((it: any) => {
-        const name = String(it?.name ?? it?.title ?? "").trim();
-        const note = String(it?.risk_note ?? it?.notes ?? "").trim();
-        // Keep if it has either a label or a note (note-only can still be meaningful)
-        return Boolean(name || note);
-      });
+  // Normalize strings into { name } items, and filter out items with no usable label.
+  const list: Item[] = raw
+   .map((it: any) => (typeof it === "string" ? ({ name: it } as any) : it))
+   .filter((it: any) => {
+    const name = String(it?.name ?? it?.title ?? "").trim();
+    const note = String(it?.risk_note ?? it?.notes ?? "").trim();
+    // Keep if it has either a label or a note (note-only can still be meaningful)
+    return Boolean(name || note);
+   });
 
-    if (!list.length) {
-      if (opts?.showNone) {
-        return (
-          <div style={{ marginTop: 10 }}>
-            <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
-            <div style={{ marginTop: 8, fontSize: 13, opacity: 0.55 }}>None</div>
-          </div>
-        );
-      }
-      return null;
-    }
-
+  if (!list.length) {
+   if (opts?.showNone) {
     return (
-      <div style={{ marginTop: 10 }}>
-        <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
-        <div style={{ marginTop: 10 }} className="pt-stack">
-          {list.map((it, idx) => {
-            const name = String(it.name ?? it.title ?? "").trim();
-            const note = String(it.risk_note ?? it.notes ?? "").trim();
-            const metaParts: string[] = [].filter(Boolean);
-
-            return (
-              <div key={`${label}-${idx}`} className="pt-item">
-                {(() => {
-                  const href = resolveInteractionHref(it);
-                  // If we have no name, don't show a fake label; just show the note.
-                  const display = name ? prettyInteractionLabel(name) : null;
-                  return display ? (
-                    href ? (
-                      <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
-                        <div className="pt-item-title">{display}</div>
-                      </Link>
-                    ) : (
-                      <div className="pt-item-title">{display}</div>
-                    )
-                  ) : null;
-                })()}
-                {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
-                {note ? <div className="pt-item-note" style={{ marginTop: name ? 8 : 0 }}>{note}</div> : null}
-              </div>
-            );
-          })}
-        </div>
-      </div>
+     <div style={{ marginTop: 10 }}>
+      <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
+      <div style={{ marginTop: 8, fontSize: 13, opacity: 0.55 }}>None</div>
+     </div>
     );
+   }
+   return null;
   }
+
+  return (
+   <div style={{ marginTop: 10 }}>
+    <div style={{ fontSize: 13, fontWeight: 800 }}>{label}</div>
+    <div style={{ marginTop: 10 }} className="pt-stack">
+     {list.map((it, idx) => {
+      const name = String(it.name ?? it.title ?? "").trim();
+      const note = String(it.risk_note ?? it.notes ?? "").trim();
+      const metaParts: string[] = [].filter(Boolean);
+
+      return (
+       <div key={`${label}-${idx}`} className="pt-item">
+        {(() => {
+         const href = resolveInteractionHref(it);
+         // If we have no name, don't show a fake label; just show the note.
+         const display = name ? prettyInteractionLabel(name) : null;
+         return display ? (
+          href ? (
+           <Link href={href} style={{ textDecoration: "none", color: "inherit" }}>
+            <div className="pt-item-title">{display}</div>
+           </Link>
+          ) : (
+           <div className="pt-item-title">{display}</div>
+          )
+         ) : null;
+        })()}
+        {metaParts.length ? <div style={{ marginTop: 6, fontSize: 12, opacity: 0.75 }}>{metaParts.join(" · ")}</div> : null}
+        {note ? <div className="pt-item-note" style={{ marginTop: name ? 8 : 0 }}>{note}</div> : null}
+       </div>
+      );
+     })}
+    </div>
+   </div>
+  );
+ }
 
 const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
 
 export default function InteractionsSection({
-  heading = "Interactions and medication considerations",
-  drugClasses,
-  supplementClasses,
-  peptides,
-  interactionSummaryBlocks,
-    hideHeading = false,
+ heading = "Interactions and medication considerations",
+ drugClasses,
+ supplementClasses,
+ peptides,
+ interactionSummaryBlocks,
+  hideHeading = false,
 }: Props) {
-  const hasStructured =
-    (drugClasses ?? []).length > 0 ||
-    (supplementClasses ?? []).length > 0 ||
-    (peptides ?? []).length > 0 ||
-    (interactionSummaryBlocks ?? []).length > 0;
+ const hasStructured =
+  (drugClasses ?? []).length > 0 ||
+  (supplementClasses ?? []).length > 0 ||
+  (peptides ?? []).length > 0 ||
+  (interactionSummaryBlocks ?? []).length > 0;
 
-  return (
-      <>
+ return (
+   <>
 {!hideHeading ? <h2 className="pt-card-title">{heading}</h2> : null}
-      <p className="pt-card-subtext">
-        Interactions summarize known or plausible ways this peptide may intersect with medications, supplements, or physiologic states. Use this as a risk-awareness map: what to ask about, what to watch for, and what deserves a clinician conversation.
-      </p>
+   <p className="pt-card-subtext">
+    Interactions summarize known or plausible ways this peptide may intersect with medications, supplements, or physiologic states. Use this as a risk-awareness map: what to ask about, what to watch for, and what deserves a clinician conversation.
+   </p>
 
-      {(interactionSummaryBlocks ?? []).length ? (
-        <div style={{ marginTop: 12 }}>
-          <ContentBlocks heading="" blocks={interactionSummaryBlocks ?? null} wrapCard={false} hideHeading />
-        </div>
-      ) : null}
+   {(interactionSummaryBlocks ?? []).length ? (
+    <div style={{ marginTop: 12 }}>
+     <ContentBlocks heading="" blocks={interactionSummaryBlocks ?? null} wrapCard={false} hideHeading />
+    </div>
+   ) : null}
 
-      {renderList("Medication classes", drugClasses, { showNone: hasStructured })}
-      {renderList("Supplement classes", supplementClasses, { showNone: hasStructured })}
-      {renderList("Other peptides", peptides, { showNone: hasStructured })}
+   {renderList("Medication classes", drugClasses, { showNone: hasStructured })}
+   {renderList("Supplement classes", supplementClasses, { showNone: hasStructured })}
+   {renderList("Other peptides", peptides, { showNone: hasStructured })}
 
-      {!hasStructured ? (
-        <div className="pt-item" style={{ opacity: 0.9 }}>
-          No interaction details have been added yet.
-        </div>
-      ) : null}
-      </>
-    );}
+   {!hasStructured ? (
+    <div className="pt-item" style={{ opacity: 0.9 }}>
+     No interaction details have been added yet.
+    </div>
+   ) : null}
+   </>
+  );}
