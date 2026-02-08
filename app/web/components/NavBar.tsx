@@ -38,16 +38,15 @@ function ProPill() {
         marginLeft: 8,
         display: "inline-flex",
         alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.22)",
+        border: "1px solid rgba(0,0,0,0.16)",
         borderRadius: 999,
-        padding: "2px 7px",
+        padding: "2px 6px",
         fontSize: 10,
-        fontWeight: 900,
-        letterSpacing: 0.8,
+        fontWeight: 800,
+        letterSpacing: 0.7,
         lineHeight: 1,
-        background: "#fff",
-        color: "#111",
-        opacity: 0.92,
+        background: "rgba(255,255,255,0.9)",
+        color: "rgba(0,0,0,0.88)",
         whiteSpace: "nowrap",
       }}
     >
@@ -162,7 +161,15 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
           </div>
 
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-            <nav className="desktop-nav" style={{ gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+            <nav
+              className="desktop-nav"
+              style={{
+                display: "inline-flex",
+                gap: 16,
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}
+            >
               {items.slice(1).map((item) => (
                 <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
                   <Link
@@ -170,12 +177,13 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
                     style={{
                       textDecoration: "none",
                       color: "inherit",
-                      opacity: 0.9,
+                      opacity: 0.92,
                       fontWeight: 800,
                       fontSize: 14,
                       display: "inline-flex",
                       alignItems: "center",
                       whiteSpace: "nowrap",
+                      lineHeight: 1,
                     }}
                   >
                     <span>{item.label}</span>
