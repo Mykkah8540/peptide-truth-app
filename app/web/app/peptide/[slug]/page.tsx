@@ -88,7 +88,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <h1>{p?.canonical_name ?? slug}</h1>
-            <p>Educational resource. Not medical advice. No dosing or instructions.</p>
+            <p></p>
           </div>
           <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
             {riskHit ? (
