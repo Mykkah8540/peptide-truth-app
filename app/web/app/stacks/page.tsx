@@ -12,14 +12,16 @@ function ProPill() {
         marginLeft: 10,
         display: "inline-flex",
         alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.18)",
+        border: "1px solid rgba(0,0,0,0.16)",
         borderRadius: 999,
-        padding: "2px 8px",
+        padding: "2px 6px",
         fontSize: 10,
-        fontWeight: 900,
-        letterSpacing: 0.9,
+        fontWeight: 800,
+        letterSpacing: 0.7,
         lineHeight: 1,
-        opacity: 0.92,
+        background: "rgba(255,255,255,0.9)",
+        color: "rgba(0,0,0,0.88)",
+        whiteSpace: "nowrap",
       }}
     >
       PRO
@@ -47,11 +49,9 @@ export default async function StacksPage() {
         </div>
 
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
-          Stacks are curated combinations built around a goal. This is a synergy-first exploration surface — not a document dump.
+          Stacks are curated combinations built around a goal — a fast way to explore common pairings and ideas.
         </p>
-        <p className="pt-card-subtext">
-          Educational only. No dosing, protocols, schedules, or instructions.
-        </p>
+        <p className="pt-card-subtext">Educational only. No dosing, protocols, schedules, or instructions.</p>
       </section>
 
       <section className="pt-card">
@@ -66,7 +66,7 @@ export default async function StacksPage() {
               >
                 <div style={{ fontSize: 14, fontWeight: 900 }}>{s.title}</div>
                 <div className="pt-item-note" style={{ marginTop: 6 }}>
-                  Open stack →
+                  Explore stack →
                 </div>
               </Link>
             ))}
@@ -85,7 +85,6 @@ export default async function StacksPage() {
             Suggest a stack →
           </Link>
         </div>
-
       </section>
     </main>
   );
