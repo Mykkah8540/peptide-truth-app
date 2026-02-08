@@ -95,7 +95,7 @@ const s = props.stack;
         </div>
 
         <div className="pt-card-subtext" style={{ marginTop: 10 }}>
-          Educational only. No dosing, protocols, schedules, or instructions.
+          
         </div>
 
         {goals.length ? (

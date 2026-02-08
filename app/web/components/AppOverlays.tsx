@@ -209,7 +209,7 @@ export default function AppOverlays() {
           }
         >
           <p style={{ margin: 0, color: "#333", lineHeight: 1.45, fontSize: 14 }}>
-            Pep-Talk is an educational reference for peptides and blends. No protocols, dosing, or instructions are provided.
+            Pep-Talk is an educational reference for peptides and blends. 
           </p>
 
           <label style={{ display: "flex", gap: 10, alignItems: "center", marginTop: 14, fontSize: 13, color: "#333" }}>

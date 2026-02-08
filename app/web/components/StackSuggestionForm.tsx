@@ -18,7 +18,7 @@ function makeAutoOutcomes(goal: string, items: { type: EntityType; slug: string;
   if (g) lines.push(`Goal-aligned: ${g}`);
   if (names.length) lines.push(`Synergy narrative: how ${names.slice(0, 5).join(", ")} may complement each other (education only).`);
   lines.push("Expected outcomes are not guaranteed; responses vary by person and context.");
-  lines.push("No dosing, protocols, schedules, or instructions are allowed.");
+  lines.push("");
   return lines;
 }
 
@@ -177,7 +177,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
     <section className="pt-card" style={{ marginTop: 14 }}>
       <h2 className="pt-card-title">Your suggestion</h2>
       <div className="pt-card-subtext" style={{ marginTop: 8 }}>
-        Build this without typing errors: pick peptides/blends from the list. Educational only (no dosing/protocols). Moderated.
+        
       </div>
 
       <div style={{ display: "grid", gap: 12, marginTop: 14 }}>

@@ -44,7 +44,7 @@ export default function CategoriesPage() {
         <p className="pt-card-subtext" style={{ marginTop: 10 }}>
           Wellness Paths group peptides by a shared goal or theme — a simpler way to explore than one compound at a time.
         </p>
-        <p className="pt-card-subtext">Educational only. No dosing, protocols, schedules, or instructions.</p>
+        <p className="pt-card-subtext"></p>
       </section>
 
       <section className="pt-card">

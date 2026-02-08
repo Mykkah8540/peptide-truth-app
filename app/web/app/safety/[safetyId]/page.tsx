@@ -21,7 +21,7 @@ export default async function SafetyPage({ params }: { params: Promise<{ safetyI
   return (
     <main style={{ padding: 24, maxWidth: 900, margin: "0 auto" }}>
       <h1 style={{ fontSize: 28, fontWeight: 800 }}>Safety: {safetyId}</h1>
-      <p style={{ opacity: 0.75 }}>Educational resource. Not medical advice.</p>
+      <p style={{ opacity: 0.75 }}></p>
 
       {md ? (
         <pre style={{ whiteSpace: "pre-wrap", lineHeight: 1.5 }}>{md}</pre>

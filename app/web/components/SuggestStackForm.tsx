@@ -255,7 +255,7 @@ export default function SuggestStackForm() {
     <section className="pt-card">
       <h2 className="pt-card-title">Suggest a stack</h2>
       <div className="pt-card-subtext" style={{ marginTop: 8 }}>
-        Educational discussion only. No dosing, protocols, schedules, or instructions. Submissions are moderated before appearing.
+        
       </div>
 
       <div style={{ display: "grid", gap: 10, marginTop: 14 }}>
