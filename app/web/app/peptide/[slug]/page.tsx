@@ -11,7 +11,6 @@ import OutlookSection from "@/components/OutlookSection";
 import InteractionsSection from "@/components/InteractionsSection";
 import FavoriteButton from "@/components/FavoriteButton";
 import CollapsibleSection from "@/components/CollapsibleSection";
-import UgcNotesSection from "@/components/UgcNotesSection";
 import PeptideCommentsSection from "@/components/PeptideCommentsSection";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -225,7 +224,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
      <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
     </CollapsibleSection>
    </section>
-       <UgcNotesSection type="peptide" slug={slug} />
 
 {DEBUG && riskHit ? <SafetyLinks safetyIds={riskHit.safety_links} label="Risk references" /> : null}
   </main>
