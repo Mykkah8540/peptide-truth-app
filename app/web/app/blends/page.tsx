@@ -8,11 +8,11 @@ export default async function BlendsPage() {
  return (
   <main style={{ maxWidth: 920, margin: "0 auto", padding: "24px 16px" }}>
    <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-    <h1 style={{ fontSize: 28, fontWeight: 900, margin: 0 }}>Blends</h1>
+    <h1 style={{ fontSize: 28, fontWeight: 900, margin: 0 }}>Commercial Blends</h1>
    </div>
 
    <div style={{ color: "#666", marginBottom: 12 }}>
-    These are commercially available, pre-mixed products sold by peptide suppliers — not user-assembled stacks.
+    These are commercially available, pre-mixed products sold by suppliers — not user-assembled stacks.
    </div>
 
    <div style={{ color: "#666", marginBottom: 16 }}>

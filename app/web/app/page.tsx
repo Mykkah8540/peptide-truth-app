@@ -68,8 +68,8 @@ export default function Home() {
      <div style={{ display: "grid", gap: 6 }}>
       <h1 style={{ fontSize: 28, fontWeight: 900, letterSpacing: -0.4, margin: 0 }}>Pep-Talk</h1>
       <p style={{ margin: 0, color: "#666", fontSize: 14, lineHeight: 1.5 }}>
-
-      </p>
+ Explore peptides and commercially available blends with a safety-first lens.
+</p>
      </div>
 
      <section className="pt-card" style={{ padding: 14 }}>
@@ -94,7 +94,7 @@ export default function Home() {
       </div>
 
       <p style={{ marginTop: 10, color: "#666", fontSize: 13, lineHeight: 1.5, marginBottom: 0 }}>
-       Educational content remains free. Pro unlocks discovery tools and personal organization.
+       Educational content remains free. Pro unlocks guided discovery and community stack tools.
       </p>
      </section>
 

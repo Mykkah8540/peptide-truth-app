@@ -20,7 +20,7 @@ const NAV_ITEMS: NavItem[] = [
 
  // Free
  { label: "Peptides", href: "/peptides" },
- { label: "Blends", href: "/blends" },
+ { label: "Commercial Blends", href: "/blends" },
  { label: "Resources", href: "/resources" },
 
  // Pro (always visible; pill indicates paid when not Pro). My Peps is in the avatar menu.
@@ -127,7 +127,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
    }}
   >
    <div style={{ maxWidth: 980, margin: "0 auto", padding: "14px 16px", display: "grid", gap: 10 }}>
-    <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", gap: 12 }}>
      <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
       <button
        type="button"
@@ -160,8 +160,8 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
       </Link>
      </div>
 
-     <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
-      <nav
+     <div style={{ display: "flex", justifyContent: "center" }}>
+ <nav
        className="desktop-nav"
        style={{
         display: "inline-flex",
@@ -191,10 +191,13 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
          </Link>
         </span>
        ))}
-       <AccountChip />
+       
       </nav>
+</div>
 
-      <button
+<div style={{ display: "inline-flex", alignItems: "center", justifyContent: "flex-end", gap: 12, paddingLeft: 12 }}>
+ <AccountChip />
+ <button
        className="mobile-menu-btn"
        aria-label="Open menu"
        onClick={() => setOpen(true)}
@@ -210,7 +213,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
       >
        ☰
       </button>
-     </div>
+</div>
     </div>
 
     <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
