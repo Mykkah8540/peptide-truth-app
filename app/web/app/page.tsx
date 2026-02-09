@@ -1,4 +1,16 @@
 import { getSponsors } from "@/lib/sponsors";
+import { listStacks } from "@/lib/content";
+import { requirePaid } from "@/lib/gate";
+import Link from "next/link";
+
+async function isPaid(): Promise<boolean> {
+ try {
+  await requirePaid();
+  return true
+ } catch {
+  return false
+ }
+}
 import SponsorBanner from "@/components/SponsorBanner";
 
 function ProPill() {
@@ -58,10 +70,12 @@ function HomeLink(props: {
  );
 }
 
-export default function Home() {
+export default async function Home() {
  const sponsors = getSponsors();
+ const paid = await isPaid();
+ const recent = listStacks().slice(0, 4);
 
- return (
+return (
   <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
    <main className="mx-auto w-full max-w-3xl px-4 py-10">
     <div style={{ display: "grid", gap: 14 }}>
