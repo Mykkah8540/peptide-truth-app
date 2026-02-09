@@ -82,8 +82,13 @@ return (
      <div style={{ display: "grid", gap: 6 }}>
       <h1 style={{ fontSize: 28, fontWeight: 900, letterSpacing: -0.4, margin: 0 }}>Pep-Talk</h1>
       <p style={{ margin: 0, color: "#666", fontSize: 14, lineHeight: 1.5 }}>
- Explore peptides and commercially available blends with a safety-first lens.
+ Science-backed education for curious humans at every level.
 </p>
+       <div style={ display: "grid", gap: 6, marginTop: 6 }>
+        <div style={ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }>Understand peptides — without the hype.</div>
+        <div style={ fontSize: 13, color: "#666", lineHeight: 1.5 }>We don’t tell you what to do. We help you understand what’s happening.</div>
+       </div>
+
      </div>
 
      <section className="pt-card" style={{ padding: 14 }}>

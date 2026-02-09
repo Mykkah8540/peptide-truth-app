@@ -43,3 +43,6 @@ data/ugc/
 # local-only supabase temp files
 /tmp_profiles.sql
 /tmp_trigger.sql
+
+# Ignore legacy UI doc folder (canonical is docs/ui)
+docs/UI/
