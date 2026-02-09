@@ -84,9 +84,9 @@ return (
       <p style={{ margin: 0, color: "#666", fontSize: 14, lineHeight: 1.5 }}>
  Science-backed education for curious humans at every level.
 </p>
-       <div style={ display: "grid", gap: 6, marginTop: 6 }>
-        <div style={ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }>Understand peptides — without the hype.</div>
-        <div style={ fontSize: 13, color: "#666", lineHeight: 1.5 }>We don’t tell you what to do. We help you understand what’s happening.</div>
+       <div style={{ display: "grid", gap: 6, marginTop: 6 }}>
+        <div style={{ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }}>Understand peptides — without the hype.</div>
+        <div style={{ fontSize: 13, color: "#666", lineHeight: 1.5 }}>We don’t tell you what to do. We help you understand what’s happening.</div>
        </div>
 
      </div>

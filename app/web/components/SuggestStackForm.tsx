@@ -28,7 +28,7 @@ function generateOutcomes(goal: string, includes: Option[]): string[] {
  if (g.includes("sleep")) out.push("Improved sleep quality and recovery (subjective).");
  if (g.includes("recovery") || g.includes("injury") || g.includes("heal")) out.push("Support for recovery processes and comfort (educational).");
  if (g.includes("focus") || g.includes("cognitive") || g.includes("brain")) out.push("Improved focus/clarity (subjective).");
- if (g.includes("fat") || g.includes("weight") || g.includes("cut")) out.push("Support for weight-management goals .");
+ if (g.includes("fat") || g.includes("weight") || g.includes("cut")) out.push("Support for weight-management goals (context varies).");
  if (g.includes("skin") || g.includes("hair") || g.includes("beauty")) out.push("Support for skin/hair appearance goals (subjective).");
  if (g.includes("immune")) out.push("Support for immune resilience (educational).");
  if (g.includes("energy") || g.includes("motivation")) out.push("Improved day-to-day energy and motivation (subjective).");
