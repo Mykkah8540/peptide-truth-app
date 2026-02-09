@@ -46,3 +46,7 @@ data/ugc/
 
 # Ignore legacy UI doc folder (canonical is docs/ui)
 docs/UI/
+
+# FORCE-ALLOW canonical docs/ui (do not ignore)
+!docs/ui/
+!docs/ui/**
