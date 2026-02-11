@@ -1,6 +1,6 @@
 {
   "version": "v1",
-  "updated_at": "2026-01-31",
+  "updated_at": "2026-02-10",
   "notes": "Deterministic search routing index (terms -> entity/category routes). Additive only.",
   "counts": {
     "terms": 533,
