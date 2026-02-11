@@ -175,7 +175,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
              fontSize: 10,
              fontWeight: 650,
              letterSpacing: 0.5,
-             opacity: 0.62,
+             opacity: 0.50,
              lineHeight: 1.1,
             }}
            >
