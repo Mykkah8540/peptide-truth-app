@@ -8,7 +8,6 @@ This document is the canonical “master blueprint” for **everything** designe
 
 This is intentionally prescriptive and verbose. If a future change conflicts with this document, **this document wins**.
 
----
 
 ## 0. Core reality and product stance
 
@@ -48,7 +47,6 @@ Pep Talk is NOT:
 - a prescribing authority
 - a protocol library
 - a dosing/scheduling guide
-- a “best stack” engine
 - a supplier marketplace
 - an influencer/social platform
 - a popularity contest (likes/trending/leaderboards)
@@ -126,7 +124,6 @@ Acknowledges reality without endorsing behavior.
 - Giving instructions is also irresponsible.
 - Standing in the gap with clarity and restraint is the only adult option.
 
----
 
 ## 1. Global messaging (final copy) and what it replaces
 
@@ -152,7 +149,6 @@ Replace/remove wherever found:
 Disclaimers exist in the **disclaimer area** only.
 Do not scare users mid-exploration with defensive language.
 
----
 
 ## 2. IA and content strategy (what exists, what we’re moving to)
 
@@ -178,7 +174,6 @@ Where biologically relevant:
 - ensure tone remains consumer-readable
 - do not imply medical decision-making
 
----
 
 ## 3. Section-by-section: CURRENT STATE → TARGET STATE (prescriptive)
 
@@ -206,7 +201,6 @@ They must:
 - Add/insert: quick-nav anchor link to `#community`
 - Ensure disclaimer remains centralized (not repeated here)
 
----
 
 ### 3.2 Wellness Paths
 #### Current state
@@ -224,7 +218,6 @@ They should:
 - Ensure intros and headings use system-first language
 - Avoid “this fixes X” language, avoid “best peptide for X”
 
----
 
 ### 3.3 Resources
 #### Current state
@@ -242,7 +235,6 @@ They explicitly teach:
 - `app/resources/*`
 - Resources should reference peptides/blends/stacks without implying use
 
----
 
 ### 3.4 Commercial Blends (PDP-style, supplier-available combo products)
 #### The problem to solve
@@ -275,7 +267,6 @@ Every blend page must include:
 - Ensure each component peptide links to peptide PDP
 - Ensure no CTA implies action or purchase
 
----
 
 ### 3.5 Stacks (curated + community)
 #### Product distinction (locked)
@@ -299,7 +290,6 @@ Explore Stacks is two-lane:
 - Stacks submission flow (see Section 7)
 - Community stacks section must show “approved” label; no hype sorting
 
----
 
 ## 4. Community knowledge: the whole scope (comments + stacks) — everything decided
 
@@ -309,7 +299,6 @@ We are here to block **authority cosplay** (prescribing, instructing, guaranteei
 
 Experience is welcome. Directives and protocols are not.
 
----
 
 ## 5. Peptide PDP Community Comments (full design + rules + auth + moderation)
 
@@ -392,7 +381,6 @@ RLS:
 - section wrapper (server) + form (client)
 - only modify PDP to mount component + add nav anchor
 
----
 
 ## 6. Community Stacks (UGC) — submission, validation, review, publication
 
@@ -434,7 +422,6 @@ Allow experience:
 
 No trending/likes/hype sorting.
 
----
 
 ## 7. Guardrails: upgrade without breaking everything (locked)
 
@@ -446,7 +433,6 @@ No trending/likes/hype sorting.
 - No dead UI affordances
 - All actions return `{ ok: true/false }`
 
----
 
 ## 8. Chronological implementation order (dependency-aware)
 
@@ -456,7 +442,6 @@ C) UI components
 D) wire into PDP + nav anchor  
 E) QA gates + build green
 
----
 
 ## 9. Acceptance criteria (definition of “done”)
 
@@ -473,7 +458,6 @@ E) QA gates + build green
   - regex blocks directives/protocols/dosing
 - Build green, no regressions
 
----
 
 ## 10. Final product law (never drift)
 Pep Talk allows curiosity.
