@@ -85,3 +85,8 @@ Stop immediately if:
 - scope drifts beyond the spec
 - phantom changes appear in git status
 - a change implies advice, protocols, dosing, timing, or suitability
+
+
+## PDP rebuild artifacts (authoritative)
+- docs/ui/PDP_Delete_List.md
+- docs/ui/PDP_Rebuild_Checklist.md
