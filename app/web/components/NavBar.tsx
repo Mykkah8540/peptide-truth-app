@@ -13,6 +13,7 @@ type NavItem = {
  label: string;
  href: string;
  pro?: boolean;
+  subtitle?: string;
 };
 
 const NAV_ITEMS: NavItem[] = [
