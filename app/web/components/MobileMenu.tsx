@@ -166,7 +166,7 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
         alignItems: "center",
        }}
       >
-       <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "flex-start" }}>
+       <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "center" }}>
           <span>{item.label}</span>
           {item.subtitle ? (
            <span
@@ -175,8 +175,9 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
              fontSize: 10,
              fontWeight: 650,
              letterSpacing: 0.5,
-             opacity: 0.50,
+             opacity: 0.40,
              lineHeight: 1.1,
+             textAlign: "center",
             }}
            >
             {item.subtitle}

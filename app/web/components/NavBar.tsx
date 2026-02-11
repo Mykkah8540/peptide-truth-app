@@ -161,16 +161,18 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
       </Link>
      </div>
 
-     <div style={{ display: "flex", justifyContent: "center" }}>
+     <div style={{ display: "flex", justifyContent: "center", minWidth: 0 }}>
  <nav
-       className="desktop-nav"
-       style={{
-        display: "inline-flex",
-        gap: 16,
-        flexWrap: "wrap",
-        alignItems: "center",
-       }}
-      >
+       $1
+           display: "inline-flex",
+           gap: 14,
+           flexWrap: "nowrap",
+           alignItems: "center",
+           overflowX: "auto",
+           maxWidth: "100%",
+           whiteSpace: "nowrap",
+           paddingBottom: 2,
+          $3>
        {items.slice(1).map((item) => (
         <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
          <Link
@@ -187,7 +189,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
            lineHeight: 1,
           }}
          >
-          <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "flex-start" }}>
+          <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "center" }}>
              <span style={{ display: "inline-flex", alignItems: "center" }}>
               <span>{item.label}</span>
               {showProBadges && item.pro ? <ProPill /> : null}
@@ -201,6 +203,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
                 letterSpacing: 0.5,
                 opacity: 0.62,
                 lineHeight: 1.1,
+                textAlign: "center",
                }}
               >
                {item.subtitle}
