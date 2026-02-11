@@ -186,8 +186,26 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
            lineHeight: 1,
           }}
          >
-          <span>{item.label}</span>
-          {showProBadges && item.pro ? <ProPill /> : null}
+          <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "flex-start" }}>
+             <span style={{ display: "inline-flex", alignItems: "center" }}>
+              <span>{item.label}</span>
+              {showProBadges && item.pro ? <ProPill /> : null}
+             </span>
+             {item.subtitle ? (
+              <span
+               style={{
+                marginTop: 2,
+                fontSize: 10,
+                fontWeight: 650,
+                letterSpacing: 0.5,
+                opacity: 0.62,
+                lineHeight: 1.1,
+               }}
+              >
+               {item.subtitle}
+              </span>
+             ) : null}
+            </span>
          </Link>
         </span>
        ))}

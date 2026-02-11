@@ -9,6 +9,7 @@ type Item = {
  label: string;
  href: string;
  pro?: boolean;
+ subtitle?: string;
 };
 
 function ProPill() {
@@ -165,7 +166,23 @@ export default function MobileMenu(props: { open: boolean; onClose: () => void; 
         alignItems: "center",
        }}
       >
-       <span>{item.label}</span>
+       <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "flex-start" }}>
+          <span>{item.label}</span>
+          {item.subtitle ? (
+           <span
+            style={{
+             marginTop: 2,
+             fontSize: 10,
+             fontWeight: 650,
+             letterSpacing: 0.5,
+             opacity: 0.62,
+             lineHeight: 1.1,
+            }}
+           >
+            {item.subtitle}
+           </span>
+          ) : null}
+         </span>
       </Link>
      ))}
 
