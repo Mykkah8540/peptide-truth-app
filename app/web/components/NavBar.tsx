@@ -180,6 +180,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
         <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
          <Link
           href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+            title={item.subtitle ? ` — ` : item.label}
           style={{
            textDecoration: "none",
            color: "inherit",
@@ -202,32 +203,7 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
        ))}
        
       </nav>
-</div>
-
-      <div
-       className="taxonomy-legend"
-       style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: 14,
-        flexWrap: "wrap",
-        fontSize: 11,
-        fontWeight: 650,
-        letterSpacing: 0.2,
-        opacity: 0.52,
-        paddingTop: 2,
-       }}
-      >
-       <span>Peptides = Compound Profiles</span>
-       <span>Commercial Blends = Branded Combinations</span>
-       <span>Resources = Education Library</span>
-       <span>Wellness Paths = Context Pathways</span>
-       <span>Stack Builder = Custom Stack Tool</span>
-       <span>Explore Stacks = Curated Stacks</span>
-      </div>
-
-
-<div style={{ display: "inline-flex", alignItems: "center", justifyContent: "flex-end", gap: 12, paddingLeft: 12 }}>
+</div><div style={{ display: "inline-flex", alignItems: "center", justifyContent: "flex-end", gap: 12, paddingLeft: 12 }}>
  <AccountChip />
  <button
        className="mobile-menu-btn"
