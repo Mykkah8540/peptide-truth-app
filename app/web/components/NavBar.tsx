@@ -20,14 +20,14 @@ const NAV_ITEMS: NavItem[] = [
  { label: "Home", href: "/" },
 
  // Free
- { label: "Peptides", href: "/peptides" },
- { label: "Commercial Blends", href: "/blends" },
- { label: "Resources", href: "/resources" },
+ { label: "Peptides", href: "/peptides", subtitle: "Compound Profiles" },
+ { label: "Commercial Blends", href: "/blends", subtitle: "Branded Combinations" },
+ { label: "Resources", href: "/resources", subtitle: "Education Library" },
 
  // Pro (always visible; pill indicates paid when not Pro). My Peps is in the avatar menu.
- { label: "Wellness Paths", href: "/categories", pro: true },
- { label: "Stack Builder", href: "/stack-builder", pro: true },
- { label: "Explore Stacks", href: "/stacks", pro: true },
+ { label: "Wellness Paths", href: "/categories", pro: true, subtitle: "Context Pathways" },
+ { label: "Stack Builder", href: "/stack-builder", pro: true, subtitle: "Custom Stack Tool" },
+ { label: "Explore Stacks", href: "/stacks", pro: true, subtitle: "Curated Stacks" },
 ];
 
 function ProPill() {
