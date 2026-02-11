@@ -116,10 +116,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
 
-      <section id="community" className="pt-card" style={{ marginTop: 24 }}>
-        {/* NOTE: Community read is public; write requires auth. */}
-        <PeptideCommentsSection peptideSlug={slug} peptideName={peptideName} />
-      </section>
+      {/* NOTE: Community read is public; write requires auth. */}
+      <PeptideCommentsSection slug={slug} />
     </main>
   );
 }
