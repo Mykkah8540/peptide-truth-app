@@ -161,19 +161,22 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
       </Link>
      </div>
 
-     <div style={{ display: "flex", justifyContent: "center", minWidth: 0 }}>
- <nav
-       $1
-           display: "inline-flex",
-           gap: 14,
-           flexWrap: "nowrap",
-           alignItems: "center",
-           overflowX: "auto",
-           maxWidth: "100%",
-           whiteSpace: "nowrap",
-           paddingBottom: 2,
-          $3>
-       {items.slice(1).map((item) => (
+     
+<div style={{ display: "flex", justifyContent: "center", minWidth: 0 }}>
+        <nav
+         className="desktop-nav"
+         style={{
+          display: "inline-flex",
+          gap: 14,
+          flexWrap: "nowrap",
+          alignItems: "center",
+          overflowX: "auto",
+          maxWidth: "100%",
+          whiteSpace: "nowrap",
+          paddingBottom: 2,
+         }}
+        >
+         {items.slice(1).map((item) => (
         <span key={item.href} style={{ display: "inline-flex", alignItems: "center" }}>
          <Link
           href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
