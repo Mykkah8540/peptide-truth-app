@@ -1,8 +1,4 @@
-# Next Task
-Only one task may be active at a time.
+# NEXT TASK (Single Active Task)
 
-Status
-No active task selected.
-
-When starting work
-Fill this file using the template in docs/_status/TASK_TEMPLATE.md.
+None queued.
+Create the next task using docs/_status/TASK_TEMPLATE.md.
