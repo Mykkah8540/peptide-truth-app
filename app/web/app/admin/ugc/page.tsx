@@ -330,7 +330,7 @@ export default function UgcAdminPage() {
    cache: "no-store",
   });
   const data = await res.json().catch(() => null);
-  if (!res.ok || !data?.ok) return [];
+  if (!res.ok || !data?.ok) { throw new Error(data?.error ? String(data.error) : ("HTTP_" + res.status)); }
   return Array.isArray(data.posts) ? data.posts : [];
  }
 

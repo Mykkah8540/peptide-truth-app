@@ -14,8 +14,8 @@ export async function POST(req: Request) {
   return NextResponse.json({ ok: false, error: "missing fields" }, { status: 400 });
  }
 
- // DB currently supports peptide+blend+stack
- if (entityType !== "peptide" && entityType !== "blend" && entityType !== "stack") {
+ // UGC store contract: peptide|blend only
+ if (entityType !== "peptide" && entityType !== "blend") {
   return NextResponse.json({ ok: false, error: "invalid type" }, { status: 400 });
  }
 if (!ack) {
