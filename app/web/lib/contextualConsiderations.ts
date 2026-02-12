@@ -522,6 +522,31 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from sleep duration vs quality, apnea severity, CPAP adherence, caffeine/stimulants, late eating, alcohol, stress load, and individual sensitivity to sleep loss.`,
   },
+  {
+    id: "pt_ctx_hormone_therapy",
+    label: "Hormonal birth control / HRT / testosterone therapy",
+    synonyms: [
+      "birth control",
+      "oral contraceptive",
+      "iud",
+      "hormonal iud",
+      "hrt",
+      "hormone replacement",
+      "estrogen",
+      "progesterone",
+      "testosterone therapy",
+      "trt",
+      "androgen therapy"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Hormone therapies can shift baseline appetite, mood, fluid balance, and recovery signals, which changes how people interpret changes in weight, energy, or performance.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that background hormone therapy can meaningfully shape baseline physiology. When "${q}" is present, differences in appetite, body composition, and mood may already be in flux, which can affect interpretation.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how much of a reported change is due to ${peptide} versus underlying hormonal modulation, dose changes, or time-on-therapy adjustments. Many datasets don’t stratify by hormone therapy status.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from dose, delivery method (oral, injectable, transdermal), time since initiation, individual sensitivity to hormone shifts, training load, stress, and nutritional context.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
