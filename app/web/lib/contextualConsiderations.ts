@@ -226,6 +226,31 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from baseline BP control, salt sensitivity, hydration, sleep, stress, stimulant intake (caffeine), training load, and differences in medication type and timing.`,
   },
+  {
+    id: "pt_ctx_low_blood_pressure",
+    label: "Low blood pressure (hypotension)",
+    synonyms: [
+      "low blood pressure",
+      "hypotension",
+      "low bp",
+      "bp low",
+      "orthostatic",
+      "orthostatic hypotension",
+      "dizzy when standing",
+      "lightheaded",
+      "fainting",
+      "near syncope",
+      "syncope"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. When blood pressure runs low, baseline dizziness, lightheadedness, and fatigue sensitivity can shape how new sensations are interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is symptom overlap. In low-BP contexts, sensations like dizziness, weakness, or changes in heart-rate awareness may already be present at baseline, making attribution more complex.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how much a reported change reflects ${peptide} versus hydration status, sodium intake, heat exposure, rapid position changes, or normal day-to-day BP variability. Many studies don’t stratify specifically for hypotension.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from hydration level, salt intake, autonomic tone, medication use, body position changes, temperature, and baseline cardiovascular conditioning.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
