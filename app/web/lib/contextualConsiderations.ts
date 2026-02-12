@@ -371,6 +371,51 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from injury location and severity, training history, recent load spikes, sleep and nutrition, body weight, biomechanics, adherence to rehab, and differences in how pain is perceived and reported.`,
   },
+  {
+    id: "pt_ctx_blood_pressure",
+    label: "Blood pressure (high/low) and dizziness",
+    synonyms: [
+      "blood pressure",
+      "bp",
+      "high blood pressure",
+      "hypertension",
+      "elevated blood pressure",
+      "low blood pressure",
+      "hypotension",
+      "orthostatic",
+      "orthostatic hypotension",
+      "postural hypotension",
+      "dizziness",
+      "lightheaded",
+      "lightheadedness",
+      "faint",
+      "fainting",
+      "syncope",
+      "head rush",
+      "standing up",
+      "palpitations",
+      "heart racing",
+      "tachycardia",
+      "bradycardia",
+      "pounding heart",
+      "salt",
+      "electrolytes",
+      "dehydration",
+      "hydration",
+      "diuretics",
+      "beta blocker",
+      "ace inhibitor",
+      "arb"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Blood-pressure symptoms can be strongly influenced by hydration, salt balance, stress, and other medications—so discussion often focuses on context and attribution rather than a single cause.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is *signal overlap*: dizziness, fatigue, and “heart racing” sensations can come from blood pressure shifts, dehydration, anxiety, stimulants, or medication effects. When "${q}" is present, interpretation often benefits from separating subjective sensations from measured readings and surrounding circumstances.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether a reported symptom reflects a real blood-pressure change versus a transient event (hydration, sleep, caffeine, stress) or unrelated factors. Many anecdotes don’t include measurements, timing, or co-medication context.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from baseline BP, hydration and electrolyte intake, fitness level, heat exposure, posture changes, concurrent meds (including antihypertensives/diuretics), and differences in sensitivity to palpitations or dizziness.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
