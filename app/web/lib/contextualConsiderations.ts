@@ -547,6 +547,27 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from dose, delivery method (oral, injectable, transdermal), time since initiation, individual sensitivity to hormone shifts, training load, stress, and nutritional context.`,
   },
+  {
+    id: "pt_ctx_menopause",
+    label: "Perimenopause / menopause",
+    synonyms: [
+      "perimenopause",
+      "menopause",
+      "hot flashes",
+      "night sweats",
+      "hormone shifts",
+      "estrogen decline",
+      "sleep disruption"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Menopause transitions can shift sleep, temperature regulation, mood, and body composition signals, which can change how people interpret energy, appetite, and recovery discussions.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that baseline symptoms can fluctuate substantially during this phase (sleep quality, stress tolerance, appetite, fatigue). When "${q}" is present, it’s common for people to attribute changes to multiple overlapping factors.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how well general findings translate to perimenopausal or menopausal populations because many studies don’t stratify by menopause status or symptom severity. Direct evidence for certain outcomes can be limited.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from stage (peri vs post), sleep disruption severity, stress load, HRT use, training status, and differences in baseline metabolic health.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
