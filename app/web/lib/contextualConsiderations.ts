@@ -568,6 +568,27 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from stage (peri vs post), sleep disruption severity, stress load, HRT use, training status, and differences in baseline metabolic health.`,
   },
+  {
+    id: "pt_ctx_underweight_low_bmi",
+    label: "Underweight / low BMI / frailty",
+    synonyms: [
+      "underweight",
+      "low bmi",
+      "frailty",
+      "low body fat",
+      "unintentional weight loss",
+      "low appetite",
+      "sarcopenia"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. When someone is underweight or frail, baseline reserves are lower, so appetite, hydration, and tolerance signals may show up sooner and be interpreted differently.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that low baseline reserves can amplify perceived effects (good or bad). When "${q}" is present, discussions often emphasize whether a change reflects true benefit or just reduced tolerance margin.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how well general findings translate to frail or underweight populations because many studies enroll healthier or more weight-stable cohorts. Subgroup evidence may be limited.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from nutrition status, protein intake, baseline activity, sleep quality, medication burden, and underlying causes of low weight (illness, GI issues, stress).`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
