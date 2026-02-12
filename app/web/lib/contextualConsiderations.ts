@@ -444,6 +444,32 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from diagnosis subtype (IBS vs IBD), flare cycles, stress load, fiber intake, hydration, microbiome diversity, medication use, and individual sensitivity to gut sensations.`,
   },
+  {
+    id: "pt_ctx_sleep_issues",
+    label: "Sleep issues (insomnia / poor sleep / sleep apnea)",
+    synonyms: [
+      "sleep",
+      "poor sleep",
+      "insomnia",
+      "sleep apnea",
+      "osa",
+      "snoring",
+      "fatigue",
+      "tired",
+      "daytime sleepiness",
+      "restless sleep",
+      "shift work",
+      "jet lag"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Sleep quality is one of the biggest drivers of how people feel day-to-day, so it can dominate perceived “effects” and make attribution especially tricky.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that poor sleep amplifies sensitivity—mood, appetite, pain, motivation, and energy can swing widely. When "${q}" is present, changes may reflect improved or worsened sleep more than a direct primary effect of ${peptide}.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether reported changes are direct or downstream (e.g., sleep improved → appetite and mood shift). Many studies don’t measure sleep rigorously, and real-world reports rarely control for sleep debt or apnea severity.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from sleep apnea severity, total sleep time, sleep regularity, caffeine/stimulant use, stress load, bedtime routine, alcohol use, and whether sleep disruption is primary or secondary to another condition.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
