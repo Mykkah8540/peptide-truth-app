@@ -165,4 +165,3 @@ export function getBestContextMatches(query: string, limit = 3): Match[] {
 
   return scored.slice(0, Math.max(1, limit));
 }
-TS'
