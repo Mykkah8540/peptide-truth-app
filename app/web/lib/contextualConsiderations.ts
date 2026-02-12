@@ -87,7 +87,6 @@ export const CONTEXT_PACKS: ContextPack[
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from CKD stage, hydration status, electrolyte balance, medication burden, protein intake, and comorbid conditions that often travel with kidney disease.`,
   },
-] = [
   {
     id: "thyroid",
     label: "Thyroid conditions",
