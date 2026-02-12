@@ -406,6 +406,61 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from nutrition status, protein intake, baseline activity, sleep quality, medication burden, and underlying causes of low weight (illness, GI issues, stress).`,
   },
+
+  {
+    id: "pt_ctx_athlete_injury_recovery",
+    label: "Athletes: injury recovery, overuse, soreness, and rehab",
+    synonyms: [
+      "athlete",
+      "training",
+      "hard training",
+      "overuse",
+      "overtraining",
+      "recovery",
+      "rehab",
+      "return to sport",
+      "return to play",
+      "sports injury",
+      "injury recovery",
+      "soreness",
+      "doms",
+      "muscle soreness",
+      "strain",
+      "muscle strain",
+      "pull",
+      "muscle pull",
+      "sprain",
+      "tear",
+      "ligament tear",
+      "tendon tear",
+      "meniscus",
+      "acl",
+      "mcl",
+      "ankle sprain",
+      "knee pain",
+      "back pain",
+      "low back pain",
+      "shin splints",
+      "stress reaction",
+      "stress fracture",
+      "tendinopathy",
+      "tendonitis",
+      "tendinitis",
+      "shoulder pain",
+      "elbow pain",
+      "hip pain",
+      "plantar fasciitis"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. In athlete and rehab contexts, baseline training stress and tissue healing timelines can dominate how people interpret changes—so “worked” vs “did nothing” often depends on where someone is in the recovery cycle.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that training load and recovery stage matter a lot. Symptoms like soreness, stiffness, sleep quality, and perceived readiness can shift quickly with volume/intensity changes, so athlete discussions tend to focus on separating normal training fluctuation from any peptide-specific signal.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether a reported improvement reflects true tissue healing versus short-term shifts in pain perception, swelling, sleep, or training behavior. Many conversations rely on anecdote, and studies may not match real-world injury types, rehab protocols, or athlete workloads.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from the specific tissue involved (muscle vs tendon vs ligament), injury severity, rehab quality, sleep, nutrition, stress, re-injury risk, and whether training load was reduced or ramped while "${q}" was being discussed.`
+  },
+
   ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
