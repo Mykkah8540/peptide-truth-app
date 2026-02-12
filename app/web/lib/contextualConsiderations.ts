@@ -287,6 +287,45 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from injury location and chronicity, load management, rehab quality, biomechanics, sleep, nutrition/protein intake, baseline inflammation, and concurrent meds/supplements that affect pain or swelling.`,
   },
+  {
+    id: "pt_ctx_tendinitis",
+    label: "Tendinitis / tendon pain / connective tissue irritation",
+    synonyms: [
+      "tendonitis",
+      "tendinitis",
+      "tendon pain",
+      "tendon soreness",
+      "tendon inflammation",
+      "tendon irritation",
+      "tendon strain",
+      "overuse injury",
+      "tennis elbow",
+      "golfer's elbow",
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "achilles tendonitis",
+      "achilles tendinitis",
+      "patellar tendonitis",
+      "patellar tendinitis",
+      "jumper's knee",
+      "rotator cuff tendinitis",
+      "shoulder tendonitis",
+      "plantar fasciitis",
+      "tendinopathy",
+      "connective tissue",
+      "collagen",
+      "joint pain",
+      "insertional pain"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Tendon pain tends to be driven by load, recovery, and tissue capacity—so discussions often focus on training volume, sleep, and “too much too soon” patterns rather than a single, simple cause.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that tendon symptoms can lag behind training decisions. When "${q}" is present, interpretation usually benefits from separating day-to-day pain fluctuations from longer-term changes in function, stiffness, and tolerance to load.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether changes reflect true tissue-level recovery versus short-term symptom modulation, altered activity patterns, or normal variability. Many reports don’t capture training load, sleep, and rehab details well enough to compare fairly.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from training volume/intensity, exercise selection, recovery quality, age, baseline inflammation, footwear/ergonomics, previous injury history, and differences in how people define “better” (less pain vs more function vs less stiffness).`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
