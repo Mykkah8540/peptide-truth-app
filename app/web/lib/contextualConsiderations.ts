@@ -193,140 +193,7 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from disease severity, inflammation status, nutrition, alcohol history, medication burden, bile flow issues, and comorbid metabolic conditions that often co-occur with liver disease.`,
   },
-  {
-    id: "pt_ctx_high_blood_pressure",
-    label: "High blood pressure (hypertension)",
-    synonyms: [
-      "high blood pressure",
-      "hypertension",
-      "high bp",
-      "bp high",
-      "elevated bp",
-      "elevated blood pressure",
-      "htn",
-      "systolic",
-      "diastolic",
-      "amlodipine",
-      "lisinopril",
-      "losartan",
-      "metoprolol",
-      "beta blocker",
-      "ace inhibitor",
-      "arb",
-      "calcium channel blocker",
-      "thiazide",
-      "hydrochlorothiazide"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Blood pressure context matters because vascular tone, heart-rate sensitivity, hydration status, and medication baselines can change what people notice and how they interpret symptoms.`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is that baseline blood pressure and BP medications can shape the “feel” of changes in energy, dizziness, flushing, headaches, or heart-rate sensations. For many peptides, direct hypertension-specific evidence is limited, so discussions often focus on interpretation rather than certainty.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear how much a reported change is attributable to ${peptide} versus normal BP variability, measurement differences (cuff vs wearable), hydration/sodium swings, or recent medication adjustments. Many studies don’t stratify by BP status or antihypertensive use.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from baseline BP control, salt sensitivity, hydration, sleep, stress, stimulant intake (caffeine), training load, and differences in medication type and timing.`,
-  },
-  {
-    id: "pt_ctx_low_blood_pressure",
-    label: "Low blood pressure (hypotension)",
-    synonyms: [
-      "low blood pressure",
-      "hypotension",
-      "low bp",
-      "bp low",
-      "orthostatic",
-      "orthostatic hypotension",
-      "dizzy when standing",
-      "lightheaded",
-      "fainting",
-      "near syncope",
-      "syncope"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. When blood pressure runs low, baseline dizziness, lightheadedness, and fatigue sensitivity can shape how new sensations are interpreted.`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is symptom overlap. In low-BP contexts, sensations like dizziness, weakness, or changes in heart-rate awareness may already be present at baseline, making attribution more complex.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear how much a reported change reflects ${peptide} versus hydration status, sodium intake, heat exposure, rapid position changes, or normal day-to-day BP variability. Many studies don’t stratify specifically for hypotension.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from hydration level, salt intake, autonomic tone, medication use, body position changes, temperature, and baseline cardiovascular conditioning.`,
-  },
-  {
-    id: "pt_ctx_tendon_pain_tendonitis",
-    label: "Tendon pain / tendonitis / connective tissue issues",
-    synonyms: [
-      "tendon pain",
-      "tendonitis",
-      "tendinitis",
-      "tendinosis",
-      "tennis elbow",
-      "golfer's elbow",
-      "achilles",
-      "achilles tendon",
-      "patellar tendon",
-      "jumper's knee",
-      "rotator cuff",
-      "shoulder tendon",
-      "biceps tendon",
-      "plantar fasciitis",
-      "elbow pain",
-      "wrist pain",
-      "overuse injury",
-      "connective tissue",
-      "joint pain",
-      "inflammation",
-      "rehab",
-      "physical therapy"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Tendon and connective-tissue issues are often slow-moving and load-dependent, so people may interpret changes through the lens of training volume, rehab work, pain sensitivity, and recovery patterns rather than a single short-term signal.`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is that tendon symptoms can fluctuate with activity: loading, rest cycles, sleep, and overall inflammation can change how pain feels day to day. When "${q}" is present, reports are often easier to interpret when they include what changed in training or rehab at the same time.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear whether a perceived change reflects tissue healing versus reduced irritation, altered pain perception, or simply a change in load. Many anecdotes don’t separate tendon-specific outcomes from general recovery or mood/energy shifts.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from injury location and chronicity, load management, rehab quality, biomechanics, sleep, nutrition/protein intake, baseline inflammation, and concurrent meds/supplements that affect pain or swelling.`,
-  },
-  {
-    id: "pt_ctx_tendinitis",
-    label: "Tendinitis / tendon pain / connective tissue irritation",
-    synonyms: [
-      "tendonitis",
-      "tendinitis",
-      "tendon pain",
-      "tendon soreness",
-      "tendon inflammation",
-      "tendon irritation",
-      "tendon strain",
-      "overuse injury",
-      "tennis elbow",
-      "golfer's elbow",
-      "lateral epicondylitis",
-      "medial epicondylitis",
-      "achilles tendonitis",
-      "achilles tendinitis",
-      "patellar tendonitis",
-      "patellar tendinitis",
-      "jumper's knee",
-      "rotator cuff tendinitis",
-      "shoulder tendonitis",
-      "plantar fasciitis",
-      "tendinopathy",
-      "connective tissue",
-      "collagen",
-      "joint pain",
-      "insertional pain"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Tendon pain tends to be driven by load, recovery, and tissue capacity—so discussions often focus on training volume, sleep, and “too much too soon” patterns rather than a single, simple cause.`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is that tendon symptoms can lag behind training decisions. When "${q}" is present, interpretation usually benefits from separating day-to-day pain fluctuations from longer-term changes in function, stiffness, and tolerance to load.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear whether changes reflect true tissue-level recovery versus short-term symptom modulation, altered activity patterns, or normal variability. Many reports don’t capture training load, sleep, and rehab details well enough to compare fairly.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from training volume/intensity, exercise selection, recovery quality, age, baseline inflammation, footwear/ergonomics, previous injury history, and differences in how people define “better” (less pain vs more function vs less stiffness).`,
-  },
-  {
+          {
     id: "pt_ctx_tendonitis",
     label: "Tendonitis / tendon pain / overuse injuries",
     synonyms: [
@@ -497,57 +364,7 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from dose, delivery method (injection vs topical), estradiol balance, SHBG levels, body fat percentage, sleep quality, training intensity, and whether hormone levels are stable or recently adjusted.`,
   },
-  {
-    id: "pt_ctx_sleep",
-    label: "Sleep problems (insomnia / poor sleep / sleep apnea)",
-    synonyms: [
-      "sleep",
-      "poor sleep",
-      "insomnia",
-      "sleep apnea",
-      "osa",
-      "cpap",
-      "restless sleep",
-      "sleep quality",
-      "fatigue",
-      "daytime sleepiness",
-      "snoring"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Sleep strongly shapes appetite, mood, inflammation, and recovery, so poor sleep can change what people notice first and how they judge “working” versus “not working.”`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is that sleep can dominate outcomes people care about—energy, hunger, training recovery, and mood. When "${q}" is present, the same change may feel bigger (or smaller) depending on baseline sleep debt.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear whether reported benefits or side effects are driven by ${peptide} or by sleep changes happening in parallel (stress, schedule, apnea treatment, stimulant use). Many reports don’t separate sleep effects from everything else.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from sleep duration vs quality, apnea severity, CPAP adherence, caffeine/stimulants, late eating, alcohol, stress load, and individual sensitivity to sleep loss.`,
-  },
-  {
-    id: "pt_ctx_hormone_therapy",
-    label: "Hormonal birth control / HRT / testosterone therapy",
-    synonyms: [
-      "birth control",
-      "oral contraceptive",
-      "iud",
-      "hormonal iud",
-      "hrt",
-      "hormone replacement",
-      "estrogen",
-      "progesterone",
-      "testosterone therapy",
-      "trt",
-      "androgen therapy"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Hormone therapies can shift baseline appetite, mood, fluid balance, and recovery signals, which changes how people interpret changes in weight, energy, or performance.`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is that background hormone therapy can meaningfully shape baseline physiology. When "${q}" is present, differences in appetite, body composition, and mood may already be in flux, which can affect interpretation.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear how much of a reported change is due to ${peptide} versus underlying hormonal modulation, dose changes, or time-on-therapy adjustments. Many datasets don’t stratify by hormone therapy status.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from dose, delivery method (oral, injectable, transdermal), time since initiation, individual sensitivity to hormone shifts, training load, stress, and nutritional context.`,
-  },
-  {
+      {
     id: "pt_ctx_menopause",
     label: "Perimenopause / menopause",
     synonyms: [
@@ -589,31 +406,7 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from nutrition status, protein intake, baseline activity, sleep quality, medication burden, and underlying causes of low weight (illness, GI issues, stress).`,
   },
-  {
-    id: "pt_ctx_gi_sensitivity",
-    label: "GI sensitivity (IBS / reflux / nausea-prone)",
-    synonyms: [
-      "ibs",
-      "irritable bowel",
-      "reflux",
-      "gerd",
-      "acid reflux",
-      "sensitive stomach",
-      "nausea",
-      "bloating",
-      "constipation",
-      "diarrhea"
-    ],
-    contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. In GI-sensitive contexts, baseline nausea, motility changes, and reflux symptoms can already be present, which affects how appetite and tolerance are described.`,
-    whatIsKnown: (peptide, q) =>
-      `What’s discussed most consistently is overlap in GI endpoints. When "${q}" is present, appetite shifts, fullness, nausea, or bowel changes may be interpreted differently because baseline variability is already high.`,
-    whatIsUnclear: (peptide, q) =>
-      `It’s often unclear whether reported GI changes reflect the compound itself, baseline IBS/reflux variability, diet changes, or stress-related motility shifts. Many studies don’t stratify for GI sensitivity.`,
-    whyExperiencesVary: (peptide, q) =>
-      `Variability can come from diet composition, fiber intake, stress, hydration, microbiome differences, medication use (PPIs, SSRIs), and baseline motility patterns.`,
-  },
-];
+  ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
   const qn = norm(query);
