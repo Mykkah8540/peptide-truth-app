@@ -272,7 +272,7 @@ export default function UgcAdminPage() {
      else if (r.status === 403) setAdminGateMsg("Admin access required.");
      else setAdminGateMsg("");
     }
-   } catch {}
+   } catch (e) { }
   })();
   return () => {
    cancelled = true;
@@ -311,7 +311,7 @@ export default function UgcAdminPage() {
    const obj = JSON.parse(raw);
    obj[id] = true;
    localStorage.setItem("pt_ugc_read_ids", JSON.stringify(obj));
-  } catch {}
+  } catch (e) { }
  }
 
  function getNextId(currentId: string | null, direction: 1 | -1): string | null {
@@ -333,18 +333,11 @@ export default function UgcAdminPage() {
   if (!res.ok || !data?.ok) { throw new Error(data?.error ? String(data.error) : ("HTTP_" + res.status)); }
   return Array.isArray(data.posts) ? data.posts : [];
  }
-
-
- 
- 
- function applySeenLocal(id?: string | null) {
-  if (!id) return;
-  const stamp = new Date().toISOString();
-  setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: p.seenAt || stamp } : p)));
- }
-
- async function markSeenRemote(id?: string | null) {
-   if (!id) return;
+  function applySeenLocal(id: string, seenAt: string | null) {
+   setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt } : p)));
+  }
+  async function markSeenRemote(id?: string | null): Promise<boolean> {
+   if (!id) return false;
    try {
     const res = await fetch("/api/ugc/seen", {
      method: "POST",
@@ -353,27 +346,36 @@ export default function UgcAdminPage() {
     });
 
     if (!res.ok) {
-     // Revert local optimistic seenAt if server rejected it.
-     setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: null } : p)));
-
      const j = await res.json().catch(() => null);
      if (res.status === 401) setErrorMsg("Admin session expired or unauthorized (401).");
      else setErrorMsg(j?.error ? String(j.error) : ("Failed to mark seen (HTTP_" + res.status + ")"));
+     return false;
     }
-   } catch {
-    // network/TLS/etc
-    setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: null } : p)));
+
+    return true;
+   } catch (e) {
     setErrorMsg("Failed to mark seen (network).");
+    return false;
    }
   }
 
- function selectPost(id?: string | null) {
-  if (!id) return;
-  setSelectedId(id);
-  markRead(id);
-  applySeenLocal(id);
-  markSeenRemote(id);
- }
+  function selectPost(id?: string | null) {
+   if (!id) return;
+   setSelectedId(id);
+   markRead(id);
+
+   // Only “seen” matters for triage queues (pending/flagged). Keep other queues immutable.
+   if (queue !== "pending" && queue !== "flagged") return;
+
+   const stamp = new Date().toISOString();
+   applySeenLocal(id, stamp);
+
+   // If server rejects (auth/tls/network), revert local stamp to keep UI==DB truth.
+   void (async () => {
+    const ok = await markSeenRemote(id);
+    if (!ok) applySeenLocal(id, null);
+   })();
+  }
 
  async function refreshCounts() {
   const [pending, approved, rejected, archived, trash] = await Promise.all([
