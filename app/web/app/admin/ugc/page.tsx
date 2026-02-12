@@ -344,15 +344,28 @@ export default function UgcAdminPage() {
  }
 
  async function markSeenRemote(id?: string | null) {
-  if (!id) return;
-  try {
-   await fetch("/api/ugc/seen", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ id }),
-   });
-  } catch {}
- }
+   if (!id) return;
+   try {
+    const res = await fetch("/api/ugc/seen", {
+     method: "POST",
+     headers: { "content-type": "application/json" },
+     body: JSON.stringify({ id }),
+    });
+
+    if (!res.ok) {
+     // Revert local optimistic seenAt if server rejected it.
+     setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: null } : p)));
+
+     const j = await res.json().catch(() => null);
+     if (res.status === 401) setErrorMsg("Admin session expired or unauthorized (401).");
+     else setErrorMsg(j?.error ? String(j.error) : ("Failed to mark seen (HTTP_" + res.status + ")"));
+    }
+   } catch {
+    // network/TLS/etc
+    setPosts((prev) => prev.map((p) => (p.id === id ? { ...p, seenAt: null } : p)));
+    setErrorMsg("Failed to mark seen (network).");
+   }
+  }
 
  function selectPost(id?: string | null) {
   if (!id) return;
