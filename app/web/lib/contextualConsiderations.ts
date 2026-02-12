@@ -589,6 +589,30 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from nutrition status, protein intake, baseline activity, sleep quality, medication burden, and underlying causes of low weight (illness, GI issues, stress).`,
   },
+  {
+    id: "pt_ctx_gi_sensitivity",
+    label: "GI sensitivity (IBS / reflux / nausea-prone)",
+    synonyms: [
+      "ibs",
+      "irritable bowel",
+      "reflux",
+      "gerd",
+      "acid reflux",
+      "sensitive stomach",
+      "nausea",
+      "bloating",
+      "constipation",
+      "diarrhea"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. In GI-sensitive contexts, baseline nausea, motility changes, and reflux symptoms can already be present, which affects how appetite and tolerance are described.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is overlap in GI endpoints. When "${q}" is present, appetite shifts, fullness, nausea, or bowel changes may be interpreted differently because baseline variability is already high.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether reported GI changes reflect the compound itself, baseline IBS/reflux variability, diet changes, or stress-related motility shifts. Many studies don’t stratify for GI sensitivity.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from diet composition, fiber intake, stress, hydration, microbiome differences, medication use (PPIs, SSRIs), and baseline motility patterns.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
