@@ -326,6 +326,51 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from training volume/intensity, exercise selection, recovery quality, age, baseline inflammation, footwear/ergonomics, previous injury history, and differences in how people define “better” (less pain vs more function vs less stiffness).`,
   },
+  {
+    id: "pt_ctx_tendonitis",
+    label: "Tendonitis / tendon pain / overuse injuries",
+    synonyms: [
+      "tendonitis",
+      "tendinitis",
+      "tendinopathy",
+      "tendon pain",
+      "tendon soreness",
+      "overuse injury",
+      "overuse injuries",
+      "achilles tendonitis",
+      "achilles tendinitis",
+      "achilles pain",
+      "patellar tendonitis",
+      "patellar tendinitis",
+      "jumper's knee",
+      "tennis elbow",
+      "golfer's elbow",
+      "lateral epicondylitis",
+      "medial epicondylitis",
+      "rotator cuff tendinitis",
+      "rotator cuff pain",
+      "shoulder tendonitis",
+      "biceps tendonitis",
+      "elbow tendonitis",
+      "wrist tendonitis",
+      "plantar fasciitis",
+      "connective tissue pain",
+      "joint pain",
+      "inflammation",
+      "training load",
+      "volume",
+      "recovery",
+      "rehab"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Tendon problems are often about load management and slow tissue remodeling, so discussions tend to focus on recovery timelines and variability rather than quick, obvious changes.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that tendon symptoms can lag behind training changes and can flare with small shifts in volume, intensity, or biomechanics. When "${q}" is present, interpretation often benefits from tracking training load and recovery conditions alongside any compound-related discussion.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether a reported improvement reflects true tendon remodeling versus reduced irritation, temporary symptom suppression, or simply a change in training stress. Many reports lack details about rehab work, rest, or activity modification.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from injury location and severity, training history, recent load spikes, sleep and nutrition, body weight, biomechanics, adherence to rehab, and differences in how pain is perceived and reported.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
