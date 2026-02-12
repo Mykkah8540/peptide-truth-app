@@ -416,6 +416,34 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from baseline BP, hydration and electrolyte intake, fitness level, heat exposure, posture changes, concurrent meds (including antihypertensives/diuretics), and differences in sensitivity to palpitations or dizziness.`,
   },
+  {
+    id: "pt_ctx_gi_conditions",
+    label: "Gastrointestinal conditions (IBS / IBD / reflux)",
+    synonyms: [
+      "ibs",
+      "irritable bowel",
+      "ibd",
+      "crohns",
+      "ulcerative colitis",
+      "reflux",
+      "gerd",
+      "acid reflux",
+      "gastritis",
+      "bloating",
+      "gut issues",
+      "digestive issues",
+      "diarrhea",
+      "constipation"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Gastrointestinal conditions can shift baseline appetite, nausea sensitivity, and bowel patterns, which strongly shapes how effects are perceived and reported.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that GI symptoms are highly sensitive and easily influenced by stress, diet, and expectation. When "${q}" is present, distinguishing baseline variability from new effects becomes especially important.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how much of a change is directly attributable to ${peptide} versus underlying motility patterns, inflammation cycles, microbiome shifts, or concurrent dietary changes. Many studies don’t deeply stratify by GI diagnosis.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from diagnosis subtype (IBS vs IBD), flare cycles, stress load, fiber intake, hydration, microbiome diversity, medication use, and individual sensitivity to gut sensations.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
