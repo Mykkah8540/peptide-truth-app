@@ -193,6 +193,39 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from disease severity, inflammation status, nutrition, alcohol history, medication burden, bile flow issues, and comorbid metabolic conditions that often co-occur with liver disease.`,
   },
+  {
+    id: "pt_ctx_high_blood_pressure",
+    label: "High blood pressure (hypertension)",
+    synonyms: [
+      "high blood pressure",
+      "hypertension",
+      "high bp",
+      "bp high",
+      "elevated bp",
+      "elevated blood pressure",
+      "htn",
+      "systolic",
+      "diastolic",
+      "amlodipine",
+      "lisinopril",
+      "losartan",
+      "metoprolol",
+      "beta blocker",
+      "ace inhibitor",
+      "arb",
+      "calcium channel blocker",
+      "thiazide",
+      "hydrochlorothiazide"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Blood pressure context matters because vascular tone, heart-rate sensitivity, hydration status, and medication baselines can change what people notice and how they interpret symptoms.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that baseline blood pressure and BP medications can shape the “feel” of changes in energy, dizziness, flushing, headaches, or heart-rate sensations. For many peptides, direct hypertension-specific evidence is limited, so discussions often focus on interpretation rather than certainty.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how much a reported change is attributable to ${peptide} versus normal BP variability, measurement differences (cuff vs wearable), hydration/sodium swings, or recent medication adjustments. Many studies don’t stratify by BP status or antihypertensive use.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from baseline BP control, salt sensitivity, hydration, sleep, stress, stimulant intake (caffeine), training load, and differences in medication type and timing.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
