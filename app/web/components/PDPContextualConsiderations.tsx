@@ -208,4 +208,3 @@ export default function PDPContextualConsiderations(props: Props) {
     </section>
   );
 }
-TSX'
