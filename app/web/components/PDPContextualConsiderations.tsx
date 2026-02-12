@@ -1,139 +1,105 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getBestContextMatches } from "@/lib/contextualConsiderations";
 
 type Props = {
   peptideName: string;
 };
 
-const LOCKED_TITLE = "Things to Consider for Your Situation";
-const LOCKED_SUBLINE =
-  "People respond differently to the same peptide. Age, health conditions, medications, and biology can all change how this compound is discussed and experienced.";
+const TITLE = "Things to Consider for Your Situation";
+const SUBLINE =
+  "People respond differently to the same compound. Age, health conditions, medications, and baseline biology can all change what matters most in research discussions and real-world experiences.";
 
-const LOCKED_PLACEHOLDER = "Search by condition, medication, age, or situation";
-const LOCKED_FRAMING_LINE = "This information is meant to add context — not to decide what’s right for any individual.";
+const PLACEHOLDER = "Search: thyroid, SSRI, autoimmune, older adults…";
+const FRAMING_LINE = "This adds context — it does not decide what’s right for any individual.";
 
-const EXAMPLES = [
-  "Thyroid conditions",
-  "Autoimmune conditions",
-  "Antidepressants (SSRIs)",
-  "Metabolic conditions",
-  "Older adults",
-  "Pregnancy",
-];
+const EXAMPLES = ["Thyroid conditions", "Antidepressants (SSRIs)", "Autoimmune conditions", "Hormonal conditions", "Older adults", "Pregnancy"];
 
 function normalize(s: string) {
   return s.trim().replace(/\s+/g, " ");
 }
 
-function pct(n: number) {
-  const v = Math.max(0, Math.min(1, n));
-  if (v >= 0.85) return "High";
-  if (v >= 0.60) return "Medium";
-  return "Low";
+function fill(t: unknown, vars: Record<string, string>) {
+  const s = typeof t === "string" ? t : "";
+  return s.replace(/\{(peptide|query)\}/g, (_m, k) => vars[k] ?? "");
 }
 
 export default function PDPContextualConsiderations(props: Props) {
   const [q, setQ] = useState("");
   const query = normalize(q);
 
+  const [selectedIdx, setSelectedIdx] = useState<number>(-1);
+
   const matches = useMemo(() => {
     if (!query) return [];
-    return getBestContextMatches(query, 3);
+    try {
+      const res = (getBestContextMatches as any)(query, 4);
+      return Array.isArray(res) ? res.slice(0, 4) : [];
+    } catch {
+      return [];
+    }
   }, [query]);
 
-  const best = matches[0] || null;
+  useEffect(() => {
+    setSelectedIdx(-1);
+  }, [query]);
 
-  // Mandated 5-part structure; contents become context-specific when a pack matches.
-  const response = useMemo(() => {
-    if (!query) return null;
+  const selected = matches[selectedIdx] ?? null;
+  const pack = (selected && (selected.pack || selected.context || selected.item || selected)) || null;
 
-    const peptide = props.peptideName;
+  const vars = useMemo(
+    () => ({
+      peptide: props.peptideName,
+      query,
+    }),
+    [props.peptideName, query]
+  );
 
-    if (!best) {
-      return {
-        contextSummary: `People often ask how "${query}" relates to ${peptide}. This context matters because physiology, concurrent medications, and baseline health can change which mechanisms are emphasized in research discussions and how experiences are described.`,
-        whatIsKnown: `What’s discussed most consistently is *mechanistic overlap*—how ${peptide} is theorized to interact with pathways that may be relevant to "${query}". The strength of evidence varies by peptide and by context, and may be limited to preclinical or early human data in many areas.`,
-        whatIsUnclear: `It’s often unclear how well general findings translate to people with "${query}", especially when studies exclude certain populations, use different endpoints, or don’t account for co-medications and comorbidities. In many cases, there is not enough direct data to make confident, individualized claims.`,
-        whyExperiencesVary: `Variability can come from differences in baseline biology, coexisting conditions, concurrent medications, lifestyle factors, and how outcomes are measured or reported. Two people describing the “same” outcome may be referencing different physiological changes or different expectations.`,
-        framingLine: LOCKED_FRAMING_LINE,
-      };
-    }
+  const output = useMemo(() => {
+    if (!pack) return null;
 
-    const pack = best.pack;
+    const contextSummary =
+      fill(pack.contextSummary ?? pack.context_summary ?? pack.summary ?? "", vars) ||
+      `People often ask how "${query}" relates to ${props.peptideName}. This context matters because physiology, co-medications, and baseline health can change which mechanisms are emphasized and how experiences are described.`;
 
-    return {
-      contextSummary: pack.contextSummary(peptide, query),
-      whatIsKnown: pack.whatIsKnown(peptide, query),
-      whatIsUnclear: pack.whatIsUnclear(peptide, query),
-      whyExperiencesVary: pack.whyExperiencesVary(peptide, query),
-      framingLine: LOCKED_FRAMING_LINE,
-    };
-  }, [query, props.peptideName, best]);
+    const whatIsKnown =
+      fill(pack.whatIsKnown ?? pack.what_is_known ?? pack.known ?? "", vars) ||
+      `What’s discussed most consistently is how ${props.peptideName} may overlap with pathways relevant to "${query}". Evidence strength varies and may be limited or indirect.`;
+
+    const whatIsUnclear =
+      fill(pack.whatIsUnclear ?? pack.what_is_unclear ?? pack.unclear ?? pack.limits ?? "", vars) ||
+      `It may be unclear how well general findings translate to people with "${query}", especially when studies exclude certain populations or don’t account for co-medications and comorbidities.`;
+
+    const whyExperiencesVary =
+      fill(pack.whyExperiencesVary ?? pack.why_experiences_vary ?? pack.variance ?? "", vars) ||
+      `Variability can come from baseline biology, coexisting conditions, concurrent medications, lifestyle factors, and how outcomes are measured or reported.`;
+
+    return { contextSummary, whatIsKnown, whatIsUnclear, whyExperiencesVary };
+  }, [pack, props.peptideName, query, vars]);
 
   return (
-    <section className="pt-card" aria-label={LOCKED_TITLE}>
-      <h2 className="pt-card-title">{LOCKED_TITLE}</h2>
-      <p className="pt-card-subtext">{LOCKED_SUBLINE}</p>
+    <section className="pt-card" aria-label={TITLE}>
+      <h2 className="pt-card-title">{TITLE}</h2>
+      <p className="pt-card-subtext">{SUBLINE}</p>
 
       <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-        <div style={{ display: "grid", gap: 8 }}>
-          <input
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder={LOCKED_PLACEHOLDER}
-            style={{
-              width: "100%",
-              border: "1px solid rgba(0,0,0,0.14)",
-              borderRadius: 14,
-              padding: "12px 12px",
-              fontSize: 14,
-              fontWeight: 800,
-              outline: "none",
-            }}
-          />
+        <input
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder={PLACEHOLDER}
+          style={{
+            width: "100%",
+            border: "1px solid rgba(0,0,0,0.14)",
+            borderRadius: 14,
+            padding: "12px 12px",
+            fontSize: 14,
+            fontWeight: 800,
+            outline: "none",
+          }}
+        />
 
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 10, alignItems: "center" }}>
-            <div style={{ fontSize: 12, fontWeight: 850, opacity: 0.7 }}>
-              {query ? (
-                best ? (
-                  <>
-                    Matched: <span style={{ opacity: 0.95 }}>{best.pack.label}</span> ·{" "}
-                    <span style={{ opacity: 0.75 }}>Confidence: {pct(best.score)}</span>
-                  </>
-                ) : (
-                  <>No strong match yet · Try a more specific term</>
-                )
-              ) : (
-                <>Try one of these:</>
-              )}
-            </div>
-
-            {query ? (
-              <button
-                type="button"
-                onClick={() => setQ("")}
-                style={{
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  background: "#fff",
-                  borderRadius: 999,
-                  padding: "6px 10px",
-                  fontSize: 12,
-                  fontWeight: 900,
-                  cursor: "pointer",
-                  opacity: 0.9,
-                }}
-                aria-label="Clear"
-                title="Clear"
-              >
-                Clear
-              </button>
-            ) : null}
-          </div>
-        </div>
-
-        {!response ? (
+        {!query ? (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
             {EXAMPLES.map((ex) => (
               <button
@@ -157,51 +123,99 @@ export default function PDPContextualConsiderations(props: Props) {
               </button>
             ))}
           </div>
-        ) : (
-          <div style={{ display: "grid", gap: 12, marginTop: 6 }}>
-            {matches.length > 1 ? (
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {matches.slice(0, 3).map((m) => (
-                  <span
-                    key={m.pack.id}
+        ) : matches.length ? (
+          <div style={{ display: "grid", gap: 10 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
+              <div style={{ fontSize: 12, fontWeight: 950, opacity: 0.85 }}>Top matches</div>
+              <button
+                type="button"
+                onClick={() => {
+                  setQ("");
+                  setSelectedIdx(-1);
+                }}
+                style={{
+                  border: "1px solid rgba(0,0,0,0.12)",
+                  background: "#fff",
+                  borderRadius: 999,
+                  padding: "6px 10px",
+                  fontSize: 12,
+                  fontWeight: 900,
+                  cursor: "pointer",
+                  opacity: 0.85,
+                }}
+                aria-label="Clear"
+                title="Clear"
+              >
+                Clear
+              </button>
+            </div>
+
+            <div style={{ display: "grid", gap: 8 }}>
+              {matches.map((m: any, idx: number) => {
+                const label =
+                  String(m?.title || m?.label || m?.pack?.title || m?.pack?.label || m?.name || "Context").trim() ||
+                  "Context";
+                const active = idx === selectedIdx;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedIdx(idx)}
                     style={{
-                      border: "1px solid rgba(0,0,0,0.10)",
-                      background: "rgba(0,0,0,0.02)",
-                      borderRadius: 999,
-                      padding: "6px 10px",
-                      fontSize: 12,
-                      fontWeight: 900,
-                      opacity: 0.78,
+                      textAlign: "left",
+                      border: active ? "1px solid rgba(0,0,0,0.35)" : "1px solid rgba(0,0,0,0.12)",
+                      background: active ? "rgba(0,0,0,0.03)" : "#fff",
+                      borderRadius: 12,
+                      padding: "10px 12px",
+                      cursor: "pointer",
+                      display: "grid",
+                      gap: 4,
                     }}
-                    title={m.matchedTerms.length ? `Matched: ${m.matchedTerms.join(", ")}` : ""}
+                    aria-label={`Select match: ${label}`}
+                    title={`Select match: ${label}`}
                   >
-                    {m.pack.label}
-                  </span>
-                ))}
+                    <div style={{ fontSize: 13, fontWeight: 950, letterSpacing: -0.1 }}>{label}</div>
+                    {typeof m?.why === "string" && m.why.trim() ? (
+                      <div style={{ fontSize: 12, opacity: 0.72, lineHeight: 1.35 }}>{m.why}</div>
+                    ) : null}
+                  </button>
+                );
+              })}
+            </div>
+
+            {output ? (
+              <div style={{ display: "grid", gap: 12, marginTop: 4 }}>
+                <div>
+                  <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>1. Context Summary</div>
+                  <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{output.contextSummary}</div>
+                </div>
+
+                <div>
+                  <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>2. What Is Known</div>
+                  <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{output.whatIsKnown}</div>
+                </div>
+
+                <div>
+                  <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>3. What Is Unclear or Limited</div>
+                  <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{output.whatIsUnclear}</div>
+                </div>
+
+                <div>
+                  <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>4. Why Experiences Vary</div>
+                  <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{output.whyExperiencesVary}</div>
+                </div>
+
+                <div style={{ marginTop: 2, fontSize: 13, fontWeight: 900, opacity: 0.9 }}>5. {FRAMING_LINE}</div>
               </div>
-            ) : null}
-
-            <div>
-              <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>1. Context Summary</div>
-              <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{response.contextSummary}</div>
-            </div>
-
-            <div>
-              <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>2. What Is Known</div>
-              <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{response.whatIsKnown}</div>
-            </div>
-
-            <div>
-              <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>3. What Is Unclear or Limited</div>
-              <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{response.whatIsUnclear}</div>
-            </div>
-
-            <div>
-              <div style={{ fontWeight: 950, fontSize: 13, letterSpacing: -0.1 }}>4. Why Experiences Vary</div>
-              <div style={{ marginTop: 6, fontSize: 13, lineHeight: 1.45, opacity: 0.92 }}>{response.whyExperiencesVary}</div>
-            </div>
-
-            <div style={{ marginTop: 2, fontSize: 13, fontWeight: 900, opacity: 0.9 }}>5. {response.framingLine}</div>
+            ) : (
+              <div style={{ fontSize: 12, opacity: 0.72, lineHeight: 1.35 }}>
+                Select a match to view the context structure.
+              </div>
+            )}
+          </div>
+        ) : (
+          <div style={{ fontSize: 12, opacity: 0.72, lineHeight: 1.35 }}>
+            No close matches found yet. Try a simpler term (e.g., “thyroid”, “SSRI”, “autoimmune”).
           </div>
         )}
       </div>
