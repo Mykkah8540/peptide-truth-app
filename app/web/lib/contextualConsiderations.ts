@@ -165,6 +165,34 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from baseline insulin resistance, sleep, stress, diet composition, training status, and concurrent meds that affect appetite or glucose handling.`,
   },
+  {
+    id: "pt_ctx_liver_disease",
+    label: "Liver disease / reduced liver function",
+    synonyms: [
+      "liver",
+      "liver disease",
+      "fatty liver",
+      "nafld",
+      "nash",
+      "cirrhosis",
+      "hepatitis",
+      "elevated liver enzymes",
+      "alt",
+      "ast",
+      "bilirubin",
+      "albumin",
+      "child pugh",
+      "portal hypertension"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Liver function can matter because the liver is central to metabolism and clearance for many compounds, which can shift sensitivity and how side effects are interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that reduced liver function can change how long effects linger and how “strong” something feels at a given exposure. For many peptides, direct liver-disease subgroup evidence is limited, so discussions often stay cautious and context-heavy.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how well general findings translate across liver-disease severity because studies may exclude significant liver impairment or fail to report liver-related stratification. Evidence can also be indirect (mechanistic or mixed-population).`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from disease severity, inflammation status, nutrition, alcohol history, medication burden, bile flow issues, and comorbid metabolic conditions that often co-occur with liver disease.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
