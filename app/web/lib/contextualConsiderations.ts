@@ -497,6 +497,31 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from dose, delivery method (injection vs topical), estradiol balance, SHBG levels, body fat percentage, sleep quality, training intensity, and whether hormone levels are stable or recently adjusted.`,
   },
+  {
+    id: "pt_ctx_sleep",
+    label: "Sleep problems (insomnia / poor sleep / sleep apnea)",
+    synonyms: [
+      "sleep",
+      "poor sleep",
+      "insomnia",
+      "sleep apnea",
+      "osa",
+      "cpap",
+      "restless sleep",
+      "sleep quality",
+      "fatigue",
+      "daytime sleepiness",
+      "snoring"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Sleep strongly shapes appetite, mood, inflammation, and recovery, so poor sleep can change what people notice first and how they judge “working” versus “not working.”`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that sleep can dominate outcomes people care about—energy, hunger, training recovery, and mood. When "${q}" is present, the same change may feel bigger (or smaller) depending on baseline sleep debt.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether reported benefits or side effects are driven by ${peptide} or by sleep changes happening in parallel (stress, schedule, apnea treatment, stimulant use). Many reports don’t separate sleep effects from everything else.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from sleep duration vs quality, apnea severity, CPAP adherence, caffeine/stimulants, late eating, alcohol, stress load, and individual sensitivity to sleep loss.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
