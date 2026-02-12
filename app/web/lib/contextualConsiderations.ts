@@ -73,7 +73,7 @@ function scorePack(queryNorm: string, queryTokens: string[], pack: ContextPack):
 
 // Context packs: conservative, non-directive, focused on interpretation + variability.
 // Add more over time; this file is intentionally the single source for the v1 matcher.
-export const CONTEXT_PACKS: ContextPack[
+export const CONTEXT_PACKS: ContextPack[] = [
   {
     id: "pt_ctx_kidney_disease_ckd",
     label: "Kidney disease (CKD) / reduced kidney function",
