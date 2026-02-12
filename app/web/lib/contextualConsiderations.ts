@@ -251,6 +251,42 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from hydration level, salt intake, autonomic tone, medication use, body position changes, temperature, and baseline cardiovascular conditioning.`,
   },
+  {
+    id: "pt_ctx_tendon_pain_tendonitis",
+    label: "Tendon pain / tendonitis / connective tissue issues",
+    synonyms: [
+      "tendon pain",
+      "tendonitis",
+      "tendinitis",
+      "tendinosis",
+      "tennis elbow",
+      "golfer's elbow",
+      "achilles",
+      "achilles tendon",
+      "patellar tendon",
+      "jumper's knee",
+      "rotator cuff",
+      "shoulder tendon",
+      "biceps tendon",
+      "plantar fasciitis",
+      "elbow pain",
+      "wrist pain",
+      "overuse injury",
+      "connective tissue",
+      "joint pain",
+      "inflammation",
+      "rehab",
+      "physical therapy"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Tendon and connective-tissue issues are often slow-moving and load-dependent, so people may interpret changes through the lens of training volume, rehab work, pain sensitivity, and recovery patterns rather than a single short-term signal.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that tendon symptoms can fluctuate with activity: loading, rest cycles, sleep, and overall inflammation can change how pain feels day to day. When "${q}" is present, reports are often easier to interpret when they include what changed in training or rehab at the same time.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether a perceived change reflects tissue healing versus reduced irritation, altered pain perception, or simply a change in load. Many anecdotes don’t separate tendon-specific outcomes from general recovery or mood/energy shifts.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from injury location and chronicity, load management, rehab quality, biomechanics, sleep, nutrition/protein intake, baseline inflammation, and concurrent meds/supplements that affect pain or swelling.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
