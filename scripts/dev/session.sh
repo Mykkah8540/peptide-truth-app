@@ -77,6 +77,60 @@ postflight() {
   echo "OK: postflight complete"
 }
 
+
+chat_prompt() {
+  echo "PEP TALK / PEPTIDE-TRUTH — CHAT BOOTSTRAP PROMPT"
+  echo
+  echo "You are inheriting an in-flight repo. BEFORE proposing any changes, you MUST:"
+  echo "1) Read the repo feeder + execution rules + UI specs + status files listed below (in order)."
+  echo "2) Restate (a) what is disallowed, (b) what is the active next task, (c) what is deferred."
+  echo "3) Propose ONE scoped plan with a clear stop point and verification gates."
+  echo "4) Output bashable steps only. No manual editing instructions."
+  echo
+  echo "HARD RULES"
+  echo "- No medical advice, no dosing, no protocols, no 'should I take X'."
+  echo "- No scope drift beyond authoritative docs."
+  echo "- If build fails after edits: STOP and fix."
+  echo "- Avoid phantom changes; keep git status clean."
+  echo "- Respect no-divider docs (no '---' lines) per docs conformance."
+  echo
+  echo "READ IN ORDER"
+  echo "- docs/README_FEEDER.md"
+  echo "- docs/README_EXECUTION.md"
+  echo "- docs/ui/Master_UI_and_Content_Polish.md"
+  echo "- docs/ui/PDP_Contextual_Considerations.md"
+  echo "- docs/_status/current_state.md"
+  echo "- docs/_status/next_task.md"
+  echo "- docs/_status/parking_lot.md"
+  echo "- docs/_status/build_best_practices.md"
+  echo
+  echo "REPO STATE (for context)"
+  echo "- Branch: $(git branch --show-current)"
+  echo "- HEAD:   $(git --no-pager log -1 --oneline)"
+  echo
+  echo "WORKING TREE"
+  if [ -n "$(git status --porcelain)" ]; then
+    echo "NOT CLEAN:"
+    git status --short
+  else
+    echo "CLEAN"
+  fi
+  echo
+  echo "LAST 8 COMMITS"
+  git --no-pager log -8 --oneline || true
+  echo
+  echo "CURRENT STATE (docs/_status/current_state.md)"
+  sed -n '1,260p' docs/_status/current_state.md 2>/dev/null || true
+  echo
+  echo "NEXT TASK (docs/_status/next_task.md)"
+  sed -n '1,260p' docs/_status/next_task.md 2>/dev/null || true
+  echo
+  echo "PARKING LOT (docs/_status/parking_lot.md)"
+  sed -n '1,260p' docs/_status/parking_lot.md 2>/dev/null || true
+  echo
+  echo "END OF PROMPT"
+}
+
 task_new() {
   slug="${1:-}"
   if [ -z "${slug}" ]; then
@@ -144,6 +198,7 @@ case "${cmd}" in
   preflight) preflight ;;
   postflight) postflight ;;
   task:new) shift; task_new "${1:-}" ;;
+  chat-prompt) chat_prompt ;;
   *)
     cat <<'TXT'
 Usage
@@ -151,6 +206,7 @@ Usage
 - ./scripts/dev/session.sh preflight
 - ./scripts/dev/session.sh postflight
 - ./scripts/dev/session.sh task:new <slug>
+- ./scripts/dev/session.sh chat-prompt
 TXT
     exit 1
     ;;
