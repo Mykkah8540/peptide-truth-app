@@ -461,6 +461,43 @@ export const CONTEXT_PACKS: ContextPack[] = [
       `Variability can come from the specific tissue involved (muscle vs tendon vs ligament), injury severity, rehab quality, sleep, nutrition, stress, re-injury risk, and whether training load was reduced or ramped while "${q}" was being discussed.`
   },
 
+
+  {
+    id: "pt_ctx_young_adolescents",
+    label: "Younger people: teens, adolescents, and growth-stage factors",
+    synonyms: [
+      "young","teen","teens","teenager","adolescent","adolescents","youth",
+      "high school","middle school","puberty","growth","growing","still growing"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. In younger or growth-stage contexts, baseline physiology can be different, and discussion tends to focus on uncertainty, safety signals, and the fact that most evidence is not built around adolescents.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s most consistent is that evidence quality is usually lower for "${q}" because many studies focus on adults. Conversations often emphasize that growth-stage hormones, training volume, and sleep can strongly shape outcomes people attribute to ${peptide}.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how adult findings translate to adolescents, and what’s “normal variability” versus a true signal. Many datasets do not include age-specific stratification or long-term follow-up in younger groups.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from puberty stage, sleep needs, training load, nutrition adequacy, stress, and rapid baseline changes that can dwarf subtle effects being discussed.`
+  },
+
+
+  {
+    id: "pt_ctx_overweight_high_bmi",
+    label: "Overweight / high BMI: appetite, metabolic signals, and baseline inflammation",
+    synonyms: [
+      "overweight","high bmi","bmi","obese","obesity","weight loss","fat loss",
+      "appetite","cravings","hungry","satiety","insulin resistance","prediabetes",
+      "blood sugar","metabolic","metabolic syndrome","inflammation","nafld","fatty liver"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. In overweight/high-BMI contexts, appetite signals and metabolic markers can shift for many reasons—so interpretation often improves when people separate “how I feel” from measurable changes over time.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that baseline appetite regulation, sleep, and stress can strongly shape reported outcomes. When "${q}" is present, people often pay closer attention to appetite, nausea, energy, and blood-sugar-related sensations that may not generalize across individuals.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear whether a reported change reflects a direct effect of ${peptide} versus concurrent behavior changes, diet composition shifts, training changes, or normal variability in weight and hunger signals.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from baseline insulin resistance, sleep quality, stress, diet, training status, medication effects, and how quickly someone changes lifestyle variables during the same window they’re discussing "${q}".`
+  },
+
   ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
