@@ -470,6 +470,33 @@ export const CONTEXT_PACKS: ContextPack[] = [
     whyExperiencesVary: (peptide, q) =>
       `Variability can come from sleep apnea severity, total sleep time, sleep regularity, caffeine/stimulant use, stress load, bedtime routine, alcohol use, and whether sleep disruption is primary or secondary to another condition.`,
   },
+  {
+    id: "pt_ctx_hrt_trt",
+    label: "Hormone therapy (TRT / estrogen / HRT)",
+    synonyms: [
+      "trt",
+      "testosterone replacement",
+      "testosterone therapy",
+      "low testosterone",
+      "low t",
+      "hrt",
+      "hormone replacement",
+      "estrogen therapy",
+      "estradiol",
+      "progesterone",
+      "androgen therapy",
+      "menopause",
+      "perimenopause"
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Hormone therapy can strongly influence energy, body composition, mood, libido, and recovery—so it often changes baseline expectations and how results are interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What’s discussed most consistently is that hormone status can amplify or dampen perceived effects. When "${q}" is present, changes in energy, appetite, muscle recovery, or mood may reflect overlapping hormonal signaling rather than a single isolated mechanism.`,
+    whatIsUnclear: (peptide, q) =>
+      `It’s often unclear how much of a reported effect is due to ${peptide} versus underlying hormone levels, dose stability, aromatization, or recent protocol changes. Many datasets don’t stratify by hormone therapy status.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from dose, delivery method (injection vs topical), estradiol balance, SHBG levels, body fat percentage, sleep quality, training intensity, and whether hormone levels are stable or recently adjusted.`,
+  },
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
