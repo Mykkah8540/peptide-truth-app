@@ -20,11 +20,22 @@ export async function supabaseServer() {
       get(name: string) {
         return cookieStore.get(name)?.value;
       },
+      // Next.js App Router: cookies can only be *mutated* in a Route Handler or Server Action.
+      // During Server Component render (including dev), attempts to set cookies will throw.
+      // We treat cookie writes as best-effort here to avoid crashing render/dev.
       set(name: string, value: string, options: any) {
-        cookieStore.set({ name, value, ...options });
+        try {
+          cookieStore.set({ name, value, ...options });
+        } catch {
+          // no-op outside Route Handlers / Server Actions
+        }
       },
       remove(name: string, options: any) {
-        cookieStore.set({ name, value: "", ...options, maxAge: 0 });
+        try {
+          cookieStore.set({ name, value: "", ...options, maxAge: 0 });
+        } catch {
+          // no-op outside Route Handlers / Server Actions
+        }
       },
     },
   });
