@@ -176,7 +176,7 @@ Status: Working. Should be removed before public maturity.
 
 Current HEAD:
 
-- 58bf163 Rebuild indexes post admin phase
+- 47abdd3 DB: add admin_events migration scaffold
 
 Origin matches local.
 Build green.
