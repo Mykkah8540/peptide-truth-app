@@ -69,3 +69,24 @@ UGC production hardening (no feature creep):
 - No dosing, no protocols, no vendor links, no affiliate logic
 - Always prove wires before edits
 - Always run gates before commit
+
+---
+
+## Account System Status
+
+Current:
+
+- Users can sign up
+- Users can log in
+- Users can log out
+- Account page exists
+
+Missing:
+
+- Password change flow
+- Email change flow
+- Session management UI
+- Account security settings
+
+Password change has been added to Parking Lot as a secondary priority.
+

@@ -77,3 +77,29 @@ Items move out of this file only when:
   - Audit Trail UI (/admin/audit): moderation/event log with filtering/export
   - Ops UI (/admin/ops): health checks, queue snapshots, maintenance tools
   - Admin UI polish: better nav, sectioning, design consistency, mobile-first layout
+
+---
+
+## 9. Account Management Hardening (SECONDARY PRIORITY)
+
+Users must be able to securely change their password from their account page.
+
+Scope:
+
+- Add password change UI to /account
+- Use Supabase auth.updateUser({ password })
+- Require current session
+- Add confirmation messaging
+- Handle error states (weak password, expired session)
+- Desktop UX priority, but responsive for mobile
+- Optional: require reauthentication if session age > threshold
+
+Security Considerations:
+
+- No password fields logged
+- Rate limit attempts
+- Clear success/failure states
+- Consider future: email verification on password change
+
+Status: Not implemented.
+
