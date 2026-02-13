@@ -70,3 +70,10 @@ Items move out of this file only when:
   - ugc_posts: seen_by, submit_ip_hash, submit_user_agent, moderated_at, moderated_by
   - ugc_admin_events table for moderation actions + auth failures
   - optional /api/ugc/stats endpoint + moderation velocity metrics
+
+- Admin Control Panel (SaaS dashboard + multi-tool hub):
+  - Role Management UI (/admin/roles): admin-only create/remove moderator/admin roles, with email lookup and guardrails
+  - Feature Flags UI (/admin/flags): safe toggles + descriptions + change history
+  - Audit Trail UI (/admin/audit): moderation/event log with filtering/export
+  - Ops UI (/admin/ops): health checks, queue snapshots, maintenance tools
+  - Admin UI polish: better nav, sectioning, design consistency, mobile-first layout
