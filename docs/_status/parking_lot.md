@@ -59,3 +59,14 @@ Items move out of this file only when:
 - a dedicated authoritative spec is written
 - governance implications are resolved
 - scope is explicitly approved
+
+## RBAC + Admin Portal
+- Adopt RBAC via `user_roles` table (roles: admin, moderator).
+- `/admin` becomes the canonical admin entry (uses normal Supabase auth; role gated).
+- UGC moderation should allow role: admin OR moderator.
+- Defer “UGC metadata/audit trail fields” (ip hash, user agent, seen_by, moderated_by, admin_events) until post-polish/build-complete.
+
+- UGC metadata + audit trail (post-level + admin events) AFTER UI polish is complete:
+  - ugc_posts: seen_by, submit_ip_hash, submit_user_agent, moderated_at, moderated_by
+  - ugc_admin_events table for moderation actions + auth failures
+  - optional /api/ugc/stats endpoint + moderation velocity metrics
