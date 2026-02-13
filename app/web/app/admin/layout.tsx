@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { supabaseServer } from "@/lib/supabase/server";
 import { getUserSafe } from "@/lib/auth/getUserSafe";
 import { hasAnyRole, getUserRoles } from "@/lib/auth/roles";
+import AdminNav from "./_components/AdminNav";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supa = await supabaseServer();
@@ -46,16 +47,30 @@ on conflict (user_id, role) do nothing;
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6">
+    <div className="mx-auto max-w-6xl px-4 py-6">
       <div className="mb-6 flex items-center justify-between">
         <div>
           <div className="text-sm text-muted-foreground">Pep Talk Admin</div>
-          <div className="text-xl font-semibold">Dashboard</div>
+          <div className="text-xl font-semibold">Control Panel</div>
         </div>
-        <a className="text-sm underline" href="/">Back to site</a>
+        <div className="flex items-center gap-3">
+          <a className="text-sm underline" href="/">Back to site</a>
+          <a className="text-sm underline" href="/logout">Log out</a>
+        </div>
       </div>
 
-      {children}
+      <div className="grid gap-6 md:grid-cols-[240px_1fr]">
+        <aside className="md:sticky md:top-6 h-fit">
+          <div className="rounded-xl border p-3">
+            <div className="mb-2 text-xs font-medium text-muted-foreground">NAV</div>
+            <AdminNav />
+          </div>
+        </aside>
+
+        <main className="min-w-0">
+          {children}
+        </main>
+      </div>
     </div>
   );
 }
