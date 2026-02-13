@@ -1,11 +1,11 @@
 import { redirect } from "next/navigation";
 import { supabaseServer } from "@/lib/supabase/server";
+import { getUserSafe } from "@/lib/auth/getUserSafe";
 import { hasAnyRole } from "@/lib/auth/roles";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supa = await supabaseServer();
-  const { data: auth } = await supa.auth.getUser();
-  const user = auth?.user;
+  const user = await getUserSafe(supa);
 
   if (!user) redirect("/login?next=/admin");
 

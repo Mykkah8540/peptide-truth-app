@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import { supabaseServer } from "@/lib/supabase/server";
+import { getUserSafe } from "@/lib/auth/getUserSafe";
 import { hasAnyRole } from "@/lib/auth/roles";
 
 export type UgcAdminContext = {
@@ -35,8 +36,7 @@ export async function getUgcAdminContext(req: Request): Promise<UgcAdminContext>
 
   // Supabase session → user_roles contains admin/moderator
   const supa = await supabaseServer();
-  const { data: auth } = await supa.auth.getUser();
-  const user = auth?.user;
+  const user = await getUserSafe(supa);
   if (!user) return { ok: false, actorKind: "supabase", actorUserId: null };
 
   const ok = await hasAnyRole(supa, user.id, ["admin", "moderator"]);
