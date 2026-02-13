@@ -176,7 +176,7 @@ Status: Working. Should be removed before public maturity.
 
 Current HEAD:
 
-- 707e391 Docs: admin current_state + full parking lot (plus account password change)
+- 58bf163 Rebuild indexes post admin phase
 
 Origin matches local.
 Build green.
