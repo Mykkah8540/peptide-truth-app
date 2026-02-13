@@ -1,5 +1,12 @@
 import crypto from "crypto";
 import { supabaseServer } from "@/lib/supabase/server";
+import { hasAnyRole } from "@/lib/auth/roles";
+
+export type UgcAdminContext = {
+  ok: boolean;
+  actorKind: "supabase" | "token";
+  actorUserId?: string | null;
+};
 
 function timingSafeEqual(a: string, b: string): boolean {
   const aa = Buffer.from(a);
@@ -22,22 +29,21 @@ function tokenAuthed(req: Request): boolean {
   }
 }
 
-async function supabaseAdminAuthed(): Promise<boolean> {
+export async function getUgcAdminContext(req: Request): Promise<UgcAdminContext> {
+  // Token auth (non-user automation / emergency access)
+  if (tokenAuthed(req)) return { ok: true, actorKind: "token", actorUserId: null };
+
+  // Supabase session → user_roles contains admin/moderator
   const supa = await supabaseServer();
   const { data: auth } = await supa.auth.getUser();
   const user = auth?.user;
-  if (!user) return false;
+  if (!user) return { ok: false, actorKind: "supabase", actorUserId: null };
 
-  const { data: prof } = await supa
-    .from("profiles")
-    .select("is_admin")
-    .eq("id", user.id)
-    .maybeSingle();
-
-  return prof?.is_admin === true;
+  const ok = await hasAnyRole(supa, user.id, ["admin", "moderator"]);
+  return { ok, actorKind: "supabase", actorUserId: user.id };
 }
 
 export async function isUgcAdmin(req: Request): Promise<boolean> {
-  if (tokenAuthed(req)) return true;
-  return await supabaseAdminAuthed();
+  const ctx = await getUgcAdminContext(req);
+  return ctx.ok;
 }
