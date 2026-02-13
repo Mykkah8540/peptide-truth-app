@@ -78,23 +78,174 @@ Items move out of this file only when:
   - Ops UI (/admin/ops): health checks, queue snapshots, maintenance tools
   - Admin UI polish: better nav, sectioning, design consistency, mobile-first layout
 
----
 
-## 9. Account Management Hardening (SECONDARY PRIORITY)
+WHAT WE DID NOT BUILD YET (PARKING LOT)
 
-Users must be able to securely change their password from their account page.
+These are real, unfinished system layers.
+
+1. Audit Logging System (CRITICAL)
+
+We built:
+
+- Role mutations
+- Moderation actions
+- Future flags control
+
+But we did NOT:
+
+- Create admin_events table
+- Log:
+  - role adds/removes
+  - UGC moderation actions
+  - flag toggles
+- Build /admin/audit viewer UI
+- Add pagination
+- Add filters by event type
+
+This is required for:
+
+- Forensic traceability
+- Governance integrity
+- Production accountability
+
+Status: Not implemented.
+
+2. Feature Flags System (HIGH PRIORITY)
+
+We scaffolded:
+
+- /admin/flags
+- /api/admin/flags (exists but not wired to DB-backed toggle system)
+
+Missing:
+
+- site_flags table
+- GET flags endpoint
+- POST mutation endpoint
+- Audit logging
+- Safe defaulting
+- Server-side gating helper
+- UI toggle controls
+
+Flags needed for:
+
+- UGC submission enable/disable
+- Dev unlock control
+- Stack suggestions enable/disable
+- Temporary system lockdown
+
+Status: Not implemented.
+
+3. Ops Panel (HIGH PRIORITY)
+
+We scaffolded /admin/ops.
+
+Missing:
+
+- /api/admin/health
+- DB connectivity check
+- Content index age check
+- Environment sanity display
+- Supabase ref display
+- RevenueCat webhook verification
+- Cron/job queue visibility (future)
+
+This becomes the system heartbeat.
+
+Status: Not implemented.
+
+4. UGC Moderation Hardening (MEDIUM)
+
+We have:
+
+- UGC routes
+- Moderation endpoints
+
+Missing:
+
+- Audit trail
+- Moderator attribution
+- Moderation status history
+- Bulk moderation tools
+- Rate limiting
+- Abuse safeguards
+- Auto-flag logic
+- Moderator dashboard metrics
+
+Status: Basic only.
+
+5. Admin Guard Rails
+
+Missing:
+
+- Double confirmation on role deletion
+- Protection from self-demotion
+- Protection from removing last admin
+- Rate limiting on role endpoint
+- CSRF protection verification
+
+Status: Minimal protections.
+
+6. Diag Endpoint Removal
+
+Before maturity:
+
+- Remove /api/admin/diag
+- Or restrict to admin only
+- Or put behind env flag
+
+Currently public.
+
+Status: Temporary debug endpoint.
+
+7. Governance / Source-of-Truth Alignment
+
+Not touched in this session:
+
+- Content validator hardening
+- Canonical JSON schema enforcement improvements
+- Content index rebuild verification tooling
+- Automated integrity checks
+
+Status: Deferred.
+
+8. UI / UX Polish
+
+Not done:
+
+- Active nav highlighting
+- Breadcrumbs
+- Better dashboard stats tiles
+- Mobile admin nav behavior improvements
+- Admin-only badge in header
+- Inline toast success/failure messaging
+
+Status: Cosmetic backlog.
+
+OUTSTANDING ARCHITECTURAL LAYERS
+
+- Admin Events System
+- Flags System
+- Ops Health Panel
+- Moderation Audit Trail
+- Production Lockdown Mode
+- Remove debug endpoints
+- Admin metrics dashboard
+
+SECONDARY NEED — ACCOUNT PASSWORD CHANGE
+
+Users should be able to change their password from the account page (desktop priority, still responsive).
 
 Scope:
 
 - Add password change UI to /account
 - Use Supabase auth.updateUser({ password })
 - Require current session
-- Add confirmation messaging
+- Confirmation messaging
 - Handle error states (weak password, expired session)
-- Desktop UX priority, but responsive for mobile
 - Optional: require reauthentication if session age > threshold
 
-Security Considerations:
+Security considerations:
 
 - No password fields logged
 - Rate limit attempts
