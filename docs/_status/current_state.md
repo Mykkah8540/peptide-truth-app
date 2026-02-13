@@ -176,7 +176,7 @@ Status: Working. Should be removed before public maturity.
 
 Current HEAD:
 
-- 9afda08 Admin: fix Supabase admin typing for roles API
+- 707e391 Docs: admin current_state + full parking lot (plus account password change)
 
 Origin matches local.
 Build green.
