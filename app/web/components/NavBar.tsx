@@ -59,6 +59,7 @@ function ProPill() {
 export default function NavBar(props: { peptides: EntityListItem[]; blends: EntityListItem[]; topics: TopicListItem[] }) {
  const [open, setOpen] = useState(false);
  const [showProBadges, setShowProBadges] = useState(true);
+  const [showAdmin, setShowAdmin] = useState(false);
  const router = useRouter();
 
  // We must not rely on a one-time viewer fetch; the menu needs to update immediately after auth changes.
@@ -75,12 +76,15 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
     if (!mounted.current) return;
 
     const isPro = !!j?.isPro;
+      const isAdmin = !!(j?.profile?.is_admin);
+      setShowAdmin(isAdmin);
     // If user is Pro => hide PRO pills. Otherwise show pills (marketing + clear gating).
     setShowProBadges(!isPro);
    } catch {
     // Default: show badges (marketing) if viewer check fails
     if (!mounted.current) return;
     setShowProBadges(true);
+      setShowAdmin(false);
    }
   }
 
@@ -204,7 +208,26 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
        
       </nav>
 </div><div style={{ display: "inline-flex", alignItems: "center", justifyContent: "flex-end", gap: 12, paddingLeft: 12 }}>
- <AccountChip />
+   {showAdmin ? (
+   <Link
+    href="/admin"
+    style={{
+     height: 40,
+     padding: "0 12px",
+     borderRadius: 999,
+     border: "1px solid rgba(0,0,0,0.15)",
+     background: "#fff",
+     fontWeight: 950,
+     textDecoration: "none",
+     display: "inline-flex",
+     alignItems: "center",
+     lineHeight: 1,
+    }}
+   >
+    Admin
+   </Link>
+  ) : null}
+<AccountChip />
  <button
        className="mobile-menu-btn"
        aria-label="Open menu"
