@@ -1,7 +1,7 @@
 # Pep-Talk Current State (Authoritative)
 
-Date: 2026-02-03
-Branch: interactions-glp-batch1-20260127
+Date: 2026-02-14
+Branch: main (HEAD 6198bab)
 
 ## System Health
 
@@ -31,7 +31,7 @@ UGC storage has been migrated from file-based JSON to Supabase-hosted Postgres a
 - Database: Supabase Postgres (pooler) via `UGC_DATABASE_URL` (fallback: `DATABASE_URL`)
 - Schema: `public.ugc_posts` exists with statuses: `pending|approved|rejected|archived|trash`
 - Runtime verification: submit → moderate(approve) → list(approved) confirmed working against DB
-- Admin auth: protected endpoints require header `x-admin-token` matching `PEP_TALK_ADMIN_TOKEN`
+- Admin auth: role-gated via Supabase session roles (admin|moderator) using `public.user_roles` (token header remains as legacy fallback where present).
 - Seen/unseen: admin selection marks `seen_at` in DB via `/api/ugc/seen`
 
 Code locations (authoritative):
@@ -70,146 +70,28 @@ UGC production hardening (no feature creep):
 - Always prove wires before edits
 - Always run gates before commit
 
+## Admin System (Reality)
 
-CURRENT STATE — ADMIN SYSTEM (AS OF 9afda08)
+- Admin area routes exist: `/admin`, `/admin/ugc`, `/admin/flags`, `/admin/ops`, `/admin/audit`, `/admin/roles`
+- Access model:
+  - `/admin/*` is gated server-side by `public.user_roles` (roles: `admin`, `moderator`)
+  - `/admin/roles` mutations are admin-only
+  - UGC admin APIs use `isUgcAdmin` (admin|moderator; legacy header token may exist in some routes)
+- Audit + traceability:
+  - `admin_events` logging is present for admin mutations that already write events (e.g., flags/roles where implemented)
+  - `/admin/audit` + `/api/admin/audit` exist (viewer is read-only)
 
-What Was Completed
+## Most Recent Changes (This Merge)
 
-1. Deterministic Role System (Server-Side Only)
+- Removed “Global Pro Override” control from `/admin/ugc` UI (no flags control in moderation screen).
+- NavBar:
+  - Fetches `/api/viewer` and surfaces an “Admin” link when `profile.is_admin` is true.
+  - Fixed MobileMenu prop mismatch that was breaking `next build`.
 
-- Created public.user_roles table in Supabase
-- Enforced deterministic role resolution via:
-  - supabaseAdmin() (service role key)
-  - Server-only role reads
-- Removed dependency on client session for role checks
-- hasAnyRole() + getUserRoles() now:
-  - Ignore client supabase instance
-  - Always read from public.user_roles
-  - Use service role key
-  - Fail closed
+## NEXT SINGLE ACTION (Strict Scope)
 
-Status: Production-grade and stable.
-
-2. Supabase Environment Hardening
-
-Verified:
-
-- SUPABASE_URL matches project
-- SUPABASE_SERVICE_ROLE_KEY present in Vercel
-- NEXT_PUBLIC_SUPABASE_ANON_KEY present
-- Service role JWT decodes correctly
-
-/api/admin/diag confirms:
-
-- service key active
-- roles visible
-- userId correct
-- role array returns ["admin"]
-
-Status: Fully validated across:
-
-- Local build
-- Vercel deployment
-- Signed-in browser session
-
-3. Admin Control Panel Foundation
-
-Routes created:
-
-- /admin
-- /admin/ugc
-- /admin/flags
-- /admin/ops
-- /admin/audit
-- /admin/roles
-
-Layout:
-
-- Real admin shell
-- Sidebar nav
-- Sticky nav on desktop
-- Header with logout + back to site
-- Clean dashboard tile landing
-
-Status: Structural UI complete.
-
-4. Roles Manager (Admin-Only)
-
-Built:
-
-- /admin/roles UI
-- Admin-only access enforcement
-- POST API: /api/admin/roles
-- Add/remove moderator or admin
-- Uses service role client
-- Redirects after mutation
-- Typed fix for Supabase "never" error
-
-Security:
-
-- Only users with admin role may mutate roles
-- Moderators cannot manage access control
-- Fail closed if role lookup fails
-
-Status: Functional + secure.
-
-5. Diagnostic Endpoint
-
-/api/admin/diag
-
-Purpose:
-
-- Validate Supabase ref
-- Validate service key presence
-- Validate role resolution
-- Validate userId visibility
-
-Used to solve:
-
-- Missing service role key
-- Wrong project mismatch
-- RLS visibility errors
-
-Status: Working. Should be removed before public maturity.
-
-6. Build State
-
-Current HEAD:
-
-- 47abdd3 DB: add admin_events migration scaffold
-
-Origin matches local.
-Build green.
-No untracked files.
-Deployment active.
-Admin dashboard accessible.
-
-RUNNING TRACKER UPDATE
-
-Completed
-
-- Deterministic server-side role resolution
-- Service role client
-- Admin shell
-- Roles manager
-- Secure role enforcement
-- Environment verified on Vercel
-- Diagnostic verification endpoint
-
-In Progress
-
-- None.
-
-Not Started
-
-- Everything listed in Parking Lot.
-
-READY FOR NEW CHAT HANDOFF
-
-In the next chat you should paste:
-
-- Current HEAD commit
-- Statement: “Admin system live. Role resolution verified.”
-- Parking Lot list
-- Which system you want to build next
-
+UGC production hardening only:
+- Confirm seen/counts reflect DB truth
+- Harden operator-facing errors/empty states
+- Verify role gating works in production (admin|moderator)
+- Keep builds/validators green; small commits only
