@@ -34,6 +34,7 @@ Nothing in this file is approved for build unless promoted into an authoritative
 - Visual balance improvements
 
 ## Home Landing Page Concepts
+- Home page exists (not a placeholder); future enhancements require an authoritative spec before build.
 - Audience self-identification entry points
 - Choose-your-depth onboarding
 - Clear articulation of Pep Talk’s role
@@ -74,3 +75,9 @@ Deferred / polish (do not build until explicitly promoted):
 - Seen/counts must reflect DB truth deterministically
 - Clear operator-facing error reporting + empty states
 - Bulk actions / rate limiting / abuse safeguards (future)
+
+
+## Sponsor System Governance
+- Define sponsor rotation rules, disclosure copy, and eligibility criteria
+- Document UTM conventions and click tracking expectations
+- Ensure no influence over educational content; maintain strict separation

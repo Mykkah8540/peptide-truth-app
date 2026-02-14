@@ -26,6 +26,14 @@ PDP rendering is aligned with mission:
 - Interactions and Evidence sections behave deterministically with sane empty states
 
 ### UGC → Supabase Postgres (LIVE)
+
+### Sponsor System (Test + Verified in Prod)
+- Home page includes a sponsored placement module (currently test sponsor: ACME Lab).
+- Sponsor link includes UTM params (note: HTML renders `&amp;` escapes; unescape to see raw `&`).
+- Click tracking endpoint verified in production:
+  - `POST /api/sponsor-click` with `{id, href}` returns `{ok:true}`
+  - Vercel logs show `POST /api/sponsor-click 200`
+
 UGC storage has been migrated from file-based JSON to Supabase-hosted Postgres and is verified end-to-end:
 
 - Database: Supabase Postgres (pooler) via `UGC_DATABASE_URL` (fallback: `DATABASE_URL`)
@@ -88,10 +96,3 @@ UGC production hardening (no feature creep):
   - Fetches `/api/viewer` and surfaces an “Admin” link when `profile.is_admin` is true.
   - Fixed MobileMenu prop mismatch that was breaking `next build`.
 
-## NEXT SINGLE ACTION (Strict Scope)
-
-UGC production hardening only:
-- Confirm seen/counts reflect DB truth
-- Harden operator-facing errors/empty states
-- Verify role gating works in production (admin|moderator)
-- Keep builds/validators green; small commits only
