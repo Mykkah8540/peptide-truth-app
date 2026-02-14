@@ -1,4 +1,16 @@
 import { NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
+
+function getSupabase() {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY; // server only
+
+  if (!url || !key) return null;
+
+  return createClient(url, key, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
 
 export async function POST(req: Request) {
   try {
@@ -9,17 +21,21 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false }, { status: 400 });
     }
 
-    // For now: structured server log.
-    // Later: pipe to DB, analytics warehouse, or edge log.
-    console.log("[sponsor-click]", {
-      id,
+    const supabase = getSupabase();
+    if (!supabase) {
+      console.error("[sponsor-click] missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
+      return NextResponse.json({ ok: false, error: "server_misconfigured" }, { status: 500 });
+    }
+
+    await supabase.from("sponsor_events").insert({
+      sponsor_id: id,
       href,
-      ts: Date.now(),
-      ua: req.headers.get("user-agent") || "",
+      user_agent: req.headers.get("user-agent") || "",
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error("[sponsor-click-error]", err);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
