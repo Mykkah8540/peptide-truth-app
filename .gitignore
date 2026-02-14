@@ -50,3 +50,6 @@ docs/UI/
 # FORCE-ALLOW canonical docs/ui (do not ignore)
 !docs/ui/
 !docs/ui/**
+# Local-only (never commit)
+.vercel/
+.env*.local
