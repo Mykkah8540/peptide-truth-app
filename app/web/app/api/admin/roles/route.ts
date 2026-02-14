@@ -56,12 +56,12 @@ export async function POST(req: Request) {
       actor_email: (user as any)?.email || null,
       actor_role: "admin",
       action: actionName,
-      entity_type: "user_role",
+      entity_type: "user_roles",
       entity_id: userId,
       ip,
       user_agent,
       request_id,
-      details: { role, op },
+      details: { target_user_id: userId, role, op },
     });
   } catch (_) {
     // swallow
