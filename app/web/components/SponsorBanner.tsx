@@ -11,6 +11,34 @@ export default function SponsorBanner({
  rotateMs?: number;
 }) {
  const items = Array.isArray(sponsors) ? sponsors.filter(Boolean) : [];
+
+ function buildHref(href: string, id: string) {
+  try {
+   const u = new URL(href);
+   u.searchParams.set("utm_source", "pep-talk");
+   u.searchParams.set("utm_medium", "sponsor");
+   u.searchParams.set("utm_campaign", id);
+   return u.toString();
+  } catch {
+   return href;
+  }
+ }
+
+ function handleClick(id: string, href: string) {
+  try {
+   const payload = JSON.stringify({ id, href });
+   const ok = (navigator as any).sendBeacon?.("/api/sponsor-click", payload);
+   if (!ok) {
+    fetch("/api/sponsor-click", {
+     method: "POST",
+     headers: { "Content-Type": "application/json" },
+     body: payload,
+     keepalive: true,
+    }).catch(() => {});
+   }
+  } catch {}
+ }
+
  const canRotate = items.length > 1;
 
  const [idx, setIdx] = useState(0);
@@ -51,9 +79,10 @@ export default function SponsorBanner({
    </div>
 
    <a
-    href={current.href}
+    onClick={() => handleClick(current.id, current.href)}
+    href={buildHref(current.href, current.id)}
     target="_blank"
-    rel="noopener noreferrer nofollow"
+    rel="noopener noreferrer nofollow sponsored"
     aria-label={`Visit sponsor: ${current.name}`}
     style={{
      display: "inline-flex",
