@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 type AuditRow = {
   id: string;
   created_at: string;
@@ -19,12 +20,15 @@ type AuditResp = {
 };
 
 async function fetchAudit(cursor?: string | null) {
-  const url = new URL("http://local/api/admin/audit");
+  const h = await headers();
+  const host = h.get("host") || "localhost:3000";
+  const proto = h.get("x-forwarded-proto") || "http";
+
+  const url = new URL(`/api/admin/audit`, `${proto}://${host}`);
   url.searchParams.set("limit", "50");
   if (cursor) url.searchParams.set("cursor", cursor);
 
-  // Next server component fetch: relative URL needs a base; we replace origin after build-time.
-  const res = await fetch(url.toString().replace("http://local", ""), { cache: "no-store" });
+  const res = await fetch(url.toString(), { cache: "no-store" });
   const data = (await res.json()) as AuditResp;
   return { res, data };
 }
