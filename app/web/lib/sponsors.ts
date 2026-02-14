@@ -1,42 +1,48 @@
+import { createClient } from "@supabase/supabase-js";
+
 export type Sponsor = {
   id: string;
   name: string;
   href: string;
-  // Optional path under /public, e.g. "/sponsors/acme.png"
   logoSrc?: string;
-  // Optional fallback label if no image
   label?: string;
 };
 
-function s(v: any): string {
-  return typeof v === "string" ? v.trim() : "";
+function getSupabase() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY;
+
+  if (!url || !anon) return null;
+
+  return createClient(url, anon, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
 }
 
-/**
- * Sponsors are configured via a single env var so you can deploy without code changes:
- * NEXT_PUBLIC_SPONSORS_JSON='[{"id":"acme","name":"ACME Lab","href":"https://example.com","logoSrc":"/sponsors/acme.png"}]'
- *
- * If unset/invalid => returns [].
- */
-export function getSponsors(): Sponsor[] {
-  const raw = s(process.env.NEXT_PUBLIC_SPONSORS_JSON);
-  if (!raw) return [];
-
-  try {
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    const out: Sponsor[] = [];
-    for (const x of parsed) {
-      const id = s(x?.id);
-      const name = s(x?.name);
-      const href = s(x?.href);
-      const logoSrc = s(x?.logoSrc) || undefined;
-      const label = s(x?.label) || undefined;
-      if (!id || !name || !href) continue;
-      out.push({ id, name, href, logoSrc, label });
-    }
-    return out;
-  } catch {
+export async function getSponsors(): Promise<Sponsor[]> {
+  const supabase = getSupabase();
+  if (!supabase) {
+    // Do not break build/prerender if env isn't present.
+    console.warn("[sponsors] missing SUPABASE env; returning []");
     return [];
   }
+
+  const { data, error } = await supabase
+    .from("sponsors")
+    .select("id, name, href, image_url, label")
+    .eq("is_active", true)
+    .order("sort_order", { ascending: true, nullsFirst: false });
+
+  if (error) {
+    console.error("[sponsors-fetch-error]", error);
+    return [];
+  }
+
+  return (data || []).map((row: any) => ({
+    id: row.id,
+    name: row.name,
+    href: row.href,
+    logoSrc: row.image_url || undefined,
+    label: row.label || undefined,
+  }));
 }

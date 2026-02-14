@@ -72,7 +72,7 @@ function SectionTitle({ k }: { k: string }) {
 }
 
 export default async function Home() {
-  const sponsors = getSponsors();
+  const sponsors = await getSponsors();
   const paid = await isPaid();
 
   const proHref = (href: string) => (paid ? href : `/upgrade?next=${encodeURIComponent(href)}`);
