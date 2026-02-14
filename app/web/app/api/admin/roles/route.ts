@@ -4,6 +4,18 @@ import { getUserSafe } from "@/lib/auth/getUserSafe";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { hasAnyRole } from "@/lib/auth/roles";
 
+function getReqMeta(req: Request) {
+  const h = req.headers;
+  const ip =
+    h.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    h.get("x-real-ip") ||
+    null;
+  const user_agent = h.get("user-agent") || null;
+  const request_id = h.get("x-vercel-id") || h.get("x-request-id") || null;
+  return { ip, user_agent, request_id };
+}
+
+
 export async function POST(req: Request) {
   // Identify caller via normal cookie auth
   const supa = await supabaseServer();
@@ -34,5 +46,26 @@ export async function POST(req: Request) {
     if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 400 });
   }
 
-  return NextResponse.redirect(new URL("/admin/roles", req.url), 303);
+  
+  // Audit log (best-effort; do not block the op if logging fails)
+  try {
+    const { ip, user_agent, request_id } = getReqMeta(req);
+    const actionName = op === "add" ? "role_add" : "role_remove";
+    await admin.from("admin_events").insert({
+      actor_user_id: user.id,
+      actor_email: (user as any)?.email || null,
+      actor_role: "admin",
+      action: actionName,
+      entity_type: "user_role",
+      entity_id: userId,
+      ip,
+      user_agent,
+      request_id,
+      details: { role, op },
+    });
+  } catch (_) {
+    // swallow
+  }
+
+return NextResponse.redirect(new URL("/admin/roles", req.url), 303);
 }
