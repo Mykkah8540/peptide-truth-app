@@ -32,6 +32,14 @@ export default function ResourcesPage() {
     ))}
    </div>
 
+
+    <div id="community" className="mt-10 rounded-2xl border bg-card p-5">
+     <div className="text-base font-semibold">The Community</div>
+     <p className="mt-2 text-sm leading-6 text-muted-foreground">
+      Pep-Talk combines structured education with real-world discussion. You can comment after creating an account.
+      Pro members unlock community insight summaries and submission workflows for UGC stacks and blends.
+     </p>
+    </div>
    <p className="mt-10 text-sm leading-6 text-muted-foreground">
     Note: These pages will be expanded and linked into relevant peptide pages (ex: purity/testing guidance) as the resource library grows.
    </p>
