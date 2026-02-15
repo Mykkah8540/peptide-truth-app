@@ -538,3 +538,26 @@ body {
   font-size: var(--pt-body-size);
   line-height: var(--pt-body-line);
 }
+
+/* PT_BENCHMARK_SURFACE_V1 */
+/* Adds structural depth plane to Retatrutide benchmark only */
+
+.pt-benchmark{
+  background:
+    linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f8f9fb 35%,
+      #f4f6f9 100%
+    );
+  min-height: 100vh;
+}
+
+.pt-benchmark .pt-hero{
+  margin-top: 28px;
+}
+
+.pt-benchmark .grid{
+  margin-top: 20px;
+}
+
