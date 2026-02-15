@@ -3,7 +3,9 @@ Deferred ideas, open questions, and future enhancements
 
 Nothing in this file is approved for build unless promoted into an authoritative spec.
 
-## PDP Contextual Exploration Phase 2
+## PDP
+- [PDP] “Things to Consider for Your Situation” search: no typeahead suggestions; search appears non-functional; needs guidance/empty-state + working typeahead.
+ Contextual Exploration Phase 2
 - Suggested queries personalized by peptide
 - Condition clusters
 - Visual indicators for limited data
