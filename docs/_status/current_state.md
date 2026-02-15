@@ -211,10 +211,38 @@ Stability-first doctrine enforced
 
 Next Required Step
 
-Before writing any redesign code:
+Design Spec v2 now exists (canonical) and doctrine is locked.
 
-Write:
+Next work must be zero-risk:
+- Add CSS editorial tokens + section-weight classes (no component edits yet)
+- Keep validators + build green
+- One scoped change-set per commit
 
-“Design Spec v2: PDP Editorial Architecture”
+No redesign code proceeds beyond tokenization until the spec implementation details are executed deterministically.
 
-No structural redesign should proceed without that spec being written and approved.
+
+## PDP Editorial Governance Anchor (HEAD 638a931, 2026-02-15)
+
+Canonical PDP editorial guidance now lives in:
+- Doctrine (authoritative posture, narrative order, non-negotiables)
+  - docs/governance/pdp_editorial_doctrine.md
+- Design Spec v2 (canonical blueprint)
+  - docs/_governance/design_spec_v2_pdp_editorial_architecture.md
+
+Phase 1 is locked:
+- Single-column, deterministic, mobile-first
+- No adaptive branching / decision-path UI
+- No schema drift
+- Non-directive education only (no dosing, no protocols, no medical advice)
+- Primary sections move toward unboxed (reduce stacked-card dominance)
+- Right-rail banned in Phase 1
+- Retatrutide is benchmark; no peptide-specific styling (system-wide tokens only)
+- CSS tokens + section-weight classes first (zero layout-break risk); no component edits yet
+
+Authoritative catalog counts (PDP contract validator at this HEAD):
+- Peptides scanned: 94
+- Blends scanned: 9
+
+Notes:
+- PT_PDP_POLISH_V1/V2 are scaffolding/polish, not the full editorial architecture.
+- Avoid duplicate PDP specs under docs/_status; canonical spec lives under docs/_governance.
