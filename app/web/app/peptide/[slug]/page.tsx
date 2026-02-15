@@ -31,45 +31,68 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   );
 
   return (
-    <main className="pt-page">
+    <main className={`pt-page`}>
       <div className={`pt-hero${isRetatrutide ? " pt-hero--open" : ""}`}>
-        <VialImage kind="peptide" slug={slug} alt={`${peptideName} vial`} />
+        {isRetatrutide ? (
+          <div className="reta-hero">
+            <div className="reta-hero__top">
+              <h1 className="reta-hero__title">{peptideName}</h1>
+              <p className="reta-hero__sub">
+                The benchmark PDP. Built with stability-first editorial hierarchy and clear evidence posture.
+              </p>
 
-        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h1>{peptideName}</h1>
+              <div className="reta-hero__meta">
+                {riskHit ? (
+                  <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
+                ) : null}
+                <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
+              </div>
 
-            <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
-              <a
-                href="#community"
-                style={{
-                  textDecoration: "none",
-                  fontWeight: 900,
-                  opacity: 0.88,
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  borderRadius: 999,
-                  padding: "8px 10px",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                }}
-              >
+              <a className="reta-hero__cta" href="#community">
                 Join the Conversation →
               </a>
             </div>
           </div>
+        ) : (
+          <>
+            <VialImage kind="peptide" slug={slug} alt={`${peptideName} vial`} />
 
-          <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
-            {riskHit ? (
+            <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
-              </div>
-            ) : null}
-            <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
-          </div>
-        </div>
-      </div>
+                <h1>{peptideName}</h1>
 
+                <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                  <a
+                    href="#community"
+                    style={{
+                      textDecoration: "none",
+                      fontWeight: 900,
+                      opacity: 0.88,
+                      border: "1px solid rgba(0,0,0,0.12)",
+                      borderRadius: 999,
+                      padding: "8px 10px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                    }}
+                  >
+                    Join the Conversation →
+                  </a>
+                </div>
+              </div>
+
+              <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
+                {riskHit ? (
+                  <div>
+                    <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
+                  </div>
+                ) : null}
+                <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
+              </div>
+            </div>
+          </>
+        )}
+      </div>
       <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start">
         <div className="grid gap-6">
           {supportPack ? <SupportLayerSection pack={supportPack} /> : null}

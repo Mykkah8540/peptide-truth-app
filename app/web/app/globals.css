@@ -285,3 +285,111 @@ body {
   background: rgba(255,255,255,0.96);
 }
 
+
+/* RETA_GOLD_STANDARD_HERO */
+.pt-hero.pt-hero--open {
+  padding: 28px 22px;
+  border-radius: 24px;
+}
+
+.reta-hero {
+  width: 100%;
+  max-width: 980px;
+}
+
+.reta-hero__top {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reta-hero__title {
+  font-size: 44px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 950;
+  margin: 0;
+}
+
+.reta-hero__sub {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  opacity: 0.75;
+  max-width: 68ch;
+}
+
+.reta-hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reta-hero__cta {
+  text-decoration: none;
+  font-weight: 950;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: rgba(255,255,255,0.78);
+}
+
+.reta-hero__cta:hover {
+  background: rgba(255,255,255,0.94);
+}
+
+/* Retatrutide benchmark PDP (scoped). Do not reuse on other PDPs until approved. */
+.pt-benchmark .pt-hero {
+  max-width: 1120px;
+  margin: 18px auto 14px auto;
+  padding: 26px 26px 18px 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.9);
+}
+
+.pt-benchmark .reta-hero__top {
+  display: grid;
+  gap: 10px;
+}
+
+.pt-benchmark .reta-hero__title {
+  font-size: 42px;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.pt-benchmark .reta-hero__sub {
+  font-size: 16px;
+  line-height: 1.45;
+  opacity: 0.78;
+  max-width: 70ch;
+}
+
+.pt-benchmark .pt-card {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+.pt-benchmark .pt-card h2,
+.pt-benchmark .pt-card h3 {
+  letter-spacing: -0.01em;
+}
+
+.pt-benchmark .pt-page > .grid {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pt-benchmark .pt-page .grid.gap-6 {
+  gap: 18px;
+}
+
+.pt-benchmark .pt-card section + section {
+  margin-top: 14px;
+}
