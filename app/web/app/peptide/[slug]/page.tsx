@@ -11,6 +11,7 @@ import EvidenceList from "@/components/EvidenceList";
 import InteractionsSection from "@/components/InteractionsSection";
 import PDPContextualConsiderations from "@/components/PDPContextualConsiderations";
 import PeptideCommentsSection from "@/components/PeptideCommentsSection";
+import CollapsibleSection from "@/components/CollapsibleSection";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -106,6 +107,17 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
+
+<section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+            <ContentBlocks
+              heading="Evidence posture"
+              blocks={sections?.evidence_posture ?? null}
+              showEmpty
+              emptyText="No evidence posture has been added yet."
+              wrapCard={false}
+            />
+          </section>
+
           <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="What people discuss and why it matters"
@@ -126,18 +138,14 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
-          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
-            <ContentBlocks
-              heading="Evidence posture"
-              blocks={sections?.evidence_posture ?? null}
-              showEmpty
-              emptyText="No evidence posture has been added yet."
-              wrapCard={false}
-            />
-          </section>
-
-          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
-            <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+                    <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+            {isRetatrutide ? (
+              <CollapsibleSection title="Evidence details" defaultCollapsedMobile>
+                <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+              </CollapsibleSection>
+            ) : (
+              <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+            )}
           </section>
         </div>
 
