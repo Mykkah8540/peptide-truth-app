@@ -486,3 +486,55 @@ body {
   font-size: var(--pt-body-size);
   line-height: var(--pt-body-line);
 }
+
+/* PT_BENCHMARK_LAYOUT_V1 */
+/* Retatrutide benchmark: first visible editorial depth (scoped to .pt-benchmark only) */
+
+.pt-benchmark{
+  background: linear-gradient(180deg, rgba(0,0,0,0.015), rgba(0,0,0,0.0) 280px);
+}
+
+.pt-benchmark .pt-hero{
+  background: var(--pt-surface-primary);
+  border: 1px solid var(--pt-border-hairline);
+  box-shadow: var(--pt-shadow-elevated);
+  border-radius: var(--pt-radius-lg);
+  padding: 22px;
+}
+
+/* Editorial “breathing room” for primary sections */
+.pt-benchmark .pt-section--primary{
+  margin-top: var(--pt-space-6);
+}
+
+/* Secondary sections: clear depth without loud borders */
+.pt-benchmark .pt-section--secondary{
+  box-shadow: var(--pt-shadow-elevated);
+}
+
+/* Utility sections: keep them subordinate */
+.pt-benchmark .pt-section--utility{
+  opacity: 0.98;
+}
+
+/* Heading discipline (only inside benchmark zones) */
+.pt-benchmark h1{
+  letter-spacing: var(--pt-title-track);
+  font-weight: var(--pt-title-weight);
+}
+
+.pt-benchmark .pt-card h2,
+.pt-benchmark .pt-section--primary h2,
+.pt-benchmark .pt-section--secondary h2{
+  letter-spacing: -0.12px;
+  font-weight: 850;
+}
+
+/* Slightly more readable body inside benchmark */
+.pt-benchmark .pt-card,
+.pt-benchmark .pt-section--primary,
+.pt-benchmark .pt-section--secondary,
+.pt-benchmark .pt-section--utility{
+  font-size: var(--pt-body-size);
+  line-height: var(--pt-body-line);
+}
