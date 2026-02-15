@@ -1,189 +1,220 @@
-# Pep-Talk Current State (Authoritative)
-
+Pep-Talk Current State (Authoritative)
 Date: 2026-02-14
-Branch: main (HEAD 6198bab)
+Branch: main
+HEAD: b10eb66
+Commit message: PDP strategic pivot captured: moving away from stacked cards toward editorial hierarchy
 
-## System Health
+This document reflects actual repository state — not aspirational direction.
 
-- Build: PASS (Next.js app/web builds clean when gates are run)
-- Validators: PASS (core validators and index rebuild pipeline operational)
-- Repo state: expected clean working tree before/after changes
+Always verify before trusting this file:
 
-## What Is Implemented (Reality, Not Aspirational)
-
-### Risk Badge Integration
-Risk index UI integration is implemented:
-- `content/_index/risk_index_v1.json` is used by the web app via `app/web/lib/riskIndex.ts`
-- `RiskBadge` exists at `app/web/components/RiskBadge.tsx`
-- Peptide PDP and Blend PDP render risk badge through IdentityPanel when risk info is available
-
-### PDP Tone + Structure
-PDP rendering is aligned with mission:
-- Educational only (no dosing/protocols)
-- Practical, neutral voice
-- No debug/metadata leakage in user-facing content
-- Practical risks phrasing avoids fear framing and signals rarity appropriately
-- Interactions and Evidence sections behave deterministically with sane empty states
-
-### UGC → Supabase Postgres (LIVE)
-
-### Sponsor System (Test + Verified in Prod)
-- Home page includes a sponsored placement module (currently test sponsor: ACME Lab).
-- Sponsor link includes UTM params (note: HTML renders `&amp;` escapes; unescape to see raw `&`).
-- Click tracking endpoint verified in production:
-  - `POST /api/sponsor-click` with `{id, href}` returns `{ok:true}`
-  - Vercel logs show `POST /api/sponsor-click 200`
-
-UGC storage has been migrated from file-based JSON to Supabase-hosted Postgres and is verified end-to-end:
-
-- Database: Supabase Postgres (pooler) via `UGC_DATABASE_URL` (fallback: `DATABASE_URL`)
-- Schema: `public.ugc_posts` exists with statuses: `pending|approved|rejected|archived|trash`
-- Runtime verification: submit → moderate(approve) → list(approved) confirmed working against DB
-- Admin auth: role-gated via Supabase session roles (admin|moderator) using `public.user_roles` (token header remains as legacy fallback where present).
-- Seen/unseen: admin selection marks `seen_at` in DB via `/api/ugc/seen`
-
-Code locations (authoritative):
-- DB pool: `app/web/lib/ugc/db.ts`
-- Store: `app/web/lib/ugc/store.ts`
-- Routes: `app/web/app/api/ugc/{submit,list,moderate,seen}/route.ts`
-- Admin UI: `app/web/app/admin/ugc/page.tsx`
-
-API contracts (verified):
-- Submit: `POST /api/ugc/submit`
-  Body: `{ "type":"peptide|blend", "slug":"...", "username":"...", "text":"...", "ack_no_dosing": true }`
-- List approved: `GET /api/ugc/list?type=peptide|blend&slug=...`
-- Moderate (admin): `GET /api/ugc/moderate?status=pending|approved|...&limit=...` (header `x-admin-token`)
-  `POST /api/ugc/moderate` body: `{ "id":"...", "status":"approved|rejected|archived|trash|pending", "reason": null|string }`
-- Seen (admin): `POST /api/ugc/seen` body `{ "id":"..." }` (header `x-admin-token`)
-
-TLS behavior (explicit):
-- Dev: Node pg pool uses TLS with `rejectUnauthorized: false` to avoid local cert-chain issues.
-- Prod: pool enforces verification with `rejectUnauthorized: true` (requires proper CA trust in deployment).
-
-## Known Stale Docs (Fixed in repo when updated)
-If any doc claims “risk badge not implemented” or “next action is integrate risk badge,” it is stale.
-
-## NEXT SINGLE ACTION (Strict Scope)
-
-UGC production hardening (no feature creep):
-- Keep UGC working in dev + production (TLS verification plan for prod)
-- Confirm admin UGC UI marks `seen_at` and counts align with DB truth
-- Improve UGC error reporting + empty states (no new schemas)
-- Run gates and commit small, scoped changes
-## Guardrails (Non-Negotiable)
-
-- Repo is truth, not chat
-- Do not invent schemas, file paths, or content contracts
-- No dosing, no protocols, no vendor links, no affiliate logic
-- Always prove wires before edits
-- Always run gates before commit
-
-## Admin System (Reality)
-
-- Admin area routes exist: `/admin`, `/admin/ugc`, `/admin/flags`, `/admin/ops`, `/admin/audit`, `/admin/roles`
-- Access model:
-  - `/admin/*` is gated server-side by `public.user_roles` (roles: `admin`, `moderator`)
-  - `/admin/roles` mutations are admin-only
-  - UGC admin APIs use `isUgcAdmin` (admin|moderator; legacy header token may exist in some routes)
-- Audit + traceability:
-  - `admin_events` logging is present for admin mutations that already write events (e.g., flags/roles where implemented)
-  - `/admin/audit` + `/api/admin/audit` exist (viewer is read-only)
-
-## Most Recent Changes (This Merge)
-
-- Removed “Global Pro Override” control from `/admin/ugc` UI (no flags control in moderation screen).
-- NavBar:
-  - Fetches `/api/viewer` and surfaces an “Admin” link when `profile.is_admin` is true.
-  - Fixed MobileMenu prop mismatch that was breaking `next build`.
+cd "$(git rev-parse --show-toplevel)" || exit 1
+git --no-pager log -1 --oneline
+git status --short
+python3 scripts/validate/validate_pdp_contract_v1.py
 
 
-## PDP Visual & UX Status (Retatrutide Gold Standard)
+Validator output is canonical truth for dataset counts.
 
-### Data Integrity
-• Peptides: 92
-• Blends: 8
-• PDP contract validation: PASSING
-• No schema drift
-• No new dependencies introduced
+System Health
 
----
+Build: PASS (Next.js 16.1.6)
+Validators: PASS
+Working tree: expected clean before/after change sets
 
-### Strategic Direction
+No schema drift introduced in this chat.
+No API contract changes introduced in this chat.
 
-Retatrutide is the gold standard PDP.
+Data Integrity
 
-All PDPs must:
-- Feel editorial, structured, and intentional
-- Reflect Apple-level hierarchy and clarity
-- Avoid visual flatness
-- Emphasize contrast between content sections
-- Maintain deterministic governance (validators first)
+Validator is authoritative.
 
----
+Historical validator output during this session showed:
 
-### Completed Work
+Peptides scanned: 94
 
-• Support Layer system added and rendering on PDP
-• Inline SVG replacement for lucide dependency (removed external icon dep)
-• Softened card borders
-• Subtle hero elevation (PT_PDP_POLISH_V1)
-• Section spacing rhythm adjustments
-• Pill styling utility (.pt-pill)
-• Title divider visual refinement (PT_PDP_POLISH_V2)
-• Input field styling improvements
-• Red flag visual accent bar
-• Typography weight refinement
-• All builds passing (Next.js 16.1.6)
-• All validators passing
+Blends scanned: 9
 
----
+Later documentation referenced:
 
-### Partially Implemented (Not Finished)
+92 peptides
 
-• PT_PDP_POLISH_V2 hierarchy refinement
-• Hero depth and molecule visual layering
-• Section weight differences (Evidence vs Support vs Context vs Red Flags)
-• Interactive micro-motion polish
-• Visual rhythm improvements between stacked pt-card sections
+8 blends
 
----
+This discrepancy indicates either:
 
-### Not Implemented
+Content was removed between commits
 
-• Protein & Hydration widget (concept only)
-• Scientific visual fill (molecule diagrams / editorial depth assets)
-• Contextual search typeahead
-• Search empty-state guidance
-• Contextual search filtering logic
-• Dynamic hero refinement
-• Sidebar / right-rail treatment exploration
-• Scroll-based section anchoring refinement
-• Visual differentiation between PDP and homepage tone
+Validator was run before index update
 
----
+Documentation was written manually without re-verification
 
-### Known Functional Issues
+Rule going forward:
+Validator output overrides documentation claims.
 
-• "Things to Consider for Your Situation" search:
-  - No typeahead suggestions
-  - No empty-state messaging
-  - No active filter indication
-  - May not filter content at all
+Before writing counts into docs, always re-run:
 
-• PDP pages still visually flatter than homepage
-• Homepage contrast model not yet applied to PDP
+python3 scripts/validate/validate_pdp_contract_v1.py
 
----
+UGC → Supabase (Production Verified)
 
-### Architectural Guardrails (Non-Negotiable)
+Database: Supabase Postgres
+Schema: public.ugc_posts
+Statuses:
 
-• No schema drift beyond contract
-• Validators must pass before commit
-• No interactive shell-breaking commands
-• Small atomic commits only
-• CSS-only changes unless explicitly authorized
-• Retatrutide defines aesthetic benchmark
+pending
 
----
+approved
 
-## END PDP STATUS
+rejected
+
+archived
+
+trash
+
+Flow verified:
+submit → moderate → list → seen
+
+Admin gating:
+
+Supabase session roles (admin | moderator)
+
+Legacy header fallback exists in some routes
+
+Seen/unseen:
+
+Writes seen_at via /api/ugc/seen
+
+No schema expansion in this chat.
+
+Sponsor System
+
+Home page sponsor placement active.
+Click tracking endpoint verified in production.
+No sponsor changes in this chat.
+
+PDP Strategic Pivot (This Chat)
+
+This is the FIRST chat intentionally initiating a gold-standard editorial PDP redesign.
+
+Important clarification:
+
+The redesign is NOT complete.
+
+What exists today is scaffolding — not architecture.
+
+What Was Implemented (CSS-Only Scaffolding)
+
+PT_PDP_POLISH_V1 (hero elevation + softened card rhythm)
+
+PT_PDP_POLISH_V2 (section weight refinement + pill styling + divider refinement)
+
+Inline SVG replacement for lucide dependency
+
+Red flag visual accent refinement
+
+Typography weight adjustments
+
+Input styling refinement
+
+All changes:
+
+CSS-only
+
+No schema edits
+
+No component contract edits
+
+No API changes
+
+Build passes.
+
+What Is NOT Implemented
+
+The true editorial hierarchy system does NOT exist.
+
+We still have:
+
+pt-card stacking dominance
+
+Uniform section boxing
+
+No explicit Primary / Secondary / Utility system
+
+No contrast zone system
+
+No layered background architecture
+
+No defined editorial layout spec
+
+No component-level structural refactor
+
+PT_PDP_POLISH_V1 and V2 are visual refinements only — not architectural redesign.
+
+Partially Started But Incomplete
+
+Section weight differentiation experiments
+
+Hero depth experiments
+
+Molecule visual exploration (concept only)
+
+Rhythm experimentation
+
+These changes are incomplete and not systematized.
+
+Functional Issues
+
+“Things to Consider for Your Situation” module:
+
+No typeahead
+
+No empty state guidance
+
+No active filter indicators
+
+Filtering logic may not function correctly
+
+Logged in parking lot.
+
+Retatrutide Standard
+
+Retatrutide PDP defines aesthetic benchmark.
+
+All redesign work must:
+
+Maintain governance integrity
+
+Remain validator-safe
+
+Avoid schema drift
+
+Preserve deterministic rendering
+
+Remain educational (no dosing/protocols)
+
+Architectural Guardrails
+
+No schema drift
+
+Validators must pass before commit
+
+No multi-file mutation scripts
+
+No blind JSX deletion
+
+One scoped change-set per commit
+
+Always build after structural edits
+
+Stability-first doctrine enforced
+
+Next Required Step
+
+Before writing any redesign code:
+
+Write:
+
+“Design Spec v2: PDP Editorial Architecture”
+
+No structural redesign should proceed without that spec being written and approved.
