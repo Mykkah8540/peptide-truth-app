@@ -191,3 +191,69 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.10);
   background: rgba(255,255,255,0.95);
 }
+
+/* PT_PDP_POLISH_V2 */
+/* Section weight + right-rail UI polish (safe: CSS-only) */
+
+.pt-hero{
+  gap: 18px;
+}
+
+.pt-hero img{
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.10));
+}
+
+.pt-card + .pt-card{
+  margin-top: 14px;
+}
+
+.pt-card-title{
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.pt-card-title::after{
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-top: 10px;
+  background: rgba(0,0,0,0.06);
+}
+
+/* Inputs + pill tags polish */
+.pt-card input[type="text"], .pt-card input[type="search"]{
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.9);
+  outline: none;
+}
+
+.pt-card input[type="text"]:focus, .pt-card input[type="search"]:focus{
+  border-color: rgba(0,0,0,0.18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.pt-card button, .pt-card a[role="button"]{
+  border-radius: 999px;
+}
+
+/* Generic “pill” treatment used across PDP (chips/buttons) */
+.pt-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pt-pill:hover{
+  background: rgba(0,0,0,0.05);
+}
+
