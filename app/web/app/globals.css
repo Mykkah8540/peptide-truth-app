@@ -393,3 +393,96 @@ body {
 .pt-benchmark .pt-card section + section {
   margin-top: 14px;
 }
+
+/* PT_EDITORIAL_TOKENS_V1 */
+/* Editorial tokens + section weight classes (NO-OP until components opt-in) */
+
+:root{
+  /* Surfaces (zones) */
+  --pt-surface-primary: #ffffff;                  /* Zone A: open white */
+  --pt-surface-secondary: rgba(255,255,255,0.82); /* Zone B: soft elevated */
+  --pt-surface-utility: rgba(0,0,0,0.025);        /* Zone C: muted strip */
+
+  /* Borders */
+  --pt-border-soft: rgba(0,0,0,0.08);
+  --pt-border-hairline: rgba(0,0,0,0.06);
+
+  /* Shadows (depth controls) */
+  --pt-shadow-soft: 0 6px 18px rgba(0,0,0,0.06);
+  --pt-shadow-elevated: 0 16px 40px rgba(0,0,0,0.08);
+
+  /* Radius */
+  --pt-radius-lg: 18px;
+
+  /* Spacing rhythm */
+  --pt-space-1: 6px;
+  --pt-space-2: 10px;
+  --pt-space-3: 14px;
+  --pt-space-4: 18px;
+  --pt-space-5: 26px;
+  --pt-space-6: 36px;
+
+  /* Typography (editorial discipline) */
+  --pt-title-weight: 950;
+  --pt-title-track: -0.18px;
+  --pt-subtext-opacity: 0.72;
+  --pt-body-size: 15px;
+  --pt-body-line: 1.65;
+}
+
+/* Section weight system (opt-in) */
+.pt-section{ display:block; }
+
+/* Primary: open, unboxed, breathing room */
+.pt-section--primary{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin-top: var(--pt-space-6);
+}
+
+/* Secondary: softly contained, structured */
+.pt-section--secondary{
+  background: var(--pt-surface-secondary);
+  border: 1px solid var(--pt-border-soft);
+  box-shadow: var(--pt-shadow-soft);
+  border-radius: var(--pt-radius-lg);
+  padding: 18px;
+  margin-top: var(--pt-space-5);
+}
+
+/* Utility: muted, subordinate */
+.pt-section--utility{
+  background: var(--pt-surface-utility);
+  border: 1px solid var(--pt-border-hairline);
+  box-shadow: none;
+  border-radius: var(--pt-radius-lg);
+  padding: 16px;
+  margin-top: var(--pt-space-4);
+}
+
+/* Contrast zones (opt-in wrappers; do not attach to existing markup yet) */
+.pt-zone-a{ background: var(--pt-surface-primary); }
+.pt-zone-b{ background: var(--pt-surface-secondary); }
+.pt-zone-c{ background: var(--pt-surface-utility); }
+
+/* Editorial title helpers (opt-in) */
+.pt-section-title{
+  margin: 0;
+  font-weight: var(--pt-title-weight);
+  letter-spacing: var(--pt-title-track);
+}
+
+.pt-section-subtext{
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 13px;
+  opacity: var(--pt-subtext-opacity);
+  line-height: 1.5;
+}
+
+.pt-body{
+  font-size: var(--pt-body-size);
+  line-height: var(--pt-body-line);
+}
