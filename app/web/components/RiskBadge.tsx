@@ -28,9 +28,9 @@ export default function RiskBadge({ score, tier }: Props) {
  return (
   <div style={{ display: "inline-flex", alignItems: "center", gap: 10, border: "1px solid rgba(0,0,0,0.10)", borderRadius: 12, padding: "10px 12px" }}>
    <span style={{ width: 10, height: 10, borderRadius: 999, background: color, display: "inline-block" }} />
-   <div style={{ fontSize: 12, opacity: 0.7 }}>Safety grade</div>
-   <div style={{ fontSize: 18, fontWeight: 800 }}>{s}/10</div>
-   <div style={{ fontSize: 12, opacity: 0.85, fontWeight: 700 }}>{label(s, tier)}</div>
+   
+   
+   <div style={{ fontSize: 13, fontWeight: 700 }}>{label(s, tier)} maturity</div>
   </div>
  );
 }
