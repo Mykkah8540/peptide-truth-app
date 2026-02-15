@@ -142,3 +142,52 @@ body {
 @media (min-width: 768px) {
   .mobile-menu-btn { display: none !important; }
 }
+
+/* PT_PDP_POLISH_V1 */
+:root{
+  --pt-card-bg: rgba(255,255,255,0.88);
+  --pt-card-br: rgba(0,0,0,0.08);
+  --pt-card-shadow: 0 1px 0 rgba(0,0,0,0.05);
+  --pt-card-shadow-strong: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.pt-page{
+  background: radial-gradient(1200px 500px at 50% -120px, rgba(0,0,0,0.04), transparent 60%);
+}
+
+.pt-hero{
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.78);
+  box-shadow: var(--pt-card-shadow-strong);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.pt-hero h1{
+  letter-spacing: -0.2px;
+}
+
+.pt-card{
+  background: var(--pt-card-bg);
+  border: 1px solid var(--pt-card-br);
+  box-shadow: var(--pt-card-shadow);
+}
+
+.pt-card-title{
+  font-weight: 950;
+  letter-spacing: -0.15px;
+}
+
+.pt-card-subtext{
+  opacity: 0.72;
+}
+
+.pt-hero a{
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.pt-hero a:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.95);
+}
