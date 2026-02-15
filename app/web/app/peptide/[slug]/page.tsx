@@ -3,6 +3,8 @@ import RiskBadge from "@/components/RiskBadge";
 import VialImage from "@/components/VialImage";
 import AliasSequenceMini from "@/components/AliasSequenceMini";
 import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
+import { getSupportPack } from "@/lib/supportLayer";
+import SupportLayerSection from "@/components/SupportLayerSection";
 
 import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
@@ -15,6 +17,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
   const riskHit = getRiskForPeptide(slug);
   const doc = await loadPeptideBySlug(slug);
+  const supportPack = getSupportPack(doc as any);
+
   const p = doc?.peptide ?? {};
   const sections = p?.sections ?? {};
 
@@ -66,6 +70,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
       <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start">
         <div className="grid gap-6">
+          {supportPack ? <SupportLayerSection pack={supportPack} /> : null}
           <section className="pt-card">
             <ContentBlocks
               heading="Overview"

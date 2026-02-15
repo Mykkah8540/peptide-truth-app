@@ -94,7 +94,7 @@
           "population_group": null,
           "confidence": null,
           "evidence_grade": null,
-          "text": "Retatrutide shows strong promise, but the full long-term story is still being written. Most of what we know comes from limited human trials so far, and ongoing research will clarify durability, safety, and who benefits most.",
+          "text": "Retatrutide has strong early human trial results, but the long-term story (durability, safety, and who benefits most) is still being defined. Expect the guidance to sharpen as more data accumulates.",
           "evidence_refs": []
         }
       ],
@@ -145,23 +145,23 @@
         }
       ],
       "current_outlook_bullets": [
-        "strong appetite control / less “food noise”",
-        "fat loss and body-composition goals",
-        "blood sugar / insulin resistance improvement interest",
-        "curiosity about “triple agonist” vs GLP-1 only",
-        "how to keep energy, training, and lean mass solid during weight loss"
+        "Quiet “food noise” and make eating feel simpler",
+        "Drive meaningful fat loss in an obesity/metabolic context",
+        "Improve glucose control markers in research settings",
+        "See whether “triple agonist” feels different than GLP-1 alone",
+        "Lose fat without letting energy and lean mass collapse"
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "",
+        "title": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
         "source_type": "pubmed",
-        "source_id": "",
+        "source_id": "E1",
         "url": "",
         "published_date": "",
         "evidence_grade": "unknown",
-        "notes": ""
+        "notes": "Curation note: this entry will be replaced with properly cited trial and safety references after review."
       }
     ],
     "changelog": [
@@ -195,26 +195,32 @@
   },
   "practical": {
     "schema_version": "practical_block_v1",
-    "bottom_line": "This peptide is discussed primarily in metabolic and body-composition contexts. Human evidence exists for some indications, but real-world use often exceeds approved frameworks. Risk is driven by dose escalation, stacking, and sourcing quality.",
+    "bottom_line": "Retatrutide is an investigational tri-agonist (GLP-1/GIP/glucagon receptors) being studied for obesity and metabolic disease. In controlled human studies it produces substantial weight loss and improves metabolic markers. The practical risk is not mystery — it’s tolerability (GI side effects), dehydration/constipation, and unintentional under-eating that drives fatigue and lean-mass loss.",
     "benefits": [
-      "appetite regulation effects discussed in clinical contexts",
-      "weight and metabolic interest in obesity-related discussions",
-      "investigated effects on insulin sensitivity and glycemic control"
+      "Reduce appetite and “food noise” in a way many people notice quickly",
+      "Support significant weight loss in controlled studies",
+      "Improve glycemic and cardiometabolic markers in research settings",
+      "Make calorie deficits feel more “automatic” for some users"
     ],
     "side_effects_common": [
-      "nausea or GI discomfort",
-      "reduced appetite beyond intended levels",
-      "fatigue during adjustment periods"
+      "nausea, reflux, or stomach discomfort",
+      "constipation or slower GI motility",
+      "diarrhea or unpredictable bowel changes",
+      "fatigue / low energy during adjustment",
+      "reduced appetite beyond what feels healthy"
     ],
     "side_effects_serious": [
-      "persistent vomiting or dehydration",
-      "gallbladder complications reported in some contexts",
-      "hypoglycemia risk when combined with other agents"
+      "persistent vomiting or dehydration (dizziness, inability to keep fluids down)",
+      "severe abdominal pain that doesn’t settle (needs urgent evaluation)",
+      "gallbladder complications in incretin contexts (upper-right abdominal pain, fever, jaundice)",
+      "hypoglycemia risk when combined with other glucose-lowering agents"
     ],
     "who_should_be_cautious": [
-      "individuals with prior GI disorders",
-      "those with eating disorder history",
-      "people combining multiple metabolic agents"
+      "people with a history of pancreatitis or gallbladder disease",
+      "individuals with significant GI motility issues (severe reflux, gastroparesis-like symptoms)",
+      "those with eating-disorder history or active restrictive patterns",
+      "people using insulin or insulin secretagogues (higher hypoglycemia risk)",
+      "anyone stacking multiple metabolic agents (risk compounds fast)"
     ]
   },
   "sections": {
@@ -229,16 +235,16 @@
       }
     ],
     "current_outlook_bullets": [
-      "appetite control and reduced food noise",
-      "fat-loss and waist reduction goals",
-      "improved glucose control in metabolic discussions",
-      "curiosity about “GLP-1 + more” (triple-agonist hype)",
-      "interest in whether it preserves energy and performance better than older options"
+      "Quiet “food noise” and make eating feel simpler",
+      "Drive meaningful fat loss in an obesity/metabolic context",
+      "Improve glucose control markers in research settings",
+      "See whether “triple agonist” feels different than GLP-1 alone",
+      "Lose fat without letting energy and lean mass collapse"
     ],
     "use_cases": [
       {
-        "heading": "What it appears to do",
-        "text": "Across early human research and real-world discussion, the most commonly expected effects are reduced appetite, easier adherence to a calorie deficit, and improvements in metabolic markers (especially glucose regulation). Some people also report changes in cravings and meal portion size."
+        "heading": "What people usually notice",
+        "text": "The most commonly described changes are: appetite feels quieter, portions shrink naturally, and cravings become easier to ignore. In research contexts, improvements show up in weight and metabolic markers. The experience varies — especially depending on how hard intake drops."
       },
       {
         "heading": "Nutrition considerations",
@@ -249,9 +255,20 @@
         "text": "Results are typically better when paired with consistent training. Resistance work is especially relevant during weight loss to help preserve strength and lean mass. If food intake drops too low, fatigue and performance dips are common—so training volume and recovery need to stay realistic."
       },
       {
-        "heading": "Regulatory & scientific uncertainty",
-        "text": "While this peptide shows meaningful promise, much of what is known today comes from limited human trials and evolving research programs. Ongoing studies will determine how well early results translate into broader, approved clinical use and long-term safety."
+        "heading": "What’s still being figured out",
+        "text": "Retatrutide has real human trial data behind it, but the long-term safety profile, durability, and best-fit populations are still being defined. As this moves through the research pipeline, guidance will get clearer — and some early assumptions will likely change."
       }
+    ]
+  },
+  "slug": "retatrutide",
+  "outlook": {
+    "outlook_text": "Retatrutide gets called the “next level” of GLP-1s because it’s built to push three signals at once: GLP-1, GIP, and glucagon. In plain language, people chase it for one main reason: appetite feels quieter, eating feels easier, and weight loss can move faster than expected.\n\nThe tradeoff is that the same lever that reduces intake can also make people under-eat without noticing. When that happens, the usual storyline isn’t just nausea — it’s low energy, weaker workouts, constipation/dehydration, and muscle loss if protein drops too far.\n\nBottom line: it’s an investigational compound with real human trial data behind the headline effects, but the long-term picture and best-fit populations are still being defined. Treat bold claims and aggressive stacking culture as noise until the evidence catches up.",
+    "interest_bullets": [
+      "Quiet “food noise” and make eating feel simpler",
+      "Drive meaningful fat loss in an obesity/metabolic context",
+      "Improve glucose control markers in research settings",
+      "See whether “triple agonist” feels different than GLP-1 alone",
+      "Lose fat without letting energy and lean mass collapse"
     ]
   }
 }
