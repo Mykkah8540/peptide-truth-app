@@ -31,7 +31,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   );
 
   return (
-    <main className={`pt-page`}>
+    <main className={`pt-page${isRetatrutide ? " pt-benchmark" : ""}`}>
       <div className={`pt-hero${isRetatrutide ? " pt-hero--open" : ""}`}>
         {isRetatrutide ? (
           <div className="reta-hero">
@@ -96,7 +96,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       <div className="grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start">
         <div className="grid gap-6">
           {supportPack ? <SupportLayerSection pack={supportPack} /> : null}
-          <section className="pt-card">
+          <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="Overview"
               blocks={sections?.overview ?? null}
@@ -106,7 +106,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
-          <section className="pt-card">
+          <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="What people discuss and why it matters"
               blocks={sections?.use_cases ?? null}
@@ -116,7 +116,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
-          <section className="pt-card">
+          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <InteractionsSection
               hideHeading={false}
               drugClasses={doc?.interactions?.drug_classes}
@@ -126,7 +126,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
-          <section className="pt-card">
+          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <ContentBlocks
               heading="Evidence posture"
               blocks={sections?.evidence_posture ?? null}
@@ -136,7 +136,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
-          <section className="pt-card">
+          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
           </section>
         </div>
@@ -147,7 +147,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       </div>
 
       {/* NOTE: Community read is public; write requires auth. */}
-      <PeptideCommentsSection slug={slug} />
+      <div id="community">
+        <PeptideCommentsSection slug={slug} />
+      </div>
     </main>
   );
 }
