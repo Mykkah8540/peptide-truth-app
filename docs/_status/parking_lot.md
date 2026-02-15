@@ -81,3 +81,9 @@ Deferred / polish (do not build until explicitly promoted):
 - Define sponsor rotation rules, disclosure copy, and eligibility criteria
 - Document UTM conventions and click tracking expectations
 - Ensure no influence over educational content; maintain strict separation
+
+## Things to Consider for Your Situation — Search UX is broken
+- The “Things to Consider for Your Situation” search function appears non-functional (no results / no guidance).
+- UX needs typeahead suggestions (search suggestions should populate as you start typing).
+- Add empty-state guidance: what the user can search for + example queries.
+- Verify: keyboard input → suggestions → selection → filters/anchors/blocks update as expected.
