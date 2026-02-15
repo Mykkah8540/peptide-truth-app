@@ -1,0 +1,187 @@
+Design Spec v2: PDP Editorial Architecture
+Status: Draft v1.2 (requires Micah approval before redesign code)
+Benchmark PDP: Retatrutide
+Doctrine: Stability-first, validator-safe, non-directive education
+
+Purpose
+Create a gold-standard editorial PDP system that replaces stacked-card dominance with an Apple-level hierarchy:
+- clearer scanning
+- fewer boxes
+- stronger visual rhythm
+- explicit section weight model
+- deterministic behavior
+- governance-safe posture (no dosing, no protocols, no medical advice)
+
+Non-negotiables
+- No schema drift
+- Validators must pass before commit
+- One scoped change-set per commit
+- No feature expansion while core modules are non-deterministic
+- UGC must not become canonical content
+
+Phase 1 Explicit Locks
+- Single-column only
+- Deterministic behavior only
+- Mobile-first only
+- No right-rail
+- No grid system introduced in Phase 1
+- No layout wrapper refactors yet
+- No moving JSX between components until Hero spec locked
+- Retatrutide PDP is the only implementation target initially
+- All changes must preserve existing deterministic rendering
+- No API changes
+- No content contract changes
+
+Editorial Narrative Order (Locked Spine)
+A PDP must answer, in order:
+1) What is this?
+2) How strong is the evidence?
+3) Why do people care?
+4) What are the risks?
+5) Where does this fit contextually?
+6) What tools help interpretation?
+
+This order is architectural, not visual.
+
+I. Primary Layer (Authority + Intellectual Posture)
+Primary sections are open.
+No .pt-card.
+These sections rely on spacing + typography — not boxes.
+
+1. Hero (Identity Anchor)
+- Canonical name
+- Status category
+- Taxonomy context
+- Evidence posture signal (summary only)
+- Framing line (1–2 sentence orientation)
+
+No decorative clutter.
+No right-rail.
+Watermark allowed only as low-contrast texture token (default OFF).
+
+2. Overview (Core Explanation)
+- What it is
+- Mechanism summary
+- Why it exists in conversation
+
+Large vertical breathing.
+No border box.
+No heavy accents.
+
+3. Evidence Posture (Signal Only)
+- Approved / Investigational / Preclinical
+- Research maturity
+- Confidence signal
+
+Signal summary only.
+No citation overload.
+No expandable lists here.
+
+Primary ends here.
+Primary must feel light, controlled, authoritative.
+
+II. Secondary Layer (Depth Without Dominance)
+Secondary sections use soft container styling.
+.pt-card remains — but reduced contrast and reduced border dominance.
+
+4. Why People Discuss It
+- Trends
+- Use cases
+- Cultural context
+- Hype vs signal
+
+5. Safety & Red Flags
+- Structured
+- Clear
+- Visually differentiated
+- Not alarmist
+
+Red flag accent allowed here only.
+
+6. Interactions
+- Stack awareness
+- Overlap risks
+- Synergy claims (non-directive)
+
+7. Evidence Detail (Expandable)
+- Citation lists
+- Expandable blocks
+- Collapsible on mobile if long
+
+Prevents citation overload above the fold.
+
+III. Utility Layer (Interpretive Tools)
+Utility is visually subordinate.
+Subtle background zone or very light container.
+Never competes with Safety.
+
+8. “Things to Consider for Your Situation”
+Must be:
+- Deterministic
+- Fully functional
+- Graceful degradation
+- Clear empty states
+
+Functional repair required before UX enhancement.
+
+9. Protein & Hydration Widget
+Concept only.
+Not Phase 1.
+No layout allocation yet.
+
+10. Anchor Navigation
+Utility-only experiment.
+Not structural in Phase 1.
+No sticky behavior defined yet.
+
+Section Weight Model (Locked)
+Primary:
+- Open
+- No box
+- Generous spacing
+
+Secondary:
+- Soft container
+- Reduced border contrast
+- Consistent rhythm
+
+Utility:
+- Muted background or subtle container
+- Reduced contrast
+
+Card Elimination Strategy (Phase 1)
+Remove .pt-card from:
+- Hero
+- Overview
+- Evidence Posture
+
+Retain .pt-card (softened) for:
+- Secondary
+- Utility
+
+No new wrapper elements introduced yet.
+
+Contrast Zones (Token-Based, Not Structural)
+Zone A — Open White (Primary)
+Zone B — Soft Elevated (Secondary)
+Zone C — Muted Background (Utility)
+
+Implemented through tokens only.
+No structural wrapper refactors yet.
+
+Allowances (Explicit)
+Subtle molecule watermark in hero:
+- Allowed only as an optional design token, OFF by default
+- Must be non-illustrative, ultra-low contrast, never competes with title/CTA
+- If it distracts, remove it
+
+Icons in section titles:
+- Allowed only for Utility sections
+- Inline SVG only (no deps)
+- Primary/Secondary rely on typography + spacing, not icons
+
+Right-rail:
+- Banned in Phase 1
+
+Retatrutide accents:
+- Neutral system-wide tokens only (no Retatrutide-only styling)
