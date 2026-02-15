@@ -126,6 +126,44 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
+          {/* PT_SAFETY_REFRAME_V1 */}
+          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+            <div className="pt-card__inner">
+              <h2 style={{ fontSize: 20, fontWeight: 900, letterSpacing: "-0.2px", marginBottom: 10 }}>Safety & red flags</h2>
+
+              {riskHit ? (
+                <>
+                  <p style={{ margin: "0 0 10px 0", opacity: 0.82, maxWidth: 760 }}>
+                    This is a calm, non-alarmist snapshot of what is known, what is uncertain, and what patterns show up consistently.
+                  </p>
+
+                  <ul style={{ margin: "0 0 10px 18px", opacity: 0.9 }}>
+                    {riskHit.risk.severity ? <li>Severity tends to be: <strong>{riskHit.risk.severity}</strong>.</li> : null}
+                    {riskHit.risk.likelihood ? <li>Likelihood tends to be: <strong>{riskHit.risk.likelihood}</strong>.</li> : null}
+                    {riskHit.risk.developmental_risk ? <li>Higher uncertainty due to novelty / developmental risk.</li> : null}
+                    {riskHit.risk.unknowns_penalty ? <li>Long-term outcomes are not well established.</li> : null}
+
+                    {(
+                      !riskHit.risk.severity &&
+                      !riskHit.risk.likelihood &&
+                      !riskHit.risk.developmental_risk &&
+                      !riskHit.risk.unknowns_penalty
+                    ) ? <li>No specific red flags have been added yet.</li> : null}
+                  </ul>
+
+                  <div style={{ fontSize: 12, opacity: 0.72, marginTop: 6 }}>
+                    Safety is contextual. This page doesn’t provide medical direction.
+                  </div>
+                </>
+              ) : (
+                <p style={{ margin: 0, opacity: 0.8 }}>
+                  Safety posture has not been classified yet.
+                </p>
+              )}
+            </div>
+          </section>
+
+
           
           {/* PT_SAFETY_LAYER_V1 */}
           {isRetatrutide ? (
