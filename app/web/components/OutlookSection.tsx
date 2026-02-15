@@ -29,7 +29,7 @@ export default function OutlookSection({ blocks, outlookText, interestBullets, w
   <Wrapper {...wrapperProps}>
    {!hideTitle ? <h2 className="pt-card-title">Current outlook and intended use</h2> : null}
 
-   <p className="pt-card-subtext">Why it's getting attention for this peptide and how it is commonly discussed in real-world wellness, rehabilitation, and athletic communities.</p>
+   <p className="pt-card-subtext">Why it's getting attention and how it is commonly discussed in real-world wellness, rehabilitation, and athletic communities.</p>
 
    {t ? (
     <div style={{ marginTop: 12, fontSize: 14, lineHeight: 1.55 }}>
@@ -52,7 +52,7 @@ export default function OutlookSection({ blocks, outlookText, interestBullets, w
     </div>
    ) : (
     <div style={{ marginTop: 14, fontSize: 13, opacity: 0.75 }}>
-     This section has not yet been populated for this peptide.
+     Outlook copy hasn’t been added yet.
     </div>
    )}
 
