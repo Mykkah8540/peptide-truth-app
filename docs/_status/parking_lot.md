@@ -89,3 +89,50 @@ Deferred / polish (do not build until explicitly promoted):
 - UX needs typeahead suggestions (search suggestions should populate as you start typing).
 - Add empty-state guidance: what the user can search for + example queries.
 - Verify: keyboard input → suggestions → selection → filters/anchors/blocks update as expected.
+
+
+## PDP
+
+### Design & Hierarchy
+- Apply homepage contrast rhythm to PDP
+- Introduce stronger section weight differences
+- Elevate hero depth and editorial polish
+- Reduce visual flatness across stacked pt-card blocks
+- Improve spacing compression between sequential sections
+- Introduce optional molecule visual accent layer
+- Add subtle gradient structure behind hero
+- Improve visual distinction between:
+  • Evidence
+  • Support Layer
+  • Red Flags
+  • Contextual Considerations
+
+---
+
+### Functional Repairs
+- Fix contextual search filtering logic
+- Implement typeahead suggestion engine
+- Add empty-state guidance for search
+- Add active filter indicator
+- Improve search input UX feedback
+- Confirm search results are actually bound to content
+
+---
+
+### New Components
+- Build Protein & Hydration widget
+- Evaluate right-rail support layout
+- Explore section-based anchor navigation
+- Consider scroll-reactive depth cues
+
+---
+
+### UX Refinement
+- Add micro-motion to buttons
+- Improve hover elevation behavior
+- Refine input focus behavior
+- Improve pill/chip hierarchy consistency
+
+---
+
+## END PDP PARKING

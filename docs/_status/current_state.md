@@ -96,3 +96,94 @@ UGC production hardening (no feature creep):
   - Fetches `/api/viewer` and surfaces an “Admin” link when `profile.is_admin` is true.
   - Fixed MobileMenu prop mismatch that was breaking `next build`.
 
+
+## PDP Visual & UX Status (Retatrutide Gold Standard)
+
+### Data Integrity
+• Peptides: 92
+• Blends: 8
+• PDP contract validation: PASSING
+• No schema drift
+• No new dependencies introduced
+
+---
+
+### Strategic Direction
+
+Retatrutide is the gold standard PDP.
+
+All PDPs must:
+- Feel editorial, structured, and intentional
+- Reflect Apple-level hierarchy and clarity
+- Avoid visual flatness
+- Emphasize contrast between content sections
+- Maintain deterministic governance (validators first)
+
+---
+
+### Completed Work
+
+• Support Layer system added and rendering on PDP
+• Inline SVG replacement for lucide dependency (removed external icon dep)
+• Softened card borders
+• Subtle hero elevation (PT_PDP_POLISH_V1)
+• Section spacing rhythm adjustments
+• Pill styling utility (.pt-pill)
+• Title divider visual refinement (PT_PDP_POLISH_V2)
+• Input field styling improvements
+• Red flag visual accent bar
+• Typography weight refinement
+• All builds passing (Next.js 16.1.6)
+• All validators passing
+
+---
+
+### Partially Implemented (Not Finished)
+
+• PT_PDP_POLISH_V2 hierarchy refinement
+• Hero depth and molecule visual layering
+• Section weight differences (Evidence vs Support vs Context vs Red Flags)
+• Interactive micro-motion polish
+• Visual rhythm improvements between stacked pt-card sections
+
+---
+
+### Not Implemented
+
+• Protein & Hydration widget (concept only)
+• Scientific visual fill (molecule diagrams / editorial depth assets)
+• Contextual search typeahead
+• Search empty-state guidance
+• Contextual search filtering logic
+• Dynamic hero refinement
+• Sidebar / right-rail treatment exploration
+• Scroll-based section anchoring refinement
+• Visual differentiation between PDP and homepage tone
+
+---
+
+### Known Functional Issues
+
+• "Things to Consider for Your Situation" search:
+  - No typeahead suggestions
+  - No empty-state messaging
+  - No active filter indication
+  - May not filter content at all
+
+• PDP pages still visually flatter than homepage
+• Homepage contrast model not yet applied to PDP
+
+---
+
+### Architectural Guardrails (Non-Negotiable)
+
+• No schema drift beyond contract
+• Validators must pass before commit
+• No interactive shell-breaking commands
+• Small atomic commits only
+• CSS-only changes unless explicitly authorized
+• Retatrutide defines aesthetic benchmark
+
+---
+
+## END PDP STATUS
