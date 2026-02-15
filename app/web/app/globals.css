@@ -589,3 +589,96 @@ body {
   }
 }
 
+
+/* PT_PRIMARY_EDITORIAL_RESET_V1 */
+/* True editorial primary sections — remove all card DNA */
+
+.pt-benchmark .pt-section--primary{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Increase breathing room between chapters */
+.pt-benchmark .pt-section--primary + .pt-section--primary{
+  margin-top: 56px;
+}
+
+/* Stronger chapter headings */
+.pt-benchmark .pt-section--primary h2{
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.25px;
+  margin-bottom: 18px;
+}
+
+/* Improve readable line width */
+.pt-benchmark .pt-section--primary .pt-body{
+  max-width: 760px;
+}
+
+
+/* PT_BENCHMARK_SINGLE_COLUMN_V1 */
+/* Phase 1 lock: Retatrutide benchmark is single-column (no right rail) */
+
+.pt-benchmark-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 26px;
+}
+
+/* Utility zone: calm strip below the narrative spine */
+.pt-benchmark-utility{
+  background: var(--pt-surface-utility);
+  border: 1px solid var(--pt-border-hairline);
+  border-radius: var(--pt-radius-lg);
+  padding: 16px;
+}
+
+/* Keep utility from overpowering the spine */
+.pt-benchmark-utility h2,
+.pt-benchmark-utility h3{
+  font-weight: 850;
+  letter-spacing: -0.12px;
+}
+
+
+/* PT_BENCHMARK_TYPE_MEASURE_V1 */
+/* Retatrutide-only: enforce readable line length + calmer editorial typography */
+
+.pt-benchmark .pt-section--primary{
+  max-width: 760px;
+}
+
+/* Apply measure to the actual rendered content (ContentBlocks outputs plain p/ul/ol) */
+.pt-benchmark .pt-section--primary p,
+.pt-benchmark .pt-section--primary ul,
+.pt-benchmark .pt-section--primary ol,
+.pt-benchmark .pt-section--primary blockquote{
+  max-width: 760px;
+}
+
+/* Body readability */
+.pt-benchmark .pt-section--primary p{
+  font-size: var(--pt-body-size);
+  line-height: var(--pt-body-line);
+  opacity: 0.92;
+}
+
+/* Lists should read like prose, not “manual bullets” */
+.pt-benchmark .pt-section--primary ul,
+.pt-benchmark .pt-section--primary ol{
+  padding-left: 18px;
+}
+
+.pt-benchmark .pt-section--primary li{
+  margin-top: 8px;
+}
+
+/* Chapter rhythm: subtle divider between primary chapters (not a card stack) */
+.pt-benchmark .pt-section--primary + .pt-section--primary{
+  padding-top: 18px;
+  border-top: 1px solid var(--pt-border-hairline);
+}
+
