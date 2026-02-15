@@ -682,3 +682,101 @@ body {
   border-top: 1px solid var(--pt-border-hairline);
 }
 
+
+/* PT_BENCHMARK_TYPO_HIERARCHY_V1 */
+/* Retatrutide-only: enforce editorial hierarchy, readable measure, chapter rhythm */
+
+.pt-benchmark{
+  /* global type feel inside benchmark */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* HERO: title page */
+.pt-benchmark .pt-hero{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* If the Retatrutide hero component exists, give it true title/dek discipline */
+.pt-benchmark .reta-hero__title{
+  font-size: clamp(34px, 4.2vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.6px;
+  font-weight: 950;
+  margin: 0;
+}
+
+.pt-benchmark .reta-hero__sub{
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  opacity: 0.78;
+  max-width: 68ch;
+}
+
+/* CONTENT SPINE: readable measure */
+.pt-benchmark .pt-section--primary{
+  max-width: 78ch;
+}
+
+/* “chapter” rhythm: subtle separator between primary sections */
+.pt-benchmark .pt-section--primary + .pt-section--primary{
+  position: relative;
+  padding-top: 34px;
+  margin-top: 34px;
+}
+
+.pt-benchmark .pt-section--primary + .pt-section--primary::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--pt-border-hairline);
+  opacity: 0.7;
+}
+
+/* Chapter headings: not card headers */
+.pt-benchmark .pt-section--primary h2{
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 950;
+  letter-spacing: -0.35px;
+  margin: 0 0 14px 0;
+}
+
+/* Body readability: applies even if ContentBlocks doesn’t emit .pt-body */
+.pt-benchmark .pt-section--primary p,
+.pt-benchmark .pt-section--primary li{
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pt-benchmark .pt-section--primary p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Secondary sections: keep them structured but subordinate */
+.pt-benchmark .pt-section--secondary h2{
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 900;
+  letter-spacing: -0.18px;
+  margin: 0 0 12px 0;
+}
+
+/* Utility zone: quieter + tighter rhythm */
+.pt-benchmark-utility{
+  margin-top: 8px;
+}
+
+.pt-benchmark-utility p,
+.pt-benchmark-utility li{
+  font-size: 14px;
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
