@@ -55,7 +55,7 @@ export default function SupportLayerSection({ pack }: { pack: SupportPack }) {
             borderRadius: 999,
             display: "grid",
             placeItems: "center",
-            border: "1px solid rgba(0,0,0,0.10)",
+            border: "1px solid rgba(0,0,0,0.08)",
             background: "rgba(255,255,255,0.7)",
           }}
         >
@@ -86,11 +86,26 @@ export default function SupportLayerSection({ pack }: { pack: SupportPack }) {
           style={{
             marginTop: 16,
             padding: 14,
+            paddingLeft: 16,
             borderRadius: 16,
-            border: "1px solid rgba(0,0,0,0.10)",
-            background: "rgba(255, 245, 245, 0.6)",
+            border: "1px solid rgba(0,0,0,0.08)",
+            background: "rgba(255, 245, 245, 0.35)",
+            boxShadow: "0 1px 0 rgba(0,0,0,0.04)",
+            position: "relative",
+            overflow: "hidden",
           }}
         >
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              bottom: 0,
+              width: 5,
+              background: "rgba(255, 120, 120, 0.22)",
+            }}
+          />
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
             <AlertTriangleIcon style={{ opacity: 0.9 }} />
             <div style={{ fontSize: 13, fontWeight: 950 }}>Red flags (don’t ignore)</div>
