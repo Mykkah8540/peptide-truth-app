@@ -557,7 +557,35 @@ body {
   margin-top: 28px;
 }
 
-.pt-benchmark .grid{
+.pt-benchmark > .grid{
   margin-top: 20px;
+}
+
+
+/* PT_BENCHMARK_RAILS_V1 */
+/* Retatrutide-only layout rails: consistent max-width + gutters */
+
+.pt-benchmark > .pt-hero,
+.pt-benchmark > .grid{
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+@media (min-width: 768px){
+  .pt-benchmark > .pt-hero,
+  .pt-benchmark > .grid{
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Make the 2-col layout feel more intentional */
+@media (min-width: 1024px){
+  .pt-benchmark > .grid{
+    column-gap: 28px;
+  }
 }
 
