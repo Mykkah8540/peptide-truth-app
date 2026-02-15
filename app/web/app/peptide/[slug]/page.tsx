@@ -1,5 +1,6 @@
-import { getRiskForPeptide } from "@/lib/riskIndex";
+import { getRiskForPeptide, evidenceGradeLabel } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
+import MaturityPostureLabel from "@/components/MaturityPostureLabel";
 import VialImage from "@/components/VialImage";
 import AliasSequenceMini from "@/components/AliasSequenceMini";
 import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
@@ -43,9 +44,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               </p>
 
               <div className="reta-hero__meta">
-                {riskHit ? (
-                  <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
-                ) : null}
                 <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
               </div>
 
@@ -85,7 +83,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
                 {riskHit ? (
                   <div>
-                    <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
+                    <MaturityPostureLabel evidenceGrade={riskHit?.risk?.evidence_grade ?? null} />
                   </div>
                 ) : null}
                 <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
@@ -128,7 +126,77 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             />
           </section>
 
-          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+          
+          {/* PT_SAFETY_LAYER_V1 */}
+          {isRetatrutide ? (
+            <section className="pt-section pt-section--secondary">
+              <div className="pt-card__inner">
+                <h2 style={{ marginBottom: 10 }}>Safety &amp; red flags</h2>
+
+                {riskHit ? (
+                  <>
+                    <div style={{ fontSize: 14, opacity: 0.92, maxWidth: 760, lineHeight: 1.55 }}>
+                      <div style={{ fontWeight: 850, marginBottom: 6 }}>Safety posture</div>
+                      <div>
+                        {riskHit.risk.evidence_grade ? (
+                          <>Based on current evidence: <span style={{ fontWeight: 800 }}>{evidenceGradeLabel(riskHit.risk.evidence_grade)}</span>.</>
+                        ) : (
+                          <>Evidence posture has not been classified yet.</>
+                        )}
+                        {(riskHit.risk.developmental_risk || riskHit.risk.unknowns_penalty) ? (
+                          <> <span style={{ opacity: 0.85 }}>Uncertainty is higher due to limited long-term data.</span></>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <div style={{ marginTop: 14, fontSize: 14, maxWidth: 760, lineHeight: 1.55 }}>
+                      <div style={{ fontWeight: 850, marginBottom: 6 }}>Red flags to keep in mind</div>
+                      <ul style={{ paddingLeft: 18, margin: 0 }}>
+                        {riskHit.risk.severity ? <li>Reported severity: {riskHit.risk.severity}</li> : null}
+                        {riskHit.risk.likelihood ? <li>Reported likelihood: {riskHit.risk.likelihood}</li> : null}
+                        {riskHit.risk.developmental_risk ? <li>Higher uncertainty due to novelty / developmental risk.</li> : null}
+                        {riskHit.risk.unknowns_penalty ? <li>Long-term outcomes are not well established.</li> : null}
+                        {(!riskHit.risk.severity && !riskHit.risk.likelihood && !riskHit.risk.developmental_risk && !riskHit.risk.unknowns_penalty) ? (
+                          <li>No specific red flags have been added yet.</li>
+                        ) : null}
+                      </ul>
+                    </div>
+
+                    {Array.isArray(riskHit.safety_links) && riskHit.safety_links.length ? (
+                      <div style={{ marginTop: 14, fontSize: 14, maxWidth: 760, lineHeight: 1.55 }}>
+                        <div style={{ fontWeight: 850, marginBottom: 6 }}>Related safety topics</div>
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                          {riskHit.safety_links.map((sid) => (
+                            <a
+                              key={sid}
+                              href={`/safety/${sid}`}
+                              style={{
+                                textDecoration: "none",
+                                border: "1px solid rgba(0,0,0,0.14)",
+                                borderRadius: 999,
+                                padding: "7px 10px",
+                                fontWeight: 800,
+                                fontSize: 13,
+                                opacity: 0.92,
+                              }}
+                            >
+                              {sid.replace(/_/g, " ")}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                  </>
+                ) : (
+                  <div style={{ fontSize: 14, opacity: 0.9, maxWidth: 760, lineHeight: 1.55 }}>
+                    Safety posture has not been generated for this peptide yet.
+                  </div>
+                )}
+              </div>
+            </section>
+          ) : null}
+
+<section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <InteractionsSection
               hideHeading={false}
               drugClasses={doc?.interactions?.drug_classes}
