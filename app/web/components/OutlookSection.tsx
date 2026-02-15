@@ -29,7 +29,7 @@ export default function OutlookSection({ blocks, outlookText, interestBullets, w
   <Wrapper {...wrapperProps}>
    {!hideTitle ? <h2 className="pt-card-title">Current outlook and intended use</h2> : null}
 
-   <p className="pt-card-subtext">Why people are interested in this peptide and how it is commonly discussed in real-world wellness, rehabilitation, and athletic communities.</p>
+   <p className="pt-card-subtext">Why it's getting attention in this peptide and how it is commonly discussed in real-world wellness, rehabilitation, and athletic communities.</p>
 
    {t ? (
     <div style={{ marginTop: 12, fontSize: 14, lineHeight: 1.55 }}>
@@ -40,7 +40,7 @@ export default function OutlookSection({ blocks, outlookText, interestBullets, w
    {bullets.length ? (
     <div style={{ marginTop: 14 }}>
      <div style={{ fontSize: 14, fontWeight: 800, marginBottom: 8 }}>
-      Why people are interested
+      Why it's getting attention
      </div>
      <ul style={{ paddingLeft: 22, margin: 0, listStyleType: "disc", listStylePosition: "outside" }}>
       {bullets.map((b, i) => (

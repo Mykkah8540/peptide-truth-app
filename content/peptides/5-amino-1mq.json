@@ -139,9 +139,11 @@
   "practical": {
     "bottom_line": "5-Amino-1MQ is discussed for fat-loss and metabolic goals based on early mechanistic work. Human outcomes are not well-established, so treat expectations as uncertain.",
     "benefits": [
-      "body composition interest (primarily based on early data)",
-      "metabolic and energy balance curiosity in biohacker communities",
-      "used in goal-based stacking discussions for fat-loss (anecdotal)"
+      "Try to lean out without relying on appetite suppression",
+      "Chase a “metabolism feels faster” effect",
+      "Feel warmer / sweat more during activity",
+      "Experiment with a non-GLP-1 fat-loss angle",
+      "Compare notes with what others report (without treating it as fact)"
     ],
     "side_effects_common": [
       "stimulant-like feelings (restlessness, jittery energy)",
@@ -159,5 +161,15 @@
       "adolescents (developmental risk plus limited evidence)"
     ],
     "schema_version": "practical_block_v1"
+  },
+  "outlook": {
+    "outlook_text": "5-Amino-1MQ gets attention in fat-loss circles because it’s talked about as a “metabolism lever,” not a hunger-killer. The basic idea people repeat is that it targets an enzyme called NNMT that shows up in metabolism research.\n\nIn real-world chatter, the most common “early” comments aren’t dramatic scale changes — it’s more like: feeling warmer, sweating easier, or feeling a little more “amped” than usual. Some people also say it can mess with sleep or make them feel jittery, which is why expectations should stay cautious.\n\nBottom line: it’s experimental, the human evidence is thin, and a lot of what’s floating around is personal experience — useful, but not proof.",
+    "interest_bullets": [
+      "Try to lean out without killing appetite",
+      "Chase a “faster metabolism” feel",
+      "Feel warmer / sweat more during workouts",
+      "Tackle stubborn fat with a non-GLP-1 angle",
+      "Experiment with the “cell energy” angle people talk about"
+    ]
   }
 }

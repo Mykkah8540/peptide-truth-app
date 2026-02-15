@@ -134,7 +134,7 @@
     "peptides": []
   },
   "practical": {
-    "bottom_line": "MK-677 (ibutamoren) is an investigational oral ghrelin-receptor agonist that may increase growth hormone/IGF-1 signaling. It’s often discussed for sleep, appetite, and body-composition goals, but tradeoffs commonly involve appetite/weight gain, fluid retention, and glucose tolerance concerns.",
+    "bottom_line": "MK-677 (ibutamoren) is an investigational oral ghrelin-receptor agonist that raises growth hormone and IGF-1 levels in controlled studies. It’s often discussed for sleep, appetite, and body-composition goals. Common tradeoffs include increased appetite/weight gain, fluid retention, and potential glucose-tolerance concerns.",
     "benefits": [
       "Increases GH/IGF-1 signaling in studies (mechanistic effect)",
       "Often discussed for sleep quality or recovery feelings (mixed reports)",
@@ -159,5 +159,6 @@
       "Adolescents (growth/endocrine setpoints; not an appropriate context)"
     ],
     "schema_version": "practical_block_v1"
-  }
+  },
+  "slug": "mk-677"
 }
