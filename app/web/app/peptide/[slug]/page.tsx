@@ -95,7 +95,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       </div>
       <div className={isRetatrutide ? "pt-benchmark-grid" : "grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start"}>
         <div className="grid gap-6">
-          {supportPack ? <SupportLayerSection pack={supportPack} /> : null}
+          {/* moved: SupportLayer -> utility zone */}
           <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="Overview"
@@ -142,6 +142,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         </div>
 
         <div className={isRetatrutide ? "pt-benchmark-utility" : "grid gap-6"}>
+          {supportPack ? <SupportLayerSection pack={supportPack} /> : null}
           <PDPContextualConsiderations peptideName={peptideName} />
         </div>
       </div>
