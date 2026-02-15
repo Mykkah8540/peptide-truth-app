@@ -15,6 +15,8 @@ import PeptideCommentsSection from "@/components/PeptideCommentsSection";
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
+  const isRetatrutide = slug === "retatrutide";
+
   const riskHit = getRiskForPeptide(slug);
   const doc = await loadPeptideBySlug(slug);
   const supportPack = getSupportPack(doc as any);
@@ -30,7 +32,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="pt-page">
-      <div className="pt-hero">
+      <div className={`pt-hero${isRetatrutide ? " pt-hero--open" : ""}`}>
         <VialImage kind="peptide" slug={slug} alt={`${peptideName} vial`} />
 
         <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
