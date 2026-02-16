@@ -53,12 +53,46 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 The benchmark PDP. Built with stability-first editorial hierarchy and clear evidence posture.
               </p>
 
-              <div className="reta-hero__meta">
-                <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
+
+              {/* PT_HERO_DECLUTTER_V1 */}
+              <div className="pt-hero__rows">
+                <CollapsibleSection title="Also known as">
+                  <div style={{ marginTop: 6 }}>
+                    <AliasSequenceMini aliases={mergedAliases} />
+                  </div>
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Technical details">
+                  {p?.structure?.amino_acid_seq ? (
+                    <div style={{ marginTop: 8, fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace", fontSize: 12, opacity: 0.9, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
+                      {p.structure.amino_acid_seq}
+                    </div>
+                  ) : (
+                    <div style={{ marginTop: 8, fontSize: 13, opacity: 0.82 }}>
+                      No technical details have been added yet.
+                    </div>
+                  )}
+                </CollapsibleSection>
               </div>
 
+              <div className="reta-hero__meta">
+                <AliasSequenceMini aliases={mergedAliases} />
+              </div>
+
+
+              {/* PT_OVERVIEW_IN_HERO_V1 */}
+<section data-pt="overview-in-hero" className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
+            <ContentBlocks
+              heading="Overview"
+              blocks={sections?.overview ?? null}
+              showEmpty
+              emptyText="No overview has been added yet."
+              wrapCard={false}
+            />
+          </section>
+
               <a className="reta-hero__cta" href="#community">
-                Join the Conversation →
+                Join the Conversation → <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 700, marginLeft: 10 }}>See real-world experiences</span>
               </a>
             </div>
           </div>
@@ -86,17 +120,19 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     }}
                   >
                     Join the Conversation →
+                    <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 700, marginLeft: 10 }}>
+                      See real-world experiences
+                    </span>
                   </a>
                 </div>
               </div>
-
               <div className="w-full sm:max-w-[420px] flex flex-col gap-3">
                 {riskHit ? (
                   <div>
                     <MaturityPostureLabel evidenceGrade={riskHit?.risk?.evidence_grade ?? null} />
                   </div>
                 ) : null}
-                <AliasSequenceMini aliases={mergedAliases} aminoAcidSeq={p?.structure?.amino_acid_seq} />
+                <AliasSequenceMini aliases={mergedAliases} />
               </div>
             </div>
           </>
