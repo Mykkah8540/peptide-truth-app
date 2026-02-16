@@ -19,6 +19,17 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
   const isRetatrutide = slug === "retatrutide";
 
   const riskHit = getRiskForPeptide(slug);
+  const safetyLinks = (riskHit?.safety_links ?? []).filter(Boolean);
+  const hasSafetyFlags = Boolean(
+    riskHit && (
+      riskHit.risk?.severity ||
+      riskHit.risk?.likelihood ||
+      riskHit.risk?.developmental_risk ||
+      riskHit.risk?.unknowns_penalty ||
+      safetyLinks.length
+    )
+  );
+
   const doc = await loadPeptideBySlug(slug);
   const supportPack = getSupportPack(doc as any);
 
@@ -230,6 +241,46 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                   </div>
                 )}
               </div>
+            </section>
+          ) : null}
+
+
+          {isRetatrutide && hasSafetyFlags ? (
+            <section className={isRetatrutide ? "pt-section pt-section--secondary pt-safety" : "pt-card"}>
+              <div className="pt-safety__head">
+                <h2 className="pt-safety__title">Safety &amp; red flags</h2>
+                <p className="pt-safety__sub">
+                  Calm, specific signals. Not a score. Not medical advice.
+                </p>
+              </div>
+
+              <ul className="pt-safety__list">
+                {riskHit?.risk?.severity ? <li><strong>Severity:</strong> {riskHit.risk.severity}</li> : null}
+                {riskHit?.risk?.likelihood ? <li><strong>Likelihood:</strong> {riskHit.risk.likelihood}</li> : null}
+                {riskHit?.risk?.developmental_risk ? <li>Higher uncertainty due to novelty / developmental risk.</li> : null}
+                {riskHit?.risk?.unknowns_penalty ? <li>Long-term outcomes are not well established.</li> : null}
+
+                {!riskHit?.risk?.severity &&
+                !riskHit?.risk?.likelihood &&
+                !riskHit?.risk?.developmental_risk &&
+                !riskHit?.risk?.unknowns_penalty &&
+                !safetyLinks.length ? (
+                  <li>No red flags have been added yet.</li>
+                ) : null}
+              </ul>
+
+              {safetyLinks.length ? (
+                <div className="pt-safety__links">
+                  <div className="pt-safety__linksLabel">Related safety notes</div>
+                  <div className="pt-safety__linksGrid">
+                    {safetyLinks.map((id) => (
+                      <a key={id} className="pt-safety__link" href={`/safety/${id}`}>
+                        View note →
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </section>
           ) : null}
 

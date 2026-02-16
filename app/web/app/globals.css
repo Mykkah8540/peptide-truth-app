@@ -780,3 +780,101 @@ body {
   opacity: 0.88;
 }
 
+
+/* PT_POSTURE_PILL_V1 */
+/* Calm posture signal (no numeric, no fear framing) */
+
+.pt-posture{
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.75);
+  border-radius: 14px;
+  padding: 10px 12px;
+  max-width: 320px;
+}
+
+.pt-benchmark .pt-posture{
+  background: rgba(255,255,255,0.92);
+}
+
+.pt-posture__k{
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  font-weight: 800;
+}
+
+.pt-posture__v{
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: -0.12px;
+  opacity: 0.92;
+}
+
+
+/* PT_SAFETY_BAND_V1 */
+/* Calm, specific safety band (no spectacle) */
+
+.pt-safety{
+  border: 1px solid var(--pt-border-hairline);
+  background: var(--pt-surface-utility);
+}
+
+.pt-safety__head{
+  margin-bottom: 10px;
+}
+
+.pt-safety__title{
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  margin: 0 0 4px 0;
+}
+
+.pt-safety__sub{
+  margin: 0;
+  opacity: 0.78;
+  font-size: 13px;
+}
+
+.pt-safety__list{
+  margin: 10px 0 0 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.pt-safety__links{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--pt-border-hairline);
+}
+
+.pt-safety__linksLabel{
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.pt-safety__linksGrid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pt-safety__link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 999px;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-weight: 850;
+  opacity: 0.9;
+}
+
