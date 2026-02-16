@@ -50,49 +50,63 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             <div className="reta-hero__top">
               <h1 className="reta-hero__title">{peptideName}</h1>
               <p className="reta-hero__sub">
-                The benchmark PDP. Built with stability-first editorial hierarchy and clear evidence posture.
+                A calm, human-first overview of what it is, why people care, what to watch for, and what’s still uncertain.
               </p>
 
 
               {/* PT_HERO_DECLUTTER_V1 */}
-              <div className="pt-hero__rows">
-                <CollapsibleSection title="Also known as">
-                  <div style={{ marginTop: 6 }}>
-                    <AliasSequenceMini aliases={mergedAliases} />
-                  </div>
-                </CollapsibleSection>
+                <div className="pt-hero__rows">
+                  <CollapsibleSection title="Technical details" defaultCollapsedMobile>
+                    {mergedAliases?.length ? (
+                      <div style={{ marginTop: 6 }}>
+                        <div style={{ fontSize: 12, opacity: 0.72, fontWeight: 800, marginBottom: 6 }}>
+                          Also known as
+                        </div>
+                        <AliasSequenceMini aliases={mergedAliases} />
+                      </div>
+                    ) : null}
 
-                <CollapsibleSection title="Technical details">
-                  {p?.structure?.amino_acid_seq ? (
-                    <div style={{ marginTop: 8, fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace", fontSize: 12, opacity: 0.9, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
-                      {p.structure.amino_acid_seq}
-                    </div>
-                  ) : (
-                    <div style={{ marginTop: 8, fontSize: 13, opacity: 0.82 }}>
-                      No technical details have been added yet.
-                    </div>
-                  )}
-                </CollapsibleSection>
-              </div>
+                    {p?.structure?.amino_acid_seq ? (
+                      <div
+                        style={{
+                          marginTop: mergedAliases?.length ? 12 : 8,
+                          fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
+                          fontSize: 12,
+                          opacity: 0.9,
+                          whiteSpace: "pre-wrap",
+                          wordBreak: "break-word",
+                        }}
+                      >
+                        {p.structure.amino_acid_seq}
+                      </div>
+                    ) : null}
 
-              <div className="reta-hero__meta">
-                <AliasSequenceMini aliases={mergedAliases} />
+                    {!mergedAliases?.length && !p?.structure?.amino_acid_seq ? (
+                      <div style={{ marginTop: 8, fontSize: 13, opacity: 0.82 }}>
+                        No technical details have been added yet.
+                      </div>
+                    ) : null}
+                  </CollapsibleSection>
+                </div>
+
+                <div className="reta-hero__meta">
+
+                {riskHit ? <MaturityPostureLabel evidenceGrade={riskHit?.risk?.evidence_grade ?? null} /> : null}
+
               </div>
 
 
               {/* PT_OVERVIEW_IN_HERO_V1 */}
-<section data-pt="overview-in-hero" className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
-            <ContentBlocks
-              heading="Overview"
-              blocks={sections?.overview ?? null}
-              showEmpty
-              emptyText="No overview has been added yet."
-              wrapCard={false}
-            />
-          </section>
-
-              <a className="reta-hero__cta" href="#community">
-                Join the Conversation → <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 700, marginLeft: 10 }}>See real-world experiences</span>
+                <section data-pt="overview-in-hero" className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
+                  <ContentBlocks
+                    heading="Overview"
+                    blocks={sections?.overview ?? null}
+                    showEmpty
+                    emptyText="No overview has been added yet."
+                    wrapCard={false}
+                  />
+                </section><a className="reta-hero__cta" href="#community">
+                Join the conversation → <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 700, marginLeft: 10 }}>Real-world notes from people who’ve tried it</span>
               </a>
             </div>
           </div>
@@ -141,12 +155,23 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       <div className={isRetatrutide ? "pt-benchmark-grid" : "grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start"}>
         <div className="grid gap-6">
           {/* moved: SupportLayer -> utility zone */}
-          <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
+          {isRetatrutide ? null : (
+<section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="Overview"
               blocks={sections?.overview ?? null}
               showEmpty
               emptyText="No overview has been added yet."
+              wrapCard={false}
+            />
+          </section>
+            )}
+          <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
+            <ContentBlocks
+              heading="What people discuss and why it matters"
+              blocks={sections?.use_cases ?? null}
+              showEmpty
+              emptyText="No discussion framing has been added yet."
               wrapCard={false}
             />
           </section>
@@ -161,17 +186,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               wrapCard={false}
             />
           </section>
-
-          <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
-            <ContentBlocks
-              heading="What people discuss and why it matters"
-              blocks={sections?.use_cases ?? null}
-              showEmpty
-              emptyText="No discussion framing has been added yet."
-              wrapCard={false}
-            />
-          </section>
-
           {/* PT_SAFETY_REFRAME_V1 */}
           {isRetatrutide && hasSafetyFlags ? (
 <section className={isRetatrutide ? "pt-section pt-section--secondary pt-safety" : "pt-card"}>
