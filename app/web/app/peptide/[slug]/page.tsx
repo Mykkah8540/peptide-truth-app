@@ -1,5 +1,4 @@
 import { getRiskForPeptide, evidenceGradeLabel } from "@/lib/riskIndex";
-import RiskBadge from "@/components/RiskBadge";
 import MaturityPostureLabel from "@/components/MaturityPostureLabel";
 import VialImage from "@/components/VialImage";
 import AliasSequenceMini from "@/components/AliasSequenceMini";
