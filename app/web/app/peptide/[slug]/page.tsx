@@ -53,7 +53,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 A calm, human-first overview of what it is, why people care, what to watch for, and what’s still uncertain.
               </p>
 
-
               {/* PT_HERO_DECLUTTER_V1 */}
                 <div className="pt-hero__rows">
                   <CollapsibleSection title="Technical details" defaultCollapsedMobile>
@@ -94,7 +93,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 {riskHit ? <MaturityPostureLabel evidenceGrade={riskHit?.risk?.evidence_grade ?? null} /> : null}
 
               </div>
-
 
               {/* PT_OVERVIEW_IN_HERO_V1 */}
                 <section data-pt="overview-in-hero" className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
@@ -155,7 +153,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       <div className={isRetatrutide ? "pt-benchmark-grid" : "grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start"}>
         <div className="grid gap-6">
           {/* moved: SupportLayer -> utility zone */}
-          {isRetatrutide ? null : (
+                    {isRetatrutide ? null : (
 <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="Overview"
@@ -165,7 +163,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               wrapCard={false}
             />
           </section>
-            )}
+          )}
+
           <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
             <ContentBlocks
               heading="What people discuss and why it matters"
@@ -174,17 +173,46 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               emptyText="No discussion framing has been added yet."
               wrapCard={false}
             />
-          </section>
+          </section>          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+            <div style={{ display: "grid", gap: 10 }}>
+              <div>
+                <h2 style={{ margin: 0 }}>Evidence</h2>
+                <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, lineHeight: 1.55, opacity: 0.78, maxWidth: 760 }}>
+                  This is a living snapshot of what’s been studied, what’s been observed, and what remains unclear — without hype framing.
+                </p>
+              </div>
 
+              <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile>
+                <div style={{ marginTop: 10 }}>
+                  <ContentBlocks
+                    heading="Evidence posture"
+                    blocks={sections?.evidence_posture ?? null}
+                    showEmpty
+                    emptyText="No evidence posture has been added yet."
+                    wrapCard={false}
+                  />
+                </div>
 
-<section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
-            <ContentBlocks
-              heading="Evidence posture"
-              blocks={sections?.evidence_posture ?? null}
-              showEmpty
-              emptyText="No evidence posture has been added yet."
-              wrapCard={false}
-            />
+                <div style={{ marginTop: 14 }}>
+                  <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+                </div>
+              </CollapsibleSection>
+
+              <CollapsibleSection title="How to read this" defaultCollapsedMobile>
+                <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
+                  Favor human data over animal-only findings. Look for replication, duration, and whether outcomes are clinically meaningful
+                  (not just surrogate markers). If results are short-term, single-site, or based on small samples, treat conclusions as provisional.
+                </div>
+              </CollapsibleSection>
+
+              <CollapsibleSection title="What’s missing" defaultCollapsedMobile>
+                <ul className="pt-safety__list" style={{ marginTop: 10 }}>
+                  <li>Long-duration follow-up in diverse populations.</li>
+                  <li>Clear comparisons versus established alternatives on outcomes people actually care about.</li>
+                  <li>Better understanding of who benefits most, who tolerates it poorly, and why.</li>
+                </ul>
+              </CollapsibleSection>
+            </div>
           </section>
           {/* PT_SAFETY_REFRAME_V1 */}
           {isRetatrutide && hasSafetyFlags ? (
@@ -253,7 +281,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             </section>
           ) : null}
 
-
 <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <InteractionsSection
               hideHeading={false}
@@ -263,17 +290,6 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               interactionSummaryBlocks={sections?.interaction_summary}
             />
           </section>
-
-                    <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
-            {isRetatrutide ? (
-              <CollapsibleSection title="Evidence details" defaultCollapsedMobile>
-                <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
-              </CollapsibleSection>
-            ) : (
-              <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
-            )}
-          </section>
-
           <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <PDPContextualConsiderations peptideName={peptideName} />
           </section>
