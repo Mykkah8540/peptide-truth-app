@@ -188,43 +188,71 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           </section>
           {/* PT_SAFETY_REFRAME_V1 */}
           {isRetatrutide && hasSafetyFlags ? (
-<section className={isRetatrutide ? "pt-section pt-section--secondary pt-safety" : "pt-card"}>
+            <section className={isRetatrutide ? "pt-section pt-section--secondary pt-safety" : "pt-card"}>
               <div className="pt-safety__head">
-                <h2 className="pt-safety__title">Safety &amp; red flags</h2>
+                <h2 className="pt-safety__title">Safety</h2>
                 <p className="pt-safety__sub">
-                  Calm, specific signals. Not a score. Not medical advice.
+                  Calm context — what’s known, what’s uncertain, and when to pause. Not a score.
                 </p>
               </div>
 
-              <ul className="pt-safety__list">
-                {riskHit?.risk?.severity ? <li><strong>Severity:</strong> {riskHit.risk.severity}</li> : null}
-                {riskHit?.risk?.likelihood ? <li><strong>Likelihood:</strong> {riskHit.risk.likelihood}</li> : null}
-                {riskHit?.risk?.developmental_risk ? <li>Higher uncertainty due to novelty / developmental risk.</li> : null}
-                {riskHit?.risk?.unknowns_penalty ? <li>Long-term outcomes are not well established.</li> : null}
+              <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.6, opacity: 0.92, maxWidth: 760 }}>
+                {riskHit?.risk?.developmental_risk || riskHit?.risk?.unknowns_penalty ? (
+                  <>
+                    This is a newer compound with real early human data, but the long-term picture is still being defined.
+                    The main practical risk is tolerability and unintended under-eating (which can cascade into fatigue,
+                    constipation/dehydration, and lean-mass loss if basics slip).
+                  </>
+                ) : (
+                  <>
+                    This section summarizes the most relevant safety context currently recorded — without alarm framing.
+                    If you’re seeing strong side effects or something feels “off,” that’s a signal to slow down and reassess.
+                  </>
+                )}
+              </div>
 
-                {!riskHit?.risk?.severity &&
-                !riskHit?.risk?.likelihood &&
-                !riskHit?.risk?.developmental_risk &&
-                !riskHit?.risk?.unknowns_penalty &&
-                !safetyLinks.length ? (
-                  <li>No red flags have been added yet.</li>
+              <div style={{ marginTop: 14, display: "grid", gap: 10 }}>
+                <CollapsibleSection title="Red flags" defaultCollapsedMobile>
+                  <ul className="pt-safety__list">
+                    {riskHit?.risk?.severity ? <li><strong>Severity:</strong> {riskHit.risk.severity}</li> : null}
+                    {riskHit?.risk?.likelihood ? <li><strong>Likelihood:</strong> {riskHit.risk.likelihood}</li> : null}
+
+                    {!riskHit?.risk?.severity && !riskHit?.risk?.likelihood ? (
+                      <li>No red-flag signals have been added yet.</li>
+                    ) : null}
+                  </ul>
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Uncertainty & long-term unknowns" defaultCollapsedMobile>
+                  <ul className="pt-safety__list">
+                    {riskHit?.risk?.developmental_risk ? (
+                      <li>Higher uncertainty due to novelty / limited long-term follow-up.</li>
+                    ) : null}
+                    {riskHit?.risk?.unknowns_penalty ? (
+                      <li>Long-term outcomes are not well established.</li>
+                    ) : null}
+
+                    {!riskHit?.risk?.developmental_risk && !riskHit?.risk?.unknowns_penalty ? (
+                      <li>No uncertainty notes have been added yet.</li>
+                    ) : null}
+                  </ul>
+                </CollapsibleSection>
+
+                {safetyLinks.length ? (
+                  <CollapsibleSection title="Related safety notes" defaultCollapsedMobile>
+                    <div className="pt-safety__linksGrid" style={{ marginTop: 6 }}>
+                      {safetyLinks.map((id) => (
+                        <a key={id} className="pt-safety__link" href={`/safety/${id}`}>
+                          View note →
+                        </a>
+                      ))}
+                    </div>
+                  </CollapsibleSection>
                 ) : null}
-              </ul>
-
-              {safetyLinks.length ? (
-                <div className="pt-safety__links">
-                  <div className="pt-safety__linksLabel">Related safety notes</div>
-                  <div className="pt-safety__linksGrid">
-                    {safetyLinks.map((id) => (
-                      <a key={id} className="pt-safety__link" href={`/safety/${id}`}>
-                        View note →
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : null}
+              </div>
             </section>
           ) : null}
+
 
 <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <InteractionsSection
