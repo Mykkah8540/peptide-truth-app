@@ -245,12 +245,14 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
             )}
           </section>
+
+          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+            <PDPContextualConsiderations peptideName={peptideName} />
+          </section>
         </div>
 
         <div className={isRetatrutide ? "pt-benchmark-utility" : "grid gap-6"}>
-          {supportPack ? <SupportLayerSection pack={supportPack} /> : null}
-          <PDPContextualConsiderations peptideName={peptideName} />
-        </div>
+          {supportPack ? <SupportLayerSection pack={supportPack} /> : null}</div>
       </div>
 
       {/* NOTE: Community read is public; write requires auth. */}
