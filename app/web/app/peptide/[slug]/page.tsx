@@ -192,11 +192,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     wrapCard={false}
                   />
                 </div>
-
-                <div style={{ marginTop: 14 }}>
-                  <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
-                </div>
-              </CollapsibleSection>
+</CollapsibleSection>
 
               <CollapsibleSection title="How to read this" defaultCollapsedMobile>
                 <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
@@ -298,6 +294,14 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         <div className={isRetatrutide ? "pt-benchmark-utility" : "grid gap-6"}>
           {supportPack ? <SupportLayerSection pack={supportPack} /> : null}</div>
       </div>
+        {isRetatrutide ? (
+          <section className="pt-section pt-section--secondary" aria-label="Evidence detail">
+            <CollapsibleSection title="Evidence">
+              <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+            </CollapsibleSection>
+          </section>
+        ) : null}
+
 
       {/* NOTE: Community read is public; write requires auth. */}
       <div id="community">
