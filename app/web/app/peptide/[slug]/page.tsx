@@ -91,6 +91,15 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 <div className="reta-hero__meta">
 
                 {riskHit ? <MaturityPostureLabel evidenceGrade={riskHit?.risk?.evidence_grade ?? null} /> : null}
+                  <div style={{ marginTop: 10, display: "flex", flexWrap: "wrap", gap: 8 }}>
+                    <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 800, marginRight: 6 }}>Quick jumps:</span>
+                    <a href="#start" style={{ textDecoration: "none", fontSize: 12, fontWeight: 800, opacity: 0.88, border: "1px solid rgba(0,0,0,0.14)", borderRadius: 999, padding: "6px 10px" }}>Start</a>
+                    <a href="#evidence" style={{ textDecoration: "none", fontSize: 12, fontWeight: 800, opacity: 0.88, border: "1px solid rgba(0,0,0,0.14)", borderRadius: 999, padding: "6px 10px" }}>Evidence</a>
+                    <a href="#safety" style={{ textDecoration: "none", fontSize: 12, fontWeight: 800, opacity: 0.88, border: "1px solid rgba(0,0,0,0.14)", borderRadius: 999, padding: "6px 10px" }}>Safety</a>
+                    <a href="#interactions" style={{ textDecoration: "none", fontSize: 12, fontWeight: 800, opacity: 0.88, border: "1px solid rgba(0,0,0,0.14)", borderRadius: 999, padding: "6px 10px" }}>Interactions</a>
+                    <a href="#community" style={{ textDecoration: "none", fontSize: 12, fontWeight: 800, opacity: 0.88, border: "1px solid rgba(0,0,0,0.14)", borderRadius: 999, padding: "6px 10px" }}>Community</a>
+                  </div>
+
 
               </div>
 
@@ -103,7 +112,8 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     emptyText="No overview has been added yet."
                     wrapCard={false}
                   />
-                </section><a className="reta-hero__cta" href="#community">
+                </section>
+                <a className="reta-hero__cta" href="#community">
                 Join the conversation → <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 700, marginLeft: 10 }}>Real-world notes from people who’ve tried it</span>
               </a>
             </div>
@@ -154,7 +164,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
         <div className="grid gap-6">
           {/* PT_START_HERE_V1 */}
           {isRetatrutide ? (
-            <section className="pt-section pt-section--primary" aria-label="Start here">
+            <section id="start" className="pt-section pt-section--primary" aria-label="Start here">
               <div className="pt-start">
                 <h2 className="pt-start__title">Start here</h2>
                 <ul className="pt-start__list">
@@ -189,7 +199,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               wrapCard={false}
             />
           </section>
-            <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+            <section id="evidence" className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <div style={{ display: "grid", gap: 10 }}>
               <div>
                 <h2 style={{ margin: 0 }}>Evidence</h2>
@@ -241,7 +251,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           </section>
           {/* PT_SAFETY_REFRAME_V1 */}
           {isRetatrutide && hasSafetyFlags ? (
-            <section className={isRetatrutide ? "pt-section pt-section--secondary pt-safety" : "pt-card"}>
+            <section id="safety" className={isRetatrutide ? "pt-section pt-section--secondary pt-safety" : "pt-card"}>
               <div className="pt-safety__head">
                 <h2 className="pt-safety__title">Safety</h2>
                 <p className="pt-safety__sub">
