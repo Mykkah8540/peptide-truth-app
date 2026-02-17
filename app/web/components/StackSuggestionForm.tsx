@@ -123,7 +123,13 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
  }
 
  async function submit() {
-  setSubmitState("submitting");
+  
+  // NOTE: Stack community submissions are not wired yet.
+  // UGC backend currently supports entityType: "peptide" | "blend" only.
+  setErrorMsg("Stack community is coming soon. For now, stack submissions are disabled while the data model + moderation flow are finalized.");
+  setSubmitState("error");
+  return;
+
   setErrorMsg("");
 
   if (!username.trim()) {

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type EntityType = "peptide" | "blend" | "stack";
+type EntityType = "peptide" | "blend";
 
 type Post = {
  id: string;

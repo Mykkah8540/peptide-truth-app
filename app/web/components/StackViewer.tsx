@@ -3,8 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { isStackSaved, saveStack, removeStack } from "@/lib/savedStacks";
-import UgcNotesSection from "@/components/UgcNotesSection";
-
 type StackV1 = {
  schema_version: "stack_v1";
  stack_id: string;
@@ -166,7 +164,6 @@ const s = props.stack;
      </Section>
     ) : null}
    </section>
-     <UgcNotesSection type="stack" slug={props.stack.slug} />
   </main>
  );
 }

@@ -111,3 +111,5 @@ Content density rhythm improvements
 Clear differentiation between PDP and homepage tone
 
 END PDP PARKING
+
+- Stack community: implement as its own governed system if/when the DB + API contract is expanded (UGC currently supports peptide|blend only).

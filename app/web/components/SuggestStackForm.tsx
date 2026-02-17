@@ -156,7 +156,13 @@ export default function SuggestStackForm() {
  }
 
  async function submit() {
-  setSubmitState("submitting");
+  
+  // NOTE: Stack community submissions are not wired yet.
+  // UGC backend currently supports entityType: "peptide" | "blend" only.
+  setErrorMsg("Stack community is coming soon. For now, stack submissions are disabled while the data model + moderation flow are finalized.");
+  setSubmitState("error");
+  return;
+
   setErrorMsg("");
 
   if (!username.trim()) {
@@ -186,7 +192,7 @@ export default function SuggestStackForm() {
    const slug = String(r.slug || "").trim();
    if (!slug) continue;
    const hit = optionsByType.map.get(`${r.type}:${slug}`);
-   if (hit) validIncludes.push(hit);
+   if (hit !== undefined) validIncludes.push(hit as Option);
   }
 
   if (!validIncludes.length) {
