@@ -198,7 +198,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 </p>
               </div>
 
-              /* PT_EVIDENCE_DEEP_DIVE_V1 */
+              {/* PT_EVIDENCE_DEEP_DIVE_V1 */}
               <CollapsibleSection title="Deep dive" defaultCollapsedMobile>
                 <div style={{ display: "grid", gap: 12 }}>
 <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile>
