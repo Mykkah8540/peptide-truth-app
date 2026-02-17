@@ -226,14 +226,15 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                   <li>Better understanding of who benefits most, who tolerates it poorly, and why.</li>
                 </ul>
               </CollapsibleSection>
-            
-                </div>
-              
                 <CollapsibleSection title="Study list" defaultCollapsedMobile>
                   <div style={{ marginTop: 10 }}>
                     <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
                   </div>
                 </CollapsibleSection>
+
+            
+                </div>
+              
 </CollapsibleSection>
 
 </div>
