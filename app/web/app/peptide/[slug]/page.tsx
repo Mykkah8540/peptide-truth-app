@@ -202,42 +202,42 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               <CollapsibleSection title="Deep dive" defaultCollapsedMobile>
                 <div style={{ display: "grid", gap: 12 }}>
                   <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile>
-                  <div style={{ marginTop: 10 }}>
-                  <ContentBlocks
-                    heading="Evidence posture"
-                    blocks={sections?.evidence_posture ?? null}
-                    showEmpty
-                    emptyText="No evidence posture has been added yet."
-                    wrapCard={false}
-                  />
-                </div>
-              </CollapsibleSection>
-              <CollapsibleSection title="How to read this" defaultCollapsedMobile>
-                <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
-                  Favor human data over animal-only findings. Look for replication, duration, and whether outcomes are clinically meaningful
-                  (not just surrogate markers). If results are short-term, single-site, or based on small samples, treat conclusions as provisional.
+                    <div style={{ marginTop: 10 }}>
+                      <ContentBlocks
+                        heading="Evidence posture"
+                        blocks={sections?.evidence_posture ?? null}
+                        showEmpty
+                        emptyText="No evidence posture has been added yet."
+                        wrapCard={false}
+                      />
+                    </div>
+                  </CollapsibleSection>
+
+                  <CollapsibleSection title="How to read this" defaultCollapsedMobile>
+                    <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
+                      Favor human data over animal-only findings. Look for replication, duration, and whether outcomes are clinically meaningful
+                      (not just surrogate markers). If results are short-term, single-site, or based on small samples, treat conclusions as provisional.
+                    </div>
+                  </CollapsibleSection>
+
+                  <CollapsibleSection title="What’s missing" defaultCollapsedMobile>
+                    <ul className="pt-safety__list" style={{ marginTop: 10 }}>
+                      <li>Long-duration follow-up in diverse populations.</li>
+                      <li>Clear comparisons versus established alternatives on outcomes people actually care about.</li>
+                      <li>Better understanding of who benefits most, who tolerates it poorly, and why.</li>
+                    </ul>
+                  </CollapsibleSection>
+
+                  <CollapsibleSection title="Study list" defaultCollapsedMobile>
+                    <div style={{ marginTop: 10 }}>
+                      <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
+                    </div>
+                  </CollapsibleSection>
                 </div>
               </CollapsibleSection>
 
-              <CollapsibleSection title="What’s missing" defaultCollapsedMobile>
-                <ul className="pt-safety__list" style={{ marginTop: 10 }}>
-                  <li>Long-duration follow-up in diverse populations.</li>
-                  <li>Clear comparisons versus established alternatives on outcomes people actually care about.</li>
-                  <li>Better understanding of who benefits most, who tolerates it poorly, and why.</li>
-                </ul>
-              </CollapsibleSection>
-                <CollapsibleSection title="Study list" defaultCollapsedMobile>
-                  <div style={{ marginTop: 10 }}>
-                    <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
-                  </div>
-                </CollapsibleSection>
 
-            
-                </div>
-              
-</CollapsibleSection>
-
-</div>
+            </div>
           </section>
           {/* PT_SAFETY_REFRAME_V1 */}
           {isRetatrutide && hasSafetyFlags ? (
