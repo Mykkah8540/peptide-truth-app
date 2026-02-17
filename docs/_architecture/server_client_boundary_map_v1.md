@@ -90,4 +90,3 @@ Rules:
 - Never import `app/web/lib/ugc/db.ts` or `pg` from a `"use client"` file.
 - Prefer Route Handlers as the stable seam between UI and privileged operations.
 - If a client needs data, create an API route; do not “reach across” by importing server modules.
-
