@@ -490,6 +490,43 @@ body {
 /* PT_BENCHMARK_LAYOUT_V1 */
 /* Retatrutide benchmark: first visible editorial depth (scoped to .pt-benchmark only) */
 
+/* Retatrutide benchmark: Evidence detail (scoped) */
+.pt-benchmark .pt-evidence-detail{
+  margin-top: 8px;
+  padding-top: 4px;
+}
+
+.pt-benchmark .pt-evidence-detail > div{
+  max-width: 760px;
+}
+
+/* Collapsible header feels like an editorial toggle, not a card title */
+.pt-benchmark .pt-evidence-detail .pt-card-title{
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+/* Evidence list: calmer density + breathing room on mobile */
+.pt-benchmark .pt-evidence-detail .pt-stack{
+  gap: 12px;
+}
+
+.pt-benchmark .pt-evidence-detail .pt-item{
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.015);
+}
+
+@media (min-width: 768px){
+  .pt-benchmark .pt-evidence-detail .pt-item{
+    padding: 14px 14px;
+  }
+  .pt-benchmark .pt-evidence-detail .pt-stack{
+    gap: 14px;
+  }
+}
+
 .pt-benchmark{
   background: linear-gradient(180deg, rgba(0,0,0,0.015), rgba(0,0,0,0.0) 280px);
 }
@@ -876,5 +913,76 @@ body {
   text-decoration: none;
   font-weight: 850;
   opacity: 0.9;
+}
+
+
+/* Retatrutide benchmark: readability pass (scoped) */
+.pt-benchmark{
+  --pt-body-size: 16px;
+  --pt-body-line: 1.72;
+}
+
+.pt-benchmark .pt-body,
+.pt-benchmark .pt-card,
+.pt-benchmark .pt-section--primary,
+.pt-benchmark .pt-section--secondary,
+.pt-benchmark .pt-section--utility{
+  font-size: var(--pt-body-size);
+  line-height: var(--pt-body-line);
+}
+
+.pt-benchmark .pt-page{
+  color: rgba(0,0,0,0.92);
+}
+
+.pt-benchmark .pt-page p{
+  max-width: 72ch;
+}
+
+@media (min-width: 768px){
+  .pt-benchmark{
+    --pt-body-size: 15px;
+    --pt-body-line: 1.7;
+  }
+}
+
+
+
+
+
+/* PT_START_HERE_V1 (Retatrutide benchmark, scoped) */
+.pt-benchmark .pt-start{
+  max-width: 760px;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(0,0,0,0.015);
+}
+
+.pt-benchmark .pt-start__title{
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.pt-benchmark .pt-start__title + .pt-start__list{ margin-top: 10px; }
+
+.pt-benchmark .pt-start__list{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.88);
+}
+
+.pt-benchmark .pt-start__list li{
+  padding-left: 2px;
+}
+
+@media (min-width: 768px){
+  .pt-benchmark .pt-start__title{ font-size: 19px; }
+  .pt-benchmark .pt-start__list{ font-size: 15px; }
 }
 

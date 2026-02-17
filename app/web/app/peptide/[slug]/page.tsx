@@ -152,6 +152,21 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       </div>
       <div className={isRetatrutide ? "pt-benchmark-grid" : "grid gap-6 lg:grid-cols-[1fr_360px] lg:items-start"}>
         <div className="grid gap-6">
+          {/* PT_START_HERE_V1 */}
+          {isRetatrutide ? (
+            <section className="pt-section pt-section--primary" aria-label="Start here">
+              <div className="pt-start">
+                <h2 className="pt-start__title">Start here</h2>
+                <ul className="pt-start__list">
+                  <li>What it is: an investigational incretin drug being studied for weight and metabolic outcomes.</li>
+                  <li>What matters most: real effects vs. tolerability, and what long-term data still hasn’t been proven.</li>
+                  <li>How to use this page: skim what’s open, then expand sections when you want detail.</li>
+                </ul>
+              </div>
+            </section>
+          ) : null}
+
+
           {/* moved: SupportLayer -> utility zone */}
                     {isRetatrutide ? null : (
 <section className={isRetatrutide ? "pt-section pt-section--primary" : "pt-card"}>
@@ -173,16 +188,20 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               emptyText="No discussion framing has been added yet."
               wrapCard={false}
             />
-          </section>          <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
+          </section>
+            <section className={isRetatrutide ? "pt-section pt-section--secondary" : "pt-card"}>
             <div style={{ display: "grid", gap: 10 }}>
               <div>
                 <h2 style={{ margin: 0 }}>Evidence</h2>
                 <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, lineHeight: 1.55, opacity: 0.78, maxWidth: 760 }}>
-                  This is a living snapshot of what’s been studied, what’s been observed, and what remains unclear — without hype framing.
+                  This is a living snapshot of what’s been studied, what’s been observed, and what remains unclear — without hype framing. Expand “Deep dive” for the full structure and nuance.
                 </p>
               </div>
 
-              <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile>
+              /* PT_EVIDENCE_DEEP_DIVE_V1 */
+              <CollapsibleSection title="Deep dive" defaultCollapsedMobile>
+                <div style={{ display: "grid", gap: 12 }}>
+<CollapsibleSection title="What the evidence includes" defaultCollapsedMobile>
                 <div style={{ marginTop: 10 }}>
                   <ContentBlocks
                     heading="Evidence posture"
@@ -192,8 +211,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     wrapCard={false}
                   />
                 </div>
-</CollapsibleSection>
-
+              </CollapsibleSection>
               <CollapsibleSection title="How to read this" defaultCollapsedMobile>
                 <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
                   Favor human data over animal-only findings. Look for replication, duration, and whether outcomes are clinically meaningful
@@ -208,7 +226,11 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                   <li>Better understanding of who benefits most, who tolerates it poorly, and why.</li>
                 </ul>
               </CollapsibleSection>
-            </div>
+            
+                </div>
+              </CollapsibleSection>
+
+</div>
           </section>
           {/* PT_SAFETY_REFRAME_V1 */}
           {isRetatrutide && hasSafetyFlags ? (
@@ -295,7 +317,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           {supportPack ? <SupportLayerSection pack={supportPack} /> : null}</div>
       </div>
         {isRetatrutide ? (
-          <section className="pt-section pt-section--secondary" aria-label="Evidence detail">
+          <section className="pt-section pt-section--secondary pt-evidence-detail" aria-label="Evidence detail">
             <CollapsibleSection title="Evidence">
               <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
             </CollapsibleSection>
