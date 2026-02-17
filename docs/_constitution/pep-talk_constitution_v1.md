@@ -319,3 +319,11 @@ This constitution exists so the product **never forgets why it exists**.
 ---
 
 
+
+## Architectural References
+
+The following documents define the canonical runtime wiring and data contracts of the application:
+
+- docs/_architecture/pdp_plumbing_map_v1.md  
+  Authoritative PDP, search, synonym, risk, support, comments, and UGC plumbing map.
+
