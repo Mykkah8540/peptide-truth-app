@@ -337,3 +337,4 @@ The following documents are governance-critical and must be treated as non-drift
 - docs/_governance/design_spec_v2_pdp_editorial_architecture.md
 - docs/_governance/pdp_hero_v2_spec.md
 - docs/_governance/pdp_hero_build_governance_chat42.md
+- docs/_architecture/alias_and_search_contract_v1.md
