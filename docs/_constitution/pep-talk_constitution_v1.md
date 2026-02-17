@@ -338,3 +338,4 @@ The following documents are governance-critical and must be treated as non-drift
 - docs/_governance/pdp_hero_v2_spec.md
 - docs/_governance/pdp_hero_build_governance_chat42.md
 - docs/_architecture/alias_and_search_contract_v1.md
+- docs/_architecture/server_client_boundary_map_v1.md
