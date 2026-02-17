@@ -301,6 +301,17 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                   </ul>
                 </CollapsibleSection>
 
+                <CollapsibleSection title="When to pause & reassess" defaultCollapsedMobile>
+                  <ul className="pt-safety__list">
+                    <li>If side effects are escalating instead of settling over time.</li>
+                    <li>If you can’t keep fluids/food down, or you’re getting persistently lightheaded.</li>
+                    <li>If you notice severe, persistent abdominal pain, confusion, chest pain, or fainting.</li>
+                    <li>If something feels meaningfully “off” compared with your normal baseline.</li>
+                    <li>In those cases, treat it as a signal to slow down and reassess — and seek medical care if symptoms are severe.</li>
+                  </ul>
+                </CollapsibleSection>
+
+
                 {safetyLinks.length ? (
                   <CollapsibleSection title="Related safety notes" defaultCollapsedMobile>
                     <div className="pt-safety__linksGrid" style={{ marginTop: 6 }}>
