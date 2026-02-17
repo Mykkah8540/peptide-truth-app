@@ -327,3 +327,13 @@ The following documents define the canonical runtime wiring and data contracts o
 - docs/_architecture/pdp_plumbing_map_v1.md  
   Authoritative PDP, search, synonym, risk, support, comments, and UGC plumbing map.
 
+
+## Governance References
+
+The following documents are governance-critical and must be treated as non-driftable unless explicitly revised under a deliberate governance change:
+
+- docs/_governance/pdp_contract_v1.md
+- docs/_governance/pdp_editorial_doctrine.md
+- docs/_governance/design_spec_v2_pdp_editorial_architecture.md
+- docs/_governance/pdp_hero_v2_spec.md
+- docs/_governance/pdp_hero_build_governance_chat42.md
