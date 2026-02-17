@@ -29,6 +29,14 @@ build_prompt_full() {
   else
     echo "current_state.md missing"
   fi
+
+  echo
+  echo "=== HERO GOVERNANCE (TAIL 120) ==="
+  if [ -f docs/_governance/pdp_hero_build_governance_chat42.md ]; then
+    tail -n 120 docs/_governance/pdp_hero_build_governance_chat42.md
+  else
+    echo "pdp_hero_build_governance_chat42.md missing"
+  fi
   echo
   echo "=== PARKING LOT (TAIL 120) ==="
   if [ -f docs/_status/parking_lot.md ]; then
@@ -46,6 +54,12 @@ build_prompt_lite() {
   echo
   echo "HEAD:"
   get_head
+
+  echo
+  echo "Must Read (PDP Hero):"
+  echo "  - docs/_governance/pdp_hero_build_governance_chat42.md"
+  echo "  - docs/_governance/design_spec_v2_pdp_editorial_architecture.md"
+  echo "  - docs/_status/current_state.md"
   echo
   echo "Parking Lot Headings:"
   if [ -f docs/_status/parking_lot.md ]; then

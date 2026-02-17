@@ -225,6 +225,8 @@ No redesign code proceeds beyond tokenization until the spec implementation deta
 
 Canonical PDP editorial guidance now lives in:
 - Doctrine (authoritative posture, narrative order, non-negotiables)
+- Hero Build Governance (Chat 42 guiding light)
+  - docs/_governance/pdp_hero_build_governance_chat42.md
   - docs/governance/pdp_editorial_doctrine.md
 - Design Spec v2 (canonical blueprint)
   - docs/_governance/design_spec_v2_pdp_editorial_architecture.md
