@@ -53,3 +53,5 @@ docs/UI/
 # Local-only (never commit)
 .vercel/
 .env*.local
+# Generated at build/dev time (copied content indexes)
+/app/web/content/
