@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "node scripts/copy_content_indexes.mjs"
   },
   "dependencies": {
     "@revenuecat/purchases-js": "^1.25.0",

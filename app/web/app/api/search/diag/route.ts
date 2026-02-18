@@ -17,12 +17,17 @@ function repoRoot(): string {
 export async function GET() {
   const cwd = process.cwd();
   const root = repoRoot();
-  const fp = path.join(root, "content", "_index", "search_routes_v1.json");
-
-  const out: any = {
+  const fpLocal = path.join(process.cwd(), "content", "_index", "search_routes_v1.json");
+  const fpRoot = path.join(root, "content", "_index", "search_routes_v1.json");
+  const fp = existsSync(fpLocal) ? fpLocal : fpRoot;
+const out: any = {
     cwd,
     resolved_root: root,
     fp,
+    fpLocal,
+    fpRoot,
+    existsLocal: existsSync(fpLocal),
+    existsRoot: existsSync(fpRoot),
     exists: existsSync(fp),
   };
 

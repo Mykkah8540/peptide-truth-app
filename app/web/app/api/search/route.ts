@@ -77,9 +77,10 @@ export async function GET(req: Request) {
   }
 
   const root = repoRoot();
-  const fp = path.join(root, "content", "_index", "search_routes_v1.json");
-
-  if (!existsSync(fp)) {
+  const fpLocal = path.join(process.cwd(), "content", "_index", "search_routes_v1.json");
+  const fpRoot = path.join(root, "content", "_index", "search_routes_v1.json");
+  const fp = existsSync(fpLocal) ? fpLocal : fpRoot;
+if (!existsSync(fp)) {
     return NextResponse.json({ results: [] }, { status: 200 });
   }
 
