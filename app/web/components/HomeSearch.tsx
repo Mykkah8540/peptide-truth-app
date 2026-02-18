@@ -4,111 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { EntityListItem, TopicListItem } from "@/lib/content";
 
-type SearchItem =
- | { kind: "peptide" | "blend"; slug: string; title: string; route: string; aliases: string[] }
- | { kind: "topic"; slug: string; title: string; route: string; aliases: string[] };
-
-function normKey(s: string): string {
- return (s || "")
-  .toLowerCase()
-  .trim()
-  .replace(/[_\-\s]+/g, "")
-  .replace(/[^a-z0-9+]/g, "");
-}
-
-function scoreMatch(queryKey: string, fields: string[]): number {
- // Lower is better. 0..49 = startsWith, 50..99 = includes, 999 = no match
- let best = 999;
-
- for (const f of fields) {
-  const fk = normKey(f);
-  if (!fk) continue;
-
-  if (fk.startsWith(queryKey)) {
-   // Prefer shorter / tighter match
-   best = Math.min(best, 0 + Math.min(49, fk.length));
-   continue;
-  }
-
-  const idx = fk.indexOf(queryKey);
-  if (idx >= 0) {
-   best = Math.min(best, 50 + Math.min(49, idx));
-  }
- }
-
- return best;
-}
+type SearchItem = { kind: "peptide" | "blend" | "topic" | "interaction"; slug: string; route: string };
 
 
-function variantPenalty(slug: string): number {
- const s = (slug || "").toLowerCase();
 
- // Lower is better (base wins).
- const rules: Array<[RegExp, number]> = [
-  [/-arginate$/, 30],
-  [/-dac$/, 30],
-  [/-lr3$/, 30],
-  [/-full$/, 20],
-  [/-ii$/, 20],
-  [/-y$/, 20],
-  [/-s$/, 10],
- ];
 
- let pen = 0;
- for (const [rx, v] of rules) {
-  if (rx.test(s)) pen += v;
- }
- return pen;
-}
 
-function variantLabel(slug: string): string {
- const s = (slug || "").toLowerCase();
- if (s.endsWith("-arginate")) return "Arginate";
- if (s.endsWith("-dac")) return "DAC";
- if (s.endsWith("-lr3")) return "LR3";
- if (s.endsWith("-full")) return "Full";
- if (s.endsWith("-ii")) return "II";
- if (s.endsWith("-i")) return "I";
- if (s.endsWith("-y")) return "Y";
- if (s.endsWith("-s")) return "S";
- return "";
-}
-
-function buildItems(peptides: EntityListItem[], blends: EntityListItem[], topics: TopicListItem[]): SearchItem[] {
- const out: SearchItem[] = [];
-
- for (const p of peptides || []) {
-  out.push({
-   kind: "peptide",
-   slug: p.slug,
-   title: p.name,
-   route: p.route || `/peptide/${p.slug}`,
-   aliases: Array.isArray((p as any).aliases) ? ((p as any).aliases as string[]) : [],
-  });
- }
-
- for (const b of blends || []) {
-  out.push({
-   kind: "blend",
-   slug: b.slug,
-   title: b.name,
-   route: b.route || `/blend/${b.slug}`,
-   aliases: Array.isArray((b as any).aliases) ? ((b as any).aliases as string[]) : [],
-  });
- }
-
- for (const t of topics || []) {
-  out.push({
-   kind: "topic",
-   slug: t.slug,
-   title: t.title,
-   route: `/topic/${t.slug}`,
-   aliases: [],
-  });
- }
-
- return out;
-}
 
 export default function HomeSearch(props: {
  peptides: EntityListItem[];
@@ -123,26 +24,47 @@ export default function HomeSearch(props: {
  const [open, setOpen] = useState(false);
  const [activeIdx, setActiveIdx] = useState(0);
 
- const items = useMemo(() => buildItems(props.peptides, props.blends, props.topics), [props.peptides, props.blends, props.topics]);
+const [results, setResults] = useState<SearchItem[]>([]);
 
- const results = useMemo(() => {
+// Debounced governed search
+useEffect(() => {
   const query = q.trim();
-  const qk = normKey(query);
-  if (!qk) return [];
+  if (!query) {
+    setResults([]);
+    return;
+  }
 
-  const scored = items
-   .map((it) => {
-    const fields = [it.title, it.slug, ...(it.aliases || [])];
-    const s = scoreMatch(qk, fields);
-    return { it, s };
-   })
-   .filter((x) => x.s < 999)
-   .sort((a, b) => a.s - b.s || variantPenalty(a.it.slug) - variantPenalty(b.it.slug) || a.it.title.localeCompare(b.it.title) || a.it.slug.localeCompare(b.it.slug))
-   .map((x) => x.it);
+  const t = setTimeout(async () => {
+    try {
+      const res = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
+      const json = await res.json();
+      const arr = Array.isArray(json?.results) ? json.results : [];
+      setResults(arr.slice(0, 12));
+    } catch {
+      setResults([]);
+    }
+  }, 180);
 
-  return scored.slice(0, 12);
- }, [q, items]);
+  return () => clearTimeout(t);
+}, [q]);
 
+ const peptideTitle = useMemo(() => {
+  const m = new Map<string, string>();
+  for (const p of props.peptides || []) m.set(p.slug, p.name);
+  return m;
+ }, [props.peptides]);
+
+ const blendTitle = useMemo(() => {
+  const m = new Map<string, string>();
+  for (const b of props.blends || []) m.set(b.slug, b.name);
+  return m;
+ }, [props.blends]);
+
+ const topicTitle = useMemo(() => {
+  const m = new Map<string, string>();
+  for (const t of props.topics || []) m.set(t.slug, t.title);
+  return m;
+ }, [props.topics]);
  // Close on outside click
  useEffect(() => {
   function onDown(e: MouseEvent) {
@@ -251,11 +173,19 @@ export default function HomeSearch(props: {
           }}
          >
           <span style={{ display: "grid", gap: 2 }}>
-           <span style={{ fontWeight: 800 }}>{it.title}</span>
-           <span style={{ fontSize: 12, opacity: 0.65 }}>{it.kind} · {it.slug}{variantLabel(it.slug) ? ` · ${variantLabel(it.slug)}` : ``}</span>
+           <span style={{ fontWeight: 800 }}>
+            {it.kind === "peptide"
+              ? (peptideTitle.get(it.slug) || it.slug)
+              : it.kind === "blend"
+              ? (blendTitle.get(it.slug) || it.slug)
+              : it.kind === "topic"
+              ? (topicTitle.get(it.slug) || it.slug)
+              : it.slug}
+           </span>
+           <span style={{ fontSize: 12, opacity: 0.65 }}>{it.kind} · {it.slug}</span>
           </span>
           <span style={{ fontSize: 12, opacity: 0.55, alignSelf: "center" }}>
-           {it.kind === "blend" ? "Blend" : it.kind === "peptide" ? "Peptide" : "Topic"}
+           {it.kind === "blend" ? "Blend" : it.kind === "peptide" ? "Peptide" : it.kind === "topic" ? "Topic" : "Interaction"}
           </span>
          </button>
         );
