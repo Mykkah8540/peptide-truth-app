@@ -9,12 +9,16 @@ const dstDir = path.join(here, "content", "_index");
 
 fs.mkdirSync(dstDir, { recursive: true });
 
-const files = [
-  "search_routes_v1.json",
-  "entities_v1.json",
-  "blends_v1.json",
-  "topics_v1.json",
-];
+const files = fs
+  .readdirSync(srcDir)
+  .filter((name) => name.endsWith('.json'))
+  .filter((name) => {
+    try {
+      return fs.statSync(path.join(srcDir, name)).isFile();
+    } catch {
+      return false;
+    }
+  });
 
 const copied = [];
 
