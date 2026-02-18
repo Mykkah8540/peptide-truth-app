@@ -1,38 +1,61 @@
-cd "$(git rev-parse --show-toplevel)" || exit 1
+# Server/Client Boundary Map v1
 
-cat > docs/_constitution/server_client_boundary_v1.md <<'MD'
-# Server/Client Boundary v1
+## Purpose
+Define what runs on the server vs the client in Pep-Talk, and what data is allowed to cross the boundary. This is a stability and safety contract.
 
-Rule
-Client components must never access secrets, service roles, admin tokens, or privileged database clients. All privileged operations live in server-only code paths.
+## Principles
+- Server is the authority for: auth, entitlements, moderation, and privileged reads.
+- Client is for: rendering, user interaction, and calling governed APIs.
+- Never leak secrets or privileged data to the client.
+- Prefer “thin client, governed server routes.”
 
-Server-only
-- Next.js route handlers under app/web/app/api/**
-- Server actions (if used)
-- Supabase server client via "@/lib/supabase/server"
-- Any use of admin token headers
+## Server-only
+### Environment + secrets
+- `SUPABASE_SERVICE_ROLE_KEY`
+- RevenueCat webhook secrets
+- Any admin keys / internal tokens
 
-Client-only
-- "use client" components
-- fetch() calls to app/web/app/api/** only
-- No direct Supabase admin/session manipulation
+### Auth + entitlements
+- Session verification
+- Role checks (admin/mod)
+- Subscription/entitlement checks (RevenueCat)
 
-Allowed data flow
-Client UI -> fetch("/api/...") -> route handler -> server auth -> DB -> sanitized JSON -> client UI
+### Moderation + UGC write paths
+- UGC submit endpoints validate and store
+- Moderation endpoints approve/reject/remove
+- “Seen”/ops endpoints update operator state
 
-Disallowed
-- Using service-role key in client
-- Calling Postgres directly from client
-- Leaking admin token into browser runtime
-- Embedding sensitive env vars into client bundles
+### Content index reads (authoritative)
+- Reading from `content/_index/*` and `content/_taxonomy/*` is allowed server-side.
+- If a route returns derived data, it must return only the minimal safe shape required for UI.
 
-Auth rules
-- User auth uses Supabase session server-side
-- Admin/moderator checks happen server-side (roles table)
-- Emergency automation can use x-admin-token only in server-to-server contexts
-MD
+## Client-only
+- UI rendering components
+- Form state, local validation (non-authoritative)
+- Calling API routes for:
+  - search
+  - UGC submit/list (public-safe)
+  - account/profile (user-safe)
 
-git add docs/_constitution/server_client_boundary_v1.md
-cd app/web && npm run build
-cd "$(git rev-parse --show-toplevel)" || exit 1
-git status --short
+## Data that may cross server → client
+Allowed:
+- Canonical public content (peptides/blends/topics/interactions/resources)
+- Generated index outputs intended for UI (non-secret)
+- User-safe account fields (no secrets)
+- Public UGC content that has passed moderation rules
+
+Disallowed:
+- Service role keys, webhook secrets
+- Raw admin audit payloads not intended for the UI
+- Internal-only flags, private moderation notes, hidden diagnostics unless explicitly gated
+
+## API boundary rules
+- Client must never call Supabase with a service role key.
+- Admin/mod routes must enforce role checks server-side.
+- If a route is “admin”, it must never be reachable without server-side gating.
+
+## Governance
+Any change to boundary rules or any new API route that exposes new data shapes requires:
+- Documentation update here
+- Build-green proof
+- Note in `docs/_status/current_state.md` describing the risk and why the exposure is safe
