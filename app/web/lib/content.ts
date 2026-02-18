@@ -327,7 +327,6 @@ function loadSynonymIndex(): any | null {
   const root = repoRoot();
   const candidates = [
     path.join(root, "content", "_taxonomy", "search_synonyms_v1.json"),
-    path.join(root, "content", "_taxonomy", "search_synonyms.json"),
 ];
 
   for (const fp of candidates) {
