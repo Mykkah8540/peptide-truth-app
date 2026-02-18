@@ -328,9 +328,7 @@ function loadSynonymIndex(): any | null {
   const candidates = [
     path.join(root, "content", "_taxonomy", "search_synonyms_v1.json"),
     path.join(root, "content", "_taxonomy", "search_synonyms.json"),
-    path.join(root, "content", "_index", "search_synonyms_v1.json"),
-    path.join(root, "content", "_index", "search_synonyms.json"),
-  ];
+];
 
   for (const fp of candidates) {
     if (existsSync(fp)) {
