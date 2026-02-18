@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import { readFileSync, existsSync } from "fs";
-import path from "path";
+import SEARCH_ROUTES_V1 from "@/lib/generated/search_routes_v1";
 
 // Deterministic normalization (match HomeSearch contract)
 function normKey(s: string): string {
@@ -21,19 +20,6 @@ function scoreMatch(queryKey: string, term: string): number {
   const idx = fk.indexOf(queryKey);
   if (idx >= 0) return 50 + Math.min(49, idx);
   return 999;
-}
-
-function repoRoot(): string {
-  // Walk upward from CWD until we find content/_index/entities_v1.json
-  let cur = process.cwd();
-  for (let i = 0; i < 20; i++) {
-    const marker = path.join(cur, "content", "_index", "entities_v1.json");
-    if (existsSync(marker)) return cur;
-    const next = path.dirname(cur);
-    if (next === cur) break;
-    cur = next;
-  }
-  return process.cwd();
 }
 
 type RouteEntry = {
@@ -57,13 +43,11 @@ function routeTokenToPath(token: string): string | null {
   const prefix = m[1].toLowerCase();
   const rest = m[2];
 
-  // Only implement what the current UI can navigate to deterministically
   if (prefix === "peptide") return `/peptide/${rest}`;
   if (prefix === "blend") return `/blend/${rest}`;
   if (prefix === "topic") return `/topic/${rest}`;
   if (prefix === "interaction") return `/interaction/${rest}`;
 
-  // Categories/resources can be added later under governance, once routes are defined.
   return null;
 }
 
@@ -76,24 +60,10 @@ export async function GET(req: Request) {
     return NextResponse.json({ results: [] }, { status: 200 });
   }
 
-  const root = repoRoot();
-  const fpLocal = path.join(process.cwd(), "content", "_index", "search_routes_v1.json");
-  const fpRoot = path.join(root, "content", "_index", "search_routes_v1.json");
-  const fp = existsSync(fpLocal) ? fpLocal : fpRoot;
-if (!existsSync(fp)) {
-    return NextResponse.json({ results: [] }, { status: 200 });
-  }
+  const terms: TermRow[] = Array.isArray((SEARCH_ROUTES_V1 as any)?.terms)
+    ? ((SEARCH_ROUTES_V1 as any).terms as TermRow[])
+    : [];
 
-  let doc: any;
-  try {
-    doc = JSON.parse(readFileSync(fp, "utf-8"));
-  } catch {
-    return NextResponse.json({ results: [] }, { status: 200 });
-  }
-
-  const terms: TermRow[] = Array.isArray(doc?.terms) ? doc.terms : [];
-
-  // Score terms, then expand routes, then dedupe by route token.
   const scored = terms
     .map((row) => ({ row, s: scoreMatch(qk, row.term) }))
     .filter((x) => x.s < 999)

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "prebuild": "node scripts/copy_content_indexes.mjs"
+    "prebuild": "python3 scripts/gen_search_routes.py && node scripts/copy_content_indexes.mjs",
+    "predev": "python3 scripts/gen_search_routes.py && node scripts/copy_content_indexes.mjs"
   },
   "dependencies": {
     "@revenuecat/purchases-js": "^1.25.0",
