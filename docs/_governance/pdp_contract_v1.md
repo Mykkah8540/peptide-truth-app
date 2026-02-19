@@ -23,7 +23,7 @@ Must Include
 - Entity name
 - Entity type (Peptide / Blend / Stack)
 - One-line disclaimer:
-  “Educational resource. Not medical advice. No prescriptive instructions. Observational dosing/protocol patterns may be included when clearly lane-separated (Clinical Evidence vs Observed Patterns).”
+  “Educational resource. Not medical advice. No prescriptive directives or personalized instruction. Observational transparency allowed when lane-separated (Clinical Evidence vs Observed Patterns).”
 
 Safety Indicator (Human-Readable Only)
 - Generally safe
@@ -85,8 +85,9 @@ Allowed Language
 - “Anecdotal reports often mention…”
 
 Rules
-- No dosing
-- No instructions
+- No prescriptive directives
+- No personalized instruction
+- Observational transparency allowed when lane-separated (Clinical Evidence vs Observed Patterns)
 - No promises
 - No fear language
 
