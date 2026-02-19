@@ -51,8 +51,8 @@ A clear path to community context
 No pressure to act
 
 ## Non-Negotiable Constraints
-No dosing
-No protocols
+No prescriptive directives
+Observational transparency allowed when lane-separated (Clinical Evidence vs Observed Patterns)
 No prescriptive recommendations
 
 No numeric safety scores

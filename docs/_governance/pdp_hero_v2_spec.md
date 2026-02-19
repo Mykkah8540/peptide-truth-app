@@ -61,8 +61,8 @@ Hero Composition (Content Blocks)
 - 1–2 sentence neutral educational orientation
 - Explains why the molecule matters in conversation
 - Non-directive
-- No dosing
-- No protocols
+- No prescriptive directives
+- Observational transparency allowed when lane-separated (Clinical Evidence vs Observed Patterns)
 
 What Is Explicitly Excluded
 - No citation lists
