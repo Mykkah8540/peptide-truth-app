@@ -75,9 +75,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
               <div className="reta-hero__identity">
                 <div className="reta-hero__kicker">
-                {statusLabel ? <span className="reta-chip">Status: {statusLabel}</span> : null}
-                {topicLabel ? <span className="reta-taxonomy">Context: {topicLabel}</span> : null}
-              </div>
+                  {statusLabel ? <span className="reta-chip">Status: {statusLabel}</span> : null}
+                  {topicLabel ? <span className="reta-taxonomy">Context: {topicLabel}</span> : null}
+                </div>
 
               <p className="reta-hero__posture">
                 <strong>{evidenceLabel}.</strong> This page is a descriptive overview — it does not provide protocols or personalized instruction.
