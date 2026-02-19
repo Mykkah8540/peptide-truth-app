@@ -325,6 +325,53 @@ body {
   gap: 10px;
 }
 
+
+.reta-hero__identity{
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.reta-hero__kicker{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.reta-chip,
+.reta-taxonomy{
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.78);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 850;
+  opacity: 0.9;
+}
+
+.reta-hero__posture{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.86;
+  max-width: 72ch;
+}
+
+.reta-hero__posture strong{
+  font-weight: 950;
+}
+
+.reta-hero__frame{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 74ch;
+}
+
 .reta-hero__cta {
   text-decoration: none;
   font-weight: 950;

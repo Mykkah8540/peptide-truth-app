@@ -38,6 +38,29 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
   const peptideName = String(p?.canonical_name ?? slug);
 
+  const statusCategory = String(p?.status?.category ?? p?.classification?.category ?? "").trim();
+
+  function titleize(x: string) {
+    return x
+      .replace(/_/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .replace(/\b\w/g, (m) => m.toUpperCase());
+  }
+
+  const statusLabel = statusCategory ? titleize(statusCategory) : "";
+
+  const topicSlug = String(p?.topics?.primary?.[0] ?? "").trim();
+  function topicLabelFor(slug: string) {
+    const clean = slug.replace(/^topic_/, "").trim();
+    if (!clean) return "";
+    if (clean == "fat_loss_metabolism") return "Fat loss & metabolism";
+    return titleize(clean);
+  }
+  const topicLabel = topicLabelFor(topicSlug);
+
+  const evidenceLabel = evidenceGradeLabel(riskHit?.risk?.evidence_grade ?? null);
+
   const mergedAliases = Array.from(
     new Set([...(Array.isArray(p?.aliases) ? p.aliases : []), ...getAliasesForSlug(slug)])
   );
@@ -49,48 +72,23 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
           <div className="reta-hero">
             <div className="reta-hero__top">
               <h1 className="reta-hero__title">{peptideName}</h1>
-              <p className="reta-hero__sub">
-                A calm, human-first overview of what it is, why people care, what to watch for, and what’s still uncertain.
+
+              <div className="reta-hero__identity">
+                <div className="reta-hero__kicker">
+                {statusLabel ? <span className="reta-chip">Status: {statusLabel}</span> : null}
+                {topicLabel ? <span className="reta-taxonomy">Context: {topicLabel}</span> : null}
+              </div>
+
+              <p className="reta-hero__posture">
+                <strong>{evidenceLabel}.</strong> This page is a descriptive overview — it does not provide protocols or personalized instruction.
               </p>
 
-              {/* PT_HERO_DECLUTTER_V1 */}
-                <div className="pt-hero__rows">
-                  <CollapsibleSection title="Technical details" defaultCollapsedMobile>
-                    {mergedAliases?.length ? (
-                      <div style={{ marginTop: 6 }}>
-                        <div style={{ fontSize: 12, opacity: 0.72, fontWeight: 800, marginBottom: 6 }}>
-                          Also known as
-                        </div>
-                        <AliasSequenceMini aliases={mergedAliases} />
-                      </div>
-                    ) : null}
+              <p className="reta-hero__frame">
+                What it is, why people care, what to watch for, and what’s still uncertain — presented calmly and with explicit uncertainty where evidence is thin.
+              </p>
+              </div>
 
-                    {p?.structure?.amino_acid_seq ? (
-                      <div
-                        style={{
-                          marginTop: mergedAliases?.length ? 12 : 8,
-                          fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-                          fontSize: 12,
-                          opacity: 0.9,
-                          whiteSpace: "pre-wrap",
-                          wordBreak: "break-word",
-                        }}
-                      >
-                        {p.structure.amino_acid_seq}
-                      </div>
-                    ) : null}
-
-                    {!mergedAliases?.length && !p?.structure?.amino_acid_seq ? (
-                      <div style={{ marginTop: 8, fontSize: 13, opacity: 0.82 }}>
-                        No technical details have been added yet.
-                      </div>
-                    ) : null}
-                  </CollapsibleSection>
-                </div>
-
-                <div className="reta-hero__meta">
-
-                {riskHit ? <MaturityPostureLabel evidenceGrade={riskHit?.risk?.evidence_grade ?? null} /> : null}
+              <div className="reta-hero__meta">
                   <div style={{ marginTop: 10, display: "flex", flexWrap: "wrap", gap: 8 }}>
                     <span style={{ fontSize: 12, opacity: 0.72, fontWeight: 800, marginRight: 6 }}>Quick jumps:</span>
                     <a href="#start" style={{ textDecoration: "none", fontSize: 12, fontWeight: 800, opacity: 0.88, border: "1px solid rgba(0,0,0,0.14)", borderRadius: 999, padding: "6px 10px" }}>Start</a>
