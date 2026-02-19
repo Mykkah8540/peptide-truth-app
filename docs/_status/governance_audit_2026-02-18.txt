@@ -1,0 +1,51 @@
+Pep-Talk Governance Audit Snapshot
+Date: Wed Feb 18 20:27:08 EST 2026
+HEAD: 3ded412
+
+[A] dosing/protocol restriction language
+docs/_constitution/pep-talk_screen_spec_v1.md:135:- “Key Takeaways” (3 bullets max; no dosing/protocol)
+scripts/curate/patch_peptide_placeholders_batch7.py:11:- Educational only. No dosing, no protocols.
+docs/_status/governance_audit_2026-02-18.txt:6:docs/_constitution/pep-talk_screen_spec_v1.md:135:- “Key Takeaways” (3 bullets max; no dosing/protocol)
+docs/_status/governance_audit_2026-02-18.txt:7:scripts/curate/patch_peptide_placeholders_batch7.py:11:- Educational only. No dosing, no protocols.
+scripts/curate/patch_peptide_placeholders_batch6.py:10:- Educational only. No dosing, no protocols.
+docs/_status/build_best_practices.md:60:- Remove repeated “governed reference / no protocols” language sprayed across UI
+content/peptides/oxytocin.json:147:      "notes_seed": "FDA-approved oxytocin (Rx) uterotonic; include only label-level indications; no protocols."
+app/web/lib/ugc/noDosing.ts:2:  // Allow explicit negations like "no dosing" / "not a protocol" without blocking.
+scripts/ingest/generate_from_queue.py:7:- No instructions / no regimens / no dosing advice
+scripts/ingest/generate_from_queue.py:442:    Descriptive-only: no protocols, no dosing, no regimens.
+scripts/ingest/generate_from_queue.py:454:    # Store structured systems-of-concern (descriptive labels only; no protocols)
+content/peptides/pramlintide.json:120:      "notes_seed": "FDA-approved pramlintide (Symlin) amylin analog (Rx) for glycemic control adjunct in diabetes; include only label-level indications; no protocols."
+scripts/curate/patch_peptide_placeholders_batch8.py:10:- Educational only. No dosing, no protocols.
+scripts/curate/patch_peptide_placeholders_batch5.py:6:- Educational only. No dosing, no protocols, no vendor guidance.
+docs/_governance/design_spec_v2_pdp_editorial_architecture.md:13:- governance-safe posture (no dosing, no protocols, no medical advice)
+scripts/patch/defragment_peptides.py:100:    status.setdefault("human_use_note", f"{name} appears in research and/or clinical contexts. Descriptive only; no protocols.")
+docs/ui/PDP_Delete_List.md:8:- “No protocols / no dosing / no instructions” sprayed mid-page
+content/peptides/hcg.json:120:      "notes_seed": "FDA-approved chorionic gonadotropin hormone (Rx); include only label-level indications; no protocols."
+app/web/components/UgcNotesSection.tsx:148:       placeholder="Your note (no dosing/protocols)"
+app/web/components/SuggestStackForm.tsx:27: // NOTE: keep generator simple + safe (no dosing/protocol). Keyword-based only.
+app/web/components/SuggestStackForm.tsx:407:     placeholder="Description (why this stack, synergy logic, cautions at a high level — no protocols)"
+app/web/components/StackSuggestionForm.tsx:305:     placeholder="Description (why these pair well, what context, what to watch for — no protocols)"
+content/peptides/_queue.csv:6:Oxytocin,oxytocin,approved_human,true,normal,FDA-approved oxytocin (Rx) uterotonic; include only label-level indications; no protocols.,pitocin|oxytocin injection,topic_hormonal_endocrine,,
+content/peptides/_queue.csv:7:hCG,hcg,approved_human,true,normal,FDA-approved chorionic gonadotropin hormone (Rx); include only label-level indications; no protocols.,human chorionic gonadotropin|chorionic gonadotropin|pregnyl,topic_hormonal_endocrine,,
+content/peptides/_queue.csv:15:Pramlintide,pramlintide,approved_human,true,normal,FDA-approved pramlintide (Symlin) amylin analog (Rx) for glycemic control adjunct in diabetes; include only label-level indications; no protocols.,symlin|symlinpen|amylin analog,topic_fat_loss_metabolism|topic_hormonal_endocrine,,
+
+[B] medical advice disclaimers (review for overreach)
+docs/build/BUILD_NOTES.md:84:- No medical advice
+docs/00-governance/stacks_governance_v1.md:254:- Serve as medical advice
+docs/_status/governance_audit_2026-02-18.txt:20:docs/_governance/design_spec_v2_pdp_editorial_architecture.md:13:- governance-safe posture (no dosing, no protocols, no medical advice)
+docs/_status/governance_audit_2026-02-18.txt:32:[B] medical advice disclaimers (review for overreach)
+docs/_status/governance_audit_2026-02-18.txt:33:docs/build/BUILD_NOTES.md:84:- No medical advice
+docs/_status/governance_audit_2026-02-18.txt:34:docs/00-governance/stacks_governance_v1.md:254:- Serve as medical advice
+docs/_governance/design_spec_v2_pdp_editorial_architecture.md:13:- governance-safe posture (no dosing, no protocols, no medical advice)
+docs/_governance/pdp_contract_v1.md:26:  “Educational resource. Not medical advice. No dosing or instructions.”
+docs/_governance/pdp_contract_v1.md:209:“Pep-Talk is an educational resource only and does not provide medical advice. Information presented here is for learning purposes and should not be used as a substitute for professional medical guidance.”
+scripts/validate/validate_blend_practical_block_v1.py:11:  "not medical advice",
+docs/README_FEEDER.md:25:- medical advice
+scripts/qa/patch_interaction_detail_page_v1.py:35:          It does <strong>not</strong> provide medical advice, dosing guidance, or prescribing recommendations.
+app/web/components/DisclaimerSection.tsx:16:     Pep-Talk is informational only and not medical advice. We make no warranties and are not liable for actions you take.
+docs/ui/PDP_Delete_List.md:7:- “Not medical advice” sprayed mid-page
+docs/ui/PDP_Contextual_Considerations.md:36:- Not medical advice
+app/web/app/page.tsx:81:    "Pep-Talk is an educational resource. It is not medical advice, diagnosis, or treatment. Always use your judgment and consult a qualified clinician for personal medical decisions.";
+
+[C] tone rules that can flatten voice
+scripts/validate/validate_pdp_contract_v1.py:10:- Banned jargon phrases that violate the "talk like a friend" rule

@@ -130,8 +130,14 @@ def scan_web_for_leaks() -> None:
                 die(f"UI leak marker '{m}' found in {p}")
 
 def main() -> int:
-    pep_files = sorted([p for p in PEPTIDES_DIR.glob("*.json") if p.is_file()])
-    blend_files = sorted([p for p in BLENDS_DIR.glob("*.json") if p.is_file()])
+    pep_files = sorted([
+        p for p in PEPTIDES_DIR.glob("*.json")
+        if p.is_file() and not p.name.startswith("_")
+    ])
+    blend_files = sorted([
+        p for p in BLENDS_DIR.glob("*.json")
+        if p.is_file() and not p.name.startswith("_")
+    ])
 
     if not pep_files:
         die("No peptide JSON files found under content/peptides")
