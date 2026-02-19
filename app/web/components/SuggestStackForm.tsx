@@ -221,7 +221,7 @@ export default function SuggestStackForm() {
    if (err === "contains_dosing_or_protocol") {
     setErrorMsg("Looks like your text contains dosing/protocol language. Remove it to submit.");
    } else if (err === "ack_required") {
-    setErrorMsg("You must acknowledge the no-dosing rule to submit.");
+    setErrorMsg("You must acknowledge the non-directive rule to submit.");
    } else {
     setErrorMsg("Could not submit. Check required fields.");
    }
