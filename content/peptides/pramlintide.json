@@ -117,7 +117,7 @@
     "needs_prescription": true,
     "meta": {
       "priority": "normal",
-      "notes_seed": "FDA-approved pramlintide (Symlin) amylin analog (Rx) for glycemic control adjunct in diabetes; include only label-level indications; no protocols."
+      "notes_seed": "FDA-approved pramlintide (Symlin) amylin analog (Rx) for glycemic control adjunct in diabetes; include only label-level indications; descriptive only, no prescriptive directives."
     },
     "topics": {
       "primary": [

@@ -117,7 +117,7 @@
     "needs_prescription": true,
     "meta": {
       "priority": "normal",
-      "notes_seed": "FDA-approved chorionic gonadotropin hormone (Rx); include only label-level indications; no protocols."
+      "notes_seed": "FDA-approved chorionic gonadotropin hormone (Rx); include only label-level indications; descriptive only, no prescriptive directives."
     },
     "topics": {
       "primary": [

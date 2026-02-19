@@ -8,7 +8,7 @@ Batch 7: practical_block_v1 for:
 - ss-31
 
 Rules:
-- Educational only. No dosing, no protocols.
+- Educational only. Not medical advice. No prescriptive directives or personalized instruction. Observational transparency allowed when lane-separated.
 - schema_version must be practical_block_v1.
 - Avoid validator "weasel wording" like: may/might/could/expected/likely/possibly.
 """
