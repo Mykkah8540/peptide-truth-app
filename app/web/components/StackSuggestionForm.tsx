@@ -353,7 +353,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
 
       <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
        <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} />
-       <span>I understand: dosing/protocol details are not allowed and will be rejected.</span>
+       <span>I understand: no prescriptive directives or personalized instruction (including dosing, schedules, reconstitution, injection).</span>
       </label>
 
       {submitState === "ok" ? <div style={{ fontSize: 13, fontWeight: 800 }}>Submitted for review.</div> : null}
