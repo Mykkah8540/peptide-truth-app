@@ -23,7 +23,7 @@ Must Include
 - Entity name
 - Entity type (Peptide / Blend / Stack)
 - One-line disclaimer:
-  “Educational resource. Not medical advice. No dosing or instructions.”
+  “Educational resource. Not medical advice. No prescriptive instructions. Observational dosing/protocol patterns may be included when clearly lane-separated (Clinical Evidence vs Observed Patterns).”
 
 Safety Indicator (Human-Readable Only)
 - Generally safe
@@ -216,3 +216,23 @@ V1 is complete when:
 - No empty sections render
 - Every page tells a coherent human story
 - Missing data is handled intentionally and transparently
+
+
+
+## Observational Transparency Clause (Contract-Level)
+
+Pep-Talk may include:
+- Clinical dose ranges studied (and study titration schedules)
+- Observed real-world titration patterns and common cycle/duration patterns
+- Common stacking patterns and common discontinuation reasons
+
+All such content must be framed as:
+- Descriptive, not directive
+- Lane-separated (Clinical Evidence vs Observed Patterns)
+- Non-personalized
+
+Pep-Talk must not:
+- Tell users what to take
+- Tell users how to start
+- Tell users how to titrate
+- Provide prescriptive protocols

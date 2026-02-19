@@ -132,7 +132,7 @@ Top block:
   - Favorite toggle
   - Add to Stack
   - Share
-- “Key Takeaways” (3 bullets max; no dosing/protocol)
+- “Key Takeaways” (3 bullets max; no prescriptive directives; observational transparency allowed when lane-separated)
 
 Content Tabs (or stacked sections with anchors; pick one pattern and stick to it):
 A) Overview

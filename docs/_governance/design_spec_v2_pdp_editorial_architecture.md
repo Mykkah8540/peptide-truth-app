@@ -10,7 +10,27 @@ Create a gold-standard editorial PDP system that replaces stacked-card dominance
 - stronger visual rhythm
 - explicit section weight model
 - deterministic behavior
-- governance-safe posture (no dosing, no protocols, no medical advice)
+- governance-safe posture (not medical advice; no prescriptive directives; observational transparency allowed in lane-separated form)
+
+
+## Observational Transparency Policy (Constitution-Aligned)
+
+Pep-Talk may include:
+- Clinical dose ranges studied
+- Study titration schedules
+- Duration patterns studied
+- Observed real-world titration patterns
+- Common stacking patterns
+- Common discontinuation reasons
+
+These must be framed in two clearly separated lanes:
+Clinical Evidence
+Observed Patterns
+
+Pep-Talk must NOT include:
+- Directive language (“you should,” “start at,” “take X”)
+- Personalized instruction
+- Prescriptive protocol steps
 
 Non-negotiables
 - No schema drift
