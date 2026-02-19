@@ -1,0 +1,4 @@
+docs/_status/build_best_practices.md:60:- Remove repeated “governed reference / no protocols” language sprayed across UI
+app/web/lib/ugc/noDosing.ts:2:  // Allow explicit negations like "no dosing" / "not a protocol" without blocking.
+docs/_governance/design_spec_v2_pdp_editorial_architecture.md:13:- governance-safe posture (not medical advice; no prescriptive directives; observational transparency allowed in lane-separated form)
+docs/ui/PDP_Delete_List.md:8:- “No protocols / no dosing / no instructions” sprayed mid-page

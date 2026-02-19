@@ -3,7 +3,7 @@
 Batch 5: promote selected peptides from placeholder -> practical_block_v1.
 
 Rules:
-- Educational only. No dosing, no protocols, no vendor guidance.
+- Educational only. Not medical advice. No prescriptive directives or personalized instruction. Observational transparency allowed when lane-separated. No vendor guidance.
 - practical.schema_version must be "practical_block_v1".
 - Avoid validator "weasel wording" like: may/might/could/expected/likely/possibly/contraindications may apply.
 - Tone: neutral, practical, uncertainty-forward.

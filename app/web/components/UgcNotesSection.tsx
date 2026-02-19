@@ -145,7 +145,7 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
       <textarea
        value={text}
        onChange={(e) => setText(e.target.value)}
-       placeholder="Your note (no dosing/protocols)"
+       placeholder="Your note (no prescriptive directives)"
        rows={5}
        style={{
         width: "100%",

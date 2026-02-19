@@ -97,7 +97,7 @@ def patch_file(path: Path) -> tuple[bool, str]:
     cat = status.get("category")
     if not (isinstance(cat, str) and cat.strip() in ALLOWED_STATUS):
         status["category"] = "investigational_human"
-    status.setdefault("human_use_note", f"{name} appears in research and/or clinical contexts. Descriptive only; no protocols.")
+    status.setdefault("human_use_note", f"{name} appears in research and/or clinical contexts. Descriptive only; no prescriptive directives. Observational transparency allowed when lane-separated.")
 
     # risk
     risk = pep.setdefault("risk", {})

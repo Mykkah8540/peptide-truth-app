@@ -302,7 +302,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
     <textarea
      value={description}
      onChange={(e) => setDescription(e.target.value)}
-     placeholder="Description (why these pair well, what context, what to watch for — no protocols)"
+     placeholder="Description (why these pair well, what context, what to watch for — no prescriptive directives)"
      rows={6}
      style={{
       width: "100%",

@@ -24,7 +24,7 @@ function generateOutcomes(goal: string, includes: Option[]): string[] {
   if (g.includes("sleep")) out.push("Improved sleep quality and recovery (subjective).");
    }
 
- // NOTE: keep generator simple + safe (no dosing/protocol). Keyword-based only.
+ // NOTE: keep generator simple + safe (no prescriptive directives / no personalized instruction). Keyword-based only.
  if (g.includes("sleep")) out.push("Improved sleep quality and recovery (subjective).");
  if (g.includes("recovery") || g.includes("injury") || g.includes("heal")) out.push("Support for recovery processes and comfort (educational).");
  if (g.includes("focus") || g.includes("cognitive") || g.includes("brain")) out.push("Improved focus/clarity (subjective).");
@@ -404,7 +404,7 @@ export default function SuggestStackForm() {
     <textarea
      value={description}
      onChange={(e) => setDescription(e.target.value)}
-     placeholder="Description (why this stack, synergy logic, cautions at a high level — no protocols)"
+     placeholder="Description (why this stack, synergy logic, cautions at a high level — no prescriptive directives)"
      rows={6}
      style={{
       width: "100%",

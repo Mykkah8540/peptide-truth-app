@@ -4,7 +4,7 @@ Phase 6: Safe, scalable peptide ingestion (queue -> JSON -> index -> validation)
 
 Non-negotiables:
 - Do not redesign schema (pdp_json_v1)
-- No instructions / no regimens / no dosing advice
+- No prescriptive directives / no personalized instruction (observational transparency allowed when lane-separated)
 - Observed exposure ranges are allowed ONLY as descriptive sections (placeholders by default)
 - Developmental risk must be clearly flagged when applicable
 - Validator is authoritative gate
@@ -439,7 +439,7 @@ def enforce_developmental_risk(doc: dict, slug: str, systems: List[str]) -> bool
     """
     Ensures developmental risk flags + an adolescent developmental risk block exists.
     Returns True if doc was modified.
-    Descriptive-only: no protocols, no dosing, no regimens.
+    Descriptive-only: no prescriptive directives, no personalized instruction. Observational transparency allowed when lane-separated (Clinical Evidence vs Observed Patterns).
     """
     changed = False
     pep = doc.setdefault("peptide", {})
@@ -451,7 +451,7 @@ def enforce_developmental_risk(doc: dict, slug: str, systems: List[str]) -> bool
         risk["developmental_risk"] = True
         changed = True
 
-    # Store structured systems-of-concern (descriptive labels only; no protocols)
+    # Store structured systems-of-concern (descriptive labels only; no prescriptive directives)
     if systems:
         current = risk.get("developmental_systems_of_concern")
         # Normalize: unique, stable order

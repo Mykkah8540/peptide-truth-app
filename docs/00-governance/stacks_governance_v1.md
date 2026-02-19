@@ -249,10 +249,20 @@ Pep-Talk may feature:
 
 Stacks will **never**:
 - Replace PDPs
-- Contain protocols
-- Provide dosing guidance
+- Use prescriptive directive language (e.g., “you should,” “start at,” “take X”)
+- Provide personalized instruction
 - Serve as medical advice
 - Optimize for SEO keyword stuffing
+
+Stacks **may** include observational transparency when it increases clarity and reduces harm:
+- Clinical ranges / schedules as studied (when relevant)
+- Common real-world patterns users report (titration, duration, discontinuation)
+- Common stacking patterns and tradeoffs
+
+All observational content must be:
+- Descriptive, not directive
+- Lane-separated (Clinical Evidence vs Observed Patterns)
+- Non-personalized
 
 ---
 
