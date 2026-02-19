@@ -180,8 +180,8 @@ Each suggestion must include:
 
 Stacks support moderated community notes:
 - Short experiential observations
-- No dosing
-- No protocols
+- No prescriptive directives
+- No personalized instruction
 - No timelines
 
 Same governance rules as peptide and blend notes.

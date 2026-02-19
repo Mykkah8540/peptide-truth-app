@@ -74,7 +74,7 @@ Search returns:
 - UGC is not searchable
 - “Stack community” is not searchable
 - Medical intent inference is not used for ranking
-- No dosing/protocol suggestions in search behavior or output
+- No prescriptive directives / no personalized instruction in search behavior or output
 
 ## Governance
 Any change to:
