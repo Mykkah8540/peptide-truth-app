@@ -138,7 +138,7 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
    return;
   }
   if (!ack) {
-   setErrorMsg("You must acknowledge the no-dosing rule to submit.");
+   setErrorMsg("You must acknowledge the non-directive rule to submit.");
    setSubmitState("error");
    return;
   }
@@ -161,9 +161,9 @@ export default function StackSuggestionForm(props: { ugcSlug: string }) {
   if (!res.ok) {
    const err = String(j?.error || "submit_failed");
    if (err === "contains_dosing_or_protocol") {
-    setErrorMsg("Looks like your submission contains dosing/protocol language. Remove it to submit.");
+    setErrorMsg("Looks like your submission contains prescriptive or how-to language (dosing, schedules, reconstitution, injection). Remove it to submit.");
    } else if (err === "ack_required") {
-    setErrorMsg("You must acknowledge the no-dosing rule to submit.");
+    setErrorMsg("You must acknowledge the non-directive rule to submit.");
    } else {
     setErrorMsg("Could not submit. Check required fields.");
    }

@@ -171,7 +171,7 @@ export default function SuggestStackForm() {
    return;
   }
   if (!ack) {
-   setErrorMsg("You must acknowledge the no-dosing rule to submit.");
+   setErrorMsg("You must acknowledge the non-directive rule to submit.");
    setSubmitState("error");
    return;
   }

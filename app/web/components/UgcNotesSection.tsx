@@ -76,9 +76,9 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
   if (!res.ok) {
    const err = String(j?.error || "submit_failed");
    if (err === "contains_dosing_or_protocol") {
-    setErrorMsg("Looks like your note contains dosing/protocol language. Remove it to submit.");
+    setErrorMsg("Looks like your note contains prescriptive or how-to language (dosing, schedules, reconstitution, injection). Remove it to submit.");
    } else if (err === "ack_required") {
-    setErrorMsg("You must acknowledge the no-dosing rule to submit.");
+    setErrorMsg("You must acknowledge the non-directive rule to submit.");
    } else {
     setErrorMsg("Could not submit. Check required fields.");
    }
@@ -159,7 +159,7 @@ export default function UgcNotesSection(props: { type: EntityType; slug: string;
 
       <label style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: 13, opacity: 0.9 }}>
        <input type="checkbox" checked={ack} onChange={(e) => setAck(e.target.checked)} />
-       <span>I understand: dosing/protocol details are not allowed and will be rejected.</span>
+       <span>I understand: no prescriptive directives or personalized instruction (including dosing, schedules, and how-to details).</span>
       </label>
 
       {submitState === "ok" ? <div style={{ fontSize: 13, fontWeight: 800 }}>Submitted for review.</div> : null}
