@@ -1,3 +1,22 @@
+# Current State
+
+HEAD: c4ee6c2
+
+Active focus:
+- PDP Phase 1: reduce cognitive load via progressive disclosure + hierarchy tokens
+- Retatrutide remains benchmark; changes must remain deterministic + validator-safe
+
+Just landed:
+- CollapsibleSection: desktop collapse supported + SSR-safe initial collapse (prevents wall-of-text flash)
+- pt-collapse-title class introduced for nested collapse alignment + density
+- repoRoot resolution hardened (best match rather than first match)
+
+Locks:
+- No schema drift
+- Small atomic changes
+- Build must be green before push
+
+---
 # Pep-Talk Current State (Authoritative)
 
 Date: 2026-02-18  
