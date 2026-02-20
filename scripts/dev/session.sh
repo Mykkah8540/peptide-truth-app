@@ -19,13 +19,28 @@ build_prompt_full() {
   echo
   echo "HEAD:"
   get_head
+
+  echo
+  echo "STATE:"
+  echo "  Build: Green"
+  echo "  Phase: PDP Phase 1 – Hierarchy & Cognitive Load refinement"
+  echo "  Just landed:"
+  echo "    - Desktop + mobile collapse defaults"
+  echo "    - SSR-safe initial collapse"
+  echo "    - pt-collapse-title alignment fix"
+  echo "    - repoRoot hardening"
+  echo "  Locks:"
+  echo "    - No schema drift"
+  echo "    - No backend/API work"
+  echo "    - Small atomic patches only"
+  echo "    - Build must stay green"
   echo
   echo "Last 3 Commits:"
   get_last_commits
   echo
-  echo "=== CURRENT STATE (TAIL 120) ==="
+  echo "=== CURRENT STATE (HEAD 80) ==="
   if [ -f docs/_status/current_state.md ]; then
-    tail -n 120 docs/_status/current_state.md
+    sed -n '1,80p' docs/_status/current_state.md
   else
     echo "current_state.md missing"
   fi
@@ -54,6 +69,21 @@ build_prompt_lite() {
   echo
   echo "HEAD:"
   get_head
+
+  echo
+  echo "STATE:"
+  echo "  Build: Green"
+  echo "  Phase: PDP Phase 1 – Hierarchy & Cognitive Load refinement"
+  echo "  Just landed:"
+  echo "    - Desktop + mobile collapse defaults"
+  echo "    - SSR-safe initial collapse"
+  echo "    - pt-collapse-title alignment fix"
+  echo "    - repoRoot hardening"
+  echo "  Locks:"
+  echo "    - No schema drift"
+  echo "    - No backend/API work"
+  echo "    - Small atomic patches only"
+  echo "    - Build must stay green"
 
   echo
   echo "Must Read (PDP Hero):"
