@@ -55,10 +55,14 @@ function repoRoot(): string {
     path.resolve(cwd, "..", "..", "..", ".."),
   ];
 
+  let best: string | null = null;
+
   for (const base of candidates) {
     const marker = path.join(base, "content", "_index", "entities_v1.json");
-    if (existsSync(marker)) return base;
+    if (existsSync(marker)) best = base;
   }
+
+  if (best) return best;
 
   // Fallback: previous behavior (best guess)
   return path.resolve(cwd, "..", "..");

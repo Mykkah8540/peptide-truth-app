@@ -207,9 +207,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               </div>
 
               {/* PT_EVIDENCE_DEEP_DIVE_V1 */}
-              <CollapsibleSection title="Deep dive" defaultCollapsedMobile>
+              <CollapsibleSection title="Deep dive" defaultCollapsedMobile defaultCollapsed>
                 <div style={{ display: "grid", gap: 12 }}>
-                  <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile>
+                  <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                     <div style={{ marginTop: 10 }}>
                       <ContentBlocks
                         heading="Evidence posture"
@@ -221,14 +221,14 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     </div>
                   </CollapsibleSection>
 
-                  <CollapsibleSection title="How to read this" defaultCollapsedMobile>
+                  <CollapsibleSection title="How to read this" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                     <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
                       Favor human data over animal-only findings. Look for replication, duration, and whether outcomes are clinically meaningful
                       (not just surrogate markers). If results are short-term, single-site, or based on small samples, treat conclusions as provisional.
                     </div>
                   </CollapsibleSection>
 
-                  <CollapsibleSection title="What’s missing" defaultCollapsedMobile>
+                  <CollapsibleSection title="What’s missing" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                     <ul className="pt-safety__list" style={{ marginTop: 10 }}>
                       <li>Long-duration follow-up in diverse populations.</li>
                       <li>Clear comparisons versus established alternatives on outcomes people actually care about.</li>
@@ -236,7 +236,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     </ul>
                   </CollapsibleSection>
 
-                  <CollapsibleSection title="Study list" defaultCollapsedMobile>
+                  <CollapsibleSection title="Study list" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                     <div style={{ marginTop: 10 }}>
                       <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
                     </div>
@@ -273,7 +273,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               </div>
 
               <div style={{ marginTop: 14, display: "grid", gap: 10 }}>
-                <CollapsibleSection title="Red flags" defaultCollapsedMobile>
+                <CollapsibleSection title="Red flags" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                   <ul className="pt-safety__list">
                     {riskHit?.risk?.severity ? <li><strong>Severity:</strong> {riskHit.risk.severity}</li> : null}
                     {riskHit?.risk?.likelihood ? <li><strong>Likelihood:</strong> {riskHit.risk.likelihood}</li> : null}
@@ -284,7 +284,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                   </ul>
                 </CollapsibleSection>
 
-                <CollapsibleSection title="Uncertainty & long-term unknowns" defaultCollapsedMobile>
+                <CollapsibleSection title="Uncertainty & long-term unknowns" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                   <ul className="pt-safety__list">
                     {riskHit?.risk?.developmental_risk ? (
                       <li>Higher uncertainty due to novelty / limited long-term follow-up.</li>
@@ -299,7 +299,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                   </ul>
                 </CollapsibleSection>
 
-                <CollapsibleSection title="When to pause & reassess" defaultCollapsedMobile>
+                <CollapsibleSection title="When to pause & reassess" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                   <ul className="pt-safety__list">
                     <li>If side effects are escalating instead of settling over time.</li>
                     <li>If you can’t keep fluids/food down, or you’re getting persistently lightheaded.</li>
@@ -311,7 +311,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
 
                 {safetyLinks.length ? (
-                  <CollapsibleSection title="Related safety notes" defaultCollapsedMobile>
+                  <CollapsibleSection title="Related safety notes" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
                     <div className="pt-safety__linksGrid" style={{ marginTop: 6 }}>
                       {safetyLinks.map((id) => (
                         <a key={id} className="pt-safety__link" href={`/safety/${id}`}>
