@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 export default async function AdminHome() {
   const tiles = [
     { href: "/admin/ugc", title: "UGC Moderation", sub: "Review, approve, reject, archive, triage" },

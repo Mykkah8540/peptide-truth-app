@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { headers } from "next/headers";
 type AuditRow = {
   id: string;
