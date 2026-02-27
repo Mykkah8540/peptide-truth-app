@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { getBestContextMatches } from "@/lib/contextualConsiderations";
+import { getBestContextMatches, CONTEXT_PACKS } from "@/lib/contextualConsiderations";
 
 type Props = {
   peptideName: string;
@@ -17,7 +17,12 @@ const SUBLINE =
 const PLACEHOLDER = "Search: thyroid, SSRI, autoimmune, older adults…";
 const FRAMING_LINE = "This adds context — it does not decide what’s right for any individual.";
 
-const EXAMPLES = ["Thyroid conditions", "Antidepressants (SSRIs)", "Autoimmune conditions", "Hormonal conditions", "Older adults", "Pregnancy"];
+const EXAMPLES = [
+  "Thyroid conditions", "Antidepressants (SSRIs)", "Autoimmune conditions",
+  "Hormone therapy (TRT / estrogen / HRT)", "Older adults", "Pregnancy",
+  "Kidney disease (CKD)", "Sleep issues", "Metabolic conditions",
+  "Blood pressure", "GI conditions", "Athletes: injury recovery",
+];
 
 function normalize(s: string) {
   return s.trim().replace(/\s+/g, " ");
@@ -26,6 +31,14 @@ function normalize(s: string) {
 function fill(t: unknown, vars: Record<string, string>) {
   const s = typeof t === "string" ? t : "";
   return s.replace(/\{(peptide|query)\}/g, (_m, k) => vars[k] ?? "");
+}
+
+/** Call a pack field whether it's a function or a template string. */
+function callField(field: unknown, peptide: string, query: string): string {
+  if (typeof field === "function") {
+    return (field as (p: string, q: string) => string)(peptide, query) || "";
+  }
+  return fill(field, { peptide, query });
 }
 
 export default function PDPContextualConsiderations(props: Props) {
@@ -63,20 +76,21 @@ export default function PDPContextualConsiderations(props: Props) {
   const output = useMemo(() => {
     if (!pack) return null;
 
+    const pn = props.peptideName;
     const contextSummary =
-      fill(pack.contextSummary ?? pack.context_summary ?? pack.summary ?? "", vars) ||
-      `People often ask how "${query}" relates to ${props.peptideName}. This context matters because physiology, co-medications, and baseline health can change which mechanisms are emphasized and how experiences are described.`;
+      callField(pack.contextSummary ?? pack.context_summary ?? pack.summary ?? "", pn, query) ||
+      `People often ask how "${query}" relates to ${pn}. This context matters because physiology, co-medications, and baseline health can change which mechanisms are emphasized and how experiences are described.`;
 
     const whatIsKnown =
-      fill(pack.whatIsKnown ?? pack.what_is_known ?? pack.known ?? "", vars) ||
-      `What’s discussed most consistently is how ${props.peptideName} may overlap with pathways relevant to "${query}". Evidence strength varies and may be limited or indirect.`;
+      callField(pack.whatIsKnown ?? pack.what_is_known ?? pack.known ?? "", pn, query) ||
+      `What’s discussed most consistently is how ${pn} may overlap with pathways relevant to "${query}". Evidence strength varies and may be limited or indirect.`;
 
     const whatIsUnclear =
-      fill(pack.whatIsUnclear ?? pack.what_is_unclear ?? pack.unclear ?? pack.limits ?? "", vars) ||
+      callField(pack.whatIsUnclear ?? pack.what_is_unclear ?? pack.unclear ?? pack.limits ?? "", pn, query) ||
       `It may be unclear how well general findings translate to people with "${query}", especially when studies exclude certain populations or don’t account for co-medications and comorbidities.`;
 
     const whyExperiencesVary =
-      fill(pack.whyExperiencesVary ?? pack.why_experiences_vary ?? pack.variance ?? "", vars) ||
+      callField(pack.whyExperiencesVary ?? pack.why_experiences_vary ?? pack.variance ?? "", pn, query) ||
       `Variability can come from baseline biology, coexisting conditions, concurrent medications, lifestyle factors, and how outcomes are measured or reported.`;
 
     return { contextSummary, whatIsKnown, whatIsUnclear, whyExperiencesVary };
@@ -89,6 +103,7 @@ export default function PDPContextualConsiderations(props: Props) {
 
       <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
         <input
+          list="pt-ctx-packs"
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder={PLACEHOLDER}
@@ -102,6 +117,11 @@ export default function PDPContextualConsiderations(props: Props) {
             outline: "none",
           }}
         />
+        <datalist id="pt-ctx-packs">
+          {CONTEXT_PACKS.map((p) => (
+            <option key={p.id} value={p.label} />
+          ))}
+        </datalist>
 
         {!query ? (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
