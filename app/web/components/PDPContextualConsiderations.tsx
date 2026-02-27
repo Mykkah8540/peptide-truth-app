@@ -18,10 +18,11 @@ const PLACEHOLDER = "Search: thyroid, SSRI, autoimmune, older adults…";
 const FRAMING_LINE = "This adds context — it does not decide what’s right for any individual.";
 
 const EXAMPLES = [
-  "Thyroid conditions", "Antidepressants (SSRIs)", "Autoimmune conditions",
-  "Hormone therapy (TRT / estrogen / HRT)", "Older adults", "Pregnancy",
-  "Kidney disease (CKD)", "Sleep issues", "Metabolic conditions",
-  "Blood pressure", "GI conditions", "Athletes: injury recovery",
+  "Thyroid conditions", "Antidepressants (SSRIs)", "Anxiety or ADHD",
+  "Heart disease", "Blood thinners", "Autoimmune conditions",
+  "Hormone therapy (TRT / HRT)", "Older adults", "Pregnancy",
+  "Kidney disease", "Sleep issues", "Metabolic conditions",
+  "Blood pressure", "GI / stomach issues", "Athletes: injury recovery",
 ];
 
 function normalize(s: string) {
