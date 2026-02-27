@@ -97,14 +97,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "polycystic kidney", "pkd", "kidney transplant", "transplant", "azotemia",
       "uremia", "stage 3 kidney", "stage 4 kidney", "stage 5 kidney",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `Reduced kidney function changes how ${peptide} is cleared and tolerated — this is a real flag worth discussing with a provider before starting.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Reduced kidney function can change clearance and sensitivity, which can shift how people interpret side effects or benefits discussed in research and anecdotes.`,
+      `The kidneys handle clearance for many peptides, so reduced function means the compound lingers longer and side effects can hit harder at the same dose. GLP-1 class compounds also carry nausea and vomiting risk, which can cause dehydration — a serious accelerant for kidney decline. If eGFR is below 60, this needs to be part of the conversation before starting.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that kidney function can be a key variable for how compounds are handled and tolerated. For many peptides, CKD-specific evidence may be limited, so discussions tend to stay cautious and context-heavy.`,
+      `GLP-1 receptor agonists have shown some renal-protective effects in trials (reduced albuminuria, slower eGFR decline), but those were in people with mild-to-moderate CKD and careful monitoring. At stage 3b+ or on dialysis, clearance changes meaningfully. Track eGFR, creatinine, and hydration status closely — especially during the titration phase when nausea peaks.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate across CKD stages when studies exclude reduced kidney function or don't report kidney-related stratification. Direct evidence for some outcomes may be sparse.`,
+      `Most ${peptide} data comes from people with normal or mildly reduced kidney function. How it behaves at stage 4-5, on dialysis, or post-transplant is largely unstudied. The dehydration risk from early GI side effects is the biggest practical unknown.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from CKD stage, hydration status, electrolyte balance, medication burden, protein intake, and comorbid conditions that often travel with kidney disease.`,
+      `Someone with stable stage 3a CKD and good hydration will have a completely different experience than someone with stage 4, on three blood pressure meds, running borderline dehydrated. CKD stage, fluid balance, medication load, and protein intake all drive the gap.`,
   },
 
   // ─── THYROID ──────────────────────────────────────────────────────────────
@@ -125,14 +128,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "thyroid nodule", "goiter", "thyroid cancer", "thyroidectomy",
       "iodine", "euthyroid", "subclinical hypothyroid", "metabolism",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Well-managed thyroid conditions don't interact directly with ${peptide} — the early fatigue window during titration is the real thing to watch.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Thyroid status can shift baseline metabolism, heart-rate sensitivity, and energy perception, which changes how outcomes are described and which signals people notice first.`,
+      `If your thyroid is optimized (TSH in range, energy stable), there's no known direct interaction with ${peptide}. The concern is the titration phase — appetite drops sharply, energy dips, and for someone already managing fatigue from thyroid disease that 4-6 week adjustment can feel rough. It usually stabilizes. If thyroid is NOT optimized, fix that first — uncontrolled hypothyroidism amplifies weight-loss resistance and fatigue.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is *baseline sensitivity*. When "${q}" is part of the picture, people may pay more attention to changes in energy, sleep, temperature tolerance, and heart-rate sensations. Evidence for direct thyroid-specific effects varies by peptide and is often indirect (mechanistic or early human data).`,
+      `Thyroid meds (levothyroxine, Synthroid, Armour) aren't known to interact pharmacologically with GLP-1 class compounds. What matters more is whether thyroid function is well-controlled before starting — unoptimized T3/T4 amplifies fatigue and weight-loss resistance. Have labs current within 3-6 months. GLP-1 compounds can also slow gastric emptying, which theoretically could affect levothyroxine absorption timing.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear which observations are attributable to ${peptide} versus underlying thyroid dynamics, concurrent thyroid medications, or fluctuations in lab markers over time. Many studies are not designed around thyroid subgroups, so direct applicability can be limited.`,
+      `There's no good data on how triple agonists like ${peptide} specifically affect people with Hashimoto's or those on combination T3/T4 therapy. Most GLP-1 trials don't stratify by thyroid status, so the real-world nuance is largely extrapolated.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from baseline thyroid function, medication stability, iodine status, sleep debt, stimulant exposure (caffeine), and differences in what "more energy" or "better metabolism" means to different people.`,
+      `Someone with well-controlled hypothyroidism on a stable levothyroxine dose will barely notice a difference. Someone with fluctuating Hashimoto's, poor sleep, and marginal T3 levels may find the early fatigue phase genuinely hard. Thyroid stability, medication type, and baseline energy reserves drive the gap.`,
   },
 
   // ─── AUTOIMMUNE ───────────────────────────────────────────────────────────
@@ -165,14 +171,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "steroids", "anti-inflammatory", "tnf", "tnf inhibitor",
       "humira", "adalimumab", "remicade", "infliximab", "enbrel", "etanercept",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Autoimmune conditions don't block ${peptide} use, but flare cycles and immunosuppressant medications add real variables worth tracking.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Autoimmune contexts tend to involve fluctuating symptoms and immune signaling, so discussion often centers on inflammatory pathways and symptom variability rather than single, stable outcomes.`,
+      `${peptide} isn't contraindicated by autoimmune conditions, but the picture gets complicated. Flare cycles mean your baseline shifts week to week — fatigue, pain, and inflammation move independently of anything you add. If you're on immunosuppressants (methotrexate, biologics, prednisone), those already affect appetite, GI function, and energy, so isolating what ${peptide} is doing requires patience and honest tracking.`,
     whatIsKnown: (peptide, q) =>
-      `The most consistent theme is *signal noise*: symptoms can shift from week to week even without a single clear cause. When "${q}" is present, interpretation usually benefits from separating immune-related symptom fluctuations from more general effects being discussed for ${peptide}.`,
+      `GLP-1 class compounds have shown some anti-inflammatory effects in metabolic contexts, but that doesn't mean they help autoimmune inflammation specifically. If you're on prednisone or biologics, watch for GI overlap — nausea from ${peptide} stacked on methotrexate nausea is a real pattern. Track flare timing separately from ${peptide} titration changes so you can tell them apart.`,
     whatIsUnclear: (peptide, q) =>
-      `Direct evidence in specific autoimmune populations is often limited, and studies may exclude people on immunomodulators or complex regimens. That makes it hard to generalize from mixed-population findings to "${q}" specifically.`,
+      `Direct evidence for ${peptide} in autoimmune populations is essentially absent. Whether it modulates immune activity in any clinically meaningful way (positive or negative) is unknown. Most trials exclude people on immunosuppressants.`,
     whyExperiencesVary: (peptide, q) =>
-      `Differences in diagnosis subtype, flare cycles, baseline inflammation, concurrent meds, and how outcomes are measured (pain, fatigue, function) can all produce very different narratives—even when people are describing similar events.`,
+      `Someone with stable, well-controlled RA on a biologic will have a very different experience than someone with active lupus flares on high-dose prednisone. Disease activity, immunosuppressant type, flare frequency, and baseline GI tolerance drive the range.`,
   },
 
   // ─── ANTIDEPRESSANTS / SSRIs ──────────────────────────────────────────────
@@ -203,14 +212,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "vilazodone", "viibryd",
       "vortioxetine", "trintellix",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `SSRIs and SNRIs don't interact pharmacologically with ${peptide}, but they share overlapping side-effect territory — appetite, nausea, sleep, and motivation all move in both directions.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. In antidepressant contexts, discussions usually focus on overlapping domains like sleep, appetite, nausea, mood perception, and energy—where attribution can be tricky.`,
+      `No known direct drug interaction between ${peptide} and SSRIs/SNRIs. The practical issue is overlapping symptoms: both can affect appetite, nausea, sleep, energy, and libido. If you recently started or changed antidepressant dose, give that 4-6 weeks to stabilize before adding ${peptide} — otherwise you'll have no idea what's causing what. Mirtazapine (Remeron) is a special case because it increases appetite, which ${peptide} suppresses; the tug-of-war can be confusing.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is *overlap in subjective endpoints*. When "${q}" is present, a change in sleep, appetite, or motivation may be interpreted differently depending on baseline mental-state stability and side-effect sensitivity.`,
+      `SSRIs commonly cause initial nausea that overlaps with GLP-1 side effects. Bupropion (Wellbutrin) can itself suppress appetite, so combined with ${peptide} the effect may be stronger than expected. Track mood stability separately — if you notice flattened mood or increased apathy, flag it, because that pattern can come from either side. Weight changes on SSRIs (gain or loss) add another variable.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how much reported change is due to ${peptide} versus the antidepressant's baseline effects, dose stability over time, or normal mood variability. Many datasets don't capture nuanced psychiatric baselines, so specificity is limited.`,
+      `Whether ${peptide} affects serotonin signaling or antidepressant efficacy in any meaningful way is unstudied. Most metabolic trials don't capture psychiatric baselines or antidepressant use, so the real-world interaction picture is inferred rather than measured.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from medication type, duration of use, baseline anxiety, sleep quality, caffeine/stimulants, and differences in how individuals label "better" (calmer vs more energized vs less appetite vs better sleep).`,
+      `Someone stable on Lexapro for years will barely notice an interaction. Someone who just started Zoloft two weeks ago and adds ${peptide} will have overlapping nausea, appetite shifts, and mood changes that are nearly impossible to untangle. Antidepressant type, dose stability, and how long you've been on it matter enormously.`,
   },
 
   // ─── ANXIETY / ADHD / STIMULANTS ─────────────────────────────────────────
@@ -243,14 +255,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "propranolol", "beta blocker for anxiety",
       "gad", "ocd", "nervous system",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Stimulants and ${peptide} both suppress appetite and can nudge heart rate up — stacking these effects is manageable but worth monitoring.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Anxiety, ADHD, and stimulant medications all influence the nervous system's baseline tone, which can shape how effects on sleep, appetite, heart rate, and mood are perceived and described.`,
+      `GLP-1/GIP/glucagon agonists like ${peptide} are potent appetite suppressors. On Adderall or Vyvanse, appetite suppression can stack — some people eat almost nothing early on. That's not a win; it's a muscle loss and nutrient depletion risk. If you're on stimulants, you need to be intentional about eating enough protein (minimum 100g/day) even when you don't feel hungry. For anxiety, ${peptide}'s early nausea and heart rate changes can mimic anxiety symptoms, which may spike health-monitoring behavior.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is *nervous system overlap*. When "${q}" is present, stimulant use or anxiety can amplify sensitivity to changes in heart rate, energy, sleep, and appetite—making it harder to isolate what any single compound is contributing.`,
+      `Track your resting heart rate if you're on stimulants — both Adderall and aggressive GLP-1 receptor agonists can nudge heart rate up 5-10 bpm. Not a dealbreaker, but worth knowing. Stimulant users also tend to undereat protein, and adding ${peptide} makes that worse. Benzodiazepines and buspirone don't have known interactions, but sedation plus GLP-1 nausea can feel rough.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether reported changes reflect ${peptide} directly, stimulant dose effects, anxiety fluctuation, or day-to-day variation in stress and sleep. Most studies don't enroll people with active ADHD or significant anxiety diagnoses, limiting direct applicability.`,
+      `Studies consistently exclude people on stimulants, so the real-world interaction picture is largely extrapolated. Whether ${peptide} affects ADHD symptom management, anxiety baseline, or stimulant efficacy is unknown.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from stimulant type and dose, caffeine use, baseline anxiety level, sleep quality, stress load, and how tightly someone's attention is focused on physical sensations (which high-anxiety and ADHD profiles can amplify).`,
+      `Someone on low-dose Vyvanse with mild anxiety will have a different experience than someone on high-dose Adderall with panic disorder. Stimulant dose, caffeine intake, baseline anxiety level, and whether someone tends to hyper-focus on body sensations all shape the experience dramatically.`,
   },
 
   // ─── OLDER ADULTS ─────────────────────────────────────────────────────────
@@ -271,14 +286,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "osteoporosis", "bone loss", "bone density", "falls", "balance",
       "muscle loss", "sarcopenia", "functional decline",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Age itself isn't a contraindication, but muscle preservation and fall risk from rapid weight loss are real concerns with ${peptide} in older adults.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Age can change pharmacodynamics, recovery capacity, and baseline risks, so discussions often center on comorbidities and concurrent medications rather than a single mechanism.`,
+      `The biggest risk with ${peptide} in older adults isn't a drug interaction — it's sarcopenia. Aggressive appetite suppression plus age-related muscle loss can accelerate functional decline if protein intake drops. GLP-1 class compounds cause weight loss that's roughly 60-70% fat and 30-40% lean mass. For someone over 65, losing muscle is a fall risk. Strength training and high protein (1.2-1.6g/kg) aren't optional in this group.`,
     whatIsKnown: (peptide, q) =>
-      `The most consistent theme is *context load*: more medications, more conditions, and less physiological reserve can change how effects are noticed and described. Evidence is often thinner in older cohorts because many studies skew younger or healthier.`,
+      `Polypharmacy is common over 65, so check for anything that compounds nausea or dehydration risk (diuretics, metformin, blood pressure meds). Kidney function tends to decline with age — even "normal" creatinine can mask reduced GFR. Start at the lowest dose and titrate slowly. Monitor weight loss rate: more than 1% body weight per week in an older adult warrants a conversation.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate to older adults because subgroup analyses may be missing, and outcomes can be influenced by baseline frailty, nutrition status, sleep, and mobility limitations.`,
+      `Most ${peptide} trial participants are 40-65. Data in people over 70 is thin, and over 80 essentially nonexistent. How age-related changes in gut motility, renal clearance, and body composition affect ${peptide} tolerability is mostly inferred.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from medication burden, kidney/liver function differences, hydration status, baseline activity level, and how "improvement" is defined (pain, function, energy, sleep, appetite).`,
+      `A fit 68-year-old who strength trains will respond very differently than a frail 78-year-old on eight medications. Baseline muscle mass, kidney function, medication burden, activity level, and nutritional status create a massive range in this age group.`,
   },
 
   // ─── PREGNANCY / FERTILITY ────────────────────────────────────────────────
@@ -300,14 +318,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "birth control", "contraception", "getting off birth control",
       "newborn", "childbirth",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `${peptide} should be stopped before conception and is not recommended during pregnancy or breastfeeding — there's no safety data and the risk profile is unknown.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Pregnancy and lactation contexts are discussed differently because evidence standards, ethical constraints, and safety signals are treated with more caution.`,
+      `This is straightforward: ${peptide} has no human safety data in pregnancy or breastfeeding. Animal studies for GLP-1 class drugs have shown adverse fetal outcomes at high doses. The standard recommendation is to stop at least 2 months before trying to conceive (longer for longer-acting formulations). If you're actively trying, this isn't the time. If you got pregnant while on it, stop and talk to your OB — it's not an emergency, but continued use isn't supported.`,
     whatIsKnown: (peptide, q) =>
-      `What's known most consistently is that direct human evidence is frequently limited in these populations. Discussion tends to emphasize the difference between mechanistic speculation and population-specific safety data.`,
+      `GLP-1 receptor agonists can increase fertility by improving ovulation in women with PCOS or obesity — some people get pregnant unexpectedly after starting. If you're on birth control, don't assume metabolic compounds are neutral. GLP-1 compounds also slow gastric emptying, which can reduce oral contraceptive absorption. During breastfeeding, whether ${peptide} passes into breast milk is unknown.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear what is truly known versus assumed, because many datasets exclude pregnancy/lactation by design. That creates a gap between general research discourse and pregnancy-specific certainty.`,
+      `Human pregnancy exposure data for ${peptide} is essentially zero. The fertility-boosting effect is real but poorly quantified — nobody knows the timeline from starting to ovulatory changes. Transfer into breast milk and effects on infant development are completely unstudied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from trimester/postpartum phase, baseline nausea/sleep shifts, iron status, thyroid changes, and normal hormonal dynamics that can dominate subjective experience.`,
+      `Women with PCOS may see rapid fertility improvements (sometimes within weeks), while others may not. Postpartum weight loss goals add urgency that collides with breastfeeding safety unknowns. The tension between wanting to lose weight and wanting to breastfeed safely is real and personal.`,
   },
 
   // ─── METABOLIC ────────────────────────────────────────────────────────────
@@ -334,14 +355,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "dyslipidemia", "high triglycerides", "triglycerides", "cholesterol",
       "high ldl", "low hdl",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Metabolic conditions are actually the core use case for ${peptide} — but if you're on insulin or sulfonylureas, hypoglycemia risk is the thing to manage carefully.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Metabolic contexts often change baseline appetite, energy, and cardiovascular signals, so discussions frequently hinge on which outcomes are being measured and over what timeframe.`,
+      `This is where ${peptide} is designed to work. GLP-1/GIP agonism directly targets insulin sensitivity, appetite, and glucose control. If you have type 2 diabetes or insulin resistance, the effects tend to be more pronounced — sometimes dramatically so. The catch: if you're already on insulin or sulfonylureas, adding ${peptide} can cause hypoglycemia. Your diabetes meds will likely need adjusting downward, often within the first few weeks. For PCOS, the insulin-sensitizing effects can improve ovulation (see fertility considerations).`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is *endpoint ambiguity*: appetite, weight, glucose markers, and energy can move for many reasons. When "${q}" is present, clarity often comes from distinguishing mechanism talk from measurable outcomes in real-world reports.`,
+      `Track fasting glucose, A1c, and fasting insulin if possible. If you're on metformin, that's generally fine to continue — GI side effects may stack initially but usually settle. If on insulin or a sulfonylurea, coordinate with your prescriber because doses typically need reduction within 2-4 weeks. Blood pressure often improves with weight loss, so monitor if you're on antihypertensives — you may need less medication.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how much of a reported change is due to ${peptide} versus baseline lifestyle shifts, medication changes, or regression-to-the-mean in fluctuating markers. Many studies don't capture all confounders.`,
+      `For type 1 diabetes, ${peptide} data is very limited and the risk-benefit is different — appetite suppression without matching insulin reduction is dangerous. Long-term effects on insulin sensitivity after stopping ${peptide} are still being studied. Whether metabolic improvements persist or reverse after discontinuation varies.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from baseline insulin resistance, sleep, stress, diet composition, training status, and concurrent meds that affect appetite or glucose handling.`,
+      `Someone with prediabetes and mild insulin resistance may see steady, undramatic improvement. Someone with uncontrolled T2D on multiple medications may see dramatic glucose drops that require aggressive med adjustments. Baseline metabolic severity, medication stack, and diet composition drive the variance.`,
   },
 
   // ─── LIVER DISEASE ────────────────────────────────────────────────────────
@@ -365,14 +389,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "jaundice", "yellow skin", "yellow eyes",
       "liver transplant", "steatohepatitis",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `Mild fatty liver may actually benefit from ${peptide}'s metabolic effects, but significant liver disease (cirrhosis, elevated bilirubin) changes drug handling and warrants careful evaluation.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Liver function can matter because the liver is central to metabolism and clearance for many compounds, which can shift sensitivity and how side effects are interpreted.`,
+      `This splits two ways. NAFLD/NASH (fatty liver) is actually a condition where GLP-1 class drugs show real promise — weight loss and improved insulin sensitivity can reduce liver fat meaningfully. But if you have cirrhosis, significant fibrosis, or compromised liver function (elevated bilirubin, low albumin), ${peptide} metabolism and clearance change unpredictably. Mild fatty liver and advanced liver disease are completely different risk profiles.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that reduced liver function can change how long effects linger and how "strong" something feels at a given exposure. For many peptides, direct liver-disease subgroup evidence is limited, so discussions often stay cautious and context-heavy.`,
+      `For NAFLD/NASH, GLP-1 agonists have shown reduced liver fat, improved ALT/AST, and in some cases histological improvement. Track liver enzymes (ALT, AST) at baseline and every 2-3 months initially. If you're on medications processed through the liver, clearance may shift as liver fat decreases. For advanced disease, nausea and dehydration from ${peptide} can worsen hepatic encephalopathy risk.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate across liver-disease severity because studies may exclude significant liver impairment or fail to report liver-related stratification. Evidence can also be indirect (mechanistic or mixed-population).`,
+      `How ${peptide} specifically behaves in cirrhosis (Child-Pugh B or C) is unstudied. Whether the liver-protective effects seen in mild NAFLD extend to more advanced disease is unproven. Drug-drug interactions in the setting of impaired hepatic metabolism are largely theoretical.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from disease severity, inflammation status, nutrition, alcohol history, medication burden, bile flow issues, and comorbid metabolic conditions that often co-occur with liver disease.`,
+      `Someone with simple fatty liver and mildly elevated ALT may see their enzymes normalize within months. Someone with compensated cirrhosis faces a completely different risk calculus. Disease stage, synthetic function, medication burden, and alcohol use history drive the range.`,
   },
 
   // ─── HEART DISEASE / CARDIOVASCULAR ──────────────────────────────────────
@@ -405,14 +432,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "nitrates", "nitroglycerin", "isosorbide",
       "spironolactone", "furosemide", "lasix", "amlodipine",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `GLP-1 class drugs actually show cardiovascular benefit in trials, but established heart failure or arrhythmia adds complexity that needs a provider's input before starting ${peptide}.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Heart and cardiovascular conditions can affect baseline heart rate, blood pressure, and fluid balance—which changes how effects on energy, exercise tolerance, and recovery are described.`,
+      `GLP-1 receptor agonists have shown cardiovascular benefit in large trials — reduced MACE events, improved lipids, modest blood pressure reduction. That's the good news. The complexity: if you have heart failure (especially HFrEF), the early nausea/dehydration phase can stress fluid balance. If you're on diuretics, dehydration risk compounds. And the modest heart rate increase (2-4 bpm average) from GLP-1 agonism may matter more if you already have arrhythmia concerns.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that cardiac status can amplify or mask signals that would otherwise be attributed to ${peptide}. When "${q}" is present, changes in heart rate, blood pressure, exercise tolerance, or fluid retention are often difficult to attribute to a single cause.`,
+      `Monitor heart rate, blood pressure, and weight. If you're on diuretics (furosemide, HCTZ), the dehydration from early GI side effects can cause electrolyte shifts — potassium and sodium especially. Blood pressure medications may need dose reduction as weight drops. Semaglutide's SUSTAIN-6 and SELECT trials showed cardiovascular benefit; ${peptide}'s specific cardiovascular profile is still being characterized.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate to people with established heart disease because most study populations exclude significant cardiac conditions. Direct cardiac-specific evidence for many peptides is limited or indirect.`,
+      `${peptide}'s long-term cardiovascular outcomes data is less mature than semaglutide's. How it specifically affects people with low ejection fraction, active arrhythmia, or on complex cardiac medication regimens is largely unstudied. The triple-agonist mechanism (GLP-1/GIP/glucagon) has a different hemodynamic profile than pure GLP-1 agonists.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from cardiac diagnosis type and severity, medication burden, ejection fraction, fluid regulation, activity limitations, and the strong influence that cardiovascular baseline can have on energy, tolerance, and recovery markers.`,
+      `Someone with stable coronary disease on a statin and ACE inhibitor will have a straightforward experience. Someone with heart failure, afib, and four cardiac medications faces real fluid balance and drug interaction complexity. Cardiac diagnosis type, ejection fraction, and medication burden drive the variance.`,
   },
 
   // ─── BLOOD THINNERS / ANTICOAGULATION ────────────────────────────────────
@@ -446,14 +476,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "antiplatelet",
       "stroke prevention", "afib anticoagulation",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Blood thinners don't interact pharmacologically with ${peptide}, but GI nausea and vomiting can create a temporary bleeding risk worth flagging.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. When someone is on blood thinners or has a clotting condition, bleeding and bruising signals take on added significance—so discussions often focus heavily on safety considerations and how to interpret unexpected changes.`,
+      `No direct pharmacological interaction between ${peptide} and anticoagulants. The practical concern is GI: nausea and vomiting during titration can cause retching-related mucosal irritation, and if you're anticoagulated, even minor GI bleeding becomes more significant. For warfarin specifically, significant dietary changes (eating much less, or differently) can shift vitamin K intake and affect INR stability. The DOACs (Eliquis, Xarelto) are less affected by diet but still warrant awareness.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is *elevated baseline concern* around any new compound when anticoagulation is involved. When "${q}" is present, people often pay close attention to bruising, wound healing, and any signs of unexpected bleeding—though attribution is usually uncertain.`,
+      `If you're on warfarin, get INR checked more frequently during ${peptide} titration — dietary shifts from appetite suppression can move it. For DOACs, the main risk is dehydration from nausea/vomiting affecting renal clearance (Eliquis and Xarelto are partially renally cleared). Track any unusual bruising, dark stools, or bleeding gums as early signals.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how ${peptide} specifically interacts with anticoagulant pathways, especially at the level of real-world outcomes versus theoretical mechanistic concern. Many studies don't enroll people on anticoagulation or don't report bleeding outcomes in detail.`,
+      `Whether ${peptide} affects anticoagulant absorption through delayed gastric emptying is theoretically possible but not studied. Real-world interaction data for any GLP-1 agonist combined with anticoagulants is thin.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from which anticoagulant is used, dose stability, INR control, baseline bleeding risk, underlying condition (afib vs DVT vs clotting disorder), and individual tissue sensitivity to bruising and healing.`,
+      `Someone on Eliquis with stable renal function and mild nausea will likely be fine. Someone on warfarin with borderline INR control who develops significant vomiting faces a real complication risk. Anticoagulant type, INR stability, renal function, and GI symptom severity drive the difference.`,
   },
 
   // ─── TENDONITIS ───────────────────────────────────────────────────────────
@@ -478,14 +511,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "plantar fasciitis", "plantar fascia",
       "inflammation",
     ],
+    signal: "low",
+    signalNote: (peptide, q) =>
+      `Tendon issues don't create any special concern with ${peptide} — load management and rehab matter far more than the compound.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Tendon problems are often about load management and slow tissue remodeling, so discussions tend to focus on recovery timelines and variability rather than quick, obvious changes.`,
+      `No pharmacological concern. ${peptide} doesn't affect tendon biology in any known way. The indirect consideration: if weight loss is significant and rapid, and you maintain the same training load, tendons can get irritated because loading patterns change. If you're already dealing with tendinopathy, keep rehab consistent and don't ramp volume just because you feel lighter. Tendons adapt slower than muscles.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that tendon symptoms can lag behind training changes and can flare with small shifts in volume, intensity, or biomechanics. When "${q}" is present, interpretation often benefits from tracking training load and recovery conditions alongside any compound-related discussion.`,
+      `Tendon remodeling operates on a 3-6 month timeline regardless of what else you're doing. Track training load and don't let rapid weight loss trick you into thinking you can suddenly do more. If you're doing eccentric-focused rehab, keep at it — ${peptide} won't interfere. Adequate protein intake (which can drop with appetite suppression) matters for collagen synthesis.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether a reported improvement reflects true tendon remodeling versus reduced irritation, temporary symptom suppression, or simply a change in training stress. Many reports lack details about rehab work, rest, or activity modification.`,
+      `Whether GLP-1 class compounds have any direct effect on connective tissue healing or collagen metabolism is unknown. It's a theoretical non-issue, but it's genuinely unstudied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from injury location and severity, training history, recent load spikes, sleep and nutrition, body weight, biomechanics, adherence to rehab, and differences in how pain is perceived and reported.`,
+      `Tendon issues are overwhelmingly driven by load management, not systemic compounds. Someone doing progressive rehab and managing volume will improve regardless. Someone ignoring load spikes and not sleeping enough won't — and that has nothing to do with ${peptide}.`,
   },
 
   // ─── BLOOD PRESSURE ───────────────────────────────────────────────────────
@@ -512,14 +548,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "hydrochlorothiazide", "hctz", "chlorthalidone",
       "furosemide", "lasix",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `${peptide} typically lowers blood pressure modestly through weight loss — if you're already on BP meds, you may need to reduce them to avoid dizziness.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Blood-pressure symptoms can be strongly influenced by hydration, salt balance, stress, and other medications—so discussion often focuses on context and attribution rather than a single cause.`,
+      `GLP-1 agonists reliably lower blood pressure by 2-5 mmHg on average through weight loss and possibly direct vascular effects. If you're already on antihypertensives, the combined effect can cause orthostatic symptoms — dizziness when standing, lightheadedness, head rushes. This is especially true in the first few weeks when nausea reduces fluid and salt intake. It's manageable: hydrate, get electrolytes, and talk to your prescriber about proactively reducing BP medication if needed.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is *signal overlap*: dizziness, fatigue, and "heart racing" sensations can come from blood pressure shifts, dehydration, anxiety, stimulants, or medication effects. When "${q}" is present, interpretation often benefits from separating subjective sensations from measured readings and surrounding circumstances.`,
+      `Monitor blood pressure at home, especially sitting vs. standing. If the difference is >20 mmHg systolic, you're experiencing orthostatic changes and may need medication adjustment. Diuretics combined with ${peptide}'s early nausea create a dehydration double-hit — sodium, potassium, and magnesium all matter. If you're on a beta blocker, note that ${peptide} can increase heart rate 2-4 bpm, partially offsetting the blocker's effect.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether a reported symptom reflects a real blood-pressure change versus a transient event (hydration, sleep, caffeine, stress) or unrelated factors. Many anecdotes don't include measurements, timing, or co-medication context.`,
+      `How much of ${peptide}'s blood pressure effect is direct versus weight-mediated isn't fully separated. Whether the blood pressure benefit persists after stopping or reverses with weight regain is still being characterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from baseline BP, hydration and electrolyte intake, fitness level, heat exposure, posture changes, concurrent meds (including antihypertensives/diuretics), and differences in sensitivity to palpitations or dizziness.`,
+      `Someone with mild hypertension on one medication may just see their numbers improve. Someone on three blood pressure meds who develops significant nausea and stops eating may become hypotensive and lightheaded within days. Baseline medication burden, hydration habits, and GI tolerance drive the difference.`,
   },
 
   // ─── GI CONDITIONS ────────────────────────────────────────────────────────
@@ -553,14 +592,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "gut motility", "motility disorder",
       "abdominal pain", "abdominal cramps",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Pre-existing GI conditions mean ${peptide}'s most common side effects — nausea, constipation, reflux — will likely hit harder and earlier.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Gastrointestinal conditions can shift baseline appetite, nausea sensitivity, and bowel patterns, which strongly shapes how effects are perceived and reported.`,
+      `GLP-1 agonists slow gastric emptying. If you already have gastroparesis, IBS-C, or GERD, this will amplify those symptoms — sometimes significantly. If you have IBD (Crohn's, UC), the nausea and appetite suppression can make it harder to maintain nutrition during flares. For IBS-D, some people actually improve because slower transit normalizes things. Gastroparesis is the biggest red flag — ${peptide} can make it meaningfully worse.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that GI symptoms are highly sensitive and easily influenced by stress, diet, and expectation. When "${q}" is present, distinguishing baseline variability from new effects becomes especially important.`,
+      `Nausea is the #1 side effect of every GLP-1 agonist, affecting 20-45% of people. If you already have a sensitive GI tract, you're more likely to be in that group. Track bowel patterns, nausea timing (before/after meals, AM vs PM), and reflux episodes. For GERD: slower gastric emptying can worsen reflux, especially if lying down after eating. Prokinetic medications (domperidone, metoclopramide) are counterproductive with ${peptide} since they work in opposite directions.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how much of a change is directly attributable to ${peptide} versus underlying motility patterns, inflammation cycles, microbiome shifts, or concurrent dietary changes. Many studies don't deeply stratify by GI diagnosis.`,
+      `Whether ${peptide} has direct effects on gut inflammation (helpful or harmful) in IBD is unknown. Long-term effects of prolonged gastric emptying delay on GERD progression or Barrett's esophagus risk haven't been studied. The gut microbiome shifts from dramatically reduced food intake are largely uncharacterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from diagnosis subtype (IBS vs IBD), flare cycles, stress load, fiber intake, hydration, microbiome diversity, medication use, and individual sensitivity to gut sensations.`,
+      `Someone with mild IBS-D may actually feel better on ${peptide}. Someone with gastroparesis or severe GERD may find it intolerable within the first week. GI diagnosis subtype, baseline motility, current medications, and individual nausea sensitivity explain the wide range.`,
   },
 
   // ─── SLEEP ────────────────────────────────────────────────────────────────
@@ -590,14 +632,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "trazodone for sleep", "mirtazapine for sleep",
       "non-restorative sleep", "sleep deprivation",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Sleep issues don't block ${peptide} use, but poor sleep blunts weight loss and amplifies fatigue — and sleep apnea often improves with weight loss, which is worth tracking.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Sleep quality is one of the biggest drivers of how people feel day-to-day, so it can dominate perceived "effects" and make attribution especially tricky.`,
+      `Sleep is the single biggest confounder in how people feel on ${peptide}. Poor sleep amplifies fatigue, increases hunger, worsens insulin resistance, and makes every side effect feel worse. On the positive side: weight loss from ${peptide} can dramatically improve obstructive sleep apnea — some people reduce or eliminate CPAP within months. If you have untreated sleep apnea, fixing that will likely matter more than anything ${peptide} does.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that poor sleep amplifies sensitivity—mood, appetite, pain, motivation, and energy can swing widely. When "${q}" is present, changes may reflect improved or worsened sleep more than a direct primary effect of ${peptide}.`,
+      `Weight loss of 10-15% can significantly reduce AHI (apnea events per hour) in obstructive sleep apnea. Track sleep quality, not just hours — if you're waking up more rested, that's a real signal. For insomnia, ${peptide} hasn't been shown to directly affect sleep architecture, but eating much less (especially eating nothing after 3pm, which some people do on GLP-1s) can disrupt overnight blood sugar and cause early waking.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether reported changes are direct or downstream (e.g., sleep improved → appetite and mood shift). Many studies don't measure sleep rigorously, and real-world reports rarely control for sleep debt or apnea severity.`,
+      `Whether ${peptide} directly affects sleep neurobiology or circadian signaling is unknown. The relationship between rapid caloric restriction and sleep disruption is well-established but poorly characterized in the GLP-1 context specifically. For shift workers, how ${peptide}'s effects interact with circadian disruption is completely unstudied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from sleep apnea severity, total sleep time, sleep regularity, caffeine/stimulant use, stress load, bedtime routine, alcohol use, and whether sleep disruption is primary or secondary to another condition.`,
+      `Someone with sleep apnea who loses 30 pounds may experience life-changing sleep improvement. Someone with chronic insomnia who starts undereating may find sleep gets worse before it gets better. Sleep diagnosis type, baseline sleep debt, and whether apnea is present drive dramatically different trajectories.`,
   },
 
   // ─── HORMONE THERAPY ──────────────────────────────────────────────────────
@@ -629,14 +674,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "anastrozole", "letrozole", "aromatase inhibitor", "ai",
       "hcg", "human chorionic gonadotropin",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Hormone therapy and ${peptide} don't interact directly, but body composition changes from both can amplify results — and estrogen levels shift with fat loss, which matters for both TRT and HRT users.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Hormone therapy can strongly influence energy, body composition, mood, libido, and recovery—so it often changes baseline expectations and how results are interpreted.`,
+      `No pharmacological interaction. The practical consideration is that fat tissue converts testosterone to estrogen (aromatization), so as ${peptide} drives fat loss, estrogen levels may drop — which can affect mood, libido, and joint comfort for both men on TRT and women on HRT. For men on TRT, rapid fat loss sometimes improves free testosterone but shifts estradiol, requiring AI (aromatase inhibitor) dose adjustment. For women on HRT, monitor whether hot flashes or mood shift as body composition changes.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that hormone status can amplify or dampen perceived effects. When "${q}" is present, changes in energy, appetite, muscle recovery, or mood may reflect overlapping hormonal signaling rather than a single isolated mechanism.`,
+      `Track body composition (not just weight) if possible — DEXA or even waist circumference. For TRT users, check total testosterone, free testosterone, and estradiol after 3-6 months of significant weight loss, since the ratios can shift. GLP-1 agonists may improve testosterone levels in obese men independently of TRT by reducing insulin resistance and fat mass. HRT absorption (patches, gels) can change with body composition shifts.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how much of a reported effect is due to ${peptide} versus underlying hormone levels, dose stability, aromatization, or recent protocol changes. Many datasets don't stratify by hormone therapy status.`,
+      `Whether ${peptide} directly affects sex hormone binding globulin (SHBG) or androgen receptor sensitivity is unstudied. How rapid fat loss specifically affects HRT dosing requirements hasn't been systematically evaluated. The timing of hormonal shifts relative to weight loss phases is poorly characterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from dose, delivery method (injection vs topical), estradiol balance, SHBG levels, body fat percentage, sleep quality, training intensity, and whether hormone levels are stable or recently adjusted.`,
+      `Someone on stable TRT with moderate body fat may see improved free T as fat drops. Someone on high-dose TRT with aggressive fat loss may get an estrogen crash that tanks mood and libido. Hormone type, dose, delivery method, starting body fat percentage, and rate of fat loss all drive the variance.`,
   },
 
   // ─── MENOPAUSE ────────────────────────────────────────────────────────────
@@ -662,14 +710,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "fsh", "follicle stimulating hormone",
       "sleep disruption menopause",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Menopause doesn't block ${peptide} use — but the hormonal transition amplifies fatigue, sleep disruption, and weight-loss resistance, which shapes the experience.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Menopause transitions can shift sleep, temperature regulation, mood, and body composition signals, which can change how people interpret energy, appetite, and recovery discussions.`,
+      `Perimenopause and menopause shift body composition toward visceral fat, increase insulin resistance, and disrupt sleep — which is exactly why many women in this window seek out ${peptide}. The compound can work well here, but expectations need calibrating: weight loss may be slower than for someone with the same BMI who isn't in menopausal transition. The compounding fatigue from declining estrogen plus ${peptide}'s titration-phase energy dip can feel significant for the first month. It usually improves.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that baseline symptoms can fluctuate substantially during this phase (sleep quality, stress tolerance, appetite, fatigue). When "${q}" is present, it's common for people to attribute changes to multiple overlapping factors.`,
+      `Track sleep quality (not just hot flashes), energy patterns, and mood alongside weight. If you're on HRT, that generally helps ${peptide} outcomes because stabilized estrogen improves insulin sensitivity and sleep. Bone density is a background concern — rapid weight loss accelerates bone loss, and menopause already does this. Strength training and adequate calcium/vitamin D aren't optional. Protein needs are higher during menopause (1.2g/kg minimum).`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate to perimenopausal or menopausal populations because many studies don't stratify by menopause status or symptom severity. Direct evidence for certain outcomes can be limited.`,
+      `Whether ${peptide} has any direct effect on menopausal symptoms (hot flashes, mood) is unknown. How the triple-agonist mechanism interacts with declining ovarian hormones hasn't been studied. Whether GLP-1 class compounds affect bone density outcomes differently in menopausal versus premenopausal women is an open question.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from stage (peri vs post), sleep disruption severity, stress load, HRT use, training status, and differences in baseline metabolic health.`,
+      `A postmenopausal woman on stable HRT with good sleep may respond like anyone else. A perimenopausal woman with night sweats, insomnia, and wildly fluctuating hormones may find the first 6 weeks of ${peptide} genuinely difficult. Menopause stage, HRT status, sleep quality, and baseline metabolic health drive the range.`,
   },
 
   // ─── UNDERWEIGHT / LOW BMI ────────────────────────────────────────────────
@@ -692,14 +743,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "nutrient deficiency", "nutrient deficiencies",
       "hard gainer", "ectomorph",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `If you're already underweight or have low appetite, ${peptide}'s appetite suppression is a real risk — further caloric restriction can cause dangerous muscle and nutrient depletion.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. When someone is underweight or frail, baseline reserves are lower, so appetite, hydration, and tolerance signals may show up sooner and be interpreted differently.`,
+      `This is a genuine concern. ${peptide} is designed to suppress appetite and promote weight loss. If you're already underweight or struggling to eat enough, adding aggressive appetite suppression can push caloric intake dangerously low — muscle wasting, electrolyte depletion, and nutrient deficiency accelerate quickly in people without reserves. Unless there's a specific non-weight-loss reason to use ${peptide} (e.g., glucose control), this needs a clear clinical rationale.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that low baseline reserves can amplify perceived effects (good or bad). When "${q}" is present, discussions often emphasize whether a change reflects true benefit or just reduced tolerance margin.`,
+      `GLP-1 agonists cause dose-dependent appetite suppression and weight loss. In someone already at or below healthy weight, there's no metabolic "floor" that prevents further loss. Track caloric intake, protein (aim for at least 1.6g/kg), and body weight weekly. Electrolytes (sodium, potassium, magnesium) can drop quickly if food intake falls below 1000 calories/day. Muscle mass should be monitored — grip strength or body composition tracking.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate to frail or underweight populations because many studies enroll healthier or more weight-stable cohorts. Subgroup evidence may be limited.`,
+      `Whether ${peptide} has utility at low body weight for non-metabolic indications is poorly studied. Pharmacokinetics may differ in low body-fat individuals (altered distribution volume). The threshold at which appetite suppression becomes clinically dangerous hasn't been defined for this population.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from nutrition status, protein intake, baseline activity, sleep quality, medication burden, and underlying causes of low weight (illness, GI issues, stress).`,
+      `Someone with low BMI but normal muscle mass and good nutritional status may tolerate it cautiously. Someone who's frail, malnourished, or has cachexia is at real risk of harm. Baseline nutritional reserves, reason for low weight, and protein intake capacity drive the difference.`,
   },
 
   // ─── ATHLETES / INJURY RECOVERY ───────────────────────────────────────────
@@ -735,14 +789,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "plantar fasciitis",
       "overuse injury", "overuse injuries",
     ],
+    signal: "low",
+    signalNote: (peptide, q) =>
+      `No special athletic concern with ${peptide} — but preserving muscle mass during weight loss requires intentional protein intake and resistance training.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. In athlete and rehab contexts, baseline training stress and tissue healing timelines can dominate how people interpret changes—so "worked" vs "did nothing" often depends on where someone is in the recovery cycle.`,
+      `${peptide} doesn't impair recovery or healing. The athlete-specific consideration is lean mass preservation: GLP-1 agonist-driven weight loss includes 30-40% lean mass unless you actively counteract it with resistance training and high protein (1.6-2.2g/kg). For endurance athletes, the appetite suppression can make fueling for long sessions difficult — bonking becomes more likely if you can't eat enough. For injury rehab, adequate nutrition is critical for tissue repair, and undereating slows healing.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that training load and recovery stage matter a lot. Symptoms like soreness, stiffness, sleep quality, and perceived readiness can shift quickly with volume/intensity changes, so athlete discussions tend to focus on separating normal training fluctuation from any peptide-specific signal.`,
+      `Track training performance, not just body weight. If lifts are declining or endurance is dropping, you're likely underfueling. Protein timing around training matters more on ${peptide} because total intake tends to drop. For injury recovery, maintain caloric intake at maintenance (not deficit) — healing tissue needs energy. Some athletes report improved body composition but worse performance during aggressive ${peptide} dosing.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether a reported improvement reflects true tissue healing versus short-term shifts in pain perception, swelling, sleep, or training behavior. Many conversations rely on anecdote, and studies may not match real-world injury types, rehab protocols, or athlete workloads.`,
+      `Whether ${peptide} affects muscle protein synthesis, recovery kinetics, or anabolic signaling pathways is largely unstudied in athletic populations. The interaction between high training volume and aggressive appetite suppression hasn't been formally characterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from the specific tissue involved (muscle vs tendon vs ligament), injury severity, rehab quality, sleep, nutrition, stress, re-injury risk, and whether training load was reduced or ramped while "${q}" was being discussed.`,
+      `A recreational lifter wanting to cut body fat with solid protein intake may see great results. A competitive endurance athlete trying to maintain volume while eating 40% less will struggle. Training type, intensity, protein discipline, and whether you're in-season vs. off-season drive the difference.`,
   },
 
   // ─── YOUNGER PEOPLE ───────────────────────────────────────────────────────
@@ -757,14 +814,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "18 years old", "19 years old", "early 20s", "20s", "18-25", "young adult",
       "developing body", "adolescence", "developmental stage",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Adolescents and young adults are still developing — ${peptide}'s long-term effects on growth, hormones, and bone density in this age group are essentially unknown.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. In younger or growth-stage contexts, baseline physiology can be different, and discussion tends to focus on uncertainty, safety signals, and the fact that most evidence is not built around adolescents.`,
+      `The concern isn't a drug interaction — it's developmental context. Adolescents have active growth plates, developing endocrine systems, and rapidly changing body composition. Aggressive appetite suppression during this window could affect bone density accrual, hormonal development, and growth. Semaglutide has some adolescent obesity data showing it works, but long-term safety over decades of use starting in youth is completely unknown. The younger the person, the higher the bar for justification.`,
     whatIsKnown: (peptide, q) =>
-      `What's most consistent is that evidence quality is usually lower for "${q}" because many studies focus on adults. Conversations often emphasize that growth-stage hormones, training volume, and sleep can strongly shape outcomes people attribute to ${peptide}.`,
+      `Semaglutide's STEP TEENS trial showed efficacy in adolescents with obesity, but follow-up is short. Bone density, hormonal development, and growth velocity weren't primary endpoints. For college-age adults (18-25), the main practical risk is disordered eating patterns — using ${peptide} for body image rather than metabolic health can normalize extreme restriction. Track growth (if still growing), bone health markers, and maintain honest conversations about why it's being used.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how adult findings translate to adolescents, and what's "normal variability" versus a true signal. Many datasets do not include age-specific stratification or long-term follow-up in younger groups.`,
+      `Long-term effects of GLP-1 agonists on skeletal development, pubertal hormones, and brain maturation are unknown. Whether starting in adolescence creates dependency patterns (weight regain requiring lifetime use) is a real open question. ${peptide} specifically has no published adolescent data.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from puberty stage, sleep needs, training load, nutrition adequacy, stress, and rapid baseline changes that can dwarf subtle effects being discussed.`,
+      `A 22-year-old with class 3 obesity and metabolic syndrome has a very different risk-benefit than a 16-year-old who wants to lose 15 pounds. Developmental stage, metabolic severity, and psychological relationship with food and body image drive the calculus.`,
   },
 
   // ─── OVERWEIGHT / HIGH BMI ────────────────────────────────────────────────
@@ -790,14 +850,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "belly fat", "abdominal obesity", "visceral fat",
       "slow metabolism",
     ],
+    signal: "low",
+    signalNote: (peptide, q) =>
+      `This is ${peptide}'s primary use case — no special concerns beyond standard titration and monitoring.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. In overweight/high-BMI contexts, appetite signals and metabolic markers can shift for many reasons—so interpretation often improves when people separate "how I feel" from measurable changes over time.`,
+      `Weight loss is what ${peptide} is designed for. GLP-1/GIP/glucagon triple agonism produces the most aggressive appetite suppression and weight loss in the class — early trial data shows 20-25%+ body weight reduction. The main thing to calibrate: the first 4-6 weeks can be intense (nausea, appetite crash, fatigue), and this is dose-dependent. Start low, titrate slowly, and don't try to white-knuckle through severe nausea — it's better to stay at a lower dose longer than to push through and quit.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that baseline appetite regulation, sleep, and stress can strongly shape reported outcomes. When "${q}" is present, people often pay closer attention to appetite, nausea, energy, and blood-sugar-related sensations that may not generalize across individuals.`,
+      `Track weight weekly (not daily — fluctuations are noise), waist circumference monthly, and how your clothes fit. Protein intake is critical — aim for 1.2-1.6g/kg of ideal body weight to minimize lean mass loss. Resistance training significantly improves body composition outcomes. Blood pressure, fasting glucose, and lipids typically improve within 3-6 months. Most people reach maximum weight loss at 9-12 months and then stabilize.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether a reported change reflects a direct effect of ${peptide} versus concurrent behavior changes, diet composition shifts, training changes, or normal variability in weight and hunger signals.`,
+      `Weight regain after stopping is the elephant in the room — most GLP-1 trials show significant regain within 12 months of discontinuation. Whether ${peptide}'s triple-agonist mechanism produces more durable effects than semaglutide or tirzepatide is unknown. The long-term metabolic adaptation to sustained GLP-1 agonism is still being characterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from baseline insulin resistance, sleep quality, stress, diet, training status, medication effects, and how quickly someone changes lifestyle variables during the same window they're discussing "${q}".`,
+      `Someone with high insulin resistance and food noise may feel like a completely different person within weeks. Someone with emotional eating patterns may lose appetite but not the underlying drive, creating a frustrating disconnect. Baseline metabolic health, relationship with food, and whether structural eating habits change alongside the compound drive the range.`,
   },
 
   // ─── POST-COVID / LONG COVID ─────────────────────────────────────────────
@@ -825,14 +888,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "can't exercise after covid", "exercise intolerance", "post-exertional malaise",
       "pem", "crashes", "energy crashes",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Long COVID's unpredictable symptom cycling makes it hard to tell what ${peptide} is doing versus what the condition is doing — go slow and track carefully.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Post-COVID and Long COVID contexts involve multi-system involvement—fatigue, immune dysregulation, autonomic dysfunction, and cognitive symptoms—that can shift how all outcomes are perceived and which signals get attention.`,
+      `Long COVID involves immune dysregulation, autonomic instability, and metabolic disruption that can mimic or amplify every common ${peptide} side effect. Fatigue, brain fog, nausea, heart rate changes, and exercise intolerance are all Long COVID features AND ${peptide} titration features. If you're going to try it, start at the lowest possible dose and titrate much slower than standard protocols — your nervous system is already sensitized. Some Long COVID patients report improvement (possibly anti-inflammatory effects), but others report flares.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that Long COVID produces layered, overlapping symptoms (fatigue, brain fog, breathlessness, palpitations) that fluctuate unpredictably. When "${q}" is part of the picture, it can be very difficult to attribute any change to ${peptide} versus normal Long COVID variation or recovery trajectory.`,
+      `Track heart rate, fatigue patterns, and cognitive function separately from weight. If you have post-COVID POTS, ${peptide}'s mild heart rate increase and potential dehydration from nausea can worsen orthostatic symptoms. Hydration and electrolytes are non-negotiable. Some early data suggests GLP-1 agonists may reduce neuroinflammation, but this is mechanistic speculation, not proven therapeutic benefit.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well findings from healthy or typical-disease populations translate to Long COVID, since the underlying biology—microclots, immune dysregulation, viral persistence—is still being characterized. Evidence for ${peptide} in this specific context is typically absent or indirect.`,
+      `Whether ${peptide} helps or worsens Long COVID symptoms is genuinely unknown — it could go either way depending on the individual's specific pathology. The interaction between GLP-1 agonism and immune dysregulation, microclot biology, and autonomic dysfunction hasn't been studied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from which organ systems were affected (respiratory, cardiac, neurological), initial COVID severity, vaccination status, timing since infection, autonomic involvement, co-occurring conditions, and how sensitized someone is to physical sensations after a prolonged illness.`,
+      `Long COVID itself varies enormously — someone with mild brain fog will have a different experience than someone with severe POTS and post-exertional malaise. Which organ systems were affected, how long since acute infection, and the specific pattern of autonomic involvement drive the unpredictability.`,
   },
 
   // ─── CHRONIC FATIGUE / ME-CFS / POTS / DYSAUTONOMIA ──────────────────────
@@ -863,14 +929,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "brain fog", "cognitive dysfunction", "memory issues",
       "pain all over", "widespread pain",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `ME/CFS and POTS involve a sensitized autonomic nervous system — ${peptide}'s effects on heart rate, appetite, and energy can amplify existing instability.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Chronic fatigue conditions like ME/CFS and POTS involve profound energy limitation and autonomic instability, which means baseline function can vary enormously day-to-day and small changes can be hard to interpret.`,
+      `This population needs extra caution. ${peptide}'s nausea, dehydration risk, and modest heart rate increase can directly worsen POTS symptoms (orthostatic tachycardia, dizziness, presyncope). ME/CFS patients often have post-exertional malaise, and the caloric restriction from appetite suppression counts as metabolic stress — some people crash. If you're going to try ${peptide}, start at the absolute minimum dose, ensure electrolytes and fluid intake are solid, and track energy patterns rather than weight.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that post-exertional malaise (PEM) and autonomic symptoms set a very different starting point for interpreting any compound's effects. When "${q}" is present, perceived changes in energy, heart rate, and cognition often reflect illness fluctuation as much as any external factor.`,
+      `POTS patients should monitor resting and standing heart rate — if the differential worsens (>30bpm increase on standing), ${peptide} may be contributing via dehydration. Sodium and fluid intake need to increase, not decrease, during titration. For ME/CFS, track post-exertional malaise patterns: if crashes become more frequent or severe, that's a signal to pause. Appetite suppression can drop caloric intake below what these conditions tolerate.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how findings from healthy populations or different disease models translate to ME/CFS, since the underlying biology remains incompletely understood. Formal evidence for ${peptide} in this population is usually absent or anecdotal, and PEM risk makes interpretation especially complex.`,
+      `Whether GLP-1 agonists affect autonomic function, mast cell activation, or the neuroimmune pathways involved in ME/CFS is unknown. Some theoretical pathways suggest possible anti-inflammatory benefit, but there's no clinical evidence. The interaction between energy envelope management (pacing) and aggressive appetite suppression is completely uncharacterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from illness severity and duration, autonomic subtype (POTS vs other dysautonomia), co-occurring MCAS or hypermobility, sleep quality, stress, activity pacing, and the sensitivity of the nervous system in this context.`,
+      `Someone with mild POTS and stable energy may tolerate ${peptide} fine with extra hydration. Someone with severe ME/CFS who's already struggling to eat enough may find appetite suppression tips them into a crash cycle. Illness severity, autonomic subtype, baseline caloric intake, and hydration discipline drive the range.`,
   },
 
   // ─── CHRONIC PAIN / PAIN MEDICATIONS ─────────────────────────────────────
@@ -911,14 +980,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "complex regional pain syndrome", "crps",
       "central sensitization",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Pain medications don't interact directly with ${peptide}, but opioids slow gut motility just like GLP-1 agonists — stacking these effects can cause severe constipation.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Chronic pain contexts involve a high medication burden and a nervous system that may already be sensitized—which changes how new signals, side effects, and perceived benefits are interpreted.`,
+      `The practical issue is GI overlap. Opioids and ${peptide} both slow gut motility — combined, constipation can become severe. Gabapentin and pregabalin cause weight gain and appetite increase in some people, which ${peptide} counteracts, but the tug-of-war can be confusing. For weight-bearing pain (back, hips, knees), weight loss from ${peptide} often provides meaningful pain relief — sometimes more than the pain medication itself. That's a real and underappreciated benefit.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that pain medications (especially opioids, gabapentinoids, and muscle relaxants) can dampen energy, cognition, and motivation—which creates a complicated baseline when trying to interpret what ${peptide} is contributing. Pain itself also affects sleep, appetite, and mood, layering additional confounders.`,
+      `If you're on opioids, proactively manage constipation (fiber, magnesium, stool softeners) before starting ${peptide}, not after. Gabapentin and pregabalin don't have direct interactions but both can cause peripheral edema — monitor if you notice swelling. NSAIDs on an empty stomach (which happens more often with suppressed appetite) increase GI bleeding and ulcer risk. Track pain levels separately from ${peptide} side effects so you can see if the weight loss is actually helping.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how much of a reported change reflects ${peptide} versus fluctuations in pain levels, medication adjustments, sleep quality, or mood shifts that travel with chronic pain. Studies rarely enroll people on complex pain regimens.`,
+      `Whether ${peptide} affects pain perception, central sensitization, or opioid receptor signaling is unknown. The gut motility interaction between opioids and GLP-1 agonists hasn't been formally characterized. Whether rapid weight loss changes pain medication dosing requirements (through volume of distribution changes) is unstudied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from pain type and location, medication class and dose, tolerance development, sleep disruption, psychological impact of chronic pain, activity levels, and whether pain is currently stable or in a flare cycle.`,
+      `Someone with knee pain on Tylenol may find dramatic relief from weight loss. Someone on chronic high-dose opioids with central sensitization may find the constipation intolerable and the pain unchanged. Pain type, medication class, whether the pain is weight-bearing, and baseline GI function drive the difference.`,
   },
 
   // ─── CANCER / ONCOLOGY ────────────────────────────────────────────────────
@@ -953,14 +1025,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "cachexia", "cancer weight loss",
       "palliative", "palliative care",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `Active cancer treatment is a real flag — ${peptide} hasn't been studied in this context, and the metabolic load is unpredictable.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Cancer and active treatment create a physiological environment unlike most study populations—immune function, metabolism, organ reserve, and medication interactions are all significantly altered.`,
+      `This splits sharply: active treatment vs. survivorship. During active chemo, radiation, or immunotherapy, adding ${peptide} introduces appetite suppression and nausea into a system already struggling with both. Cancer cachexia (involuntary weight loss) is the opposite of what ${peptide} does — if someone is losing weight from cancer, further appetite suppression is harmful. In survivorship (years out, no active disease), the risk profile is much more like the general population, especially for weight management after treatment-related gain.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that cancer treatment changes baseline dramatically: fatigue, nausea, appetite loss, and immune suppression can dominate the experience. When "${q}" is present, separating treatment effects from anything ${peptide} might contribute is especially difficult, and the stakes around unexpected changes are higher.`,
+      `During active treatment, prioritize nutrition — muscle mass preservation matters for treatment tolerance and outcomes. ${peptide}'s nausea stacked on chemo nausea can make eating nearly impossible. For cancer survivors, post-treatment weight gain (especially from hormonal therapy like tamoxifen or ADT) is common, and GLP-1 agonists can help. Some early research suggests GLP-1 agonism may have anti-tumor properties, but this is mechanistic speculation, not treatment guidance.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how findings from healthy or non-cancer populations apply to people in active treatment or early survivorship, since organ function, immune status, and drug metabolism can be significantly altered. Direct evidence for ${peptide} in oncology contexts is typically very limited.`,
+      `Whether ${peptide} affects tumor biology, immune surveillance, or treatment efficacy is completely unknown. Drug-drug interactions with chemotherapy agents are unstudied. The safety profile in immunocompromised patients (post-transplant, neutropenic) is uncharacterized. For survivors, long-term cancer recurrence risk with metabolic compound use is an open question.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from cancer type, treatment phase, cumulative treatment toxicity, current immune status, nutritional state, organ function (liver, kidney, bone marrow), and the psychological context of navigating a cancer diagnosis.`,
+      `A breast cancer survivor 5 years out wanting to lose tamoxifen-related weight has a completely different profile than someone currently on chemo with treatment-related cachexia. Cancer type, treatment phase, nutritional status, and how far from active disease you are drive the calculus.`,
   },
 
   // ─── RESPIRATORY / PULMONARY ──────────────────────────────────────────────
@@ -994,14 +1069,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "exercise-induced asthma", "exercise induced bronchospasm",
       "vo2 max", "aerobic capacity", "reduced exercise capacity",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Respiratory conditions themselves don't interact with ${peptide}, but oral steroid use for flares affects weight and glucose — and weight loss often improves breathing capacity.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Respiratory conditions affect oxygen delivery, exercise capacity, and sometimes systemic inflammation—which can shift how effects on energy, endurance, and recovery are perceived and reported.`,
+      `No direct pharmacological concern between ${peptide} and inhaled respiratory medications. The real connection is weight: for obesity-related breathing difficulty, weight loss from ${peptide} can significantly improve exercise tolerance, reduce inhaler use, and improve sleep apnea. If you're on oral steroids (prednisone) for flares, those cause weight gain, glucose spikes, and appetite increase — ${peptide} counteracts some of this, but the metabolic whiplash from steroid courses can make tracking difficult.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that breathing limitations set a ceiling on energy and exercise tolerance that can dominate outcomes. When "${q}" is present, changes in perceived exertion, endurance, and recovery may reflect respiratory status as much as any direct effect of ${peptide}.`,
+      `Weight loss of 10-15% can measurably improve FEV1 and exercise capacity in people with obesity-related breathing limitations. For asthma, reduced abdominal fat improves diaphragm mechanics. If you're on frequent oral steroid courses, track glucose during flares — ${peptide} can help blunt the steroid-induced spikes. Sleep apnea (which overlaps heavily with respiratory conditions) often improves with weight loss.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well findings from people with normal lung function translate to those with significant respiratory limitations. Inhaled medications and systemic steroids can also affect energy, bone density, immune function, and metabolism in ways that create additional confounders.`,
+      `Whether ${peptide} has direct airway or anti-inflammatory effects relevant to asthma or COPD is unknown. How GLP-1 agonism interacts with the systemic effects of chronic oral steroid use (bone loss, glucose, muscle wasting) hasn't been studied. For pulmonary fibrosis or pulmonary hypertension, there's zero data.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from condition type and severity, current exacerbation status, inhaler and medication regimen, allergen exposure, activity level, and how much respiratory limitation already constrains daily function.`,
+      `Someone with obesity-related asthma may see dramatic breathing improvement with weight loss. Someone with severe COPD and low body weight may find appetite suppression counterproductive. Respiratory diagnosis, body weight, steroid use frequency, and baseline exercise capacity drive the range.`,
   },
 
   // ─── BIPOLAR / ANTIPSYCHOTICS / MOOD STABILIZERS ─────────────────────────
@@ -1039,14 +1117,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "tardive dyskinesia",
       "lithium levels", "lithium toxicity",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Antipsychotics cause significant metabolic side effects that ${peptide} can help counter — but lithium levels can shift with dehydration, which is a real thing to monitor.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Bipolar disorder and antipsychotic medications create a complex baseline—metabolic changes, mood cycling, sedation, and significant pharmacological interactions can all influence how effects are experienced and interpreted.`,
+      `Antipsychotics (especially olanzapine, quetiapine, clozapine) cause substantial weight gain and metabolic dysfunction — sometimes 20-40+ pounds. ${peptide} directly counteracts this, and there's growing interest in using GLP-1 agonists specifically for antipsychotic-induced weight gain. The serious watch item: if you're on lithium, dehydration from ${peptide}'s nausea phase can raise lithium levels into the toxic range. Lithium toxicity is dangerous. Stay hydrated and get levels checked during titration.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that mood stabilizers and antipsychotics can significantly affect metabolic markers (weight, blood sugar, lipids), energy levels, and cognitive clarity. When "${q}" is present, separating medication effects from any compound-related signal is especially difficult, and mood stability itself can shift how experiences are labeled.`,
+      `Monitor lithium levels closely during ${peptide} titration — any significant nausea, vomiting, or reduced fluid intake can concentrate lithium. For olanzapine/clozapine, metabolic monitoring (glucose, lipids, waist circumference) may show improvement with ${peptide}. Mood stability is the priority — if appetite, sleep, or energy changes trigger mood episode concern, flag it immediately. Some antipsychotics (quetiapine) are sedating; combined with ${peptide} fatigue, the first few weeks can feel heavy.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how ${peptide} interacts with the pharmacology of mood stabilizers or antipsychotics, and most study populations exclude people on these medications. Changes in energy, sleep, appetite, and weight in this context have multiple plausible explanations.`,
+      `Whether ${peptide} affects mood stability, dopaminergic signaling, or antipsychotic efficacy is unstudied. The metabolic benefits of GLP-1 agonists in antipsychotic-treated populations are being actively researched but data for ${peptide} specifically is absent. Long-term psychiatric outcomes for people using both are unknown.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from mood phase (stable vs hypomanic vs depressed), specific medication class and dose, metabolic side-effect burden, sleep quality, stress load, substance use, and how closely someone is monitoring their mental state for changes.`,
+      `Someone on lamotrigine (weight-neutral) will have a very different metabolic baseline than someone on olanzapine who's gained 40 pounds. Medication class, dose, metabolic side-effect severity, and whether mood is currently stable drive the variance. Lithium users are in a separate risk category because of the dehydration-toxicity pathway.`,
   },
 
   // ─── OSTEOPOROSIS / BONE HEALTH ───────────────────────────────────────────
@@ -1083,14 +1164,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "collagen", "bone collagen",
       "cortisone bone loss", "steroid bone loss", "glucocorticoid-induced osteoporosis",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Rapid weight loss accelerates bone density loss — if you already have osteoporosis, muscle and bone preservation with ${peptide} need active management.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Bone health contexts often involve long-term medication use and a focus on markers that change slowly—which means interpreting short-term experiences is tricky, and the medications used have their own systemic effects.`,
+      `Weight loss from any cause reduces bone density — and GLP-1 agonist-driven loss is no exception. For someone already dealing with osteoporosis or osteopenia, this isn't a reason to avoid ${peptide}, but it means you need to actively protect bone: strength training (especially weight-bearing and resistance), adequate calcium (1200mg/day), vitamin D (get levels checked, target 40-60 ng/mL), and adequate protein. Bisphosphonates like Fosamax need to be taken on an empty stomach with water — ${peptide}'s delayed gastric emptying could theoretically affect absorption timing.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that bone density changes on a timescale of months to years, while subjective symptoms (joint comfort, energy, recovery) are what people notice day-to-day. When "${q}" is present, it's important to separate how ${peptide} might influence bone-adjacent markers (collagen, inflammation) from claims about bone density itself.`,
+      `Get a DEXA scan before starting if you don't have a recent one. Track it annually. Weight-bearing exercise is the single most protective thing for bone during weight loss — don't skip it. Lean mass loss (which accompanies all GLP-1 weight loss) correlates with bone density loss. If you're on denosumab (Prolia), stopping it causes rapid bone loss — that's separate from ${peptide} but adds to the context. Bisphosphonate absorption timing may need adjustment.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well general findings translate to people with established bone disease or on bisphosphonate/denosumab therapy, since these medications alter bone metabolism significantly. Direct evidence for ${peptide} in osteoporosis populations is limited.`,
+      `Whether ${peptide} has any direct effect on bone metabolism (osteoblast/osteoclast activity) is unclear. Some GLP-1 receptor agonist data suggests possible bone-protective effects through GIP receptor activation, but this is mechanistic and not clinically proven. Whether rate of weight loss correlates with rate of bone loss in this specific context is unquantified.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from severity of bone loss, medication class, calcium and vitamin D status, hormonal status (especially estrogen/testosterone), activity level, history of steroid use, and underlying cause of bone loss.`,
+      `Someone with osteopenia who does heavy resistance training and takes calcium/D may see zero bone impact. Someone with established osteoporosis who loses weight rapidly without exercise may see meaningful density decline. Baseline bone health, exercise type, calcium/D status, and rate of weight loss drive the outcome.`,
   },
 
   // ─── ENDOMETRIOSIS / PCOS / WOMEN'S REPRODUCTIVE HEALTH ──────────────────
@@ -1130,14 +1214,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "endocrine disruptor", "period tracker", "luteal phase",
       "follicular phase", "cycle tracking",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `PCOS responds well to ${peptide}'s insulin-sensitizing effects, but endometriosis is inflammation-driven and less predictable — track cycle patterns closely.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Conditions like endometriosis and PCOS involve hormonal and inflammatory dynamics that fluctuate with the menstrual cycle—which creates a shifting baseline that makes it hard to isolate what any single compound is contributing.`,
+      `For PCOS, ${peptide} is arguably a strong fit: insulin resistance drives much of PCOS pathology, and GLP-1/GIP agonism directly improves insulin sensitivity, reduces androgen levels, and can restore ovulation. This is genuinely promising. For endometriosis, the connection is weaker — it's an inflammatory and hormonal condition where weight loss may or may not affect symptoms. The fertility angle matters: ${peptide} can improve ovulation in PCOS quickly, sometimes unexpectedly. If you don't want to get pregnant, use reliable contraception (and note that GLP-1 drugs may reduce oral contraceptive absorption).`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that hormonal cycling, inflammation, and pain levels in these conditions can produce week-to-week variability that dominates subjective experience. When "${q}" is present, changes in energy, mood, appetite, and pain often reflect cycle phase and underlying condition as much as any external compound.`,
+      `For PCOS, track cycle regularity, androgen symptoms (acne, hair growth), and fasting insulin alongside weight. Improvements in cycle regularity can appear within 2-3 months. If on metformin for PCOS, GI side effects may stack with ${peptide} initially. For endometriosis, track pain patterns by cycle phase — if ${peptide} shifts inflammation or hormonal balance, pain patterns may change. Oral contraceptive absorption may be reduced by delayed gastric emptying.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well findings from mixed or male-dominated study populations translate to people with endometriosis or PCOS, since hormonal environment, inflammation patterns, and drug metabolism can differ meaningfully. Direct evidence for ${peptide} in these conditions is typically limited.`,
+      `Whether ${peptide} has direct effects on endometrial tissue, endo-related inflammation, or estrogen metabolism is unknown. The speed and reliability of fertility improvement in PCOS with GLP-1 agonists is poorly quantified. How hormonal birth control effectiveness is affected by delayed gastric emptying hasn't been formally studied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from cycle phase, disease severity, current hormonal therapy, insulin sensitivity (especially in PCOS), stress load, sleep, pain level, and how hormone levels fluctuate across the month.`,
+      `A woman with PCOS and high insulin resistance may see dramatic improvement in cycles and symptoms within months. A woman with deep infiltrating endometriosis may see weight change but no pain relief. Whether the condition is primarily insulin-driven (PCOS) versus inflammation-driven (endo) predicts the response far more than anything else.`,
   },
 
   // ─── EATING DISORDERS ────────────────────────────────────────────────────
@@ -1172,14 +1259,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "eating disorder treatment", "inpatient eating disorder", "residential treatment",
       "dietitian", "nutritionist", "eating disorder therapist",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `Eating disorders are a serious flag — ${peptide}'s appetite suppression can reinforce restrictive patterns, trigger relapse, or mask dangerous undereating.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Eating disorder contexts involve significant nutritional variability, potential electrolyte and metabolic instability, and a heightened sensitivity to anything that affects appetite, weight, or body perception—making interpretation especially nuanced.`,
+      `This is a genuine clinical concern. For people with active anorexia or restrictive eating, ${peptide} removes hunger signals that may be the only thing preventing dangerously low intake. For bulimia, the nausea and appetite suppression could enable restriction phases. For binge eating disorder, GLP-1 agonists show real promise — reducing binge frequency by dampening the compulsive drive to eat. But even here, it needs to be part of a supported treatment plan, not a standalone fix. History of eating disorder in recovery requires honest self-assessment: is this tool, or is this the disorder finding a new mechanism?`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that appetite, weight, energy, and body-related signals carry outsized emotional and behavioral weight in this context. When "${q}" is part of the picture, effects on hunger, nausea, and body composition perception can interact with existing patterns in ways that don't apply to general populations.`,
+      `GLP-1 agonists reduce food noise and binge urges in many people — for binge eating disorder, this is clinically meaningful. For restrictive disorders, the same mechanism is dangerous. Electrolyte monitoring (potassium, magnesium, phosphorus) is essential if intake drops below 1200 calories. Watch for refeeding-like metabolic shifts if someone transitions from very low to normal intake. Bone density, amenorrhea, and cardiac markers all need tracking in underweight or recently-underweight individuals.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how findings from typical populations translate to people with active or historical eating disorders, since nutritional status, electrolyte balance, and neuroendocrine function can be significantly altered. Most studies exclude this population, so direct evidence for ${peptide} here is essentially absent.`,
+      `Whether ${peptide} affects eating disorder psychopathology (body image, fear of weight gain, control compulsions) or only the behavioral component (binge frequency, restriction) is unknown. Long-term relapse risk when using appetite suppressants in people with ED history is unstudied. The psychological impact of externally-imposed appetite suppression on someone with a history of control-based eating patterns is a real and uncharacterized concern.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from current nutritional status, recovery stage, medication use, electrolyte balance, bone health, hormonal suppression from low weight, psychological relationship with food, and whether appetite suppression or stimulation is experienced as welcome or threatening.`,
+      `Someone with binge eating disorder and stable mental health support may find genuine relief from food noise. Someone in early recovery from anorexia may find that ${peptide} re-enables the restriction their treatment is trying to undo. ED subtype, recovery stage, therapeutic support, and honest self-awareness about motivation drive the calculus.`,
   },
 
   // ─── ALLERGIES / HISTAMINE / ANTIHISTAMINES ──────────────────────────────
@@ -1222,14 +1312,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "omalizumab", "xolair",
       "prednisone for allergy", "steroids for allergy",
     ],
+    signal: "low",
+    signalNote: (peptide, q) =>
+      `Standard allergies and antihistamines don't create meaningful concerns with ${peptide} — MCAS is a different story and warrants closer monitoring.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Allergy and histamine contexts can affect immune reactivity, skin, GI function, and respiratory symptoms—and antihistamines can have sedating and anti-inflammatory effects that change the baseline for interpreting other signals.`,
+      `For standard seasonal or food allergies, no real interaction with ${peptide}. Antihistamines (Zyrtec, Claritin, Allegra) are fine. The exception is mast cell activation syndrome (MCAS) — people with MCAS can have unpredictable reactions to new compounds, including injection-site reactions or systemic histamine responses. If you have MCAS, introduce ${peptide} cautiously and watch for hives, flushing, or GI flares in the hours after injection. Diphenhydramine (Benadryl) can increase sedation if combined with ${peptide}'s fatigue.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that histamine-related symptoms (skin reactions, gut irritation, fatigue, brain fog) can fluctuate with allergen exposure, season, stress, and diet—creating variability that's hard to attribute to any single compound. When "${q}" is present, antihistamine use can dampen or mask signals.`,
+      `No pharmacological interactions between ${peptide} and antihistamines. Injection-site reactions (redness, itching, swelling) can occur with any subcutaneous peptide and are usually histamine-mediated but not true allergy. For MCAS patients, pre-treating with antihistamines before injection is a common precautionary approach. If you have severe food allergies and dramatically change your diet on ${peptide}, be aware that new foods you introduce may trigger reactions.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether a new skin symptom, GI reaction, or fatigue episode reflects ${peptide} directly, a histamine response, an allergy flare, or antihistamine side effects. Most studies don't stratify by allergy status or antihistamine use.`,
+      `Whether GLP-1 agonists affect mast cell degranulation or histamine pathways is poorly characterized. True allergic reactions to ${peptide} (as opposed to injection site irritation) are rare but reported for the GLP-1 class. The histamine intolerance community reports mixed experiences with peptides, but formal data is absent.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from allergy type and severity, current allergen load (season, diet), antihistamine class and sedation level, mast cell reactivity, gut permeability, and underlying immune sensitivity.`,
+      `Someone with seasonal allergies on Claritin will notice nothing different. Someone with MCAS who reacts to new compounds may have significant injection-site or systemic reactions. Allergy type, mast cell reactivity, and individual immune sensitivity drive the difference.`,
   },
 
   // ─── ANEMIA / IRON DEFICIENCY / BLOOD DISORDERS ──────────────────────────
@@ -1267,14 +1360,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "myelodysplastic syndrome", "mds",
       "anemia of chronic disease", "anemia of inflammation",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Iron deficiency causes fatigue that overlaps heavily with ${peptide}'s titration side effects — fix the deficiency first or you won't be able to tell what's causing what.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Anemia and iron deficiency affect oxygen delivery, energy metabolism, and cognitive function—creating a fatigue and performance baseline that can be difficult to separate from effects attributed to other compounds.`,
+      `No direct interaction, but the practical overlap matters: iron deficiency anemia causes fatigue, brain fog, exercise intolerance, and cold sensitivity — all of which are also common during ${peptide} titration. If you start ${peptide} with uncorrected iron deficiency, you'll feel terrible and blame the compound when the fix was iron. Get ferritin, hemoglobin, and B12 checked before starting. If ferritin is under 30, correct it first. Oral iron supplements are best taken on an empty stomach, and ${peptide}'s nausea may make that harder to tolerate.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that iron deficiency and anemia can independently produce fatigue, brain fog, exercise intolerance, and cold sensitivity—symptoms that overlap substantially with what people monitor when using ${peptide}. When "${q}" is present, correcting deficiency often has a more noticeable effect than any compound.`,
+      `Reduced food intake from ${peptide} can worsen iron and B12 deficiency if dietary sources drop — especially if red meat intake decreases. Menstruating women are at higher risk. Iron absorption requires stomach acid, and GLP-1 agonists can reduce gastric acid secretion. Track ferritin and hemoglobin at baseline and every 3-6 months. If oral iron isn't tolerated (nausea on top of ${peptide} nausea), IV iron infusion is a reliable alternative.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well findings from iron-replete populations translate to people with active anemia or deficiency, and whether ${peptide} influences iron metabolism, red cell production, or inflammatory pathways that affect blood markers. Direct evidence is typically limited.`,
+      `Whether ${peptide} meaningfully affects iron absorption through gastric pH changes or delayed emptying hasn't been studied. For rarer blood disorders (sickle cell, thalassemia, MDS), there's zero data on GLP-1 agonist use. The nutritional impact of sustained low caloric intake on micronutrient status is undercharacterized in this specific context.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from severity of deficiency, underlying cause (dietary, absorption, blood loss, chronic disease), whether supplementation is ongoing, concurrent deficiencies (B12, folate), menstrual blood loss, and baseline metabolic demand.`,
+      `Someone with replete iron stores will feel fine. Someone with ferritin of 12 who starts ${peptide} may feel profoundly exhausted and assume it's the compound. Baseline iron and B12 status, menstrual blood loss, and dietary iron sources explain most of the variance.`,
   },
 
   // ─── ALOPECIA / HAIR LOSS ────────────────────────────────────────────────
@@ -1311,14 +1407,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "dermatologist", "trichologist",
       "jak inhibitor for alopecia", "baricitinib", "ritlecitinib",
     ],
+    signal: "low",
+    signalNote: (peptide, q) =>
+      `Hair shedding during rapid weight loss is common and temporary (telogen effluvium) — it's not a ${peptide}-specific effect, it's a caloric deficit effect.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Hair loss is a sensitive and highly visible outcome, and its causes are multifactorial—hormones, nutrition, stress, immune function, and medications can all contribute—which makes attribution especially difficult.`,
+      `Hair shedding is one of the most commonly reported concerns with GLP-1 agonists, but it's not a drug-specific side effect — it's telogen effluvium triggered by rapid weight loss and caloric restriction. Any significant weight loss (surgical, dietary, or pharmaceutical) can push hair follicles into the shedding phase 2-4 months after the caloric shift. It's temporary. Hair typically recovers within 6-12 months as weight stabilizes, as long as nutritional deficiencies aren't driving it.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that hair cycling has a natural lag—telogen effluvium and regrowth both appear weeks to months after the triggering event. When "${q}" is present, it can be hard to know whether ${peptide} is influencing hair cycles, or whether the change reflects an earlier stressor, hormonal shift, or nutritional deficit.`,
+      `Ensure iron (ferritin >40), zinc, biotin, and protein intake are adequate — deficiencies in any of these during caloric restriction accelerate hair loss. If you already have androgenetic alopecia, the shedding may temporarily worsen it but doesn't change the underlying pattern. Thyroid function should be checked if shedding is severe. The shedding usually peaks 3-5 months after significant weight loss begins and self-resolves.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether reported changes in hair shedding or regrowth reflect ${peptide} directly, changes in hormones (androgens, thyroid, estrogen), nutritional status, or the natural fluctuation of hair cycling. Most studies don't track hair outcomes systematically.`,
+      `Whether ${peptide} has any direct effect on hair follicle cycling beyond the caloric deficit mechanism is unknown. The reported rates of hair loss in GLP-1 trials are low (3-5%), but real-world reports are higher — possibly because trials don't always ask about it. Whether the triple-agonist mechanism has different hair effects than pure GLP-1 agonism is unstudied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from genetic predisposition, hormonal environment (DHT, estrogen, thyroid), nutritional status (iron, biotin, protein), stress levels, scalp health, and what phase of the hair cycle someone is in when they start observing.`,
+      `Someone losing weight slowly with good nutrition may notice nothing. Someone dropping 30 pounds in 3 months with inadequate protein and low ferritin may see alarming shedding. Rate of weight loss, nutritional status, genetic hair pattern, and baseline iron/zinc levels explain the difference.`,
   },
 
   // ─── SKIN CONDITIONS ─────────────────────────────────────────────────────
@@ -1361,16 +1460,18 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "antibiotic for skin", "doxycycline for skin", "minocycline",
       "spironolactone for acne",
     ],
+    signal: "low",
+    signalNote: (peptide, q) =>
+      `Skin conditions don't create special concerns with ${peptide} — some people report skin improvement from reduced inflammation, others notice temporary changes during weight loss.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Skin conditions involve immune, hormonal, and inflammatory dynamics that fluctuate with stress, diet, season, and medication—making it difficult to isolate what any single compound is contributing to skin changes.`,
+      `No direct interaction between ${peptide} and skin conditions or their treatments. Indirectly, weight loss and improved insulin sensitivity can improve acne (especially hormonal/PCOS-related), reduce psoriasis severity (lower systemic inflammation), and sometimes improve eczema. On the flip side, rapid weight loss can temporarily worsen skin laxity and stretch marks. Injection-site reactions (redness, itching at the injection spot) are separate from underlying skin conditions and usually mild.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that skin symptoms are highly reactive to multiple overlapping factors. When "${q}" is present, new skin changes (flushing, breakouts, dryness, irritation) often reflect immune or hormonal shifts, topical medication changes, or diet/stress rather than a direct effect of ${peptide}.`,
+      `For hormonal acne, ${peptide}'s insulin-sensitizing effects may reduce androgen-driven breakouts over months. For psoriasis, weight loss of >5% has been shown to improve disease severity in studies. If you're on isotretinoin (Accutane), the combined GI effects (both cause nausea, both affect lipids) warrant monitoring. Hydration matters for skin — dehydration from ${peptide}'s nausea phase can temporarily worsen dry skin conditions.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether a skin change reflects ${peptide} directly, a change in inflammatory status, hormonal fluctuation, dietary shift, or reaction to other medications. Skin responses are often nonspecific and may resolve without any clear cause identified.`,
+      `Whether ${peptide} has direct anti-inflammatory effects on skin conditions is unknown. Anecdotal reports of skin improvement are common but hard to separate from weight loss, dietary changes, and reduced systemic inflammation. The injection-site reaction profile for ${peptide} specifically is still being characterized.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from skin condition type and severity, immune and hormonal environment, current medication regimen, skincare routine, diet, stress load, climate and season, and individual skin barrier function.`,
+      `Someone with insulin-driven hormonal acne may see clear skin within months. Someone with autoimmune eczema may notice no change. Skin condition type, underlying driver (hormonal vs. immune vs. barrier), and how much systemic inflammation contributes explain the variance.`,
   },
-
 
   // ─── MIGRAINE ─────────────────────────────────────────────────────────────
   {
@@ -1403,14 +1504,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "nerve block", "occipital nerve block",
       "neck pain headache", "tmj headache",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Dietary changes and dehydration from ${peptide} can trigger migraines — the first few weeks are the highest-risk window for people with migraine history.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Migraine is a complex neurological condition influenced by hormones, inflammation, sleep, stress, and metabolic factors—all of which can shift when metabolic or inflammatory status changes.`,
+      `Migraines are triggered by metabolic shifts, and ${peptide} creates a lot of metabolic shifts. Caloric restriction, dehydration, skipped meals, blood sugar swings, and sleep changes are all classic migraine triggers — and all common during GLP-1 titration. Some people with migraines report improvement over time (possibly from reduced inflammation and improved metabolic stability), but the first 4-8 weeks can be rocky. If you have a reliable migraine pattern, track whether frequency changes and keep your acute medications on hand.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that migraine frequency and severity can be sensitive to hormonal fluctuations, dietary shifts (especially caloric restriction or fasting), changes in sleep, and stress levels. When someone with "${q}" starts ${peptide}, any of these factors may shift.`,
+      `Hydration and consistent eating patterns matter more for migraine prevention during ${peptide} use than anything else. Don't skip meals even if appetite is low — blood sugar drops trigger migraines. Topiramate (Topamax) already causes appetite suppression and cognitive side effects; adding ${peptide} can amplify both. CGRP inhibitors (Aimovig, Nurtec) don't have known interactions with GLP-1 agonists. Track migraine days per month as a separate metric.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether headache changes reflect ${peptide} directly, a change in hydration or electrolytes, dietary pattern shifts (common with GLP-1 class compounds), hormonal fluctuations, medication interactions, or background migraine variability.`,
+      `Whether ${peptide} affects CGRP pathways, trigeminal signaling, or migraine threshold directly is unknown. Some GLP-1 receptor expression has been found in brain regions relevant to migraine, but the clinical significance is uncharacterized. Whether the metabolic stabilization from long-term use reduces migraine frequency is anecdotal, not proven.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from migraine subtype, hormone status (especially estrogen), current preventive medication, hydration and electrolyte balance, sleep quality, stress, dietary changes, and how migraine threshold shifts with metabolic changes.`,
+      `Someone whose migraines are driven by hormonal triggers may see no change. Someone whose migraines are metabolically triggered (skipped meals, dehydration) may get worse initially and then better once eating patterns stabilize. Migraine trigger profile, preventive medication, hydration discipline, and how dramatically eating patterns shift drive the range.`,
   },
 
   // ─── OSTEOARTHRITIS / JOINT DEGENERATION ──────────────────────────────────
@@ -1443,14 +1547,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "glucosamine", "chondroitin",
       "duloxetine for pain", "cymbalta pain",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Weight loss from ${peptide} often provides significant joint pain relief — every pound lost removes about 4 pounds of knee joint load.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Osteoarthritis and joint degeneration involve structural, inflammatory, and mechanical factors. Weight, metabolic status, and systemic inflammation all influence joint symptom trajectory—making the picture complex when other variables change.`,
+      `This is one of the most consistently positive stories with GLP-1 agonists. Weight loss reduces mechanical joint loading — for knee OA especially, even 10% body weight loss can meaningfully reduce pain and improve function. The reduction in systemic inflammation from improved metabolic health may add further benefit. The watch item: rapid weight loss without resistance training can reduce the muscle that stabilizes joints, potentially worsening instability. Strength training around affected joints is protective.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that reduced mechanical load (from weight change) and shifts in systemic inflammation can affect how joint symptoms are experienced. When someone with "${q}" experiences changes, it's often difficult to distinguish structural factors from inflammatory, mechanical, and medication effects.`,
+      `Track pain levels, functional capacity (stairs, walking distance), and NSAID use over time. Many people reduce or stop NSAIDs after significant weight loss. If you're taking NSAIDs regularly, the reduced food intake from ${peptide} means more empty-stomach NSAID use, which increases GI risk — consider switching to taking them with whatever food you do eat. Joint replacement candidates who lose weight first often have better surgical outcomes and may even postpone surgery.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how well findings from general populations apply to people with significant "${q}", especially those on anti-inflammatory medications, corticosteroid injections, or those who have had joint procedures. Concurrent medication effects are rarely studied together.`,
+      `Whether ${peptide} has direct anti-inflammatory effects on joint tissue beyond the indirect benefit of weight loss and metabolic improvement is unknown. How rapidly joint pain improves relative to weight loss (is there a threshold?) isn't well-quantified. Whether cartilage degeneration slows or just symptoms improve is an open question.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from joint affected and severity, body weight and loading patterns, concurrent anti-inflammatory medications, activity level, physical therapy, sleep quality, systemic inflammation, and individual cartilage and bone biology.`,
+      `Someone with knee OA driven primarily by mechanical overload may see dramatic improvement with 20 pounds of weight loss. Someone with advanced bone-on-bone disease may get some relief but still need surgical intervention. Joint affected, disease severity, how much of the pain is weight-bearing versus inflammatory, and whether strength training accompanies the weight loss all drive outcomes.`,
   },
 
   // ─── ALCOHOL / SUBSTANCE USE ───────────────────────────────────────────────
@@ -1479,14 +1586,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "fatty liver from alcohol", "alcoholic hepatitis",
       "elevated liver enzymes drinking", "ast alt elevated alcohol",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `GLP-1 agonists appear to reduce alcohol cravings in many people — but if you have liver damage from alcohol, that's a separate and more serious consideration.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Alcohol and substance use affect liver function, metabolic status, sleep, inflammation, and medication processing—creating a complex background that can change how any compound is experienced and how effects are interpreted.`,
+      `One of the most interesting emerging findings: GLP-1 receptor agonists appear to reduce alcohol intake and cravings in a significant subset of people. This is thought to work through reward pathway modulation — the same mechanism that reduces food noise seems to reduce alcohol desire. For people wanting to cut back, this may be an unexpected benefit. The caution: if there's existing liver damage from alcohol use, see the liver disease section — reduced hepatic function changes the risk profile. For opioid users on MAT (Suboxone, methadone), GI effects stack and constipation can become severe.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that liver function, metabolic health, and inflammatory baseline can all be affected by alcohol or substance use patterns. When "${q}" is present, liver enzyme monitoring and metabolic parameters may have additional complexity. Some research suggests GLP-1 receptor signaling may be relevant to reward pathways.`,
+      `Track alcohol intake honestly — many people report spontaneously drinking less on GLP-1 agonists without actively trying. If you're on naltrexone (Vivitrol) for alcohol or opioid use disorder, there's no known interaction with ${peptide}, but both can cause nausea. For cannabis users, the appetite-stimulating effects of THC can partially counteract ${peptide}'s suppression, creating a confusing push-pull. Liver enzymes (ALT, AST, GGT) should be monitored if there's any alcohol use history.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how substance use history interacts with ${peptide} in practice. Most clinical studies exclude people with active substance use disorders, so evidence is limited. Interactions with medications used in addiction treatment are often unstudied.`,
+      `The alcohol reduction effect is real but not yet approved for this indication — clinical trials are underway. Whether this extends to other substances of abuse is largely anecdotal. How ${peptide}'s specific triple-agonist mechanism compares to semaglutide's effect on reward pathways is unknown. Long-term interaction with MAT medications is unstudied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from type and amount of substance used, current use vs. recovery status, liver and metabolic health, concurrent medications (especially MAT), sleep quality, nutritional status, and how substance use affects appetite regulation and GI function.`,
+      `Someone who drinks socially may find they simply stop wanting it. Someone with severe alcohol use disorder may find cravings reduced but behavioral patterns still deeply entrenched. Substance type, severity of use, liver health, concurrent MAT medications, and the psychological versus physical components of the addiction drive the variance.`,
   },
 
   // ─── NEUROLOGICAL CONDITIONS ──────────────────────────────────────────────
@@ -1520,17 +1630,20 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "neurological", "neurology", "neurological condition", "brain condition",
       "cognitive decline", "dementia", "alzheimer", "memory loss",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Neurological medications often have metabolic and GI side effects that can overlap with ${peptide} — and seizure threshold can shift with rapid metabolic changes.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Neurological conditions involve a wide spectrum of mechanisms—from altered neurotransmitter systems to inflammatory and metabolic factors—that can influence how any compound affects the nervous system and cognitive function.`,
+      `The neurological landscape is broad, so the considerations vary by condition. For epilepsy: rapid metabolic shifts (blood sugar, electrolytes, hydration) can affect seizure threshold — titrate slowly and stay hydrated. Valproate and some anticonvulsants cause significant weight gain, making ${peptide} appealing, but medication levels may shift with changed body composition. For Parkinson's: nausea from ${peptide} can overlap with levodopa nausea. For diabetic neuropathy: improved glucose control from ${peptide} may stabilize or improve nerve function over time.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that neurological conditions may alter metabolic regulation, appetite signaling, and how the CNS responds to compounds. Some neurological medications have metabolic or GI effects that may overlap or interact. When "${q}" is present, effects on cognition, energy, and motor function may be harder to attribute clearly.`,
+      `If you're on anti-epileptic drugs, check with your prescriber about monitoring drug levels during significant weight loss — volume of distribution changes can alter effective concentrations. Topiramate already suppresses appetite; adding ${peptide} can cause excessive caloric restriction. For neuropathy, track pain scores and sensation — some people report improvement with sustained glucose control. GLP-1 receptor agonists are being actively researched for neuroprotective properties in Alzheimer's and Parkinson's, but this is investigational.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how neurological conditions or their medications affect ${peptide} processing and tolerability. Most trials exclude people with significant neurological diagnoses, and drug-drug interactions with neurological medications are understudied in this context.`,
+      `Whether ${peptide} has neuroprotective or neurotoxic effects is an active research question. The interaction between GLP-1 agonism and seizure threshold hasn't been formally evaluated. How neurological medication levels change with rapid body composition shifts is understudied. The neuroprotection signal from GLP-1 agonists is promising but not yet clinically validated.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from neurological diagnosis and severity, current medications and their metabolic effects, sleep disruption, autonomic function, cognitive capacity to track changes, dietary and mobility patterns, and how the condition affects appetite, GI motility, and stress systems.`,
+      `Someone with well-controlled epilepsy on a stable regimen may tolerate ${peptide} without issues. Someone with brittle seizure control on multiple anticonvulsants faces more uncertainty. Neurological diagnosis, seizure control stability, medication type and number, and baseline metabolic health drive the variance.`,
   },
 
-  // ─── LYME / MOLD / CIRS ───────────────────────────────────────────────────
+  // ─── LYME / MOLD / CIRS ──────���────────────────────────────────────────────
   {
     id: "pt_ctx_lyme_mold_cirs",
     label: "Lyme / Mold / CIRS",
@@ -1561,14 +1674,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "functional medicine", "integrative medicine",
       "chronic illness", "complex chronic illness",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Lyme, mold illness, and CIRS involve complex immune dysregulation — ${peptide}'s effects will be harder to interpret against an already unpredictable symptom baseline.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Lyme disease, mold illness, and CIRS involve persistent inflammatory, immune, and neuroendocrine disruption that can affect how the body responds to any compound—and how reported effects are interpreted in the context of an already unpredictable symptom baseline.`,
+      `These conditions involve multi-system inflammation, immune activation, and autonomic dysfunction that create a noisy baseline. Adding ${peptide} introduces new variables (nausea, appetite change, energy shifts) into a system that already fluctuates unpredictably. If you're on binders (cholestyramine, charcoal, Welchol), be aware that these can bind other compounds in the gut — timing ${peptide} relative to binders may matter for oral medications, though injectable ${peptide} bypasses this. Go slow, track symptoms in a structured way, and resist the temptation to attribute every change to one cause.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that people with "${q}" often have baseline fatigue, brain fog, pain, and immune dysregulation that fluctuate independently. Changes in symptoms when using ${peptide} may be difficult to distinguish from underlying condition variability, herxheimer-type reactions, or treatment effects.`,
+      `Mast cell activation (common in CIRS and chronic Lyme) can increase reactivity to injections — watch for injection-site reactions or systemic histamine responses. If you're on long-term antibiotics, the combined GI burden with ${peptide} may be significant. Track core symptoms (fatigue, brain fog, joint pain) separately from ${peptide} side effects so you can tell them apart. Hydration and electrolyte balance matter more in these populations because baseline autonomic function is often compromised.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how chronic inflammatory conditions like "${q}" affect metabolic and endocrine pathways relevant to ${peptide}, and whether standard effects are amplified, blunted, or shifted. Research populations generally exclude people with these diagnoses.`,
+      `Whether ${peptide} affects immune signaling in ways that matter for Lyme, mold, or CIRS pathophysiology is completely unknown. There's no research on GLP-1 agonists in these specific populations. Whether the anti-inflammatory properties seen in metabolic contexts translate to biotoxin-driven inflammation is purely speculative.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from illness phase and severity, current treatment protocol, mold or tick antigen burden, mast cell reactivity, immune system state, HPA axis function, sleep disruption, concurrent medications and binders, and individual sensitivity to inflammatory signals.`,
+      `Someone with post-treatment Lyme who's mostly recovered but dealing with persistent fatigue will have a very different experience than someone with active CIRS, MCAS, and autonomic dysfunction. Illness phase, mast cell reactivity, current treatment burden, and how stable the baseline is drive the range enormously.`,
   },
 
   // ─── GOUT / HIGH URIC ACID ────────────────────────────────────────────────
@@ -1600,14 +1716,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "kidney stones uric acid", "uric acid kidney stones",
       "urate nephropathy",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Rapid weight loss and dietary shifts can temporarily spike uric acid and trigger gout flares — the first few months on ${peptide} are the highest-risk window.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Gout and high uric acid are influenced by diet, hydration, kidney function, metabolic health, and several medications—making it complex to predict how changes in any of these factors (which may shift during ${peptide} use) affect uric acid levels and gout risk.`,
+      `This is a real and under-discussed risk. Rapid weight loss and caloric restriction can transiently increase uric acid levels through purine release from tissue breakdown and reduced renal clearance from dehydration. For someone with gout or borderline-high uric acid, the first 2-3 months on ${peptide} carry an elevated flare risk. Long-term, weight loss and improved metabolic health typically lower uric acid. It's the transition period that's risky. Stay well-hydrated and consider prophylactic colchicine if flare history is frequent.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that uric acid is sensitive to dietary changes (especially caloric restriction and protein intake), hydration status, kidney function, and metabolic shifts. When "${q}" is present, changes in diet or weight can sometimes transiently affect uric acid levels.`,
+      `Track uric acid levels at baseline and 2-3 months in. Hydration is critical — dehydration concentrates uric acid and impairs renal excretion. If you're on allopurinol, keep taking it; don't stop because things seem to be improving metabolically. Dietary changes on ${peptide} (eating less protein, or different protein sources) can shift purine intake unpredictably. Alcohol reduction (which many people experience on GLP-1s) helps gout independently. Some GLP-1 trial data suggests modest uric acid reduction with sustained use.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear whether ${peptide} directly affects uric acid metabolism, or whether observed changes reflect diet, hydration, weight change, or kidney function shifts. Gout medications and their interactions in this context are not well studied.`,
+      `Whether ${peptide} has direct effects on uric acid metabolism or renal urate handling beyond the indirect effects of weight loss is unknown. The magnitude and duration of the early uric acid spike during rapid weight loss is poorly quantified. How gout medications interact with the metabolic changes from ${peptide} hasn't been formally studied.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from baseline uric acid level, kidney function, diet composition, hydration, alcohol use, genetic uric acid handling, concurrent urate-lowering therapy, and how dietary patterns shift during the period of use.`,
+      `Someone with controlled gout on allopurinol who loses weight gradually may see uric acid improve. Someone with frequent flares and borderline levels who loses 15 pounds in 6 weeks may trigger a bad flare early on. Baseline uric acid level, hydration habits, rate of weight loss, and whether prophylactic medication is in place drive the outcome.`,
   },
 
   // ─── PROSTATE / BPH ───────────────────────────────────────────────────────
@@ -1638,14 +1757,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "testosterone prostate", "low t prostate", "trt prostate",
       "dihydrotestosterone", "dht",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `BPH itself isn't a concern with ${peptide}, but men on androgen deprivation therapy for prostate cancer face significant metabolic side effects that ${peptide} may help counter.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Prostate health involves hormonal, inflammatory, and urological dynamics that can interact with metabolic status, testosterone levels, and medications—creating a background context that shapes how any compound's effects are interpreted.`,
+      `For BPH (enlarged prostate), no meaningful interaction with ${peptide}. Alpha blockers (Flomax) and 5-alpha reductase inhibitors (finasteride) don't interact with GLP-1 agonists. For prostate cancer, the picture depends on treatment: androgen deprivation therapy (ADT/Lupron) causes significant weight gain, insulin resistance, muscle loss, and metabolic syndrome — exactly the profile where ${peptide} could help. But if actively on ADT, the combined muscle-wasting risk from hormone deprivation plus aggressive appetite suppression needs active management (high protein, resistance training).`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that hormonal balance, metabolic health, and inflammatory status can influence prostate symptoms and PSA levels. When someone with "${q}" is also on hormone-modulating treatments like ADT or TRT, the interaction with ${peptide}'s metabolic effects may add complexity.`,
+      `If you're on ADT, metabolic monitoring (glucose, lipids, body composition) is already recommended — ${peptide} may improve these markers. Track PSA alongside metabolic markers; weight loss alone shouldn't affect PSA, but hormonal shifts can. For BPH, some men notice that reduced fluid intake from ${peptide}'s appetite suppression changes urinary patterns — ensure you're still drinking adequate water. Tamsulosin can cause orthostatic hypotension, which ${peptide}'s dehydration effects may amplify.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how ${peptide} affects prostate-specific outcomes, or how prostate medications interact with metabolic compounds in practice. Studies involving people on active prostate cancer treatment rarely include investigational metabolic compounds.`,
+      `Whether ${peptide} affects PSA levels, prostate tissue directly, or androgen metabolism is unknown. The interaction between ADT-induced metabolic syndrome and GLP-1 agonism is theoretically promising but unstudied with ${peptide} specifically. Whether weight loss affects prostate cancer outcomes is an active research question unrelated to ${peptide}.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from prostate condition type and severity, current medications (especially hormonal), baseline testosterone levels, metabolic and inflammatory status, urological anatomy, and whether active treatment for prostate cancer is ongoing.`,
+      `Someone with BPH on Flomax will barely register ${peptide} as relevant. Someone on ADT gaining 30 pounds with worsening glucose may find ${peptide} addresses the metabolic side effects meaningfully. Whether it's simple BPH versus cancer treatment, and which medications are involved, drive entirely different contexts.`,
   },
 
   // ─── POST-SURGICAL RECOVERY ───────────────────────────────────────────────
@@ -1676,14 +1798,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "blood clot post surgery", "dvt post op", "pe post surgery",
       "complications surgery",
     ],
+    signal: "flag",
+    signalNote: (peptide, q) =>
+      `Surgery requires adequate nutrition for healing — ${peptide}'s appetite suppression can undermine recovery if caloric and protein intake drops too low.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. Post-surgical recovery involves tissue healing, immune response, pain management, and metabolic demands that can be highly sensitive to nutritional status, appetite, weight, and medication changes—all of which may be relevant when using compounds that affect these systems.`,
+      `Timing matters here. Before elective surgery: most surgeons and anesthesiologists now recommend stopping GLP-1 agonists 1-3 weeks before surgery because delayed gastric emptying increases aspiration risk during anesthesia. After surgery: the priority is wound healing and nutrition, and ${peptide}'s appetite suppression can make it hard to eat enough protein and calories for tissue repair. For bariatric surgery patients specifically, adding ${peptide} post-bypass or post-sleeve creates an extreme restriction environment that needs very careful nutritional monitoring.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that nutrition, protein intake, inflammatory status, and weight trajectory all matter for surgical recovery. When someone is recovering from "${q}" while also using ${peptide}, the effect on appetite and GI function may have implications for meeting recovery nutritional needs.`,
+      `The American Society of Anesthesiologists recommends holding GLP-1 agonists before procedures involving sedation/anesthesia due to aspiration risk from retained gastric contents. After surgery, protein requirements increase to 1.5-2g/kg for wound healing — if ${peptide} makes eating 50g of protein a struggle, healing will suffer. Track wound healing progress, protein intake, and albumin/prealbumin if available. Post-bariatric surgery patients already have restricted intake; ${peptide} on top requires a dietitian's involvement.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how ${peptide} use around the surgical period affects wound healing, immune function, or anesthetic interactions. Guidance on timing (stopping before surgery, when to resume) varies and is not systematically studied in clinical contexts.`,
+      `Exactly how long before surgery to stop ${peptide} is debated — some say 1 week, some say up to the full half-life (which varies by compound). Whether ${peptide} affects wound healing through mechanisms beyond caloric restriction (e.g., GLP-1 receptor expression in immune cells) is unknown. The ideal timing for resuming post-surgery hasn't been established.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from surgery type and complexity, nutritional status before surgery, healing biology, concurrent medications (especially pain management), activity level, comorbid conditions, age, and whether complications occurred during or after the procedure.`,
+      `Someone having elective knee replacement who stops ${peptide} a week before and resumes 2 weeks after will likely be fine. Someone having emergency abdominal surgery while on ${peptide} with a full stomach faces real aspiration risk. Surgery type, urgency, current GI state, and nutritional reserves pre-surgery drive the risk profile.`,
   },
 
   // ─── PTSD / TRAUMA ────────────────────────────────────────────────────────
@@ -1716,14 +1841,17 @@ export const CONTEXT_PACKS: ContextPack[] = [
       "hpa axis", "cortisol and trauma", "adrenal and stress",
       "chronic stress", "allostatic load",
     ],
+    signal: "watch",
+    signalNote: (peptide, q) =>
+      `Trauma deeply affects eating behavior and body relationship — ${peptide} changes both of these systems, which can be helpful or destabilizing depending on the person.`,
     contextSummary: (peptide, q) =>
-      `People often ask how "${q}" relates to ${peptide}. PTSD and trauma affect the nervous system, HPA axis, cortisol, appetite regulation, and eating patterns in ways that are deeply intertwined with metabolic health—making it complex to interpret how any compound affects symptoms, behavior, or wellbeing in this context.`,
+      `Trauma and eating are deeply intertwined. Emotional eating, binge eating, restrictive patterns, and the use of food as nervous system regulation are all common in trauma histories. ${peptide} removes the hunger drive, which can feel like freedom from compulsive eating — or it can remove a coping mechanism without replacing it. For people with PTSD who use food to manage hyperarousal, dissociation, or nightmares, the sudden absence of that regulation tool needs therapeutic support. Body changes from weight loss can also trigger trauma responses related to body image, especially in sexual trauma histories.`,
     whatIsKnown: (peptide, q) =>
-      `What's discussed most consistently is that trauma affects appetite, eating behavior, weight regulation, and stress hormones. When "${q}" is present, emotional eating patterns, dissociation around food, and hypervigilance about body changes may all intersect with how ${peptide} affects appetite and weight.`,
+      `High ACE scores correlate with higher rates of obesity, emotional eating, and metabolic syndrome — this population often benefits metabolically from ${peptide} but needs psychological support alongside it. If you're on SSRIs for PTSD (sertraline, paroxetine), see the antidepressant section for overlap considerations. Prazosin for nightmares can lower blood pressure; combined with ${peptide}'s BP-lowering effect, monitor for dizziness. Track emotional eating patterns and nervous system regulation, not just weight.`,
     whatIsUnclear: (peptide, q) =>
-      `It's often unclear how trauma history or active PTSD affects the subjective experience of metabolic compounds, or whether changes in appetite and weight trigger psychological responses that complicate the picture. The interaction between trauma-related eating patterns and GLP-1 class mechanisms is not well studied.`,
+      `Whether ${peptide} affects HPA axis function, cortisol regulation, or stress reactivity is unknown. The psychological impact of rapid body change in trauma survivors hasn't been studied in the GLP-1 context. Whether the reduction in food noise helps or hinders trauma processing is a clinical question without data.`,
     whyExperiencesVary: (peptide, q) =>
-      `Variability can come from trauma type, history, and severity, current therapeutic support, concurrent psychiatric medications, relationship with food and body, stress and cortisol baseline, sleep disruption, nervous system regulation capacity, and emotional eating patterns.`,
+      `Someone with resolved PTSD and residual emotional eating may feel genuine liberation from food noise. Someone with active PTSD and food as a primary coping mechanism may find the experience destabilizing. Trauma type, current therapeutic support, relationship with food, and nervous system regulation capacity drive dramatically different outcomes.`,
   },
 
 ];
