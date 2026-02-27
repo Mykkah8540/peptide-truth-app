@@ -22,7 +22,9 @@ const EXAMPLES = [
   "Heart disease", "Blood thinners", "Autoimmune conditions",
   "Hormone therapy (TRT / HRT)", "Older adults", "Pregnancy",
   "Kidney disease", "Sleep issues", "Metabolic conditions",
-  "Blood pressure", "GI / stomach issues", "Athletes: injury recovery",
+  "Long COVID", "Chronic fatigue or POTS", "Chronic pain",
+  "Cancer", "Asthma or COPD", "Bipolar or antipsychotics",
+  "Osteoporosis", "Endometriosis or PCOS", "Blood pressure",
 ];
 
 function normalize(s: string) {

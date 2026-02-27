@@ -796,6 +796,346 @@ export const CONTEXT_PACKS: ContextPack[] = [
       `Variability can come from baseline insulin resistance, sleep quality, stress, diet, training status, medication effects, and how quickly someone changes lifestyle variables during the same window they're discussing "${q}".`,
   },
 
+  // ─── POST-COVID / LONG COVID ─────────────────────────────────────────────
+  {
+    id: "pt_ctx_long_covid",
+    label: "Post-COVID / Long COVID",
+    synonyms: [
+      // plain language
+      "long covid", "long haul covid", "post covid", "post-covid", "covid long hauler",
+      "long hauler", "long haulers", "covid recovery", "after covid", "covid symptoms",
+      "still sick from covid", "never recovered from covid", "covid complications",
+      "brain fog covid", "fatigue after covid", "exhausted after covid",
+      "shortness of breath covid", "breathlessness after covid",
+      "heart issues after covid", "chest pain after covid",
+      "smell loss", "taste loss", "anosmia", "parosmia",
+      // clinical
+      "post-acute sequelae", "pasc", "post-acute covid", "long-haul covid",
+      "post-viral syndrome", "post-viral fatigue", "post-viral illness",
+      "autonomic dysfunction covid", "pots after covid",
+      "myocarditis covid", "pericarditis covid",
+      "cognitive impairment covid", "neurological covid",
+      "immune dysregulation", "microclots", "endothelial dysfunction",
+      "covid", "sars-cov-2", "coronavirus",
+      // related symptoms searched
+      "can't exercise after covid", "exercise intolerance", "post-exertional malaise",
+      "pem", "crashes", "energy crashes",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Post-COVID and Long COVID contexts involve multi-system involvement—fatigue, immune dysregulation, autonomic dysfunction, and cognitive symptoms—that can shift how all outcomes are perceived and which signals get attention.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that Long COVID produces layered, overlapping symptoms (fatigue, brain fog, breathlessness, palpitations) that fluctuate unpredictably. When "${q}" is part of the picture, it can be very difficult to attribute any change to ${peptide} versus normal Long COVID variation or recovery trajectory.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how well findings from healthy or typical-disease populations translate to Long COVID, since the underlying biology—microclots, immune dysregulation, viral persistence—is still being characterized. Evidence for ${peptide} in this specific context is typically absent or indirect.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from which organ systems were affected (respiratory, cardiac, neurological), initial COVID severity, vaccination status, timing since infection, autonomic involvement, co-occurring conditions, and how sensitized someone is to physical sensations after a prolonged illness.`,
+  },
+
+  // ─── CHRONIC FATIGUE / ME-CFS / POTS / DYSAUTONOMIA ──────────────────────
+  {
+    id: "pt_ctx_cfs_pots",
+    label: "Chronic fatigue syndrome (ME/CFS), POTS, and dysautonomia",
+    synonyms: [
+      // plain language
+      "chronic fatigue", "chronic fatigue syndrome", "always exhausted", "extreme fatigue",
+      "debilitating fatigue", "fatigue all the time", "tired all the time",
+      "no energy", "energy crashes", "crashes", "boom and bust",
+      "post-exertional malaise", "pem", "can't exercise", "exercise makes me worse",
+      "can't do much", "housebound", "bedbound",
+      "pots", "postural orthostatic tachycardia", "dysautonomia",
+      "autonomic dysfunction", "autonomic nervous system",
+      "dizzy when standing", "heart races when standing", "can't stand long",
+      // clinical
+      "me/cfs", "mecfs", "myalgic encephalomyelitis", "me", "cfs",
+      "systemic exertion intolerance disease", "seid",
+      "fibromyalgia", "fibro",
+      "orthostatic intolerance", "orthostatic tachycardia",
+      "neurocardiogenic syncope", "vasovagal",
+      "mast cell activation", "mcas", "mast cell",
+      "small fiber neuropathy",
+      "hypermobility", "hypermobile", "eds", "ehlers danlos", "ehlers-danlos",
+      // related
+      "unrefreshing sleep", "non-restorative sleep", "wake up exhausted",
+      "brain fog", "cognitive dysfunction", "memory issues",
+      "pain all over", "widespread pain",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Chronic fatigue conditions like ME/CFS and POTS involve profound energy limitation and autonomic instability, which means baseline function can vary enormously day-to-day and small changes can be hard to interpret.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that post-exertional malaise (PEM) and autonomic symptoms set a very different starting point for interpreting any compound's effects. When "${q}" is present, perceived changes in energy, heart rate, and cognition often reflect illness fluctuation as much as any external factor.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how findings from healthy populations or different disease models translate to ME/CFS, since the underlying biology remains incompletely understood. Formal evidence for ${peptide} in this population is usually absent or anecdotal, and PEM risk makes interpretation especially complex.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from illness severity and duration, autonomic subtype (POTS vs other dysautonomia), co-occurring MCAS or hypermobility, sleep quality, stress, activity pacing, and the sensitivity of the nervous system in this context.`,
+  },
+
+  // ─── CHRONIC PAIN / PAIN MEDICATIONS ─────────────────────────────────────
+  {
+    id: "pt_ctx_chronic_pain",
+    label: "Chronic pain and pain medications",
+    synonyms: [
+      // plain language
+      "chronic pain", "pain", "pain all the time", "constant pain", "always in pain",
+      "pain management", "pain medication", "pain meds", "on pain medication",
+      "nerve pain", "neuropathic pain", "burning pain", "shooting pain",
+      "back pain", "chronic back pain", "neck pain", "joint pain",
+      "pain clinic", "pain specialist", "pain doctor",
+      "fibromyalgia", "fibro",
+      // opioids - plain language
+      "opioid", "opioids", "opiate", "opiates", "narcotic", "narcotics",
+      "hydrocodone", "vicodin", "norco",
+      "oxycodone", "oxycontin", "percocet",
+      "morphine", "ms contin",
+      "tramadol", "ultram",
+      "codeine",
+      "fentanyl", "fentanyl patch",
+      "buprenorphine", "suboxone", "subutex", "methadone",
+      "on opioids", "opioid therapy", "chronic opioid therapy",
+      // nerve pain medications
+      "gabapentin", "neurontin",
+      "pregabalin", "lyrica",
+      "duloxetine for pain", "cymbalta for pain",
+      "amitriptyline", "nortriptyline", "tricyclic",
+      // NSAIDs and anti-inflammatory
+      "nsaids", "nsaid", "ibuprofen", "naproxen", "aleve", "advil",
+      "meloxicam", "celebrex", "celecoxib", "diclofenac",
+      "anti-inflammatory medication",
+      // other
+      "muscle relaxer", "muscle relaxant", "baclofen", "cyclobenzaprine", "flexeril",
+      "ketamine", "low dose naltrexone", "ldn",
+      "pain patch", "pain pump",
+      "complex regional pain syndrome", "crps",
+      "central sensitization",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Chronic pain contexts involve a high medication burden and a nervous system that may already be sensitized—which changes how new signals, side effects, and perceived benefits are interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that pain medications (especially opioids, gabapentinoids, and muscle relaxants) can dampen energy, cognition, and motivation—which creates a complicated baseline when trying to interpret what ${peptide} is contributing. Pain itself also affects sleep, appetite, and mood, layering additional confounders.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how much of a reported change reflects ${peptide} versus fluctuations in pain levels, medication adjustments, sleep quality, or mood shifts that travel with chronic pain. Studies rarely enroll people on complex pain regimens.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from pain type and location, medication class and dose, tolerance development, sleep disruption, psychological impact of chronic pain, activity levels, and whether pain is currently stable or in a flare cycle.`,
+  },
+
+  // ─── CANCER / ONCOLOGY ────────────────────────────────────────────────────
+  {
+    id: "pt_ctx_cancer",
+    label: "Cancer and oncology (active treatment or survivorship)",
+    synonyms: [
+      // plain language
+      "cancer", "cancer diagnosis", "cancer treatment", "fighting cancer",
+      "cancer survivor", "cancer history", "had cancer", "in remission",
+      "chemotherapy", "chemo", "on chemo",
+      "radiation", "radiation therapy", "radiation treatment",
+      "immunotherapy", "cancer immunotherapy",
+      "tumor", "tumors",
+      // specific cancers searched
+      "breast cancer", "prostate cancer", "colon cancer", "colorectal cancer",
+      "lung cancer", "skin cancer", "melanoma", "lymphoma", "leukemia",
+      "thyroid cancer", "ovarian cancer", "cervical cancer", "uterine cancer",
+      "kidney cancer", "bladder cancer", "liver cancer", "pancreatic cancer",
+      "brain cancer", "glioblastoma",
+      "blood cancer", "myeloma", "multiple myeloma",
+      // treatments and clinical
+      "oncology", "oncologist", "hematologist", "tumor marker",
+      "targeted therapy", "biologic therapy", "monoclonal antibody",
+      "immunosuppressive cancer treatment",
+      "checkpoint inhibitor", "car-t", "car t cell therapy",
+      "stem cell transplant", "bone marrow transplant",
+      "hormonal cancer therapy", "tamoxifen", "aromatase inhibitor cancer",
+      "androgen deprivation therapy", "adt",
+      "neutropenic", "neutropenia", "low white blood cells",
+      "anemia from cancer", "cancer fatigue", "cancer-related fatigue",
+      "cachexia", "cancer weight loss",
+      "palliative", "palliative care",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Cancer and active treatment create a physiological environment unlike most study populations—immune function, metabolism, organ reserve, and medication interactions are all significantly altered.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that cancer treatment changes baseline dramatically: fatigue, nausea, appetite loss, and immune suppression can dominate the experience. When "${q}" is present, separating treatment effects from anything ${peptide} might contribute is especially difficult, and the stakes around unexpected changes are higher.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how findings from healthy or non-cancer populations apply to people in active treatment or early survivorship, since organ function, immune status, and drug metabolism can be significantly altered. Direct evidence for ${peptide} in oncology contexts is typically very limited.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from cancer type, treatment phase, cumulative treatment toxicity, current immune status, nutritional state, organ function (liver, kidney, bone marrow), and the psychological context of navigating a cancer diagnosis.`,
+  },
+
+  // ─── RESPIRATORY / PULMONARY ──────────────────────────────────────────────
+  {
+    id: "pt_ctx_respiratory",
+    label: "Respiratory conditions (asthma, COPD, breathing issues)",
+    synonyms: [
+      // plain language
+      "asthma", "asthmatic", "breathing problems", "breathing issues", "trouble breathing",
+      "shortness of breath", "breathlessness", "out of breath",
+      "chest tightness", "wheezing", "wheeze",
+      "copd", "chronic obstructive pulmonary disease", "emphysema", "chronic bronchitis",
+      "lung disease", "lung condition", "lung problems", "bad lungs",
+      "inhaler", "rescue inhaler", "steroid inhaler", "on inhalers",
+      "oxygen", "on oxygen", "supplemental oxygen", "oxygen tank",
+      "pulmonary", "pulmonary disease", "pulmonary condition",
+      // clinical
+      "bronchial", "bronchiectasis", "bronchospasm",
+      "pulmonary fibrosis", "ipf", "interstitial lung disease", "ild",
+      "pulmonary hypertension", "pah",
+      "sleep apnea", "osa", "cpap",
+      "respiratory failure", "low oxygen saturation", "low o2",
+      // medications
+      "albuterol", "salbutamol", "ventolin",
+      "salmeterol", "formoterol", "advair", "symbicort",
+      "tiotropium", "spiriva",
+      "montelukast", "singulair",
+      "inhaled corticosteroids", "fluticasone", "budesonide",
+      "oral steroids for lung", "prednisone for asthma",
+      "nebulizer", "nebulizer treatment",
+      "exercise-induced asthma", "exercise induced bronchospasm",
+      "vo2 max", "aerobic capacity", "reduced exercise capacity",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Respiratory conditions affect oxygen delivery, exercise capacity, and sometimes systemic inflammation—which can shift how effects on energy, endurance, and recovery are perceived and reported.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that breathing limitations set a ceiling on energy and exercise tolerance that can dominate outcomes. When "${q}" is present, changes in perceived exertion, endurance, and recovery may reflect respiratory status as much as any direct effect of ${peptide}.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how well findings from people with normal lung function translate to those with significant respiratory limitations. Inhaled medications and systemic steroids can also affect energy, bone density, immune function, and metabolism in ways that create additional confounders.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from condition type and severity, current exacerbation status, inhaler and medication regimen, allergen exposure, activity level, and how much respiratory limitation already constrains daily function.`,
+  },
+
+  // ─── BIPOLAR / ANTIPSYCHOTICS / MOOD STABILIZERS ─────────────────────────
+  {
+    id: "pt_ctx_bipolar_antipsychotics",
+    label: "Bipolar disorder, antipsychotics, and mood stabilizers",
+    synonyms: [
+      // plain language
+      "bipolar", "bipolar disorder", "manic depression",
+      "mania", "manic", "manic episode", "hypomania",
+      "mood disorder", "mood swings", "extreme mood swings",
+      "antipsychotic", "antipsychotics", "on antipsychotics",
+      "mood stabilizer", "mood stabilizers", "on mood stabilizers",
+      "psychiatric medication", "psych medication",
+      "schizophrenia", "schizoaffective",
+      "psychosis", "psychotic",
+      // specific medications
+      "lithium", "lithium carbonate",
+      "valproate", "valproic acid", "depakote", "divalproex",
+      "lamotrigine", "lamictal",
+      "quetiapine", "seroquel",
+      "olanzapine", "zyprexa",
+      "risperidone", "risperdal",
+      "aripiprazole", "abilify",
+      "lurasidone", "latuda",
+      "ziprasidone", "geodon",
+      "clozapine", "clozaril",
+      "haloperidol", "haldol",
+      "paliperidone", "invega",
+      "cariprazine", "vraylar",
+      "brexpiprazole", "rexulti",
+      // related concerns
+      "weight gain from medication", "medication weight gain",
+      "metabolic effects of antipsychotics", "metabolic side effects",
+      "tardive dyskinesia",
+      "lithium levels", "lithium toxicity",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Bipolar disorder and antipsychotic medications create a complex baseline—metabolic changes, mood cycling, sedation, and significant pharmacological interactions can all influence how effects are experienced and interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that mood stabilizers and antipsychotics can significantly affect metabolic markers (weight, blood sugar, lipids), energy levels, and cognitive clarity. When "${q}" is present, separating medication effects from any compound-related signal is especially difficult, and mood stability itself can shift how experiences are labeled.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how ${peptide} interacts with the pharmacology of mood stabilizers or antipsychotics, and most study populations exclude people on these medications. Changes in energy, sleep, appetite, and weight in this context have multiple plausible explanations.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from mood phase (stable vs hypomanic vs depressed), specific medication class and dose, metabolic side-effect burden, sleep quality, stress load, substance use, and how closely someone is monitoring their mental state for changes.`,
+  },
+
+  // ─── OSTEOPOROSIS / BONE HEALTH ───────────────────────────────────────────
+  {
+    id: "pt_ctx_osteoporosis",
+    label: "Osteoporosis and bone health",
+    synonyms: [
+      // plain language
+      "osteoporosis", "bone loss", "bone density", "low bone density",
+      "weak bones", "brittle bones", "thinning bones",
+      "fracture risk", "fracture", "stress fracture", "broken bone easily",
+      "bone health", "bone strength",
+      "osteopenia", "pre-osteoporosis",
+      // clinical
+      "dexa scan", "dxa scan", "bone density scan", "t-score", "z-score",
+      "bone mineral density", "bmd",
+      "hip fracture", "vertebral fracture", "spinal fracture", "compression fracture",
+      "calcium", "calcium supplement", "calcium deficiency",
+      "vitamin d", "vitamin d deficiency", "low vitamin d",
+      "vitamin k2", "bone metabolism",
+      "osteoblast", "osteoclast", "bone remodeling",
+      // medications
+      "bisphosphonates", "bisphosphonate",
+      "alendronate", "fosamax",
+      "risedronate", "actonel",
+      "zoledronic acid", "reclast",
+      "denosumab", "prolia",
+      "teriparatide", "forteo", "parathyroid hormone",
+      "romosozumab", "evenity",
+      "raloxifene", "evista",
+      // related
+      "falls", "fall risk", "fracture prevention",
+      "calcium and d", "calcium and vitamin d",
+      "collagen", "bone collagen",
+      "cortisone bone loss", "steroid bone loss", "glucocorticoid-induced osteoporosis",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Bone health contexts often involve long-term medication use and a focus on markers that change slowly—which means interpreting short-term experiences is tricky, and the medications used have their own systemic effects.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that bone density changes on a timescale of months to years, while subjective symptoms (joint comfort, energy, recovery) are what people notice day-to-day. When "${q}" is present, it's important to separate how ${peptide} might influence bone-adjacent markers (collagen, inflammation) from claims about bone density itself.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how well general findings translate to people with established bone disease or on bisphosphonate/denosumab therapy, since these medications alter bone metabolism significantly. Direct evidence for ${peptide} in osteoporosis populations is limited.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from severity of bone loss, medication class, calcium and vitamin D status, hormonal status (especially estrogen/testosterone), activity level, history of steroid use, and underlying cause of bone loss.`,
+  },
+
+  // ─── ENDOMETRIOSIS / PCOS / WOMEN'S REPRODUCTIVE HEALTH ──────────────────
+  {
+    id: "pt_ctx_womens_reproductive",
+    label: "Endometriosis, PCOS, and women's reproductive conditions",
+    synonyms: [
+      // plain language
+      "endometriosis", "endo", "painful periods", "period pain", "bad periods",
+      "heavy periods", "heavy bleeding", "heavy menstrual bleeding",
+      "irregular periods", "missed periods", "no periods",
+      "pcos", "polycystic ovary syndrome", "polycystic ovaries",
+      "hormonal imbalance", "hormone imbalance", "female hormone issues",
+      "uterine fibroids", "fibroids",
+      "adenomyosis",
+      "ovarian cysts", "cysts on ovaries",
+      "pelvic pain", "pelvic floor", "pelvic floor issues",
+      "fertility issues", "infertility", "trouble conceiving", "hormonal infertility",
+      // symptoms
+      "bloating from period", "period bloating", "period symptoms",
+      "cramps", "severe cramps", "dysmenorrhea",
+      "spotting", "breakthrough bleeding",
+      "estrogen dominance", "low progesterone",
+      "excess androgens", "facial hair", "hirsutism",
+      "acne from hormones", "hormonal acne",
+      // medications and treatments
+      "birth control for endometriosis", "hormonal birth control",
+      "progesterone", "progestin", "norethindrone",
+      "lupron", "leuprolide", "gnrh agonist",
+      "orilissa", "elagolix",
+      "letrozole for fertility", "clomid for pcos",
+      "inositol", "myo-inositol", "d-chiro-inositol",
+      "metformin for pcos",
+      "spironolactone for pcos", "spiro",
+      "lap surgery", "laparoscopy", "excision surgery",
+      // related
+      "endocrine disruptor", "period tracker", "luteal phase",
+      "follicular phase", "cycle tracking",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Conditions like endometriosis and PCOS involve hormonal and inflammatory dynamics that fluctuate with the menstrual cycle—which creates a shifting baseline that makes it hard to isolate what any single compound is contributing.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that hormonal cycling, inflammation, and pain levels in these conditions can produce week-to-week variability that dominates subjective experience. When "${q}" is present, changes in energy, mood, appetite, and pain often reflect cycle phase and underlying condition as much as any external compound.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how well findings from mixed or male-dominated study populations translate to people with endometriosis or PCOS, since hormonal environment, inflammation patterns, and drug metabolism can differ meaningfully. Direct evidence for ${peptide} in these conditions is typically limited.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from cycle phase, disease severity, current hormonal therapy, insulin sensitivity (especially in PCOS), stress load, sleep, pain level, and how hormone levels fluctuate across the month.`,
+  },
+
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
