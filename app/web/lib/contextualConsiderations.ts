@@ -2,6 +2,10 @@ export type ContextPack = {
   id: string;
   label: string;
   synonyms: string[];
+  /** "low" = no direct concern; "watch" = worth monitoring; "flag" = discuss before starting */
+  signal?: "low" | "watch" | "flag";
+  /** One-sentence plain-language verdict shown first. */
+  signalNote?: (peptideName: string, query: string) => string;
   // Copy blocks are intentionally non-directive and non-protocol
   contextSummary: (peptideName: string, query: string) => string;
   whatIsKnown: (peptideName: string, query: string) => string;
