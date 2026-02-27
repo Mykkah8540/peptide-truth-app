@@ -1367,6 +1367,361 @@ export const CONTEXT_PACKS: ContextPack[] = [
       `Variability can come from skin condition type and severity, immune and hormonal environment, current medication regimen, skincare routine, diet, stress load, climate and season, and individual skin barrier function.`,
   },
 
+
+  // ─── MIGRAINE ─────────────────────────────────────────────────────────────
+  {
+    id: "pt_ctx_migraine",
+    label: "Migraine",
+    synonyms: [
+      // plain language
+      "migraine", "migraines", "severe headache", "bad headaches", "chronic headaches",
+      "headaches all the time", "pounding headache", "throbbing head",
+      "aura", "migraine with aura", "ocular migraine", "silent migraine",
+      "vestibular migraine", "hemiplegic migraine",
+      // triggers
+      "migraine triggers", "light sensitivity", "photophobia", "sound sensitivity",
+      "phonophobia", "nausea headache", "vomiting headache", "migraine nausea",
+      // medications — preventive
+      "topiramate", "topamax", "valproate", "depakote", "amitriptyline for migraine",
+      "propranolol for migraine", "metoprolol for migraine", "verapamil for migraine",
+      "candesartan", "beta blocker migraine",
+      // medications — acute / abortive
+      "sumatriptan", "imitrex", "rizatriptan", "maxalt", "triptan", "triptans",
+      "ubrelvy", "ubrogepant", "nurtec", "rimegepant", "cgrp",
+      "aimovig", "erenumab", "ajovy", "fremanezumab", "emgality", "galcanezumab",
+      "cgrp blocker", "cgrp inhibitor", "cgrp antibody",
+      "ergotamine", "dihydroergotamine", "dhe",
+      "excedrin", "ibuprofen headache", "nsaid headache", "acetaminophen headache",
+      "rebound headache", "medication overuse headache",
+      // related
+      "cluster headache", "tension headache", "cervicogenic headache",
+      "botox for migraine", "onabotulinumtoxin", "botox injection headache",
+      "nerve block", "occipital nerve block",
+      "neck pain headache", "tmj headache",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Migraine is a complex neurological condition influenced by hormones, inflammation, sleep, stress, and metabolic factors—all of which can shift when metabolic or inflammatory status changes.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that migraine frequency and severity can be sensitive to hormonal fluctuations, dietary shifts (especially caloric restriction or fasting), changes in sleep, and stress levels. When someone with "${q}" starts ${peptide}, any of these factors may shift.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear whether headache changes reflect ${peptide} directly, a change in hydration or electrolytes, dietary pattern shifts (common with GLP-1 class compounds), hormonal fluctuations, medication interactions, or background migraine variability.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from migraine subtype, hormone status (especially estrogen), current preventive medication, hydration and electrolyte balance, sleep quality, stress, dietary changes, and how migraine threshold shifts with metabolic changes.`,
+  },
+
+  // ─── OSTEOARTHRITIS / JOINT DEGENERATION ──────────────────────────────────
+  {
+    id: "pt_ctx_osteoarthritis",
+    label: "Osteoarthritis / Joint Pain",
+    synonyms: [
+      // plain language
+      "joint pain", "knee pain", "hip pain", "back pain", "arthritis", "oa",
+      "osteoarthritis", "degenerative joint disease", "bone on bone",
+      "cartilage loss", "worn joints", "stiff joints", "achy joints",
+      "joint degeneration", "worn cartilage", "joint wear",
+      "my knees hurt", "my hips hurt", "bad joints",
+      // body parts
+      "knee arthritis", "hip arthritis", "ankle pain", "shoulder arthritis",
+      "spine arthritis", "lumbar osteoarthritis", "cervical osteoarthritis",
+      "hand arthritis", "finger joints", "knuckle pain",
+      // related conditions
+      "rheumatoid arthritis", "ra", "psoriatic arthritis", "inflammatory arthritis",
+      "gout", "joint inflammation", "synovitis",
+      "bursitis", "tendinitis", "tendinopathy",
+      // treatments
+      "cortisone injection", "steroid injection joint", "intraarticular steroid",
+      "hyaluronic acid injection", "viscosupplementation", "synvisc",
+      "nsaid for arthritis", "naproxen", "ibuprofen arthritis", "diclofenac",
+      "celecoxib", "celebrex", "meloxicam",
+      "acetaminophen arthritis", "tylenol arthritis",
+      "physical therapy", "joint replacement", "knee replacement", "hip replacement",
+      "platelet rich plasma", "prp joint",
+      "glucosamine", "chondroitin",
+      "duloxetine for pain", "cymbalta pain",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Osteoarthritis and joint degeneration involve structural, inflammatory, and mechanical factors. Weight, metabolic status, and systemic inflammation all influence joint symptom trajectory—making the picture complex when other variables change.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that reduced mechanical load (from weight change) and shifts in systemic inflammation can affect how joint symptoms are experienced. When someone with "${q}" experiences changes, it's often difficult to distinguish structural factors from inflammatory, mechanical, and medication effects.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how well findings from general populations apply to people with significant "${q}", especially those on anti-inflammatory medications, corticosteroid injections, or those who have had joint procedures. Concurrent medication effects are rarely studied together.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from joint affected and severity, body weight and loading patterns, concurrent anti-inflammatory medications, activity level, physical therapy, sleep quality, systemic inflammation, and individual cartilage and bone biology.`,
+  },
+
+  // ─── ALCOHOL / SUBSTANCE USE ───────────────────────────────────────────────
+  {
+    id: "pt_ctx_alcohol_substance",
+    label: "Alcohol or Substance Use",
+    synonyms: [
+      // plain language
+      "alcohol", "drinking", "heavy drinking", "drink a lot", "i drink", "wine",
+      "beer", "liquor", "whiskey", "vodka", "daily drinker", "social drinker",
+      "alcohol use disorder", "aud", "alcoholism", "alcohol dependency", "alcohol addiction",
+      "recovering alcoholic", "sober", "sobriety", "alcohol in recovery",
+      "quit drinking", "cutting back on alcohol",
+      // substances
+      "cannabis", "marijuana", "weed", "thc", "cbd", "pot",
+      "nicotine", "smoking", "vaping", "cigarettes", "tobacco",
+      "opioid", "opioids", "opioid use disorder", "oud",
+      "heroin", "fentanyl", "methadone", "suboxone", "buprenorphine", "naltrexone",
+      "vivitrol", "mat", "medication assisted treatment",
+      "cocaine", "stimulant use", "methamphetamine", "meth", "amphetamine misuse",
+      "benzodiazepine dependence", "benzo dependence", "xanax dependence",
+      "addiction", "substance use disorder", "sud", "recovery",
+      "harm reduction", "sobriety",
+      // liver / metabolic effects
+      "liver damage", "alcohol liver disease", "alcoholic liver", "cirrhosis",
+      "fatty liver from alcohol", "alcoholic hepatitis",
+      "elevated liver enzymes drinking", "ast alt elevated alcohol",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Alcohol and substance use affect liver function, metabolic status, sleep, inflammation, and medication processing—creating a complex background that can change how any compound is experienced and how effects are interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that liver function, metabolic health, and inflammatory baseline can all be affected by alcohol or substance use patterns. When "${q}" is present, liver enzyme monitoring and metabolic parameters may have additional complexity. Some research suggests GLP-1 receptor signaling may be relevant to reward pathways.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how substance use history interacts with ${peptide} in practice. Most clinical studies exclude people with active substance use disorders, so evidence is limited. Interactions with medications used in addiction treatment are often unstudied.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from type and amount of substance used, current use vs. recovery status, liver and metabolic health, concurrent medications (especially MAT), sleep quality, nutritional status, and how substance use affects appetite regulation and GI function.`,
+  },
+
+  // ─── NEUROLOGICAL CONDITIONS ──────────────────────────────────────────────
+  {
+    id: "pt_ctx_neurological",
+    label: "Neurological Conditions",
+    synonyms: [
+      // epilepsy
+      "epilepsy", "seizures", "seizure disorder", "convulsions",
+      "absence seizure", "grand mal", "tonic clonic", "focal seizure",
+      "anti-epileptic", "anticonvulsant", "epileptic",
+      "levetiracetam", "keppra", "lamotrigine", "lamictal", "valproate", "depakote",
+      "phenytoin", "dilantin", "carbamazepine", "tegretol", "oxcarbazepine",
+      "lacosamide", "vimpat", "topiramate seizure",
+      // parkinson's
+      "parkinson", "parkinson's", "parkinson's disease", "pd",
+      "tremor", "resting tremor", "rigidity", "bradykinesia", "shuffling gait",
+      "levodopa", "carbidopa", "sinemet", "dopamine for parkinson",
+      "ropinirole", "pramipexole", "mirapex", "rasagiline", "selegiline", "safinamide",
+      "deep brain stimulation", "dbs parkinson",
+      // neuropathy
+      "neuropathy", "peripheral neuropathy", "nerve damage", "nerve pain",
+      "diabetic neuropathy", "charcot", "burning feet", "numbness tingling",
+      "small fiber neuropathy", "autonomic neuropathy",
+      "gabapentin", "pregabalin", "lyrica", "neurontin",
+      // tbi / brain injury
+      "tbi", "traumatic brain injury", "concussion", "post-concussion", "pcs",
+      "brain injury", "head injury",
+      "multiple sclerosis", "ms", "relapsing remitting ms",
+      // general
+      "neurological", "neurology", "neurological condition", "brain condition",
+      "cognitive decline", "dementia", "alzheimer", "memory loss",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Neurological conditions involve a wide spectrum of mechanisms—from altered neurotransmitter systems to inflammatory and metabolic factors—that can influence how any compound affects the nervous system and cognitive function.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that neurological conditions may alter metabolic regulation, appetite signaling, and how the CNS responds to compounds. Some neurological medications have metabolic or GI effects that may overlap or interact. When "${q}" is present, effects on cognition, energy, and motor function may be harder to attribute clearly.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how neurological conditions or their medications affect ${peptide} processing and tolerability. Most trials exclude people with significant neurological diagnoses, and drug-drug interactions with neurological medications are understudied in this context.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from neurological diagnosis and severity, current medications and their metabolic effects, sleep disruption, autonomic function, cognitive capacity to track changes, dietary and mobility patterns, and how the condition affects appetite, GI motility, and stress systems.`,
+  },
+
+  // ─── LYME / MOLD / CIRS ───────────────────────────────────────────────────
+  {
+    id: "pt_ctx_lyme_mold_cirs",
+    label: "Lyme / Mold / CIRS",
+    synonyms: [
+      // lyme
+      "lyme", "lyme disease", "lyme borreliosis", "chronic lyme",
+      "post-lyme", "post-lyme syndrome", "post-treatment lyme", "ptlds",
+      "tick-borne illness", "tick bite", "co-infections", "bartonella", "babesia", "ehrlichia",
+      "persistent lyme", "lyme symptoms", "lyme fatigue",
+      // mold
+      "mold", "mold illness", "mold exposure", "toxic mold", "black mold",
+      "water damaged building", "wdb", "mycotoxin", "mycotoxins",
+      "mold toxicity", "mold sensitivity",
+      // cirs
+      "cirs", "chronic inflammatory response syndrome",
+      "biotoxin illness", "biotoxin", "biotoxin pathway",
+      "shoemaker protocol", "vcs test",
+      "mast cell activation", "mcas",
+      // symptoms
+      "brain fog lyme", "joint pain lyme", "fatigue lyme",
+      "neurological lyme", "lyme arthritis",
+      // treatments
+      "doxycycline lyme", "amoxicillin lyme", "ceftin lyme",
+      "iv antibiotics lyme", "long term antibiotics",
+      "cholestyramine", "welchol", "binders",
+      "hla dr", "mmp9",
+      // functional medicine
+      "functional medicine", "integrative medicine",
+      "chronic illness", "complex chronic illness",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Lyme disease, mold illness, and CIRS involve persistent inflammatory, immune, and neuroendocrine disruption that can affect how the body responds to any compound—and how reported effects are interpreted in the context of an already unpredictable symptom baseline.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that people with "${q}" often have baseline fatigue, brain fog, pain, and immune dysregulation that fluctuate independently. Changes in symptoms when using ${peptide} may be difficult to distinguish from underlying condition variability, herxheimer-type reactions, or treatment effects.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how chronic inflammatory conditions like "${q}" affect metabolic and endocrine pathways relevant to ${peptide}, and whether standard effects are amplified, blunted, or shifted. Research populations generally exclude people with these diagnoses.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from illness phase and severity, current treatment protocol, mold or tick antigen burden, mast cell reactivity, immune system state, HPA axis function, sleep disruption, concurrent medications and binders, and individual sensitivity to inflammatory signals.`,
+  },
+
+  // ─── GOUT / HIGH URIC ACID ────────────────────────────────────────────────
+  {
+    id: "pt_ctx_gout",
+    label: "Gout / High Uric Acid",
+    synonyms: [
+      // plain language
+      "gout", "gout attack", "gout flare", "gouty arthritis",
+      "high uric acid", "elevated uric acid", "uric acid",
+      "hyperuricemia", "purine", "urate", "urate crystals",
+      "crystal arthritis",
+      // symptoms
+      "big toe pain", "toe swelling gout", "joint attack gout",
+      "tophi", "gout tophi", "chronic gout",
+      // medications
+      "allopurinol", "febuxostat", "uloric",
+      "colchicine", "colcrys",
+      "indomethacin gout", "nsaid gout",
+      "probenecid",
+      "pegloticase", "krystexxa",
+      "rasburicase",
+      "prednisone gout", "steroid gout",
+      // diet related
+      "purine diet", "low purine", "avoid red meat gout",
+      "shellfish gout", "alcohol gout", "beer gout",
+      "fructose gout", "high fructose gout",
+      // kidney related
+      "kidney stones uric acid", "uric acid kidney stones",
+      "urate nephropathy",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Gout and high uric acid are influenced by diet, hydration, kidney function, metabolic health, and several medications—making it complex to predict how changes in any of these factors (which may shift during ${peptide} use) affect uric acid levels and gout risk.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that uric acid is sensitive to dietary changes (especially caloric restriction and protein intake), hydration status, kidney function, and metabolic shifts. When "${q}" is present, changes in diet or weight can sometimes transiently affect uric acid levels.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear whether ${peptide} directly affects uric acid metabolism, or whether observed changes reflect diet, hydration, weight change, or kidney function shifts. Gout medications and their interactions in this context are not well studied.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from baseline uric acid level, kidney function, diet composition, hydration, alcohol use, genetic uric acid handling, concurrent urate-lowering therapy, and how dietary patterns shift during the period of use.`,
+  },
+
+  // ─── PROSTATE / BPH ───────────────────────────────────────────────────────
+  {
+    id: "pt_ctx_prostate",
+    label: "Prostate Health / BPH",
+    synonyms: [
+      // plain language
+      "prostate", "prostate problems", "enlarged prostate", "big prostate",
+      "bph", "benign prostatic hyperplasia", "prostate enlargement",
+      "trouble urinating", "weak urine stream", "frequent urination men",
+      "can't empty bladder", "nocturia", "waking up to pee",
+      // prostate cancer
+      "prostate cancer", "pca", "prostate tumor",
+      "psa", "psa elevated", "rising psa", "psa test",
+      "active surveillance prostate", "watchful waiting prostate",
+      "prostatectomy", "radiation prostate",
+      "hormone therapy prostate", "adt", "androgen deprivation therapy",
+      "leuprolide", "lupron", "enzalutamide", "xtandi", "abiraterone", "zytiga",
+      "castration resistant",
+      // bph medications
+      "tamsulosin", "flomax", "alfuzosin", "silodosin",
+      "finasteride prostate", "dutasteride", "avodart", "proscar",
+      "5-alpha reductase inhibitor",
+      "alpha blocker prostate",
+      // related
+      "prostatitis", "chronic prostatitis", "pelvic pain men",
+      "testosterone prostate", "low t prostate", "trt prostate",
+      "dihydrotestosterone", "dht",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Prostate health involves hormonal, inflammatory, and urological dynamics that can interact with metabolic status, testosterone levels, and medications—creating a background context that shapes how any compound's effects are interpreted.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that hormonal balance, metabolic health, and inflammatory status can influence prostate symptoms and PSA levels. When someone with "${q}" is also on hormone-modulating treatments like ADT or TRT, the interaction with ${peptide}'s metabolic effects may add complexity.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how ${peptide} affects prostate-specific outcomes, or how prostate medications interact with metabolic compounds in practice. Studies involving people on active prostate cancer treatment rarely include investigational metabolic compounds.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from prostate condition type and severity, current medications (especially hormonal), baseline testosterone levels, metabolic and inflammatory status, urological anatomy, and whether active treatment for prostate cancer is ongoing.`,
+  },
+
+  // ─── POST-SURGICAL RECOVERY ───────────────────────────────────────────────
+  {
+    id: "pt_ctx_post_surgical",
+    label: "Post-Surgical Recovery",
+    synonyms: [
+      // plain language
+      "surgery", "post surgery", "after surgery", "recovering from surgery",
+      "post op", "postoperative", "surgical recovery", "healing from surgery",
+      "wound healing", "incision", "stitches", "staples",
+      "post-surgical", "recent surgery", "just had surgery",
+      // types of surgery
+      "bariatric surgery", "gastric bypass", "sleeve gastrectomy", "gastric sleeve",
+      "weight loss surgery",
+      "hip replacement", "knee replacement", "joint replacement",
+      "heart surgery", "bypass surgery", "cardiac surgery",
+      "abdominal surgery", "bowel surgery", "colon surgery", "colectomy",
+      "hernia repair",
+      "organ transplant", "transplant",
+      "appendectomy", "gallbladder surgery", "cholecystectomy",
+      "spinal surgery", "back surgery", "discectomy", "fusion spine",
+      // recovery state
+      "slow healing", "poor wound healing", "wound infection",
+      "anesthesia", "general anesthesia",
+      "physical therapy post surgery", "rehab surgery",
+      "pain control post op", "opioid post surgery",
+      "blood clot post surgery", "dvt post op", "pe post surgery",
+      "complications surgery",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Post-surgical recovery involves tissue healing, immune response, pain management, and metabolic demands that can be highly sensitive to nutritional status, appetite, weight, and medication changes—all of which may be relevant when using compounds that affect these systems.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that nutrition, protein intake, inflammatory status, and weight trajectory all matter for surgical recovery. When someone is recovering from "${q}" while also using ${peptide}, the effect on appetite and GI function may have implications for meeting recovery nutritional needs.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how ${peptide} use around the surgical period affects wound healing, immune function, or anesthetic interactions. Guidance on timing (stopping before surgery, when to resume) varies and is not systematically studied in clinical contexts.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from surgery type and complexity, nutritional status before surgery, healing biology, concurrent medications (especially pain management), activity level, comorbid conditions, age, and whether complications occurred during or after the procedure.`,
+  },
+
+  // ─── PTSD / TRAUMA ────────────────────────────────────────────────────────
+  {
+    id: "pt_ctx_ptsd_trauma",
+    label: "PTSD / Trauma",
+    synonyms: [
+      // plain language
+      "ptsd", "trauma", "traumatic stress", "post traumatic stress",
+      "post-traumatic stress disorder", "complex ptsd", "cptsd",
+      "trauma survivor", "traumatized", "childhood trauma", "adverse childhood events",
+      "ace score", "aces",
+      "military trauma", "combat ptsd", "veteran ptsd",
+      "sexual trauma", "abuse history",
+      "dissociation", "flashbacks", "nightmares trauma", "hypervigilance",
+      "freeze response", "fight or flight", "trauma response",
+      // related conditions
+      "emotional eating", "binge eating trauma", "trauma and eating",
+      "trauma and weight", "obesity and trauma",
+      "somatic symptoms", "body memory",
+      // treatments
+      "trauma therapy", "emdr", "cbt trauma", "prolonged exposure therapy",
+      "cognitive processing therapy", "cpt therapy",
+      "prazosin nightmares", "prazosin ptsd",
+      "sertraline ptsd", "paroxetine ptsd", "ssri ptsd",
+      "stellate ganglion block", "sgb ptsd",
+      "ketamine ptsd", "mdma therapy", "psychedelic therapy",
+      // stress / nervous system
+      "hyperarousal", "nervous system dysregulation",
+      "hpa axis", "cortisol and trauma", "adrenal and stress",
+      "chronic stress", "allostatic load",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. PTSD and trauma affect the nervous system, HPA axis, cortisol, appetite regulation, and eating patterns in ways that are deeply intertwined with metabolic health—making it complex to interpret how any compound affects symptoms, behavior, or wellbeing in this context.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that trauma affects appetite, eating behavior, weight regulation, and stress hormones. When "${q}" is present, emotional eating patterns, dissociation around food, and hypervigilance about body changes may all intersect with how ${peptide} affects appetite and weight.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how trauma history or active PTSD affects the subjective experience of metabolic compounds, or whether changes in appetite and weight trigger psychological responses that complicate the picture. The interaction between trauma-related eating patterns and GLP-1 class mechanisms is not well studied.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from trauma type, history, and severity, current therapeutic support, concurrent psychiatric medications, relationship with food and body, stress and cortisol baseline, sleep disruption, nervous system regulation capacity, and emotional eating patterns.`,
+  },
+
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {

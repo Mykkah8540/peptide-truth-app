@@ -17,17 +17,8 @@ const SUBLINE =
 const PLACEHOLDER = "Search: thyroid, SSRI, autoimmune, older adults…";
 const FRAMING_LINE = "This adds context — it does not decide what’s right for any individual.";
 
-const EXAMPLES = [
-  "Thyroid conditions", "Antidepressants (SSRIs)", "Anxiety or ADHD",
-  "Heart disease", "Blood thinners", "Autoimmune conditions",
-  "Hormone therapy (TRT / HRT)", "Older adults", "Pregnancy",
-  "Kidney disease", "Sleep issues", "Metabolic conditions",
-  "Long COVID", "Chronic fatigue or POTS", "Chronic pain",
-  "Cancer", "Asthma or COPD", "Bipolar or antipsychotics",
-  "Osteoporosis", "Endometriosis or PCOS", "Blood pressure",
-  "Eating disorders", "Allergies or histamine", "Low iron or anemia",
-  "Hair loss or alopecia", "Skin conditions",
-];
+const SEARCH_HINT =
+  "Try: thyroid, SSRI, long COVID, blood thinners, Adderall, autoimmune, POTS, gout, PTSD…";
 
 function normalize(s: string) {
   return s.trim().replace(/\s+/g, " ");
@@ -64,8 +55,8 @@ export default function PDPContextualConsiderations(props: Props) {
   }, [query]);
 
   useEffect(() => {
-    setSelectedIdx(-1);
-  }, [query]);
+    setSelectedIdx(matches.length > 0 ? 0 : -1);
+  }, [matches]);
 
   const selected = matches[selectedIdx] ?? null;
   const pack = (selected && (selected.pack || selected.context || selected.item || selected)) || null;
@@ -129,29 +120,7 @@ export default function PDPContextualConsiderations(props: Props) {
         </datalist>
 
         {!query ? (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {EXAMPLES.map((ex) => (
-              <button
-                key={ex}
-                type="button"
-                onClick={() => setQ(ex)}
-                style={{
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  background: "#fff",
-                  borderRadius: 999,
-                  padding: "8px 10px",
-                  fontSize: 12,
-                  fontWeight: 900,
-                  cursor: "pointer",
-                  opacity: 0.9,
-                }}
-                aria-label={`Search: ${ex}`}
-                title={`Search: ${ex}`}
-              >
-                {ex}
-              </button>
-            ))}
-          </div>
+          <div style={{ fontSize: 12, opacity: 0.6, lineHeight: 1.5 }}>{SEARCH_HINT}</div>
         ) : matches.length ? (
           <div style={{ display: "grid", gap: 10 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
