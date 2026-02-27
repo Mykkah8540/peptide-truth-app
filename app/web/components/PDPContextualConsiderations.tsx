@@ -25,6 +25,8 @@ const EXAMPLES = [
   "Long COVID", "Chronic fatigue or POTS", "Chronic pain",
   "Cancer", "Asthma or COPD", "Bipolar or antipsychotics",
   "Osteoporosis", "Endometriosis or PCOS", "Blood pressure",
+  "Eating disorders", "Allergies or histamine", "Low iron or anemia",
+  "Hair loss or alopecia", "Skin conditions",
 ];
 
 function normalize(s: string) {

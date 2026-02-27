@@ -1136,6 +1136,237 @@ export const CONTEXT_PACKS: ContextPack[] = [
       `Variability can come from cycle phase, disease severity, current hormonal therapy, insulin sensitivity (especially in PCOS), stress load, sleep, pain level, and how hormone levels fluctuate across the month.`,
   },
 
+  // ─── EATING DISORDERS ────────────────────────────────────────────────────
+  {
+    id: "pt_ctx_eating_disorders",
+    label: "Eating disorders and disordered eating",
+    synonyms: [
+      // plain language
+      "eating disorder", "eating disorders", "disordered eating",
+      "anorexia", "anorexic", "restricting food", "not eating enough",
+      "bulimia", "bulimic", "binge purge", "purging",
+      "binge eating", "binge eating disorder", "bingeing", "compulsive eating",
+      "orthorexia", "fear of food",
+      "arfid", "avoidant restrictive food intake",
+      "recovery from eating disorder", "ed recovery", "in recovery",
+      "history of eating disorder",
+      // related behaviors and concerns
+      "body image", "body dysmorphia", "body dysmorphic disorder",
+      "calorie restriction", "extreme calorie restriction", "very low calorie",
+      "food restriction", "restrictive eating",
+      "laxative use", "laxatives", "laxative abuse",
+      "overexercise", "compulsive exercise", "exercise addiction",
+      "low weight", "very low weight", "underweight",
+      "relapse risk", "eating disorder relapse",
+      // nutritional consequences
+      "electrolyte imbalance", "low electrolytes",
+      "refeeding syndrome", "refeeding",
+      "nutrient deficiency", "malnutrition",
+      "low bone density from eating disorder", "amenorrhea", "female athlete triad",
+      "relative energy deficiency", "red-s",
+      // treatment
+      "eating disorder treatment", "inpatient eating disorder", "residential treatment",
+      "dietitian", "nutritionist", "eating disorder therapist",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Eating disorder contexts involve significant nutritional variability, potential electrolyte and metabolic instability, and a heightened sensitivity to anything that affects appetite, weight, or body perception—making interpretation especially nuanced.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that appetite, weight, energy, and body-related signals carry outsized emotional and behavioral weight in this context. When "${q}" is part of the picture, effects on hunger, nausea, and body composition perception can interact with existing patterns in ways that don't apply to general populations.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how findings from typical populations translate to people with active or historical eating disorders, since nutritional status, electrolyte balance, and neuroendocrine function can be significantly altered. Most studies exclude this population, so direct evidence for ${peptide} here is essentially absent.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from current nutritional status, recovery stage, medication use, electrolyte balance, bone health, hormonal suppression from low weight, psychological relationship with food, and whether appetite suppression or stimulation is experienced as welcome or threatening.`,
+  },
+
+  // ─── ALLERGIES / HISTAMINE / ANTIHISTAMINES ──────────────────────────────
+  {
+    id: "pt_ctx_allergies",
+    label: "Allergies, histamine intolerance, and antihistamines",
+    synonyms: [
+      // plain language
+      "allergies", "allergy", "allergic", "allergic reaction",
+      "seasonal allergies", "hay fever", "pollen allergy",
+      "food allergies", "food allergy", "allergic to food",
+      "allergic to nuts", "nut allergy", "tree nut allergy",
+      "shellfish allergy", "dairy allergy", "gluten allergy",
+      "pet allergy", "cat allergy", "dog allergy", "dust allergy",
+      "mold allergy",
+      "antihistamine", "antihistamines", "on antihistamines",
+      "allergy medication", "allergy meds", "allergy pills",
+      "histamine", "histamine intolerance", "high histamine",
+      "hives", "urticaria", "chronic hives", "chronic urticaria",
+      "angioedema", "swelling from allergy",
+      "anaphylaxis", "anaphylactic", "epipen", "epinephrine",
+      // clinical
+      "allergic rhinitis", "rhinitis",
+      "mast cell activation", "mcas", "mast cell activation syndrome",
+      "mast cell disorder",
+      "ige mediated", "ige allergy",
+      "skin prick test", "allergy testing",
+      "immunotherapy allergy shots", "allergy shots", "sublingual immunotherapy", "slit",
+      "eosinophilic esophagitis", "eoe", "eosinophilic",
+      // medications
+      "cetirizine", "zyrtec",
+      "loratadine", "claritin",
+      "fexofenadine", "allegra",
+      "diphenhydramine", "benadryl",
+      "hydroxyzine for allergy",
+      "montelukast", "singulair",
+      "nasal corticosteroid", "flonase", "nasonex", "rhinocort",
+      "cromolyn", "ketotifen",
+      "dupilumab", "dupixent",
+      "omalizumab", "xolair",
+      "prednisone for allergy", "steroids for allergy",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Allergy and histamine contexts can affect immune reactivity, skin, GI function, and respiratory symptoms—and antihistamines can have sedating and anti-inflammatory effects that change the baseline for interpreting other signals.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that histamine-related symptoms (skin reactions, gut irritation, fatigue, brain fog) can fluctuate with allergen exposure, season, stress, and diet—creating variability that's hard to attribute to any single compound. When "${q}" is present, antihistamine use can dampen or mask signals.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear whether a new skin symptom, GI reaction, or fatigue episode reflects ${peptide} directly, a histamine response, an allergy flare, or antihistamine side effects. Most studies don't stratify by allergy status or antihistamine use.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from allergy type and severity, current allergen load (season, diet), antihistamine class and sedation level, mast cell reactivity, gut permeability, and underlying immune sensitivity.`,
+  },
+
+  // ─── ANEMIA / IRON DEFICIENCY / BLOOD DISORDERS ──────────────────────────
+  {
+    id: "pt_ctx_anemia_blood",
+    label: "Anemia, iron deficiency, and blood disorders",
+    synonyms: [
+      // plain language
+      "anemia", "anaemia", "low iron", "iron deficiency", "iron low",
+      "low ferritin", "ferritin low", "depleted iron stores",
+      "low hemoglobin", "low hgb", "low red blood cells", "low rbc",
+      "low blood count", "low blood", "pale", "pale skin",
+      "tired from low iron", "exhausted from anemia",
+      "blood disorder", "blood condition", "blood problem",
+      "b12 deficiency", "low b12", "b12 low", "vitamin b12",
+      "folate deficiency", "low folate", "folic acid deficiency",
+      // clinical
+      "iron deficiency anemia", "ida",
+      "hemoglobin", "hematocrit", "hgb", "hct",
+      "ferritin", "serum iron", "tibc", "transferrin saturation",
+      "iron infusion", "iv iron", "iron transfusion",
+      "iron supplement", "iron pills", "ferrous sulfate", "ferrous gluconate",
+      "blood transfusion",
+      "b12 injections", "b12 shots", "methylcobalamin", "cyanocobalamin",
+      // blood disorders
+      "sickle cell", "sickle cell disease", "sickle cell anemia",
+      "thalassemia", "thalassaemia", "beta thalassemia",
+      "hemolytic anemia", "hemolysis",
+      "aplastic anemia",
+      "polycythemia", "polycythemia vera",
+      "thrombocytopenia", "low platelets", "low platelet count",
+      "thrombocytosis", "high platelets",
+      "neutropenia", "low neutrophils",
+      "hemophilia", "von willebrand disease", "clotting factor deficiency",
+      "myelodysplastic syndrome", "mds",
+      "anemia of chronic disease", "anemia of inflammation",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Anemia and iron deficiency affect oxygen delivery, energy metabolism, and cognitive function—creating a fatigue and performance baseline that can be difficult to separate from effects attributed to other compounds.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that iron deficiency and anemia can independently produce fatigue, brain fog, exercise intolerance, and cold sensitivity—symptoms that overlap substantially with what people monitor when using ${peptide}. When "${q}" is present, correcting deficiency often has a more noticeable effect than any compound.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear how well findings from iron-replete populations translate to people with active anemia or deficiency, and whether ${peptide} influences iron metabolism, red cell production, or inflammatory pathways that affect blood markers. Direct evidence is typically limited.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from severity of deficiency, underlying cause (dietary, absorption, blood loss, chronic disease), whether supplementation is ongoing, concurrent deficiencies (B12, folate), menstrual blood loss, and baseline metabolic demand.`,
+  },
+
+  // ─── ALOPECIA / HAIR LOSS ────────────────────────────────────────────────
+  {
+    id: "pt_ctx_hair_loss",
+    label: "Hair loss and alopecia",
+    synonyms: [
+      // plain language
+      "hair loss", "losing hair", "thinning hair", "hair thinning",
+      "bald", "balding", "going bald", "hair falling out",
+      "shedding hair", "hair shedding", "excessive shedding",
+      "receding hairline", "hair line receding",
+      "alopecia", "alopecia areata", "spot baldness", "bald patches",
+      "androgenic alopecia", "androgenetic alopecia",
+      "male pattern baldness", "female pattern hair loss",
+      "hair not growing back",
+      // causes and triggers
+      "telogen effluvium", "stress hair loss", "hair loss from stress",
+      "hormonal hair loss", "thyroid hair loss",
+      "postpartum hair loss", "hair loss after baby", "hair loss after pregnancy",
+      "hair loss from medication", "drug-induced hair loss",
+      "nutritional hair loss", "hair loss from low iron",
+      "scalp issues", "scalp inflammation", "scalp condition",
+      // clinical and treatments
+      "minoxidil", "rogaine", "topical minoxidil",
+      "finasteride", "propecia", "dutasteride", "avodart",
+      "spironolactone for hair", "spiro for hair",
+      "platelet rich plasma", "prp for hair",
+      "hair transplant",
+      "ketoconazole shampoo", "nizoral",
+      "biotin", "biotin for hair",
+      "collagen for hair",
+      "low level laser therapy", "lllt",
+      "dermatologist", "trichologist",
+      "jak inhibitor for alopecia", "baricitinib", "ritlecitinib",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Hair loss is a sensitive and highly visible outcome, and its causes are multifactorial—hormones, nutrition, stress, immune function, and medications can all contribute—which makes attribution especially difficult.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that hair cycling has a natural lag—telogen effluvium and regrowth both appear weeks to months after the triggering event. When "${q}" is present, it can be hard to know whether ${peptide} is influencing hair cycles, or whether the change reflects an earlier stressor, hormonal shift, or nutritional deficit.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear whether reported changes in hair shedding or regrowth reflect ${peptide} directly, changes in hormones (androgens, thyroid, estrogen), nutritional status, or the natural fluctuation of hair cycling. Most studies don't track hair outcomes systematically.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from genetic predisposition, hormonal environment (DHT, estrogen, thyroid), nutritional status (iron, biotin, protein), stress levels, scalp health, and what phase of the hair cycle someone is in when they start observing.`,
+  },
+
+  // ─── SKIN CONDITIONS ─────────────────────────────────────────────────────
+  {
+    id: "pt_ctx_skin_conditions",
+    label: "Skin conditions (eczema, rosacea, acne, dermatitis)",
+    synonyms: [
+      // plain language
+      "skin condition", "skin conditions", "skin problem", "skin problems",
+      "skin disorder", "skin issues", "bad skin",
+      "eczema", "atopic dermatitis", "dry itchy skin", "itchy skin", "rash",
+      "rosacea", "facial redness", "flushing", "red face",
+      "acne", "breakouts", "pimples", "cystic acne", "hormonal acne", "body acne",
+      "psoriasis", "psoriasis plaques", "psoriasis flares",
+      "hives", "urticaria", "itchy welts",
+      "contact dermatitis", "skin allergy", "skin reaction",
+      "seborrheic dermatitis", "dandruff",
+      "perioral dermatitis",
+      "sensitive skin", "skin sensitivity", "reactive skin",
+      "dry skin", "very dry skin", "flaky skin",
+      "oily skin",
+      "skin inflammation",
+      "wound healing", "slow wound healing", "poor healing",
+      "scarring", "scarring easily",
+      "stretch marks",
+      "skin aging", "collagen skin", "skin elasticity",
+      // clinical and treatments
+      "dermatologist", "dermatology",
+      "topical steroid", "topical corticosteroid", "hydrocortisone cream",
+      "triamcinolone", "clobetasol",
+      "retinoid", "retinol", "tretinoin", "retin-a",
+      "isotretinoin", "accutane",
+      "dupilumab", "dupixent",
+      "biologic for skin", "skyrizi", "risankizumab",
+      "methotrexate for skin",
+      "cyclosporine for skin",
+      "phototherapy", "uvb therapy", "narrow band uvb",
+      "immunosuppressant for skin",
+      "moisturizer", "emollient", "barrier cream",
+      "antibiotic for skin", "doxycycline for skin", "minocycline",
+      "spironolactone for acne",
+    ],
+    contextSummary: (peptide, q) =>
+      `People often ask how "${q}" relates to ${peptide}. Skin conditions involve immune, hormonal, and inflammatory dynamics that fluctuate with stress, diet, season, and medication—making it difficult to isolate what any single compound is contributing to skin changes.`,
+    whatIsKnown: (peptide, q) =>
+      `What's discussed most consistently is that skin symptoms are highly reactive to multiple overlapping factors. When "${q}" is present, new skin changes (flushing, breakouts, dryness, irritation) often reflect immune or hormonal shifts, topical medication changes, or diet/stress rather than a direct effect of ${peptide}.`,
+    whatIsUnclear: (peptide, q) =>
+      `It's often unclear whether a skin change reflects ${peptide} directly, a change in inflammatory status, hormonal fluctuation, dietary shift, or reaction to other medications. Skin responses are often nonspecific and may resolve without any clear cause identified.`,
+    whyExperiencesVary: (peptide, q) =>
+      `Variability can come from skin condition type and severity, immune and hormonal environment, current medication regimen, skincare routine, diet, stress load, climate and season, and individual skin barrier function.`,
+  },
+
 ];
 
 export function getBestContextMatches(query: string, limit = 3): Match[] {
