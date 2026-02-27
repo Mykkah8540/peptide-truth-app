@@ -2544,11 +2544,22 @@ html.reta-page body {
 }
 
 @media (max-width: 999px) {
+  /* Community: full-width bar — no side gutters on the wrapper,
+     inner card spans edge-to-edge with its own padding */
   .reta-community {
-    padding: 0 20px 56px;
+    max-width: none;
+    padding: 0 0 56px;
   }
   .reta-community::before {
-    margin-bottom: 28px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .reta-community .pt-card {
+    border-radius: 0;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -2579,7 +2590,7 @@ html.reta-page body {
   .reta-hero-v2 {
     border-radius: 0;
     overflow: hidden;
-    padding: 64px 22px 44px;
+    padding: 64px 22px 32px;
     background:
       radial-gradient(ellipse 55% 70% at 88% 55%, rgba(74, 144, 226, 0.22) 0%, transparent 65%),
       linear-gradient(155deg,
@@ -2588,11 +2599,15 @@ html.reta-page body {
       );
   }
 
-  /* ── 2. Inner: flex column, rel position preserved for abs vial ── */
+  /* ── 2. Inner: flex column. position: static so the vial's
+         absolute positioning is relative to .reta-hero-v2 directly
+         (not __inner), ensuring overflow: hidden clips it correctly
+         on iOS Safari (stacking context issue with z-index: 1). ── */
   .reta-hero-v2__inner {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    position: static;
   }
 
   /* ── 3. Main: above vial, full-width ── */
@@ -2627,7 +2642,7 @@ html.reta-page body {
   .reta-hero-v2__frame {
     font-size: 14px;
     line-height: 1.55;
-    max-width: calc(100% - 160px);
+    max-width: calc(100% - 120px);
   }
 
   /* ── 6. Vial: absolute right-side decoration ──
@@ -2641,8 +2656,8 @@ html.reta-page body {
   ── */
   .reta-hero-v2__vial {
     position: absolute;
-    right: -12px;
-    top: -34px;
+    right: 0;       /* flush with hero's right padding edge */
+    top: 20px;      /* from hero's top — bottle appears ~49px lower */
     z-index: 1;
     overflow: visible;
     width: 200px;
@@ -2724,17 +2739,17 @@ html.reta-page body {
   }
 
   .reta-hero-v2__frame {
-    max-width: calc(100% - 140px);
+    max-width: calc(100% - 110px);
   }
 
   .reta-hero-v2__vial {
-    right: -10px;
-    top: -48px;
-    width: 175px;
+    right: 0;
+    top: 16px;
+    width: 170px;
   }
 
   .reta-hero-v2__vial img {
-    width: 175px !important;
+    width: 170px !important;
     transform: translateY(-70px) scale(1) !important;
   }
 
