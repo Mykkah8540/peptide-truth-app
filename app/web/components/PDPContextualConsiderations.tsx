@@ -5,6 +5,9 @@ import { getBestContextMatches } from "@/lib/contextualConsiderations";
 
 type Props = {
   peptideName: string;
+  /** When true, skips the outer <section className="pt-card"> wrapper.
+   *  Use when the parent already provides a container (e.g. reta-g-card). */
+  noWrap?: boolean;
 };
 
 const TITLE = "Things to Consider for Your Situation";
@@ -26,6 +29,7 @@ function fill(t: unknown, vars: Record<string, string>) {
 }
 
 export default function PDPContextualConsiderations(props: Props) {
+  const { noWrap = false } = props;
   const [q, setQ] = useState("");
   const query = normalize(q);
 
@@ -78,8 +82,8 @@ export default function PDPContextualConsiderations(props: Props) {
     return { contextSummary, whatIsKnown, whatIsUnclear, whyExperiencesVary };
   }, [pack, props.peptideName, query, vars]);
 
-  return (
-    <section className="pt-card" aria-label={TITLE}>
+  const inner = (
+    <>
       <h2 className="pt-card-title">{TITLE}</h2>
       <p className="pt-card-subtext">{SUBLINE}</p>
 
@@ -219,6 +223,9 @@ export default function PDPContextualConsiderations(props: Props) {
           </div>
         )}
       </div>
-    </section>
+    </>
   );
+
+  if (noWrap) return <div aria-label={TITLE}>{inner}</div>;
+  return <section className="pt-card" aria-label={TITLE}>{inner}</section>;
 }

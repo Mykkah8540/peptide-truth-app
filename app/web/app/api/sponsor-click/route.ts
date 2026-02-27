@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 function getSupabase() {
-  const url = process.env.SUPABASE_URL;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY; // server only
 
   if (!url || !key) return null;
@@ -25,6 +25,18 @@ export async function POST(req: Request) {
     if (!supabase) {
       console.error("[sponsor-click] missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
       return NextResponse.json({ ok: false, error: "server_misconfigured" }, { status: 500 });
+    }
+
+    // Validate sponsor exists and is active before recording the event
+    const { data: sponsor } = await supabase
+      .from("sponsors")
+      .select("id, href")
+      .eq("id", id)
+      .eq("is_active", true)
+      .maybeSingle();
+
+    if (!sponsor) {
+      return NextResponse.json({ ok: false, error: "invalid_sponsor" }, { status: 400 });
     }
 
     await supabase.from("sponsor_events").insert({

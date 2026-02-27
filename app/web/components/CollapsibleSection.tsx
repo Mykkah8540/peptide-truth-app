@@ -23,20 +23,14 @@ export default function CollapsibleSection(props: Props) {
   } = props;
 
   // SSR-safe: start collapsed if *either* mode might want collapsing.
-  // This prevents the "wall of text" flash + alignment jank before hydration.
+  // Prevents "wall of text" flash + layout jank before hydration.
   const ssrInitial = useMemo(() => {
     return !!(defaultCollapsed || defaultCollapsedMobile);
   }, [defaultCollapsed, defaultCollapsedMobile]);
 
-  const [collapsed, setCollapsed] = useState<boolean>(() => {
-    try {
-      if (typeof window === "undefined") return ssrInitial;
-      const isMobile = window.matchMedia("(max-width: 640px)").matches;
-      return isMobile ? defaultCollapsedMobile : defaultCollapsed;
-    } catch {
-      return ssrInitial;
-    }
-  });
+  // Always start from ssrInitial to match server HTML — avoids hydration mismatch.
+  // useEffect below applies the responsive correction after mount.
+  const [collapsed, setCollapsed] = useState<boolean>(ssrInitial);
 
   useEffect(() => {
     try {
@@ -75,19 +69,28 @@ export default function CollapsibleSection(props: Props) {
             display: "inline-flex",
             width: 18,
             height: 18,
+            flexShrink: 0,
             alignItems: "center",
             justifyContent: "center",
-            opacity: 0.7,
+            opacity: 0.6,
             transform: collapsed ? "rotate(0deg)" : "rotate(90deg)",
-            transition: "transform 120ms ease",
+            transition: "transform 200ms ease",
             fontWeight: 900,
+            fontSize: 16,
           }}
         >
           ›
         </span>
       </button>
 
-      {collapsed ? null : <div style={{ marginTop: 10 }}>{children}</div>}
+      {/*
+        CSS grid trick: grid-template-rows animates from 0fr → 1fr,
+        creating a smooth height expand/collapse. Children stay in the DOM
+        at all times — important for SEO and screen readers.
+      */}
+      <div className={`pt-collapse-body${!collapsed ? " pt-collapse-body--open" : ""}`}>
+        <div>{children}</div>
+      </div>
     </div>
   );
 }

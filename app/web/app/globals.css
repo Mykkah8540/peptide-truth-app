@@ -1049,3 +1049,1505 @@ body {
   opacity: 0.9;
 }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   RETA_HERO_V2_GLASS + RETA_BODY_V2
+   Frosted glass editorial design for Retatrutide benchmark.
+   All classes scoped to .reta-* — zero global mutations.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --reta-navy: #0f1a2e;
+  --reta-body-bg: #dce4ee;
+  --reta-glass: rgba(255, 255, 255, 0.50);
+  --reta-glass-blur: blur(20px) saturate(1.4);
+  --reta-glass-border: rgba(255, 255, 255, 0.50);
+}
+
+/* Page-level background */
+.pt-benchmark {
+  background: var(--reta-body-bg);
+  min-height: 100vh;
+}
+
+/* ══════════════════════════════════════════════
+   HERO — full-width gradient container
+   ══════════════════════════════════════════════ */
+.reta-hero-v2 {
+  width: 100%;
+  padding: 44px 52px 40px;
+  background: linear-gradient(
+    170deg,
+    #ced9e8 0%,
+    #d4dfec 12%,
+    #dae3ef 25%,
+    #e2eaf3 45%,
+    #e8eff5 65%,
+    #edf2f7 85%,
+    #f0f4f8 100%
+  );
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Watermark — multiply blend makes white PNG transparent */
+.reta-hero-v2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/assets/textures/molecular-watermark.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.065;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Inner centered 3-column grid */
+.reta-hero-v2__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 180px 1fr 320px;
+  column-gap: 36px;
+  align-items: start;
+}
+
+/* Column 1: Vial */
+.reta-hero-v2__vial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+
+/* Column 2: Title, Frame, Jumps */
+.reta-hero-v2__main {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.reta-hero-v2__title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 60px;
+  font-weight: 900;
+  color: var(--reta-navy);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.reta-hero-v2__frame {
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: #2a3a52;
+  max-width: 50ch;
+  margin: 0;
+}
+
+/* Quick jumps row */
+.reta-hero-v2__jumps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.reta-hero-v2__jumps-label {
+  font-size: 12px;
+  opacity: 0.55;
+  font-weight: 700;
+  margin-right: 4px;
+  color: var(--reta-navy);
+}
+
+.reta-hero-v2__jump {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid rgba(26, 32, 56, 0.18);
+  border-radius: 999px;
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--reta-navy);
+  transition: background 120ms ease;
+}
+
+.reta-hero-v2__jump:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+/* "For your situation" CTA — sits below the quick jumps row */
+.reta-hero-v2__consider-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--reta-navy);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(90, 156, 214, 0.45);
+  background: rgba(90, 156, 214, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: fit-content;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.reta-hero-v2__consider-btn:hover {
+  background: rgba(90, 156, 214, 0.22);
+  border-color: rgba(90, 156, 214, 0.65);
+}
+
+.reta-hero-v2__consider-sub {
+  font-size: 11.5px;
+  font-weight: 600;
+  opacity: 0.62;
+}
+
+/* Column 3: Posture card */
+.reta-hero-v2__rail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Hero frosted glass card */
+.reta-glass-card {
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 18px;
+  padding: 22px 24px 20px;
+  box-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+}
+
+.reta-glass-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.reta-glass-card__row:first-child {
+  padding-top: 0;
+}
+
+.reta-glass-card__label {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #1a2a40;
+}
+
+.reta-glass-card__chip {
+  padding: 5px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2a40;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+}
+
+.reta-glass-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.reta-glass-card__evidence {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: #0f1a2e;
+}
+
+.reta-glass-card__disclaimer {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #2a3a52;
+  opacity: 0.82;
+  margin: 0;
+}
+
+.reta-glass-card__framing {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #2a3a52;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════════
+   BODY — 2-column layout
+   ══════════════════════════════════════════════ */
+.reta-body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 52px;
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  column-gap: 28px;
+  box-sizing: border-box;
+}
+
+.reta-body__main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+
+.reta-body__rail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 24px;
+  position: sticky;
+  top: 24px;
+  align-self: start;
+}
+
+/* Body glass card */
+.reta-g-card {
+  background: rgba(255, 255, 255, 0.50);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.60);
+}
+
+/* "What people discuss" tinted variant */
+.reta-g-card--discuss {
+  background: rgba(235, 240, 248, 0.55);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.reta-g-card--discuss .pt-card-title {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  color: #0f1a2e;
+  margin-bottom: 14px;
+}
+
+/* Overview heading row with horizontal extend rule */
+.reta-overview-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.reta-overview-heading h2 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #0f1a2e;
+  white-space: nowrap;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.12);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.reta-overview-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* Body CTA pill */
+.reta-body-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--reta-navy);
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 32, 56, 0.18);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: fit-content;
+  transition: background 120ms ease;
+}
+
+.reta-body-cta:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.reta-body-cta__sub {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 700;
+}
+
+/* Start Here heading */
+.reta-start-heading {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: #0f1a2e;
+  margin: 0 0 16px 0;
+}
+
+/* Start Here list — blue circle checkmarks */
+.reta-start-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reta-start-list li {
+  font-size: 14px;
+  line-height: 1.58;
+  color: #1a2a40;
+  padding-left: 28px;
+  position: relative;
+}
+
+.reta-start-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='10' fill='%235a9cd6'/%3E%3Cpath d='M6 10.5l2.5 2.5 5.5-5.5' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE ≤ 999px
+   ══════════════════════════════════════════════ */
+@media (max-width: 999px) {
+  .reta-hero-v2 {
+    padding: 28px 20px 32px;
+  }
+
+  .reta-hero-v2__inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .reta-hero-v2__vial {
+    justify-content: center;
+  }
+
+  .reta-hero-v2__title {
+    font-size: 42px;
+  }
+
+  .reta-hero-v2__frame {
+    font-size: 15px;
+    max-width: none;
+  }
+
+  .reta-body {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+
+  .reta-body__rail {
+    position: static;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   PDP_JOURNEY_V1
+   Navigation, progressive disclosure, community engagement.
+   "Beach walk vs forest explore" — calm, structured, beautiful.
+   All patterns responsive-first; no scroll-trap risk.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Card border refinement (global) ── */
+:root {
+  --pt-card-br: rgba(0, 0, 0, 0.055);
+}
+
+/* ── CollapsibleSection: smooth height animation via CSS grid trick ──
+   Children stay in DOM at all times — critical for SEO + screen readers.
+   grid-template-rows: 0fr → 1fr creates a natural height transition.
+*/
+.pt-collapse-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms ease;
+  margin-top: 0;
+}
+
+.pt-collapse-body--open {
+  grid-template-rows: 1fr;
+  margin-top: 10px;
+}
+
+/* Inner div must have overflow: hidden + min-height: 0 for the trick to work */
+.pt-collapse-body > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Hero jump links — all non-reta PDPs ── */
+.pt-hero-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.pt-hero-jump {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.72);
+  color: inherit;
+  opacity: 0.82;
+  transition: opacity 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.pt-hero-jump:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* ── Mid-page community CTA — non-reta PDPs ── */
+.pt-mid-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  color: inherit;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.85);
+  width: fit-content;
+  transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pt-mid-cta:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+}
+
+.pt-mid-cta__sub {
+  font-size: 12px;
+  opacity: 0.62;
+  font-weight: 600;
+}
+
+/* ── Back to top floating button ── */
+.pt-back-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.09);
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.52;
+  transition: opacity 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  z-index: 50;
+  color: inherit;
+}
+
+.pt-back-top:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.13);
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 640px) {
+  .pt-back-top {
+    bottom: 18px;
+    right: 18px;
+    width: 44px;
+    height: 44px;
+    opacity: 0.70;
+  }
+
+  .pt-hero-jumps {
+    gap: 5px;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   VISUAL_POLISH_V1
+   Fix critical layout bugs + establish real depth hierarchy.
+   Shadow system, glass morphism correction, typography scale.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Global shadow upgrade ──
+   Previous: 0 1px 0 rgba(0,0,0,0.05) — invisible
+   Now: layered ambient + diffuse + depth + inset highlight
+*/
+:root {
+  --pt-card-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    0 3px 10px rgba(0, 0, 0, 0.05),
+    0 10px 28px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.80);
+  --pt-card-bg: rgba(255, 255, 255, 0.92);
+  --pt-card-br: rgba(0, 0, 0, 0.05);
+}
+
+/* ── Hero gradient — deeper drama at top, airy at bottom ── */
+.reta-hero-v2 {
+  padding: 52px 52px 48px;
+  background: linear-gradient(
+    155deg,
+    #b6cfe3 0%,
+    #c2d8e8 10%,
+    #cde0ed 22%,
+    #d8e8f2 38%,
+    #e4eff6 58%,
+    #edf4f9 78%,
+    #f3f7fa 100%
+  );
+}
+
+/* Hero mobile padding */
+@media (max-width: 999px) {
+  .reta-hero-v2 {
+    padding: 32px 20px 36px;
+  }
+}
+
+/* ── Title — more dominant on mobile ── */
+@media (max-width: 999px) {
+  .reta-hero-v2__title {
+    font-size: 48px;
+  }
+}
+
+/* ── Quick jumps — horizontal scroll on mobile (no wrap) ── */
+@media (max-width: 999px) {
+  .reta-hero-v2__jumps {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    /* fade edge hint */
+    -webkit-mask-image: linear-gradient(to right, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, black 88%, transparent 100%);
+  }
+  .reta-hero-v2__jumps::-webkit-scrollbar {
+    display: none;
+  }
+  .pt-hero-jumps {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, black 88%, transparent 100%);
+  }
+  .pt-hero-jumps::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ── "For your situation" button — CRITICAL FIX ──
+   Was stretching full-width because flex column parent uses align-items: stretch.
+   Fix: align-self: flex-start + stack label/sub vertically.
+*/
+.reta-hero-v2__consider-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  text-decoration: none;
+  color: var(--reta-navy);
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(90, 156, 214, 0.38);
+  background: rgba(90, 156, 214, 0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+  max-width: fit-content;
+}
+
+.reta-hero-v2__consider-btn:hover {
+  background: rgba(90, 156, 214, 0.18);
+  border-color: rgba(90, 156, 214, 0.55);
+  transform: translateY(-1px);
+}
+
+.reta-hero-v2__consider-btn > span:first-child,
+.reta-hero-v2__consider-btn > :not(.reta-hero-v2__consider-sub) {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.1px;
+}
+
+.reta-hero-v2__consider-sub {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.55;
+  letter-spacing: 0;
+}
+
+/* ── Hero glass card — stronger, more dimensional ── */
+.reta-glass-card {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(28px) saturate(1.6);
+  -webkit-backdrop-filter: blur(28px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.07),
+    0 6px 20px rgba(0, 0, 0, 0.07),
+    0 20px 48px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.reta-glass-card__evidence {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #0f1a2e;
+  line-height: 1.25;
+}
+
+/* ── Body background — subtle depth so glass effect reads ── */
+.pt-benchmark {
+  background:
+    radial-gradient(ellipse 80% 40% at 15% 25%, rgba(255, 255, 255, 0.14), transparent),
+    radial-gradient(ellipse 60% 60% at 85% 65%, rgba(190, 215, 235, 0.20), transparent),
+    var(--reta-body-bg);
+}
+
+/* ── Body glass cards — real depth, visible glass ── */
+.reta-g-card {
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 20px;
+  padding: 28px 30px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    0 6px 18px rgba(0, 0, 0, 0.06),
+    0 18px 40px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.reta-g-card:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.07),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 24px 52px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+/* Discuss card — tinted but still dimensional */
+.reta-g-card--discuss {
+  background: rgba(228, 238, 250, 0.72);
+  border-color: rgba(200, 220, 240, 0.60);
+}
+
+/* Heading in discuss card — was 25px/950, too aggressive */
+.reta-g-card--discuss .pt-card-title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #0f1a2e;
+  margin-bottom: 12px;
+}
+
+/* ── Section headings inside reta body cards ── */
+/* h2 with inline style margin:0 (evidence section) still gets Playfair via font-family */
+.reta-g-card h2 {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-weight: 700;
+  color: #0f1a2e;
+  letter-spacing: -0.25px;
+}
+
+/* The evidence section h2 specifically */
+.reta-g-card #evidence-heading,
+.reta-g-card > div > div > h2 {
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+/* Safety heading */
+.reta-g-card .pt-safety__title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  color: #0f1a2e;
+}
+
+/* Overview heading underline decoration */
+.reta-overview-heading h2 {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ── Start Here card ── */
+.reta-g-card .reta-start-heading {
+  font-size: 20px;
+  color: #0f1a2e;
+}
+
+.reta-start-list li {
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: #1c2d40;
+}
+
+/* ── pt-card-title inside reta cards — contextual considerations ── */
+.reta-g-card .pt-card-title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: #0f1a2e;
+}
+
+/* ── Collapse button refinement ── */
+.pt-collapse-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2a40;
+  letter-spacing: -0.1px;
+}
+
+/* ── Non-reta pt-card — better depth globally ── */
+.pt-card {
+  border-radius: 18px;
+  padding: 22px;
+  margin-top: 0;
+}
+
+/* ── pt-hero refinement ── */
+.pt-hero {
+  padding: 20px 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 6px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+/* ── Body CTA refinements ── */
+.reta-body-cta {
+  padding: 13px 20px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(26, 32, 56, 0.14);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+}
+
+.reta-body-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+.reta-body-cta__sub {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.58;
+  letter-spacing: 0;
+}
+
+/* ── Gap upgrade — more breathing room between body sections ── */
+.reta-body__main {
+  gap: 24px;
+}
+
+.reta-body__rail {
+  gap: 24px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   VISUAL_POLISH_V2
+   Precision values from Radix/Geist/Tailwind design tokens.
+   Typography, spacing, interaction refinement.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Jump pill refinement — Stripe/Linear standard ── */
+/* Exact values: 11px text, 4px 10px padding, 6px radius, 1px border */
+.reta-hero-v2__jump {
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 26, 46, 0.15);
+  background: rgba(255, 255, 255, 0.50);
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.reta-hero-v2__jump:hover {
+  background: rgba(255, 255, 255, 0.80);
+  border-color: rgba(15, 26, 46, 0.22);
+}
+
+/* Non-reta hero jumps — match Stripe tag style */
+.pt-hero-jump {
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  opacity: 1;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.pt-hero-jump:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* ── Frame text — more weight and presence ── */
+.reta-hero-v2__frame {
+  font-size: 16px;
+  line-height: 1.68;
+  color: #2c3e52;
+  max-width: 48ch;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ── Glass card status/context rows — refined Stripe-style chips ── */
+.reta-glass-card__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.02em;
+}
+
+.reta-glass-card__chip {
+  padding: 3px 11px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1e3a5f;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  border-radius: 8px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Body card inner spacing — Radix/Tailwind 28px inner padding standard ── */
+.reta-g-card {
+  padding: 26px 28px;
+}
+
+/* ── Overview heading — bolder editorial presence ── */
+.reta-overview-heading h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #0f1a2e;
+  text-underline-offset: 7px;
+}
+
+/* ── Evidence section: manual h2 with inline style gets font upgrade ──
+   The h2 in the evidence section has style={{ margin: 0 }} so we
+   can still apply font-family via the .reta-g-card h2 rule above.
+   Add a subtle bottom separator to match Stripe docs section headers.
+*/
+.reta-g-card > div > div:first-child > h2 {
+  font-size: 21px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(15, 26, 46, 0.08);
+  margin-bottom: 0 !important;
+}
+
+/* ── Collapse title in reta cards — slightly more refined ── */
+.reta-g-card .pt-collapse-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e3454;
+  letter-spacing: -0.05px;
+}
+
+.reta-g-card .pt-collapse-title--nested {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #2a3d58;
+  opacity: 1;
+}
+
+/* ── Item text in reta cards ── */
+.reta-g-card .pt-item-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f1a2e;
+  letter-spacing: -0.1px;
+}
+
+.reta-g-card .pt-item-text {
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: #2a3a52;
+  opacity: 1;
+}
+
+.reta-g-card .pt-item-note {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #3a4d65;
+}
+
+/* ── pt-item inside reta cards — remove the opaque grey bg ── */
+.reta-g-card .pt-item {
+  background: rgba(15, 26, 46, 0.03);
+  border: 1px solid rgba(15, 26, 46, 0.05);
+  border-radius: 12px;
+}
+
+/* ── Stack gap in reta cards ── */
+.reta-g-card .pt-stack {
+  gap: 10px;
+}
+
+/* ── Card sub-heading text (CardBlocks description paragraphs) ── */
+.reta-g-card p {
+  color: #2a3a52;
+  line-height: 1.65;
+}
+
+/* ── Interactions section heading inside reta card ── */
+.reta-g-card [data-section="interactions"] h2,
+.reta-g-card .pt-card-title:first-child {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  color: #0f1a2e;
+}
+
+/* ── Jumps label on desktop looks polished ── */
+.reta-hero-v2__jumps-label {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.50;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO_POLISH_V2
+   1. Remove overflow:hidden from hero (was clipping right rail card)
+   2. Vial image: strip white background via !important CSS override
+   3. Consider-btn: proper pill corners (999px)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Fix 1: hero rounded corners + clip to contain rail card within bounds */
+.reta-hero-v2 {
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+/* Grid: vial column auto-sizes to image, slimmer rail */
+.reta-hero-v2__inner {
+  grid-template-columns: auto 1fr 240px;
+}
+
+/* Fix 2: transparent vial — fixed width so natural 2:3 ratio determines height (~285px tall)
+   The PNG is 1024×1536 with ~43% transparent space at the top before the visible bottle.
+   translateY(-110px) compensates for the transparent top so the bottle appears balanced.
+   scale(1.4) makes it 40% bigger. Both are transforms so layout is completely unaffected. */
+.reta-hero-v2__vial img {
+  width: 190px !important;
+  height: auto !important;
+  max-width: none !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transform: translateY(-55px) scale(1.4);
+  transform-origin: top center;
+  filter: drop-shadow(0 10px 32px rgba(0, 0, 0, 0.24)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.14));
+  display: block;
+}
+
+/* Vial column: no padding, centered horizontally */
+.reta-hero-v2__vial {
+  padding-top: 0;
+  align-items: center;
+}
+
+/* Fix 3: consider-btn — full pill corners */
+.reta-hero-v2__consider-btn {
+  border-radius: 999px;
+}
+
+/* Fix 4: glass card chip overflow — stack label above value so text fits narrow rail */
+.reta-glass-card__row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  padding: 10px 0;
+}
+
+.reta-glass-card__chip {
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO_POLISH_V1
+   Consider-btn grid placement (spans cols 1-2, row 2),
+   gradient glass transparency, chip overflow fix.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Hero inner: explicit 2-row grid so consider-btn can span cols 1-2 ── */
+.reta-hero-v2__inner {
+  grid-template-rows: auto auto;
+  row-gap: 16px;
+}
+
+/* Explicit placement for each child */
+.reta-hero-v2__vial {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.reta-hero-v2__main {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Rail: pinned right, spans both rows so banner sits to its left */
+.reta-hero-v2__rail {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  min-width: 0;
+}
+
+/* Consider-btn: full-width banner across cols 1-2, row 2 */
+.reta-hero-v2__consider-btn {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: none;
+  padding: 15px 22px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(15, 26, 46, 0.20);
+  background: rgba(15, 26, 46, 0.065);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-decoration: none;
+  color: #0f1a2e;
+  transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+  /* reset earlier overrides */
+  flex-direction: row;
+  align-self: center;
+}
+
+.reta-hero-v2__consider-btn:hover {
+  background: rgba(15, 26, 46, 0.10);
+  border-color: rgba(15, 26, 46, 0.28);
+  transform: translateY(-1px);
+}
+
+/* "For your situation" — bold, dark, prominent */
+.reta-hero-v2__consider-main {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f1a2e;
+  letter-spacing: -0.15px;
+  white-space: nowrap;
+}
+
+/* Subline pill — sits beside main label */
+.reta-hero-v2__consider-sub {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #3a4a5e;
+  opacity: 0.70;
+  letter-spacing: 0;
+  flex: 1;
+  display: block;
+}
+
+/* Arrow — pushed to the far right */
+.reta-hero-v2__consider-arrow {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f1a2e;
+  opacity: 0.55;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── Glass card chip: prevent overflow in narrow rail column ── */
+.reta-glass-card__chip {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 180px;
+  text-align: right;
+}
+
+/* ── Hero glass card: refined frosted glass — background bleeds through delicately ── */
+.reta-glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.58) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+  backdrop-filter: blur(22px) saturate(1.9);
+  -webkit-backdrop-filter: blur(22px) saturate(1.9);
+}
+
+/* ── Body glass cards: gradient transparency ── */
+.reta-g-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.90) 0%,
+    rgba(255, 255, 255, 0.36) 100%
+  );
+}
+
+.reta-g-card--discuss {
+  background: linear-gradient(
+    145deg,
+    rgba(228, 238, 250, 0.92) 0%,
+    rgba(228, 238, 250, 0.34) 100%
+  );
+}
+
+/* ── Mobile: reset explicit grid placements — all stack single column ── */
+@media (max-width: 999px) {
+  .reta-hero-v2__vial,
+  .reta-hero-v2__main,
+  .reta-hero-v2__rail,
+  .reta-hero-v2__consider-btn {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .reta-hero-v2__consider-btn {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   TABS_V1 — tabbed panel layout for reta PDP
+   ═══════════════════════════════════════════════════════ */
+
+.reta-body-tabs {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 52px 72px;
+  box-sizing: border-box;
+}
+
+/* Start Here strip — uses same card treatment as reta-g-card */
+.reta-start-strip {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.90) 0%,
+    rgba(255, 255, 255, 0.56) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  border-radius: 18px;
+  padding: 16px 24px;
+  margin-bottom: 14px;
+  box-shadow: var(--pt-card-shadow);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.reta-start-strip__heading {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--reta-navy);
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+.reta-start-strip__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0 20px;
+  flex-wrap: wrap;
+}
+.reta-start-strip__list li {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #2c3e52;
+  opacity: 0.88;
+  position: relative;
+  padding-left: 13px;
+}
+.reta-start-strip__list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--reta-navy);
+}
+
+/* Tab bar — clearly visible frosted strip */
+.reta-tabs__bar {
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow:
+    0 2px 8px rgba(15, 26, 46, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: 20px;
+}
+.reta-tabs__bar::-webkit-scrollbar { display: none; }
+
+/* Tab buttons */
+.reta-tabs__btn {
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2c3e52;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.reta-tabs__btn:hover:not(.reta-tabs__btn--active) {
+  background: rgba(15, 26, 46, 0.06);
+}
+.reta-tabs__btn--active {
+  background: var(--reta-navy, #0f1a2e);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(15, 26, 46, 0.30);
+}
+
+/* Tab panels */
+.reta-tabs__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.reta-tabs__panel--hidden {
+  display: none;
+}
+
+/* Mobile overrides */
+@media (max-width: 999px) {
+  .reta-body-tabs {
+    padding: 16px 20px 48px;
+  }
+  .reta-start-strip {
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 14px;
+    padding: 14px 18px;
+  }
+  .reta-start-strip__list {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .reta-tabs__bar {
+    top: 60px;
+  }
+  .reta-tabs__btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   DESIGN_V1 — depth, texture, community, page background
+   ═══════════════════════════════════════════════════════ */
+
+/* Fix: body shows white when page is taller than 100vh.
+   Class injected via BodyClass component (JS, reliable in all browsers). */
+html.reta-page,
+html.reta-page body {
+  background: var(--reta-body-bg, #dce4ee);
+}
+
+/* Scroll-anchor tab (e.g. Community) — visually distinct from panel tabs */
+.reta-tabs__btn--scroll {
+  opacity: 0.70;
+  font-style: italic;
+}
+.reta-tabs__btn--scroll:hover {
+  opacity: 1;
+  background: rgba(15, 26, 46, 0.06);
+}
+
+/* Subtle diagonal pinstripe texture over the page background */
+.pt-benchmark {
+  background:
+    repeating-linear-gradient(
+      -55deg,
+      transparent 0px,
+      transparent 18px,
+      rgba(255, 255, 255, 0.045) 18px,
+      rgba(255, 255, 255, 0.045) 19px
+    ),
+    radial-gradient(ellipse 80% 40% at 15% 25%, rgba(255, 255, 255, 0.14), transparent),
+    radial-gradient(ellipse 60% 60% at 85% 65%, rgba(190, 215, 235, 0.20), transparent),
+    var(--reta-body-bg);
+  min-height: 100vh;
+}
+
+/* Community section — reta only */
+.reta-community {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 52px 80px;
+  box-sizing: border-box;
+}
+
+/* Override pt-card inside community for reta: glass card like the rest of the page */
+.reta-community .pt-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(255, 255, 255, 0.50) 100%
+  );
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 20px;
+  box-shadow: var(--pt-card-shadow);
+}
+
+/* Comment items: lift them off the card bg */
+.reta-community .pt-item {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.70);
+  border-radius: 14px;
+  box-shadow: 0 1px 4px rgba(15, 26, 46, 0.06);
+}
+
+/* Section title: match reta heading style */
+.reta-community .pt-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.25px;
+  color: var(--reta-navy, #0f1a2e);
+}
+
+/* Separator — medium-grey hairline, dynamic weight (tapers at edges like a calligraphic stroke) */
+.reta-community::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(120, 132, 148, 0.18) 6%,
+    rgba(120, 132, 148, 0.42) 20%,
+    rgba(120, 132, 148, 0.58) 40%,
+    rgba(120, 132, 148, 0.58) 60%,
+    rgba(120, 132, 148, 0.42) 80%,
+    rgba(120, 132, 148, 0.18) 94%,
+    transparent 100%
+  );
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 999px) {
+  .reta-community {
+    padding: 0 20px 56px;
+  }
+  .reta-community::before {
+    margin-bottom: 28px;
+  }
+}
