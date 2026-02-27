@@ -2761,3 +2761,32 @@ html.reta-page body {
 
   .reta-g-card { padding: 16px; }
 }
+
+/* ── Tab swipe hint — mobile only ── */
+.reta-tabs__hint { display: none; }
+
+@media (max-width: 999px) {
+  .reta-tabs__hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 9px;
+    color: rgba(15, 26, 46, 0.42);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+  }
+  .reta-tabs__hint-arrow {
+    font-size: 16px;
+    line-height: 1;
+    animation: reta-hint-slide 1.6s ease-in-out infinite;
+  }
+  @keyframes reta-hint-slide {
+    0%, 100% { transform: translateX(0); opacity: 0.5; }
+    50%       { transform: translateX(5px); opacity: 1; }
+  }
+}

@@ -14,6 +14,7 @@ export default function PDPTabs({ tabs }: Props) {
   const panelTabs = tabs.filter((t) => !isScrollTab(t));
   const defaultId = panelTabs[0]?.id ?? "";
   const [activeTab, setActiveTab] = useState<string>(defaultId);
+  const [showHint, setShowHint] = useState(true);
   const tabBarRef = useRef<HTMLDivElement>(null);
 
   const activateTab = useCallback(
@@ -48,6 +49,7 @@ export default function PDPTabs({ tabs }: Props) {
   }, [activateTab, tabs]);
 
   function handleTabClick(tab: Tab) {
+    setShowHint(false);
     if (isScrollTab(tab)) {
       document.getElementById(tab.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
@@ -69,6 +71,12 @@ export default function PDPTabs({ tabs }: Props) {
           </button>
         ))}
       </div>
+      {showHint && (
+        <div className="reta-tabs__hint" aria-hidden="true">
+          <span className="reta-tabs__hint-arrow">›</span>
+          <span className="reta-tabs__hint-text">swipe to navigate</span>
+        </div>
+      )}
       {panelTabs.map((tab) => (
         <div
           key={tab.id}
