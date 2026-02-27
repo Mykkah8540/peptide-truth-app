@@ -80,7 +80,19 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
 
             {/* Column 2: Title + Frame + Quick jumps */}
             <div className="reta-hero-v2__main">
-              <h1 className="reta-hero-v2__title">{peptideName}</h1>
+              {/* Mobile: small vial inline with title */}
+              <div className="reta-hero-v2__title-row">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="reta-hero-v2__vial-sm"
+                  src="/vials/peptide/retatrutide-sm.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={70}
+                  height={105}
+                />
+                <h1 className="reta-hero-v2__title">{peptideName}</h1>
+              </div>
               <p className="reta-hero-v2__frame">
                 What it is, why people care, what to watch for, and what&apos;s still uncertain — presented calmly and with explicit uncertainty where evidence is thin.
               </p>

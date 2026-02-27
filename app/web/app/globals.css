@@ -2551,3 +2551,194 @@ html.reta-page body {
     margin-bottom: 28px;
   }
 }
+
+/* Desktop: title-row wrapper is transparent to layout; small vial hidden */
+.reta-hero-v2__title-row { display: contents; }
+.reta-hero-v2__vial-sm   { display: none; }
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE_V1 — world-class mobile PDP (≤999px)
+
+   Hero: magazine-cover layout.
+   Vial is absolutely positioned (right side, full height)
+   so it does NOT affect hero height — hero stays compact.
+   Glass card + consider btn are hidden in the hero
+   (evidence tab and tab nav cover that info on mobile).
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 999px) {
+
+  /* ── 0. Remove pt-page gutters — hero bleeds edge-to-edge ── */
+  main.pt-benchmark {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  /* ── 1. Hero: compact, full-bleed, rich gradient with vial glow ── */
+  .reta-hero-v2 {
+    border-radius: 0;
+    overflow: hidden;
+    padding: 64px 22px 44px;
+    background:
+      radial-gradient(ellipse 55% 70% at 88% 55%, rgba(74, 144, 226, 0.22) 0%, transparent 65%),
+      linear-gradient(155deg,
+        #b6cfe3 0%, #c2d8e8 10%, #cde0ed 22%,
+        #d8e8f2 38%, #e4eff6 58%, #edf4f9 78%, #f3f7fa 100%
+      );
+  }
+
+  /* ── 2. Inner: flex column, rel position preserved for abs vial ── */
+  .reta-hero-v2__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── 3. Main: above vial, full-width ── */
+  .reta-hero-v2__main {
+    position: relative;
+    z-index: 2;
+    gap: 12px;
+  }
+
+  /* Title row: plain block */
+  .reta-hero-v2__title-row { display: block; }
+
+  /* Jumps: tab bar handles navigation on mobile */
+  .reta-hero-v2__jumps { display: none; }
+
+  /* Small vial variant: unused */
+  .reta-hero-v2__vial-sm { display: none !important; }
+
+  /* ── 4. Title: dominant, full-width ──
+     At 46px Playfair 900, "Retatrutide" is ~250px wide on
+     331px inner — flows freely; vial's transparent-top
+     zone covers the title height band so no conflict.
+  ── */
+  .reta-hero-v2__title {
+    font-size: 46px;
+    letter-spacing: -0.038em;
+    line-height: 1.0;
+    text-shadow: 0 1px 6px rgba(15, 26, 46, 0.06);
+  }
+
+  /* ── 5. Frame text: constrained to left, clears glass bottle ── */
+  .reta-hero-v2__frame {
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: calc(100% - 160px);
+  }
+
+  /* ── 6. Vial: absolute right-side decoration ──
+     PNG: 1024×1536, 43% transparent at top.
+     At 200px width → rendered height 300px.
+     translateY(-80px) crops 80px of transparent top:
+       bottle visible from ~49px down in hero space.
+     top: -36px offsets hero padding so vial starts at
+     the hero's visual top edge.
+     overflow:hidden on hero clips vial at page boundaries.
+  ── */
+  .reta-hero-v2__vial {
+    position: absolute;
+    right: -12px;
+    top: -34px;
+    z-index: 1;
+    overflow: visible;
+    width: 200px;
+    height: auto;
+    display: block;
+  }
+
+  .reta-hero-v2__vial img {
+    width: 200px !important;
+    transform: translateY(-80px) scale(1) !important;
+    transform-origin: top center;
+    opacity: 0.92;
+  }
+
+  /* ── 7. Glass card: hidden in hero — evidence tab covers this ── */
+  .reta-hero-v2__rail { display: none; }
+
+  /* ── 8. Consider btn: hidden — "For Your Situation" tab covers this ── */
+  .reta-hero-v2__consider-btn { display: none; }
+
+  /* ── 9. Glass card interior (compact when shown elsewhere) ── */
+  .reta-glass-card { padding: 14px 16px 12px; }
+  .reta-glass-card__row { padding: 10px 0; }
+  .reta-glass-card__evidence { font-size: 17px; }
+  .reta-glass-card__disclaimer,
+  .reta-glass-card__framing { font-size: 13px; }
+
+  /* ── 10. Body g-cards ── */
+  .reta-g-card { padding: 18px 20px; border-radius: 16px; }
+
+  /* ── 11. No hover lift on touch ── */
+  .reta-g-card:hover {
+    transform: none;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.06),
+      0 6px 18px rgba(0, 0, 0, 0.06),
+      0 18px 40px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  }
+
+  /* ── 12. Tab bar: elevated, stronger shadow ── */
+  .reta-tabs__bar {
+    top: 60px;
+    box-shadow:
+      0 4px 20px rgba(15, 26, 46, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  }
+
+  /* ── 13. Tab buttons: 44px touch targets ── */
+  .reta-tabs__btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  /* ── 14. Collapsible headers: comfortable tap target ── */
+  .reta-g-card .pt-collapse-title {
+    font-size: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  /* ── 15. Start Here strip ── */
+  .reta-start-strip__heading { font-size: 11px; letter-spacing: 0.08em; }
+  .reta-start-strip__list li { font-size: 13px; }
+}
+
+/* ── Extra-narrow phones (≤430px) ── */
+@media (max-width: 430px) {
+  .reta-hero-v2 {
+    padding: 48px 18px 36px;
+  }
+
+  .reta-hero-v2__title {
+    font-size: 40px;
+  }
+
+  .reta-hero-v2__frame {
+    max-width: calc(100% - 140px);
+  }
+
+  .reta-hero-v2__vial {
+    right: -10px;
+    top: -48px;
+    width: 175px;
+  }
+
+  .reta-hero-v2__vial img {
+    width: 175px !important;
+    transform: translateY(-70px) scale(1) !important;
+  }
+
+  .reta-tabs__btn { padding: 10px 11px; font-size: 12.5px; }
+
+  .reta-g-card { padding: 16px; }
+}
