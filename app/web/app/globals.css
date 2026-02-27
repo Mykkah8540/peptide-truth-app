@@ -2548,12 +2548,12 @@ html.reta-page body {
      inner card spans edge-to-edge with its own padding */
   .reta-community {
     max-width: none;
-    padding: 0 0 56px;
+    padding: 32px 0 56px;
   }
   .reta-community::before {
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 0;
+    margin-bottom: 32px;
   }
   .reta-community .pt-card {
     border-radius: 0;
@@ -2657,7 +2657,7 @@ html.reta-page body {
   .reta-hero-v2__vial {
     position: absolute;
     right: 0;       /* flush with hero's right padding edge */
-    top: 20px;      /* from hero's top — bottle appears ~49px lower */
+    top: 45px;      /* from hero's top — bottle appears ~94px lower, more centered */
     z-index: 1;
     overflow: visible;
     width: 200px;
@@ -2698,12 +2698,33 @@ html.reta-page body {
       inset 0 1px 0 rgba(255, 255, 255, 0.90);
   }
 
-  /* ── 12. Tab bar: elevated, stronger shadow ── */
+  /* ── 12. Tab bar: elevated shadow + scroll-hint fade on right edge ── */
   .reta-tabs__bar {
     top: 60px;
     box-shadow:
       0 4px 20px rgba(15, 26, 46, 0.12),
       inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  }
+
+  /* Right-edge gradient on the bar to hint there are more tabs */
+  .reta-tabs {
+    position: relative;
+  }
+  .reta-tabs::after {
+    content: '';
+    position: absolute;
+    top: 5px;                      /* align with bar's inner padding */
+    right: 0;
+    width: 52px;
+    height: 46px;                  /* match bar height */
+    background: linear-gradient(to right,
+      transparent 0%,
+      rgba(220, 228, 238, 0.80) 60%,
+      rgba(220, 228, 238, 0.96) 100%
+    );
+    border-radius: 0 14px 14px 0;
+    pointer-events: none;
+    z-index: 50;
   }
 
   /* ── 13. Tab buttons: 44px touch targets ── */

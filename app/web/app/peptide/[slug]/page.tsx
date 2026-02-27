@@ -369,7 +369,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             },
             {
               id: "considerations",
-              label: "For Your Situation",
+              label: "For You",
               content: (
                 <>
                   <section className="reta-g-card">
@@ -381,7 +381,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             },
             {
               id: "community",
-              label: "Join the Conversation",
+              label: "Community",
               content: null,
             },
           ]} />
