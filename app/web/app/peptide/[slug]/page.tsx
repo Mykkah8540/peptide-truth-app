@@ -30,8 +30,12 @@ import Tb500OverviewPanel from "@/components/Tb500OverviewPanel";
 import Tb500EvidencePanel from "@/components/Tb500EvidencePanel";
 import Tb500SafetyPanel from "@/components/Tb500SafetyPanel";
 import Tb500InteractionsPanel from "@/components/Tb500InteractionsPanel";
+import Cjc1295OverviewPanel from "@/components/Cjc1295OverviewPanel";
+import Cjc1295EvidencePanel from "@/components/Cjc1295EvidencePanel";
+import Cjc1295SafetyPanel from "@/components/Cjc1295SafetyPanel";
+import Cjc1295InteractionsPanel from "@/components/Cjc1295InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -64,6 +68,12 @@ const PANEL_MAP: Record<string, {
     Evidence: Tb500EvidencePanel,
     Safety: Tb500SafetyPanel,
     Interactions: Tb500InteractionsPanel,
+  },
+  "cjc-1295": {
+    Overview: Cjc1295OverviewPanel,
+    Evidence: Cjc1295EvidencePanel,
+    Safety: Cjc1295SafetyPanel,
+    Interactions: Cjc1295InteractionsPanel,
   },
 };
 
@@ -102,6 +112,14 @@ const V3_HERO_CONTENT: Record<string, {
       "TB-500 is a research-grade peptide marketed as a thymosin beta-4 fragment \u2014 most evidence comes from Tβ4 biology, not TB-500 directly.",
       "What matters most: cancer history and anticoagulant status are elevated concerns compared to similar peptides \u2014 check these first.",
       "How to use this page: if you have cancer history or take blood thinners, start with Safety before anything else.",
+    ],
+  },
+  "cjc-1295": {
+    considerSub: "Diabetes, prediabetes, cancer history, thyroid therapy, adolescents\u2026",
+    startHere: [
+      "CJC-1295 is a GHRH analog \u2014 it amplifies GH pulses and elevates IGF-1. It has actual human endocrine evidence (PMID 16352683, 2006).",
+      "What matters most: know your variant (DAC vs no-DAC), know your metabolic and cancer history before starting.",
+      "How to use this page: if you have diabetes, prediabetes, or cancer history, Safety is your first stop.",
     ],
   },
 };

@@ -46,6 +46,11 @@ function isHealingFamily(entity: EntityLike): boolean {
   return ["bpc-157", "tb-500"].includes(s);
 }
 
+function isGhAxisFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return ["cjc-1295", "cjc-1295-dac", "ipamorelin", "mk-677"].includes(s);
+}
+
 const SUPPORT_INCRETIN: SupportPack = {
   id: "support_incretin_metabolic_v1",
   title: "Support layer: protecting energy, hydration, and lean mass",
@@ -109,9 +114,31 @@ const SUPPORT_HEALING: SupportPack = {
   ],
 };
 
+const SUPPORT_GH_AXIS: SupportPack = {
+  id: "support_gh_axis_v1",
+  title: "Support layer: managing a GH-axis compound responsibly",
+  subtitle:
+    "CJC-1295 changes endocrine physiology systemically. These anchors keep the downstream effects from becoming problems.",
+  bullets: [
+    "Glucose awareness: GH is counter-regulatory to insulin \u2014 get a baseline fasting glucose before starting and monitor if you have any metabolic history",
+    "Know your variant: CJC-1295 with DAC has a multi-day half-life; without DAC, it\u2019s hours \u2014 dosing frequency, accumulation, and side effects differ significantly",
+    "Sleep timing: GH pulses are largest during slow-wave sleep \u2014 bedtime injection aligns with this; disrupted sleep undermines the mechanism",
+    "Water retention is expected early: mild edema in weeks 1\u20134 is a common GH response \u2014 significant or persistent swelling warrants dose reduction",
+    "Cancer history gate: GH/IGF-1 is a mitogenic axis \u2014 active cancer, recent treatment, or high hereditary risk requires oncology clearance before starting",
+    "Plan your cycle before you start: long-term continuous GH-axis stimulation is unstudied \u2014 cycling on/off is the community convention for a reason",
+  ],
+  redFlags: [
+    "Fasting glucose noticeably elevated or symptoms of glucose dysregulation (unusual thirst, fatigue, frequent urination) \u2014 stop and check glucose",
+    "Active cancer diagnosis or starting cancer treatment \u2014 stop immediately; IGF-1 is a direct growth signal",
+    "Significant, persistent edema (hands, feet, face) not resolving after early weeks \u2014 stop and evaluate",
+    "Pregnant, planning pregnancy, or breastfeeding \u2014 stop immediately, no safety data exists",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
   if (isHealingFamily(entity)) return SUPPORT_HEALING;
+  if (isGhAxisFamily(entity)) return SUPPORT_GH_AXIS;
   return null;
 }
