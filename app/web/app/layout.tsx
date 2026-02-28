@@ -3,6 +3,7 @@ import { listPeptides, listBlends, listTopics } from "@/lib/content";
 import NavBar from "@/components/NavBar";
 import AppOverlays from "@/components/AppOverlays";
 import BackToTop from "@/components/BackToTop";
+import SiteFooter from "@/components/SiteFooter";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <NavBar peptides={peptides} blends={blends} topics={topics} />
     <AppOverlays />
     {children}
+    <SiteFooter />
     <BackToTop />
    </body>
   </html>
