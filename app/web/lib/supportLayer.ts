@@ -135,10 +135,201 @@ const SUPPORT_GH_AXIS: SupportPack = {
   ],
 };
 
+function isMelanocortinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return ["bremelanotide", "melanotan-ii", "melanotan-i"].includes(s);
+}
+
+function isSelankFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "selank";
+}
+
+function isSemaxFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "semax";
+}
+
+function isThymosinA1Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "thymosin-alpha-1";
+}
+
+function isGhkCuFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "ghk-cu";
+}
+
+function isMetabolicPeptideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return ["aod-9604", "mots-c"].includes(s);
+}
+
+function isOxytocinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "oxytocin";
+}
+
+const SUPPORT_MELANOCORTIN: SupportPack = {
+  id: "support_melanocortin_v1",
+  title: "Support layer: using a melanocortin compound responsibly",
+  subtitle:
+    "Nausea management and cardiovascular awareness are the two practical anchors for this compound class.",
+  bullets: [
+    "Nausea is common on first use: sit down for 30\u201360 min post-dose, avoid alcohol and heavy food beforehand, and have antiemetics available if prescribed",
+    "Blood pressure: a transient elevation is a known pharmacological effect \u2014 understand your cardiovascular baseline before starting",
+    "Dose titration matters: start low and wait for the full effect window before increasing \u2014 most adverse effects track to overuse, not the compound itself",
+    "Skin monitoring: any compound affecting melanocortin receptors that also impacts pigmentation requires a baseline skin/mole check and monitoring for changes",
+    "Source quality: research-grade melanocortin compounds lack pharmaceutical quality control \u2014 get a third-party CoA before use",
+    "Timing: understand onset/duration for your specific compound and plan use accordingly; impulsive re-dosing is where most adverse events occur",
+  ],
+  redFlags: [
+    "Significant or persistent BP elevation, chest pain, or palpitations \u2014 stop and evaluate cardiovascular status",
+    "Spontaneous, unwanted, or prolonged erection (priapism >4 hours for Melanotan II) \u2014 emergency evaluation required",
+    "New, rapidly darkening, or changing moles or lesions after starting \u2014 dermatology evaluation before continuing",
+    "Previous melanoma diagnosis \u2014 stop immediately; this is a hard contraindication",
+    "Severe vomiting preventing fluid intake \u2014 hydration and medical evaluation",
+  ],
+};
+
+const SUPPORT_SELANK: SupportPack = {
+  id: "support_selank_v1",
+  title: "Support layer: anxiolytic CNS peptide use",
+  subtitle:
+    "Selank\u2019s clean profile in isolation can mask real risk when CNS-active medications are in the picture.",
+  bullets: [
+    "CNS medication screen first: benzodiazepines, opioids, alcohol, and Z-drugs all add to Selank\u2019s CNS inhibitory mechanism \u2014 this is the most important pre-use check",
+    "Intranasal technique: proper insertion angle, correct volume, and avoiding immediate horizontal position after dosing ensure consistent delivery",
+    "Expectation calibration: the anxiolytic effect is subtle, not sedating, and cumulative over days of use \u2014 not an immediate dramatic shift",
+    "Dosing protocol: twice-daily is the most common clinical reference protocol; pick one approach and observe for 1\u20132 weeks before adjusting",
+    "Concurrent CNS compounds: if combining with Semax or other stimulatory compounds, monitor the combined CNS load; the combination is common but the overall effect profile changes",
+    "Source quality: intranasal peptide formulations vary in stability \u2014 refrigerate properly and observe the manufacturer\u2019s stability window",
+  ],
+  redFlags: [
+    "Unexpected sedation or coordination impairment \u2014 most likely a CNS drug interaction; review your full medication list",
+    "On benzodiazepines or opioid medications \u2014 do not add Selank without physician guidance",
+    "Worsening anxiety or paradoxical agitation \u2014 discontinue and reassess",
+    "Any psychiatric deterioration \u2014 stop immediately and discuss with prescribing psychiatrist",
+  ],
+};
+
+const SUPPORT_SEMAX: SupportPack = {
+  id: "support_semax_v1",
+  title: "Support layer: stimulatory cognitive peptide use",
+  subtitle:
+    "Semax\u2019s stimulatory profile means timing, dose titration, and psychiatric context matter more than for most peptides.",
+  bullets: [
+    "Morning timing only: Semax activates BDNF, dopaminergic, and serotonergic pathways \u2014 evening use disrupts sleep for most people",
+    "Start low: 200\u2013300\u03bcg intranasal is a reasonable starting point; stimulatory effects are dose-dependent and can become dysphoric at high doses",
+    "Anxiety monitoring: Semax can amplify baseline anxiety \u2014 if you have an anxiety-prone baseline, Selank co-use is the standard community buffer strategy",
+    "Psychiatric medication screen: MAOIs, antipsychotics, and stimulant medications have real mechanistic intersections with Semax \u2014 check your drug list before starting",
+    "Cycle your use: effects tend to fade with continuous daily use; cycling (e.g., 5 on / 2 off) is the common community protocol to maintain responsiveness",
+    "Expectation calibration: cognitive enhancement effects are anecdotally reported; the Russian clinical evidence base has significant methodological limitations and limited independent replication",
+  ],
+  redFlags: [
+    "Significant anxiety worsening, panic episodes, or agitation \u2014 discontinue or reduce dose; adding Selank may buffer",
+    "On MAOIs or antipsychotics without physician guidance \u2014 stop and consult first",
+    "Sleep disruption persisting after shifting to morning dosing \u2014 reduce dose or discontinue",
+    "Any psychiatric deterioration \u2014 stop immediately and discuss with prescribing psychiatrist",
+  ],
+};
+
+const SUPPORT_THYMOSIN_A1: SupportPack = {
+  id: "support_thymosin_a1_v1",
+  title: "Support layer: immune-modulating peptide use",
+  subtitle:
+    "Thymosin Alpha-1\u2019s value depends on your immune context \u2014 clarify that context before starting.",
+  bullets: [
+    "Autoimmune and immunosuppressive gate: check this first \u2014 Thymosin Alpha-1 activates immune pathways that directly conflict with immunosuppressive medications and autoimmune disease management",
+    "Injection technique: SC injection with sterile prep, correct angle, site rotation \u2014 standard injectable peptide protocol",
+    "Source quality: pharmaceutical-grade Thymosin Alpha-1 (Zadaxin) has established manufacturing standards \u2014 research-grade versions require third-party CoA verification before injection",
+    "Expectation calibration: immunological effects are real in hepatitis B/C and oncology adjunct contexts; \u2018immune support\u2019 in healthy adults is a different and less-characterized claim",
+    "Active infection timing: don\u2019t start during acute illness \u2014 let the immune system resolve active infection before adding immune modulation",
+    "Evaluation window: immunological effects are cumulative; a minimum 8-week protocol before assessing response is a reasonable reference point",
+  ],
+  redFlags: [
+    "Autoimmune disease flare during use \u2014 stop and consult rheumatologist",
+    "On immunosuppressive medications without physician guidance for this combination \u2014 stop and consult",
+    "Organ transplant recipient \u2014 stop immediately; immune activation conflicts with transplant management",
+    "Injection site infection signs (increasing redness, warmth, pus, fever after 24h) \u2014 stop injecting there and seek medical evaluation",
+  ],
+};
+
+const SUPPORT_GHK_CU: SupportPack = {
+  id: "support_ghk_cu_v1",
+  title: "Support layer: topical copper peptide use",
+  subtitle:
+    "GHK-Cu is primarily a topical compound \u2014 application technique and product quality are the main practical anchors.",
+  bullets: [
+    "Patch test first: apply a small amount to the inner arm for 24 hours before face or body application \u2014 check for copper sensitivity or product-specific irritation",
+    "Application technique: apply to clean, dry skin; a thin layer is sufficient \u2014 excess product does not improve outcomes",
+    "Layering strategy: avoid applying simultaneously with strong acids (glycolic, lactic >10%) or prescription retinoids \u2014 30 min separation or AM/PM split timing is the practical approach",
+    "Expectation calibration: skin appearance evidence is modest and real, primarily via collagen pathway effects \u2014 evaluate at 8\u201312 weeks, not days",
+    "Wilson\u2019s disease: if you have a copper metabolism disorder, topical copper peptide use is not appropriate",
+    "Injectable route: the topical route has meaningfully more evidence than injectable GHK-Cu; if pursuing injectable, the evidence gap is larger and source quality becomes critical",
+  ],
+  redFlags: [
+    "Skin rash, significant irritation, or allergic reaction \u2014 discontinue use",
+    "Known copper allergy or Wilson\u2019s disease \u2014 do not use",
+    "Broken skin, active eczema, or open wounds \u2014 do not apply topical preparations",
+    "Injectable route: injection site infection signs (increasing redness, warmth, pus after 24h) \u2014 stop and seek evaluation",
+  ],
+};
+
+const SUPPORT_METABOLIC_PEPTIDE: SupportPack = {
+  id: "support_metabolic_peptide_v1",
+  title: "Support layer: metabolic peptide use",
+  subtitle:
+    "Blood sugar monitoring and expectation calibration are the primary anchors for this compound class.",
+  bullets: [
+    "Blood sugar monitoring: if you\u2019re on diabetes medications, AOD-9604 and MOTS-c both interact with glucose metabolism pathways \u2014 get a baseline fasting glucose and monitor if you have any metabolic history",
+    "Expectation calibration: neither compound has demonstrated clinically significant fat loss in human trials at community-available doses \u2014 set expectations based on mechanism plausibility, not dramatic outcomes",
+    "Injection technique (if injectable): sterile prep, correct SC insertion, site rotation \u2014 standard injectable peptide protocol",
+    "Protocol length: 12 weeks is the reference period from AOD-9604 Phase II data; MOTS-c has no human reference \u2014 don\u2019t commit to indefinite use without an evaluation plan",
+    "Stack attribution: these compounds may interact with other metabolic interventions (dietary changes, exercise, GLP-1 drugs) in ways that make individual attribution difficult",
+    "Source quality: research-grade metabolic peptides vary significantly in purity \u2014 third-party CoA is essential before injection",
+  ],
+  redFlags: [
+    "On insulin or sulfonylureas without a glucose monitoring plan \u2014 establish monitoring before adding a metabolic peptide",
+    "Hypoglycemia symptoms (shakiness, sweating, confusion, rapid heart rate) \u2014 fast-acting carbohydrates, check glucose, reassess protocol",
+    "Fasting glucose rising noticeably or glucose dysregulation symptoms developing \u2014 stop and check glucose",
+    "Injection site infection signs (increasing redness, warmth, pus after 24h) \u2014 stop injecting there and seek evaluation",
+  ],
+};
+
+const SUPPORT_OXYTOCIN: SupportPack = {
+  id: "support_oxytocin_v1",
+  title: "Support layer: intranasal oxytocin use",
+  subtitle:
+    "Pregnancy exclusion is the non-negotiable first step \u2014 the rest follows from that.",
+  bullets: [
+    "Pregnancy gate: if there is any possibility of pregnancy, stop immediately \u2014 oxytocin causes uterine contractions; this is the mechanism of the FDA-approved drug, not a theoretical concern",
+    "Intranasal technique: blow nose first, upright position, correct sniff technique, avoid immediately lying down after \u2014 inconsistent delivery creates inconsistent results",
+    "Seizure history screen: hyponatremia is a documented seizure trigger and oxytocin has antidiuretic-like activity \u2014 epilepsy or seizure history requires explicit clinical review before use",
+    "Expectation calibration: large pre-registered replication studies have NOT consistently shown the prosocial effects from early small studies \u2014 the \u2018love hormone\u2019 effect in healthy adults is genuinely uncertain",
+    "Hyponatremia awareness: with high or repeated doses, watch for early signs \u2014 unusual headache, nausea, unusual fatigue, confusion",
+    "Social context: proposed prosocial effects are context-dependent; oxytocin is not a standalone social effect compound",
+  ],
+  redFlags: [
+    "Pregnant or any possibility of current pregnancy \u2014 stop immediately; absolute contraindication",
+    "Trying to conceive \u2014 stop; the uterotonic risk extends to the periconceptional period",
+    "Unusual headache + nausea + confusion (possible hyponatremia) \u2014 stop, drink moderate fluids, seek evaluation if symptoms persist",
+    "Seizure activity \u2014 stop and seek emergency evaluation",
+    "Seizure disorder history and using oxytocin without neurological clearance \u2014 stop and consult neurologist",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
   if (isHealingFamily(entity)) return SUPPORT_HEALING;
   if (isGhAxisFamily(entity)) return SUPPORT_GH_AXIS;
+  if (isMelanocortinFamily(entity)) return SUPPORT_MELANOCORTIN;
+  if (isSelankFamily(entity)) return SUPPORT_SELANK;
+  if (isSemaxFamily(entity)) return SUPPORT_SEMAX;
+  if (isThymosinA1Family(entity)) return SUPPORT_THYMOSIN_A1;
+  if (isGhkCuFamily(entity)) return SUPPORT_GHK_CU;
+  if (isMetabolicPeptideFamily(entity)) return SUPPORT_METABOLIC_PEPTIDE;
+  if (isOxytocinFamily(entity)) return SUPPORT_OXYTOCIN;
   return null;
 }
