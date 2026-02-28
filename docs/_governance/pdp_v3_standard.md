@@ -180,11 +180,23 @@ Answers: "What does this interact with? How do I mitigate risk?"
 - **Live search:** filters across name, aliases, summary
 - **Category chips:** show counts, highlight active filter
 
-### Considerations tab
+### Considerations tab ("For You")
+
 Answers: "What applies specifically to my situation?"
+
 - **Ghost typeahead search:** inline suggestion, Tab to complete, Enter to commit
 - **43+ consideration packs** each with: `title, tags[], summary, body[], cautions[], callToAction`
-- **Support layer** (if present): rendered after search results via `SupportLayerSection`
+- **Support layer — MANDATORY on every v3 PDP.** Rendered after search results via `SupportLayerSection`. Every peptide must have a corresponding `SupportPack` in `lib/supportLayer.ts`. If no specific pack exists for the peptide's category, author one before the page ships. No v3 PDP should ever have a blank "For You" tab with only the search tool and no support layer below it.
+
+#### Support layer authoring rules
+
+- Authored in `lib/supportLayer.ts` as a named constant (e.g., `SUPPORT_NAD`, `SUPPORT_GH`)
+- Detection via a slug-list function (e.g., `isNadFamily()`, `isGHFamily()`)
+- `getSupportPack()` dispatches to the correct pack — add a new `if` branch for each new family
+- **Pack structure:** `title` (action-oriented), `subtitle` (context sentence), `bullets[]` (6 anchors — practical, specific, framed as supportive not prescriptive), `redFlags[]` (3–5 stop-now signals)
+- Tone: Big Brother principle — protective, practical, not clinical. "This is what people miss" not "you must do X"
+- Content: covers the *predictable* support failures for this peptide category (hydration, nutrition, timing, interaction checks, realistic expectations, how to evaluate)
+- Red flags: concrete signals that warrant stopping or getting medical input — specific to this compound's risk profile
 
 ---
 

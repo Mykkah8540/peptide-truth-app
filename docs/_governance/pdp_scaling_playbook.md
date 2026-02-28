@@ -99,7 +99,57 @@ The panels have hardcoded data arrays. Replace the Reta-specific data with the n
 
 ---
 
-### Step 4 — Wire in page.tsx
+### Step 4 — Author the Support Pack (MANDATORY)
+
+Every v3 PDP **must** have a `SupportPack` in `app/web/lib/supportLayer.ts`. The "For You" tab is incomplete without it. A page that ships without a support layer is a broken page.
+
+**Author the pack before wiring the page:**
+
+1. Open `app/web/lib/supportLayer.ts`
+
+2. Add a detection function for the peptide's family (or add the slug to an existing one):
+
+```ts
+function isGHFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return ["ipamorelin", "cjc-1295", "sermorelin", "mk-677"].includes(s);
+}
+```
+
+3. Author a `SUPPORT_<FAMILY>` constant:
+
+```ts
+const SUPPORT_GH: SupportPack = {
+  id: "support_gh_secretagogue_v1",
+  title: "Support layer: ...",
+  subtitle: "...",
+  bullets: [
+    // 6 practical anchors specific to this peptide's risk profile
+    // Cover: timing, hydration/nutrition needs, interaction checks,
+    // realistic expectations, how to evaluate effect, what's commonly missed
+  ],
+  redFlags: [
+    // 3–5 stop-now signals specific to this compound
+  ],
+};
+```
+
+4. Add a dispatch branch in `getSupportPack()`:
+
+```ts
+if (isGHFamily(entity)) return SUPPORT_GH;
+```
+
+**Support pack content principles:**
+
+- Tone: protective, practical — Big Brother voice ("this is what people miss"), not clinical
+- Each bullet: one concrete, specific anchor — not generic advice
+- Red flags: compound-specific stop signals, not boilerplate
+- No prescriptive language ("you should", "take X") — descriptive, supportive framing only
+
+---
+
+### Step 5 — Wire in page.tsx
 
 In the `isV3` branch of `page.tsx`, swap the import references:
 
