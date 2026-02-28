@@ -18,10 +18,63 @@ import RetaOverviewPanel from "@/components/RetaOverviewPanel";
 import RetaEvidencePanel from "@/components/RetaEvidencePanel";
 import RetaSafetyPanel from "@/components/RetaSafetyPanel";
 import RetaInteractionsPanel from "@/components/RetaInteractionsPanel";
+import NadPlusOverviewPanel from "@/components/NadPlusOverviewPanel";
+import NadPlusEvidencePanel from "@/components/NadPlusEvidencePanel";
+import NadPlusSafetyPanel from "@/components/NadPlusSafetyPanel";
+import NadPlusInteractionsPanel from "@/components/NadPlusInteractionsPanel";
+
+const V3_SLUGS = new Set(["retatrutide", "nad-plus"]);
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PanelComponent = () => any;
+const PANEL_MAP: Record<string, {
+  Overview: PanelComponent;
+  Evidence: PanelComponent;
+  Safety: PanelComponent;
+  Interactions: PanelComponent;
+}> = {
+  retatrutide: {
+    Overview: RetaOverviewPanel,
+    Evidence: RetaEvidencePanel,
+    Safety: RetaSafetyPanel,
+    Interactions: RetaInteractionsPanel,
+  },
+  "nad-plus": {
+    Overview: NadPlusOverviewPanel,
+    Evidence: NadPlusEvidencePanel,
+    Safety: NadPlusSafetyPanel,
+    Interactions: NadPlusInteractionsPanel,
+  },
+};
+
+// Per-peptide hero content for v3 PDPs
+const V3_HERO_CONTENT: Record<string, {
+  considerSub: string;
+  startHere: string[];
+}> = {
+  retatrutide: {
+    considerSub: "Thyroid, SSRIs, autoimmune, older adults\u2026",
+    startHere: [
+      "Investigational incretin drug being studied for weight and metabolic outcomes.",
+      "What matters most: real effects vs. tolerability, and what long-term data still hasn\u2019t been proven.",
+      "How to use this page: pick a tab, skim what\u2019s open, expand when you want detail.",
+    ],
+  },
+  "nad-plus": {
+    considerSub: "Cancer history, cancer therapy, longevity goals\u2026",
+    startHere: [
+      "NAD+ is a coenzyme that declines with age — supplementation is aimed at restoring cellular energy and longevity pathways.",
+      "What matters most: the mechanism is real, but human outcome data is still thin — manage expectations accordingly.",
+      "How to use this page: pick a tab, understand what\u2019s known vs. what\u2019s still theoretical.",
+    ],
+  },
+};
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
+  const isV3 = V3_SLUGS.has(slug);
+  // Keep isRetatrutide for reta-specific hero content that's still hardcoded (mobile vial src)
   const isRetatrutide = slug === "retatrutide";
 
   const riskHit = getRiskForPeptide(slug);
@@ -71,9 +124,12 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
     new Set([...(Array.isArray(p?.aliases) ? p.aliases : []), ...getAliasesForSlug(slug)])
   );
 
+  const panels = PANEL_MAP[slug] ?? PANEL_MAP["retatrutide"];
+  const heroContent = V3_HERO_CONTENT[slug] ?? V3_HERO_CONTENT["retatrutide"];
+
   return (
-    <main className={`pt-page${isRetatrutide ? " pt-benchmark" : ""}`}>
-      {isRetatrutide ? (
+    <main className={`pt-page${isV3 ? " pt-benchmark" : ""}`}>
+      {isV3 ? (
         /* RETA_HERO_V2_GLASS — full-width gradient container with 3-column inner grid */
         <div className="reta-hero-v2">
           <div className="reta-hero-v2__inner">
@@ -89,7 +145,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="reta-hero-v2__vial-sm"
-                  src="/vials/peptide/retatrutide-sm.png"
+                  src={`/vials/peptide/${slug}-sm.png`}
                   alt=""
                   aria-hidden="true"
                   width={70}
@@ -136,7 +192,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
             {/* Row 2: Consider banner — spans cols 1-2, extends under vial */}
             <a className="reta-hero-v2__consider-btn" href="#considerations">
               <span className="reta-hero-v2__consider-main">For your situation</span>
-              <span className="reta-hero-v2__consider-sub">Thyroid, SSRIs, autoimmune, older adults&hellip;</span>
+              <span className="reta-hero-v2__consider-sub">{heroContent.considerSub}</span>
               <span className="reta-hero-v2__consider-arrow">→</span>
             </a>
           </div>
@@ -190,16 +246,16 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* ── BODY ── */}
-      {isRetatrutide && <BodyClass className="reta-page" />}
-      {isRetatrutide ? (
+      {isV3 && <BodyClass className="reta-page" />}
+      {isV3 ? (
         <div className="reta-body-tabs">
           {/* Start Here strip — full width, above tabs */}
           <div className="reta-start-strip">
             <h2 className="reta-start-strip__heading">Start here</h2>
             <ul className="reta-start-strip__list">
-              <li>Investigational incretin drug being studied for weight and metabolic outcomes.</li>
-              <li>What matters most: real effects vs. tolerability, and what long-term data still hasn&apos;t been proven.</li>
-              <li>How to use this page: pick a tab, skim what&apos;s open, expand when you want detail.</li>
+              {heroContent.startHere.map((bullet, i) => (
+                <li key={i}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
@@ -209,7 +265,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               label: "Overview",
               content: (
                 <section className="reta-g-card">
-                  <RetaOverviewPanel />
+                  <panels.Overview />
                 </section>
               ),
             },
@@ -218,7 +274,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               label: "Evidence",
               content: (
                 <section className="reta-g-card">
-                  <RetaEvidencePanel />
+                  <panels.Evidence />
                 </section>
               ),
             },
@@ -227,7 +283,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               label: "Safety",
               content: (
                 <section className="reta-g-card">
-                  <RetaSafetyPanel />
+                  <panels.Safety />
                 </section>
               ),
             },
@@ -236,7 +292,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               label: "Interactions",
               content: (
                 <section className="reta-g-card">
-                  <RetaInteractionsPanel />
+                  <panels.Interactions />
                 </section>
               ),
             },
@@ -350,7 +406,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
       )}
 
       {/* NOTE: Community read is public; write requires auth. */}
-      <div className={isRetatrutide ? "reta-community" : ""}>
+      <div className={isV3 ? "reta-community" : ""}>
         <PeptideCommentsSection slug={slug} />
       </div>
     </main>
