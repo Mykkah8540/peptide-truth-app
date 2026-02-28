@@ -629,6 +629,108 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isLeuprolideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "leuprolide";
+}
+
+function isDesmopressinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "desmopressin";
+}
+
+function isCalcitoninFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "calcitonin";
+}
+
+function isGlucagonFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "glucagon";
+}
+
+const SUPPORT_LEUPROLIDE: SupportPack = {
+  id: "leuprolide",
+  title: "Continuous GnRH receptor stimulation suppresses the axis — this is chemical castration, not stimulation; the PCT narrative is backwards",
+  subtitle: "GnRH agonist (Lupron) — chemical castration; flare management; bone loss",
+  bullets: [
+    "The suppression mechanism: leuprolide continuously stimulates GnRH receptors until they downregulate — this produces chemical castration (testosterone/estrogen suppression), not stimulation; it is pharmacologically the opposite of axis stimulation from gonadorelin or SERMs",
+    "Testosterone flare at initiation: the first 1-2 weeks cause a sex hormone surge before suppression; prostate cancer patients require anti-androgen cover (bicalutamide, enzalutamide) during this window to prevent disease flare — this is standard of care, not optional",
+    "Depot duration means no quick reversal: 1-month, 3-month, and 6-month depot formulations are available; if adverse effects develop, you cannot stop exposure; understand your formulation duration before injection",
+    "Bone density loss is cumulative: sustained androgen/estrogen deprivation causes progressive bone density loss; baseline DEXA scan + calcium + vitamin D supplementation are standard clinical practice; bisphosphonate co-prescription is common for long-term use",
+    "PCT use is pharmacologically backwards: PCT aims to stimulate the HPG axis to restore endogenous testosterone production; leuprolide suppresses the axis; this is not a PCT compound",
+    "Physician supervision is mandatory: leuprolide is a Schedule III drug (prescription only) with serious, potentially irreversible hormonal and metabolic consequences in depot form",
+  ],
+  redFlags: [
+    "Prostate cancer at initiation without anti-androgen cover — testosterone flare can cause bone pain, urinary obstruction, spinal cord compression; this is a medical emergency risk",
+    "Osteoporotic fracture during treatment — bone density monitoring and intervention required immediately",
+    "Significant cardiovascular event (MI, stroke) during prolonged therapy — ADT increases cardiovascular risk; stop and evaluate with cardiologist",
+    "Expecting testosterone stimulation from leuprolide — stop; the mechanism produces suppression, not stimulation",
+    "Any use outside a physician-supervised context given depot duration and hormonal potency",
+  ],
+};
+
+const SUPPORT_DESMOPRESSIN: SupportPack = {
+  id: "desmopressin",
+  title: "Hyponatremia is the dominant safety concern — fluid restriction while using desmopressin is not optional",
+  subtitle: "V2-selective ADH analog — antidiuretic/hemostatic; hyponatremia and fluid intake protocol",
+  bullets: [
+    "Fluid restriction is required during use: desmopressin's V2 receptor activation causes water retention; drinking more than necessary while on desmopressin causes dilutional hyponatremia — fluid restriction is a clinical protocol requirement, not a general suggestion",
+    "Heart failure contraindication: desmopressin causes water retention; this directly worsens volume overload in heart failure, hyponatremia, or conditions where fluid balance is impaired — contraindicated without cardiologist guidance",
+    "SSRI interaction is mechanistically significant: SSRIs independently cause SIADH (antidiuretic hormone syndrome); adding desmopressin creates additive water retention and hyponatremia risk; check your medication list before starting desmopressin",
+    "Elderly vulnerability: elderly patients are more susceptible to hyponatremia from desmopressin due to reduced renal concentrating ability and often lower baseline sodium; the FDA added a boxed warning for nocturia use in elderly patients",
+    "Hyponatremia recognition: headache + nausea + unusual fatigue + confusion = possible hyponatremia; stop desmopressin, do not drink excessive fluids, seek medical evaluation",
+    "Clinical indications are the appropriate context: desmopressin is appropriately used for diabetes insipidus, nocturnal enuresis in children, nocturia, and hemostasis (vWD Type 1, hemophilia A) — these have established protocols and monitoring standards",
+  ],
+  redFlags: [
+    "Heart failure, significant edema, or volume overload — stop; desmopressin contraindicated",
+    "Headache, nausea, unusual fatigue, confusion — possible hyponatremia; stop, limit fluid intake, seek medical evaluation immediately",
+    "Sodium level below 130 mEq/L on any blood test — hyponatremia; stop and seek medical evaluation",
+    "Seizure activity — hyponatremia-associated seizure; emergency services immediately",
+    "Using for athletic performance or water retention management outside a medical context — not an appropriate use",
+  ],
+};
+
+const SUPPORT_CALCITONIN: SupportPack = {
+  id: "calcitonin",
+  title: "FDA withdrew calcitonin nasal spray for osteoporosis due to a cancer signal — this is a real regulatory finding",
+  subtitle: "Osteoclast-inhibiting thyroid peptide — Paget's/hypercalcemia indications; malignancy concern",
+  bullets: [
+    "Cancer signal is real: in 2013, the FDA refused to allow calcitonin nasal spray (Fortical, Miacalcin) to remain on label for osteoporosis after a pooled analysis of clinical trial data showed higher rates of malignancies in calcitonin-treated patients versus placebo — this was a regulatory evidence-based decision, not theoretical concern",
+    "Approved indications remain: Paget's disease and hypercalcemia of malignancy are the remaining FDA-approved uses where the benefit-risk balance is established; physician-supervised post-menopausal osteoporosis in specific clinical situations where other agents are not tolerated",
+    "Salmon vs human calcitonin: salmon calcitonin has 40-50x higher receptor affinity than human calcitonin and is the clinically used form; the receptor is the same but potency differs substantially",
+    "Antibody formation with salmon calcitonin: some patients develop neutralizing antibodies that reduce efficacy over months of use; this is a pharmacological characteristic of a non-human peptide sequence",
+    "Bisphosphonates are generally preferred: for post-menopausal osteoporosis, bisphosphonates (alendronate, risedronate) and denosumab have stronger fracture reduction evidence and better established safety profiles than calcitonin",
+    "Calcium and vitamin D co-supplementation: any bone agent requires adequate calcium and vitamin D as a foundation; ensure these are in place",
+  ],
+  redFlags: [
+    "Cancer history in the osteoporosis treatment context — the malignancy signal from pooled clinical trials warrants oncology discussion before starting",
+    "Symptoms of hypocalcemia (muscle cramps, tingling, numbness, tetany) — stop and check serum calcium",
+    "Loss of efficacy over months of use — possible antibody formation; discuss with physician about transitioning to bisphosphonate",
+    "Calcitonin injection without physician supervision and indication — the malignancy signal makes physician oversight important for any ongoing use",
+  ],
+};
+
+const SUPPORT_GLUCAGON: SupportPack = {
+  id: "glucagon",
+  title: "Every insulin-using diabetic should have a glucagon rescue kit — its absence is the primary safety gap",
+  subtitle: "Counter-regulatory hormone / hypoglycemia rescue — FDA-approved emergency use",
+  bullets: [
+    "Rescue kit access: if you or someone close to you uses insulin, a glucagon rescue kit (GlucaGen, Gvoke, or Baqsimi nasal powder) should be immediately accessible at all times; severe hypoglycemia can cause loss of consciousness and the person may be unable to self-treat",
+    "Who should have the kit: any insulin user, anyone with an insulin-using person in their household, and anyone using other high-risk glucose-lowering compounds (pramlintide, IGF-1 LR3) should have glucagon available",
+    "Rescue training: family members, partners, and coworkers should know how to administer the kit; glucagon's value during a severe hypoglycemia emergency depends entirely on someone being present and trained",
+    "Post-rescue protocol: after glucagon rescue, the person should eat a carbohydrate-containing meal once conscious; glucagon causes temporary glycogen depletion that predisposes to recurrence; seek medical evaluation after any severe hypoglycemia episode",
+    "Pheochromocytoma contraindication: glucagon stimulates catecholamine release from pheochromocytoma tumors, which can cause a life-threatening hypertensive crisis; this is a contraindication for diagnostic or therapeutic glucagon use",
+    "GLP-1 mechanism education: GLP-1 drugs (semaglutide, tirzepatide, retatrutide) suppress glucagon release from alpha cells; this is part of how they lower glucose; understanding this explains why GLP-1 users have more stable post-meal glucose",
+  ],
+  redFlags: [
+    "Severe hypoglycemia (unconscious, seizure, unable to swallow) without glucagon rescue kit available — emergency services immediately",
+    "Pheochromocytoma or suspected pheochromocytoma — do not use glucagon; hypertensive crisis risk",
+    "Glycogen depletion context (prolonged fasting, severe illness, heavy alcohol use) — glucagon rescue requires liver glycogen to work; in these contexts, IV dextrose is required, not glucagon",
+    "Recurrent severe hypoglycemia — requires immediate reassessment of insulin regimen by prescribing physician",
+  ],
+};
+
 function isVasopressinFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "vasopressin";
@@ -970,5 +1072,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isTriptorelinFamily(entity)) return SUPPORT_TRIPTORELIN;
   if (isKpvFamily(entity)) return SUPPORT_KPV;
   if (isAnpFamily(entity)) return SUPPORT_ANP;
+  if (isLeuprolideFamily(entity)) return SUPPORT_LEUPROLIDE;
+  if (isDesmopressinFamily(entity)) return SUPPORT_DESMOPRESSIN;
+  if (isCalcitoninFamily(entity)) return SUPPORT_CALCITONIN;
+  if (isGlucagonFamily(entity)) return SUPPORT_GLUCAGON;
   return null;
 }

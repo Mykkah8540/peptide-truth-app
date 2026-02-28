@@ -206,8 +206,24 @@ import AnpOverviewPanel from "@/components/AnpOverviewPanel";
 import AnpEvidencePanel from "@/components/AnpEvidencePanel";
 import AnpSafetyPanel from "@/components/AnpSafetyPanel";
 import AnpInteractionsPanel from "@/components/AnpInteractionsPanel";
+import LeuprolideOverviewPanel from "@/components/LeuprolideOverviewPanel";
+import LeuprolideEvidencePanel from "@/components/LeuprolideEvidencePanel";
+import LeuprolideSafetyPanel from "@/components/LeuprolideSafetyPanel";
+import LeuprolideInteractionsPanel from "@/components/LeuprolideInteractionsPanel";
+import DesmopressinOverviewPanel from "@/components/DesmopressinOverviewPanel";
+import DesmopressinEvidencePanel from "@/components/DesmopressinEvidencePanel";
+import DesmopressinSafetyPanel from "@/components/DesmopressinSafetyPanel";
+import DesmopressinInteractionsPanel from "@/components/DesmopressinInteractionsPanel";
+import CalcitoninOverviewPanel from "@/components/CalcitoninOverviewPanel";
+import CalcitoninEvidencePanel from "@/components/CalcitoninEvidencePanel";
+import CalcitoninSafetyPanel from "@/components/CalcitoninSafetyPanel";
+import CalcitoninInteractionsPanel from "@/components/CalcitoninInteractionsPanel";
+import GlucagonOverviewPanel from "@/components/GlucagonOverviewPanel";
+import GlucagonEvidencePanel from "@/components/GlucagonEvidencePanel";
+import GlucagonSafetyPanel from "@/components/GlucagonSafetyPanel";
+import GlucagonInteractionsPanel from "@/components/GlucagonInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -504,6 +520,30 @@ const PANEL_MAP: Record<string, {
     Evidence: AnpEvidencePanel,
     Safety: AnpSafetyPanel,
     Interactions: AnpInteractionsPanel,
+  },
+  leuprolide: {
+    Overview: LeuprolideOverviewPanel,
+    Evidence: LeuprolideEvidencePanel,
+    Safety: LeuprolideSafetyPanel,
+    Interactions: LeuprolideInteractionsPanel,
+  },
+  desmopressin: {
+    Overview: DesmopressinOverviewPanel,
+    Evidence: DesmopressinEvidencePanel,
+    Safety: DesmopressinSafetyPanel,
+    Interactions: DesmopressinInteractionsPanel,
+  },
+  calcitonin: {
+    Overview: CalcitoninOverviewPanel,
+    Evidence: CalcitoninEvidencePanel,
+    Safety: CalcitoninSafetyPanel,
+    Interactions: CalcitoninInteractionsPanel,
+  },
+  glucagon: {
+    Overview: GlucagonOverviewPanel,
+    Evidence: GlucagonEvidencePanel,
+    Safety: GlucagonSafetyPanel,
+    Interactions: GlucagonInteractionsPanel,
   },
 };
 
@@ -894,6 +934,38 @@ const V3_HERO_CONTENT: Record<string, {
       "ANP (Atrial Natriuretic Peptide) is a 28-AA cardiac hormone released in response to atrial volume overload. It drives natriuresis, vasodilation, and RAAS inhibition via NPR-A. Its 2-3 minute plasma half-life makes native ANP subcutaneous injection pharmacokinetically irrational \u2014 the clinical applications are IV infusion only (carperitide in Japan).",
       "What matters most: the 2-3 minute half-life is the defining constraint \u2014 no sustained effect is achievable from subcutaneous injection. Clinical use of natriuretic peptides requires IV infusion in a monitored cardiac setting.",
       "How to use this page: Evidence frames the pharmacokinetic reality. Safety covers hypotension \u2014 the primary adverse effect. Interactions covers antihypertensives and diuretics.",
+    ],
+  },
+  leuprolide: {
+    considerSub: "Prostate cancer, endometriosis, depot duration, PCT confusion, GnRH agonist mechanism\u2026",
+    startHere: [
+      "Leuprolide (Lupron) is a GnRH agonist \u2014 continuous GnRH receptor stimulation causes receptor downregulation and sex hormone suppression (chemical castration). This is pharmacologically the OPPOSITE of pulsatile gonadorelin stimulation. FDA-approved for prostate cancer, endometriosis, uterine fibroids, precocious puberty.",
+      "What matters most: if you are expecting leuprolide to stimulate testosterone or help with PCT, you have the mechanism backwards. Depot formulations persist for 1-6 months \u2014 you cannot undo a dose. Flare management (anti-androgen cover) is mandatory at initiation for prostate cancer.",
+      "How to use this page: Safety first if on leuprolide for prostate cancer \u2014 covers flare management and bone loss monitoring. Overview explains the suppression mechanism vs. gonadorelin's stimulation mechanism.",
+    ],
+  },
+  desmopressin: {
+    considerSub: "Heart failure (contraindicated), SSRIs, elderly, hyponatremia risk, DI/enuresis/nocturia\u2026",
+    startHere: [
+      "Desmopressin (DDAVP) is a V2-selective vasopressin analog \u2014 modified to remove V1a vasoconstriction, retaining only antidiuretic and hemostatic (vWD Type 1, hemophilia A) effects. FDA-approved for central diabetes insipidus, nocturnal enuresis, nocturia, and hemostasis.",
+      "What matters most: hyponatremia is the dominant safety concern. Fluid restriction during use is required \u2014 excessive fluid intake causes dilutional hyponatremia. Heart failure is a contraindication (water retention worsens volume overload). SSRIs cause additive antidiuretic effect.",
+      "How to use this page: Safety covers hyponatremia recognition and the heart failure contraindication. Interactions covers SSRIs and the other hyponatremia-amplifying drugs. Evidence explains the five FDA-approved use contexts.",
+    ],
+  },
+  calcitonin: {
+    considerSub: "Osteoporosis (cancer signal), Paget's disease, hypercalcemia, bisphosphonate comparison\u2026",
+    startHere: [
+      "Calcitonin is a 32-AA thyroid C-cell hormone that inhibits osteoclasts. FDA-approved for Paget's disease and hypercalcemia of malignancy. The FDA withdrew the calcitonin nasal spray for osteoporosis in 2013 citing a pooled clinical trial cancer signal (higher malignancy rates in calcitonin-treated patients).",
+      "What matters most: the 2013 FDA cancer signal for osteoporosis use is a real regulatory evidence-based finding. Bisphosphonates have better established safety and fracture reduction evidence for osteoporosis.",
+      "How to use this page: Safety first covers the cancer signal context. Evidence explains the Paget's and hypercalcemia indications vs. the withdrawn osteoporosis indication. Overview compares calcitonin to bisphosphonates and denosumab.",
+    ],
+  },
+  glucagon: {
+    considerSub: "Insulin users (rescue kit), hypoglycemia management, pheochromocytoma, GLP-1 mechanism\u2026",
+    startHere: [
+      "Glucagon is the counter-regulatory hormone to insulin \u2014 it drives hepatic glucose output via glycogenolysis and gluconeogenesis. FDA-approved for severe hypoglycemia rescue (GlucaGen, Gvoke, Baqsimi). Every insulin user should have a rescue kit accessible at all times.",
+      "What matters most: glucagon's primary clinical importance is as a rescue medication for severe hypoglycemia. Its community relevance is largely educational \u2014 understanding why GLP-1 drugs work (they suppress glucagon) and why insulin users need the rescue kit.",
+      "How to use this page: Overview explains the GLP-1/glucagon axis connection. Safety covers why the rescue kit must be available and the pheochromocytoma contraindication.",
     ],
   },
 };
