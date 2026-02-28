@@ -28,10 +28,10 @@ export default function MelanoranIiOverviewPanel() {
       }}>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Melanotan II (MT-II) is a synthetic analog of alpha-melanocyte stimulating hormone (α-MSH), designed to broadly activate melanocortin receptors (MC1R, MC3R, MC4R, MC5R). MC1R activation drives melanin production and tanning; MC3R/MC4R activation produces libido effects and appetite suppression — these are not separate effects that can be selected, they all occur together.
+          Melanotan II (MT-II) is a synthetic compound that produces tanning without sun exposure and increases sexual desire — at the same time, involuntarily. These aren&apos;t separate effects you can select; the same mechanism drives all of them. It also suppresses appetite. The core issue: it activates multiple body systems at once, some desirable and some not.
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          MT-II is <strong>not FDA-approved</strong> and is not approved in any major regulatory jurisdiction for human use. It is sold as a research chemical and widely consumed for cosmetic tanning and sexual function purposes, often with significant sourcing quality uncertainty. The compound was the research predecessor to bremelanotide (Vyleesi/PT-141), which achieved FDA approval by being developed as a more selective melanocortin agonist for HSDD with better tolerability.
+          MT-II is unregulated and not approved for human use in any major jurisdiction. It&apos;s sold as a research chemical and widely used for tanning and libido purposes, often with significant uncertainty about what you&apos;re actually getting. It was the research predecessor to bremelanotide (PT-141/Vyleesi) — a drug developed specifically to refine the libido effect while reducing nausea, cardiovascular risk, and unwanted tanning. If your interest is libido improvement specifically and bremelanotide is accessible, that&apos;s the more targeted and better-characterized option.
         </p>
       </div>
 

@@ -116,10 +116,10 @@ export default function HexarelinOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          Highest-potency GHRP — strong GH pulse, fast desensitization, unique cardiac receptor activity. Ipamorelin replaced it.
+          The most potent injectable GH stimulator in its class — but your body adapts fast, and it has unusual cardiac receptor activity.
         </div>
         <div className="reta-overview__headline-sub">
-          Hexarelin produces the largest acute GH pulse of any GHRP class compound — but that potency advantage is temporary. Tachyphylaxis (receptor downregulation) attenuates the response faster than any other GHRP, making continuous protocols ineffective. Hexarelin also binds the CD36 cardiac receptor independently of GH release — unique among GHRPs, with unclear implications in enhancement contexts. Ipamorelin offers a more sustainable GH protocol without these constraints.
+          Hexarelin stimulates GH release more powerfully than any other compound in its class. The catch: your body adapts within weeks, and the GH response drops off significantly as receptors lose sensitivity — faster than any other injectable in this category. It also has an unusual interaction with cardiac tissue that no other GH-stimulating compound shares, and what that means for long-term use isn&apos;t well understood. For sustainable protocols, ipamorelin is the more practical choice.
         </div>
       </div>
 

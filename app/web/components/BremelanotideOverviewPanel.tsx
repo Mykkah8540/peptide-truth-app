@@ -116,10 +116,10 @@ export default function BremelanotideOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          CNS melanocortin agonist — targets desire pathways in the brain, not hormones or blood flow. Nausea is the primary management challenge.
+          A drug that targets sexual desire in the brain — not hormones, not blood flow. Nausea is the main management challenge.
         </div>
         <div className="reta-overview__headline-sub">
-          Bremelanotide (Vyleesi / PT-141) works on melanocortin receptors in the brain to modulate desire signaling — not on hormones or blood flow, which makes it genuinely different from testosterone or PDE5 inhibitors. It carries FDA approval for HSDD in premenopausal women and is used off-label in men for the same CNS desire mechanism. The clinical management challenge is nausea (~40% in trials) and, with repeated use, focal hyperpigmentation. Cardiovascular caution is real — BP elevation documented; contraindicated in uncontrolled hypertension.
+          Bremelanotide (PT-141 / Vyleesi) is an injectable that works by acting on brain pathways that control sexual desire — not by raising hormones or improving blood flow. That makes it a genuinely different category from testosterone or drugs like Viagra. It carries FDA approval for low sexual desire in women and is widely used off-label in men for the same reason. The main challenge is nausea, which affects roughly 40% of users. Blood pressure also rises with each dose — a real consideration if your cardiovascular health is a factor.
         </div>
       </div>
 

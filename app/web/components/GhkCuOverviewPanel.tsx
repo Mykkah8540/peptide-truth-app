@@ -28,10 +28,10 @@ export default function GhkCuOverviewPanel() {
       }}>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          GHK-Cu (Copper Tripeptide-1) is a naturally occurring copper-binding tripeptide — Glycine-Histidine-Lysine complexed with copper — produced in human plasma, saliva, and urine. Concentrations decline with age, which forms the basis of interest in supplementation. It has been widely used in cosmetic and skincare formulations since the 1990s.
+          GHK-Cu is a naturally occurring compound in your body that declines as you age. In skincare and wound healing, it&apos;s one of the better-studied peptides — there&apos;s real evidence for its role in tissue repair and collagen production. Most people encounter it as a skincare ingredient, where it&apos;s been in use since the 1990s. The wellness community also discusses injectable forms for systemic recovery effects, though the evidence base for that use is thinner.
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          GHK-Cu is classified as <strong>investigational_human</strong> — it is not an FDA-approved drug but is legal as a cosmetic ingredient globally. Its effects are highly formulation-dependent: absorption through skin barrier layers varies significantly by product, and results in small human trials reflect this variability. The systemic risk profile of topical use is genuinely low.
+          The important nuance: results depend heavily on formulation. Not all GHK-Cu products deliver the same absorption, and &ldquo;GHK-Cu&rdquo; on a label doesn&apos;t tell you how much actually reaches deeper tissue. Injectable use carries a different risk profile than topical. For topical use, the safety record is reassuring; injectable use is less well-characterized.
         </p>
       </div>
 

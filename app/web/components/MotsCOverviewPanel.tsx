@@ -28,10 +28,10 @@ export default function MotsCOverviewPanel() {
       }}>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          MOTS-c (Mitochondrial Open reading frame of the twelve S rRNA type-c) is a 16-amino-acid peptide encoded within the mitochondrial genome — specifically within the 12S rRNA gene. It was first identified in 2015 as one of the few known peptides encoded by mitochondrial DNA rather than nuclear DNA. Circulating MOTS-c levels naturally increase in response to exercise and decline with age, which forms the conceptual basis for supplementation interest.
+          MOTS-c is a tiny peptide your body produces naturally — specifically from your mitochondria, the energy-generating structures inside every cell. It was only discovered in 2015, and levels rise when you exercise and decline as you age. The interest centers on metabolic health, insulin sensitivity, and longevity — similar territory to NAD+.
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          The primary mechanism involves AMPK activation and insulin sensitization pathways — placing MOTS-c in the "metabolic health and longevity" category alongside compounds like NAD+. However, unlike NAD+, which has a substantial human evidence base, MOTS-c evidence in 2025 is primarily animal studies and human observational biomarker data. No published human RCTs yet exist. It is being actively researched and is used as a research peptide in wellness communities, often discussed alongside exercise optimization and metabolic resilience goals.
+          The honest caveat: this is very early-stage. Unlike NAD+, which has a growing human clinical evidence base, MOTS-c evidence in 2025 is primarily animal studies and observational data in humans. No published human RCTs exist yet. Anyone using it is working ahead of the clinical evidence — worth being clear-eyed about before you start.
         </p>
       </div>
 

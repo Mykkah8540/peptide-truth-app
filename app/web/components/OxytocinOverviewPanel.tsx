@@ -28,10 +28,10 @@ export default function OxytocinOverviewPanel() {
       }}>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Oxytocin is a neuropeptide hormone naturally produced in the hypothalamus and released by the posterior pituitary. It plays central roles in social bonding, pair bonding, maternal behavior, childbirth, and breastfeeding. FDA-approved as Pitocin (synthetic oxytocin injection), it is used in hospitals for labor induction and postpartum hemorrhage prevention — strictly in clinical settings with monitoring.
+          Oxytocin is your body&apos;s own bonding and trust signal — it&apos;s released during physical touch, intimacy, social connection, and childbirth. The &ldquo;love hormone&rdquo; label oversimplifies it, but the core idea isn&apos;t wrong: oxytocin is deeply involved in how humans connect with each other. The intranasal form — a nasal spray — is what people use off-label for social bonding, anxiety reduction, and relationship enhancement.
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          The wellness community interest in oxytocin centers on intranasal formulations (often sourced from compounding pharmacies or research peptide markets) for social bonding, stress reduction, anxiety, and relationship enhancement — the so-called "love hormone" effects. The key issue: the research evidence for intranasal oxytocin's social effects in healthy adults is substantially less consistent than the popular narrative suggests, and the approved drug is an intravenous hospital medication with serious contraindications.
+          Here&apos;s the honest picture: the early research on intranasal oxytocin was exciting, but large-scale studies haven&apos;t consistently replicated those results in healthy adults. The &ldquo;love hormone&rdquo; narrative got ahead of the evidence. If you&apos;re pregnant or thinking about becoming pregnant, this is an absolute hard stop — the same mechanism that makes oxytocin useful for inducing labor is why it&apos;s dangerous in that context without clinical supervision.
         </p>
       </div>
 

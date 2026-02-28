@@ -114,10 +114,10 @@ export default function Ghrp2OverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          The original research GHRP — potent GH release, non-selective profile. Ipamorelin replaced it for a reason.
+          An early injectable GH-stimulating compound — works, but also elevates stress hormones. Ipamorelin replaced it for a reason.
         </div>
         <div className="reta-overview__headline-sub">
-          GHRP-2 established the proof of concept for ghrelin receptor agonism as a GH-stimulating strategy. It works. The problem is selectivity: it elevates cortisol and prolactin alongside GH — the opposite of what most enhancement users want. Ipamorelin was developed specifically to fix this. The GH-axis safety gates are identical.
+          GHRP-2 was one of the first compounds developed to boost GH without injecting GH itself — and it works. The problem: it also elevates cortisol and prolactin, which are stress hormones most people aren&apos;t trying to raise. That side effect profile is exactly why ipamorelin was developed as a cleaner alternative. If you&apos;re researching injectable GH options, ipamorelin is almost certainly the better starting point.
         </div>
       </div>
 

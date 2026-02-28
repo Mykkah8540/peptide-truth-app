@@ -114,10 +114,10 @@ export default function Mk677OverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          Oral, long-acting GH secretagogue — the convenience is real, and so are the amplified tradeoffs.
+          The only oral GH booster — no needles, but the tradeoffs are amplified compared to injectables.
         </div>
         <div className="reta-overview__headline-sub">
-          MK-677 is a ghrelin receptor agonist taken as a capsule. The 24-hour half-life means sustained GH elevation — not the physiologic pulses of injectable GHRPs. That sustained exposure amplifies appetite, glucose, fluid, and carpal tunnel concerns. The same GH-axis safety gates apply; they&apos;re not softened by oral delivery.
+          MK-677 is the oral alternative to injectable GH-stimulating compounds — no needles, just a daily capsule. The tradeoff: it stays active for about 24 hours, which means continuous elevated GH rather than the brief natural pulses that injectable protocols produce. That sustained exposure is why the appetite effect is intense, blood sugar changes are more pronounced, and fluid retention is common. Taking it orally doesn&apos;t soften the safety picture — the same cautions apply.
         </div>
       </div>
 

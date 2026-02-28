@@ -114,10 +114,10 @@ export default function Ghrp6OverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          The highest-appetite GHRP — strong GH release, extreme hunger, non-selective profile. Ipamorelin replaced it.
+          The GH compound that causes extreme hunger — useful for aggressive bulking, a problem for everything else.
         </div>
         <div className="reta-overview__headline-sub">
-          GHRP-6 is the &ldquo;hunger bomb&rdquo; of the GHRP class — it stimulates GH release alongside the most intense appetite stimulation of any GHRP, plus cortisol and prolactin elevation. For aggressive caloric surplus goals, the appetite effect can be an asset. For everything else, ipamorelin provides similar GH release with manageable appetite and no cortisol elevation.
+          GHRP-6 is an injectable GH-stimulating compound with a defining characteristic: intense hunger. Not &ldquo;I could use a snack&rdquo; — users describe strong cravings within 30 minutes of injecting. For people trying to eat aggressively in a bulking phase, that hunger effect can be genuinely useful. For everyone else, it&apos;s the main reason ipamorelin — which produces similar GH effects without the appetite storm — became the standard.
         </div>
       </div>
 

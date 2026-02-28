@@ -114,10 +114,10 @@ export default function SelankOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          Russian anxiolytic peptide — calm without sedation, GABAergic mechanism, intranasal route. Evidence is real but from a single research tradition.
+          A Russian nasal spray for anxiety — calming without sedation or brain fog. Evidence is real but from one research tradition.
         </div>
         <div className="reta-overview__headline-sub">
-          Selank is a synthetic heptapeptide derived from tuftsin, developed at Russia&apos;s Institute of Molecular Genetics as a non-sedating anxiolytic. Its proposed mechanism — GABAergic modulation plus enkephalinase inhibition (raising endogenous enkephalins) — is pharmacologically grounded and distinct from benzodiazepines. Community reports consistently describe anxiolytic effects without cognitive blunting. The honest constraint is the evidence base: Russian clinical literature with limited independent Western replication. The mechanism is plausible and the safety profile appears favorable; the precise clinical effect size in Western populations is less established.
+          Selank is a nasal spray developed in Russia to reduce anxiety without causing sedation — calm without the brain fog. That&apos;s the key distinction from benzodiazepines (Valium, Xanax), which work by broadly suppressing the nervous system and tend to impair thinking. Selank works through a different, more targeted mechanism. Community reports consistently describe reduced anxiety with clear-headed focus maintained. The evidence comes from Russian clinical research — which is real science — but it hasn&apos;t been widely replicated in Western clinical trials, so the exact strength of effect is less established than FDA-approved options.
         </div>
       </div>
 

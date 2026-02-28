@@ -28,10 +28,10 @@ export default function Aod9604OverviewPanel() {
       }}>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          AOD-9604 is a synthetic peptide comprising amino acids 176–191 of human growth hormone — specifically the C-terminal region identified as responsible for hGH's lipolytic (fat-metabolizing) effects. It was developed to isolate these fat-burning properties while avoiding the growth-axis effects (IGF-1 elevation, anabolic signaling) associated with full-length hGH.
+          AOD-9604 is a research peptide developed specifically for fat loss — it was engineered from a fragment of human growth hormone that controls fat metabolism, while leaving out the parts that cause growth effects or raise IGF-1. The pitch is that you get the fat-burning signal without the hormonal side effects of full GH.
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          The drug completed Phase II clinical trials for obesity with human safety data showing a reasonable short-term profile. However, clinically meaningful weight loss was not demonstrated at the doses studied, and FDA approval was not obtained. It is now widely sold as a research peptide for fat-loss and metabolic goals, with the Phase II experience providing real but limited human reference points.
+          Here&apos;s what the human trial data actually showed: AOD-9604 completed Phase II clinical trials for obesity, and the short-term safety profile looked acceptable. But meaningful weight loss wasn&apos;t demonstrated at the doses tested, which is why it never became an approved drug. It&apos;s now widely used as a research peptide for fat-loss goals, with the trial data providing a real but limited reference point for expectations.
         </p>
       </div>
 

@@ -115,10 +115,10 @@ export default function TesamorelinOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          A GHRH analog with Phase III RCT evidence for visceral fat reduction — same mechanism as CJC-1295, available as a prescription compound.
+          A prescription GH compound with controlled trial evidence for reducing deep abdominal fat — the strongest fat-focused data in this class.
         </div>
         <div className="reta-overview__headline-sub">
-          Tesamorelin is a GHRH receptor agonist — the same mechanism as CJC-1295 and sermorelin — that stimulates pulsatile GH release and has Phase III RCT evidence for visceral fat reduction. It carries FDA approval for a specific clinical indication, which is what produced the controlled trial data; off-label enhancement use extrapolates the visceral fat mechanism to healthy adults. The mechanism is real and well-characterized; the evidence is stronger for the specific approved context than for general optimization.
+          Tesamorelin works the same way as CJC-1295 and sermorelin — it prompts your body to produce more growth hormone. What sets it apart: it&apos;s backed by controlled clinical trials specifically for reducing visceral fat — the deep abdominal fat around your organs that&apos;s hardest to target with diet and exercise alone. That&apos;s the strongest fat-specific evidence of any compound in this class. It requires a prescription; off-label use extrapolates this data to healthy adults. The mechanism is well-established; whether the results translate outside the trial population is the honest question.
         </div>
       </div>
 

@@ -115,10 +115,10 @@ export default function SermorelinOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          The original GHRH analog — clinical history, prescription context, same GH-axis considerations.
+          The original prescription GH compound — decades of clinical history, now back through compounding pharmacies.
         </div>
         <div className="reta-overview__headline-sub">
-          Sermorelin was the first GHRH analog in clinical use, approved for pediatric GH deficiency and later discontinued due to manufacturing issues — not safety concerns. The mechanism is identical to CJC-1295. The evidence posture and regulatory history are different.
+          Sermorelin is the oldest compound in the prescription GH category — used clinically for decades before being discontinued for manufacturing reasons, not safety. It&apos;s now available again through compounding pharmacies and is popular in anti-aging and longevity clinics. The mechanism works the same way as CJC-1295: it prompts your pituitary to release GH naturally. The main practical differences are that it requires a prescription and has a shorter duration than some alternatives.
         </div>
       </div>
 

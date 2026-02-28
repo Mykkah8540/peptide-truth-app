@@ -114,10 +114,10 @@ export default function IpamorelinOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          A selective GH secretagogue — but the GH-axis considerations are identical to CJC-1295.
+          The cleanest injectable GH booster in its class — and why it&apos;s so often paired with CJC-1295.
         </div>
         <div className="reta-overview__headline-sub">
-          Ipamorelin hits the ghrelin receptor, not the GHRH receptor — that&apos;s what makes it complement CJC-1295 rather than duplicate it. &ldquo;Selective&rdquo; means cleaner than older GHRPs, not low-impact on the GH axis.
+          You&apos;ve probably seen ipamorelin and CJC-1295 recommended together — there&apos;s a real reason for that. They stimulate GH release through different pathways, so pairing them produces more effect than either alone. &ldquo;Selective&rdquo; means ipamorelin doesn&apos;t spike cortisol or appetite the way older compounds in this class do. But the same cautions that apply to any GH-boosting compound still apply here.
         </div>
       </div>
 

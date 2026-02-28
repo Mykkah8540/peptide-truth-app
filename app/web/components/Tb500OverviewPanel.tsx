@@ -116,7 +116,7 @@ export default function Tb500OverviewPanel() {
           A recovery peptide with a borrowed evidence base and a product identity problem.
         </div>
         <div className="reta-overview__headline-sub">
-          TB-500&apos;s evidence comes from thymosin beta-4 biology — not direct TB-500 human trials. The distinction matters. So does knowing what&apos;s actually in the vial.
+          TB-500 is sold as a healing and recovery peptide, but here&apos;s the honest picture: most of what&apos;s known about how it works was discovered studying a related compound, not TB-500 directly. That borrowed evidence base shapes what this page can tell you — and what you should realistically expect. What&apos;s actually in the vial matters too.
         </div>
       </div>
 

@@ -113,10 +113,10 @@ export default function Cjc1295OverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          A GH-axis compound with real human evidence — and real systemic downstream effects.
+          A growth hormone booster with real human evidence — and real consequences for your hormonal system.
         </div>
         <div className="reta-overview__headline-sub">
-          CJC-1295 actually changes your endocrine physiology. That&apos;s why people use it, and why the risk profile is more consequential than most research-grade peptides. Know your variant. Know your metabolic baseline.
+          CJC-1295 prompts your body to release more growth hormone — that&apos;s the goal, and it works. But this isn&apos;t a supplement that gently nudges natural function. It actually shifts how your hormonal system operates, which is why the safety picture here is more consequential than most research-grade peptides. Two versions exist — with and without DAC — that behave very differently. Know which one you&apos;re using, and know your metabolic baseline before you start.
         </div>
       </div>
 

@@ -114,10 +114,10 @@ export default function SemaxOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          Russian cognitive peptide — BDNF upregulation, stimulatory activation, intranasal route. Evidence from stroke/recovery contexts; enhancement extrapolated.
+          A Russian cognitive enhancer in nasal spray form — focus, alertness, possible brain protection. More stimulating than calming.
         </div>
         <div className="reta-overview__headline-sub">
-          Semax is a synthetic heptapeptide derived from ACTH(4-7) with a Pro-Gly-Pro sequence added for stability. Used clinically in Russia for cognitive impairment and stroke recovery, it upregulates BDNF and activates dopaminergic and serotonergic pathways. Community use focuses on cognitive enhancement — focus, mental energy, and neuroprotection. More stimulatory than Selank; can worsen anxiety in anxiety-prone individuals. Often used with Selank as a balance. Evidence: mechanistically grounded, Russian clinical data, limited Western replication.
+          Semax is a cognitive enhancer in nasal spray form, developed in Russia, that increases alertness, focus, and mental energy — think of it as the more stimulating counterpart to Selank. It also supports the formation of new neural connections over time, which is why it&apos;s discussed for both short-term focus sessions and longer cognitive optimization goals. It&apos;s used medically in Russia for stroke recovery and cognitive impairment, giving it real clinical grounding. Enhancement use in healthy adults extrapolates from that context. One important note: Semax&apos;s stimulating effect can worsen anxiety if you&apos;re prone to it — which is why it&apos;s often paired with Selank as a balancing compound.
         </div>
       </div>
 
