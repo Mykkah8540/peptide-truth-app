@@ -142,8 +142,24 @@ import KisspeptinOverviewPanel from "@/components/KisspeptinOverviewPanel";
 import KisspeptinEvidencePanel from "@/components/KisspeptinEvidencePanel";
 import KisspeptinSafetyPanel from "@/components/KisspeptinSafetyPanel";
 import KisspeptinInteractionsPanel from "@/components/KisspeptinInteractionsPanel";
+import GonadorelinOverviewPanel from "@/components/GonadorelinOverviewPanel";
+import GonadorelinEvidencePanel from "@/components/GonadorelinEvidencePanel";
+import GonadorelinSafetyPanel from "@/components/GonadorelinSafetyPanel";
+import GonadorelinInteractionsPanel from "@/components/GonadorelinInteractionsPanel";
+import Follistatin344OverviewPanel from "@/components/Follistatin344OverviewPanel";
+import Follistatin344EvidencePanel from "@/components/Follistatin344EvidencePanel";
+import Follistatin344SafetyPanel from "@/components/Follistatin344SafetyPanel";
+import Follistatin344InteractionsPanel from "@/components/Follistatin344InteractionsPanel";
+import HumaninOverviewPanel from "@/components/HumaninOverviewPanel";
+import HumaninEvidencePanel from "@/components/HumaninEvidencePanel";
+import HumaninSafetyPanel from "@/components/HumaninSafetyPanel";
+import HumaninInteractionsPanel from "@/components/HumaninInteractionsPanel";
+import DSIPOverviewPanel from "@/components/DSIPOverviewPanel";
+import DSIPEvidencePanel from "@/components/DSIPEvidencePanel";
+import DSIPSafetyPanel from "@/components/DSIPSafetyPanel";
+import DSIPInteractionsPanel from "@/components/DSIPInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -344,6 +360,30 @@ const PANEL_MAP: Record<string, {
     Evidence: KisspeptinEvidencePanel,
     Safety: KisspeptinSafetyPanel,
     Interactions: KisspeptinInteractionsPanel,
+  },
+  gonadorelin: {
+    Overview: GonadorelinOverviewPanel,
+    Evidence: GonadorelinEvidencePanel,
+    Safety: GonadorelinSafetyPanel,
+    Interactions: GonadorelinInteractionsPanel,
+  },
+  "follistatin-344": {
+    Overview: Follistatin344OverviewPanel,
+    Evidence: Follistatin344EvidencePanel,
+    Safety: Follistatin344SafetyPanel,
+    Interactions: Follistatin344InteractionsPanel,
+  },
+  humanin: {
+    Overview: HumaninOverviewPanel,
+    Evidence: HumaninEvidencePanel,
+    Safety: HumaninSafetyPanel,
+    Interactions: HumaninInteractionsPanel,
+  },
+  dsip: {
+    Overview: DSIPOverviewPanel,
+    Evidence: DSIPEvidencePanel,
+    Safety: DSIPSafetyPanel,
+    Interactions: DSIPInteractionsPanel,
   },
 };
 
@@ -606,6 +646,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Kisspeptin is the upstream master regulator of the reproductive axis \u2014 it drives GnRH, which drives LH and FSH, which drives testosterone and estrogen. The IVF trigger evidence (KP-54) is real and peer-reviewed. Community use targets testosterone optimization and post-TRT axis recovery.",
       "What matters most: continuous dosing suppresses the axis rather than stimulating it \u2014 the same desensitization mechanism that GnRH agonists use for medical castration. Pulsatile administration is not optional. Monitor LH and testosterone; declining testosterone during use means stop immediately.",
       "How to use this page: Safety first if you have ER-positive cancer, endometriosis, or PCOS \u2014 kisspeptin drives sex steroid production, which exacerbates these conditions. Evidence explains the pulsatile constraint and the gap between IVF evidence and testosterone optimization use.",
+    ],
+  },
+  gonadorelin: {
+    considerSub: "On GnRH agonists (leuprolide, triptorelin), prostate cancer, TRT users\u2026",
+    startHere: [
+      "Gonadorelin is synthetic GnRH \u2014 the same 10-amino-acid signal the hypothalamus uses to drive LH and FSH from the pituitary. Community use is almost entirely as a TRT adjunct for testicular preservation. Compounding pharmacy access (prescription) makes it more accessible than most investigational peptides.",
+      "What matters most: GnRH agonists (leuprolide, triptorelin) are a hard stop \u2014 same receptor, continuous stimulation causes the opposite effect. Pulsatile dosing is the mechanism; continuous use suppresses the axis.",
+      "How to use this page: Interactions first if you\u2019re on any GnRH agonist or TRT. Evidence covers what\u2019s established (GnRH mechanism and pump protocols) vs. what\u2019s extrapolated (twice-daily injection).",
+    ],
+  },
+  "follistatin-344": {
+    considerSub: "Cancer history, estrogen-sensitive conditions, fertility planning, anyone on anti-activin medications\u2026",
+    startHere: [
+      "Follistatin-344 is a myostatin/activin antagonist with dramatic animal and gene therapy data. The bodybuilding hype is real \u2014 the human peptide injection evidence is not. No human RCTs for subcutaneous injection exist.",
+      "What matters most: the activin suppression cancer concern is documented in oncology literature, not theoretical. Any cancer history is a hard stop. FSH suppression (via activin blockade) is a predictable consequence affecting fertility in both sexes.",
+      "How to use this page: Safety first if you have any cancer history, estrogen-sensitive conditions, or are planning fertility treatment. Evidence explains the gap between gene therapy models and peptide injection.",
+    ],
+  },
+  humanin: {
+    considerSub: "On JAK inhibitors, active cancer, STAT3-dependent conditions, insulin users\u2026",
+    startHere: [
+      "Humanin is the first identified mitokine \u2014 a mitochondria-encoded peptide that declines with age and is lower in people with Alzheimer\u2019s disease, cardiovascular disease, and type 2 diabetes. Centenarians and their offspring have higher levels.",
+      "What matters most: the mechanistic story is unusually coherent for an investigational compound; the evidence is cell/rodent + human observational only \u2014 no human RCTs exist. JAK inhibitor conflict is the primary drug interaction.",
+      "How to use this page: Interactions first if you\u2019re on a JAK inhibitor. Evidence explains the centenarian correlation and the gap between rodent data and human interventional evidence.",
+    ],
+  },
+  dsip: {
+    considerSub: "On opioid medications, benzodiazepines, HPA axis medications\u2026",
+    startHere: [
+      "DSIP was isolated from rabbit sleep states in 1977. The \u2018delta sleep-inducing\u2019 name overpromises \u2014 the human sleep induction studies are mixed. The HPA axis normalization story (ACTH/cortisol modulation) has more consistent support. The opioid withdrawal evidence is the most controlled human data.",
+      "What matters most: no modern RCTs exist; all evidence is from 1980s\u201390s European studies. No dedicated receptor has been identified. Opioid medications are a flag due to receptor overlap. CNS depressants (benzodiazepines, alcohol) are additive.",
+      "How to use this page: Interactions first if you\u2019re on opioids or benzodiazepines. Evidence explains why the sleep claim is weaker than the name suggests and what the HPA data actually shows.",
     ],
   },
 };

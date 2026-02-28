@@ -529,6 +529,106 @@ const SUPPORT_KISSPEPTIN: SupportPack = {
   ],
 };
 
+function isGonadorelinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "gonadorelin";
+}
+
+function isFollistatin344Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "follistatin-344";
+}
+
+function isHumaninFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "humanin";
+}
+
+function isDsipFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "dsip";
+}
+
+const SUPPORT_GONADORELIN: SupportPack = {
+  id: "gonadorelin",
+  title: "Pulsatile stimulation — the same receptor, misused, causes the opposite effect",
+  subtitle: "Synthetic GnRH — HPG axis mechanics and TRT context",
+  bullets: [
+    "Pulsatile requirement: gonadorelin works by mimicking the natural GnRH pulse — twice-daily subcutaneous injection approximates this; increasing frequency beyond this risks receptor desensitization and axis suppression",
+    "GnRH agonists are a hard stop: leuprolide, triptorelin, nafarelin on the same receptor continuously — adding gonadorelin while on these is mechanistically futile and potentially harmful",
+    "TRT context monitoring: exogenous testosterone suppresses the axis; monitor LH 30–60 min post-injection to confirm pituitary is still responding — blunted LH response indicates TRT suppression is overcoming gonadorelin stimulation",
+    "Post-TRT axis recovery: combine with SERMs (clomiphene, enclomiphene) for dual-mechanism recovery — gonadorelin acts at pituitary level, SERMs remove negative feedback at hypothalamus; monitor LH and testosterone together",
+    "Source: gonadorelin is available through compounding pharmacies in the US (prescription required); verify CoA for purity and sterility",
+    "Expect modest testicular volume preservation, not TRT-equivalent testosterone — gonadorelin supports the axis, it does not replace TRT levels",
+  ],
+  redFlags: [
+    "Currently on GnRH agonist (leuprolide, triptorelin, nafarelin) — hard stop; mechanistic conflict at receptor level",
+    "Falling testosterone while on gonadorelin — potential receptor desensitization; reduce dosing frequency, reassess protocol",
+    "Prostate cancer history — gonadorelin stimulates testosterone production; hard stop without oncology guidance",
+    "Signs of OHSS in female users (abdominal pain, bloating, nausea) — stop and seek evaluation",
+  ],
+};
+
+const SUPPORT_FOLLISTATIN_344: SupportPack = {
+  id: "follistatin-344",
+  title: "Activin suppression is a real cancer concern — not a theoretical one",
+  subtitle: "Myostatin/activin antagonist — high-stakes screens before use",
+  bullets: [
+    "Cancer screen first — hard stop: activin has tumor-suppressive roles in endometrial, ovarian, prostate, and colorectal cancer; follistatin overexpression is found in these cancers; any cancer history is a hard stop",
+    "Recent cancer screening required: even without cancer history, activin suppression is not appropriate without a recent baseline screening (age-appropriate: PSA, breast/gyn, colorectal)",
+    "Product quality is higher concern than most compounds: follistatin-344 is a 344 AA glycoprotein requiring mammalian cell expression; most research peptide suppliers cannot produce correctly folded product — verify identity with HPLC + mass spec",
+    "FSH suppression is expected: activin drives FSH; follistatin suppresses activin; FSH suppression impairs spermatogenesis (males) and follicular development (females) — fertility impact is predictable",
+    "The animal data is real; the peptide injection pharmacokinetics in humans are not: dramatic transgenic/gene therapy results do not establish that subcutaneous injection achieves systemic myostatin blockade",
+    "Fertility timeline: anyone planning conception in the next 6 months should not use follistatin-344 given expected FSH suppression",
+  ],
+  redFlags: [
+    "Any cancer history — activin suppression removes tumor-suppressive signaling; hard stop",
+    "ER-positive breast cancer or estrogen-sensitive conditions — stop immediately",
+    "Fertility treatment or planned conception — FSH suppression from activin blockade directly conflicts with fertility goals",
+    "Anti-ActRIIB or TGF-β pathway cancer drugs — do not combine",
+  ],
+};
+
+const SUPPORT_HUMANIN: SupportPack = {
+  id: "humanin",
+  title: "More mechanistically coherent than most — but no human RCTs to validate it",
+  subtitle: "Mitokine peptide — longevity/neuroprotection context",
+  bullets: [
+    "JAK inhibitor screen first: humanin activates JAK2/STAT3; if you are on ruxolitinib, tofacitinib, baricitinib, or other JAK inhibitors, humanin is mechanistically opposed to your treatment",
+    "Cancer flag for STAT3-dependent cancers: JAK2/STAT3 activation is a pro-survival signal in certain cancer types; active cancer treatment requires oncology guidance before adding any JAK2/STAT3-activating compound",
+    "Native humanin vs HNG: most preclinical efficacy data uses HNG (Gly14-humanin, ~1000× more potent); confirm what your product actually contains — dose calibration differs substantially",
+    "Metabolic monitoring if combining with insulin or metformin: humanin has insulin-sensitizing effects in rodent models; additive glucose-lowering is a possible interaction to monitor",
+    "Source quality: humanin is a 21 AA peptide amenable to standard synthesis — quality concerns are lower than for follistatin, but verify CoA for purity and identity",
+    "Expectation calibration: the centenarian association is the most compelling human data point; there are no human RCTs; this is early-investigational by any evidence standard",
+  ],
+  redFlags: [
+    "On JAK inhibitors — humanin activates the pathway being suppressed; mechanistic conflict; discuss with physician",
+    "Active cancer with STAT3-dependent biology — stop and consult oncology",
+    "On insulin without glucose monitoring plan — additive insulin sensitization could cause hypoglycemia",
+    "Severe injection site reaction or systemic symptoms post-injection — stop and evaluate",
+  ],
+};
+
+const SUPPORT_DSIP: SupportPack = {
+  id: "dsip",
+  title: "Old evidence, mixed results — the stress-modulation story is more credible than the sleep-induction name",
+  subtitle: "Sleep/stress neuropeptide — key context and safety checks",
+  bullets: [
+    "Opioid medication screen first: DSIP has proposed opioid receptor interactions and demonstrated efficacy in opioid withdrawal — concurrent opioid use creates uncharacterized receptor overlap; discuss with prescribing physician",
+    "CNS depressant check: benzodiazepines, z-drugs, and alcohol all have additive CNS depression potential with DSIP's sleep-modulating effects; don't combine on first use nights",
+    "HPA axis medications: DSIP modulates ACTH and cortisol; corticosteroids, adrenal insufficiency treatment, and Cushing's management all interact with HPA axis — physician guidance required",
+    "Expectation calibration: the 'delta sleep-inducing' name overpromises; the human sleep induction studies are mixed; the HPA axis normalization and stress modulation data is more consistent — orient expectations accordingly",
+    "No modern human RCTs exist: the evidence base is 1980s-90s European sleep medicine studies; community use is based on extrapolation from dated literature",
+    "BBB penetration uncertain: the original studies used IV administration; whether subcutaneous injection achieves CNS concentrations for sleep architecture effects is not established",
+  ],
+  redFlags: [
+    "On opioid medications — uncharacterized receptor interaction; discuss with prescribing physician before combining",
+    "On benzodiazepines + DSIP: potential additive sedation — do not combine without clinical guidance",
+    "Opioid use disorder in active treatment — any investigational compound use should be disclosed to addiction medicine provider",
+    "Worsening sleep or paradoxical stimulation — stop use; DSIP's response is highly variable in community reports",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
@@ -549,5 +649,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isThymosinBeta4Family(entity)) return SUPPORT_THYMOSIN_BETA4;
   if (isFiveAmino1MQFamily(entity)) return SUPPORT_FIVE_AMINO_1MQ;
   if (isKisspeptinFamily(entity)) return SUPPORT_KISSPEPTIN;
+  if (isGonadorelinFamily(entity)) return SUPPORT_GONADORELIN;
+  if (isFollistatin344Family(entity)) return SUPPORT_FOLLISTATIN_344;
+  if (isHumaninFamily(entity)) return SUPPORT_HUMANIN;
+  if (isDsipFamily(entity)) return SUPPORT_DSIP;
   return null;
 }
