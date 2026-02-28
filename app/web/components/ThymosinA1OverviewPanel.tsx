@@ -28,10 +28,10 @@ export default function ThymosinA1OverviewPanel() {
       }}>
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Thymosin Alpha-1 (Thymalfasin / Zadaxin) is a 28-amino-acid peptide naturally produced by the thymus. Commercially available since the 1980s, it is approved in approximately 35 countries — including many in Asia and parts of Europe — for chronic hepatitis B, hepatitis C, and as an adjunct in some cancer treatment protocols. It is <em>not</em> FDA-approved in the United States, though it is widely discussed in immune optimization communities.
+          Thymosin Alpha-1 is a naturally occurring 28-amino-acid peptide produced by the thymus that promotes T-cell maturation and activates dendritic cells — the core function of an immune modulator. It calibrates immune response rather than suppressing or over-activating it. In wellness contexts, it is most often discussed during periods of heavy training, frequent illness, or high-stress seasons where immune resilience is the goal.
         </p>
         <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          Its mechanism centers on thymic signaling: it promotes T-cell maturation, enhances dendritic cell function, and modulates both innate and adaptive immune responses. In wellness contexts, it is most often discussed during periods of heavy training, frequent illness, or high-stress seasons where immune resilience is the goal.
+          Thymalfasin (brand name Zadaxin) has been commercially available since the 1980s and is approved in approximately 35 countries — including many in Asia and parts of Europe. It is not FDA-approved in the United States but is available via compounding pharmacies and widely discussed in immune optimization communities.
         </p>
       </div>
 

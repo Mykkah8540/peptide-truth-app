@@ -116,10 +116,10 @@ export default function BremelanotideOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          FDA-approved CNS desire pathway drug — not a hormone, not a blood flow drug. Nausea is the primary clinical challenge.
+          CNS melanocortin agonist — targets desire pathways in the brain, not hormones or blood flow. Nausea is the primary management challenge.
         </div>
         <div className="reta-overview__headline-sub">
-          Bremelanotide (Vyleesi / PT-141) is the second FDA-approved drug for HSDD in premenopausal women — and the first injectable option. It works on melanocortin receptors in the brain to modulate desire signaling, not on hormones or blood flow. That makes it genuinely different from testosterone or PDE5 inhibitors. The clinical management challenge is nausea (~40% in trials) and, with repeated use, focal hyperpigmentation. Cardiovascular caution is real — BP elevation documented; contraindicated in uncontrolled hypertension.
+          Bremelanotide (Vyleesi / PT-141) works on melanocortin receptors in the brain to modulate desire signaling — not on hormones or blood flow, which makes it genuinely different from testosterone or PDE5 inhibitors. It carries FDA approval for HSDD in premenopausal women and is used off-label in men for the same CNS desire mechanism. The clinical management challenge is nausea (~40% in trials) and, with repeated use, focal hyperpigmentation. Cardiovascular caution is real — BP elevation documented; contraindicated in uncontrolled hypertension.
         </div>
       </div>
 
