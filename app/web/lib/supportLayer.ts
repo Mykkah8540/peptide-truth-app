@@ -629,6 +629,108 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isSomatostatinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "somatostatin";
+}
+
+function isBpc157ArginateFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "bpc-157-arginate";
+}
+
+function isThymosinBeta4FullFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "thymosin-beta-4-full";
+}
+
+function isCjc1295DacFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "cjc-1295-dac";
+}
+
+const SUPPORT_SOMATOSTATIN: SupportPack = {
+  id: "somatostatin",
+  title: "90-second half-life makes subcutaneous injection pharmacologically meaningless — use an analog if you need somatostatin receptor activity",
+  subtitle: "Endogenous GH/glucagon inhibitor — mechanism vs practical use context",
+  bullets: [
+    "Half-life reality check: native somatostatin has a plasma half-life of approximately 90 seconds; subcutaneous injection does not achieve sustained systemic levels; if somatostatin receptor activity is the goal, octreotide or lanreotide are the clinically rational compounds",
+    "Glucagon counter-regulation concern: somatostatin inhibits glucagon as well as insulin; if glucose drops while using a somatostatin compound, the normal glucagon rescue response is impaired — fast-acting glucose must be accessible",
+    "Octreotide/lanreotide reference: if using a somatostatin analog (octreotide, lanreotide, pasireotide), physician oversight is the standard — these have FDA-approved prescribing information with established contraindications",
+    "GH axis context: somatostatin is the endogenous brake on GH; those using GH secretagogues are working against the somatostatin system; the two are opposing signals",
+    "Glucose monitoring: any compound affecting both insulin and glucagon secretion requires glucose awareness; monitoring fasting glucose at baseline is a minimum",
+    "Source quality: no pharmaceutical-grade native somatostatin is available for community injection; this compound is primarily used in IV research contexts",
+  ],
+  redFlags: [
+    "Hypoglycemia symptoms (shakiness, sweating, confusion, rapid heart rate) — impaired glucagon counter-regulation means normal recovery may be blunted; fast-acting carbohydrates immediately",
+    "Bradycardia or significant heart rate slowing — somatostatin has cardiac effects; stop and evaluate",
+    "On insulin or hypoglycemic agents without a glucose monitoring plan — glucagon suppression is additive hypoglycemia risk",
+    "Gallbladder symptoms (right upper quadrant pain, nausea) during long-term analog use — gallstone risk is a documented class effect",
+  ],
+};
+
+const SUPPORT_BPC157_ARGINATE: SupportPack = {
+  id: "bpc-157-arginate",
+  title: "Same peptide as BPC-157 in a different salt form — the BPC-157 safety and protocol considerations apply unchanged",
+  subtitle: "Arginate formulation of BPC-157 — the active peptide is identical",
+  bullets: [
+    "The BPC-157 safety framework applies: cancer history (same angiogenesis mechanism), pregnancy (no safety data), injection site infection signs, anticoagulant awareness — all apply to the arginate form identically",
+    "Arginate is the counterion, not the active moiety: the GEPPPGKPADDAGLV peptide sequence is unchanged; arginate improves water solubility, it does not change pharmacology",
+    "Source quality: third-party CoA is required as for standard BPC-157; arginate form does not guarantee higher quality or different standards",
+    "No separate evidence base: all BPC-157 animal and limited human data applies; there are no arginate-specific comparative studies showing superior efficacy",
+    "Route selection: oral route targets GI tract; injectable is for systemic effects — same decision framework as standard BPC-157",
+    "Set a hypothesis: what specific outcome are you targeting, over what defined timeframe? The same 6-8 week minimum evaluation window applies",
+  ],
+  redFlags: [
+    "Cancer history — same BPC-157 hard stop applies; the arginate form does not change the angiogenesis mechanism",
+    "Injection site infection signs (increasing redness, warmth, pus, fever after 24 hours) — stop injecting there, seek medical evaluation",
+    "Pregnant, planning pregnancy, or breastfeeding — stop immediately; no safety data for either BPC-157 form",
+    "Product without a verifiable third-party CoA — do not inject; arginate labeling does not guarantee quality",
+  ],
+};
+
+const SUPPORT_THYMOSIN_BETA4_FULL: SupportPack = {
+  id: "thymosin-beta-4-full",
+  title: "Most community 'TB4' is actually TB-500 — verify what you have before applying TB4 protocols",
+  subtitle: "Complete 43-AA thymosin beta-4 protein — cardiac repair evidence; cancer hard stop",
+  bullets: [
+    "Product verification first: full TB4 (43 AA, ~4964 Da) and TB-500 (Ac-SDKP fragment, ~886 Da) are only distinguishable by mass spectrometry; most gray-market 'TB4' products are TB-500; verify identity before proceeding",
+    "Cancer history hard stop: thymosin beta-4 promotes angiogenesis via ILK signaling; this applies equally to TB-500 and full TB4; any personal cancer history is an absolute contraindication",
+    "Cold chain is critical for full protein: the complete 43-AA glycoprotein is significantly more temperature-sensitive than smaller peptides like TB-500; verify refrigeration integrity and check product for cloudiness or precipitation",
+    "Cardiac context: the TOPCARE-AMI pilot and dry eye Phase 2 data are the strongest evidence contexts; any use in someone with active cardiac disease requires cardiologist oversight",
+    "NSAIDs: minimize NSAID use during recovery-focused use — some inflammatory signaling is necessary for repair; NSAIDs partially counteract TB4's repair signaling",
+    "Cancer surveillance: ongoing use requires monitoring for new tissue masses or unexplained growths; angiogenesis promotion is a recurring concern, not a one-time screen",
+  ],
+  redFlags: [
+    "Any cancer history — angiogenesis mechanism; absolute hard stop for both TB4 and TB-500",
+    "Active cardiac disease without cardiologist oversight — cardiac repair evidence requires physician involvement",
+    "Product stored at room temperature or showing cloudiness/precipitation — protein degradation; do not use",
+    "New unexplained tissue mass or lymph node enlargement during use — stop immediately and seek evaluation",
+    "Pregnancy — developmental angiogenesis implications unknown; stop immediately",
+  ],
+};
+
+const SUPPORT_CJC1295_DAC: SupportPack = {
+  id: "cjc-1295-dac",
+  title: "8-day half-life means steady-state builds over weeks and side effects persist for days after dosing — plan accordingly",
+  subtitle: "Long-acting GHRH analog — continuous GH axis activation; once-weekly dosing context",
+  bullets: [
+    "Cancer history hard stop: the 8-day half-life means continuous, not pulsatile, IGF-1 elevation — the same GH-axis cancer gate as no-DAC CJC-1295 but amplified by persistent elevated exposure; any cancer history is an absolute stop",
+    "Steady-state accumulation: with an 8-day half-life, steady-state is not reached until 5-6 weeks of weekly dosing; GH and IGF-1 levels continue building during this period — glucose and side effect monitoring is most important in this window",
+    "Side effect persistence: if edema, carpal tunnel, or glucose elevation develop, it takes approximately 1 week after the last dose for levels to halve; you cannot rapidly reduce exposure as you can with daily short-acting compounds",
+    "Glucose monitoring: baseline fasting glucose before starting; recheck at 4-6 weeks when approaching steady state; continuous GH elevation is counter-regulatory to insulin over time",
+    "DAC vs no-DAC confusion: CJC-1295 DAC and CJC-1295 without DAC are not interchangeable at the same dose; if you have ordered one and received the other, the pharmacokinetics and dosing frequency are fundamentally different",
+    "Sleep timing: once-weekly injection at bedtime aligns with natural GH pulse; the DAC extension means injection timing has less acute impact than with short-acting compounds",
+  ],
+  redFlags: [
+    "Any cancer history — continuous IGF-1 elevation from DAC half-life; absolute hard stop",
+    "Significant edema, carpal tunnel symptoms, or glucose elevation — reduce dose; note that effects persist ~1 week after last injection before beginning to resolve",
+    "Fasting glucose noticeably elevated or symptoms of glucose dysregulation (thirst, fatigue, frequent urination) — stop; check glucose",
+    "Product confusion between DAC and no-DAC variants — do not assume equivalence; confirm what you have before dosing",
+    "Pregnant, planning pregnancy, or breastfeeding — stop immediately; GH axis activation in pregnancy is contraindicated",
+  ],
+};
+
 function isPramlintideFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "pramlintide";
@@ -759,5 +861,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isHcgFamily(entity)) return SUPPORT_HCG;
   if (isSS31Family(entity)) return SUPPORT_SS31;
   if (isIgf1Lr3Family(entity)) return SUPPORT_IGF1_LR3;
+  if (isSomatostatinFamily(entity)) return SUPPORT_SOMATOSTATIN;
+  if (isBpc157ArginateFamily(entity)) return SUPPORT_BPC157_ARGINATE;
+  if (isThymosinBeta4FullFamily(entity)) return SUPPORT_THYMOSIN_BETA4_FULL;
+  if (isCjc1295DacFamily(entity)) return SUPPORT_CJC1295_DAC;
   return null;
 }

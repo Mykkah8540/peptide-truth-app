@@ -174,8 +174,24 @@ import IGF1LR3OverviewPanel from "@/components/IGF1LR3OverviewPanel";
 import IGF1LR3EvidencePanel from "@/components/IGF1LR3EvidencePanel";
 import IGF1LR3SafetyPanel from "@/components/IGF1LR3SafetyPanel";
 import IGF1LR3InteractionsPanel from "@/components/IGF1LR3InteractionsPanel";
+import SomatostatinOverviewPanel from "@/components/SomatostatinOverviewPanel";
+import SomatostatinEvidencePanel from "@/components/SomatostatinEvidencePanel";
+import SomatostatinSafetyPanel from "@/components/SomatostatinSafetyPanel";
+import SomatostatinInteractionsPanel from "@/components/SomatostatinInteractionsPanel";
+import Bpc157ArginateOverviewPanel from "@/components/Bpc157ArginateOverviewPanel";
+import Bpc157ArginateEvidencePanel from "@/components/Bpc157ArginateEvidencePanel";
+import Bpc157ArginaleSafetyPanel from "@/components/Bpc157ArginaleSafetyPanel";
+import Bpc157ArginateInteractionsPanel from "@/components/Bpc157ArginateInteractionsPanel";
+import ThymosinBeta4FullOverviewPanel from "@/components/ThymosinBeta4FullOverviewPanel";
+import ThymosinBeta4FullEvidencePanel from "@/components/ThymosinBeta4FullEvidencePanel";
+import ThymosinBeta4FullSafetyPanel from "@/components/ThymosinBeta4FullSafetyPanel";
+import ThymosinBeta4FullInteractionsPanel from "@/components/ThymosinBeta4FullInteractionsPanel";
+import Cjc1295DacOverviewPanel from "@/components/Cjc1295DacOverviewPanel";
+import Cjc1295DacEvidencePanel from "@/components/Cjc1295DacEvidencePanel";
+import Cjc1295DacSafetyPanel from "@/components/Cjc1295DacSafetyPanel";
+import Cjc1295DacInteractionsPanel from "@/components/Cjc1295DacInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -424,6 +440,30 @@ const PANEL_MAP: Record<string, {
     Evidence: IGF1LR3EvidencePanel,
     Safety: IGF1LR3SafetyPanel,
     Interactions: IGF1LR3InteractionsPanel,
+  },
+  somatostatin: {
+    Overview: SomatostatinOverviewPanel,
+    Evidence: SomatostatinEvidencePanel,
+    Safety: SomatostatinSafetyPanel,
+    Interactions: SomatostatinInteractionsPanel,
+  },
+  "bpc-157-arginate": {
+    Overview: Bpc157ArginateOverviewPanel,
+    Evidence: Bpc157ArginateEvidencePanel,
+    Safety: Bpc157ArginaleSafetyPanel,
+    Interactions: Bpc157ArginateInteractionsPanel,
+  },
+  "thymosin-beta-4-full": {
+    Overview: ThymosinBeta4FullOverviewPanel,
+    Evidence: ThymosinBeta4FullEvidencePanel,
+    Safety: ThymosinBeta4FullSafetyPanel,
+    Interactions: ThymosinBeta4FullInteractionsPanel,
+  },
+  "cjc-1295-dac": {
+    Overview: Cjc1295DacOverviewPanel,
+    Evidence: Cjc1295DacEvidencePanel,
+    Safety: Cjc1295DacSafetyPanel,
+    Interactions: Cjc1295DacInteractionsPanel,
   },
 };
 
@@ -750,6 +790,38 @@ const V3_HERO_CONTENT: Record<string, {
       "IGF-1 LR3 is an IGFBP-resistant IGF-1 analog with a 20-30 hour half-life \u2014 engineered to evade the binding proteins that clear native IGF-1, producing sustained systemic IGF-1 receptor activation. The extended half-life is the defining feature: unlike native IGF-1 where glucose-lowering lasts 2-3 hours, LR3\u2019s effect spans the full day and overnight.",
       "What matters most: cancer history is an absolute permanent hard stop \u2014 IGF-1R is a validated cancer treatment target. The 24-hour hypoglycemia window is the acute life-safety concern; it requires food, fast-acting glucose, and no insulin or alcohol on injection day and the next day.",
       "How to use this page: Safety before anything else. If you have cancer history or diabetes, stop there. Overview compares LR3 to native IGF-1 and GH secretagogues \u2014 a substantially lower-risk alternative worth understanding first.",
+    ],
+  },
+  somatostatin: {
+    considerSub: "On insulin or hypoglycemics, using GH secretagogues, using octreotide/lanreotide\u2026",
+    startHere: [
+      "Somatostatin is an endogenous cyclic 14-AA peptide that inhibits GH, glucagon, insulin, TSH, and GI secretions. Its 90-second plasma half-life makes native somatostatin impractical as a clinical compound \u2014 octreotide and lanreotide are the long-acting analogs used clinically.",
+      "What matters most: subcutaneous injection of native somatostatin does not achieve sustained systemic levels \u2014 the half-life is too short; if somatostatin receptor activity is the goal, an analog (octreotide, lanreotide) is the rational compound.",
+      "How to use this page: Evidence explains the pharmacokinetic reality. Interactions covers the glucagon counter-regulatory impairment \u2014 the most clinically important concern if combining with glucose-lowering medications.",
+    ],
+  },
+  "bpc-157-arginate": {
+    considerSub: "Cancer history, anticoagulants, pregnancy, NSAIDs, injectable vs oral route\u2026",
+    startHere: [
+      "BPC-157 arginate is the same pentadecapeptide (GEPPPGKPADDAGLV) as standard BPC-157 in an arginine salt formulation for improved water solubility. The active peptide sequence is unchanged. All BPC-157 evidence, safety considerations, and protocols apply.",
+      "What matters most: the BPC-157 safety framework applies unchanged \u2014 cancer history is the same concern; arginate does not alter the mechanism. Third-party CoA is required for either form.",
+      "How to use this page: same as the BPC-157 page \u2014 Safety for cancer history and pregnancy screens; Interactions for anticoagulants and NSAIDs; Overview for route selection (oral vs injectable).",
+    ],
+  },
+  "thymosin-beta-4-full": {
+    considerSub: "Cancer history (hard stop \u2014 angiogenesis), cardiac disease, TB-500 product confusion\u2026",
+    startHere: [
+      "Thymosin Beta-4 full (Tβ4) is the complete 43-amino acid protein. Most community 'TB4' products are actually TB-500, a synthetic Ac-SDKP fragment \u2014 distinguishable only by mass spectrometry. The full protein has cardiac repair (TOPCARE-AMI pilot) and dry eye (Phase 2 NDA-stage) evidence.",
+      "What matters most: cancer history is a hard stop \u2014 the ILK/angiogenesis mechanism applies to both full TB4 and TB-500; there is no safe dose for anyone with cancer history. Cold chain integrity is critical for the full 43-AA protein.",
+      "How to use this page: Safety first if you have cancer history. Evidence explains the TOPCARE cardiac pilot and the gap between full TB4 evidence and the TB-500 fragment. Overview clarifies the TB4 vs TB-500 distinction.",
+    ],
+  },
+  "cjc-1295-dac": {
+    considerSub: "Cancer history, diabetes, DAC vs no-DAC confusion, long-term GH axis use\u2026",
+    startHere: [
+      "CJC-1295 DAC contains the Drug Affinity Complex modification that enables albumin binding and an ~8-day half-life. This is fundamentally different from CJC-1295 without DAC \u2014 not just more convenient dosing. Steady-state accumulation takes 5-6 weeks; you cannot rapidly reduce exposure after a problematic dose.",
+      "What matters most: the 8-day half-life means continuous, not pulsatile, IGF-1 elevation \u2014 the same GH-axis cancer gate as no-DAC CJC-1295, but amplified by persistent exposure. Glucose monitoring is more important here than with daily short-acting GH compounds.",
+      "How to use this page: if you have cancer history, Safety first \u2014 stop there. Overview explains the DAC vs no-DAC pharmacokinetic distinction. Interactions covers glucose-lowering medications and the ipamorelin+DAC stack considerations.",
     ],
   },
 };
