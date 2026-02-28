@@ -81,7 +81,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🔄",
+    icon: "›",
     title: "Tachyphylaxis management — cycling is not optional",
     body: "Hexarelin's receptor desensitization is the primary practical management challenge. The GH response attenuates faster than any other GHRP — continuous protocols lose the primary pharmacological benefit within weeks. The solution is structured cycling: 4–8 weeks on, 4–6 weeks off. There is no dose escalation that reverses receptor downregulation meaningfully. If you're not planning to cycle, hexarelin is the wrong compound.",
     flags: [
@@ -92,7 +92,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "❤️",
+    icon: "›",
     title: "Cardiac history — CD36 is a hexarelin-specific consideration",
     body: "Hexarelin's CD36 receptor binding is the most pharmacologically unique aspect of its safety profile. CD36 has been studied in cardiac biology — hexarelin showed cardioprotective effects in heart failure animal models. What this means for healthy adults or for people with cardiac disease other than heart failure is genuinely unknown. The appropriate stance: any cardiac history (arrhythmias, CAD, significant hypertension) is a reason to consult a physician before starting, not to proceed without information.",
     flags: [
@@ -103,7 +103,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — same concern as GHRP-2",
     body: "Hexarelin creates the same compounded glucose-raising mechanism as GHRP-2: GH counter-regulation to insulin AND cortisol glucocorticoid glucose effect. Baseline fasting glucose before starting is essential for anyone with metabolic history. The tachyphylaxis note: cortisol elevation may persist even as the GH response desensitizes — so the glucose concern doesn't necessarily diminish on the same timeline as the GH effect.",
     flags: [
@@ -114,7 +114,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — same flag as all GH-axis compounds",
     body: "Same stop-and-consult requirement as CJC-1295, ipamorelin, GHRP-2, GHRP-6, and all GH-axis compounds. Active cancer or recent treatment requires oncology discussion before starting.",
     flags: [

@@ -5,9 +5,9 @@ export default function MelanoranIiOverviewPanel() {
       {/* Stat cards */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         {[
-          { label: "Approval Status", value: "NOT Approved", sub: "Research chemical; unregulated market", accent: "#9e3800" },
-          { label: "Primary Effect", value: "Non-Selective MC Agonist", sub: "Pigmentation + libido + appetite", accent: "#2c5282" },
+          { label: "Primary Effect", value: "Non-Selective MC Agonist", sub: "Pigmentation + libido + appetite — cannot be separated", accent: "#2c5282" },
           { label: "Key Risk Signal", value: "Melanoma Association", sub: "Case reports (association, not proven causation)", accent: "#9e3800" },
+          { label: "Regulatory Status", value: "NOT Approved", sub: "Research chemical; unregulated market; no major jurisdiction approval", accent: "#9e3800" },
         ].map((c) => (
           <div key={c.label} style={{
             flex: "1 1 160px", background: "rgba(255,255,255,0.80)",

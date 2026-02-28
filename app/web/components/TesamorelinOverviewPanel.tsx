@@ -8,32 +8,32 @@
 
 const STAT_CARDS = [
   {
-    value: "FDA-approved",
-    label: "for HIV-associated lipodystrophy",
-    sub: "tesamorelin (Egrifta) is the only FDA-approved GHRH analog on the US market — approved specifically for excess visceral fat in HIV patients on antiretroviral therapy",
-    note: "Approval is narrow and specific. The enhancement community uses tesamorelin off-label, extrapolating from HIV-lipodystrophy RCT data. The mechanism transfers; the outcome data doesn't. The FDA pathway means prescribing is available — not that off-label use has the same evidence base as the approved indication.",
+    value: "GHRH receptor",
+    label: "agonist — same mechanism as CJC-1295, sermorelin",
+    sub: "stimulates pulsatile GH release; visceral fat reduction is the primary documented specific outcome in controlled trials",
+    note: "Same safety gates as all GHRH analogs: metabolic baseline, cancer history, thyroid function. Distinctive vs CJC-1295: Phase III RCT visceral fat data and a more prominent arthralgia/myalgia profile per prescribing information.",
   },
   {
     value: "RCT-supported",
-    label: "visceral fat reduction (HIV population)",
-    sub: "tesamorelin has controlled trial evidence for visceral fat reduction — the strongest specific-outcome evidence of any GHRH analog; in HIV-lipodystrophy patients, visceral fat reduction was statistically significant and clinically meaningful",
-    note: "The RCT data is real and the strongest specific-outcome evidence of any GHRH analog. It's also population-specific — HIV patients with lipodystrophy on antiretrovirals. Whether the visceral fat mechanism transfers to healthy adults is plausible but not established in controlled conditions.",
+    label: "visceral fat reduction — strongest outcome data in its class",
+    sub: "Phase III controlled trial evidence for visceral fat; the most rigorous specific-outcome data of any GHRH analog",
+    note: "The RCT evidence is real and the most rigorous in this compound class. The trial population was HIV patients with lipodystrophy — visceral fat mechanism extrapolates to healthy adults plausibly but is not proven in controlled conditions outside that population.",
   },
   {
-    value: "GHRH receptor",
-    label: "agonist — same as CJC-1295, sermorelin",
-    sub: "tesamorelin acts on the GHRH receptor to stimulate pulsatile GH release — the same fundamental mechanism as CJC-1295 and sermorelin; GH/IGF-1 axis considerations apply identically",
-    note: "Same mechanism means same safety gates: metabolic baseline, cancer history, thyroid therapy. Tesamorelin's distinctive clinical features vs CJC-1295 are the FDA approval, the visceral fat RCT data, and the arthralgia/myalgia side effect profile from the prescribing information.",
+    value: "Prescription only",
+    label: "Egrifta — FDA-approved, compounding available",
+    sub: "tesamorelin (Egrifta) is FDA-approved; legitimate access requires a prescription; compounding pharmacy is the common off-label route",
+    note: "The FDA approval makes legal prescribing access available — not that off-label enhancement use has equivalent evidence. Enhancement use extrapolates the mechanism from the approved clinical context.",
   },
 ];
 
 const FIT_YES = [
-  "You have HIV-associated lipodystrophy and excess visceral fat — this is the approved indication with RCT evidence",
-  "You have access to a physician willing to prescribe for off-label use and you understand the on-label vs off-label evidence gap",
-  "Your primary goal is visceral fat reduction and you accept that the supporting evidence is from an HIV population, not healthy adults",
-  "You have no diabetes or uncontrolled diabetes — glucose dysregulation is a documented concern per the prescribing information",
+  "Your primary goal is visceral fat reduction — tesamorelin has the best controlled trial evidence for this outcome of any GHRH analog",
+  "You have no diabetes or significant insulin resistance — glucose dysregulation is flagged in the prescribing information",
   "You have no active or recent cancer diagnosis — IGF-1 mitogenic concern applies identically to all GHRH analogs",
-  "You can monitor for arthralgia and myalgia — the most distinctive side effects from the clinical trials",
+  "You have access to a physician for prescription or are informed about the off-label evidence gap in gray-market use",
+  "You can monitor for arthralgia and myalgia — more prominent in tesamorelin clinical trial data than other GHRH analogs",
+  "You've read the GH-axis safety gates that apply to this compound class (Evidence and Safety tabs)",
 ];
 
 const FIT_NO = [
@@ -115,10 +115,10 @@ export default function TesamorelinOverviewPanel() {
       {/* ── Headline ── */}
       <div className="reta-overview__headline">
         <div className="reta-overview__headline-text">
-          The only FDA-approved GHRH analog — RCT evidence for visceral fat in HIV patients, same GH-axis mechanism as CJC-1295.
+          A GHRH analog with Phase III RCT evidence for visceral fat reduction — same mechanism as CJC-1295, available as a prescription compound.
         </div>
         <div className="reta-overview__headline-sub">
-          Tesamorelin (Egrifta) is unique among GHRH analogs: it&apos;s the only one with FDA approval and randomized controlled trial evidence — for visceral fat reduction in HIV-associated lipodystrophy. The enhancement community uses it off-label, extrapolating from this specific population. The mechanism is the same as CJC-1295; the evidence hierarchy is higher for the narrow approved indication, and no better for the general enhancement use case.
+          Tesamorelin is a GHRH receptor agonist — the same mechanism as CJC-1295 and sermorelin — that stimulates pulsatile GH release and has Phase III RCT evidence for visceral fat reduction. It carries FDA approval for a specific clinical indication, which is what produced the controlled trial data; off-label enhancement use extrapolates the visceral fat mechanism to healthy adults. The mechanism is real and well-characterized; the evidence is stronger for the specific approved context than for general optimization.
         </div>
       </div>
 

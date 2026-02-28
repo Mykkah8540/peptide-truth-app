@@ -65,19 +65,19 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 // The mitigation playbook — what you actually do
 const PLAYBOOK = [
   {
-    icon: "🥩",
+    icon: "›",
     title: "Protein — the #1 thing people miss",
     body: "When appetite crashes, protein is the first to drop. That's when lean mass loss starts. Most people need 0.7–1g per lb of goal body weight daily. Shakes become practical here — not because they're optimal, but because hitting protein targets through food alone is hard when you're not hungry.",
     flags: ["Aim for 0.7–1g/lb goal body weight", "Prioritize protein at every meal — even small ones", "Track it for the first few weeks to calibrate"],
   },
   {
-    icon: "💧",
+    icon: "›",
     title: "Hydration — more complicated than just drinking water",
     body: "Food contains a lot of water — usually 20–30% of daily intake. When you eat significantly less, you lose that source. Add GI symptoms that cause more fluid loss, and dehydration can sneak up fast. Electrolytes matter too, especially if nausea is significant.",
     flags: ["Target: light yellow urine — not clear, not dark", "Electrolytes (sodium, potassium, magnesium) if nausea is persistent", "Constipation is often dehydration + less fiber — address both"],
   },
   {
-    icon: "🤢",
+    icon: "›",
     title: "Managing GI side effects",
     body: "Nausea is dose-dependent and typically peaks during the titration phase (weeks 1–4), then settles for most people. The goal is to make it through titration, not to push through maximally uncomfortable doses. Most GI issues are manageable with behavior changes.",
     flags: [
@@ -89,7 +89,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🏋️",
+    icon: "›",
     title: "Training — protect what you have",
     body: "Resistance training is the main lever for preserving lean mass during aggressive weight loss. Don't try to train as if you're fully fed when you're running a steep caloric deficit — that's a path to poor recovery and overreach. Reduce volume intelligently, keep intensity honest.",
     flags: [
@@ -99,7 +99,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "😴",
+    icon: "›",
     title: "Sleep — often overlooked",
     body: "Inadequate sleep elevates cortisol, increases muscle catabolism, and shifts body composition toward fat retention during weight loss. It's not glamorous but it's real. Poor sleep undermines the protein and training effort.",
     flags: ["7–9 hours matters more during active weight loss", "Cortisol from poor sleep directly works against body composition goals"],

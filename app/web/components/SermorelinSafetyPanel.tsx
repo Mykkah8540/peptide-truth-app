@@ -81,7 +81,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — glucose check before starting",
     body: "GH counter-regulation to insulin is established endocrine physiology — not a sermorelin-specific side effect. Sermorelin amplifies GH release through the GHRH receptor; the downstream metabolic consequence (reduced insulin sensitivity) is the same as CJC-1295 or ipamorelin. In clinical GHD treatment, glucose monitoring is standard practice. For enhancement use: get a baseline fasting glucose before starting if you have any metabolic history. If using through a physician protocol, this is likely already included — verify with your prescriber.",
     flags: [
@@ -92,7 +92,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🦋",
+    icon: "›",
     title: "Thyroid check — sermorelin-specific consideration",
     body: "GH elevation affects thyroid hormone metabolism — GH can influence T4-to-T3 conversion and TSH dynamics. Untreated thyroid disease was included as a caution in sermorelin's clinical context. Adding a GHRH analog when thyroid function is unchecked or unstable introduces an uncontrolled variable. Thyroid status should be established and stable before starting. If you're already on thyroid medication, a discussion with your prescribing physician is appropriate before adding sermorelin.",
     flags: [
@@ -103,7 +103,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💊",
+    icon: "›",
     title: "Prescription pathway vs gray market — use the legitimate route",
     body: "Sermorelin is unique among GH-axis peptides discussed in enhancement contexts: it has a real prescription pathway through compounding pharmacies in some jurisdictions. If you're going to use sermorelin, using the legitimate route provides meaningful benefits: known purity, CoA from the pharmacy, physician oversight with labs, and access to the full clinical context from GHD treatment. Gray-market sermorelin exists and carries all the same sourcing risks as any unregulated injectable — product identity, purity, and dosing consistency are all uncertain outside regulated manufacturing.",
     flags: [
@@ -114,7 +114,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — identical concern to all GHRH analogs",
     body: "Sermorelin's FDA history in GHD doesn't change the cancer history concern — cancer patients were excluded from GHD trials precisely because of the IGF-1 mitogenic concern. Active cancer, recent treatment, or high hereditary cancer risk requires oncology discussion before starting any GHRH analog, including sermorelin.",
     flags: [
@@ -125,7 +125,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Injection technique and timing",
     body: "Standard subcutaneous injection protocol. Bedtime timing is the convention — aligns with the body's primary GH pulse window. Sermorelin's shorter half-life (~90 min) vs CJC-1295 means some protocols use twice-daily dosing; follow the protocol guidance from your prescribing physician or source documentation.",
     flags: [

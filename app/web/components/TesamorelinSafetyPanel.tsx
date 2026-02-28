@@ -72,7 +72,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🦴",
+    icon: "›",
     title: "Arthralgia and myalgia — tesamorelin's most distinctive clinical challenge",
     body: "Joint and muscle pain are the most prominent adverse events differentiating tesamorelin from other GHRH analogs in clinical data. In Phase III trials, arthralgia was among the most common adverse events. For most participants, it was manageable — dose reduction was the standard response. People with pre-existing joint disease (osteoarthritis, inflammatory arthritis) have higher baseline risk and should monitor more carefully. This is a watch, not a flag — but it's a real effect that distinguishes tesamorelin from CJC-1295 in clinical use.",
     flags: [
@@ -83,7 +83,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — same gates as all GHRH analogs",
     body: "Tesamorelin's prescribing information explicitly flags glucose dysregulation — uncontrolled diabetes was an exclusion criterion in the Phase III trials. The GH counter-regulatory mechanism applies the same as CJC-1295: GH opposes insulin action and can worsen insulin resistance over time. Baseline fasting glucose is essential for anyone with metabolic history.",
     flags: [
@@ -94,7 +94,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — formal contraindication in prescribing information",
     body: "Active malignancy is a stated contraindication in the tesamorelin prescribing information — not just a caution. The IGF-1 mitogenic concern that applies to all GH-axis compounds has formal regulatory weight here. Same stop-and-consult requirement as CJC-1295 and ipamorelin — but with explicit prescribing information backing.",
     flags: [
@@ -104,7 +104,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Prescription pathway — what the FDA approval means for access and monitoring",
     body: "Tesamorelin is a prescription drug (Egrifta). Legitimate access requires a physician who can prescribe for the approved indication or off-label. The prescription pathway means formal medical oversight — which includes baseline labs, monitoring, and the ability to adjust or discontinue. Off-label use via gray-market sources bypasses the prescription pathway; the safety data from the prescribing information applies regardless of how the compound is sourced.",
     flags: [

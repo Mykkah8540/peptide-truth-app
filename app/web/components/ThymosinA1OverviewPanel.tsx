@@ -5,9 +5,9 @@ export default function ThymosinA1OverviewPanel() {
       {/* Stat cards */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         {[
-          { label: "Approval Status", value: "~35 Countries", sub: "Not US FDA-approved", accent: "#1a5c3a" },
           { label: "Primary Mechanism", value: "Immune Modulation", sub: "T-cell maturation + DC activation", accent: "#0f1a2e" },
-          { label: "Evidence Base", value: "RCT-Supported", sub: "Hepatitis B/C contexts", accent: "#2c5282" },
+          { label: "Evidence Base", value: "RCT-Supported", sub: "Human controlled trial data in immune contexts", accent: "#2c5282" },
+          { label: "Regulatory Status", value: "~35 Countries", sub: "Not US FDA-approved; compounding available", accent: "#1a5c3a" },
         ].map((c) => (
           <div key={c.label} style={{
             flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
@@ -43,9 +43,9 @@ export default function ThymosinA1OverviewPanel() {
         <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {[
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Immune support interest during frequent illness or high-stress blocks", note: "Core use case in wellness community" },
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Medical context: chronic hepatitis B or C", note: "On-label in approved jurisdictions" },
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Oncology-adjunct discussions", note: "Used alongside conventional therapies in some approved contexts" },
+            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Immune resilience during high training volume or frequent illness seasons", note: "Core use case in wellness community — immune support without stimulation or suppression" },
+            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Recovery-oriented goals: post-illness, high-stress periods, surgery recovery", note: "Thymosin A1's immune modulation is used in recovery and resilience contexts, not as a treatment for acute illness" },
+            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Interest in immune calibration: modulating, not suppressing or over-activating", note: "The mechanism — T-cell maturation and dendritic cell activation — supports immune competence, not stimulation per se" },
             { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Autoimmune disease (lupus, RA, MS, IBD)", note: "Immune activation can exacerbate autoimmune conditions" },
             { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Organ transplant or on immunosuppressive therapy", note: "Direct pharmacological conflict" },
             { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Active systemic infection with significant symptoms", note: "Timing and immune status matter — not a treatment for acute illness" },

@@ -72,7 +72,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🔬",
+    icon: "›",
     title: "Source quality and product identity — the highest-leverage variables",
     body: "For TB-500, product quality screening has two layers: purity (same as any peptide) and identity (unique to TB-500's market situation). \"TB-500\" is a market name applied to products that may vary in molecular composition, fragment length, or purity. A CoA that doesn't confirm the specific peptide sequence is less useful than one that does. This isn't paranoia — it's proportionate to a market where product identity is genuinely variable.",
     flags: [
@@ -83,7 +83,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history check — this is the TB-500 risk asymmetry",
     body: "Tβ4's role in cell migration and tissue repair involves growth-promoting signaling pathways. For most people this is irrelevant. For people with active cancer, recent cancer treatment, or high-risk cancer history, this creates a real mechanistic concern that warrants oncology discussion before starting. This is the most important population-specific risk that distinguishes TB-500 from other recovery peptides.",
     flags: [
@@ -94,7 +94,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Injection technique — sterile is non-negotiable",
     body: "Subcutaneous injection is the standard route for TB-500. The risk here is not the compound — it's technique. Infection at an injection site has nothing to do with TB-500 pharmacology and everything to do with whether the process was clean. New needle, swabbed septum, swabbed skin, rotated site, stored correctly.",
     flags: [
@@ -106,7 +106,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎯",
+    icon: "›",
     title: "Set a hypothesis — know what you're evaluating",
     body: "TB-500 is frequently used without a clear outcome hypothesis. The result is indefinite use because things 'seem better' or early stopping because effects weren't immediate — when this peptide (if it works) operates over weeks. Before starting: define the specific outcome, the evaluation window, and what non-improvement at 8–10 weeks means to you.",
     flags: [
@@ -117,7 +117,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "⚠️",
+    icon: "›",
     title: "Bleeding risk check",
     body: "Tβ4/TB-500 angiogenic and actin-regulation mechanisms may have additive effects with anticoagulant or antiplatelet medications. This isn't a confirmed interaction — it's a mechanistically plausible one. If you're on warfarin, a DOAC (apixaban, rivaroxaban, etc.), or daily aspirin/clopidogrel for a cardiovascular indication, this warrants a discussion before starting.",
     flags: [

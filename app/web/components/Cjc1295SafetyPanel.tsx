@@ -80,7 +80,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — know your glucose status before starting",
     body: "CJC-1295 stimulates GH, which is counter-regulatory to insulin. In metabolically healthy adults, the body typically compensates. In people with prediabetes, insulin resistance, or type 2 diabetes, this physiological counter-regulation can meaningfully worsen glucose control. Getting a baseline fasting glucose — or knowing your most recent HbA1c — is not excessive caution. It's the minimum responsible check for a GH-axis compound.",
     flags: [
@@ -91,7 +91,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🧬",
+    icon: "›",
     title: "DAC vs no-DAC — this distinction matters more than most people realize",
     body: "CJC-1295 with DAC (drug affinity complex) and CJC-1295 without DAC are pharmacokinetically different compounds for practical purposes. The no-DAC version has an active window of hours and is typically dosed daily or multiple times per week. The DAC version has a half-life of approximately 6–8 days — meaning a single injection can affect GH/IGF-1 levels for over a week. Using a DAC product on a no-DAC dosing schedule results in progressive accumulation and prolonged GH elevation. This is one of the most common and impactful errors in community CJC-1295 use.",
     flags: [
@@ -102,7 +102,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history check — IGF-1 is a direct mitogen",
     body: "Insulin-like growth factor 1 (IGF-1) — the primary downstream mediator of CJC-1295's effects — is mitogenic. That means it promotes cell proliferation. In healthy people with no cancer, this is the mechanism behind anabolic effects. In people with active cancer, cancer in remission, or high hereditary cancer risk, sustained IGF-1 elevation creates a meaningful mechanistic concern. This is a stronger cancer-related concern than most research peptides because the mechanism is direct, not theoretical.",
     flags: [
@@ -113,7 +113,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Injection technique and timing",
     body: "CJC-1295 is typically injected subcutaneously. GH pulses are largest during the first few hours of slow-wave sleep — most community protocols time the injection at or close to bedtime to align with natural GH release. Sterile technique is non-negotiable regardless of timing.",
     flags: [
@@ -124,7 +124,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "⏱️",
+    icon: "›",
     title: "Cycling awareness — GH-axis compounds aren't designed for continuous use",
     body: "No clinical data exists on the long-term safety of sustained GH-axis stimulation in healthy non-GHD adults. The community convention of cycling (8–12 weeks on, 4–6 weeks off) is not based on published safety data — it reflects reasonable caution about continuous endocrine intervention. Running CJC-1295 continuously for 6+ months without a break places you outside the reference experience base entirely.",
     flags: [

@@ -63,7 +63,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🪴",
+    icon: "›",
     title: "IV infusion rate — your main lever",
     body: "Flushing during IV NAD+ is the #1 reported experience and the main reason people don't continue. It's not dangerous — it's the body responding to the rapid systemic increase in NAD+ metabolism. The solution is simple: slow the drip. A 500mg infusion that causes intense flushing at 90 minutes can often be made comfortable at 2–3 hours. The discomfort is real. It's also manageable.",
     flags: [
@@ -73,7 +73,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💧",
+    icon: "›",
     title: "Hydrate before IV infusion",
     body: "Arriving well-hydrated to an IV infusion session reduces the intensity of flushing and general side effects. It also makes vein access easier. This is standard IV practice and especially important with NAD+ given the vascular response.",
     flags: [
@@ -83,7 +83,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🥗",
+    icon: "›",
     title: "Oral dosing — start low, go slow",
     body: "Oral NAD+ supplements have much lower side effect profiles than IV. That said, starting at full therapeutic doses can cause nausea and GI upset. Building up over 1–2 weeks allows your system to adapt and makes it much easier to identify your personal tolerance.",
     flags: [
@@ -93,7 +93,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🔬",
+    icon: "›",
     title: "Cancer therapy — check before you start",
     body: "If you are currently on PARP inhibitor cancer therapy (olaparib, niraparib, rucaparib, talazoparib), NAD+ supplementation directly conflicts with the mechanism of your treatment. PARP inhibitors work by blocking PARP enzymes, which depletes NAD+ in cancer cells. Supplementing NAD+ may counteract this. This is not a 'talk to your doctor eventually' situation — it's a 'do not start without oncology consultation' situation.",
     flags: [
@@ -103,7 +103,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "📋",
+    icon: "›",
     title: "Expectations — this is a subtle intervention",
     body: "NAD+ supplementation is not a dramatic-effect compound. The mechanism is real. The clinical outcome evidence is still building. Most users who are disappointed expected something acute and felt nothing. Most users who are satisfied are playing a long game — supporting cellular health they can't directly measure. Going in with calibrated expectations is the main preparation you can do.",
     flags: [

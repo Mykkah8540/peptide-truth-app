@@ -79,7 +79,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — more critical than with ipamorelin",
     body: "GHRP-2 creates a compounded glucose-raising mechanism: GH counter-regulation to insulin AND cortisol's glucocorticoid glucose effect. Both are documented, not theoretical. For anyone with metabolic history, this makes baseline glucose monitoring more important than with ipamorelin — not less. Get a baseline fasting glucose before starting. If you have any prediabetes, insulin resistance, or metabolic syndrome history, the glucose concern here is amplified.",
     flags: [
@@ -90,7 +90,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🧠",
+    icon: "›",
     title: "Cortisol management — the unique GHRP-2 concern",
     body: "GHRP-2's cortisol elevation is documented and meaningful. Cortisol affects sleep, mood, glucose, and body composition. If you're running GHRP-2 for recovery or muscle goals, the cortisol counter-pressure is working against those goals throughout the cycle. Monitor sleep quality — elevated cortisol from GHRP-2 can worsen the recovery that the GH effect is trying to support. If mood changes, sleep disruption, or irritability emerge, cortisol elevation is a likely contributor.",
     flags: [
@@ -101,7 +101,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — identical concern to all GH-axis compounds",
     body: "Same flag as ipamorelin and CJC-1295. Active cancer, recent treatment, or high hereditary cancer risk requires oncology discussion before starting any GHRH or GHRP compound. GHRP-2's cortisol elevation doesn't change this — if anything, the combined endocrine perturbation in cancer contexts warrants extra caution.",
     flags: [
@@ -112,7 +112,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Injection technique and the ipamorelin question",
     body: "Standard subcutaneous injection protocol. Before committing to GHRP-2: if your goal is GH-axis stimulation for recovery or body composition, consider whether ipamorelin — which produces similar GH release without the cortisol/prolactin elevation — better fits your objectives. The injection technique is the same; the pharmacological profile is meaningfully different.",
     flags: [

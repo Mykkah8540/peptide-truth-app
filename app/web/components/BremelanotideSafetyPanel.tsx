@@ -56,7 +56,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🤢",
+    icon: "›",
     title: "Nausea management — plan before first use",
     body: "Nausea is the number-one reason people stop bremelanotide. In ~40% of Phase III participants, it was significant. The practical mitigation: pre-treatment with an antiemetic approximately 30 minutes before the bremelanotide injection. Ondansetron (Zofran) is the most commonly used option — it's effective and not sedating. Ginger preparations are used as a milder alternative. Eating lightly (but not a large fatty meal) before use may also reduce severity. The nausea is typically transient — timing sexual activity for after the nausea window resolves (2–3 hours post-injection) is another practical adaptation.",
     flags: [
@@ -67,7 +67,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "❤️",
+    icon: "›",
     title: "Cardiovascular screening — not skippable",
     body: "The BP elevation from bremelanotide is a direct pharmacological effect. For healthy adults with normal baseline blood pressure, the transient elevation is generally tolerable. For anyone with hypertension, cardiovascular disease, or multiple cardiac risk factors — this is a prescribing information contraindication, not a preference. Check your blood pressure before first use. Know your cardiovascular history. If you're on antihypertensives, the combination requires physician guidance.",
     flags: [
@@ -78,7 +78,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎨",
+    icon: "›",
     title: "Hyperpigmentation monitoring — for repeated use",
     body: "Focal hyperpigmentation develops gradually with repeated use — it's not an acute event. The practical approach: monitor your face, gum line, and breasts periodically during ongoing use. If you notice changes, that's a signal to discuss frequency of use or to take a break. People with darker skin tones have higher baseline melanin and may see more pronounced or faster changes. This isn't a life-threatening concern — it's a real, cosmetically meaningful, and potentially lasting adverse event.",
     flags: [

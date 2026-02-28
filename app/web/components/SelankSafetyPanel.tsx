@@ -48,7 +48,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🧠",
+    icon: "›",
     title: "CNS medication check — the primary screening step",
     body: "Before using selank, screen for CNS-active medications. Benzodiazepines, opioid medications, and alcohol are the three primary interaction risks — all via additive CNS depressant mechanisms. Psychiatric medications (SSRIs, SNRIs, antipsychotics) are less clearly characterized interaction risks but warrant awareness. Selank alone in a person without CNS-active medications has a favorable safety profile. Selank with CNS depressants creates unpredictable synergy.",
     flags: [
@@ -59,7 +59,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "👃",
+    icon: "›",
     title: "Intranasal route management",
     body: "Intranasal selank is a peptide delivered to a mucous membrane — the pharmacokinetics are favorable (fast CNS access) but the mucosal surface requires some care. Saline rinse before administration can help with absorption and reduce irritation. If significant nasal irritation develops, the injectable route is an alternative — but requires standard injectable peptide sterile technique.",
     flags: [
@@ -69,7 +69,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🔍",
+    icon: "›",
     title: "Source quality — the practical safety variable",
     body: "Selank is not FDA-regulated for human use in the US. Product quality varies widely across research peptide suppliers. The safety profile from Russian clinical studies assumes pharmaceutical-grade selank. Gray-market selank may contain impurities, incorrect concentrations, or contamination. Source quality is the most actionable safety lever for compounds in this regulatory status.",
     flags: [

@@ -79,7 +79,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🍽️",
+    icon: "›",
     title: "Appetite management — the primary GHRP-6 challenge",
     body: "GHRP-6's appetite stimulation is the most intense of any GHRP compound and the defining clinical management challenge. It's not manageable by timing in the same way ipamorelin's appetite is — the hunger signal is intense and present after injection regardless of scheduling. If caloric control matters for your goals, GHRP-6 creates a strong headwind. If eating disorder history is present, this is a hard stop — the appetite trigger risk is real and non-negotiable.",
     flags: [
@@ -90,7 +90,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — more critical than with ipamorelin",
     body: "GHRP-6 creates the same compounded glucose-raising mechanism as GHRP-2: GH counter-regulation to insulin AND cortisol glucocorticoid glucose effect. For anyone with metabolic history, the glucose concern is more significant than with ipamorelin. Baseline fasting glucose before starting is essential, not optional.",
     flags: [
@@ -101,7 +101,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🧠",
+    icon: "›",
     title: "Cortisol and mood monitoring",
     body: "GHRP-6's cortisol elevation can affect mood, sleep, and recovery — the same concern as GHRP-2. If you're running GHRP-6 for recovery goals, the cortisol catabolic effect is working counter to those goals. Monitor sleep and mood throughout the cycle; if both deteriorate, cortisol is a likely contributor.",
     flags: [
@@ -112,7 +112,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — same flag as all GH-axis compounds",
     body: "Same stop-and-consult requirement as CJC-1295, ipamorelin, and all GH-axis compounds. Active cancer or recent treatment requires oncology discussion before starting.",
     flags: [

@@ -9,16 +9,10 @@
 
 const STAT_CARDS = [
   {
-    value: "FDA-approved",
-    label: "for HSDD in premenopausal women (Vyleesi)",
-    sub: "bremelanotide (Vyleesi) is FDA-approved for hypoactive sexual desire disorder (HSDD) in premenopausal women — not for men, not for postmenopausal women, and not for sexual performance (as opposed to desire)",
-    note: "Approval is for a specific population and indication. Off-label use in men is prevalent in community contexts but has less clinical trial support. The mechanism is the same — what's different is the evidence base for that population.",
-  },
-  {
     value: "CNS desire pathway",
-    label: "melanocortin receptor mechanism — not hormonal",
+    label: "melanocortin receptor mechanism — not hormonal, not blood flow",
     sub: "bremelanotide acts on melanocortin receptors (MC3R, MC4R) in the brain to modulate sexual desire signaling — this is a CNS mechanism, not a hormonal mechanism and not a blood flow mechanism like PDE5 inhibitors",
-    note: "This distinction matters for understanding who it helps and how. It doesn't work by raising testosterone or improving blood flow — it acts on brain circuits involved in desire and motivation. That's why it targets HSDD (a desire disorder) rather than erectile function per se.",
+    note: "This distinction matters for understanding who it helps and how. It doesn't work by raising testosterone or improving blood flow — it acts on brain circuits involved in desire and motivation. That's why it targets desire specifically rather than erectile function per se.",
   },
   {
     value: "~40% nausea rate",
@@ -26,10 +20,16 @@ const STAT_CARDS = [
     sub: "nausea is the most common adverse event from bremelanotide Phase III trials — occurring in roughly 40% of patients; flushing and headache are also documented; taking it without a management plan leads to poor tolerability",
     note: "Nausea is the defining clinical challenge. In the trials, it was most common in the first hours after injection and typically resolved within 12 hours. Having a plan for managing it (timing, antiemetics) is the difference between tolerable use and stopping.",
   },
+  {
+    value: "Prescription (Vyleesi)",
+    label: "FDA-approved for HSDD — off-label use in men is common",
+    sub: "bremelanotide (Vyleesi) carries FDA approval for HSDD in premenopausal women; off-label use in men is prevalent in community contexts with the same mechanism but less clinical trial support for that population",
+    note: "Approval is for a specific population and indication. Off-label use in men extrapolates the mechanism — which is plausible but less rigorously studied in that context.",
+  },
 ];
 
 const FIT_YES = [
-  "You have HSDD (hypoactive sexual desire disorder) — reduced sexual desire that causes personal distress — which is the approved indication for premenopausal women",
+  "Your goal is increased sexual desire and motivation — bremelanotide acts on brain desire pathways specifically, not hormonal or blood flow mechanisms",
   "You've discussed it with a physician and have a prescription or informed approach to the off-label context",
   "You have normal cardiovascular function — no uncontrolled hypertension, no significant cardiac history",
   "You have a management plan for nausea — the most common and disruptive side effect",

@@ -80,7 +80,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — glucose check before starting",
     body: "GH counter-regulation to insulin is established physiology — not a drug-specific side effect. Ipamorelin amplifies GH release through the ghrelin receptor; the downstream metabolic consequence (reduced insulin sensitivity) is the same as any GH secretagogue. Get a baseline fasting glucose before starting if you have any metabolic history. This takes 5 minutes and meaningfully changes your risk profile.",
     flags: [
@@ -91,7 +91,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "😴",
+    icon: "›",
     title: "Sleep apnea check — ipamorelin-specific concern",
     body: "This is the safety consideration most specific to ipamorelin that doesn't apply as strongly to CJC-1295 alone. GH elevation from any secretagogue can affect fluid balance and upper airway dynamics. For people with untreated or poorly controlled obstructive sleep apnea, adding a GH secretagogue can worsen breathing during sleep. This isn't a theoretical concern — it's mechanistically grounded in GH physiology and fluid retention.",
     flags: [
@@ -102,7 +102,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🍽️",
+    icon: "›",
     title: "Appetite management — it's ghrelin, not a side effect",
     body: "Ipamorelin acts on the ghrelin receptor. Ghrelin is a hunger hormone. Appetite stimulation is not an adverse effect — it's a direct consequence of the mechanism. For people trying to gain lean mass, this can be an asset. For people with other goals, it requires active management. The most common community strategy: time the injection immediately before sleep (appetite effect is present but sleep suppresses it).",
     flags: [
@@ -113,7 +113,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — identical concern to CJC-1295",
     body: "The route to IGF-1 is different (ghrelin receptor vs GHRH receptor). The downstream IGF-1 elevation and the associated cancer history concern are identical. Active cancer, recent treatment, or high hereditary cancer risk requires oncology discussion before starting either compound — or the stack.",
     flags: [
@@ -124,7 +124,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Injection technique and timing",
     body: "Standard subcutaneous injection protocol. Bedtime timing is the community convention — aligns the injection with the body's primary GH pulse window and manages appetite stimulation simultaneously.",
     flags: [

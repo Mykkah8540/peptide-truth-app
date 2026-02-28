@@ -56,7 +56,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🧠",
+    icon: "›",
     title: "Anxiety screening — know your baseline before starting",
     body: "Semax's stimulatory profile is an asset for cognitively-oriented healthy adults without anxiety. It's a liability for anyone with baseline anxiety or anxiety disorder. The practical screen: do you experience anxiety or anxious arousal with caffeine or stimulants? If yes, semax carries elevated risk of worsening anxiety — and Selank may be a better primary choice, or Selank co-use is a reasonable buffer. Starting with a lower dose to assess personal response is the pragmatic approach.",
     flags: [
@@ -67,7 +67,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "⏰",
+    icon: "›",
     title: "Timing — morning use for the stimulatory profile",
     body: "The practical timing guidance from community protocols: use semax in the morning to align the stimulatory activation window with waking cognition goals and to avoid sleep disruption. Afternoon use carries higher insomnia risk. The BDNF effect is cumulative and doesn't require specific timing — but the dopaminergic/serotonergic activation window matters for sleep quality.",
     flags: [
@@ -77,7 +77,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💊",
+    icon: "›",
     title: "Psychiatric medication check",
     body: "Semax's dopaminergic and serotonergic mechanism creates the most significant interaction risk with psychiatric medications — antidepressants, antipsychotics, stimulants (ADHD medications), and mood stabilizers all operate on overlapping pathways. The specific interaction profile for each combination is not characterized in the literature. If on psychiatric medications, physician guidance before adding semax is not bureaucratic caution — it's a real pharmacological uncertainty.",
     flags: [
@@ -88,7 +88,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🔍",
+    icon: "›",
     title: "Source quality",
     body: "Same consideration as selank — not FDA-regulated in the US, quality varies across gray-market suppliers. Third-party CoA covering purity, sterility, and concentration is the minimum standard before intranasal use.",
     flags: [

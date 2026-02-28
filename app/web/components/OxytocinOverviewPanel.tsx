@@ -5,9 +5,9 @@ export default function OxytocinOverviewPanel() {
       {/* Stat cards */}
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
         {[
-          { label: "Regulatory Status", value: "FDA-Approved (Rx)", sub: "Pitocin — obstetric indications only", accent: "#1a5c3a" },
-          { label: "Wellness Route", value: "Intranasal (off-label)", sub: "Social bonding / mood interest", accent: "#7c5200" },
-          { label: "Pregnancy Flag", value: "HARD STOP", sub: "Can cause uterine hyperstimulation", accent: "#9e3800" },
+          { label: "Primary Mechanism", value: "Oxytocin receptor", sub: "Social bonding, pair bonding, maternal behavior", accent: "#0f1a2e" },
+          { label: "Wellness Route", value: "Intranasal (off-label)", sub: "Social bonding / anxiety / mood interest", accent: "#7c5200" },
+          { label: "Pregnancy Flag", value: "HARD STOP", sub: "Can cause uterine hyperstimulation — absolute contraindication", accent: "#9e3800" },
         ].map((c) => (
           <div key={c.label} style={{
             flex: "1 1 160px", background: "rgba(255,255,255,0.80)",

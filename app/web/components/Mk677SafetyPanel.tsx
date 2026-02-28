@@ -83,7 +83,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "📊",
+    icon: "›",
     title: "Metabolic baseline — more critical here than with injectable GHRPs",
     body: "GH counter-regulation to insulin is more persistent with MK-677 than with injectable GHRPs — the 24-hour half-life means sustained glucose counter-regulation without recovery windows. In clinical trials, glucose tolerance worsening was documented even in elderly study populations. For healthy adults: baseline fasting glucose is the minimum responsible check before starting. For anyone with metabolic history: this isn't a conversation to skip.",
     flags: [
@@ -94,7 +94,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🤲",
+    icon: "›",
     title: "Carpal tunnel monitoring — MK-677's most distinctive watchpoint",
     body: "Hand tingling, numbness, or carpal tunnel symptoms are documented in MK-677 clinical trials as dose-dependent side effects — more commonly reported with MK-677 than with any injectable GHRP. The mechanism is GH-driven fluid retention causing nerve compression at the wrist. Most cases are dose-dependent and improve with reduction. Persistent symptoms — especially if bilateral or accompanied by strength loss — warrant dose reduction or discontinuation.",
     flags: [
@@ -105,7 +105,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🍽️",
+    icon: "›",
     title: "Appetite management — active, sustained, and non-optional",
     body: "Ghrelin receptor activation from MK-677 drives continuous appetite stimulation — not the post-injection pulse of ipamorelin. The bedtime-injection strategy that mitigates appetite for ipamorelin doesn't apply to an oral compound with a 24-hour half-life. If your goals require caloric control (fat loss, body recomposition), the appetite signal from MK-677 is a persistent headwind requiring deliberate management. This isn't a 'push through' situation — it's a mechanistic reality that determines whether MK-677 fits your current goal.",
     flags: [
@@ -116,7 +116,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💧",
+    icon: "›",
     title: "Edema and cardiac status — explicit concern",
     body: "MK-677's sustained GH elevation produces more persistent fluid retention than short-acting injectable GHRPs. For healthy adults, mild early edema is common and manageable. For anyone with heart failure, compromised cardiac function, or edema-prone conditions, the fluid retention from sustained GH stimulation is a real clinical concern — not a theoretical one. Heart failure was specifically identified as a caution in MK-677's clinical context.",
     flags: [
@@ -127,7 +127,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎗️",
+    icon: "›",
     title: "Cancer history — identical concern, potentially amplified exposure",
     body: "Same cancer history gate as all GH-axis compounds. IGF-1 elevation from MK-677 is documented in RCTs — confirmed, not just inferred. The sustained nature of MK-677's IGF-1 elevation (vs pulsatile) may be mechanistically more concerning than injectable GHRPs for cancer proliferation, though this hasn't been directly studied.",
     flags: [

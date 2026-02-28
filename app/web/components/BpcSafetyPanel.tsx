@@ -64,7 +64,7 @@ const TIER_STYLE: Record<string, { bg: string; border: string; labelColor: strin
 
 const PLAYBOOK = [
   {
-    icon: "🔬",
+    icon: "›",
     title: "Source quality — the highest-leverage variable",
     body: "For BPC-157, product quality is not a nice-to-have — it's the primary safety variable. An unregulated peptide market means no manufacturing standards, no purity guarantees, and no accountability for what's actually in the vial. The compound's own side effect profile is relatively mild; the impurities in poorly made product are not.",
     flags: [
@@ -75,7 +75,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💉",
+    icon: "›",
     title: "Injection technique — sterile is non-negotiable",
     body: "Subcutaneous injection is the primary route for systemic BPC-157 use. Done correctly, SC injection is straightforward. Done incorrectly or non-sterile, it introduces infection risk that has nothing to do with BPC-157 and everything to do with technique. Needle stick injury, contaminated vials, and re-used needles are all avoidable.",
     flags: [
@@ -87,7 +87,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "🎯",
+    icon: "›",
     title: "Set a hypothesis — know what you're evaluating",
     body: "BPC-157 is frequently used without a clear framework for evaluation. The result is that people continue indefinitely because they 'feel like it might be helping' or stop early because they expected acute effects that aren't how this compound works. Before starting, decide: what specific outcome are you targeting, what's your evaluation window, and what would tell you it's not working.",
     flags: [
@@ -98,7 +98,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "💊",
+    icon: "›",
     title: "NSAIDs and the feedback loop problem",
     body: "Many people use BPC-157 precisely because they want to get off NSAIDs for injury management. A less obvious risk: using BPC-157 for recovery while still relying on NSAIDs chronically masks the pain signal that tells you whether the underlying issue is actually healing. Pain is feedback. Removing it pharmacologically while simultaneously trying to support healing makes it genuinely difficult to know what's working.",
     flags: [
@@ -108,7 +108,7 @@ const PLAYBOOK = [
     ],
   },
   {
-    icon: "⚠️",
+    icon: "›",
     title: "Special population check",
     body: "Several populations face heightened uncertainty with BPC-157. For most users these don't apply — but they're worth an honest check before starting.",
     flags: [
