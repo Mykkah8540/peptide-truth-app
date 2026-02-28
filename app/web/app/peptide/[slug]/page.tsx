@@ -86,8 +86,20 @@ import Aod9604OverviewPanel from "@/components/Aod9604OverviewPanel";
 import Aod9604EvidencePanel from "@/components/Aod9604EvidencePanel";
 import Aod9604SafetyPanel from "@/components/Aod9604SafetyPanel";
 import Aod9604InteractionsPanel from "@/components/Aod9604InteractionsPanel";
+import MelanoranIiOverviewPanel from "@/components/MelanoranIiOverviewPanel";
+import MelanoranIiEvidencePanel from "@/components/MelanoranIiEvidencePanel";
+import MelanoranIiSafetyPanel from "@/components/MelanoranIiSafetyPanel";
+import MelanoranIiInteractionsPanel from "@/components/MelanoranIiInteractionsPanel";
+import MotsCOverviewPanel from "@/components/MotsCOverviewPanel";
+import MotsCEvidencePanel from "@/components/MotsCEvidencePanel";
+import MotsCSafetyPanel from "@/components/MotsCSafetyPanel";
+import MotsCInteractionsPanel from "@/components/MotsCInteractionsPanel";
+import OxytocinOverviewPanel from "@/components/OxytocinOverviewPanel";
+import OxytocinEvidencePanel from "@/components/OxytocinEvidencePanel";
+import OxytocinSafetyPanel from "@/components/OxytocinSafetyPanel";
+import OxytocinInteractionsPanel from "@/components/OxytocinInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -204,6 +216,24 @@ const PANEL_MAP: Record<string, {
     Evidence: Aod9604EvidencePanel,
     Safety: Aod9604SafetyPanel,
     Interactions: Aod9604InteractionsPanel,
+  },
+  "melanotan-ii": {
+    Overview: MelanoranIiOverviewPanel,
+    Evidence: MelanoranIiEvidencePanel,
+    Safety: MelanoranIiSafetyPanel,
+    Interactions: MelanoranIiInteractionsPanel,
+  },
+  "mots-c": {
+    Overview: MotsCOverviewPanel,
+    Evidence: MotsCEvidencePanel,
+    Safety: MotsCSafetyPanel,
+    Interactions: MotsCInteractionsPanel,
+  },
+  oxytocin: {
+    Overview: OxytocinOverviewPanel,
+    Evidence: OxytocinEvidencePanel,
+    Safety: OxytocinSafetyPanel,
+    Interactions: OxytocinInteractionsPanel,
   },
 };
 
@@ -354,6 +384,30 @@ const V3_HERO_CONTENT: Record<string, {
       "AOD-9604 is a synthetic fragment of hGH (amino acids 176\u2013191) designed to isolate fat-metabolizing effects without IGF-1 or growth-axis stimulation. It completed Phase II human trials \u2014 which did not show significant weight loss.",
       "What matters most: the Phase II trial did not get FDA approval, so the real-world expectations ceiling is modest. Diabetes medications are the primary interaction flag due to the metabolic mechanism.",
       "How to use this page: if you have diabetes or are on glucose-lowering medications, Interactions is your first stop. Evidence is worth reading for the Phase II context before forming expectations.",
+    ],
+  },
+  "melanotan-ii": {
+    considerSub: "Melanoma history, atypical moles, cardiovascular disease, pregnancy, adolescents\u2026",
+    startHere: [
+      "Melanotan II (MT-2) is an unregulated synthetic melanocortin agonist \u2014 not FDA-approved, sold as a research chemical. It produces tanning, libido effects, and appetite suppression through non-selective MC receptor activation.",
+      "What matters most: the melanoma association signal (case reports) is real enough to be a hard stop for anyone with melanoma history or multiple atypical moles. Nausea is extremely common and needs a management plan.",
+      "How to use this page: melanoma/skin cancer history or multiple moles \u2014 Safety first, then stop. Everyone else: read the Evidence page for an honest view of what the data shows vs. what the community narrative says.",
+    ],
+  },
+  "mots-c": {
+    considerSub: "Diabetes, metformin, glucose-lowering medications, adolescents\u2026",
+    startHere: [
+      "MOTS-c is a mitochondrial-derived peptide discovered in 2015 \u2014 the only peptide encoded by mitochondrial DNA in common wellness discussion. Natural levels rise with exercise and decline with age.",
+      "What matters most: no human RCTs exist as of 2025 \u2014 all evidence is animal studies and observational biomarker data. AMPK activation overlaps with metformin mechanism; diabetes medication interaction is the primary clinical flag.",
+      "How to use this page: if you\u2019re on diabetes medications or metformin, Interactions first. Evidence is the most important tab for calibrating expectations given the pre-clinical evidence ceiling.",
+    ],
+  },
+  oxytocin: {
+    considerSub: "Pregnancy, seizure disorders, SSRIs/serotonergic meds, cardiovascular disease\u2026",
+    startHere: [
+      "Oxytocin (Pitocin) is an FDA-approved hormone for obstetric use. The wellness community uses intranasal formulations for social bonding/mood \u2014 the evidence for these effects in healthy adults is substantially less consistent than the \u2018love hormone\u2019 narrative suggests.",
+      "What matters most: pregnancy is an absolute contraindication (oxytocin causes uterine contractions \u2014 this is literally how it\u2019s used clinically). Seizure disorders and serotonergic medications are the other key flags.",
+      "How to use this page: pregnancy must be excluded before anything else. Then read Evidence for the honest view on the social cognition replication crisis before forming expectations about the intranasal wellness use case.",
     ],
   },
 };
