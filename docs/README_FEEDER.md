@@ -32,14 +32,17 @@ Hard NOs
 - popularity contest
 
 ## Authority Hierarchy
-1) docs/README_EXECUTION.md
-2) docs/ui specs
-3) docs/_status files
-4) code is lowest authority
+1) docs/_constitution/ — tone charter + master blueprint (override everything)
+2) docs/_governance/pdp_v3_standard.md — PDP design law (tabs, panels, CSS, components)
+3) docs/_governance/pdp_scaling_playbook.md — how to add peptides to v3
+4) docs/README_EXECUTION.md — execution protocol
+5) docs/_status/ files — current state, next task, parking lot
+6) code is lowest authority
 
 Rules
 - If code conflicts with docs, docs win
 - If something exists in code but is not explicitly allowed in docs, it is legacy and must be removed
+- pdp_v3_standard.md supersedes all prior PDP layout/design docs
 
 ## How We Work
 Locked operating model
@@ -52,26 +55,27 @@ Locked operating model
 - Avoid chat bloat and VS Code overload
 
 ## Mandatory Start Sequence For Any New Chat
-The assistant must start by reading these files in order
-- docs/README_FEEDER.md
-- docs/README_EXECUTION.md
-- docs/ui/Master_UI_and_Content_Polish.md
-- docs/ui/PDP_Contextual_Considerations.md
-- docs/_status/current_state.md
-- docs/_status/parking_lot.md
+The assistant must start by reading these files in order:
+1. docs/README_FEEDER.md (this file)
+2. docs/_governance/pdp_v3_standard.md — THE PDP design standard (tabs, panels, CSS, components)
+3. docs/_governance/pdp_scaling_playbook.md — how to add peptides to v3
+4. docs/_status/current_state.md — what is actually built and what is not
+5. docs/_status/next_task.md — what we are building next
+6. docs/_status/parking_lot.md — what is deferred
 
 No code changes until it can restate:
-- what is disallowed
+- what the v3 PDP structure looks like (tabs, panels, hero)
 - what is currently being built next
-- what is deferred
+- what is deferred and must NOT be built
 
 ## PDP Non-Negotiables
 - PDPs are a reading experience, not a dashboard
 - Mobile is first-class
 - No sticky hero containers
-- No sticky sidebars
-- No nested scroll regions
+- No sticky sidebars or sticky rail columns
+- No nested vertical scroll regions (horizontal tab bar scroll is fine)
 - Everything reachable on short screens
+- See docs/_governance/pdp_v3_standard.md for the full design law
 
 ## Parking Lot Discipline
 Ideas live only in:

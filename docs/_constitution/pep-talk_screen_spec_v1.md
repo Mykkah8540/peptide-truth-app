@@ -1,9 +1,11 @@
 # Pep-Talk Screen Spec (v1)
 
-Status: Authoritative (sub-constitutional)
+Status: Authoritative (sub-constitutional) — **SECTION 2.4 PARTIALLY SUPERSEDED**
 Visibility: Internal / Private
 Owner & Final Authority: Micah Carroll
 Last Updated: 2026-01-19
+
+> **NOTE on Section 2.4 (Entity Detail):** The PDP layout described in section 2.4 — including old tab labels (Overview/Claims/Safety & Risk/Mechanism/Evidence/Related) and "Risk score 1–10" — is superseded by the v3 tab system. See `docs/_governance/pdp_v3_standard.md` for the current PDP design. All other sections of this document (global nav, home, search, explore, favorites, stacks) remain authoritative.
 
 This document defines the exact screens, navigation, and component blocks for Pep-Talk (mobile-first). It is the UI/UX contract for implementation.
 

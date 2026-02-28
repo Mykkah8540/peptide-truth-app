@@ -1,6 +1,10 @@
 # Pep-Talk PDP Content Contract (V1)
 
-Status: LOCKED  
+> **LAYOUT SUPERSEDED** — The 12-section linear layout described below (sections 1–12) is superseded by the v3 tab system. See `docs/_governance/pdp_v3_standard.md` for the current page structure.
+>
+> **CONTENT RULES STILL ACTIVE** — The tone, voice, observational transparency clause, and "what to say / what not to say" rules in this document remain authoritative for all content written inside v3 panels.
+
+Status: LOCKED (content rules) / LAYOUT SUPERSEDED (structure)
 Applies to:
 - Peptide PDPs
 - Blend PDPs
