@@ -26,8 +26,12 @@ import BpcOverviewPanel from "@/components/BpcOverviewPanel";
 import BpcEvidencePanel from "@/components/BpcEvidencePanel";
 import BpcSafetyPanel from "@/components/BpcSafetyPanel";
 import BpcInteractionsPanel from "@/components/BpcInteractionsPanel";
+import Tb500OverviewPanel from "@/components/Tb500OverviewPanel";
+import Tb500EvidencePanel from "@/components/Tb500EvidencePanel";
+import Tb500SafetyPanel from "@/components/Tb500SafetyPanel";
+import Tb500InteractionsPanel from "@/components/Tb500InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -54,6 +58,12 @@ const PANEL_MAP: Record<string, {
     Evidence: BpcEvidencePanel,
     Safety: BpcSafetyPanel,
     Interactions: BpcInteractionsPanel,
+  },
+  "tb-500": {
+    Overview: Tb500OverviewPanel,
+    Evidence: Tb500EvidencePanel,
+    Safety: Tb500SafetyPanel,
+    Interactions: Tb500InteractionsPanel,
   },
 };
 
@@ -84,6 +94,14 @@ const V3_HERO_CONTENT: Record<string, {
       "BPC-157 is a research-grade peptide with 30+ years of animal data and essentially no published human trials.",
       "What matters most: supply chain quality is the primary real-world risk \u2014 the compound\u2019s own side effect profile is mild.",
       "How to use this page: pick a tab, but start with Safety or Interactions if you\u2019re making an active decision.",
+    ],
+  },
+  "tb-500": {
+    considerSub: "Cancer history, anticoagulants, pregnant, adolescents\u2026",
+    startHere: [
+      "TB-500 is a research-grade peptide marketed as a thymosin beta-4 fragment \u2014 most evidence comes from Tβ4 biology, not TB-500 directly.",
+      "What matters most: cancer history and anticoagulant status are elevated concerns compared to similar peptides \u2014 check these first.",
+      "How to use this page: if you have cancer history or take blood thinners, start with Safety before anything else.",
     ],
   },
 };
