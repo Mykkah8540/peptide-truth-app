@@ -23,15 +23,17 @@ export default function PDPTabs({ tabs }: Props) {
       if (!match) return;
       setActiveTab(id);
       if (scroll) {
-        // Defer until after React re-renders the now-visible panel so layout is
-        // stable before we measure. Scrolling to the tab bar (not the panel) so
-        // the full panel content is visible from the top.
+        // Defer until after React re-renders the now-visible panel so layout
+        // is stable before we measure. Target: tab bar sits just below the
+        // sticky nav (nav = 70px, matching .reta-tabs__bar { top: 70px }).
+        // scrollTo(barDocTop - 70) puts the bar at exactly 70px from the
+        // viewport top so the panel content is immediately visible below it.
         setTimeout(() => {
           const bar = tabBarRef.current;
           if (!bar) return;
-          const barTop = bar.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top: barTop, behavior: "smooth" });
-        }, 30);
+          const barDocTop = bar.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: barDocTop - 70, behavior: "smooth" });
+        }, 50);
       }
     },
     [panelTabs],
