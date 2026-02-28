@@ -190,6 +190,26 @@ function isLl37Family(entity: EntityLike): boolean {
   return s === "ll-37";
 }
 
+function isCagrilintideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "cagrilintide";
+}
+
+function isThymosinBeta4Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return ["thymosin-beta-4", "tb-500"].includes(s);
+}
+
+function isFiveAmino1MQFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "5-amino-1mq";
+}
+
+function isKisspeptinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "kisspeptin";
+}
+
 const SUPPORT_MELANOCORTIN: SupportPack = {
   id: "support_melanocortin_v1",
   title: "Support layer: using a melanocortin compound responsibly",
@@ -427,6 +447,88 @@ const SUPPORT_IGF1: SupportPack = {
   ],
 };
 
+const SUPPORT_CAGRILINTIDE: SupportPack = {
+  id: "cagrilintide",
+  title: "The CagriSema combination is where the evidence lives — not the monotherapy",
+  subtitle: "Amylin analog for weight management — key screens before starting",
+  bullets: [
+    "Thyroid screen: MTC or MEN2 history is a class contraindication — stop signal, not a dose question",
+    "On insulin or sulfonylureas: hypoglycemia risk from additive glucose-lowering requires physician adjustment before adding cagrilintide",
+    "If already on semaglutide: adding cagrilintide amplifies gastric slowing — titrate slowly; the CagriSema combination has more GI side effects than either alone",
+    "Titrate dose: starting at full dose without titration substantially worsens GI tolerability — slow escalation is not optional",
+    "Source quality: no pharmaceutical-grade cagrilintide exists outside trials; third-party CoA is the minimum quality gate",
+    "Lean mass: appetite suppression from amylin + GLP-1 combined requires intentional protein targeting and resistance training",
+  ],
+  redFlags: [
+    "Severe or persistent abdominal pain radiating to the back — emergency pancreatitis evaluation",
+    "MTC or MEN2 history — class contraindication; do not proceed",
+    "Neck mass, difficulty swallowing, hoarseness — stop and seek thyroid evaluation",
+    "Pregnancy — stop immediately; metabolic effects incompatible with pregnancy",
+  ],
+};
+
+const SUPPORT_THYMOSIN_BETA4: SupportPack = {
+  id: "thymosin-beta-4",
+  title: "Cancer history is the hard stop — angiogenesis applies to both TB4 and TB-500",
+  subtitle: "Injury repair peptide — key screens before use",
+  bullets: [
+    "Cancer screen: TB4 promotes angiogenesis via ILK and endothelial signaling — the same mechanism that tumor vasculature exploits; any cancer history is a hard stop for both full TB4 and TB-500",
+    "TB4 vs TB-500: you are most likely using TB-500 (the synthetic Ac-SDKP fragment); the research is on TB4 (full protein); the translation is mechanistically sound but not clinically validated",
+    "NSAIDs during injury recovery: minimize NSAID use in the acute repair phase — some inflammation is necessary for repair, and NSAIDs partially counteract TB4's repair signaling",
+    "Source quality: full TB4 protein requires cold chain integrity; verify CoA with HPLC purity and mass spec identity — peptide degradation is higher for larger proteins",
+    "Structural injury evaluation: TB4/TB-500 do not substitute for imaging or clinical assessment of serious injury; get the injury evaluated, not just treated",
+    "Cancer surveillance obligation: ongoing use creates an obligation to monitor for new tissue masses or growths — angiogenesis promotion is a recurring concern, not a one-time screen",
+  ],
+  redFlags: [
+    "Any cancer history — angiogenesis mechanism applies; hard stop for both TB4 and TB-500",
+    "Pregnancy — developmental angiogenesis implications unknown; stop immediately",
+    "New unexplained tissue mass or lymph node enlargement during use — stop and seek evaluation",
+    "Progressive injection site reactions (worsening over multiple doses) — potential immune response to protein; stop and evaluate",
+  ],
+};
+
+const SUPPORT_FIVE_AMINO_1MQ: SupportPack = {
+  id: "5-amino-1mq",
+  title: "No human safety data — you are operating without a safety floor",
+  subtitle: "NNMT inhibitor (research chemical) — key screens before use",
+  bullets: [
+    "Evidence ceiling: no published human clinical trials exist; the evidence base is mouse studies and community anecdote — calibrate expectations accordingly",
+    "Liver baseline: NNMT is highly expressed in liver; get ALT, AST, bilirubin baseline before starting and monitor during sustained use",
+    "No SAMe stacking: 5-Amino-1MQ raises SAM by blocking NNMT; combining with SAMe supplements or high methionine loads creates additive methylation effects that are not characterized",
+    "No NMN/NR stacking at high doses: both raise NAD+ via different mechanisms; the combined effect on NAD+ and methylation metabolism is not characterized",
+    "Active cancer: stop — NNMT's complex role in cancer cell metabolism makes any NNMT inhibitor inappropriate during cancer treatment without oncology guidance",
+    "Source quality: this is a research chemical with less supply chain maturity than most peptides; verify identity with LC-MS or NMR, not HPLC alone",
+    "Cycling: community convention is to cycle rather than use continuously; appropriate given the unknown long-term methylation effects",
+  ],
+  redFlags: [
+    "Active cancer or cancer treatment — NNMT's role in cancer cell biology is unexplored; avoid",
+    "Jaundice, dark urine, or right upper quadrant pain — stop immediately; seek hepatic evaluation",
+    "Active liver disease — NNMT's hepatic expression makes liver disease a stop signal",
+    "Pregnancy — NAD+ and methylation pathway perturbations in pregnancy are not characterized",
+  ],
+};
+
+const SUPPORT_KISSPEPTIN: SupportPack = {
+  id: "kisspeptin",
+  title: "Pulsatile dosing is the mechanism — continuous use suppresses rather than stimulates",
+  subtitle: "HPG axis stimulant — key screens and constraints before use",
+  bullets: [
+    "Pulsatile requirement: kisspeptin drives GnRH pulses; continuous or daily high-frequency dosing desensitizes GPR54, suppressing the axis — this is the same mechanism GnRH agonists use for medical castration; ensure adequate pulse spacing",
+    "ER-positive cancer, endometriosis, uterine fibroids: kisspeptin drives estrogen production — hard stop for estrogen-sensitive conditions",
+    "PCOS: LH hypersecreting condition; additional LH stimulation from kisspeptin may worsen LH/FSH dysregulation — discuss with reproductive endocrinologist",
+    "Active TRT: kisspeptin is mechanistically conflicted with concurrent TRT — post-TRT use (after stopping) is rational; concurrent use is not; monitor LH and testosterone",
+    "GnRH agonists/antagonists: direct downstream conflict — kisspeptin cannot override receptor-level suppression from leuprolide or antagonism from degarelix",
+    "Product form: specify KP-10 or KP-54; unspecified 'kisspeptin' products may contain inactive degraded forms; require mass spec identity confirmation",
+    "Monitor hormones: measure LH and testosterone at baseline and during use — a declining testosterone during kisspeptin use indicates axis suppression, not stimulation; stop if this occurs",
+  ],
+  redFlags: [
+    "ER-positive cancer, endometriosis, or uterine fibroids — estrogen-driven conditions; kisspeptin drives estrogen",
+    "PCOS — LH hypersecretion condition; do not add further LH stimulation without specialist guidance",
+    "Falling testosterone during use — axis suppression from desensitization; stop immediately",
+    "Active TRT + expecting axis optimization — mechanistically conflicted; axis recovery requires stopping TRT first",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
@@ -443,5 +545,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isEpitalonFamily(entity)) return SUPPORT_EPITALON;
   if (isGlutathioneFamily(entity)) return SUPPORT_GLUTATHIONE;
   if (isLl37Family(entity)) return SUPPORT_LL37;
+  if (isCagrilintideFamily(entity)) return SUPPORT_CAGRILINTIDE;
+  if (isThymosinBeta4Family(entity)) return SUPPORT_THYMOSIN_BETA4;
+  if (isFiveAmino1MQFamily(entity)) return SUPPORT_FIVE_AMINO_1MQ;
+  if (isKisspeptinFamily(entity)) return SUPPORT_KISSPEPTIN;
   return null;
 }

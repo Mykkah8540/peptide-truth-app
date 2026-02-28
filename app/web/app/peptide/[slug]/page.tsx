@@ -126,8 +126,24 @@ import Igf1OverviewPanel from "@/components/Igf1OverviewPanel";
 import Igf1EvidencePanel from "@/components/Igf1EvidencePanel";
 import Igf1SafetyPanel from "@/components/Igf1SafetyPanel";
 import Igf1InteractionsPanel from "@/components/Igf1InteractionsPanel";
+import CagrilintideOverviewPanel from "@/components/CagrilintideOverviewPanel";
+import CagrilintideEvidencePanel from "@/components/CagrilintideEvidencePanel";
+import CagrilintideSafetyPanel from "@/components/CagrilintideSafetyPanel";
+import CagrilintideInteractionsPanel from "@/components/CagrilintideInteractionsPanel";
+import ThymosinBeta4OverviewPanel from "@/components/ThymosinBeta4OverviewPanel";
+import ThymosinBeta4EvidencePanel from "@/components/ThymosinBeta4EvidencePanel";
+import ThymosinBeta4SafetyPanel from "@/components/ThymosinBeta4SafetyPanel";
+import ThymosinBeta4InteractionsPanel from "@/components/ThymosinBeta4InteractionsPanel";
+import FiveAmino1MQOverviewPanel from "@/components/FiveAmino1MQOverviewPanel";
+import FiveAmino1MQEvidencePanel from "@/components/FiveAmino1MQEvidencePanel";
+import FiveAmino1MQSafetyPanel from "@/components/FiveAmino1MQSafetyPanel";
+import FiveAmino1MQInteractionsPanel from "@/components/FiveAmino1MQInteractionsPanel";
+import KisspeptinOverviewPanel from "@/components/KisspeptinOverviewPanel";
+import KisspeptinEvidencePanel from "@/components/KisspeptinEvidencePanel";
+import KisspeptinSafetyPanel from "@/components/KisspeptinSafetyPanel";
+import KisspeptinInteractionsPanel from "@/components/KisspeptinInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -304,6 +320,30 @@ const PANEL_MAP: Record<string, {
     Evidence: Ll37EvidencePanel,
     Safety: Ll37SafetyPanel,
     Interactions: Ll37InteractionsPanel,
+  },
+  cagrilintide: {
+    Overview: CagrilintideOverviewPanel,
+    Evidence: CagrilintideEvidencePanel,
+    Safety: CagrilintideSafetyPanel,
+    Interactions: CagrilintideInteractionsPanel,
+  },
+  "thymosin-beta-4": {
+    Overview: ThymosinBeta4OverviewPanel,
+    Evidence: ThymosinBeta4EvidencePanel,
+    Safety: ThymosinBeta4SafetyPanel,
+    Interactions: ThymosinBeta4InteractionsPanel,
+  },
+  "5-amino-1mq": {
+    Overview: FiveAmino1MQOverviewPanel,
+    Evidence: FiveAmino1MQEvidencePanel,
+    Safety: FiveAmino1MQSafetyPanel,
+    Interactions: FiveAmino1MQInteractionsPanel,
+  },
+  kisspeptin: {
+    Overview: KisspeptinOverviewPanel,
+    Evidence: KisspeptinEvidencePanel,
+    Safety: KisspeptinSafetyPanel,
+    Interactions: KisspeptinInteractionsPanel,
   },
 };
 
@@ -534,6 +574,38 @@ const V3_HERO_CONTENT: Record<string, {
       "LL-37 is a human host-defense peptide (cathelicidin) with extraordinary in vitro antimicrobial and immunomodulatory data \u2014 and essentially zero human RCTs for enhancement use in healthy adults.",
       "What matters most: the dual-edge immunology is not a nuance. LL-37 is elevated in psoriatic lesions and causally drives the pathology \u2014 it is an autoimmune trigger, not a bystander. Any autoimmune condition is a mechanism-based hard stop, not a general precaution.",
       "How to use this page: Safety first if you have any autoimmune condition or cancer history. Evidence is honest about the in vitro vs. human gap. Overview explains why thymosin alpha-1 is a substantially safer immune support option for most people.",
+    ],
+  },
+  cagrilintide: {
+    considerSub: "Thyroid/MEN2 history, pancreatitis, pregnancy, insulin or sulfonylurea users\u2026",
+    startHere: [
+      "Cagrilintide is a long-acting amylin analog whose clinical story is primarily about the combination with semaglutide (CagriSema) \u2014 Phase 2 showed ~25% weight loss, exceeding either monotherapy. As a monotherapy it performs similarly to liraglutide (~10%).",
+      "What matters most: the thyroid C-cell and MEN2 class contraindication applies \u2014 same as the GLP-1 family. If on insulin or sulfonylureas, Interactions is your first stop. The gastric slowing from amylin + GLP-1 combined amplifies GI side effects \u2014 titrate slowly.",
+      "How to use this page: Interactions first if on insulin or diabetes medications. Evidence explains why the Phase 2 CagriSema data is real but not Phase 3 confirmed. Overview has the comparison to pramlintide (the only approved amylin analog) and tirzepatide.",
+    ],
+  },
+  "thymosin-beta-4": {
+    considerSub: "Cancer history (hard stop \u2014 angiogenesis), pregnancy, TB4 vs TB-500 distinction\u2026",
+    startHere: [
+      "Thymosin Beta-4 (TB4) is the full 43-amino acid protein; TB-500 is the synthetic active fragment (Ac-SDKP). Most community use is TB-500. The most rigorous human evidence is in cardiac ischemia repair \u2014 not the musculoskeletal injury context that drives community use.",
+      "What matters most: the angiogenesis mechanism applies to both the full protein and the fragment. Cancer history is a hard stop. The musculoskeletal injury-healing community use case has animal model support but no human RCTs.",
+      "How to use this page: Safety first if you have cancer history. Evidence explains the cardiac trial data vs. the extrapolated injury use case. Overview compares TB4, TB-500, and BPC-157 to clarify the differences.",
+    ],
+  },
+  "5-amino-1mq": {
+    considerSub: "Active liver disease, cancer treatment, SAMe or NAD+ supplement stacking\u2026",
+    startHere: [
+      "5-Amino-1MQ is an NNMT inhibitor \u2014 it blocks the enzyme that consumes NAD+ and SAM in adipose tissue, shifting fat cell metabolism. The preclinical fat loss data in mice is real and peer-reviewed.",
+      "What matters most: there are no published human clinical trials. Zero. The evidence ceiling is mouse studies and community anecdote. This is the most evidence-thin compound on this site. The mechanism is interesting; the human translation is genuinely unknown.",
+      "How to use this page: Safety before anything else \u2014 there is no human safety data; the liver monitoring recommendation exists because NNMT is highly expressed in liver. Evidence is honest about what mouse data does and doesn\u2019t mean for humans.",
+    ],
+  },
+  kisspeptin: {
+    considerSub: "ER-positive cancer, endometriosis, PCOS, exogenous testosterone (TRT) users\u2026",
+    startHere: [
+      "Kisspeptin is the upstream master regulator of the reproductive axis \u2014 it drives GnRH, which drives LH and FSH, which drives testosterone and estrogen. The IVF trigger evidence (KP-54) is real and peer-reviewed. Community use targets testosterone optimization and post-TRT axis recovery.",
+      "What matters most: continuous dosing suppresses the axis rather than stimulating it \u2014 the same desensitization mechanism that GnRH agonists use for medical castration. Pulsatile administration is not optional. Monitor LH and testosterone; declining testosterone during use means stop immediately.",
+      "How to use this page: Safety first if you have ER-positive cancer, endometriosis, or PCOS \u2014 kisspeptin drives sex steroid production, which exacerbates these conditions. Evidence explains the pulsatile constraint and the gap between IVF evidence and testosterone optimization use.",
     ],
   },
 };
