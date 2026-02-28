@@ -106,8 +106,12 @@ import TirzepatideOverviewPanel from "@/components/TirzepatideOverviewPanel";
 import TirzepatideEvidencePanel from "@/components/TirzepatideEvidencePanel";
 import TirzepatideSafetyPanel from "@/components/TirzepatideSafetyPanel";
 import TirzepatideInteractionsPanel from "@/components/TirzepatideInteractionsPanel";
+import Igf1OverviewPanel from "@/components/Igf1OverviewPanel";
+import Igf1EvidencePanel from "@/components/Igf1EvidencePanel";
+import Igf1SafetyPanel from "@/components/Igf1SafetyPanel";
+import Igf1InteractionsPanel from "@/components/Igf1InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -254,6 +258,12 @@ const PANEL_MAP: Record<string, {
     Evidence: TirzepatideEvidencePanel,
     Safety: TirzepatideSafetyPanel,
     Interactions: TirzepatideInteractionsPanel,
+  },
+  "igf-1": {
+    Overview: Igf1OverviewPanel,
+    Evidence: Igf1EvidencePanel,
+    Safety: Igf1SafetyPanel,
+    Interactions: Igf1InteractionsPanel,
   },
 };
 
@@ -444,6 +454,14 @@ const V3_HERO_CONTENT: Record<string, {
       "Tirzepatide (Mounjaro for T2D, Zepbound for weight) is the first dual GLP-1/GIP agonist — ~22% body weight reduction in SURMOUNT-1, meaningfully more than semaglutide, with generally less nausea.",
       "What matters most: same class contraindications as semaglutide (thyroid cancer/MEN2, pancreatitis, pregnancy). The lean mass management challenge is greater given more powerful appetite suppression.",
       "How to use this page: if you\u2019re deciding between tirzepatide and semaglutide, Overview has the comparison. If on insulin or sulfonylureas, Interactions is your first stop before starting.",
+    ],
+  },
+  "igf-1": {
+    considerSub: "Cancer history, diabetes, insulin, cancer medications, physician oversight required\u2026",
+    startHere: [
+      "IGF-1 (Insulin-like Growth Factor 1) is the highest-risk compound reviewed on this site for healthy adult use. Hypoglycemia (acute, documented, has caused hospitalizations) and mitogenic cancer concern are the two defining risks. The clinical evidence base is pediatric deficiency, not healthy adult enhancement.",
+      "What matters most: cancer history is an absolute hard stop. Diabetes is a hard stop. Injecting fasted is the most preventable acute risk \u2014 eat a carbohydrate meal 20-30 minutes before every injection. The safety evidence is stronger than the efficacy evidence for enhancement use.",
+      "How to use this page: read Safety before anything else. If you have cancer history or diabetes, stop there. Overview has the comparison to GH secretagogues \u2014 a substantially lower-risk alternative worth understanding before committing to exogenous IGF-1.",
     ],
   },
 };

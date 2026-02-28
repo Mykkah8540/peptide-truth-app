@@ -170,6 +170,11 @@ function isOxytocinFamily(entity: EntityLike): boolean {
   return s === "oxytocin";
 }
 
+function isIgf1Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "igf-1";
+}
+
 const SUPPORT_MELANOCORTIN: SupportPack = {
   id: "support_melanocortin_v1",
   title: "Support layer: using a melanocortin compound responsibly",
@@ -319,6 +324,30 @@ const SUPPORT_OXYTOCIN: SupportPack = {
   ],
 };
 
+const SUPPORT_IGF1: SupportPack = {
+  id: "support_igf1_v1",
+  title: "Support layer: managing IGF-1's acute risks before and during use",
+  subtitle:
+    "Hypoglycemia is the immediate life-safety concern. These anchors address the things that actually prevent hospitalizations.",
+  bullets: [
+    "Eat before every injection — carbohydrate-containing meal 20-30 minutes before each dose; injecting fasted is the single most preventable risk amplifier",
+    "Fast-acting glucose on hand — gel, tablets, or juice within reach during the injection window and 2-3 hours after",
+    "Know hypoglycemia symptoms — shakiness, sweating, rapid heart rate, confusion, impaired coordination; treat immediately with fast-acting carbs, not 'in a few minutes'",
+    "Baseline glucose labs before starting — fasting glucose and HbA1c characterize your baseline; abnormal results are a stop signal",
+    "Cancer screening before starting — age-appropriate baseline: PSA (men), breast screening (women), colorectal by age; cancer history is an absolute hard stop",
+    "Source quality is safety-critical — IGF-1 concentration accuracy directly determines hypoglycemia severity; get a third-party CoA; a 2x concentration error doubles the hypoglycemic dose",
+    "Solo use caution — first injection should be observed, not done alone; IGF-1's longer half-life means hypoglycemia can persist longer than expected",
+  ],
+  redFlags: [
+    "Confusion, loss of coordination, or loss of consciousness — emergency services immediately; do not wait for symptoms to resolve on their own",
+    "Severe hypoglycemia symptoms not responding to fast-acting glucose within 15 minutes — emergency services",
+    "Any cancer history — stop immediately and permanently; no circumstances override this",
+    "Diabetes or significant insulin resistance — do not use IGF-1; the hypoglycemia risk is pharmacological, not a preference",
+    "Cardiac symptoms (palpitations, chest pain, shortness of breath) — stop and seek cardiac evaluation",
+    "Product without verifiable third-party CoA — do not inject; concentration errors are direct hypoglycemia risk",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
@@ -331,5 +360,6 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isGhkCuFamily(entity)) return SUPPORT_GHK_CU;
   if (isMetabolicPeptideFamily(entity)) return SUPPORT_METABOLIC_PEPTIDE;
   if (isOxytocinFamily(entity)) return SUPPORT_OXYTOCIN;
+  if (isIgf1Family(entity)) return SUPPORT_IGF1;
   return null;
 }
