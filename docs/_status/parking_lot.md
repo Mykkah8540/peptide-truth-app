@@ -1,119 +1,55 @@
-# Pep Talk Parking Lot
+# Parking Lot
 
-## PDP
+Deferred ideas and open questions. Nothing here is approved for build unless promoted into an authoritative spec.
 
-Pep Talk Parking Lot
-Deferred ideas, open questions, and future enhancements.
-Nothing in this file is approved for build unless promoted into an authoritative spec.
+---
 
-PDP
+## PDP (Deferred — v3 Standard is complete)
 
-This chat marks the first intentional strategic pivot toward a gold-standard editorial PDP architecture.
+The following were previously parked and are now **DONE** — removed from this list:
 
-Important:
-This redesign has NOT been architected.
-Only CSS scaffolding has been applied.
+- Hero redesign (frosted glass, 3-col grid) ✅
+- Editorial hierarchy system (tabs, section weight) ✅
+- "Things to Consider" functional repair (ghost typeahead, Enter-to-search) ✅
+- Jump links on all PDPs ✅
+- Community CTA ✅
 
-Structural Redesign (High Priority)
+---
 
-Objective: Replace stacked-card dominance with an editorial hierarchy system.
+## Remaining Deferred Items
 
-Current problem:
+### Phase B — Generic Data-Driven Panels
 
-Excessive pt-card stacking
+After 3–5 peptides have Phase A panel clones, abstract into generic `<OverviewPanel peptide={data} />` etc. Eliminates per-peptide component files. See `pdp_scaling_playbook.md` for the migration path. Not started.
 
-Uniform border rhythm
+### Start Here Bullets — JSON-Driven
 
-Insufficient contrast hierarchy
+Currently hardcoded in `page.tsx` per-peptide. Future: add `start_here: string[]` (3 items) to peptide JSON so they're data-driven. Low priority until 5+ peptides are on v3.
 
-No structured section weight model
+### Molecule Accent Visuals
 
-Target direction:
+Subtle scientific molecule graphics as design accents. Concept only — must be non-gimmick, ultra-restrained. Deferred until v3 propagation is well underway.
 
-Replace repetitive pt-card stacking with structured editorial sections
+### Stack Community
 
-Introduce explicit section weight hierarchy:
+Implement stack-level UGC if/when the DB + API contract is expanded. Currently UGC supports `peptide | blend` only. Deferred.
 
-Primary
+### Phase 2 UX Enhancements (blocked until Phase A scaling is stable)
 
-Secondary
+- Right-rail experiments
+- State-based adaptive PDP
+- Advanced widgets
+- Persona-based content forks
+- Analytics integration
 
-Utility
+---
 
-Create clear visual contrast between:
+## Content
 
-Identity
+### Interaction Data Enrichment
 
-Evidence
+Many peptides have sparse `interactions` fields in their JSON. As we scale v3 to each peptide, the `InteractionsPanel` needs a minimum of 15–20 entries per peptide. Content task, not engineering.
 
-Support Layer
+### Evidence Ledger Completeness
 
-Red Flags
-
-Context
-
-Reduce repetitive border rhythm
-
-Introduce breathing room zones
-
-Define contrast zones (not every section boxed)
-
-Introduce layered background depth system
-
-Possibly introduce molecule accent visuals (scientific, restrained, non-gimmick)
-
-Hero Redesign
-
-Retatrutide defines aesthetic gold standard.
-
-Required:
-
-Increase visual gravitas
-
-Improve title scale discipline
-
-Implement editorial spacing system
-
-Define consistent hero layout system
-
-Possibly introduce subtle molecule graphic system
-
-Functional Repair (Required Before UX Enhancements)
-
-The “Things to Consider for Your Situation” module is partially non-functional.
-
-Required:
-
-Fix contextual search filtering logic
-
-Add typeahead suggestions
-
-Add search empty-state guidance
-
-Add active filter indicators
-
-No feature expansion until this works deterministically.
-
-New Components (Concept Only — Not Started)
-
-Protein & Hydration widget
-
-Context-driven support visual module
-
-Section anchor navigation experiment
-
-Sidebar / right-rail experiment
-
-UX Polish (Secondary to Architecture)
-
-Button micro-motion refinement
-
-Scroll behavior polish
-
-Content density rhythm improvements
-
-Clear differentiation between PDP and homepage tone
-
-END PDP PARKING
-
-- Stack community: implement as its own governed system if/when the DB + API contract is expanded (UGC currently supports peptide|blend only).
+`p.evidence[]` is populated for some peptides, sparse for others. Not blocking v3 scaling (EvidencePanel uses hardcoded trial data per peptide), but eventual goal is full evidence ledger across all 92.

@@ -1,34 +1,44 @@
-# NEXT TASK (Single Active Task)
+# NEXT TASK — PDP v3 Scaling
 
-Task: UGC production hardening (no feature creep)
+## Goal
 
-Goal
-Keep UGC working in dev and production with clear, deterministic behavior and improved operator visibility, without changing schemas or adding new feature surfaces.
+Apply the Retatrutide v3 PDP design to the next flagship peptide(s), starting with Semaglutide. The Retatrutide benchmark is complete and cemented. All patterns, components, and docs are in place. Now we propagate.
 
-In Scope
-- Production reliability plan for TLS verification and connection behavior (dev vs prod) as already defined in current_state.md
-- Confirm admin UGC UI marks seen_at and that counts align with DB truth
-- Improve UGC error reporting and empty states (no new schemas)
+## Approach
 
-Out of Scope
-- Any new UGC schemas, new post types, ratings/likes, endorsements
-- Any PDP layout refactors unrelated to UGC
-- Any “Phase 2” contextual widgets, home landing concepts, analytics features, or any parking-lot items unless promoted to an authoritative spec
+Follow `docs/_governance/pdp_scaling_playbook.md` exactly.
 
-Success Criteria
-- Gates pass (validators + app/web build)
-- Admin UGC workflow remains end-to-end functional (submit → pending → approve → list approved; seen_at updates)
-- Errors and empty states are clearer without introducing new contracts
+Phase A: Per-peptide panel components (hardcoded data). One peptide per PR.
 
-Plan
-1) Prove current wires and gates as documented in build_best_practices.md
-2) Identify the smallest UGC hardening improvement that is purely robustness/UX (errors/empty states/admin truth alignment)
-3) Implement one small change-set at a time, running gates after each
-4) Stop after first scoped improvement + green gates + clean commit
+## First Peptide: Semaglutide (`/peptide/semaglutide`)
 
-Verification Gates
-- git status --short clean (pre)
-- validators pass
-- cd app/web && npm run build passes
-- git status --short shows only intended changes (post)
+### In Scope
+- Extend the v3 gate in `page.tsx` to include `semaglutide`
+- Create `SemaglutideOverviewPanel.tsx` — stat cards, fit matrix, timeline, Ozempic vs Wegovy vs Reta comparison
+- Create `SemaglutideEvidencePanel.tsx` — SUSTAIN/STEP trial data, mechanisms, gaps, observed
+- Create `SemaglutideSafetyPanel.tsx` — GI profile, mitigation playbook, red lines
+- Create `SemaglutideInteractionsPanel.tsx` — full interaction map (leverage existing JSON `interactions` field)
+- Generate or source vial images (`semaglutide.png` + `semaglutide-sm.png`) per `vial_image_spec.md`
+- Update Start Here bullets in `page.tsx` for semaglutide slug
 
+### Out of Scope
+- Generic/data-driven panels (Phase B — deferred until 3+ peptides are done)
+- Changes to non-v3 PDPs
+- Schema changes
+- Any new features not present on the Reta page
+
+## Success Criteria
+- `/peptide/semaglutide` renders identically to `/peptide/retatrutide` in structure and design
+- All 5 tabs function correctly
+- Hash links work (`#evidence`, `#safety`, `#interactions`, `#considerations`)
+- Mobile layout correct (sticky tab bar, swipe hint, single-column stack)
+- Validators pass
+- Build is green
+- Git status is clean
+
+## Verification Gates (run in order before commit)
+1. `git status --short` — clean pre-change
+2. `python3 scripts/validate/validate_pdp_contract_v1.py` — validators pass
+3. `cd app/web && npm run build` — build passes
+4. Visual check: `/peptide/semaglutide` on desktop + mobile
+5. `git status --short` — only intended files changed
