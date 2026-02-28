@@ -106,12 +106,28 @@ import TirzepatideOverviewPanel from "@/components/TirzepatideOverviewPanel";
 import TirzepatideEvidencePanel from "@/components/TirzepatideEvidencePanel";
 import TirzepatideSafetyPanel from "@/components/TirzepatideSafetyPanel";
 import TirzepatideInteractionsPanel from "@/components/TirzepatideInteractionsPanel";
+import LiraglutideOverviewPanel from "@/components/LiraglutideOverviewPanel";
+import LiraglutideEvidencePanel from "@/components/LiraglutideEvidencePanel";
+import LiraglutideSafetyPanel from "@/components/LiraglutideSafetyPanel";
+import LiraglutideInteractionsPanel from "@/components/LiraglutideInteractionsPanel";
+import EpitalonOverviewPanel from "@/components/EpitalonOverviewPanel";
+import EpitalonEvidencePanel from "@/components/EpitalonEvidencePanel";
+import EpitalonSafetyPanel from "@/components/EpitalonSafetyPanel";
+import EpitalonInteractionsPanel from "@/components/EpitalonInteractionsPanel";
+import GlutathioneOverviewPanel from "@/components/GlutathioneOverviewPanel";
+import GlutathioneEvidencePanel from "@/components/GlutathioneEvidencePanel";
+import GlutathioneSafetyPanel from "@/components/GlutathioneSafetyPanel";
+import GlutathioneInteractionsPanel from "@/components/GlutathioneInteractionsPanel";
+import Ll37OverviewPanel from "@/components/Ll37OverviewPanel";
+import Ll37EvidencePanel from "@/components/Ll37EvidencePanel";
+import Ll37SafetyPanel from "@/components/Ll37SafetyPanel";
+import Ll37InteractionsPanel from "@/components/Ll37InteractionsPanel";
 import Igf1OverviewPanel from "@/components/Igf1OverviewPanel";
 import Igf1EvidencePanel from "@/components/Igf1EvidencePanel";
 import Igf1SafetyPanel from "@/components/Igf1SafetyPanel";
 import Igf1InteractionsPanel from "@/components/Igf1InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -264,6 +280,30 @@ const PANEL_MAP: Record<string, {
     Evidence: Igf1EvidencePanel,
     Safety: Igf1SafetyPanel,
     Interactions: Igf1InteractionsPanel,
+  },
+  liraglutide: {
+    Overview: LiraglutideOverviewPanel,
+    Evidence: LiraglutideEvidencePanel,
+    Safety: LiraglutideSafetyPanel,
+    Interactions: LiraglutideInteractionsPanel,
+  },
+  epitalon: {
+    Overview: EpitalonOverviewPanel,
+    Evidence: EpitalonEvidencePanel,
+    Safety: EpitalonSafetyPanel,
+    Interactions: EpitalonInteractionsPanel,
+  },
+  glutathione: {
+    Overview: GlutathioneOverviewPanel,
+    Evidence: GlutathioneEvidencePanel,
+    Safety: GlutathioneSafetyPanel,
+    Interactions: GlutathioneInteractionsPanel,
+  },
+  "ll-37": {
+    Overview: Ll37OverviewPanel,
+    Evidence: Ll37EvidencePanel,
+    Safety: Ll37SafetyPanel,
+    Interactions: Ll37InteractionsPanel,
   },
 };
 
@@ -462,6 +502,38 @@ const V3_HERO_CONTENT: Record<string, {
       "IGF-1 (Insulin-like Growth Factor 1) is the highest-risk compound reviewed on this site for healthy adult use. Hypoglycemia (acute, documented, has caused hospitalizations) and mitogenic cancer concern are the two defining risks. The clinical evidence base is pediatric deficiency, not healthy adult enhancement.",
       "What matters most: cancer history is an absolute hard stop. Diabetes is a hard stop. Injecting fasted is the most preventable acute risk \u2014 eat a carbohydrate meal 20-30 minutes before every injection. The safety evidence is stronger than the efficacy evidence for enhancement use.",
       "How to use this page: read Safety before anything else. If you have cancer history or diabetes, stop there. Overview has the comparison to GH secretagogues \u2014 a substantially lower-risk alternative worth understanding before committing to exogenous IGF-1.",
+    ],
+  },
+  liraglutide: {
+    considerSub: "Thyroid/MEN2 history, pancreatitis, pregnancy, insulin or sulfonylurea users\u2026",
+    startHere: [
+      "Liraglutide is the original GLP-1 agonist benchmark \u2014 FDA-approved (Victoza for T2D, Saxenda for weight), daily injection, ~5-8% body weight reduction in SCALE trials.",
+      "What matters most: if you are starting fresh and maximum weight loss is the goal, weekly semaglutide (~15%) or tirzepatide (~22%) outperform liraglutide by a wide margin. Liraglutide makes sense if you are already stable on it, or specifically need daily dosing flexibility.",
+      "How to use this page: if you are on insulin or sulfonylureas, Interactions is your first stop. Safety has the thyroid/pancreatitis contraindication screen. Overview has the head-to-head comparison.",
+    ],
+  },
+  epitalon: {
+    considerSub: "Cancer history (hard stop), pregnancy, adolescents, unverified source\u2026",
+    startHere: [
+      "Epitalon is a Soviet-era synthetic tetrapeptide from pineal gland research. The evidence base is small Russian trials (Khavinson group) showing reduced mortality in elderly cohorts \u2014 real data, not independently replicated at Western RCT scale.",
+      "What matters most: the telomerase activation mechanism is the defining tension. The same pathway that could slow cellular aging is the same pathway that makes cancer cells immortal. Cancer history is a hard stop \u2014 this is not a theoretical concern to rationalize around.",
+      "How to use this page: Safety first if you have any cancer history. Evidence has the honest calibration of what the Russian trials do and don\u2019t show. Overview has the comparison to NAD+, which has more independent Western replication.",
+    ],
+  },
+  glutathione: {
+    considerSub: "Active chemotherapy/radiation, asthma (inhaled form), NAC users\u2026",
+    startHere: [
+      "Glutathione is the body\u2019s master antioxidant. Route determines everything: oral standard-form has poor bioavailability; liposomal is better; IV is clinical-grade. The evidence base mostly reflects IV administration.",
+      "What matters most: NAC is the more evidence-supported, better-bioavailable oral alternative for most people. Chemotherapy and radiation are the critical interaction \u2014 the antioxidant/pro-oxidant conflict requires oncology guidance before any glutathione supplementation during active cancer treatment.",
+      "How to use this page: if you are on chemotherapy or radiation, Interactions first \u2014 full stop. Evidence explains why the route matters and what IV vs. oral evidence actually shows. Overview has the comparison to NAC and ALA.",
+    ],
+  },
+  "ll-37": {
+    considerSub: "Autoimmune conditions (hard stop), cancer history, immunosuppressant users\u2026",
+    startHere: [
+      "LL-37 is a human host-defense peptide (cathelicidin) with extraordinary in vitro antimicrobial and immunomodulatory data \u2014 and essentially zero human RCTs for enhancement use in healthy adults.",
+      "What matters most: the dual-edge immunology is not a nuance. LL-37 is elevated in psoriatic lesions and causally drives the pathology \u2014 it is an autoimmune trigger, not a bystander. Any autoimmune condition is a mechanism-based hard stop, not a general precaution.",
+      "How to use this page: Safety first if you have any autoimmune condition or cancer history. Evidence is honest about the in vitro vs. human gap. Overview explains why thymosin alpha-1 is a substantially safer immune support option for most people.",
     ],
   },
 };

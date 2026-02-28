@@ -175,6 +175,21 @@ function isIgf1Family(entity: EntityLike): boolean {
   return s === "igf-1";
 }
 
+function isEpitalonFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "epitalon";
+}
+
+function isGlutathioneFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "glutathione";
+}
+
+function isLl37Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "ll-37";
+}
+
 const SUPPORT_MELANOCORTIN: SupportPack = {
   id: "support_melanocortin_v1",
   title: "Support layer: using a melanocortin compound responsibly",
@@ -324,6 +339,70 @@ const SUPPORT_OXYTOCIN: SupportPack = {
   ],
 };
 
+const SUPPORT_EPITALON: SupportPack = {
+  id: "support_epitalon_longevity_v1",
+  title: "Support layer: using a longevity peptide with realistic expectations",
+  subtitle:
+    "Cancer screening and source quality are the two gates that actually matter before starting epitalon.",
+  bullets: [
+    "Cancer history screen first — the telomerase activation mechanism is a real cancer promotion concern; any personal cancer history is a hard stop",
+    "Source quality: no pharmaceutical-grade epitalon exists commercially; third-party CoA for purity, sterility, and identity is the minimum before injection",
+    "Expectation calibration: the longevity claims are years-scale, not weeks — sleep quality improvement is the only near-term effect most people can assess",
+    "Cycle rather than continuous use: the Russian trial protocols used discrete courses (typically 10-day), not continuous daily administration; this convention reflects appropriate caution",
+    "Cancer screening baseline: age-appropriate screening (PSA, breast, colorectal by age) before starting is reasonable given the telomerase mechanism",
+    "Sleep monitoring: if epitalon is producing any effect you can assess short-term, it is most likely through the pineal/melatonin pathway — deeper sleep and vivid dreams are the most reported signal",
+  ],
+  redFlags: [
+    "Any personal cancer history — do not use epitalon; the telomerase mechanism applies broadly",
+    "New, changing, or rapidly darkening moles or tissue changes during use — stop and seek dermatology/oncology evaluation",
+    "Pregnant, breastfeeding, or adolescent — stop immediately; developmental implications of telomerase activation are unknown",
+    "Product without verifiable third-party CoA — do not inject; no pharmaceutical-grade standard exists",
+  ],
+};
+
+const SUPPORT_GLUTATHIONE: SupportPack = {
+  id: "support_glutathione_antioxidant_v1",
+  title: "Support layer: getting honest value from glutathione supplementation",
+  subtitle:
+    "Route determines everything — match your expectations to the delivery method you're actually using.",
+  bullets: [
+    "Route determines bioavailability: standard oral glutathione has poor bioavailability; liposomal is meaningfully better; IV delivers real systemic levels — know which you're using and calibrate expectations accordingly",
+    "NAC comparison: N-acetylcysteine has substantially better oral bioavailability than standard glutathione and works via the cell's own synthetic machinery — consider whether NAC achieves your goal more effectively",
+    "Asthma screen: inhaled/nebulized glutathione is contraindicated in asthma and reactive airway disease; bronchospasm is a documented adverse effect",
+    "Cancer treatment: do not use glutathione during active chemotherapy or radiation without oncologist guidance — the antioxidant/pro-oxidant interaction is treatment-regimen specific",
+    "Skin brightening expectation: the melanin inhibition mechanism is real in vitro; consistent, significant skin tone change from any route of supplementation is not reliably achieved in clinical studies",
+    "Evaluation window: oral supplementation requires 8-12 weeks minimum before assessing any effect; short-term assessment is not meaningful",
+  ],
+  redFlags: [
+    "Asthma or reactive airway disease using inhaled/nebulized glutathione — stop; bronchospasm is a documented risk",
+    "Active cancer treatment — discuss all glutathione use with your oncologist; the antioxidant/chemotherapy interaction depends on your specific regimen",
+    "Severe allergic reaction (urticaria, facial swelling, difficulty breathing) — stop and seek emergency evaluation",
+    "Chest tightness or difficulty breathing during IV infusion — stop infusion immediately",
+  ],
+};
+
+const SUPPORT_LL37: SupportPack = {
+  id: "support_ll37_antimicrobial_v1",
+  title: "Support layer: using an immune-active antimicrobial peptide responsibly",
+  subtitle:
+    "Autoimmune screen first — this is a mechanism-based contraindication, not a general precaution.",
+  bullets: [
+    "Autoimmune disease screen — the most important step: psoriasis, SLE, RA, Hashimoto's, IBD, and similar conditions are contraindications; LL-37 is mechanistically pathogenic in these conditions, not a general immune concern",
+    "Cancer history screen: any personal cancer history requires explicit oncology consultation; LL-37 promotes growth in some cancer types via FPRL1 signaling",
+    "Source quality is critical: LL-37 synthesis is technically challenging; impure preparations cause more significant injection site reactions; third-party CoA is the minimum",
+    "Immunosuppressive medication screen: LL-37's immune activation mechanism directly conflicts with pharmacological immunosuppression — transplant recipients and autoimmune patients on immunosuppressants should not use LL-37",
+    "Injection site preparation: LL-37 can cause more significant local reactions than many peptides due to its membrane-disrupting mechanism — proper dilution, sterile technique, and site rotation matter more here",
+    "Expectation calibration: there are essentially no human RCTs for the community use cases (infection resistance, immune optimization); the evidence base is animal models and in vitro data",
+  ],
+  redFlags: [
+    "Any autoimmune diagnosis (psoriasis, SLE, RA, Hashimoto's, IBD) — stop immediately; LL-37 is mechanistically pathogenic in these conditions",
+    "On immunosuppressive medications — stop and consult your prescribing physician",
+    "Severe injection site reaction (significant necrosis, worsening, signs of infection) — stop and seek medical evaluation",
+    "Fever or severe systemic inflammatory symptoms following injection — stop and seek medical evaluation",
+    "Cancer history — stop and consult oncology before proceeding",
+  ],
+};
+
 const SUPPORT_IGF1: SupportPack = {
   id: "support_igf1_v1",
   title: "Support layer: managing IGF-1's acute risks before and during use",
@@ -361,5 +440,8 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isMetabolicPeptideFamily(entity)) return SUPPORT_METABOLIC_PEPTIDE;
   if (isOxytocinFamily(entity)) return SUPPORT_OXYTOCIN;
   if (isIgf1Family(entity)) return SUPPORT_IGF1;
+  if (isEpitalonFamily(entity)) return SUPPORT_EPITALON;
+  if (isGlutathioneFamily(entity)) return SUPPORT_GLUTATHIONE;
+  if (isLl37Family(entity)) return SUPPORT_LL37;
   return null;
 }
