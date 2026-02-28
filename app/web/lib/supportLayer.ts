@@ -629,6 +629,82 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isAbaloparatideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "abaloparatide";
+}
+
+function isAcetylHexapeptide8Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "acetyl-hexapeptide-8";
+}
+
+function isAdipotideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "adipotide";
+}
+
+function isAfamelanotideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "afamelanotide";
+}
+
+const SUPPORT_ABALOPARATIDE: SupportPack = {
+  id: "abaloparatide",
+  title: "Abaloparatide builds bone — but requires careful monitoring and has a cumulative 2-year lifetime use limit",
+  subtitle: "FDA-approved PTHrP analogue for osteoporosis; osteosarcoma black box; sequential antiresorptive therapy required",
+  bullets: [
+    "FDA-approved for postmenopausal women with osteoporosis at high fracture risk — reduces vertebral and non-vertebral fractures (ACTIVE trial, NEJM 2016)",
+    "PTH1R RG-conformation preference may give more anabolic bone effect vs. teriparatide — but clinical superiority is not established",
+    "Osteosarcoma black box: cumulative lifetime use limit of 2 years across all PTH/PTHrP analogues (abaloparatide + teriparatide combined)",
+    "Hypercalcemia risk: monitor calcium and urine calcium; avoid concurrent calcium supplements + active vitamin D within the post-injection window",
+    "Must be followed by an antiresorptive agent (bisphosphonate, denosumab) — bone gains are lost rapidly without transition therapy",
+    "No community or enhancement use case — anabolic bone agents are for documented osteoporosis under endocrinology or rheumatology supervision",
+  ],
+};
+
+const SUPPORT_ACETYL_HEXAPEPTIDE_8: SupportPack = {
+  id: "acetyl-hexapeptide-8",
+  title: "Acetyl hexapeptide-8 (Argireline) is a cosmetic ingredient — not a drug, not Botox",
+  subtitle: "Topical SNARE-inhibiting peptide; evidence is limited cosmetic studies; no injectable use",
+  bullets: [
+    "Topical cosmetic ingredient — not FDA-approved as a drug; evidence base is small, industry-funded cosmetic studies",
+    "Proposed mechanism (SNARE/SNAP-25 inhibition) is pharmacologically plausible but unproven to occur in meaningful amounts through skin",
+    "At ~889 Da molecular weight, transdermal absorption sufficient to reach neuromuscular junctions is highly unlikely without penetration enhancers",
+    "The 'topical Botox' framing is pharmacologically misleading — Botox is injected directly at NMJ; topical AH8 does not achieve equivalent concentrations",
+    "Topical formulations are generally well-tolerated with low irritation risk — safe as a skincare ingredient in that context",
+    "No established injectable formulation or injection use case — community injection protocols for AH8 have no evidence base",
+  ],
+};
+
+const SUPPORT_ADIPOTIDE: SupportPack = {
+  id: "adipotide",
+  title: "Adipotide showed striking fat loss in primates — but also serious kidney toxicity, and no human trials exist",
+  subtitle: "Research compound only; pro-apoptotic adipose targeting; renal toxicity signal from the only primate study",
+  bullets: [
+    "Single primate study (Barnhart 2011, Sci Transl Med) showed ~11% body weight loss in obese Rhesus monkeys — but significant nephrotoxicity accompanied this effect",
+    "Zero completed human clinical trials — no established safe dose, administration schedule, or human pharmacokinetic data",
+    "The pro-apoptotic KLAK sequence targets prohibitin on adipose vasculature — but off-target vascular apoptosis (including in kidney) is a real mechanism-based risk",
+    "Community-sourced adipotide has no pharmaceutical-grade quality control — purity, sterility, and concentration are unverified",
+    "The nephrotoxicity signal in the primate study is not a theoretical concern — it was observed at the same doses that produced weight loss",
+    "Do not combine with other nephrotoxic drugs (NSAIDs, aminoglycosides, contrast agents) given the established renal risk signal",
+  ],
+};
+
+const SUPPORT_AFAMELANOTIDE: SupportPack = {
+  id: "afamelanotide",
+  title: "Afamelanotide (Scenesse) is FDA-approved for a rare photodermatosis — not for general tanning",
+  subtitle: "MC1R agonist implant for erythropoietic protoporphyria; melanoma surveillance required; not indicated for aesthetic use",
+  bullets: [
+    "FDA-approved (2019) for photoprotection in adults with erythropoietic protoporphyria (EPP) — a rare, severely disabling photodermatosis",
+    "Mechanism: potent MC1R agonist → eumelanin synthesis → photoprotection; significantly increases time in sunlight without phototoxic pain in EPP patients",
+    "Administered as a subcutaneous implant (16 mg every 60 days) — not an injectable peptide in the community sense; requires medical implantation",
+    "Melanoma safety: MC1R is a known melanoma risk-associated receptor; REMS program requires dermatology surveillance; skin examinations every 6 months",
+    "Not approved or indicated for general tanning — the community/melanotan space uses different analogues (MT-I, MT-II) with their own risk profile",
+    "Nausea and skin darkening are common after implant; post-implant monitoring for implant site and systemic effects is part of the prescribing protocol",
+  ],
+};
+
 function isExenatideFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "exenatide";
@@ -1174,6 +1250,10 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isDesmopressinFamily(entity)) return SUPPORT_DESMOPRESSIN;
   if (isCalcitoninFamily(entity)) return SUPPORT_CALCITONIN;
   if (isGlucagonFamily(entity)) return SUPPORT_GLUCAGON;
+  if (isAbaloparatideFamily(entity)) return SUPPORT_ABALOPARATIDE;
+  if (isAcetylHexapeptide8Family(entity)) return SUPPORT_ACETYL_HEXAPEPTIDE_8;
+  if (isAdipotideFamily(entity)) return SUPPORT_ADIPOTIDE;
+  if (isAfamelanotideFamily(entity)) return SUPPORT_AFAMELANOTIDE;
   if (isExenatideFamily(entity)) return SUPPORT_EXENATIDE;
   if (isSubstancePFamily(entity)) return SUPPORT_SUBSTANCE_P;
   if (isOrexinAFamily(entity)) return SUPPORT_OREXIN_A;

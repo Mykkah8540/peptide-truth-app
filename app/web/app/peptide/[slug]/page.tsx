@@ -238,8 +238,24 @@ import NeuropeptideYOverviewPanel from "@/components/NeuropeptideYOverviewPanel"
 import NeuropeptideYEvidencePanel from "@/components/NeuropeptideYEvidencePanel";
 import NeuropeptideYSafetyPanel from "@/components/NeuropeptideYSafetyPanel";
 import NeuropeptideYInteractionsPanel from "@/components/NeuropeptideYInteractionsPanel";
+import AbaloparatideOverviewPanel from "@/components/AbaloparatideOverviewPanel";
+import AbaloparatideEvidencePanel from "@/components/AbaloparatideEvidencePanel";
+import AbaloparatideSafetyPanel from "@/components/AbaloparatideSafetyPanel";
+import AbaloparatideInteractionsPanel from "@/components/AbaloparatideInteractionsPanel";
+import AcetylHexapeptide8OverviewPanel from "@/components/AcetylHexapeptide8OverviewPanel";
+import AcetylHexapeptide8EvidencePanel from "@/components/AcetylHexapeptide8EvidencePanel";
+import AcetylHexapeptide8SafetyPanel from "@/components/AcetylHexapeptide8SafetyPanel";
+import AcetylHexapeptide8InteractionsPanel from "@/components/AcetylHexapeptide8InteractionsPanel";
+import AdipotideOverviewPanel from "@/components/AdipotideOverviewPanel";
+import AdipotideEvidencePanel from "@/components/AdipotideEvidencePanel";
+import AdipotideSafetyPanel from "@/components/AdipotideSafetyPanel";
+import AdipotideInteractionsPanel from "@/components/AdipotideInteractionsPanel";
+import AfamelanotideOverviewPanel from "@/components/AfamelanotideOverviewPanel";
+import AfamelanotideEvidencePanel from "@/components/AfamelanotideEvidencePanel";
+import AfamelanotideSafetyPanel from "@/components/AfamelanotideSafetyPanel";
+import AfamelanotideInteractionsPanel from "@/components/AfamelanotideInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -584,6 +600,30 @@ const PANEL_MAP: Record<string, {
     Evidence: NeuropeptideYEvidencePanel,
     Safety: NeuropeptideYSafetyPanel,
     Interactions: NeuropeptideYInteractionsPanel,
+  },
+  abaloparatide: {
+    Overview: AbaloparatideOverviewPanel,
+    Evidence: AbaloparatideEvidencePanel,
+    Safety: AbaloparatideSafetyPanel,
+    Interactions: AbaloparatideInteractionsPanel,
+  },
+  "acetyl-hexapeptide-8": {
+    Overview: AcetylHexapeptide8OverviewPanel,
+    Evidence: AcetylHexapeptide8EvidencePanel,
+    Safety: AcetylHexapeptide8SafetyPanel,
+    Interactions: AcetylHexapeptide8InteractionsPanel,
+  },
+  adipotide: {
+    Overview: AdipotideOverviewPanel,
+    Evidence: AdipotideEvidencePanel,
+    Safety: AdipotideSafetyPanel,
+    Interactions: AdipotideInteractionsPanel,
+  },
+  afamelanotide: {
+    Overview: AfamelanotideOverviewPanel,
+    Evidence: AfamelanotideEvidencePanel,
+    Safety: AfamelanotideSafetyPanel,
+    Interactions: AfamelanotideInteractionsPanel,
   },
 };
 
@@ -1038,6 +1078,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Neuropeptide Y (NPY) is one of the most abundant neuropeptides in the brain \u2014 a 36-amino acid peptide acting on Y1\u2013Y5 receptors to potently stimulate appetite, reduce energy expenditure, promote fat storage, and modulate stress and anxiety responses.",
       "What matters most: NPY is a research target (Y receptor antagonists for obesity are in development) rather than a therapeutic agent itself. No approved exogenous NPY formulations exist for any indication.",
       "How to use this page: Evidence covers NPY's mechanistic role in appetite and metabolism. Safety explains the absence of any established use case for exogenous administration.",
+    ],
+  },
+  abaloparatide: {
+    considerSub: "Osteoporosis, PTHrP analogue, PTH1R, fracture risk, vs teriparatide, sequential therapy\u2026",
+    startHere: [
+      "Abaloparatide (Tymlos) is a synthetic PTHrP analogue FDA-approved for osteoporosis in postmenopausal women at high fracture risk. It reduces vertebral and non-vertebral fractures via anabolic PTH1R activation. Cumulative lifetime limit: 2 years across all PTH/PTHrP analogues.",
+      "What matters most: the osteosarcoma black box warning and hypercalcemia monitoring are real constraints. Sequential antiresorptive therapy after the anabolic course is required to maintain bone gains.",
+      "How to use this page: Evidence covers the ACTIVE trial fracture data. Safety covers the osteosarcoma limit and calcium monitoring requirements.",
+    ],
+  },
+  "acetyl-hexapeptide-8": {
+    considerSub: "Argireline, topical cosmetic peptide, SNARE mechanism, fine lines, vs Botox\u2026",
+    startHere: [
+      "Acetyl hexapeptide-8 (Argireline) is a cosmetic ingredient sold in skincare products. It is proposed to reduce fine lines by inhibiting SNARE complex assembly. It is not a drug, not FDA-approved for any indication, and not equivalent to Botox.",
+      "What matters most: the evidence is small, industry-funded cosmetic studies. Transdermal absorption sufficient to reach neuromuscular junctions is pharmacologically implausible for a peptide of this size.",
+      "How to use this page: Evidence calibrates the cosmetic study data. Safety addresses injection misconceptions and the cosmetic-only appropriate use context.",
+    ],
+  },
+  adipotide: {
+    considerSub: "FTPP, prohibitin targeting, primate fat loss study, renal toxicity, no human trials\u2026",
+    startHere: [
+      "Adipotide (FTPP) is a research compound that selectively kills adipose vasculature via prohibitin-targeted pro-apoptotic delivery. A 2011 primate study showed striking weight loss \u2014 but also significant kidney toxicity. No human clinical trials have been completed.",
+      "What matters most: the renal toxicity observed in the only primate efficacy study is a serious barrier. Zero human pharmacokinetic or safety data exist.",
+      "How to use this page: Safety covers the nephrotoxicity signal in detail. Evidence calibrates what the primate study actually shows vs. what is extrapolated.",
+    ],
+  },
+  afamelanotide: {
+    considerSub: "Scenesse, EPP, MC1R agonist, melanin, photoprotection, melanoma surveillance\u2026",
+    startHere: [
+      "Afamelanotide (Scenesse) is an FDA-approved MC1R agonist administered as a subcutaneous implant for erythropoietic protoporphyria (EPP) \u2014 a rare, severely disabling photodermatosis. It is not approved for general tanning.",
+      "What matters most: this is a REMS-program drug requiring specialist prescribing and mandatory dermatology melanoma surveillance every 6 months. It is not a peptide for community or aesthetic use.",
+      "How to use this page: Evidence covers the EPP RCT data. Safety covers the melanoma surveillance requirement and the skin darkening effects.",
     ],
   },
 };
