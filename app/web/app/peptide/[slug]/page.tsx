@@ -158,8 +158,24 @@ import DSIPOverviewPanel from "@/components/DSIPOverviewPanel";
 import DSIPEvidencePanel from "@/components/DSIPEvidencePanel";
 import DSIPSafetyPanel from "@/components/DSIPSafetyPanel";
 import DSIPInteractionsPanel from "@/components/DSIPInteractionsPanel";
+import PramlintideOverviewPanel from "@/components/PramlintideOverviewPanel";
+import PramlintideEvidencePanel from "@/components/PramlintideEvidencePanel";
+import PramlintideSafetyPanel from "@/components/PramlintideSafetyPanel";
+import PramlintideInteractionsPanel from "@/components/PramlintideInteractionsPanel";
+import HCGOverviewPanel from "@/components/HCGOverviewPanel";
+import HCGEvidencePanel from "@/components/HCGEvidencePanel";
+import HCGSafetyPanel from "@/components/HCGSafetyPanel";
+import HCGInteractionsPanel from "@/components/HCGInteractionsPanel";
+import SS31OverviewPanel from "@/components/SS31OverviewPanel";
+import SS31EvidencePanel from "@/components/SS31EvidencePanel";
+import SS31SafetyPanel from "@/components/SS31SafetyPanel";
+import SS31InteractionsPanel from "@/components/SS31InteractionsPanel";
+import IGF1LR3OverviewPanel from "@/components/IGF1LR3OverviewPanel";
+import IGF1LR3EvidencePanel from "@/components/IGF1LR3EvidencePanel";
+import IGF1LR3SafetyPanel from "@/components/IGF1LR3SafetyPanel";
+import IGF1LR3InteractionsPanel from "@/components/IGF1LR3InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -384,6 +400,30 @@ const PANEL_MAP: Record<string, {
     Evidence: DSIPEvidencePanel,
     Safety: DSIPSafetyPanel,
     Interactions: DSIPInteractionsPanel,
+  },
+  pramlintide: {
+    Overview: PramlintideOverviewPanel,
+    Evidence: PramlintideEvidencePanel,
+    Safety: PramlintideSafetyPanel,
+    Interactions: PramlintideInteractionsPanel,
+  },
+  hcg: {
+    Overview: HCGOverviewPanel,
+    Evidence: HCGEvidencePanel,
+    Safety: HCGSafetyPanel,
+    Interactions: HCGInteractionsPanel,
+  },
+  "ss-31": {
+    Overview: SS31OverviewPanel,
+    Evidence: SS31EvidencePanel,
+    Safety: SS31SafetyPanel,
+    Interactions: SS31InteractionsPanel,
+  },
+  "igf-1-lr3": {
+    Overview: IGF1LR3OverviewPanel,
+    Evidence: IGF1LR3EvidencePanel,
+    Safety: IGF1LR3SafetyPanel,
+    Interactions: IGF1LR3InteractionsPanel,
   },
 };
 
@@ -678,6 +718,38 @@ const V3_HERO_CONTENT: Record<string, {
       "DSIP was isolated from rabbit sleep states in 1977. The \u2018delta sleep-inducing\u2019 name overpromises \u2014 the human sleep induction studies are mixed. The HPA axis normalization story (ACTH/cortisol modulation) has more consistent support. The opioid withdrawal evidence is the most controlled human data.",
       "What matters most: no modern RCTs exist; all evidence is from 1980s\u201390s European studies. No dedicated receptor has been identified. Opioid medications are a flag due to receptor overlap. CNS depressants (benzodiazepines, alcohol) are additive.",
       "How to use this page: Interactions first if you\u2019re on opioids or benzodiazepines. Evidence explains why the sleep claim is weaker than the name suggests and what the HPA data actually shows.",
+    ],
+  },
+  pramlintide: {
+    considerSub: "On insulin (50% dose reduction required), gastroparesis, hypoglycemia unawareness\u2026",
+    startHere: [
+      "Pramlintide (Symlin) is the only FDA-approved amylin analog \u2014 used as an adjunct to insulin in both T1D and T2D. It slows gastric emptying, suppresses post-meal glucagon, and reduces caloric intake.",
+      "What matters most: mandatory 50% reduction in rapid-acting insulin at initiation \u2014 this is in the prescribing information for a reason; the additive glucose-lowering is real and predictable.",
+      "How to use this page: if you are on insulin, Interactions is your first stop before anything else. Safety has the gastroparesis and hypoglycemia unawareness contraindication screens.",
+    ],
+  },
+  hcg: {
+    considerSub: "Hormone-sensitive cancer, OHSS risk (females), TRT users, prostate screening\u2026",
+    startHere: [
+      "hCG (human chorionic gonadotropin) is an LH mimetic \u2014 it activates the same Leydig cell receptor as LH to drive testosterone production. FDA-approved for hypogonadotropic hypogonadism and ovulation induction. Community use is primarily as a TRT adjunct for testicular preservation.",
+      "What matters most: hormone-sensitive cancer history is a hard stop \u2014 hCG drives sex steroid production that fuels androgen-sensitive and estrogen-sensitive tumors. Estradiol management (not just testosterone) is the ongoing monitoring obligation.",
+      "How to use this page: Safety first if you have any cancer history. Interactions covers the TRT combination and the aromatase inhibitor context.",
+    ],
+  },
+  "ss-31": {
+    considerSub: "Active cardiac disease, D-amino acid product verification, mitochondrial disease\u2026",
+    startHere: [
+      "SS-31 (elamipretide) is a cardiolipin-targeting tetrapeptide that stabilizes the inner mitochondrial membrane. The HARP trial (Phase 2) showed improved mitochondrial energy production in heart failure with preserved ejection fraction (HFpEF). Barth syndrome (rare genetic cardiolipin disorder) has Phase 3 evidence.",
+      "What matters most: D-amino acid verification is the quality gate \u2014 SS-31 contains D-Arg and D-Phe, which standard HPLC cannot verify; most research suppliers lack chiral LC-MS capability. Cardiac disease requires physician oversight.",
+      "How to use this page: if you have active cardiac disease, physician oversight is required before proceeding. Evidence explains what the HARP trial showed and what the gap is to healthy adult use.",
+    ],
+  },
+  "igf-1-lr3": {
+    considerSub: "Cancer history (hard stop), diabetes, insulin users, any GH peptide stack\u2026",
+    startHere: [
+      "IGF-1 LR3 is an IGFBP-resistant IGF-1 analog with a 20-30 hour half-life \u2014 engineered to evade the binding proteins that clear native IGF-1, producing sustained systemic IGF-1 receptor activation. The extended half-life is the defining feature: unlike native IGF-1 where glucose-lowering lasts 2-3 hours, LR3\u2019s effect spans the full day and overnight.",
+      "What matters most: cancer history is an absolute permanent hard stop \u2014 IGF-1R is a validated cancer treatment target. The 24-hour hypoglycemia window is the acute life-safety concern; it requires food, fast-acting glucose, and no insulin or alcohol on injection day and the next day.",
+      "How to use this page: Safety before anything else. If you have cancer history or diabetes, stop there. Overview compares LR3 to native IGF-1 and GH secretagogues \u2014 a substantially lower-risk alternative worth understanding first.",
     ],
   },
 };

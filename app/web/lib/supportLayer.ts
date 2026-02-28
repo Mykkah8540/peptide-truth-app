@@ -629,6 +629,108 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isPramlintideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "pramlintide";
+}
+
+function isHcgFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "hcg";
+}
+
+function isSS31Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "ss-31";
+}
+
+function isIgf1Lr3Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "igf-1-lr3";
+}
+
+const SUPPORT_PRAMLINTIDE: SupportPack = {
+  id: "pramlintide",
+  title: "Insulin dose adjustment is mandatory — not optional — when starting pramlintide",
+  subtitle: "FDA-approved amylin analog — key screens and protocol requirements",
+  bullets: [
+    "Insulin reduction first: if on insulin, reduce all rapid-acting insulin by 50% when starting pramlintide — this is a labeling requirement, not a suggestion; the additive glucose-lowering is pharmacologically inevitable",
+    "Gastroparesis gate: pramlintide slows gastric emptying; gastroparesis symptoms or diagnosis are a contraindication — check before starting",
+    "Hypoglycemia unawareness screen: if you cannot reliably feel low blood sugar, pramlintide + insulin is high-risk; CGM is strongly recommended and may be essential",
+    "Oral medication timing: pramlintide slows gastric emptying; take any critical oral medication (antibiotics, thyroid meds) ≥1 hour before or 2 hours after pramlintide injection",
+    "Nausea expectation: common for first 4 weeks; start at lowest dose (15 mcg) and titrate slowly — most nausea is dose and titration-rate dependent",
+    "CGM strongly advisable at initiation: post-meal glucose variability with pramlintide + insulin is hard to track without continuous data; CGM is the practical safety anchor",
+  ],
+  redFlags: [
+    "On insulin and did not reduce dose by 50% at initiation — do not proceed without this adjustment; hypoglycemia is pharmacological, not rare",
+    "Gastroparesis symptoms (bloating, nausea, early satiety) — contraindication; stop and evaluate before resuming",
+    "Hypoglycemia unawareness — does not feel low blood sugar; pramlintide + insulin without CGM is unsafe",
+    "Severe nausea/vomiting preventing fluid intake — stop pramlintide, resume when stable, restart titration from lowest dose",
+  ],
+};
+
+const SUPPORT_HCG: SupportPack = {
+  id: "hcg",
+  title: "Estradiol management is the ongoing work — not just testosterone",
+  subtitle: "LH mimetic / TRT adjunct — key monitoring requirements",
+  bullets: [
+    "Estradiol monitoring: hCG drives Leydig cell testosterone production; aromatization of that testosterone elevates estradiol — measure E2 at baseline and 4-6 weeks after starting, especially if using with exogenous testosterone",
+    "AI awareness: if estradiol rises significantly, aromatase inhibitors are commonly co-prescribed; understand the target range and do not chase low estradiol — over-suppression is as problematic as elevation",
+    "FSH limitation: hCG only stimulates Leydig cells (testosterone); Sertoli cells (sperm production) require FSH; if fertility is the goal and hCG alone is not achieving it, FSH or gonadorelin may be needed",
+    "Prostate cancer screen: hCG drives testosterone; PSA screening is indicated before starting, especially in males over 40",
+    "Hormone-sensitive cancer history: absolute hard stop; hCG stimulates sex steroid production; any hormone-sensitive cancer history requires oncology clearance",
+    "Source quality: pharmaceutical hCG (Pregnyl, Novarel) is the reference; compounded and gray-market hCG varies in activity — verify the source before using",
+  ],
+  redFlags: [
+    "Hormone-sensitive cancer (prostate, testicular, breast) — hard stop; hCG drives the steroids that fuel these cancers",
+    "Symptoms of OHSS in female users (severe abdominal pain, bloating, rapid weight gain, shortness of breath) — stop immediately and seek emergency evaluation",
+    "Estradiol significantly elevated with symptoms developing (gynecomastia, mood changes, fluid retention) without AI management — stop and assess",
+    "Prostate cancer or rising PSA without evaluation — stop and seek urological evaluation",
+  ],
+};
+
+const SUPPORT_SS31: SupportPack = {
+  id: "ss-31",
+  title: "D-amino acid verification is the quality gate that most products fail",
+  subtitle: "Cardiolipin-targeting mitochondrial peptide — HARP trial context",
+  bullets: [
+    "D-amino acid verification: SS-31 contains D-Arg and D-Phe; standard HPLC cannot distinguish D from L amino acids — require chiral LC-MS confirmation; most research peptide suppliers cannot produce this correctly",
+    "Cardiac disease context: the HARP trial evidence is in HFpEF; cardiac conditions with active medical management require cardiologist involvement before adding an investigational mitochondrial compound",
+    "Expectation calibration: the cardiolipin mechanism is unusually well-characterized for an investigational compound; the jump to healthy adult athletic enhancement is a significant extrapolation from Phase 2 cardiac and genetic disease data",
+    "No pharmaceutical-grade SS-31 outside trials: community access is through research peptide suppliers with variable quality; chiral verification is the minimum quality gate",
+    "HARP trial context: Phase 2 showed improved PCr/ATP ratio (mitochondrial energy production) in HFpEF; this is a surrogate endpoint, not a clinical outcome — interpret the evidence accordingly",
+    "Stacking with NAD+ precursors: NMN/NR and SS-31 target different aspects of mitochondrial function; they are mechanistically complementary with no known adverse interaction",
+  ],
+  redFlags: [
+    "Active cardiac disease (heart failure, recent MI, significant arrhythmia) without cardiologist oversight — do not use an investigational mitochondrial compound without physician involvement",
+    "Product without chiral LC-MS confirmation — D-amino acid verification cannot be done with standard HPLC; L-amino acid substitution produces an inactive peptide",
+    "Progressive injection site reactions worsening over multiple uses — stop and evaluate",
+    "Worsening cardiac symptoms during use — stop and seek evaluation immediately",
+  ],
+};
+
+const SUPPORT_IGF1_LR3: SupportPack = {
+  id: "igf-1-lr3",
+  title: "Extended half-life means the hypoglycemia window is 24 hours — not an hour",
+  subtitle: "IGFBP-resistant IGF-1 analog — high-risk compound requiring specific protocols",
+  bullets: [
+    "24-hour hypoglycemia window: unlike native IGF-1, LR3's 20-30 hour half-life means the glucose-lowering effect persists overnight and the next day — eat carbohydrates with every meal on injection day and the following day",
+    "Eat before injection, always: a carbohydrate-containing meal 20-30 minutes before injection; injecting fasted with IGF-1 LR3 is dangerous given the extended duration",
+    "Fast-acting glucose accessible: glucose gel, tablets, or juice within reach during the injection window and for 24 hours post-injection — not optional",
+    "Cancer history is a hard stop: IGF-1R is a validated cancer treatment target; any personal cancer history means no IGF-1 LR3, ever, under any circumstances",
+    "No insulin same day: insulin + IGF-1 LR3 produces additive, potentially severe hypoglycemia; the 24-hour LR3 half-life means this window extends through the next day",
+    "No alcohol 24h post-injection: alcohol impairs gluconeogenesis (the liver's response to falling glucose) and masks hypoglycemia symptoms; the combination significantly amplifies risk",
+    "Source quality is safety-critical: concentration errors directly determine hypoglycemia severity; a 2× concentration error doubles the hypoglycemic dose; get a third-party CoA with concentration verification",
+  ],
+  redFlags: [
+    "Any cancer history — absolute permanent hard stop; no exceptions; IGF-1R is a cancer treatment target",
+    "Confusion, impaired coordination, or loss of consciousness — emergency services immediately; do not wait for symptoms to self-resolve",
+    "Diabetes or significant insulin resistance — contraindicated; the additive hypoglycemia risk is pharmacological, not avoidable with careful dosing",
+    "Severe hypoglycemia symptoms not responding to fast-acting glucose within 15 minutes — emergency services",
+    "Product without verifiable CoA including concentration verification — do not inject; wrong concentration is a direct path to severe hypoglycemia",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
@@ -653,5 +755,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isFollistatin344Family(entity)) return SUPPORT_FOLLISTATIN_344;
   if (isHumaninFamily(entity)) return SUPPORT_HUMANIN;
   if (isDsipFamily(entity)) return SUPPORT_DSIP;
+  if (isPramlintideFamily(entity)) return SUPPORT_PRAMLINTIDE;
+  if (isHcgFamily(entity)) return SUPPORT_HCG;
+  if (isSS31Family(entity)) return SUPPORT_SS31;
+  if (isIgf1Lr3Family(entity)) return SUPPORT_IGF1_LR3;
   return null;
 }
