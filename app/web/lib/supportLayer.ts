@@ -629,6 +629,104 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isExenatideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "exenatide";
+}
+
+function isSubstancePFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "substance-p";
+}
+
+function isOrexinAFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "orexin-a";
+}
+
+function isNeuropeptideYFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "neuropeptide-y";
+}
+
+const SUPPORT_EXENATIDE: SupportPack = {
+  id: "exenatide",
+  title: "Modern weekly GLP-1 drugs produce 3-4× more weight loss — exenatide is the class's first member, not its best",
+  subtitle: "First GLP-1 receptor agonist — established safety track record; inferior weight loss vs modern options",
+  bullets: [
+    "Insulin and sulfonylurea dose reduction: if starting exenatide on insulin or sulfonylureas, dose reduction is required before initiation to prevent hypoglycemia — the same additive glucose-lowering interaction as other GLP-1 drugs",
+    "Thyroid cancer and MEN2 class contraindication: applies equally to exenatide as all GLP-1 agonists; thyroid C-cell concern is a class-wide warning",
+    "Pancreatitis history: personal history of pancreatitis is a contraindication; the association is documented for the GLP-1 class",
+    "Nausea management: Byetta (twice daily) generally has higher nausea rates than weekly formulations; start at 5 mcg twice daily and titrate to 10 mcg after 4 weeks if tolerated",
+    "Hydration: exenatide-induced nausea/vomiting can cause volume depletion and has been associated with acute kidney injury; maintain hydration and reduce dose if GI symptoms are significant",
+    "Expectation calibration: at the prescribed doses, exenatide produces ~3-5% body weight reduction — substantially less than semaglutide (~15%) or tirzepatide (~22%); if maximum weight loss is the goal, newer agents are more effective",
+  ],
+  redFlags: [
+    "Pancreatitis — severe, persistent abdominal pain radiating to the back; stop immediately and seek emergency evaluation",
+    "MEN2 or medullary thyroid cancer history — class contraindication; do not proceed",
+    "Acute kidney injury signs (significant decrease in urine output, swelling) — stop and seek medical evaluation",
+    "On insulin without dose reduction at initiation — hypoglycemia risk; reduce insulin dose before starting exenatide",
+  ],
+};
+
+const SUPPORT_SUBSTANCE_P: SupportPack = {
+  id: "substance-p",
+  title: "Substance P is a pain-promoting, pro-inflammatory mediator — its clinical value is in its antagonists, not its injection",
+  subtitle: "NK1 receptor agonist — pro-nociceptive; NK1 antagonists are the therapeutic direction",
+  bullets: [
+    "Understand the mechanism before use: Substance P activates NK1 receptors that promote pain signaling, vasodilation, and inflammatory responses; this is not a compound where exogenous administration has therapeutic benefit in healthy adults",
+    "NK1 antagonists are the therapy: aprepitant (Emend), netupitant, and other NK1 antagonists are FDA-approved for chemotherapy-induced nausea/vomiting and are being studied for depression; these work by blocking the SP/NK1 system",
+    "Injection produces pain and inflammation: subcutaneous injection of substance P would stimulate NK1 receptors at the injection site, causing local pain, vasodilation, and inflammatory cell recruitment — this is the pharmacological mechanism, not a side effect to be managed around",
+    "Fibromyalgia and chronic pain: elevated SP levels are found in fibromyalgia patients; this finding supports the investigation of NK1 antagonists for these conditions, not SP supplementation",
+    "Research context only: if this compound is being considered, it is in a research or educational context to understand pain physiology — not for therapeutic self-administration",
+  ],
+  redFlags: [
+    "Any planned subcutaneous injection of substance P — the pharmacology is pro-inflammatory and pro-nociceptive; this would cause pain and local inflammation by mechanism",
+    "Chronic pain condition where SP is elevated — this argues for NK1 antagonist therapy (physician prescription), not SP administration",
+    "On NK1 antagonist medications (aprepitant) — exogenous SP would directly oppose the therapeutic mechanism",
+  ],
+};
+
+const SUPPORT_OREXIN_A: SupportPack = {
+  id: "orexin-a",
+  title: "Subcutaneous injection does not reach the brain — intranasal is the only studied CNS delivery route for orexin-A",
+  subtitle: "Wakefulness neuropeptide — BBB penetration only via intranasal route; narcolepsy context",
+  bullets: [
+    "BBB penetration reality: orexin-A is a 33-AA peptide that does not reliably cross the blood-brain barrier after subcutaneous injection; the wakefulness-promoting studies used intranasal administration or intracerebroventricular routes; subcutaneous injection may have no CNS wakefulness effect",
+    "Narcolepsy Type 1 is the clinically rational context: narcolepsy Type 1 is caused by loss of orexin-producing neurons; orexin-A replacement via intranasal route has been studied in small trials with positive results; community self-injection subcutaneously for wakefulness enhancement has no supporting evidence",
+    "Psychiatric and arousal screen: orexin promotes arousal and can worsen anxiety states; anyone with psychosis history, bipolar disorder, or anxiety disorders should not use arousal-promoting compounds without psychiatric guidance",
+    "Orexin antagonists are the current approved drugs: suvorexant (Belsomra) and lemborexant (Dayvigo) are FDA-approved insomnia drugs that block orexin; if you are on these medications, exogenous orexin-A directly opposes the therapeutic mechanism",
+    "Expectation calibration: any peripheral injection of orexin-A expecting CNS wakefulness is based on an assumption of BBB penetration that has not been established; the mechanism requires CNS delivery",
+    "Modafinil is the practical alternative: for community wakefulness enhancement with established CNS pharmacokinetics, modafinil has an established evidence base; orexin-A injection does not",
+  ],
+  redFlags: [
+    "Psychosis or mania history — arousal-promoting compounds are contraindicated without psychiatric guidance",
+    "On suvorexant or lemborexant for sleep — exogenous orexin-A opposes the therapeutic mechanism; stop and discuss with prescribing physician",
+    "Expecting wakefulness effect from subcutaneous injection — BBB penetration is not established from this route; manage expectations accordingly",
+    "Significant cardiovascular symptoms after administration — peripheral orexin has sympathomimetic properties; stop and evaluate",
+  ],
+};
+
+const SUPPORT_NEUROPEPTIDE_Y: SupportPack = {
+  id: "neuropeptide-y",
+  title: "NPY is a potent appetite stimulator and vasoconstrictor — community injection produces effects that conflict with most therapeutic goals",
+  subtitle: "Appetite/stress neuropeptide — Y-receptor complexity; cardiovascular and appetite concerns",
+  bullets: [
+    "Understand the appetite pharmacology: NPY is one of the most potent appetite-stimulating signals known; injecting NPY peripherally activates Y1/Y5 receptors driving food intake; if appetite suppression or weight management is your goal, NPY injection is the opposite direction",
+    "Vasoconstriction is a pharmacological effect: NPY causes peripheral vasoconstriction and blood pressure elevation via Y1 receptors; anyone with hypertension, cardiovascular disease, or on antihypertensive medications should not use NPY",
+    "The stress resilience story requires CNS selectivity: the correlation between NPY levels and stress resilience/reduced PTSD is a CNS Y2 receptor-mediated effect; systemic injection does not selectively activate CNS Y2 receptors — it activates all Y receptors including appetite-stimulating and vasoconstricting subtypes",
+    "GLP-1 drug opposition: GLP-1 agonists (semaglutide, tirzepatide) suppress appetite through pathways that include reduction of NPY signaling; NPY injection would directly oppose GLP-1 drug mechanisms",
+    "No therapeutic NPY injection use case: there is no community therapeutic rationale for NPY injection given the appetite-stimulating, vasoconstricting peripheral effects and the receptor non-selectivity of full NPY at community doses",
+    "Research and education context only: if NPY is in your compound library, it is likely being considered for research education about appetite neuroscience, not for self-administration",
+  ],
+  redFlags: [
+    "Hypertension or cardiovascular disease — Y1-mediated vasoconstriction will elevate blood pressure; stop immediately",
+    "On antihypertensive medications — NPY vasoconstriction opposes antihypertensive mechanism; potential hypertensive effect",
+    "Eating disorder history or active eating disorder treatment — the potent appetite-stimulating effect is contraindicated",
+    "On GLP-1 agonists for weight management — NPY directly opposes the appetite-suppressing mechanism of these drugs",
+  ],
+};
+
 function isLeuprolideFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "leuprolide";
@@ -1076,5 +1174,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isDesmopressinFamily(entity)) return SUPPORT_DESMOPRESSIN;
   if (isCalcitoninFamily(entity)) return SUPPORT_CALCITONIN;
   if (isGlucagonFamily(entity)) return SUPPORT_GLUCAGON;
+  if (isExenatideFamily(entity)) return SUPPORT_EXENATIDE;
+  if (isSubstancePFamily(entity)) return SUPPORT_SUBSTANCE_P;
+  if (isOrexinAFamily(entity)) return SUPPORT_OREXIN_A;
+  if (isNeuropeptideYFamily(entity)) return SUPPORT_NEUROPEPTIDE_Y;
   return null;
 }

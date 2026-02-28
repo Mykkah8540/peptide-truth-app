@@ -222,8 +222,24 @@ import GlucagonOverviewPanel from "@/components/GlucagonOverviewPanel";
 import GlucagonEvidencePanel from "@/components/GlucagonEvidencePanel";
 import GlucagonSafetyPanel from "@/components/GlucagonSafetyPanel";
 import GlucagonInteractionsPanel from "@/components/GlucagonInteractionsPanel";
+import ExenatideOverviewPanel from "@/components/ExenatideOverviewPanel";
+import ExenatideEvidencePanel from "@/components/ExenatideEvidencePanel";
+import ExenatideSafetyPanel from "@/components/ExenatideSafetyPanel";
+import ExenatideInteractionsPanel from "@/components/ExenatideInteractionsPanel";
+import SubstancePOverviewPanel from "@/components/SubstancePOverviewPanel";
+import SubstancePEvidencePanel from "@/components/SubstancePEvidencePanel";
+import SubstancePSafetyPanel from "@/components/SubstancePSafetyPanel";
+import SubstancePInteractionsPanel from "@/components/SubstancePInteractionsPanel";
+import OrexinAOverviewPanel from "@/components/OrexinAOverviewPanel";
+import OrexinAEvidencePanel from "@/components/OrexinAEvidencePanel";
+import OrexinASafetyPanel from "@/components/OrexinASafetyPanel";
+import OrexinAInteractionsPanel from "@/components/OrexinAInteractionsPanel";
+import NeuropeptideYOverviewPanel from "@/components/NeuropeptideYOverviewPanel";
+import NeuropeptideYEvidencePanel from "@/components/NeuropeptideYEvidencePanel";
+import NeuropeptideYSafetyPanel from "@/components/NeuropeptideYSafetyPanel";
+import NeuropeptideYInteractionsPanel from "@/components/NeuropeptideYInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -544,6 +560,30 @@ const PANEL_MAP: Record<string, {
     Evidence: GlucagonEvidencePanel,
     Safety: GlucagonSafetyPanel,
     Interactions: GlucagonInteractionsPanel,
+  },
+  exenatide: {
+    Overview: ExenatideOverviewPanel,
+    Evidence: ExenatideEvidencePanel,
+    Safety: ExenatideSafetyPanel,
+    Interactions: ExenatideInteractionsPanel,
+  },
+  "substance-p": {
+    Overview: SubstancePOverviewPanel,
+    Evidence: SubstancePEvidencePanel,
+    Safety: SubstancePSafetyPanel,
+    Interactions: SubstancePInteractionsPanel,
+  },
+  "orexin-a": {
+    Overview: OrexinAOverviewPanel,
+    Evidence: OrexinAEvidencePanel,
+    Safety: OrexinASafetyPanel,
+    Interactions: OrexinAInteractionsPanel,
+  },
+  "neuropeptide-y": {
+    Overview: NeuropeptideYOverviewPanel,
+    Evidence: NeuropeptideYEvidencePanel,
+    Safety: NeuropeptideYSafetyPanel,
+    Interactions: NeuropeptideYInteractionsPanel,
   },
 };
 
@@ -966,6 +1006,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Glucagon is the counter-regulatory hormone to insulin \u2014 it drives hepatic glucose output via glycogenolysis and gluconeogenesis. FDA-approved for severe hypoglycemia rescue (GlucaGen, Gvoke, Baqsimi). Every insulin user should have a rescue kit accessible at all times.",
       "What matters most: glucagon's primary clinical importance is as a rescue medication for severe hypoglycemia. Its community relevance is largely educational \u2014 understanding why GLP-1 drugs work (they suppress glucagon) and why insulin users need the rescue kit.",
       "How to use this page: Overview explains the GLP-1/glucagon axis connection. Safety covers why the rescue kit must be available and the pheochromocytoma contraindication.",
+    ],
+  },
+  exenatide: {
+    considerSub: "GLP-1 receptor agonist (first approved), weight loss, T2D, Byetta vs Ozempic comparison\u2026",
+    startHere: [
+      "Exenatide was the first GLP-1 receptor agonist approved for type 2 diabetes (Byetta, 2005). It mimics GLP-1 to stimulate insulin secretion, suppress glucagon, slow gastric emptying, and reduce appetite. Bydureon (weekly exenatide) extended dosing convenience.",
+      "What matters most: exenatide is largely superseded by once-weekly semaglutide for weight and CV outcomes \u2014 but understanding exenatide explains the foundational GLP-1 mechanism that all newer agents build on.",
+      "How to use this page: Evidence compares exenatide to modern GLP-1 agents. Safety covers the pancreatitis signal and thyroid C-cell concerns shared across GLP-1 drug class.",
+    ],
+  },
+  "substance-p": {
+    considerSub: "Pain signaling, neuroinflammation, NK1 receptor, research context, no established community use\u2026",
+    startHere: [
+      "Substance P is an 11-amino acid neuropeptide that acts as a key neurotransmitter and neuromodulator in pain signaling, neuroinflammation, and the stress response. It acts primarily on NK1 (neurokinin-1) receptors in the central and peripheral nervous system.",
+      "What matters most: substance P is a research and pharmacology reference compound \u2014 it has no established therapeutic application as an exogenous injectable. NK1 receptor antagonists (aprepitant) that block substance P signaling are used clinically.",
+      "How to use this page: Evidence covers what is known from research; Safety explains why exogenous administration is not a clinically or community-endorsed practice.",
+    ],
+  },
+  "orexin-a": {
+    considerSub: "Wakefulness, narcolepsy mechanism, orexin system, no established community use\u2026",
+    startHere: [
+      "Orexin-A (hypocretin-1) is a 33-amino acid neuropeptide produced in the lateral hypothalamus that promotes wakefulness, regulates appetite, and modulates reward pathways via OX1R and OX2R receptors. Loss of orexin neurons causes narcolepsy with cataplexy.",
+      "What matters most: orexin-A itself has no approved therapeutic application. Suvorexant and lemborexant are OX2R antagonists approved for insomnia \u2014 blocking, not agonizing, orexin. Intranasal orexin research for narcolepsy exists but is not clinical-grade.",
+      "How to use this page: Evidence covers the research landscape. Safety explains why community administration lacks any established safety profile.",
+    ],
+  },
+  "neuropeptide-y": {
+    considerSub: "Appetite regulation, NPY system, sympathetic nervous system, research context\u2026",
+    startHere: [
+      "Neuropeptide Y (NPY) is one of the most abundant neuropeptides in the brain \u2014 a 36-amino acid peptide acting on Y1\u2013Y5 receptors to potently stimulate appetite, reduce energy expenditure, promote fat storage, and modulate stress and anxiety responses.",
+      "What matters most: NPY is a research target (Y receptor antagonists for obesity are in development) rather than a therapeutic agent itself. No approved exogenous NPY formulations exist for any indication.",
+      "How to use this page: Evidence covers NPY's mechanistic role in appetite and metabolism. Safety explains the absence of any established use case for exogenous administration.",
     ],
   },
 };
