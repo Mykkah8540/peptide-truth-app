@@ -74,8 +74,20 @@ import SemaxOverviewPanel from "@/components/SemaxOverviewPanel";
 import SemaxEvidencePanel from "@/components/SemaxEvidencePanel";
 import SemaxSafetyPanel from "@/components/SemaxSafetyPanel";
 import SemaxInteractionsPanel from "@/components/SemaxInteractionsPanel";
+import ThymosinA1OverviewPanel from "@/components/ThymosinA1OverviewPanel";
+import ThymosinA1EvidencePanel from "@/components/ThymosinA1EvidencePanel";
+import ThymosinA1SafetyPanel from "@/components/ThymosinA1SafetyPanel";
+import ThymosinA1InteractionsPanel from "@/components/ThymosinA1InteractionsPanel";
+import GhkCuOverviewPanel from "@/components/GhkCuOverviewPanel";
+import GhkCuEvidencePanel from "@/components/GhkCuEvidencePanel";
+import GhkCuSafetyPanel from "@/components/GhkCuSafetyPanel";
+import GhkCuInteractionsPanel from "@/components/GhkCuInteractionsPanel";
+import Aod9604OverviewPanel from "@/components/Aod9604OverviewPanel";
+import Aod9604EvidencePanel from "@/components/Aod9604EvidencePanel";
+import Aod9604SafetyPanel from "@/components/Aod9604SafetyPanel";
+import Aod9604InteractionsPanel from "@/components/Aod9604InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -174,6 +186,24 @@ const PANEL_MAP: Record<string, {
     Evidence: SemaxEvidencePanel,
     Safety: SemaxSafetyPanel,
     Interactions: SemaxInteractionsPanel,
+  },
+  "thymosin-alpha-1": {
+    Overview: ThymosinA1OverviewPanel,
+    Evidence: ThymosinA1EvidencePanel,
+    Safety: ThymosinA1SafetyPanel,
+    Interactions: ThymosinA1InteractionsPanel,
+  },
+  "ghk-cu": {
+    Overview: GhkCuOverviewPanel,
+    Evidence: GhkCuEvidencePanel,
+    Safety: GhkCuSafetyPanel,
+    Interactions: GhkCuInteractionsPanel,
+  },
+  "aod-9604": {
+    Overview: Aod9604OverviewPanel,
+    Evidence: Aod9604EvidencePanel,
+    Safety: Aod9604SafetyPanel,
+    Interactions: Aod9604InteractionsPanel,
   },
 };
 
@@ -300,6 +330,30 @@ const V3_HERO_CONTENT: Record<string, {
       "Semax is a Russian ACTH-fragment peptide used for cognitive enhancement and neuroprotection \u2014 BDNF upregulation + dopaminergic/serotonergic activation; more stimulatory than Selank.",
       "What matters most: psychiatric medication interactions (MAOIs, antipsychotics, stimulants) are flags; anxiety-prone individuals risk worsening \u2014 Selank co-use is the standard buffer.",
       "How to use this page: screen psychiatric medications first (Interactions), then anxiety baseline; the Evidence page frames the Russian clinical evidence context honestly.",
+    ],
+  },
+  "thymosin-alpha-1": {
+    considerSub: "Autoimmune disease, immunosuppressants, organ transplant, active infection\u2026",
+    startHere: [
+      "Thymosin Alpha-1 (Zadaxin / Thymalfasin) is approved in ~35 countries for chronic hepatitis B, hepatitis C, and oncology-adjunct contexts \u2014 not US FDA-approved, widely discussed for immune support.",
+      "What matters most: autoimmune disease and immunosuppressive therapy are direct pharmacological conflicts \u2014 immune activation in the wrong direction. Check these first.",
+      "How to use this page: if you have any autoimmune diagnosis or are on immunosuppressive medications, Safety and Interactions are your mandatory first stops.",
+    ],
+  },
+  "ghk-cu": {
+    considerSub: "Copper sensitivity, Wilson\u2019s disease, injectable use, prescription retinoids\u2026",
+    startHere: [
+      "GHK-Cu (Copper Tripeptide-1) is primarily a topical cosmetic ingredient \u2014 widely used in skincare, not an FDA-approved drug. Topical risk is genuinely low; injectable GHK-Cu is a different profile entirely.",
+      "What matters most: the topical vs injectable distinction \u2014 all the cosmetic safety data does not apply to injectable use. Copper sensitivity is the one flag that applies to both.",
+      "How to use this page: if you\u2019re evaluating topical GHK-Cu products, Overview and Safety have what you need. If you\u2019re considering injectable use, treat it as a research peptide and read the Interactions page carefully.",
+    ],
+  },
+  "aod-9604": {
+    considerSub: "Diabetes, glucose-lowering medications, cardiovascular disease, adolescents\u2026",
+    startHere: [
+      "AOD-9604 is a synthetic fragment of hGH (amino acids 176\u2013191) designed to isolate fat-metabolizing effects without IGF-1 or growth-axis stimulation. It completed Phase II human trials \u2014 which did not show significant weight loss.",
+      "What matters most: the Phase II trial did not get FDA approval, so the real-world expectations ceiling is modest. Diabetes medications are the primary interaction flag due to the metabolic mechanism.",
+      "How to use this page: if you have diabetes or are on glucose-lowering medications, Interactions is your first stop. Evidence is worth reading for the Phase II context before forming expectations.",
     ],
   },
 };
