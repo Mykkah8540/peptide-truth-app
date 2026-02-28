@@ -190,8 +190,24 @@ import Cjc1295DacOverviewPanel from "@/components/Cjc1295DacOverviewPanel";
 import Cjc1295DacEvidencePanel from "@/components/Cjc1295DacEvidencePanel";
 import Cjc1295DacSafetyPanel from "@/components/Cjc1295DacSafetyPanel";
 import Cjc1295DacInteractionsPanel from "@/components/Cjc1295DacInteractionsPanel";
+import VasopressinOverviewPanel from "@/components/VasopressinOverviewPanel";
+import VasopressinEvidencePanel from "@/components/VasopressinEvidencePanel";
+import VasopressinSafetyPanel from "@/components/VasopressinSafetyPanel";
+import VasopressinInteractionsPanel from "@/components/VasopressinInteractionsPanel";
+import TriptorelinOverviewPanel from "@/components/TriptorelinOverviewPanel";
+import TriptorelinEvidencePanel from "@/components/TriptorelinEvidencePanel";
+import TriptorelinSafetyPanel from "@/components/TriptorelinSafetyPanel";
+import TriptorelinInteractionsPanel from "@/components/TriptorelinInteractionsPanel";
+import KpvOverviewPanel from "@/components/KpvOverviewPanel";
+import KpvEvidencePanel from "@/components/KpvEvidencePanel";
+import KpvSafetyPanel from "@/components/KpvSafetyPanel";
+import KpvInteractionsPanel from "@/components/KpvInteractionsPanel";
+import AnpOverviewPanel from "@/components/AnpOverviewPanel";
+import AnpEvidencePanel from "@/components/AnpEvidencePanel";
+import AnpSafetyPanel from "@/components/AnpSafetyPanel";
+import AnpInteractionsPanel from "@/components/AnpInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -464,6 +480,30 @@ const PANEL_MAP: Record<string, {
     Evidence: Cjc1295DacEvidencePanel,
     Safety: Cjc1295DacSafetyPanel,
     Interactions: Cjc1295DacInteractionsPanel,
+  },
+  vasopressin: {
+    Overview: VasopressinOverviewPanel,
+    Evidence: VasopressinEvidencePanel,
+    Safety: VasopressinSafetyPanel,
+    Interactions: VasopressinInteractionsPanel,
+  },
+  triptorelin: {
+    Overview: TriptorelinOverviewPanel,
+    Evidence: TriptorelinEvidencePanel,
+    Safety: TriptorelinSafetyPanel,
+    Interactions: TriptorelinInteractionsPanel,
+  },
+  kpv: {
+    Overview: KpvOverviewPanel,
+    Evidence: KpvEvidencePanel,
+    Safety: KpvSafetyPanel,
+    Interactions: KpvInteractionsPanel,
+  },
+  "atrial-natriuretic-peptide": {
+    Overview: AnpOverviewPanel,
+    Evidence: AnpEvidencePanel,
+    Safety: AnpSafetyPanel,
+    Interactions: AnpInteractionsPanel,
   },
 };
 
@@ -822,6 +862,38 @@ const V3_HERO_CONTENT: Record<string, {
       "CJC-1295 DAC contains the Drug Affinity Complex modification that enables albumin binding and an ~8-day half-life. This is fundamentally different from CJC-1295 without DAC \u2014 not just more convenient dosing. Steady-state accumulation takes 5-6 weeks; you cannot rapidly reduce exposure after a problematic dose.",
       "What matters most: the 8-day half-life means continuous, not pulsatile, IGF-1 elevation \u2014 the same GH-axis cancer gate as no-DAC CJC-1295, but amplified by persistent exposure. Glucose monitoring is more important here than with daily short-acting GH compounds.",
       "How to use this page: if you have cancer history, Safety first \u2014 stop there. Overview explains the DAC vs no-DAC pharmacokinetic distinction. Interactions covers glucose-lowering medications and the ipamorelin+DAC stack considerations.",
+    ],
+  },
+  vasopressin: {
+    considerSub: "Hypertension, cardiovascular disease, SSRIs, pregnancy, on antihypertensives\u2026",
+    startHere: [
+      "Vasopressin (ADH) is an endogenous 9-AA peptide with three receptor subtypes: V1a (vasoconstriction), V1b (HPA/ACTH), and V2 (renal water retention). FDA-approved uses include diabetes insipidus, vasodilatory shock, and bleeding varices. Community interest targets V1b memory and cognitive effects.",
+      "What matters most: vasopressin is NOT interchangeable with oxytocin \u2014 the vasoconstriction from V1a activation is pharmacologically real and creates cardiovascular risk that oxytocin does not. Hypertension and cardiovascular disease require physician clearance.",
+      "How to use this page: Safety first if you have hypertension or cardiovascular history. Interactions covers SSRIs and NSAIDs (additive hyponatremia). Evidence frames the memory/cognition claim honestly.",
+    ],
+  },
+  triptorelin: {
+    considerSub: "Prostate cancer, precocious puberty, endometriosis, depot duration, PCT confusion\u2026",
+    startHere: [
+      "Triptorelin (Trelstar) is a GnRH agonist \u2014 continuous GnRH receptor stimulation causes receptor downregulation and chemical castration (testosterone/estrogen suppression). This is the pharmacological OPPOSITE of gonadorelin's pulsatile axis stimulation. FDA-approved for prostate cancer, precocious puberty.",
+      "What matters most: if you are expecting triptorelin to stimulate testosterone or help with PCT recovery, you have the mechanism backwards \u2014 it suppresses the axis. Depot formulations persist for 1-6 months; you cannot quickly undo a dose.",
+      "How to use this page: if you are on triptorelin for prostate cancer or precocious puberty, Safety covers the flare management and bone loss monitoring requirements. If you encountered this compound in a PCT context, read Overview first.",
+    ],
+  },
+  kpv: {
+    considerSub: "IBD (Crohn's, UC), immunosuppressive medications, cancer history, oral vs injectable route\u2026",
+    startHere: [
+      "KPV (Lys-Pro-Val) is the C-terminal tripeptide of alpha-MSH with anti-inflammatory and NF-\u03baB inhibitory properties. Most research is in IBD (Crohn's, ulcerative colitis) using oral or targeted colonic delivery. No human RCTs have been published.",
+      "What matters most: the evidence is oral/colonic delivery for IBD \u2014 not systemic injection. Injectable KPV is outside the evidence base. If you have IBD managed by a gastroenterologist, disclose KPV use before combining with biologics or immunosuppressants.",
+      "How to use this page: Evidence explains the IBD animal data and what has not been demonstrated in humans. Interactions covers the IBD medication context.",
+    ],
+  },
+  "atrial-natriuretic-peptide": {
+    considerSub: "Cardiovascular disease, antihypertensives, diuretics, heart failure context\u2026",
+    startHere: [
+      "ANP (Atrial Natriuretic Peptide) is a 28-AA cardiac hormone released in response to atrial volume overload. It drives natriuresis, vasodilation, and RAAS inhibition via NPR-A. Its 2-3 minute plasma half-life makes native ANP subcutaneous injection pharmacokinetically irrational \u2014 the clinical applications are IV infusion only (carperitide in Japan).",
+      "What matters most: the 2-3 minute half-life is the defining constraint \u2014 no sustained effect is achievable from subcutaneous injection. Clinical use of natriuretic peptides requires IV infusion in a monitored cardiac setting.",
+      "How to use this page: Evidence frames the pharmacokinetic reality. Safety covers hypotension \u2014 the primary adverse effect. Interactions covers antihypertensives and diuretics.",
     ],
   },
 };

@@ -629,6 +629,107 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isVasopressinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "vasopressin";
+}
+
+function isTriptorelinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "triptorelin";
+}
+
+function isKpvFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "kpv";
+}
+
+function isAnpFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "atrial-natriuretic-peptide";
+}
+
+const SUPPORT_VASOPRESSIN: SupportPack = {
+  id: "vasopressin",
+  title: "Vasopressin is not oxytocin — V1a vasoconstriction creates cardiovascular risk that oxytocin does not",
+  subtitle: "ADH / V1-V2 receptor agonist — cardiovascular and hyponatremia screens required",
+  bullets: [
+    "Cardiovascular screen first: V1a receptor activation causes vasoconstriction and blood pressure elevation; any hypertension, coronary artery disease, or cardiovascular history requires physician clearance before vasopressin use",
+    "Vasopressin ≠ oxytocin: they are structurally similar 9-AA peptides but pharmacologically distinct — vasopressin activates V1a (vasoconstriction), V2 (water retention), V1b (HPA axis); oxytocin does not produce the same cardiovascular effects",
+    "Hyponatremia monitoring: V2 receptor activation causes water retention; excessive fluid intake during or after vasopressin use dilutes serum sodium — watch for headache, nausea, unusual fatigue, confusion as early signs",
+    "SSRI/SNRI interaction: SSRIs cause SIADH (syndrome of inappropriate antidiuretic hormone) independently — combining with vasopressin creates additive water retention and hyponatremia risk; check your medication list",
+    "Pregnancy exclusion: vasopressin has oxytocin-like uterotonic effects at higher doses — pregnancy is a contraindication",
+    "Expectation calibration: the memory and cognitive effects in community use are extrapolated from rodent V1b receptor research and small human IV studies — far less consistent than the oxytocin social cognition narrative (which is itself inconsistent)",
+  ],
+  redFlags: [
+    "Hypertension or cardiovascular disease without physician clearance — V1a vasoconstriction is pharmacologically real and relevant",
+    "Headache, nausea, unusual fatigue, confusion during or after use — possible hyponatremia; stop, drink moderate (not excessive) fluids, seek evaluation if symptoms persist",
+    "Any possibility of pregnancy — oxytocin-like uterotonic activity; stop immediately",
+    "Chest pain or significantly elevated blood pressure — stop and seek evaluation",
+  ],
+};
+
+const SUPPORT_TRIPTORELIN: SupportPack = {
+  id: "triptorelin",
+  title: "Continuous GnRH agonism suppresses the axis — this is chemical castration, not axis stimulation",
+  subtitle: "GnRH agonist (depot) — testosterone flare, bone loss, and duration screens",
+  bullets: [
+    "The suppression mechanism: triptorelin continuously stimulates GnRH receptors until they downregulate — this is the mechanism of chemical castration; it produces the opposite of gonadorelin's pulsatile stimulation effect; do not confuse the two",
+    "Testosterone/estrogen flare at initiation: the first 1-2 weeks of GnRH agonist therapy cause a surge in sex hormones before suppression; prostate cancer patients must have anti-androgen cover during this window; understand flare management before first injection",
+    "Depot duration means no quick reversal: depending on formulation, triptorelin's depot effects last 1, 3, or 6 months; if adverse effects develop, you cannot rapidly reduce exposure — understand the duration of your formulation before injecting",
+    "Bone density monitoring: sustained testosterone/estrogen suppression causes bone density loss; baseline DEXA scan and calcium/vitamin D supplementation are standard practice in the clinical setting",
+    "PCT context: triptorelin is sometimes discussed for PCT — this is pharmacologically irrational; it suppresses the axis rather than stimulating it; PCT requires axis stimulation (SERMs, kisspeptin, gonadorelin)",
+    "Physician oversight is mandatory: triptorelin is a prescription drug with serious hormonal consequences; off-label use without physician oversight creates real risks including irreversible effects during depot duration",
+  ],
+  redFlags: [
+    "Using triptorelin expecting PCT-like axis stimulation — the mechanism produces the opposite; stop and understand the pharmacology",
+    "Prostate cancer without anti-androgen flare cover at initiation — the testosterone surge can cause disease flare; mandatory physician involvement",
+    "Unexpected bone pain, fracture, or falls — possible bone density loss with prolonged use; stop and seek evaluation",
+    "Significant mood deterioration, depression, or cognitive changes — sex hormone suppression effects; discuss with prescribing physician",
+    "Any triptorelin use without physician oversight given depot duration and hormonal potency",
+  ],
+};
+
+const SUPPORT_KPV: SupportPack = {
+  id: "kpv",
+  title: "Primarily researched for IBD in oral colonic delivery — not a systemic anti-inflammatory compound",
+  subtitle: "MC1R/NF-κB anti-inflammatory tripeptide — IBD context and route considerations",
+  bullets: [
+    "Route defines the indication: KPV's evidence base is oral or targeted colonic delivery for IBD (Crohn's, ulcerative colitis); the research is built around mucosal delivery, not systemic injection; if injecting subcutaneously, you are operating outside the evidence base entirely",
+    "Established IBD medications take priority: if you have IBD managed by a gastroenterologist, any supplement or investigational compound should be disclosed; KPV should not replace established IBD medications (biologics, aminosalicylates, immunosuppressants)",
+    "Active cancer screen: KPV has partial MC1R agonist activity; MC1R is expressed in some melanomas and other cancers; any cancer history or active cancer treatment requires oncology consultation before use",
+    "Immunosuppressive medication interaction: if on azathioprine, 6-MP, methotrexate, or biologics for IBD, the combined anti-inflammatory effect and potential immunomodulatory interaction is not characterized",
+    "Expectation calibration: no human RCTs have been published; the evidence base is in vitro (NF-κB) and animal models (colitis); systemic injection evidence is essentially nonexistent",
+    "Oral formulation quality: not all oral 'KPV' formulations achieve meaningful GI delivery; colon-targeted delivery formulations are required for the IBD application; standard oral supplements may have limited local activity",
+  ],
+  redFlags: [
+    "Active cancer or cancer treatment — MC1R partial agonism; consult oncology",
+    "IBD flare with worsening symptoms despite use — KPV does not replace established IBD therapy; seek medical evaluation",
+    "On biologics without gastroenterologist awareness — disclosure is required for any compound with immunomodulatory activity",
+    "Severe allergic reaction to any injection (hives, breathing difficulty, swelling) — stop and seek emergency evaluation",
+  ],
+};
+
+const SUPPORT_ANP: SupportPack = {
+  id: "atrial-natriuretic-peptide",
+  title: "2-minute half-life makes native ANP subcutaneous injection pharmacokinetically irrational — the clinical applications are IV infusion only",
+  subtitle: "Cardiac natriuretic peptide — 2-3 min half-life; clinical analog context",
+  bullets: [
+    "Half-life reality: native ANP has a plasma half-life of approximately 2-3 minutes; subcutaneous injection does not achieve meaningful systemic levels; if natriuretic peptide effects are the clinical goal, carperitide (IV, Japan) or other analogs are the pharmacokinetically rational compounds",
+    "Cardiovascular disease context: natriuretic peptides are used in acute heart failure in clinical settings; any cardiovascular condition (heart failure, severe hypertension, significant arrhythmia) requires physician oversight before any natriuretic peptide compound",
+    "Hypotension risk: ANP and all natriuretic peptides cause dose-dependent vasodilation and hypotension; this is the primary adverse effect in clinical trials — understand your baseline blood pressure before use",
+    "Nesiritide context: the related clinical analog (nesiritide / BNP) was withdrawn from widespread use due to renal and mortality concerns; this does not necessarily apply to native ANP, but it illustrates the risks of clinical-dose natriuretic peptide administration",
+    "Antihypertensive medication interaction: ANP's vasodilation is additive with antihypertensive medications; if on blood pressure medications, ANP adds to the hypotensive effect",
+    "Electrolyte monitoring: the natriuretic effect increases sodium excretion; with sustained use or high doses, sodium/potassium balance requires monitoring",
+  ],
+  redFlags: [
+    "Symptomatic hypotension or dizziness after use — stop; blood pressure measurement; hydrate and rest horizontally",
+    "Active heart failure or severe cardiovascular disease — requires physician oversight; IV carperitide/analog in a monitored clinical setting",
+    "On antihypertensive medications without blood pressure monitoring plan — additive hypotension risk",
+    "Any worsening of cardiovascular symptoms (chest pain, shortness of breath, palpitations) — stop and seek emergency evaluation",
+  ],
+};
+
 function isSomatostatinFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "somatostatin";
@@ -865,5 +966,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isBpc157ArginateFamily(entity)) return SUPPORT_BPC157_ARGINATE;
   if (isThymosinBeta4FullFamily(entity)) return SUPPORT_THYMOSIN_BETA4_FULL;
   if (isCjc1295DacFamily(entity)) return SUPPORT_CJC1295_DAC;
+  if (isVasopressinFamily(entity)) return SUPPORT_VASOPRESSIN;
+  if (isTriptorelinFamily(entity)) return SUPPORT_TRIPTORELIN;
+  if (isKpvFamily(entity)) return SUPPORT_KPV;
+  if (isAnpFamily(entity)) return SUPPORT_ANP;
   return null;
 }
