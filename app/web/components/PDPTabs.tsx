@@ -23,7 +23,15 @@ export default function PDPTabs({ tabs }: Props) {
       if (!match) return;
       setActiveTab(id);
       if (scroll) {
-        tabBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Defer until after React re-renders the now-visible panel so layout is
+        // stable before we measure. Scrolling to the tab bar (not the panel) so
+        // the full panel content is visible from the top.
+        setTimeout(() => {
+          const bar = tabBarRef.current;
+          if (!bar) return;
+          const barTop = bar.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: barTop, behavior: "smooth" });
+        }, 30);
       }
     },
     [panelTabs],

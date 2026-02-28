@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getBestContextMatches, CONTEXT_PACKS } from "@/lib/contextualConsiderations";
 
 type Props = {
@@ -70,6 +70,20 @@ export default function PDPContextualConsiderations(props: Props) {
   const query = normalize(q);
 
   const [selectedIdx, setSelectedIdx] = useState<number>(-1);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const suggestions = useMemo(() => {
+    if (q.length < 1) return [];
+    const ql = q.toLowerCase();
+    return CONTEXT_PACKS
+      .filter((p) =>
+        p.label.toLowerCase().includes(ql) ||
+        p.synonyms.some((s) => s.toLowerCase().includes(ql))
+      )
+      .slice(0, 6)
+      .map((p) => p.label);
+  }, [q]);
 
   const matches = useMemo(() => {
     if (!query) return [];
@@ -121,13 +135,16 @@ export default function PDPContextualConsiderations(props: Props) {
       <p className="pt-card-subtext">{SUBLINE}</p>
 
       <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-        {/* Search input with inline clear */}
+        {/* Search input with custom suggestions */}
         <div style={{ position: "relative" }}>
           <input
-            list="pt-ctx-packs"
+            ref={inputRef}
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(e) => { setQ(e.target.value); setShowSuggestions(true); }}
+            onFocus={() => setShowSuggestions(true)}
+            onBlur={() => setTimeout(() => setShowSuggestions(false), 120)}
             placeholder={PLACEHOLDER}
+            autoComplete="off"
             style={{
               width: "100%",
               border: "1px solid rgba(0,0,0,0.14)",
@@ -139,15 +156,10 @@ export default function PDPContextualConsiderations(props: Props) {
               boxSizing: "border-box",
             }}
           />
-          <datalist id="pt-ctx-packs">
-            {CONTEXT_PACKS.map((p) => (
-              <option key={p.id} value={p.label} />
-            ))}
-          </datalist>
           {q && (
             <button
               type="button"
-              onClick={() => { setQ(""); setSelectedIdx(-1); }}
+              onMouseDown={(e) => { e.preventDefault(); setQ(""); setSelectedIdx(-1); setShowSuggestions(false); }}
               aria-label="Clear search"
               style={{
                 position: "absolute",
@@ -166,6 +178,46 @@ export default function PDPContextualConsiderations(props: Props) {
             >
               ✕
             </button>
+          )}
+          {/* Custom suggestions dropdown */}
+          {showSuggestions && suggestions.length > 0 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "calc(100% + 4px)",
+                left: 0,
+                right: 0,
+                background: "#fff",
+                border: "1px solid rgba(0,0,0,0.12)",
+                borderRadius: 12,
+                boxShadow: "0 6px 24px rgba(15,26,46,0.12)",
+                zIndex: 200,
+                overflow: "hidden",
+              }}
+            >
+              {suggestions.map((label) => (
+                <button
+                  key={label}
+                  type="button"
+                  onMouseDown={() => { setQ(label); setShowSuggestions(false); }}
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    textAlign: "left",
+                    padding: "10px 14px",
+                    border: "none",
+                    borderBottom: "1px solid rgba(0,0,0,0.05)",
+                    background: "transparent",
+                    cursor: "pointer",
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: "#1a2435",
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           )}
         </div>
 

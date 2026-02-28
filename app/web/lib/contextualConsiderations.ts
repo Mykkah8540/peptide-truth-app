@@ -43,31 +43,33 @@ function scorePack(queryNorm: string, queryTokens: string[], pack: ContextPack):
   const terms = Array.from(new Set([pack.label, ...pack.synonyms].map(norm))).filter(Boolean);
   const matched: string[] = [];
 
-  let hits = 0;
-  let weight = 0;
+  // Best-match-wins: score is the strongest individual term match.
+  // This prevents synonym-rich packs from being penalised by a huge denominator.
+  let best = 0;
 
   for (const term of terms) {
     if (!term) continue;
-    const w = term.length >= 12 ? 1.2 : term.length >= 7 ? 1.0 : 0.8;
-    weight += w;
+    // Longer synonyms are more specific → reward them more.
+    const w = term.length >= 12 ? 1.0 : term.length >= 7 ? 0.88 : term.length >= 4 ? 0.75 : 0.55;
 
     if (contains(queryNorm, term)) {
-      hits += w * 1.6; // phrase hit stronger
+      const s = w; // full phrase hit
+      if (s > best) best = s;
       matched.push(term);
       continue;
     }
 
-    // token-level hits
+    // token-level overlap
     const termToks = tokens(term);
     const inter = termToks.filter((t) => queryTokens.includes(t));
     if (inter.length) {
-      hits += w * Math.min(1.0, inter.length / Math.max(2, termToks.length));
+      const s = w * (inter.length / Math.max(2, termToks.length));
+      if (s > best) best = s;
       matched.push(...inter);
     }
   }
 
-  const raw = weight ? hits / weight : 0;
-  const score = Math.max(0, Math.min(1, raw));
+  const score = Math.max(0, Math.min(1, best));
   return {
     pack,
     score,
