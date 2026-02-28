@@ -14,8 +14,7 @@ export default function PDPTabs({ tabs }: Props) {
   const panelTabs = tabs.filter((t) => !isScrollTab(t));
   const defaultId = panelTabs[0]?.id ?? "";
   const [activeTab, setActiveTab] = useState<string>(defaultId);
-  const [showHint, setShowHint] = useState(true);
-  const tabBarRef = useRef<HTMLDivElement>(null);
+  const stickyUnitRef = useRef<HTMLDivElement>(null);
 
   const activateTab = useCallback(
     (id: string, scroll = false) => {
@@ -23,16 +22,11 @@ export default function PDPTabs({ tabs }: Props) {
       if (!match) return;
       setActiveTab(id);
       if (scroll) {
-        // Defer until after React re-renders the now-visible panel so layout
-        // is stable before we measure. Target: tab bar sits just below the
-        // sticky nav (nav = 70px, matching .reta-tabs__bar { top: 70px }).
-        // scrollTo(barDocTop - 70) puts the bar at exactly 70px from the
-        // viewport top so the panel content is immediately visible below it.
         setTimeout(() => {
-          const bar = tabBarRef.current;
-          if (!bar) return;
-          const barDocTop = bar.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({ top: barDocTop - 70, behavior: "smooth" });
+          const unit = stickyUnitRef.current;
+          if (!unit) return;
+          const unitDocTop = unit.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: unitDocTop - 70, behavior: "smooth" });
         }, 50);
       }
     },
@@ -40,7 +34,6 @@ export default function PDPTabs({ tabs }: Props) {
   );
 
   useEffect(() => {
-    // Activate from initial hash (skip scroll tabs)
     const hash = window.location.hash.slice(1);
     if (hash) activateTab(hash, false);
 
@@ -59,7 +52,6 @@ export default function PDPTabs({ tabs }: Props) {
   }, [activateTab, tabs]);
 
   function handleTabClick(tab: Tab) {
-    setShowHint(false);
     if (isScrollTab(tab)) {
       document.getElementById(tab.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
       return;
@@ -70,23 +62,27 @@ export default function PDPTabs({ tabs }: Props) {
 
   return (
     <div className="reta-tabs">
-      <div className="reta-tabs__bar" ref={tabBarRef}>
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            className={`reta-tabs__btn${!isScrollTab(tab) && activeTab === tab.id ? " reta-tabs__btn--active" : ""}${isScrollTab(tab) ? " reta-tabs__btn--scroll" : ""}`}
-            onClick={() => handleTabClick(tab)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-      {showHint && (
+      {/* Sticky unit: bar + swipe hint travel together */}
+      <div className="reta-tabs__sticky-unit" ref={stickyUnitRef}>
+        <div className="reta-tabs__bar">
+          <div className="reta-tabs__bar-scroll">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`reta-tabs__btn${!isScrollTab(tab) && activeTab === tab.id ? " reta-tabs__btn--active" : ""}${isScrollTab(tab) ? " reta-tabs__btn--scroll" : ""}`}
+                onClick={() => handleTabClick(tab)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="reta-tabs__hint" aria-hidden="true">
           <span className="reta-tabs__hint-arrow">›</span>
-          <span className="reta-tabs__hint-text">swipe to navigate</span>
+          <span className="reta-tabs__hint-text">swipe tabs</span>
         </div>
-      )}
+      </div>
+
       {panelTabs.map((tab) => (
         <div
           key={tab.id}

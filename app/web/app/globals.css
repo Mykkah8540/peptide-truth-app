@@ -2368,10 +2368,17 @@ body {
   color: var(--reta-navy);
 }
 
-/* Tab bar — clearly visible frosted strip */
+/* Sticky unit — bar + swipe hint travel together */
+.reta-tabs__sticky-unit {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  margin-bottom: 20px;
+}
+
+/* Tab bar — frosted pill, not itself sticky */
 .reta-tabs__bar {
   display: flex;
-  gap: 4px;
   padding: 5px;
   background: rgba(255, 255, 255, 0.88);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -2379,15 +2386,18 @@ body {
   box-shadow:
     0 2px 8px rgba(15, 26, 46, 0.10),
     inset 0 1px 0 rgba(255, 255, 255, 0.90);
-  position: sticky;
-  top: 70px;
-  z-index: 40;
+}
+
+/* Horizontally scrollable button row */
+.reta-tabs__bar-scroll {
+  display: flex;
+  gap: 4px;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  margin-bottom: 20px;
+  width: 100%;
 }
-.reta-tabs__bar::-webkit-scrollbar { display: none; }
+.reta-tabs__bar-scroll::-webkit-scrollbar { display: none; }
 
 /* Tab buttons */
 .reta-tabs__btn {
@@ -2438,7 +2448,7 @@ body {
     flex-direction: column;
     gap: 4px;
   }
-  .reta-tabs__bar {
+  .reta-tabs__sticky-unit {
     top: 60px;
   }
   .reta-tabs__btn {
@@ -2703,8 +2713,10 @@ html.reta-page body {
      Scroll affordance: natural tab overflow causes "For You" to peek
      at the right edge — this IS the iOS/industry-standard signal.
      No gradient overlay needed; the partial tab IS the indicator. ── */
-  .reta-tabs__bar {
+  .reta-tabs__sticky-unit {
     top: 60px;
+  }
+  .reta-tabs__bar {
     box-shadow:
       0 4px 20px rgba(15, 26, 46, 0.12),
       inset 0 1px 0 rgba(255, 255, 255, 0.90);
@@ -2762,7 +2774,7 @@ html.reta-page body {
   .reta-g-card { padding: 16px; }
 }
 
-/* ── Tab swipe hint — mobile only ── */
+/* ── Tab swipe hint — below bar, mobile only ── */
 .reta-tabs__hint { display: none; }
 
 @media (max-width: 999px) {
@@ -2771,8 +2783,7 @@ html.reta-page body {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin-top: 3px;     /* hug the tab bar */
-    margin-bottom: 20px; /* clear gap before panel content */
+    padding: 4px 0 0;
     color: rgba(15, 26, 46, 0.42);
     font-size: 11px;
     font-weight: 500;
