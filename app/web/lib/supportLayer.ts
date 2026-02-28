@@ -48,7 +48,7 @@ function isHealingFamily(entity: EntityLike): boolean {
 
 function isGhAxisFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
-  return ["cjc-1295", "cjc-1295-dac", "ipamorelin", "mk-677"].includes(s);
+  return ["cjc-1295", "cjc-1295-dac", "ipamorelin", "mk-677", "sermorelin", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin"].includes(s);
 }
 
 const SUPPORT_INCRETIN: SupportPack = {

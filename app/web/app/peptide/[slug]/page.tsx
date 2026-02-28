@@ -38,8 +38,32 @@ import IpamorelinOverviewPanel from "@/components/IpamorelinOverviewPanel";
 import IpamorelinEvidencePanel from "@/components/IpamorelinEvidencePanel";
 import IpamorelinSafetyPanel from "@/components/IpamorelinSafetyPanel";
 import IpamorelinInteractionsPanel from "@/components/IpamorelinInteractionsPanel";
+import SermorelinOverviewPanel from "@/components/SermorelinOverviewPanel";
+import SermorelinEvidencePanel from "@/components/SermorelinEvidencePanel";
+import SermorelinSafetyPanel from "@/components/SermorelinSafetyPanel";
+import SermorelinInteractionsPanel from "@/components/SermorelinInteractionsPanel";
+import Mk677OverviewPanel from "@/components/Mk677OverviewPanel";
+import Mk677EvidencePanel from "@/components/Mk677EvidencePanel";
+import Mk677SafetyPanel from "@/components/Mk677SafetyPanel";
+import Mk677InteractionsPanel from "@/components/Mk677InteractionsPanel";
+import Ghrp2OverviewPanel from "@/components/Ghrp2OverviewPanel";
+import Ghrp2EvidencePanel from "@/components/Ghrp2EvidencePanel";
+import Ghrp2SafetyPanel from "@/components/Ghrp2SafetyPanel";
+import Ghrp2InteractionsPanel from "@/components/Ghrp2InteractionsPanel";
+import Ghrp6OverviewPanel from "@/components/Ghrp6OverviewPanel";
+import Ghrp6EvidencePanel from "@/components/Ghrp6EvidencePanel";
+import Ghrp6SafetyPanel from "@/components/Ghrp6SafetyPanel";
+import Ghrp6InteractionsPanel from "@/components/Ghrp6InteractionsPanel";
+import HexarelinOverviewPanel from "@/components/HexarelinOverviewPanel";
+import HexarelinEvidencePanel from "@/components/HexarelinEvidencePanel";
+import HexarelinSafetyPanel from "@/components/HexarelinSafetyPanel";
+import HexarelinInteractionsPanel from "@/components/HexarelinInteractionsPanel";
+import TesamorelinOverviewPanel from "@/components/TesamorelinOverviewPanel";
+import TesamorelinEvidencePanel from "@/components/TesamorelinEvidencePanel";
+import TesamorelinSafetyPanel from "@/components/TesamorelinSafetyPanel";
+import TesamorelinInteractionsPanel from "@/components/TesamorelinInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -84,6 +108,42 @@ const PANEL_MAP: Record<string, {
     Evidence: IpamorelinEvidencePanel,
     Safety: IpamorelinSafetyPanel,
     Interactions: IpamorelinInteractionsPanel,
+  },
+  sermorelin: {
+    Overview: SermorelinOverviewPanel,
+    Evidence: SermorelinEvidencePanel,
+    Safety: SermorelinSafetyPanel,
+    Interactions: SermorelinInteractionsPanel,
+  },
+  "mk-677": {
+    Overview: Mk677OverviewPanel,
+    Evidence: Mk677EvidencePanel,
+    Safety: Mk677SafetyPanel,
+    Interactions: Mk677InteractionsPanel,
+  },
+  "ghrp-2": {
+    Overview: Ghrp2OverviewPanel,
+    Evidence: Ghrp2EvidencePanel,
+    Safety: Ghrp2SafetyPanel,
+    Interactions: Ghrp2InteractionsPanel,
+  },
+  "ghrp-6": {
+    Overview: Ghrp6OverviewPanel,
+    Evidence: Ghrp6EvidencePanel,
+    Safety: Ghrp6SafetyPanel,
+    Interactions: Ghrp6InteractionsPanel,
+  },
+  hexarelin: {
+    Overview: HexarelinOverviewPanel,
+    Evidence: HexarelinEvidencePanel,
+    Safety: HexarelinSafetyPanel,
+    Interactions: HexarelinInteractionsPanel,
+  },
+  tesamorelin: {
+    Overview: TesamorelinOverviewPanel,
+    Evidence: TesamorelinEvidencePanel,
+    Safety: TesamorelinSafetyPanel,
+    Interactions: TesamorelinInteractionsPanel,
   },
 };
 
@@ -138,6 +198,54 @@ const V3_HERO_CONTENT: Record<string, {
       "Ipamorelin is a GHRP \u2014 it stimulates GH release via the ghrelin receptor. Selective relative to older GHRPs; same GH-axis considerations as CJC-1295.",
       "What matters most: metabolic baseline, sleep apnea status, and cancer history \u2014 check all three before starting.",
       "How to use this page: commonly used with CJC-1295 \u2014 read both pages if you\u2019re running the stack.",
+    ],
+  },
+  sermorelin: {
+    considerSub: "Diabetes, thyroid disease, cancer history, adolescents\u2026",
+    startHere: [
+      "Sermorelin is the original GHRH analog \u2014 FDA-approved for pediatric GH deficiency, discontinued due to manufacturing (not safety), now used via compounding pharmacy.",
+      "What matters most: the GH-axis considerations are identical to CJC-1295 \u2014 metabolic status, thyroid function, and cancer history before starting.",
+      "How to use this page: if you have a prescription context, the physician oversight already frames this \u2014 use the labs that come with it.",
+    ],
+  },
+  "mk-677": {
+    considerSub: "Diabetes, heart failure, cancer history, adolescents\u2026",
+    startHere: [
+      "MK-677 (ibutamoren) is an oral ghrelin receptor agonist \u2014 the same GH-axis mechanism as ipamorelin but taken as a capsule with a 24-hour half-life.",
+      "What matters most: sustained GH elevation amplifies glucose, appetite, edema, and carpal tunnel risks vs injectable GHRPs \u2014 same flags, more persistent exposure.",
+      "How to use this page: if you have diabetes, heart failure, or are on cardiac medications, Safety is your first stop.",
+    ],
+  },
+  "ghrp-2": {
+    considerSub: "Diabetes, corticosteroids, cancer history, cardiovascular disease\u2026",
+    startHere: [
+      "GHRP-2 is an original research GHRP \u2014 it established the ghrelin receptor GH-release proof of concept but elevates cortisol and prolactin alongside GH (ipamorelin was developed to fix this).",
+      "What matters most: the cortisol elevation creates a compounded glucose risk and catabolic counter-pressure that ipamorelin avoids \u2014 consider ipamorelin first if it fits your goals.",
+      "How to use this page: if you have diabetes or are on corticosteroids, Safety and Interactions are your first stops.",
+    ],
+  },
+  "ghrp-6": {
+    considerSub: "Eating disorder history, diabetes, cancer history, weight management goals\u2026",
+    startHere: [
+      "GHRP-6 is the 'hunger bomb' GHRP \u2014 strongest appetite stimulation of any GHRP class compound; also elevates cortisol and prolactin like GHRP-2.",
+      "What matters most: eating disorder history is a hard stop; if your goal isn\u2019t aggressive caloric surplus, the extreme appetite is more liability than asset.",
+      "How to use this page: if you have eating disorder history or are pursuing fat loss, read Overview and Safety before anything else.",
+    ],
+  },
+  hexarelin: {
+    considerSub: "Cardiovascular history, diabetes, cancer history, cycling protocols\u2026",
+    startHere: [
+      "Hexarelin is the highest-potency GHRP for acute GH pulse amplitude \u2014 but also desensitizes faster than any other GHRP (tachyphylaxis). Continuous use loses effect; cycling is required.",
+      "What matters most: cardiovascular history requires extra screening due to hexarelin\u2019s unique CD36 receptor binding (not present in any other GHRP); and cycling must be planned before starting.",
+      "How to use this page: if you have cardiac history or are considering long-term use, Safety and Interactions are your first stops.",
+    ],
+  },
+  tesamorelin: {
+    considerSub: "HIV lipodystrophy, diabetes, cancer history, joint disease, prescription access\u2026",
+    startHere: [
+      "Tesamorelin (Egrifta) is the only FDA-approved GHRH analog \u2014 approved for visceral fat in HIV-associated lipodystrophy. The enhancement community uses it off-label with the same evidence gap as CJC-1295.",
+      "What matters most: the FDA approval means formal prescribing information with stated contraindications (cancer, pregnancy, uncontrolled diabetes) \u2014 and arthralgia/myalgia are the most distinctive side effects vs other GHRH analogs.",
+      "How to use this page: same GH-axis safety gates as CJC-1295, plus the arthralgia watch and the on-label vs off-label evidence framing in Overview.",
     ],
   },
 };
