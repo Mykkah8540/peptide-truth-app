@@ -17,6 +17,7 @@ import BodyClass from "@/components/BodyClass";
 import RetaOverviewPanel from "@/components/RetaOverviewPanel";
 import RetaEvidencePanel from "@/components/RetaEvidencePanel";
 import RetaSafetyPanel from "@/components/RetaSafetyPanel";
+import RetaInteractionsPanel from "@/components/RetaInteractionsPanel";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -235,13 +236,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               label: "Interactions",
               content: (
                 <section className="reta-g-card">
-                  <InteractionsSection
-                    hideHeading={false}
-                    drugClasses={doc?.interactions?.drug_classes}
-                    supplementClasses={doc?.interactions?.supplement_classes}
-                    peptides={doc?.interactions?.peptides}
-                    interactionSummaryBlocks={sections?.interaction_summary}
-                  />
+                  <RetaInteractionsPanel />
                 </section>
               ),
             },
