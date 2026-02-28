@@ -15,6 +15,7 @@ import CollapsibleSection from "@/components/CollapsibleSection";
 import PDPTabs from "@/components/PDPTabs";
 import BodyClass from "@/components/BodyClass";
 import RetaOverviewPanel from "@/components/RetaOverviewPanel";
+import RetaEvidencePanel from "@/components/RetaEvidencePanel";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -215,48 +216,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               label: "Evidence",
               content: (
                 <section className="reta-g-card">
-                  <div style={{ display: "grid", gap: 10 }}>
-                    <div>
-                      <h2 style={{ margin: 0 }}>Evidence</h2>
-                      <p style={{ marginTop: 8, marginBottom: 0, fontSize: 13, lineHeight: 1.55, opacity: 0.78, maxWidth: 760 }}>
-                        This is a living snapshot of what&apos;s been studied, what&apos;s been observed, and what remains unclear — without hype framing. Expand &ldquo;Deep dive&rdquo; for the full structure and nuance.
-                      </p>
-                    </div>
-                    {/* PT_EVIDENCE_DEEP_DIVE_V1 */}
-                    <CollapsibleSection title="Deep dive" defaultCollapsedMobile defaultCollapsed>
-                      <div style={{ display: "grid", gap: 12 }}>
-                        <CollapsibleSection title="What the evidence includes" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
-                          <div style={{ marginTop: 10 }}>
-                            <ContentBlocks
-                              heading="Evidence posture"
-                              blocks={sections?.evidence_posture ?? null}
-                              showEmpty
-                              emptyText="No evidence posture has been added yet."
-                              wrapCard={false}
-                            />
-                          </div>
-                        </CollapsibleSection>
-                        <CollapsibleSection title="How to read this" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
-                          <div style={{ marginTop: 10, fontSize: 14, lineHeight: 1.65, opacity: 0.92, maxWidth: 760 }}>
-                            Favor human data over animal-only findings. Look for replication, duration, and whether outcomes are clinically meaningful
-                            (not just surrogate markers). If results are short-term, single-site, or based on small samples, treat conclusions as provisional.
-                          </div>
-                        </CollapsibleSection>
-                        <CollapsibleSection title="What&apos;s missing" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
-                          <ul className="pt-safety__list" style={{ marginTop: 10 }}>
-                            <li>Long-duration follow-up in diverse populations.</li>
-                            <li>Clear comparisons versus established alternatives on outcomes people actually care about.</li>
-                            <li>Better understanding of who benefits most, who tolerates it poorly, and why.</li>
-                          </ul>
-                        </CollapsibleSection>
-                        <CollapsibleSection title="Study list" defaultCollapsedMobile defaultCollapsed titleClassName="pt-collapse-title--nested">
-                          <div style={{ marginTop: 10 }}>
-                            <EvidenceList evidence={p?.evidence ?? []} wrapCard={false} />
-                          </div>
-                        </CollapsibleSection>
-                      </div>
-                    </CollapsibleSection>
-                  </div>
+                  <RetaEvidencePanel />
                 </section>
               ),
             },
