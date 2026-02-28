@@ -62,8 +62,20 @@ import TesamorelinOverviewPanel from "@/components/TesamorelinOverviewPanel";
 import TesamorelinEvidencePanel from "@/components/TesamorelinEvidencePanel";
 import TesamorelinSafetyPanel from "@/components/TesamorelinSafetyPanel";
 import TesamorelinInteractionsPanel from "@/components/TesamorelinInteractionsPanel";
+import BremelanotideOverviewPanel from "@/components/BremelanotideOverviewPanel";
+import BremelanotideEvidencePanel from "@/components/BremelanotideEvidencePanel";
+import BremelanotideSafetyPanel from "@/components/BremelanotideSafetyPanel";
+import BremelanotideInteractionsPanel from "@/components/BremelanotideInteractionsPanel";
+import SelankOverviewPanel from "@/components/SelankOverviewPanel";
+import SelankEvidencePanel from "@/components/SelankEvidencePanel";
+import SelankSafetyPanel from "@/components/SelankSafetyPanel";
+import SelankInteractionsPanel from "@/components/SelankInteractionsPanel";
+import SemaxOverviewPanel from "@/components/SemaxOverviewPanel";
+import SemaxEvidencePanel from "@/components/SemaxEvidencePanel";
+import SemaxSafetyPanel from "@/components/SemaxSafetyPanel";
+import SemaxInteractionsPanel from "@/components/SemaxInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -144,6 +156,24 @@ const PANEL_MAP: Record<string, {
     Evidence: TesamorelinEvidencePanel,
     Safety: TesamorelinSafetyPanel,
     Interactions: TesamorelinInteractionsPanel,
+  },
+  bremelanotide: {
+    Overview: BremelanotideOverviewPanel,
+    Evidence: BremelanotideEvidencePanel,
+    Safety: BremelanotideSafetyPanel,
+    Interactions: BremelanotideInteractionsPanel,
+  },
+  selank: {
+    Overview: SelankOverviewPanel,
+    Evidence: SelankEvidencePanel,
+    Safety: SelankSafetyPanel,
+    Interactions: SelankInteractionsPanel,
+  },
+  semax: {
+    Overview: SemaxOverviewPanel,
+    Evidence: SemaxEvidencePanel,
+    Safety: SemaxSafetyPanel,
+    Interactions: SemaxInteractionsPanel,
   },
 };
 
@@ -246,6 +276,30 @@ const V3_HERO_CONTENT: Record<string, {
       "Tesamorelin (Egrifta) is the only FDA-approved GHRH analog \u2014 approved for visceral fat in HIV-associated lipodystrophy. The enhancement community uses it off-label with the same evidence gap as CJC-1295.",
       "What matters most: the FDA approval means formal prescribing information with stated contraindications (cancer, pregnancy, uncontrolled diabetes) \u2014 and arthralgia/myalgia are the most distinctive side effects vs other GHRH analogs.",
       "How to use this page: same GH-axis safety gates as CJC-1295, plus the arthralgia watch and the on-label vs off-label evidence framing in Overview.",
+    ],
+  },
+  bremelanotide: {
+    considerSub: "Cardiovascular disease, hypertension, naltrexone, pregnancy, adolescents\u2026",
+    startHere: [
+      "Bremelanotide (Vyleesi / PT-141) is FDA-approved for HSDD in premenopausal women \u2014 a CNS desire pathway drug, not a hormone and not a blood flow drug like PDE5 inhibitors.",
+      "What matters most: nausea (~40% in trials) requires a management plan before first use; cardiovascular caution is real \u2014 uncontrolled hypertension is a prescribing information contraindication.",
+      "How to use this page: if you have cardiovascular history, hypertension, or are on naltrexone, Interactions is your first stop.",
+    ],
+  },
+  selank: {
+    considerSub: "Benzodiazepines, opioids, alcohol, psychiatric medications, adolescents\u2026",
+    startHere: [
+      "Selank is a Russian-developed synthetic peptide (tuftsin analog) used as a non-sedating anxiolytic \u2014 GABAergic modulation + enkephalinase inhibition; intranasal primarily.",
+      "What matters most: CNS drug interactions (benzos, opioids, alcohol) are the primary real risk; selank alone in a person without CNS-active medications has a favorable safety profile.",
+      "How to use this page: screen for CNS medications first (Interactions), then assess the evidence context (Evidence) for the Russian clinical data framing.",
+    ],
+  },
+  semax: {
+    considerSub: "Psychiatric medications, MAOIs, stimulants, anxiety history, adolescents\u2026",
+    startHere: [
+      "Semax is a Russian ACTH-fragment peptide used for cognitive enhancement and neuroprotection \u2014 BDNF upregulation + dopaminergic/serotonergic activation; more stimulatory than Selank.",
+      "What matters most: psychiatric medication interactions (MAOIs, antipsychotics, stimulants) are flags; anxiety-prone individuals risk worsening \u2014 Selank co-use is the standard buffer.",
+      "How to use this page: screen psychiatric medications first (Interactions), then anxiety baseline; the Evidence page frames the Russian clinical evidence context honestly.",
     ],
   },
 };
