@@ -41,6 +41,11 @@ function isNadFamily(entity: EntityLike): boolean {
   return ["nad-plus", "nmn", "nr"].includes(s);
 }
 
+function isHealingFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return ["bpc-157", "tb-500"].includes(s);
+}
+
 const SUPPORT_INCRETIN: SupportPack = {
   id: "support_incretin_metabolic_v1",
   title: "Support layer: protecting energy, hydration, and lean mass",
@@ -83,8 +88,30 @@ const SUPPORT_NAD: SupportPack = {
   ],
 };
 
+const SUPPORT_HEALING: SupportPack = {
+  id: "support_healing_recovery_v1",
+  title: "Support layer: getting the most out of a recovery-focused peptide",
+  subtitle:
+    "BPC-157 lives or dies by supply quality and sensible use context. These anchors cover the variables that actually matter.",
+  bullets: [
+    "Source quality is the highest-leverage variable \u2014 get a third-party certificate of analysis (CoA) before use, not after purchase",
+    "Injection technique: sterile prep, proper SC insertion angle, site rotation \u2014 most short-term reactions trace back to technique, not the compound",
+    "Set a hypothesis before starting: what specific outcome are you targeting, over what defined timeframe?",
+    "Route selection matters: oral route targets GI directly; injectable is for systemic and structural goals \u2014 route choice follows your actual target",
+    "NSAIDs as the silent complicator: chronic NSAID use alongside BPC-157 removes the pain-feedback signal that tells you whether the underlying issue is healing",
+    "Minimum evaluation window: 6\u20138 weeks for any tissue or GI outcome \u2014 don\u2019t make a call at week 1 or 2",
+  ],
+  redFlags: [
+    "Increasing redness, warmth, swelling, pus, or fever at an injection site after 24 hours (stop injecting there \u2014 seek medical evaluation)",
+    "Hives, facial swelling, throat tightness, or difficulty breathing (anaphylaxis \u2014 stop immediately, emergency services if severe)",
+    "Pregnant, planning pregnancy, or breastfeeding \u2014 stop immediately, no safety data exists",
+    "Product does not have a verifiable third-party CoA \u2014 do not inject it",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
+  if (isHealingFamily(entity)) return SUPPORT_HEALING;
   return null;
 }

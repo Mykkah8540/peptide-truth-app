@@ -22,8 +22,12 @@ import NadPlusOverviewPanel from "@/components/NadPlusOverviewPanel";
 import NadPlusEvidencePanel from "@/components/NadPlusEvidencePanel";
 import NadPlusSafetyPanel from "@/components/NadPlusSafetyPanel";
 import NadPlusInteractionsPanel from "@/components/NadPlusInteractionsPanel";
+import BpcOverviewPanel from "@/components/BpcOverviewPanel";
+import BpcEvidencePanel from "@/components/BpcEvidencePanel";
+import BpcSafetyPanel from "@/components/BpcSafetyPanel";
+import BpcInteractionsPanel from "@/components/BpcInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -44,6 +48,12 @@ const PANEL_MAP: Record<string, {
     Evidence: NadPlusEvidencePanel,
     Safety: NadPlusSafetyPanel,
     Interactions: NadPlusInteractionsPanel,
+  },
+  "bpc-157": {
+    Overview: BpcOverviewPanel,
+    Evidence: BpcEvidencePanel,
+    Safety: BpcSafetyPanel,
+    Interactions: BpcInteractionsPanel,
   },
 };
 
@@ -66,6 +76,14 @@ const V3_HERO_CONTENT: Record<string, {
       "NAD+ is a coenzyme that declines with age — supplementation is aimed at restoring cellular energy and longevity pathways.",
       "What matters most: the mechanism is real, but human outcome data is still thin — manage expectations accordingly.",
       "How to use this page: pick a tab, understand what\u2019s known vs. what\u2019s still theoretical.",
+    ],
+  },
+  "bpc-157": {
+    considerSub: "Pregnant, adolescents, autoimmune conditions, NSAID users\u2026",
+    startHere: [
+      "BPC-157 is a research-grade peptide with 30+ years of animal data and essentially no published human trials.",
+      "What matters most: supply chain quality is the primary real-world risk \u2014 the compound\u2019s own side effect profile is mild.",
+      "How to use this page: pick a tab, but start with Safety or Interactions if you\u2019re making an active decision.",
     ],
   },
 };
