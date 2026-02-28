@@ -14,6 +14,7 @@ import PeptideCommentsSection from "@/components/PeptideCommentsSection";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import PDPTabs from "@/components/PDPTabs";
 import BodyClass from "@/components/BodyClass";
+import RetaOverviewPanel from "@/components/RetaOverviewPanel";
 
 export default async function PeptidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -204,30 +205,9 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
               id: "overview",
               label: "Overview",
               content: (
-                <>
-                  <section className="reta-g-card">
-                    <div className="reta-overview-heading">
-                      <h2>Overview</h2>
-                    </div>
-                    <ContentBlocks
-                      heading="Overview"
-                      hideHeading
-                      blocks={sections?.overview ?? null}
-                      showEmpty
-                      emptyText="No overview has been added yet."
-                      wrapCard={false}
-                    />
-                  </section>
-                  <section className="reta-g-card reta-g-card--discuss">
-                    <ContentBlocks
-                      heading="What people discuss and why it matters"
-                      blocks={sections?.use_cases ?? null}
-                      showEmpty
-                      emptyText="No discussion framing has been added yet."
-                      wrapCard={false}
-                    />
-                  </section>
-                </>
+                <section className="reta-g-card">
+                  <RetaOverviewPanel />
+                </section>
               ),
             },
             {
