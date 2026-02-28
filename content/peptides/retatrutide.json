@@ -131,17 +131,20 @@
       ],
       "interaction_summary": [
         {
-          "text": "Interactions here are category flags — they’re meant to help you ask better questions and avoid obvious conflicts. They are not a dosing guide.",
-          "title": "Interaction summary"
+          "title": "Key interaction flags",
+          "text": "The highest-priority interactions are with insulin and other blood sugar medications — appetite suppression can cause blood sugar to drop harder than expected, and doses often need to come down as weight loss progresses."
         },
         {
-          "text": "Drug-class flags to review:"
+          "text": "Do not stack with other GLP-1 medications like semaglutide or tirzepatide. Retatrutide already covers the same receptor — adding another creates overlapping side effects with no benefit."
         },
         {
-          "text": "antidiabetics-insulin-glp1"
+          "text": "Opioid pain medications and retatrutide both slow gut motility. Combined, constipation can become severe. If you’re on opioids, aggressive bowel management (stool softeners, high hydration) is essential from day one."
         },
         {
-          "text": "If you’re on cardiovascular, anticoagulant/antiplatelet, serotonergic, or immunomodulating meds/supplements, treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "Blood pressure medications may need adjusting as you lose weight — significant weight loss reliably lowers blood pressure, which can mean your current dose becomes too strong over time."
+        },
+        {
+          "text": "If you’re on blood thinners like warfarin, changing eating patterns affects how warfarin works. More frequent monitoring is warranted during active weight loss."
         }
       ],
       "current_outlook_bullets": [
@@ -188,9 +191,15 @@
   "canonical_name": "Retatrutide",
   "interactions": {
     "drug_classes": [
-      "antidiabetics-insulin-glp1"
+      { "name": "Insulin & blood sugar medications", "risk_note": "Appetite suppression reduces food intake — blood sugar can drop harder than expected. Monitor closely and expect dose adjustments as weight loss progresses." },
+      { "name": "GLP-1 agonists (semaglutide, tirzepatide)", "risk_note": "Do not stack. Retatrutide already covers GLP-1 receptors — adding another GLP-1 agonist compounds side effects with no added benefit." },
+      { "name": "Opioid pain medications", "risk_note": "Both slow gut motility. Combined constipation risk is severe. Aggressive bowel management required from day one." },
+      { "name": "Blood pressure medications", "risk_note": "Weight loss lowers blood pressure — current dose may become too strong as weight drops. Monitor BP regularly." },
+      { "name": "Blood thinners (warfarin)", "risk_note": "Dietary changes from appetite suppression affect how warfarin works. More frequent INR monitoring warranted." }
     ],
-    "supplement_classes": [],
+    "supplement_classes": [
+      { "name": "Fat burners / thermogenics", "risk_note": "Do not combine. Stacked appetite suppression and cardiovascular stress with no proportionate benefit." }
+    ],
     "notes": []
   },
   "practical": {
