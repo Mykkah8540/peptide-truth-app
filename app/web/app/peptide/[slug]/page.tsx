@@ -34,8 +34,12 @@ import Cjc1295OverviewPanel from "@/components/Cjc1295OverviewPanel";
 import Cjc1295EvidencePanel from "@/components/Cjc1295EvidencePanel";
 import Cjc1295SafetyPanel from "@/components/Cjc1295SafetyPanel";
 import Cjc1295InteractionsPanel from "@/components/Cjc1295InteractionsPanel";
+import IpamorelinOverviewPanel from "@/components/IpamorelinOverviewPanel";
+import IpamorelinEvidencePanel from "@/components/IpamorelinEvidencePanel";
+import IpamorelinSafetyPanel from "@/components/IpamorelinSafetyPanel";
+import IpamorelinInteractionsPanel from "@/components/IpamorelinInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -74,6 +78,12 @@ const PANEL_MAP: Record<string, {
     Evidence: Cjc1295EvidencePanel,
     Safety: Cjc1295SafetyPanel,
     Interactions: Cjc1295InteractionsPanel,
+  },
+  ipamorelin: {
+    Overview: IpamorelinOverviewPanel,
+    Evidence: IpamorelinEvidencePanel,
+    Safety: IpamorelinSafetyPanel,
+    Interactions: IpamorelinInteractionsPanel,
   },
 };
 
@@ -120,6 +130,14 @@ const V3_HERO_CONTENT: Record<string, {
       "CJC-1295 is a GHRH analog \u2014 it amplifies GH pulses and elevates IGF-1. It has actual human endocrine evidence (PMID 16352683, 2006).",
       "What matters most: know your variant (DAC vs no-DAC), know your metabolic and cancer history before starting.",
       "How to use this page: if you have diabetes, prediabetes, or cancer history, Safety is your first stop.",
+    ],
+  },
+  ipamorelin: {
+    considerSub: "Diabetes, sleep apnea, cancer history, adolescents\u2026",
+    startHere: [
+      "Ipamorelin is a GHRP \u2014 it stimulates GH release via the ghrelin receptor. Selective relative to older GHRPs; same GH-axis considerations as CJC-1295.",
+      "What matters most: metabolic baseline, sleep apnea status, and cancer history \u2014 check all three before starting.",
+      "How to use this page: commonly used with CJC-1295 \u2014 read both pages if you\u2019re running the stack.",
     ],
   },
 };

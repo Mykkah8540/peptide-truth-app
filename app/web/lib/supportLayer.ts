@@ -118,10 +118,10 @@ const SUPPORT_GH_AXIS: SupportPack = {
   id: "support_gh_axis_v1",
   title: "Support layer: managing a GH-axis compound responsibly",
   subtitle:
-    "CJC-1295 changes endocrine physiology systemically. These anchors keep the downstream effects from becoming problems.",
+    "GH-axis compounds change endocrine physiology systemically. These anchors keep the downstream effects from becoming problems.",
   bullets: [
     "Glucose awareness: GH is counter-regulatory to insulin \u2014 get a baseline fasting glucose before starting and monitor if you have any metabolic history",
-    "Know your variant: CJC-1295 with DAC has a multi-day half-life; without DAC, it\u2019s hours \u2014 dosing frequency, accumulation, and side effects differ significantly",
+    "If using CJC-1295: know your variant \u2014 DAC has a multi-day half-life vs hours without DAC; dosing frequency, accumulation, and side effects differ significantly",
     "Sleep timing: GH pulses are largest during slow-wave sleep \u2014 bedtime injection aligns with this; disrupted sleep undermines the mechanism",
     "Water retention is expected early: mild edema in weeks 1\u20134 is a common GH response \u2014 significant or persistent swelling warrants dose reduction",
     "Cancer history gate: GH/IGF-1 is a mitogenic axis \u2014 active cancer, recent treatment, or high hereditary risk requires oncology clearance before starting",
