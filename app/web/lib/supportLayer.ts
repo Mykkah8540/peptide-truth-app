@@ -1461,6 +1461,193 @@ const SUPPORT_NESIRITIDE: SupportPack = {
   ],
 };
 
+function isNeuropeptideSFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "neuropeptide-s";
+}
+
+function isOctreotideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "octreotide";
+}
+
+function isPegMgfFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "peg-mgf";
+}
+
+function isPentagastrinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "pentagastrin";
+}
+
+function isPlecanatideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "plecanatide";
+}
+
+function isProlactinReleasingPeptideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "prolactin-releasing-peptide";
+}
+
+function isSecretinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "secretin";
+}
+
+function isShlp2Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "shlp-2";
+}
+
+const SUPPORT_NEUROPEPTIDE_S: SupportPack = {
+  id: "neuropeptide-s",
+  title: "No human safety data, no established CNS delivery route \u2014 the absence of data is the primary risk",
+  subtitle: "NPSR1 agonist neuropeptide; completely uncharacterized in humans; anxiolytic and wakefulness claims animal-only",
+  bullets: [
+    "No human clinical trials exist: NPS has zero published human pharmacokinetic studies, zero Phase 1 safety trials, and zero established safe doses in humans; this is not a compound with a risk-benefit profile to weigh \u2014 the risk side is unknown and the benefit side is unestablished",
+    "CNS delivery from subcutaneous injection is not established: NPS is a 20-amino-acid peptide; peripheral injection faces significant blood-brain barrier challenges; the animal model effects are primarily from intracerebroventricular (ICV) delivery directly into the brain; whether subcutaneous injection achieves meaningful CNS concentrations is unknown",
+    "Paradoxical anxiogenic potential: NPS produces dose-dependent and brain-region-dependent effects in animals \u2014 anxiolytic at some doses, anxiogenic at others; without human data, predicting which direction exogenous NPS produces is impossible",
+    "NPSR1 genetic variant risk: NPSR1 polymorphisms affect receptor sensitivity; individuals with high-sensitivity variants and anxiety vulnerability may be at particular risk for paradoxical anxiogenic effects",
+    "If anxiolytic peptide is the goal: Selank has Russian clinical evidence and community history; if wakefulness is the goal, modafinil has extensive human safety data; NPS competes with neither on any dimension relevant to a real decision",
+    "Overlapping CNS medication screen: if on benzodiazepines, SSRIs, SNRIs, or stimulants, adding NPS creates an entirely uncharacterized CNS interaction profile on top of an already uncharacterized compound",
+  ],
+  redFlags: [
+    "On anxiolytic medications (benzodiazepines, SSRIs, buspirone) \u2014 completely uncharacterized interaction; stop and do not combine",
+    "History of panic disorder or anxiety disorder \u2014 NPSR1 genetic association with panic; specific risk of paradoxical anxiogenic effect",
+    "Adolescent or pregnant \u2014 hard stop; uncharacterized CNS compound",
+    "On stimulants for wakefulness \u2014 additive CNS arousal; uncharacterized combination",
+  ],
+};
+
+const SUPPORT_OCTREOTIDE: SupportPack = {
+  id: "octreotide",
+  title: "Gallbladder surveillance and glucose monitoring are mandatory for anyone on long-term octreotide",
+  subtitle: "Sandostatin; SSTR2/3/5-selective somatostatin analogue; acromegaly/carcinoid/NET indications; physician-managed only",
+  bullets: [
+    "FDA-approved for acromegaly, carcinoid syndrome (diarrhea/flushing), VIPomas, and variceal GI bleeding \u2014 these are specialist-managed indications requiring physician oversight and monitoring; not community peptide territory",
+    "Gallbladder surveillance is mandatory: somatostatin analogues impair gallbladder motility; gallstones develop in 15-30% of patients with chronic octreotide use; baseline ultrasound and periodic surveillance are clinical standards",
+    "Glucose monitoring is required: octreotide inhibits both insulin and glucagon; the net glucose effect is variable \u2014 hypoglycemia can occur acutely (more insulin suppression), glucose intolerance with chronic use (reduced glucagon counter-regulation); fasting glucose baseline before starting and periodic monitoring",
+    "Bradycardia and cardiac conduction: somatostatin analogues can cause bradycardia and conduction changes via SST2 receptors; baseline EKG is appropriate for anyone with pre-existing cardiac conditions or bradycardia risk factors",
+    "Cyclosporine interaction: octreotide reduces cyclosporine bioavailability significantly by inhibiting GI absorption; dose adjustment and monitoring required if combining",
+    "Comparison to lanreotide: both are long-acting somatostatin analogues with similar clinical profiles; octreotide LAR (microsphere IM injection, clinic-administered) vs lanreotide Depot (prefilled SQ syringe, self-injectable after training) \u2014 choice is often practical",
+  ],
+  redFlags: [
+    "Severe right upper quadrant pain \u2014 possible gallstone or acute cholecystitis; stop and seek evaluation urgently",
+    "Symptomatic hypoglycemia \u2014 fast-acting carbohydrates immediately; normal glucagon response may be impaired; stop and consult",
+    "Bradycardia with symptoms (syncope, pre-syncope, exercise intolerance) \u2014 stop and seek cardiac evaluation",
+    "On cyclosporine without dose adjustment and monitoring plan \u2014 octreotide significantly reduces cyclosporine levels; organ transplant recipients are at rejection risk",
+  ],
+};
+
+const SUPPORT_PEG_MGF: SupportPack = {
+  id: "peg-mgf",
+  title: "PEG-MGF activates the IGF-1 axis \u2014 cancer history is an absolute hard stop, identical to IGF-1 LR3",
+  subtitle: "PEGylated mechano growth factor; IGF-1 splice variant; preclinical only; oncogenesis concern; PEG accumulation risk",
+  bullets: [
+    "Cancer history is an absolute hard stop: PEG-MGF signals through the IGF-1 axis; IGF-1 receptor (IGF-1R) is a validated oncology target; any personal cancer history means no PEG-MGF, ever, under any circumstances \u2014 same rule as IGF-1 LR3",
+    "No human clinical trials exist: PEG-MGF is entirely preclinical; no Phase 1 safety data, no established human dose, no pharmacokinetic data in humans; the community use is a significant extrapolation from cell and animal models",
+    "PEG accumulation is an uncharacterized concern: repeated PEGylated compound dosing can lead to PEG (polyethylene glycol) accumulation in tissues and anti-PEG antibody formation; the long-term consequences of PEG accumulation from research peptide injection are not studied",
+    "IGF-1 axis interaction audit: if on GH secretagogues (CJC-1295, ipamorelin, MK-677), adding PEG-MGF creates a second IGF-1 axis input; cumulative IGF-1 axis activation amplifies the oncogenesis concern and the hypoglycemia concern",
+    "Source quality is critical: no pharmaceutical-grade PEG-MGF exists; community access is through research peptide suppliers with variable quality; purity, concentration, and PEG conjugation integrity are unverifiable without mass spectrometry",
+    "The muscle repair narrative is extrapolated from MGF biology in animal models: humans do produce MGF in mechanically loaded muscle; whether exogenous PEG-MGF injection on top of exercise adds meaningful repair benefit beyond what training alone produces is not established",
+  ],
+  redFlags: [
+    "Any cancer history \u2014 absolute permanent hard stop; IGF-1 axis activation is a cancer risk factor; no exceptions",
+    "On insulin or IGF-1 LR3 \u2014 additive IGF-1 pathway activation and hypoglycemia risk; do not combine without physician oversight",
+    "Product without verifiable third-party CoA including PEGylation confirmation \u2014 do not inject; wrong concentration or incomplete PEGylation is not detectable visually",
+    "Pregnant or breastfeeding \u2014 hard stop; IGF-1 axis activation in pregnancy is contraindicated",
+  ],
+};
+
+const SUPPORT_PENTAGASTRIN: SupportPack = {
+  id: "pentagastrin",
+  title: "Historical diagnostic tool \u2014 largely replaced by RET genetic testing; no therapeutic or community use case",
+  subtitle: "CCK-B/gastrin receptor agonist; gastric acid stimulation test; calcitonin MTC provocative test; off-market in US",
+  bullets: [
+    "Pentagastrin is a diagnostic agent, not a therapeutic compound: it was used as a provocative test to measure maximal gastric acid output and to stimulate calcitonin release for early MTC detection in MEN2 families; it has no therapeutic application",
+    "Largely replaced by genetic testing: RET proto-oncogene mutation testing now identifies MEN2 mutation carriers before MTC develops, making repeated calcitonin provocative testing unnecessary in most cases; calcium gluconate stimulation is preferred for biochemical testing where needed",
+    "Off-market in the US: pentagastrin has been removed from the US market; it is not commercially available in many countries; obtaining it outside a clinical research context is impractical",
+    "GI adverse effects are expected in diagnostic use: nausea, GI cramping, flushing, and headache are common with pentagastrin administration; these are managed in supervised diagnostic settings and are not a basis for community self-administration",
+    "Educational context: pentagastrin demonstrates CCK-B/gastrin receptor pharmacology and the C-terminal tetrapeptide (-Trp-Met-Asp-Phe-NH2) active sequence; understanding this explains the mechanism of histamine-2 receptor antagonist competition for gastric acid control",
+    "No community use case: this entry exists for pharmacological completeness in a peptide database; there is no community or enhancement use case for pentagastrin",
+  ],
+};
+
+const SUPPORT_PLECANATIDE: SupportPack = {
+  id: "plecanatide",
+  title: "Same pediatric black box warning as linaclotide \u2014 absolute contraindication under 6; diarrhea is the adult management challenge",
+  subtitle: "Trulance; GC-C agonist; uroguanylin analogue; pH-dependent activation; CIC and IBS-C indications",
+  bullets: [
+    "FDA-approved for chronic idiopathic constipation (CIC) and IBS with constipation (IBS-C) \u2014 Phase 3 RCT support for both; mechanism well-characterized (GC-C \u2192 cGMP \u2192 chloride and bicarbonate secretion \u2192 intestinal fluid and transit)",
+    "Black box warning: contraindicated in patients under 6 years of age due to risk of serious dehydrating diarrhea; avoid in patients 6-17 (safety not established); absolute contraindication",
+    "Diarrhea management: the most common adverse effect; take on an empty stomach 30 minutes before the first meal; if severe diarrhea develops, discontinue and contact physician",
+    "pH-dependent duodenal activation (vs linaclotide): plecanatide is a uroguanylin analogue with GC-C activation preferentially in the acidic duodenal environment; this is mechanistically distinct from linaclotide (guanylin analogue, non-pH-gated); may offer modestly different tolerability in some patients",
+    "Negligible systemic absorption: plecanatide works locally in the GI tract; systemic drug interactions are not expected; does not affect hepatic or renal drug metabolism",
+    "Bowel obstruction contraindication: if mechanical obstruction is suspected, plecanatide is contraindicated; rule out obstruction before starting in patients with severe constipation and significant abdominal pain",
+  ],
+  redFlags: [
+    "Child under 6 \u2014 absolute contraindication; black box warning; do not administer",
+    "Severe or bloody diarrhea \u2014 stop immediately; dehydration and electrolyte loss risk; seek medical evaluation",
+    "Possible bowel obstruction (severe cramping, inability to pass stool or gas, abdominal distension) \u2014 stop and seek emergency evaluation",
+    "Worsening abdominal pain without bowel habit improvement \u2014 rule out alternative GI pathology",
+  ],
+};
+
+const SUPPORT_PROLACTIN_RELEASING_PEPTIDE: SupportPack = {
+  id: "prolactin-releasing-peptide",
+  title: "PrRP\u2019s clinical name is misleading \u2014 its primary role is appetite suppression via GPR10, not prolactin regulation",
+  subtitle: "GPR10 agonist; energy balance neuropeptide; GLP-1/PrRP conjugate pipeline; no FDA approval; research compound",
+  bullets: [
+    "The naming is misleading: prolactin-releasing peptide was named when first isolated, but GPR10-mediated appetite suppression and energy balance is now understood as its primary biological role; prolactin regulation is a secondary or indirect effect, not the main pharmacological story",
+    "GLP-1/PrRP conjugate development: pharmaceutical companies (Novo Nordisk and others) are developing dual GLP-1R/GPR10 agonist conjugates for obesity \u2014 this is the most clinically significant development in PrRP pharmacology; exogenous PrRP alone is not the drug being developed",
+    "No FDA approval or clinical evidence for therapeutic use: PrRP has no approved clinical applications; community injection of PrRP does not have evidence support; this is an early-stage research compound",
+    "Uncertain prolactin effects: despite the naming, exogenous PrRP can affect prolactin release in some contexts; individuals with prolactinoma, hyperprolactinemia, or on dopamine agonists for prolactin management should be cautious about adding any compound with potential prolactin interaction",
+    "Research compound quality issues: no pharmaceutical-grade PrRP exists for community access; purity and potency verification is not possible through standard community channels",
+    "No community use case with an established rationale: the appetite suppression mechanism is real but has not been demonstrated to produce meaningful weight loss in any human study from exogenous PrRP injection",
+  ],
+  redFlags: [
+    "Hyperprolactinemia or prolactinoma under treatment \u2014 uncertain prolactin effects; do not add uncharacterized PrRP without endocrinologist guidance",
+    "On dopamine agonists (cabergoline, bromocriptine) for prolactin management \u2014 possible pharmacodynamic interaction; do not combine without physician oversight",
+    "Expecting GLP-1-like weight loss from PrRP injection \u2014 the GLP-1/PrRP conjugate effect is in the combined molecule; standalone PrRP injection has not demonstrated meaningful human weight loss",
+    "On antipsychotics that increase prolactin \u2014 prolactin pathway already affected; adding uncharacterized PrRP creates unstudied interaction",
+  ],
+};
+
+const SUPPORT_SECRETIN: SupportPack = {
+  id: "secretin",
+  title: "Secretin is a diagnostic agent \u2014 the autism treatment claim has been definitively refuted by multiple RCTs and a Cochrane review",
+  subtitle: "ChiRhoStim/SecreFlo; GI diagnostic peptide; pancreatic function testing; autism claim not supported",
+  bullets: [
+    "Autism claim is definitively refuted: multiple randomized controlled trials and a Cochrane systematic review found no benefit from secretin for autism spectrum disorder; the autism use case was driven by an anecdotal case series that did not replicate in controlled settings; this is not a contested area of research",
+    "FDA-approved as a diagnostic agent only: ChiRhoStim (porcine secretin) and SecreFlo (synthetic human secretin) are approved for gastrinoma (Zollinger-Ellison syndrome) evaluation and pancreatic function testing; these are specific, supervised diagnostic procedures",
+    "Mechanism is GI-specific: secretin from S cells in the duodenum stimulates pancreatic bicarbonate secretion, reduces gastric acid, and regulates GI motility via secretin receptors; these are the mechanisms that make it a useful GI diagnostic tool, not a systemic or CNS therapeutic",
+    "Anticholinergic interaction in diagnostic testing: anticholinergic drugs reduce pancreatic response to secretin in diagnostic testing; this is a pharmacodynamic interaction relevant to diagnostic test validity, not a safety concern in community use",
+    "Short duration of action: secretin has a short plasma half-life; its diagnostic utility depends on this (defined stimulation window for measurement); effects do not persist after testing",
+    "No therapeutic or enhancement use case: there is no evidence base and no pharmacological rationale for using secretin as a therapeutic or enhancement compound",
+  ],
+};
+
+const SUPPORT_SHLP2: SupportPack = {
+  id: "shlp-2",
+  title: "Novel mitochondrial biology but entirely preclinical \u2014 no human trials, no established safety data",
+  subtitle: "Small Humanin-like Peptide 2; mtDNA 16S rRNA smORF; MDP family; cytoprotective and insulin-sensitizing in preclinical models",
+  bullets: [
+    "No human clinical trials: SHLP-2 has never been tested in a human clinical trial; there are no Phase 1 safety data, no established pharmacokinetics in humans, and no known safe dose range for exogenous SHLP-2",
+    "The circulating levels correlation with longevity markers is observational: higher endogenous SHLP-2 is associated with healthier aging in some cohort studies, but correlation does not establish that injecting exogenous SHLP-2 produces the same effect \u2014 SHLP-2 may be a marker of good mitochondrial health, not a cause",
+    "Insulin sensitization concern: SHLP-2 shows insulin-sensitizing effects in cell and animal models; if on insulin, metformin, or other glucose-lowering agents, the theoretical additive effect could cause hypoglycemia; monitor glucose if adding SHLP-2 and using antidiabetic medications",
+    "Stacking with other MDPs: SHLP-2, humanin, and MOTS-c are all MDP family members from the mitochondrial genome; their interaction profiles when combined have not been studied; combining multiple MDPs is not supported by any evidence",
+    "Source quality: no pharmaceutical manufacturer produces SHLP-2; research peptide vendors are the only source; purity and identity verification is not possible through standard channels",
+    "MDP family context: SHLP-2 is one of at least 7 mitochondrial-derived peptides now identified (humanin, MOTS-c, SHLP-1 through SHLP-6); the family is genuinely novel biology; the jump from interesting science to safe, effective self-administration is not yet bridged for any of them",
+  ],
+  redFlags: [
+    "On insulin or glucose-lowering medications \u2014 putative insulin sensitization could be additive; monitor glucose and discuss with prescribing physician",
+    "Active cancer or cancer history \u2014 mitochondrial metabolic effects; discuss with oncologist before using any uncharacterized mitochondrial compound",
+    "Expecting to verify product quality through standard means \u2014 identity and purity of SHLP-2 cannot be confirmed without mass spectrometry; standard visual or HPLC testing is insufficient",
+  ],
+};
+
 function isEndothelin1Family(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "endothelin-1";
@@ -1613,5 +1800,13 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isMelanoranIFamily(entity)) return SUPPORT_MELANOTAN_I;
   if (isMotilinFamily(entity)) return SUPPORT_MOTILIN;
   if (isNesiritideFamily(entity)) return SUPPORT_NESIRITIDE;
+  if (isNeuropeptideSFamily(entity)) return SUPPORT_NEUROPEPTIDE_S;
+  if (isOctreotideFamily(entity)) return SUPPORT_OCTREOTIDE;
+  if (isPegMgfFamily(entity)) return SUPPORT_PEG_MGF;
+  if (isPentagastrinFamily(entity)) return SUPPORT_PENTAGASTRIN;
+  if (isPlecanatideFamily(entity)) return SUPPORT_PLECANATIDE;
+  if (isProlactinReleasingPeptideFamily(entity)) return SUPPORT_PROLACTIN_RELEASING_PEPTIDE;
+  if (isSecretinFamily(entity)) return SUPPORT_SECRETIN;
+  if (isShlp2Family(entity)) return SUPPORT_SHLP2;
   return null;
 }

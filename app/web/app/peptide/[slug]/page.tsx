@@ -318,8 +318,40 @@ import NesiritideOverviewPanel from "@/components/NesiritideOverviewPanel";
 import NesiritideEvidencePanel from "@/components/NesiritideEvidencePanel";
 import NesiritideSafetyPanel from "@/components/NesiritideSafetyPanel";
 import NesiritideInteractionsPanel from "@/components/NesiritideInteractionsPanel";
+import NeuropeptideSOverviewPanel from "@/components/NeuropeptideSOverviewPanel";
+import NeuropeptideSEvidencePanel from "@/components/NeuropeptideSEvidencePanel";
+import NeuropeptideSSafetyPanel from "@/components/NeuropeptideSSafetyPanel";
+import NeuropeptideSInteractionsPanel from "@/components/NeuropeptideSInteractionsPanel";
+import OctreotideOverviewPanel from "@/components/OctreotideOverviewPanel";
+import OctreotideEvidencePanel from "@/components/OctreotideEvidencePanel";
+import OctreotideSafetyPanel from "@/components/OctreotideSafetyPanel";
+import OctreotideInteractionsPanel from "@/components/OctreotideInteractionsPanel";
+import PegMgfOverviewPanel from "@/components/PegMgfOverviewPanel";
+import PegMgfEvidencePanel from "@/components/PegMgfEvidencePanel";
+import PegMgfSafetyPanel from "@/components/PegMgfSafetyPanel";
+import PegMgfInteractionsPanel from "@/components/PegMgfInteractionsPanel";
+import PentagastrinOverviewPanel from "@/components/PentagastrinOverviewPanel";
+import PentagastrinEvidencePanel from "@/components/PentagastrinEvidencePanel";
+import PentagastrinSafetyPanel from "@/components/PentagastrinSafetyPanel";
+import PentagastrinInteractionsPanel from "@/components/PentagastrinInteractionsPanel";
+import PlecanatideOverviewPanel from "@/components/PlecanatideOverviewPanel";
+import PlecanatideEvidencePanel from "@/components/PlecanatideEvidencePanel";
+import PlecanatideSafetyPanel from "@/components/PlecanatideSafetyPanel";
+import PlecanatideInteractionsPanel from "@/components/PlecanatideInteractionsPanel";
+import ProlactinReleasingPeptideOverviewPanel from "@/components/ProlactinReleasingPeptideOverviewPanel";
+import ProlactinReleasingPeptideEvidencePanel from "@/components/ProlactinReleasingPeptideEvidencePanel";
+import ProlactinReleasingPeptideSafetyPanel from "@/components/ProlactinReleasingPeptideSafetyPanel";
+import ProlactinReleasingPeptideInteractionsPanel from "@/components/ProlactinReleasingPeptideInteractionsPanel";
+import SecretinOverviewPanel from "@/components/SecretinOverviewPanel";
+import SecretinEvidencePanel from "@/components/SecretinEvidencePanel";
+import SecretinSafetyPanel from "@/components/SecretinSafetyPanel";
+import SecretinInteractionsPanel from "@/components/SecretinInteractionsPanel";
+import Shlp2OverviewPanel from "@/components/Shlp2OverviewPanel";
+import Shlp2EvidencePanel from "@/components/Shlp2EvidencePanel";
+import Shlp2SafetyPanel from "@/components/Shlp2SafetyPanel";
+import Shlp2InteractionsPanel from "@/components/Shlp2InteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide", "neuropeptide-s", "octreotide", "peg-mgf", "pentagastrin", "plecanatide", "prolactin-releasing-peptide", "secretin", "shlp-2"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -784,6 +816,54 @@ const PANEL_MAP: Record<string, {
     Evidence: NesiritideEvidencePanel,
     Safety: NesiritideSafetyPanel,
     Interactions: NesiritideInteractionsPanel,
+  },
+  "neuropeptide-s": {
+    Overview: NeuropeptideSOverviewPanel,
+    Evidence: NeuropeptideSEvidencePanel,
+    Safety: NeuropeptideSSafetyPanel,
+    Interactions: NeuropeptideSInteractionsPanel,
+  },
+  octreotide: {
+    Overview: OctreotideOverviewPanel,
+    Evidence: OctreotideEvidencePanel,
+    Safety: OctreotideSafetyPanel,
+    Interactions: OctreotideInteractionsPanel,
+  },
+  "peg-mgf": {
+    Overview: PegMgfOverviewPanel,
+    Evidence: PegMgfEvidencePanel,
+    Safety: PegMgfSafetyPanel,
+    Interactions: PegMgfInteractionsPanel,
+  },
+  pentagastrin: {
+    Overview: PentagastrinOverviewPanel,
+    Evidence: PentagastrinEvidencePanel,
+    Safety: PentagastrinSafetyPanel,
+    Interactions: PentagastrinInteractionsPanel,
+  },
+  plecanatide: {
+    Overview: PlecanatideOverviewPanel,
+    Evidence: PlecanatideEvidencePanel,
+    Safety: PlecanatideSafetyPanel,
+    Interactions: PlecanatideInteractionsPanel,
+  },
+  "prolactin-releasing-peptide": {
+    Overview: ProlactinReleasingPeptideOverviewPanel,
+    Evidence: ProlactinReleasingPeptideEvidencePanel,
+    Safety: ProlactinReleasingPeptideSafetyPanel,
+    Interactions: ProlactinReleasingPeptideInteractionsPanel,
+  },
+  secretin: {
+    Overview: SecretinOverviewPanel,
+    Evidence: SecretinEvidencePanel,
+    Safety: SecretinSafetyPanel,
+    Interactions: SecretinInteractionsPanel,
+  },
+  "shlp-2": {
+    Overview: Shlp2OverviewPanel,
+    Evidence: Shlp2EvidencePanel,
+    Safety: Shlp2SafetyPanel,
+    Interactions: Shlp2InteractionsPanel,
   },
 };
 
@@ -1398,6 +1478,70 @@ const V3_HERO_CONTENT: Record<string, {
       "Linaclotide (Linzess) is a GC-C receptor agonist FDA-approved for chronic idiopathic constipation (CIC) and IBS with constipation (IBS-C) \u2014 locally-acting secretagogue with negligible systemic absorption.",
       "What matters most: the black box warning for pediatric use (contraindicated under 6) is absolute. For adults, diarrhea is the primary management challenge.",
       "How to use this page: Evidence covers the Phase 3 CIC and IBS-C trial data. Safety covers the pediatric contraindication, diarrhea management, and bowel obstruction screening.",
+    ],
+  },
+  "neuropeptide-s": {
+    considerSub: "Anxiety, wakefulness, NPSR1, BBB penetration, no human data\u2026",
+    startHere: [
+      "Neuropeptide S is a 20-amino-acid neuropeptide that activates NPSR1 receptors \u2014 producing anxiolysis and wakefulness in animal models. There are no human clinical trials.",
+      "What matters most: the complete absence of human safety data is the primary concern. Additionally, CNS delivery from subcutaneous injection is not established \u2014 the mechanism requires brain access.",
+      "How to use this page: Safety explains why the absence of data is itself the risk. Interactions covers the theoretical concern with anxiolytics, SSRIs, and stimulants.",
+    ],
+  },
+  octreotide: {
+    considerSub: "Acromegaly, carcinoid, NETs, somatostatin analogue, gallstones, glucose\u2026",
+    startHere: [
+      "Octreotide (Sandostatin) is a long-acting somatostatin analogue FDA-approved for acromegaly, carcinoid syndrome, VIPomas, and GI bleeding from varices \u2014 the reference somatostatin drug for most clinical applications.",
+      "What matters most: gallbladder surveillance (gallstones develop in 15-30% of chronic users) and glucose monitoring are mandatory management considerations for anyone on long-term octreotide.",
+      "How to use this page: Evidence covers the Phase 3 acromegaly and NET data. Safety covers gallstones, glucose, and cardiac effects.",
+    ],
+  },
+  "peg-mgf": {
+    considerSub: "MGF splice variant, PEGylation, IGF-1 axis, muscle repair, no human trials\u2026",
+    startHere: [
+      "PEG-MGF is a PEGylated synthetic version of mechano growth factor (MGF) \u2014 an IGF-1 splice variant expressed in mechanically stressed muscle. The PEGylation extends its half-life. There are no human clinical trials.",
+      "What matters most: PEG-MGF activates the IGF-1 axis. Cancer history is an absolute contraindication, identical to IGF-1 LR3. PEG accumulation with repeated dosing is an additional uncharacterized concern.",
+      "How to use this page: Safety covers the IGF-1 axis oncogenesis concern and PEG accumulation. Evidence explains the gap between the interesting splice biology and any human efficacy.",
+    ],
+  },
+  pentagastrin: {
+    considerSub: "Calcitonin stimulation test, MTC, MEN2, gastric acid, CCK-B receptor\u2026",
+    startHere: [
+      "Pentagastrin is a synthetic 5-amino acid gastrin partial sequence that was used as a provocative test agent \u2014 for gastric acid stimulation testing and calcitonin stimulation to detect medullary thyroid carcinoma (MTC) in MEN2 families.",
+      "What matters most: this is a historical diagnostic tool, now largely replaced by RET genetic testing for MTC screening. Pentagastrin is off-market in the US. There is no therapeutic or community use case.",
+      "How to use this page: Evidence covers the historical diagnostic applications. This entry exists for pharmacological completeness in the database.",
+    ],
+  },
+  plecanatide: {
+    considerSub: "IBS-C, CIC, GC-C agonist, Trulance, uroguanylin analogue, pH-dependent\u2026",
+    startHere: [
+      "Plecanatide (Trulance) is a GC-C agonist FDA-approved for CIC and IBS-C \u2014 a uroguanylin analogue with pH-dependent activation preferentially in the duodenum, distinguishing it mechanistically from linaclotide.",
+      "What matters most: same pediatric black box warning as linaclotide (contraindicated under 6). For adults, diarrhea is the tolerability challenge. The pH-dependent design may offer modestly better tolerability vs linaclotide for some patients.",
+      "How to use this page: Evidence covers the Phase 3 CIC and IBS-C RCT data and the mechanism comparison to linaclotide. Safety covers pediatric contraindication and diarrhea management.",
+    ],
+  },
+  "prolactin-releasing-peptide": {
+    considerSub: "GPR10, appetite suppression, GLP-1 conjugate pipeline, naming confusion\u2026",
+    startHere: [
+      "Prolactin-releasing peptide (PrRP) is a misnomer \u2014 it was named for its initial discovery as a prolactin releaser, but its primary biological role is GPR10-mediated appetite suppression and energy balance. It has no FDA approval.",
+      "What matters most: the GLP-1/PrRP conjugate pipeline (being developed by pharma for obesity) is the most promising development. Community injection of PrRP alone is not supported by any human evidence.",
+      "How to use this page: Evidence distinguishes the GPR10 appetite biology from the limited clinical development context. Safety covers the absence of human data and uncertain prolactin effects.",
+    ],
+  },
+  secretin: {
+    considerSub: "GI diagnostic test, gastrinoma, pancreatic function, autism claims refuted\u2026",
+    startHere: [
+      "Secretin is an endogenous GI hormone FDA-approved as a diagnostic agent for gastrinoma (Zollinger-Ellison) and pancreatic function testing. The autism treatment claim has been rigorously refuted by multiple RCTs and a Cochrane review.",
+      "What matters most: secretin has no therapeutic applications for autism, digestive wellness, or any non-diagnostic purpose. The community autism claim is one of the most thoroughly disproven peptide claims in the literature.",
+      "How to use this page: Evidence covers both the strong diagnostic utility and the definitive refutation of the autism claim. Safety is minimal \u2014 this is a diagnostic agent with short-duration effects.",
+    ],
+  },
+  "shlp-2": {
+    considerSub: "Mitochondrial-derived peptide, longevity, 16S rRNA, humanin family, no human trials\u2026",
+    startHere: [
+      "SHLP-2 (Small Humanin-like Peptide 2) is a 12-amino-acid mitochondrial-derived peptide encoded in the 16S rRNA gene of the mitochondrial genome \u2014 the same locus as humanin. Discovered in 2016, it is in the early preclinical phase.",
+      "What matters most: no human clinical trials exist. All evidence is cell-based and animal models. Like MOTS-c and humanin, the interest is the novel mitochondrial biology \u2014 the human benefit from injection is unestablished.",
+      "How to use this page: Evidence explains the mitochondrial biology and the gap to clinical use. Safety covers the absence of human safety data and the theoretical insulin-sensitization interaction concern.",
     ],
   },
 };
