@@ -97,6 +97,18 @@ The panels have hardcoded data arrays. Replace the Reta-specific data with the n
   - Aim for 20–40 entries covering the most relevant drug classes, supplements, and peptide combinations
 - `CATEGORY_LABELS` map — may stay the same (same 5 categories)
 
+#### Content Compliance Checklist (run before committing Step 3 work)
+
+Before marking panel data as done, verify all 7 Global PDP Fix Directives:
+
+- [ ] **Opener is plain language** — headline-text and headline-sub (or "What it is" for inline-style panels) can be understood by someone new to the compound. No receptor names, mechanism acronyms, or regulatory status in the first sentence.
+- [ ] **Stat cards: mechanism/outcome first** — the first `STAT_CARDS` entry describes what the compound does or a key outcome number. FDA/regulatory/approval status is the last entry.
+- [ ] **FIT_YES is goals-based, not diagnosis-gated** — no item in the ✓ column begins with "You have [disease]" or "You are diagnosed with...". Reframe as: "Your goal is...", "You're looking to...", "You want..."
+- [ ] **No emojis** — search the file for any emoji Unicode characters. "›", "✓", "✗", "△" are acceptable. Emoji (🔬💉🎯💊⚠️🤢❤️ etc.) are not.
+- [ ] **No FDA-first framing** — the word "FDA" does not appear in headline-text, headline-sub, or first paragraph of "What it is". It may appear in a stat card (last position) or body copy.
+- [ ] **No disease-exclusive FIT_NO gating** — ✗ column items can mention contraindications but should not read as "this isn't for healthy people". Keep it practical: "Managing [X] condition without medical supervision."
+- [ ] **Route of administration** — when multiple routes exist, injectable is listed first.
+
 ---
 
 ### Step 4 — Author the Support Pack (MANDATORY)

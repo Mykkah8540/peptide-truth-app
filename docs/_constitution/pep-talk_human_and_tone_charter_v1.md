@@ -309,12 +309,81 @@ If not, revise.
 
 ---
 
+## SECTION 10: PDP Panel-Specific Rules (non-negotiable)
+
+These rules apply to every peptide detail page panel. They exist because drift happens at the component level, not the system level. Each rule maps to a real failure pattern observed across built panels.
+
+### 10.1 — The Plain Language Opener Rule ("9:42pm Constraint Applied to Panels")
+
+The first sentence of every panel's opening content — headline-text, headline-sub, or "What it is" — must be comprehensible to a tired adult with no biochemistry background.
+
+Violating patterns:
+- "A selective GH secretagogue with GHRH-independent ghrelin receptor agonism..."
+- "A synthetic heptapeptide derived from ACTH(4-7) with Pro-Gly-Pro sequence for stability..."
+- "A GHRH receptor agonist approved for HIV-associated lipodystrophy..."
+
+Passing patterns:
+- "The cleanest injectable GH booster in its class..."
+- "A cognitive enhancer in nasal spray form — focus, alertness, possible brain protection..."
+- "A prescription GH compound with controlled trial evidence for reducing deep abdominal fat..."
+
+The rule: What does it *do* for the person reading this? That goes first. What it is chemically, mechanistically, or regulatorily goes after.
+
+### 10.2 — No FDA-First Framing
+
+FDA approval status is factual and may be included. It must never be the lead.
+
+Prohibited in first position: "FDA-approved...", "Not FDA-approved...", "Investigational drug...", "Approved for HIV-associated lipodystrophy..."
+
+These are useful facts. They belong as the last stat card, or as secondary context after the outcome framing.
+
+If the FDA status is the most interesting thing about a compound, reconsider the framing — there is always a more relevant angle (mechanism, outcome, community interest, honest evidence gap).
+
+### 10.3 — No Disease-Exclusive Fit Gating
+
+The ✓ (tends to benefit) column in the fit matrix must be goals-based, not diagnosis-based.
+
+Prohibited first items:
+- "You have HIV-associated lipodystrophy"
+- "You have been diagnosed with HSDD"
+- "You have chronic hepatitis B or C"
+
+These are true but they gate an optimization-focused audience out of the page in the first line. Reframe:
+- "Your goal is reducing visceral fat" (Tesamorelin)
+- "You want increased sexual desire and motivation" (Bremelanotide)
+- "You're looking for immune resilience support" (Thymosin Alpha-1)
+
+Disease context may appear in the body copy or in a secondary ✓ item, but never as the opening gate.
+
+### 10.4 — No Emojis
+
+Emoji Unicode characters are prohibited in all panel content: 🔬💉🎯💊⚠️🤢❤️💪🧬🔑 and all others.
+
+Acceptable iconography:
+- ✓ and ✗ for fit matrix columns
+- △ for partial/uncertain signals
+- › as a neutral bullet replacement in Safety PLAYBOOK icon fields
+
+The prohibition applies to: STAT_CARDS, FIT_YES, FIT_NO, TIMELINE, COMPARISON, SIGNALS, TRIAL_STATS, MECHANISMS, GAPS, OBSERVED, SIDE_EFFECTS, PLAYBOOK, RED_LINES, INTERACTIONS, and all support pack content.
+
+### 10.5 — Stat Card Ordering
+
+`STAT_CARDS[]` must be ordered by relevance to the user's immediate question, not by regulatory importance.
+
+Order:
+1. Mechanism or primary outcome (what it does)
+2. Key evidence number (how well it works)
+3. Notable tradeoff or secondary characteristic
+4. Regulatory/access status (last — important but not the lead)
+
+---
+
 Pep-Talk must remain:
 
-Calm  
-Structured  
-Practical  
-Honest  
-Human  
+Calm
+Structured
+Practical
+Honest
+Human
 
 This is the non-negotiable identity layer.

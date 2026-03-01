@@ -158,6 +158,24 @@ Answers: "Will this work for me? How much vs alternatives?"
 - **Timeline:** 3 phases (weeks 1–4, months 1–3, month 3+) with plain-language expectations
 - **Comparison table:** Reta vs 2 alternatives, 4–5 metrics, active peptide column highlighted
 
+#### Global PDP Fix Directives (enforced on every panel build)
+
+These rules apply to ALL Overview panels. Violations must be fixed before commit.
+
+1. **Lead with digestible information** — opener flows beginner → intermediate → advanced. The first sentence must be comprehensible to someone who knows nothing about the compound. Scientific depth belongs in the body, not the headline.
+
+2. **Do not assume disease-driven intent** — optimization, performance, and wellness are the primary use cases. Clinical/disease indications exist but are secondary. The ✓ fit matrix must not open with a disease diagnosis (e.g., "You have HIV-associated lipodystrophy", "You have HSDD"). Lead with goals ("Your goal is reducing visceral fat", "You want increased sexual desire").
+
+3. **Do not lead with FDA approval status** — FDA/regulatory context is factual but must not be the first or most prominent framing. Maintain neutral, research-focused positioning. FDA information belongs as the last stat card or in the body.
+
+4. **Stat card ordering rule** — Mechanism/outcome stat goes first. FDA/regulatory/approval status stat goes last. When in doubt: what does it *do* before what category it belongs to.
+
+5. **No emojis anywhere** — emoji Unicode characters (🔬💉🎯💊⚠️🤢❤️ etc.) are prohibited in all panel content. Iconography using plain text (✓ ✗ △ ›) is acceptable. The Safety PLAYBOOK `icon:` field uses "›" as the standard neutral glyph.
+
+6. **Route of administration priority** — When listing or describing administration, injectable route comes first when available. "Injectable or nasal spray" not "nasal spray or injectable."
+
+7. **No over-indexing on FDA disclaimers** — One clear, calm framing of regulatory context is sufficient. Repeating FDA-approval caveats throughout a panel violates the tone charter (anti-drift safeguard).
+
 ### Evidence tab
 Answers: "What does the science actually say — and what's still missing?"
 - **Signal tiles:** 6 tiles, each with `tier: "strong" | "moderate" | "none"`, 1 sentence each
