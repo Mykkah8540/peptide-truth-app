@@ -97,3 +97,8 @@ export function evidenceGradeLabel(grade?: string | null): string {
   if (!grade) return "Evidence grade unknown";
   return EVIDENCE_GRADE_LABELS[grade] ?? "Evidence grade unknown";
 }
+
+/** Returns the full list of risk index entities — useful for building enriched compound lists. */
+export function getRiskIndex(): RiskIndexEntity[] {
+  return loadRiskIndex().entities;
+}

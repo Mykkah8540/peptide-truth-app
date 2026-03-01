@@ -1,5 +1,6 @@
 import { requirePaid } from "@/lib/gate";
 import Link from "next/link";
+import BackHomeLink from "@/components/BackHomeLink";
 
 export const dynamic = "force-dynamic";
 
@@ -63,6 +64,9 @@ export default async function ResourcesPage() {
       ══════════════════════════════════════════ */}
       <div className="pt-res__hero">
         <div className="pt-res__inner">
+          <div className="pt-res__hero-back">
+            <BackHomeLink />
+          </div>
           <p className="pt-res__eyebrow">Education Hub</p>
           <h1 className="pt-res__title">Resources</h1>
           <p className="pt-res__subtitle">

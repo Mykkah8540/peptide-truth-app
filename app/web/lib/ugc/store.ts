@@ -1,6 +1,6 @@
 import { ugcPool } from "@/lib/ugc/db";
 
-export type UgcEntityType = "peptide" | "blend"; // DB constraint currently matches this
+export type UgcEntityType = "peptide" | "blend" | "stack";
 export type UgcPostStatus = "pending" | "approved" | "rejected" | "archived" | "trash";
 
 export type UgcPost = {

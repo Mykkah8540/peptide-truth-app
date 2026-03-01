@@ -1,53 +1,79 @@
-import StackBuilderClient from "@/components/StackBuilderClient";
-import { loadStackBuilderGoals, loadTopicPageV1BySlug, listTopics } from "@/lib/content";
+import { listPeptides, listBlends, loadStackBuilderGoals } from "@/lib/content";
+import { getRiskIndex } from "@/lib/riskIndex";
 import { requirePaid } from "@/lib/gate";
+import { supabaseServer } from "@/lib/supabase/server";
+import StackBuilderV2, { type CompoundOption } from "@/components/StackBuilderV2";
 
-type GoalsDoc = NonNullable<ReturnType<typeof loadStackBuilderGoals>>;
-function firstText(blocks: any): string {
- if (!Array.isArray(blocks) || blocks.length === 0) return "";
- const t = blocks?.[0]?.text;
- return typeof t === "string" ? t : "";
-}
+export const dynamic = "force-dynamic";
 
-export default async function StackBuilderPage() {
- await requirePaid();
+export default async function StackBuilderPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ load?: string }>;
+}) {
+  await requirePaid();
 
- const goalsDoc = loadStackBuilderGoals();
+  const { load: loadId } = await searchParams;
 
- const goals = ((goalsDoc?.goals ?? []) as GoalsDoc["goals"]).map((g) => ({
-  goal_id: g.goal_id,
-  title: g.title,
-  description: g.description ?? "",
-  topic_ids: [
-   ...(g.primary_topic_id ? [g.primary_topic_id] : []),
-   ...(Array.isArray(g.secondary_topic_ids) ? g.secondary_topic_ids : []),
-  ],
- }));
+  const peptides = listPeptides();
+  const blends = listBlends();
+  const riskIndex = getRiskIndex();
+  const goalsDoc = loadStackBuilderGoals();
 
- // Build topic cards from actual topic_page_v1 docs
- const topicIndex = listTopics(); // uses file list; safe
- const topics = topicIndex.map((t) => {
-  const doc = loadTopicPageV1BySlug(t.slug);
-  const tp = doc?.topic_page;
+  // Build enriched compound list from in-memory indexes — no individual JSON reads
+  const riskMap = new Map(riskIndex.map((e) => [e.slug, e]));
 
-  const groups = Array.isArray(tp?.peptide_groups)
-   ? tp!.peptide_groups!.map((g) => ({
-     group_id: g.group_id ?? undefined,
-     title: g.title,
-     description: g.description ?? "",
-     peptides: Array.isArray(g.peptides) ? g.peptides : [],
-     blends: Array.isArray(g.blends) ? g.blends : [],
-    }))
-   : [];
+  const compounds: CompoundOption[] = [
+    ...peptides.map((p) => ({
+      slug: p.slug,
+      name: p.name,
+      kind: "peptide" as const,
+      taxonomy_keys: p.taxonomy_keys ?? [],
+      risk_score: riskMap.get(p.slug)?.risk.risk_score ?? 5,
+      risk_tier: riskMap.get(p.slug)?.risk.risk_tier ?? null,
+      evidence_grade: riskMap.get(p.slug)?.risk.evidence_grade ?? null,
+    })),
+    ...blends.map((b) => ({
+      slug: b.slug,
+      name: b.name,
+      kind: "blend" as const,
+      taxonomy_keys: b.taxonomy_keys ?? [],
+      risk_score: riskMap.get(b.slug)?.risk.risk_score ?? 5,
+      risk_tier: riskMap.get(b.slug)?.risk.risk_tier ?? null,
+      evidence_grade: riskMap.get(b.slug)?.risk.evidence_grade ?? null,
+    })),
+  ];
 
-  return {
-   slug: t.slug,
-   title: tp?.title ?? t.title,
-   introText: firstText(tp?.intro),
-   groups,
-   missing: !doc,
-  };
- });
+  const goals = (goalsDoc?.goals ?? []).map((g) => ({
+    goal_id: g.goal_id,
+    title: g.title,
+  }));
 
- return <StackBuilderClient goals={goals} topics={topics} />;
+  // If ?load=<id>, fetch that stack from Supabase for pre-hydration
+  let initialStack = null;
+  if (loadId) {
+    try {
+      const supa = await supabaseServer();
+      const { data: auth } = await supa.auth.getUser();
+      if (auth?.user) {
+        const { data } = await supa
+          .from("user_stacks")
+          .select("*")
+          .eq("id", loadId)
+          .eq("user_id", auth.user.id)
+          .maybeSingle();
+        if (data) initialStack = data;
+      }
+    } catch {
+      // Non-fatal: builder just opens empty
+    }
+  }
+
+  return (
+    <StackBuilderV2
+      compounds={compounds}
+      goals={goals}
+      initialStack={initialStack}
+    />
+  );
 }

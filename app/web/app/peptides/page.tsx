@@ -1,5 +1,6 @@
 import { listPeptides } from "@/lib/content";
 import Link from "next/link";
+import BackHomeLink from "@/components/BackHomeLink";
 
 export const dynamic = "force-dynamic";
 
@@ -36,6 +37,9 @@ export default async function PeptidesPage({
       <div className="pt-peptides__inner">
 
         <div className="pt-peptides__header">
+          <div className="pt-peptides__header-back">
+            <BackHomeLink />
+          </div>
           <h1 className="pt-peptides__title">Peptides</h1>
           <p className="pt-peptides__subtitle">
             {activeCat
@@ -43,7 +47,6 @@ export default async function PeptidesPage({
               : `${all.length} compounds`}
           </p>
         </div>
-
         <div className="pt-peptides__filter-bar">
           <Link
             href="/peptides"
