@@ -6841,3 +6841,46 @@ html.reta-page body {
   .pt-well__stack-cta { flex-direction: column; gap: 12px; }
   .pt-well__stack-cta-btn { width: 100%; text-align: center; }
 }
+
+/* ── WELLNESS_V1 addendum: primary/support tier layout ── */
+
+/* Tier header row: label + instruction note */
+.pt-well__tier-hd {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 22px;
+  margin-bottom: 10px;
+}
+.pt-well__tier-hd--support {
+  margin-top: 18px;
+}
+.pt-well__tier-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(15,26,46,0.42);
+}
+.pt-well__tier-note {
+  font-size: 12.5px;
+  line-height: 1.55;
+  font-weight: 600;
+  color: rgba(15,26,46,0.60);
+}
+
+/* Primary compound cards — slightly stronger treatment */
+.pt-well__compound--primary {
+  background: rgba(255,255,255,0.80);
+  border: 1px solid rgba(15,26,46,0.10);
+  border-radius: 10px;
+  padding: 13px 15px;
+}
+/* Support compound cards — lighter, clearly secondary */
+.pt-well__compound--support {
+  background: rgba(255,255,255,0.48);
+  border: 1px solid rgba(15,26,46,0.06);
+  border-radius: 10px;
+  padding: 12px 14px;
+  opacity: 0.90;
+}
