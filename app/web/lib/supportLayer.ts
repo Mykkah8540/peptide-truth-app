@@ -629,6 +629,82 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isBradykininFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "bradykinin";
+}
+
+function isBrainNatriureticPeptideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "brain-natriuretic-peptide";
+}
+
+function isCarbetocinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "carbetocin";
+}
+
+function isCgrpFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "cgrp";
+}
+
+const SUPPORT_BRADYKININ: SupportPack = {
+  id: "bradykinin",
+  title: "Bradykinin is a vasodilatory signaling peptide \u2014 not a therapeutic agent; relevant mainly for ACE inhibitor angioedema education",
+  subtitle: "Kallikrein-kinin system; ACE inhibitor angioedema mechanism; icatibant for HAE; no community use",
+  bullets: [
+    "Bradykinin is generated endogenously from kininogens by kallikrein \u2014 it causes vasodilation, pain sensitization, and increased vascular permeability via B1/B2 receptors",
+    "ACE inhibitor angioedema: ACE normally degrades bradykinin; ACE inhibitors block this degradation \u2014 bradykinin accumulates and can cause life-threatening angioedema (tongue, airway)",
+    "Icatibant (Firazyr) is a B2 receptor antagonist FDA-approved for hereditary angioedema (HAE) attacks \u2014 it blocks the bradykinin-mediated swelling",
+    "Lanadelumab (Takhzyro) prevents HAE by inhibiting plasma kallikrein, reducing bradykinin generation at the source",
+    "No exogenous bradykinin injection use case \u2014 it would cause systemic vasodilation, hypotension, and severe pain; it is a research/pharmacology reference compound",
+    "Key takeaway: if you take ACE inhibitors and experience facial/tongue swelling, this is bradykinin-mediated angioedema \u2014 a medical emergency requiring immediate care",
+  ],
+};
+
+const SUPPORT_BRAIN_NATRIURETIC_PEPTIDE: SupportPack = {
+  id: "brain-natriuretic-peptide",
+  title: "BNP is the gold-standard heart failure biomarker \u2014 nesiritide (recombinant BNP) is a declining-use IV drug",
+  subtitle: "Cardiac biomarker for HF diagnosis/monitoring; nesiritide for acute decompensated HF; no community use",
+  bullets: [
+    "BNP and NT-proBNP are secreted by ventricular myocytes under volume/pressure overload \u2014 the most clinically important heart failure biomarkers for diagnosis, prognosis, and treatment monitoring",
+    "Nesiritide (Natrecor) is recombinant human BNP \u2014 FDA-approved for acute decompensated heart failure, but use has declined since ASCEND-HF (2011) showed no mortality benefit and possible worsening renal function",
+    "BNP level interpretation: values rise with acute HF exacerbation and fall with effective treatment; obesity, kidney disease, and atrial fibrillation affect levels",
+    "NT-proBNP is preferred in many labs (more stable); BNP and NT-proBNP have different reference ranges and cannot be directly compared",
+    "No community use of exogenous BNP \u2014 nesiritide is a hospital IV medication requiring hemodynamic monitoring",
+    "The natriuretic peptide system (ANP, BNP, CNP) is the physiological counterbalance to RAAS \u2014 pharmacological context for sacubitril/valsartan (Entresto), which blocks neprilysin to preserve endogenous natriuretic peptides",
+  ],
+};
+
+const SUPPORT_CARBETOCIN: SupportPack = {
+  id: "carbetocin",
+  title: "Carbetocin is a long-acting oxytocin analogue for postpartum hemorrhage prevention \u2014 obstetric use only",
+  subtitle: "WHO essential medicine for PPH; CHAMPION trial; single-dose convenience vs repeated oxytocin; no community use",
+  bullets: [
+    "Carbetocin is a synthetic oxytocin analogue with ~40 min half-life (vs. ~3 min for oxytocin) \u2014 single dose replaces repeated oxytocin infusions for PPH prevention after cesarean delivery",
+    "CHAMPION trial (2018, Lancet): non-inferiority to oxytocin for PPH prevention across 23 countries; WHO added to essential medicines list for PPH",
+    "Not FDA-approved in the United States; widely used internationally; heat-stable formulation (Carbetocin RTS) approved by WHO for lower-resource settings without cold chain",
+    "No community or enhancement use \u2014 carbetocin is an obstetric uterotonic; its oxytocin receptor activity in non-obstetric contexts would cause uterine cramping, hypotension, and nausea without benefit",
+    "Cardiovascular monitoring: like oxytocin, carbetocin causes vasodilation and transient hypotension/tachycardia \u2014 administered with IV access and monitoring in place",
+    "The oxytocin receptor agonism that makes it useful for PPH is distinct from the social/anxiolytic effects sometimes attributed to intranasal oxytocin",
+  ],
+};
+
+const SUPPORT_CGRP: SupportPack = {
+  id: "cgrp",
+  title: "CGRP is the central migraine mediator \u2014 CGRP-targeted drugs have transformed migraine prevention and acute treatment",
+  subtitle: "Trigeminal neuropeptide; 4 FDA-approved mAbs for prevention; gepants for acute and preventive treatment",
+  bullets: [
+    "CGRP (calcitonin gene-related peptide) is released from trigeminal nerve terminals during migraine attacks, causing vasodilation and neurogenic inflammation \u2014 the key molecular driver of migraine pain",
+    "4 FDA-approved CGRP monoclonal antibodies for migraine prevention: erenumab (Aimovig), fremanezumab (Ajovy), galcanezumab (Emgality), eptinezumab (Vyepti)",
+    "Gepants (CGRP receptor antagonists) for acute migraine: rimegepant (Nurtec ODT), ubrogepant (Ubrelvy); atogepant (Qulipta) also approved for prevention",
+    "CGRP mAbs reduce monthly migraine days by 50%+ in ~40-50% of patients \u2014 one of the most targeted, mechanism-validated drug classes in modern neurology",
+    "No community injection of exogenous CGRP \u2014 this would cause vasodilation and potentially exacerbate migraine; CGRP is an endogenous mediator to block, not supplement",
+    "If you have chronic migraine (15+ headache days/month, 8+ migraine): discuss CGRP-targeted therapy with a headache specialist; these drugs represent a major advance over older preventive options",
+  ],
+};
+
 function isAmylinFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "amylin";
@@ -1326,6 +1402,10 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isDesmopressinFamily(entity)) return SUPPORT_DESMOPRESSIN;
   if (isCalcitoninFamily(entity)) return SUPPORT_CALCITONIN;
   if (isGlucagonFamily(entity)) return SUPPORT_GLUCAGON;
+  if (isBradykininFamily(entity)) return SUPPORT_BRADYKININ;
+  if (isBrainNatriureticPeptideFamily(entity)) return SUPPORT_BRAIN_NATRIURETIC_PEPTIDE;
+  if (isCarbetocinFamily(entity)) return SUPPORT_CARBETOCIN;
+  if (isCgrpFamily(entity)) return SUPPORT_CGRP;
   if (isAmylinFamily(entity)) return SUPPORT_AMYLIN;
   if (isAngiotensinIiFamily(entity)) return SUPPORT_ANGIOTENSIN_II;
   if (isAra290Family(entity)) return SUPPORT_ARA_290;

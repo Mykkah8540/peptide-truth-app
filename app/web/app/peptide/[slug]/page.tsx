@@ -270,8 +270,24 @@ import BivalirudinOverviewPanel from "@/components/BivalirudinOverviewPanel";
 import BivalirudinEvidencePanel from "@/components/BivalirudinEvidencePanel";
 import BivalirudinSafetyPanel from "@/components/BivalirudinSafetyPanel";
 import BivalirudinInteractionsPanel from "@/components/BivalirudinInteractionsPanel";
+import BradykininOverviewPanel from "@/components/BradykininOverviewPanel";
+import BradykininEvidencePanel from "@/components/BradykininEvidencePanel";
+import BradykininSafetyPanel from "@/components/BradykininSafetyPanel";
+import BradykininInteractionsPanel from "@/components/BradykininInteractionsPanel";
+import BrainNatriureticPeptideOverviewPanel from "@/components/BrainNatriureticPeptideOverviewPanel";
+import BrainNatriureticPeptideEvidencePanel from "@/components/BrainNatriureticPeptideEvidencePanel";
+import BrainNatriureticPeptideSafetyPanel from "@/components/BrainNatriureticPeptideSafetyPanel";
+import BrainNatriureticPeptideInteractionsPanel from "@/components/BrainNatriureticPeptideInteractionsPanel";
+import CarbetocinOverviewPanel from "@/components/CarbetocinOverviewPanel";
+import CarbetocinEvidencePanel from "@/components/CarbetocinEvidencePanel";
+import CarbetocinSafetyPanel from "@/components/CarbetocinSafetyPanel";
+import CarbetocinInteractionsPanel from "@/components/CarbetocinInteractionsPanel";
+import CgrpOverviewPanel from "@/components/CgrpOverviewPanel";
+import CgrpEvidencePanel from "@/components/CgrpEvidencePanel";
+import CgrpSafetyPanel from "@/components/CgrpSafetyPanel";
+import CgrpInteractionsPanel from "@/components/CgrpInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -664,6 +680,30 @@ const PANEL_MAP: Record<string, {
     Evidence: BivalirudinEvidencePanel,
     Safety: BivalirudinSafetyPanel,
     Interactions: BivalirudinInteractionsPanel,
+  },
+  bradykinin: {
+    Overview: BradykininOverviewPanel,
+    Evidence: BradykininEvidencePanel,
+    Safety: BradykininSafetyPanel,
+    Interactions: BradykininInteractionsPanel,
+  },
+  "brain-natriuretic-peptide": {
+    Overview: BrainNatriureticPeptideOverviewPanel,
+    Evidence: BrainNatriureticPeptideEvidencePanel,
+    Safety: BrainNatriureticPeptideSafetyPanel,
+    Interactions: BrainNatriureticPeptideInteractionsPanel,
+  },
+  carbetocin: {
+    Overview: CarbetocinOverviewPanel,
+    Evidence: CarbetocinEvidencePanel,
+    Safety: CarbetocinSafetyPanel,
+    Interactions: CarbetocinInteractionsPanel,
+  },
+  cgrp: {
+    Overview: CgrpOverviewPanel,
+    Evidence: CgrpEvidencePanel,
+    Safety: CgrpSafetyPanel,
+    Interactions: CgrpInteractionsPanel,
   },
 };
 
@@ -1182,6 +1222,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Bivalirudin (Angiomax) is a synthetic 20-AA direct thrombin inhibitor \u2014 FDA-approved for anticoagulation during PCI and for patients with HIT. It bivalently binds thrombin active site and exosite-1, with a short half-life via thrombin-mediated cleavage.",
       "What matters most: major bleeding is the primary risk; no reversal agent exists. Hospital-only IV medication \u2014 not relevant as a community peptide.",
       "How to use this page: Evidence covers the REPLACE-2, ACUITY, and HORIZONS-AMI trial data. Safety covers bleeding risk and renal dose adjustment.",
+    ],
+  },
+  bradykinin: {
+    considerSub: "Kallikrein-kinin system, ACE inhibitor angioedema, HAE, icatibant, pain signaling\u2026",
+    startHere: [
+      "Bradykinin is an endogenous vasodilatory peptide generated by kallikrein from kininogens. It is central to ACE inhibitor-induced angioedema \u2014 ACE normally degrades bradykinin; ACE inhibitor blockade causes bradykinin accumulation and potentially life-threatening airway swelling.",
+      "What matters most: bradykinin itself is not a therapeutic agent \u2014 it is a pharmacology education reference. The drugs that matter here are those that modulate it: ACE inhibitors (increase bradykinin), icatibant (blocks B2 receptor in HAE).",
+      "How to use this page: Safety covers the ACE inhibitor angioedema risk in detail. Evidence covers the kinin system physiology and HAE treatment context.",
+    ],
+  },
+  "brain-natriuretic-peptide": {
+    considerSub: "BNP, NT-proBNP, heart failure biomarker, nesiritide, ASCEND-HF, natriuretic peptide system\u2026",
+    startHere: [
+      "BNP (B-type natriuretic peptide) is secreted by ventricular myocytes under volume overload \u2014 the gold-standard heart failure biomarker. Nesiritide (recombinant BNP) is FDA-approved for acute decompensated HF, though its clinical use has declined after ASCEND-HF showed no mortality benefit.",
+      "What matters most: BNP and NT-proBNP as biomarkers are clinically essential for HF diagnosis and monitoring. Nesiritide is a declining-use IV drug \u2014 not a community peptide.",
+      "How to use this page: Evidence covers the biomarker standard and nesiritide trial data. Safety covers nesiritide\u2019s hypotension and renal concerns.",
+    ],
+  },
+  carbetocin: {
+    considerSub: "Long-acting oxytocin analogue, PPH prevention, CHAMPION trial, WHO essential medicine\u2026",
+    startHere: [
+      "Carbetocin is a synthetic long-acting oxytocin analogue used for postpartum hemorrhage prevention after cesarean delivery. Single dose replaces repeated oxytocin infusions. CHAMPION trial (Lancet 2018) demonstrated non-inferiority to oxytocin across 23 countries.",
+      "What matters most: obstetric use only. No community or enhancement application \u2014 oxytocin receptor agonism outside of obstetric context causes uterine cramping, hypotension, and nausea.",
+      "How to use this page: Evidence covers the CHAMPION trial. Safety covers the cardiovascular monitoring requirements in the obstetric setting.",
+    ],
+  },
+  cgrp: {
+    considerSub: "CGRP mAbs (Aimovig, Ajovy, Emgality, Vyepti), gepants, migraine prevention, trigeminal neuropeptide\u2026",
+    startHere: [
+      "CGRP (calcitonin gene-related peptide) is released from trigeminal nerve terminals during migraine attacks and is the key molecular driver of migraine pain. Four FDA-approved CGRP monoclonal antibodies prevent migraines; gepants treat acute attacks and also prevent.",
+      "What matters most: CGRP-targeted drugs represent the most mechanism-validated advance in migraine treatment in decades. If you have 4+ migraine days/month, these options are worth discussing with a headache neurologist.",
+      "How to use this page: Evidence covers the mAb and gepant trial data. Safety covers the cardiovascular monitoring considerations and common tolerability issues.",
     ],
   },
 };
