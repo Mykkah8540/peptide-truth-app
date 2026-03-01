@@ -97,14 +97,7 @@ useEffect(() => {
     }}
     onFocus={() => setOpen(true)}
     placeholder="Search peptides, blends, topics…"
-    style={{
-     width: "100%",
-     padding: "12px 14px",
-     borderRadius: 12,
-     border: "1px solid rgba(0,0,0,0.10)",
-     background: "rgba(0,0,0,0.02)",
-     outline: "none",
-    }}
+    className="pt-nav__search-input"
     onKeyDown={(e) => {
      if (!open) return;
 
@@ -136,22 +129,9 @@ useEffect(() => {
    />
 
    {open && q.trim() && (
-    <div
-     style={{
-      position: "absolute",
-      zIndex: 50,
-      top: "calc(100% + 10px)",
-      left: 0,
-      right: 0,
-      borderRadius: 14,
-      border: "1px solid rgba(0,0,0,0.10)",
-      background: "white",
-      boxShadow: "0 12px 30px rgba(0,0,0,0.10)",
-      overflow: "hidden",
-     }}
-    >
+    <div className="pt-nav__search-dropdown">
      {results.length === 0 ? (
-      <div style={{ padding: 12, fontSize: 13, opacity: 0.7 }}>No matches.</div>
+      <div className="pt-nav__search-no-results">No matches.</div>
      ) : (
       <div style={{ display: "grid" }}>
        {results.map((it, idx) => {
@@ -161,19 +141,10 @@ useEffect(() => {
           key={`${it.kind}:${it.slug}`}
           onMouseEnter={() => setActiveIdx(idx)}
           onClick={() => go(it)}
-          style={{
-           textAlign: "left",
-           padding: "10px 12px",
-           border: "none",
-           background: active ? "rgba(0,0,0,0.05)" : "transparent",
-           cursor: "pointer",
-           display: "flex",
-           justifyContent: "space-between",
-           gap: 12,
-          }}
+          className={`pt-nav__search-result${active ? " pt-nav__search-result--active" : ""}`}
          >
           <span style={{ display: "grid", gap: 2 }}>
-           <span style={{ fontWeight: 800 }}>
+           <span className="pt-nav__search-result-name">
             {it.kind === "peptide"
               ? (peptideTitle.get(it.slug) || it.slug)
               : it.kind === "blend"
@@ -182,9 +153,9 @@ useEffect(() => {
               ? (topicTitle.get(it.slug) || it.slug)
               : it.slug}
            </span>
-           <span style={{ fontSize: 12, opacity: 0.65 }}>{it.kind} · {it.slug}</span>
+           <span className="pt-nav__search-result-meta">{it.kind} · {it.slug}</span>
           </span>
-          <span style={{ fontSize: 12, opacity: 0.55, alignSelf: "center" }}>
+          <span className="pt-nav__search-result-kind">
            {it.kind === "blend" ? "Blend" : it.kind === "peptide" ? "Peptide" : it.kind === "topic" ? "Topic" : "Interaction"}
           </span>
          </button>

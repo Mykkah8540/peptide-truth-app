@@ -6,255 +6,149 @@ import { useRouter } from "next/navigation";
 import { supabaseBrowser } from "@/lib/supabase/browser";
 
 type Item = {
- label: string;
- href: string;
- pro?: boolean;
- subtitle?: string;
+  label: string;
+  href: string;
+  pro?: boolean;
+  subtitle?: string;
 };
 
 function ProPill() {
- return (
-  <span
-   aria-label="Pro"
-   title="Pro"
-   style={{
-    marginLeft: 8,
-    display: "inline-flex",
-    alignItems: "center",
-    border: "1px solid rgba(0,0,0,0.16)",
-    borderRadius: 999,
-    padding: "2px 6px",
-    fontSize: 10,
-    fontWeight: 800,
-    letterSpacing: 0.7,
-    lineHeight: 1,
-    background: "rgba(255,255,255,0.9)",
-    color: "rgba(0,0,0,0.88)",
-    whiteSpace: "nowrap",
-   }}
-  >
-   PRO
-  </span>
- );
+  return <span className="pt-mobile__pro-pill">PRO</span>;
 }
 
-function SectionLabel(props: { children: string }) {
- return (
-  <div
-   style={{
-    marginTop: 6,
-    marginBottom: 6,
-    fontSize: 11,
-    fontWeight: 900,
-    letterSpacing: 0.9,
-    opacity: 0.6,
-   }}
-  >
-   {props.children}
-  </div>
- );
+function CloseIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+      <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
 }
 
 export default function MobileMenu(props: { open: boolean; onClose: () => void; items: Item[]; showProBadges?: boolean }) {
- const { open, onClose, items, showProBadges = true } = props;
+  const { open, onClose, items, showProBadges = true } = props;
 
- const router = useRouter();
- const [loading, setLoading] = useState(true);
- const [email, setEmail] = useState<string | null>(null);
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState<string | null>(null);
 
- useEffect(() => {
-  const supa = supabaseBrowser();
-  let alive = true;
+  useEffect(() => {
+    const supa = supabaseBrowser();
+    let alive = true;
 
-  async function hydrate() {
-   try {
-    const { data } = await supa.auth.getUser();
-    if (!alive) return;
-    setEmail(data.user?.email ?? null);
-   } finally {
-    if (!alive) return;
-    setLoading(false);
-   }
+    async function hydrate() {
+      try {
+        const { data } = await supa.auth.getUser();
+        if (!alive) return;
+        setEmail(data.user?.email ?? null);
+      } finally {
+        if (!alive) return;
+        setLoading(false);
+      }
+    }
+
+    hydrate();
+
+    const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
+      if (!alive) return;
+      setEmail(session?.user?.email ?? null);
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
+    });
+
+    return () => {
+      alive = false;
+      sub.subscription.unsubscribe();
+    };
+  }, [router]);
+
+  async function handleLogout() {
+    try {
+      const supa = supabaseBrowser();
+      setEmail(null);
+      await supa.auth.signOut();
+    } catch {
+      // ignore
+    } finally {
+      onClose();
+      router.replace("/");
+      setTimeout(() => {
+        router.refresh();
+      }, 0);
+    }
   }
 
-  hydrate();
+  if (!open) return null;
 
-  const { data: sub } = supa.auth.onAuthStateChange((_event, session) => {
-   if (!alive) return;
-   setEmail(session?.user?.email ?? null);
-   setTimeout(() => {
-    router.refresh();
-   }, 0);
-  });
+  const publicItems = items.filter((i) => !i.pro);
+  const proItems = items.filter((i) => i.pro);
 
-  return () => {
-   alive = false;
-   sub.subscription.unsubscribe();
-  };
- }, [router]);
+  return (
+    <div className="pt-mobile__backdrop" onClick={onClose}>
+      <div className="pt-mobile__panel" onClick={(e) => e.stopPropagation()}>
 
- async function handleLogout() {
-  try {
-   const supa = supabaseBrowser();
-   setEmail(null); // instant UI update
-   await supa.auth.signOut();
-  } catch {
-   // ignore
-  } finally {
-   onClose();
-   router.replace("/");
-   setTimeout(() => {
-    router.refresh();
-   }, 0);
-  }
- }
-
- if (!open) return null;
-
- const publicItems = items.filter((i) => !i.pro);
- const proItems = items.filter((i) => i.pro); // always visible; pills depend on showProBadges
-
- return (
-  <div
-   role="dialog"
-   aria-modal="true"
-   style={{
-    position: "fixed",
-    inset: 0,
-    background: "#fff",
-    zIndex: 100,
-   }}
-   onClick={onClose}
-  >
-   <div
-    onClick={(e) => e.stopPropagation()}
-    style={{
-     background: "#fff",
-     padding: 20,
-     maxWidth: 360,
-     height: "100%",
-    }}
-   >
-    <button
-     onClick={onClose}
-     style={{
-      border: "none",
-      background: "#fff",
-      fontSize: 18,
-      fontWeight: 800,
-      marginBottom: 12,
-      cursor: "pointer",
-     }}
-    >
-     ✕ Close
-    </button>
-
-    <nav style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-     <SectionLabel>MENU</SectionLabel>
-
-     {publicItems.map((item) => (
-      <Link
-       key={item.href}
-       href={item.href}
-       onClick={onClose}
-       style={{
-        fontSize: 16,
-        fontWeight: 900,
-        textDecoration: "none",
-        color: "#000",
-        display: "inline-flex",
-        alignItems: "center",
-       }}
-      >
-       <span style={{ display: "inline-flex", flexDirection: "column", alignItems: "center" }}>
-          <span>{item.label}</span>
-          {item.subtitle ? (
-           <span
-            style={{
-             marginTop: 2,
-             fontSize: 10,
-             fontWeight: 650,
-             letterSpacing: 0.5,
-             opacity: 0.40,
-             lineHeight: 1.1,
-             textAlign: "center",
-            }}
-           >
-            {item.subtitle}
-           </span>
-          ) : null}
-         </span>
-      </Link>
-     ))}
-
-     <div style={{ marginTop: 10 }}>
-      <div style={{ height: 1, background: "#fff", margin: "6px 0 12px" }} />
-      <SectionLabel>ACCOUNT</SectionLabel>
-
-      {loading ? (
-       <div style={{ color: "#666", fontWeight: 800 }}>Loading…</div>
-      ) : !email ? (
-       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <Link href="/login" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
-         Sign in
-        </Link>
-        <Link href="/signup" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
-         Create account
-        </Link>
-       </div>
-      ) : (
-       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <Link href="/account" onClick={onClose} style={{ fontSize: 16, fontWeight: 900, textDecoration: "none", color: "#000" }}>
-         Account
-        </Link>
-
-        <button
-         type="button"
-         onClick={handleLogout}
-         style={{
-          textAlign: "left",
-          border: "none",
-          background: "#fff",
-          padding: 0,
-          fontSize: 16,
-          fontWeight: 900,
-          color: "#000",
-          cursor: "pointer",
-         }}
-        >
-         Logout
+        <button onClick={onClose} className="pt-mobile__close">
+          <CloseIcon />
+          Close
         </button>
-       </div>
-      )}
-     </div>
 
-     <div style={{ marginTop: 10 }}>
-      <div style={{ height: 1, background: "#fff", margin: "6px 0 12px" }} />
-      <SectionLabel>{showProBadges ? "PRO FEATURES" : "FEATURES"}</SectionLabel>
+        <nav>
+          <p className="pt-mobile__section-label">Menu</p>
+          <div className="pt-mobile__link-list">
+            {publicItems.map((item) => (
+              <Link key={item.href} href={item.href} onClick={onClose} className="pt-mobile__link">
+                <span>{item.label}</span>
+                {item.subtitle ? <span className="pt-mobile__link-sub">{item.subtitle}</span> : null}
+              </Link>
+            ))}
+          </div>
+        </nav>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 16, marginTop: 4 }}>
-       {proItems.map((item) => (
-        <Link
-         key={item.href}
-         href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
-         onClick={onClose}
-         style={{
-          fontSize: 16,
-          fontWeight: 900,
-          textDecoration: "none",
-          color: "#000",
-          display: "inline-flex",
-          alignItems: "center",
-         }}
-        >
-         <span>{item.label}</span>
-         {showProBadges && item.pro ? <ProPill /> : null}
-        </Link>
-       ))}
+        <div className="pt-mobile__divider" />
+
+        <div>
+          <p className="pt-mobile__section-label">Account</p>
+          {loading ? (
+            <div className="pt-mobile__loading">Loading…</div>
+          ) : !email ? (
+            <div className="pt-mobile__link-list">
+              <Link href="/login" onClick={onClose} className="pt-mobile__link">Sign in</Link>
+              <Link href="/signup" onClick={onClose} className="pt-mobile__link">Create account</Link>
+            </div>
+          ) : (
+            <div className="pt-mobile__link-list">
+              <Link href="/account" onClick={onClose} className="pt-mobile__link">Account</Link>
+              <Link href="/my-peps" onClick={onClose} className="pt-mobile__link">My Peps</Link>
+              <button type="button" onClick={handleLogout} className="pt-mobile__logout-btn">
+                Sign out
+              </button>
+            </div>
+          )}
+        </div>
+
+        <div className="pt-mobile__divider" />
+
+        <div>
+          <p className="pt-mobile__section-label">{showProBadges ? "Pro Features" : "Features"}</p>
+          <div className="pt-mobile__link-list">
+            {proItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+                onClick={onClose}
+                className="pt-mobile__link"
+              >
+                <span style={{ display: "flex", alignItems: "center", gap: 7 }}>
+                  {item.label}
+                  {showProBadges && item.pro ? <ProPill /> : null}
+                </span>
+                {item.subtitle ? <span className="pt-mobile__link-sub">{item.subtitle}</span> : null}
+              </Link>
+            ))}
+          </div>
+        </div>
+
       </div>
-     </div>
-    </nav>
-   </div>
-  </div>
- );
+    </div>
+  );
 }
