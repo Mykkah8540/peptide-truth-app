@@ -1,8 +1,11 @@
 import { getSponsors } from "@/lib/sponsors";
 import { requirePaid } from "@/lib/gate";
+import { listPeptides } from "@/lib/content";
 import Link from "next/link";
 import DisclaimerSection from "@/components/DisclaimerSection";
 import SponsorBanner from "@/components/SponsorBanner";
+
+export const dynamic = "force-dynamic";
 
 async function isPaid(): Promise<boolean> {
   try {
@@ -13,250 +16,230 @@ async function isPaid(): Promise<boolean> {
   }
 }
 
-function ProPill() {
-  return (
-    <span
-      aria-label="Pro"
-      title="Pro"
-      style={{
-        marginLeft: 8,
-        display: "inline-flex",
-        alignItems: "center",
-        border: "1px solid rgba(0,0,0,0.18)",
-        borderRadius: 999,
-        padding: "2px 8px",
-        fontSize: 10,
-        fontWeight: 900,
-        letterSpacing: 0.9,
-        lineHeight: 1,
-        opacity: 0.92,
-      }}
-    >
-      PRO
-    </span>
-  );
-}
+const CATEGORIES = [
+  { key: "metabolic_weight",              label: "Metabolic & Weight",         color: "#3b82f6" },
+  { key: "muscle_performance",            label: "Muscle & Performance",       color: "#f59e0b" },
+  { key: "regenerative_repair",           label: "Recovery & Repair",          color: "#10b981" },
+  { key: "endocrine_hormonal",            label: "Hormonal",                   color: "#8b5cf6" },
+  { key: "neurocognitive_mood",           label: "Brain & Mood",               color: "#6366f1" },
+  { key: "mitochondrial_longevity",       label: "Longevity",                  color: "#ef4444" },
+  { key: "immunomodulatory_inflammation", label: "Immune & Anti-Inflammatory", color: "#f97316" },
+  { key: "sexual_health_reproduction",    label: "Sexual Health",              color: "#ec4899" },
+  { key: "cosmetic_topical",              label: "Skin & Cosmetic",            color: "#14b8a6" },
+  { key: "sleep_circadian",              label: "Sleep",                      color: "#7c3aed" },
+  { key: "antimicrobial_innate",          label: "Antimicrobial",              color: "#84cc16" },
+] as const;
 
-function HomeLink(props: { href: string; label: string; pro?: boolean; subtext: string }) {
-  const { href, label, pro, subtext } = props;
-
-  return (
-    <a
-      href={href}
-      style={{
-        border: "1px solid rgba(0,0,0,0.08)",
-        background: "#fff",
-        padding: "12px 12px",
-        borderRadius: 14,
-        fontWeight: 900,
-        textDecoration: "none",
-        display: "grid",
-        gap: 4,
-      }}
-    >
-      <div style={{ display: "inline-flex", alignItems: "center" }}>
-        <span>{label}</span>
-        {pro ? <ProPill /> : null}
-      </div>
-      <div style={{ fontSize: 13, fontWeight: 700, color: "#666", lineHeight: 1.35 }}>{subtext}</div>
-    </a>
-  );
-}
-
-function SectionTitle({ k }: { k: string }) {
-  return (
-    <div style={{ fontSize: 12, fontWeight: 900, letterSpacing: 0.6, textTransform: "uppercase", color: "#555" }}>
-      {k}
-    </div>
-  );
-}
+const DISCLAIMER =
+  "Pep-Talk is an educational resource. It is not medical advice, diagnosis, or treatment. Always use your judgment and consult a qualified clinician for personal medical decisions.";
 
 export default async function Home() {
-  const sponsors = await getSponsors();
-  const paid = await isPaid();
+  const [sponsors, paid] = await Promise.all([getSponsors(), isPaid()]);
 
-  const proHref = (href: string) => (paid ? href : `/upgrade?next=${encodeURIComponent(href)}`);
-
-  const disclaimer =
-    "Pep-Talk is an educational resource. It is not medical advice, diagnosis, or treatment. Always use your judgment and consult a qualified clinician for personal medical decisions.";
+  const all = listPeptides();
+  const catCounts = new Map<string, number>();
+  for (const p of all) {
+    for (const key of p.taxonomy_keys ?? []) {
+      catCounts.set(key, (catCounts.get(key) ?? 0) + 1);
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
-      <main className="mx-auto w-full max-w-3xl px-4 py-10" style={{ display: "grid", gap: 14 }}>
-        <section className="pt-card" style={{ padding: 18 }}>
-          <h1 style={{ fontSize: 30, fontWeight: 950, letterSpacing: -0.6, margin: 0 }}>Pep-Talk</h1>
+    <div className="pt-home">
 
-          <p style={{ margin: "10px 0 0", color: "#555", fontSize: 14, lineHeight: 1.55, fontWeight: 700 }}>
-            Your source of truth for peptides — clear, practical, and built for real-world decision-making.
+      {/* ══════════════════════════════════════════
+          HERO
+      ══════════════════════════════════════════ */}
+      <section className="pt-home__hero">
+        <div className="pt-home__hero-inner">
+          <p className="pt-home__hero-eyebrow">Peptide Intelligence</p>
+          <h1 className="pt-home__hero-headline">
+            Know what you&rsquo;re<br />
+            putting in your body.
+          </h1>
+          <p className="pt-home__hero-sub">
+            Clear, practical peptide profiles — without the hype, fear, or gatekeeping.
+            Built so you can understand what you&rsquo;re looking at and decide with confidence.
+          </p>
+          <div className="pt-home__hero-ctas">
+            <Link href="/peptides" className="pt-home__hero-cta-primary">
+              Browse Peptides
+            </Link>
+            <Link href="/blends" className="pt-home__hero-cta-secondary">
+              Commercial Blends
+            </Link>
+          </div>
+          <Link href="/resources" className="pt-home__hero-resources-link">
+            New here? Start with Resources &rarr;
+          </Link>
+          <p className="pt-home__hero-stat">
+            {all.length} compounds &middot; 11 categories &middot; free to explore
+          </p>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          CATEGORY GRID
+      ══════════════════════════════════════════ */}
+      <section className="pt-home__section">
+        <div className="pt-home__section-inner">
+          <h2 className="pt-home__section-heading">Explore by goal</h2>
+          <p className="pt-home__section-sub">
+            Every compound is tagged to a primary goal area. Start here if you know what you&rsquo;re after.
+          </p>
+          <div className="pt-home__cats">
+            {CATEGORIES.map((cat) => {
+              const count = catCounts.get(cat.key) ?? 0;
+              return (
+                <Link
+                  key={cat.key}
+                  href={`/peptides?cat=${cat.key}`}
+                  className="pt-home__cat"
+                >
+                  <span className="pt-home__cat-accent" style={{ background: cat.color }} />
+                  <span className="pt-home__cat-name">{cat.label}</span>
+                  <span className="pt-home__cat-count">
+                    {count} {count === 1 ? "compound" : "compounds"}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          FREE vs PRO
+      ══════════════════════════════════════════ */}
+      <section className="pt-home__section">
+        <div className="pt-home__section-inner">
+          <h2 className="pt-home__section-heading">Built for every level of curiosity</h2>
+          <p className="pt-home__section-sub">
+            The fundamentals are free. Pro unlocks the deeper layer — community signal, guided discovery, and decision tools.
           </p>
 
-          <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-            <div style={{ fontSize: 14, fontWeight: 950, letterSpacing: -0.2 }}>Know what it is. Know how it works. Decide confidently.</div>
-            <div style={{ fontSize: 13, color: "#666", lineHeight: 1.55 }}>
-              People are already using regulated and unregulated peptides. Pep-Talk exists so you can understand what you’re looking at — without hype, fear,
-              or gatekeeping.
-            </div>
+          <div className="pt-home__split">
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 4 }}>
-              <Link
-                href="/peptides"
-                style={{
-                  display: "inline-flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: 44,
-                  borderRadius: 14,
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  background: "#111",
-                  color: "#fff",
-                  fontWeight: 950,
-                  textDecoration: "none",
-                }}
-              >
-                Browse Peptides
-              </Link>
-
-              <Link
-                href="/blends"
-                style={{
-                  display: "inline-flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: 44,
-                  borderRadius: 14,
-                  border: "1px solid rgba(0,0,0,0.12)",
-                  background: "#fff",
-                  color: "#111",
-                  fontWeight: 950,
-                  textDecoration: "none",
-                }}
-              >
-                Commercial Blends
+            {/* ── Free ── */}
+            <div className="pt-home__tier">
+              <div className="pt-home__tier-badge">Free</div>
+              <div className="pt-home__tier-title">Explore &amp; Learn</div>
+              <ul className="pt-home__tier-list">
+                <li className="pt-home__tier-item">Full compound profiles — evidence, safety, interactions</li>
+                <li className="pt-home__tier-item">Commercial blend breakdowns &amp; ingredient analysis</li>
+                <li className="pt-home__tier-item">Education library &amp; contextual resources</li>
+                <li className="pt-home__tier-item">Community commenting (free account required)</li>
+              </ul>
+              <Link href="/peptides" className="pt-home__tier-cta pt-home__tier-cta--outline">
+                Start exploring &rarr;
               </Link>
             </div>
 
-            <div style={{ marginTop: 2 }}>
-              <Link href="/resources" style={{ fontSize: 13, fontWeight: 900, textDecoration: "none", color: "#111", opacity: 0.9 }}>
-                New here? Start with Resources →
+            {/* ── Pro ── */}
+            <div className="pt-home__tier pt-home__tier--pro">
+              <div className="pt-home__tier-badge">Pro</div>
+              <div className="pt-home__tier-title">Discover &amp; Decide</div>
+              <ul className="pt-home__tier-list">
+                <li className="pt-home__tier-item pt-home__tier-item--all">Everything in Free</li>
+                <li className="pt-home__tier-item">Community Insights — what real users report, distilled</li>
+                <li className="pt-home__tier-item">Wellness Paths — topic-driven guided discovery</li>
+                <li className="pt-home__tier-item">Stack Builder — explore &amp; build compound combinations</li>
+                <li className="pt-home__tier-item">My Peps — save and quickly revisit compounds</li>
+                <li className="pt-home__tier-item">UGC submissions — publish your own stacks &amp; blends</li>
+              </ul>
+              <Link
+                href={paid ? "/account" : "/upgrade"}
+                className="pt-home__tier-cta"
+              >
+                {paid ? "You\u2019re on Pro" : "Upgrade to Pro \u2192"}
               </Link>
+              {!paid && (
+                <p className="pt-home__tier-note">
+                  No free trial. Pro is built for ongoing discovery — not one-time extraction.
+                </p>
+              )}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          HOW IT WORKS
+      ══════════════════════════════════════════ */}
+      <section className="pt-home__section">
+        <div className="pt-home__section-inner">
+          <h2 className="pt-home__section-heading">How it works</h2>
+          <div className="pt-home__how">
+            <div className="pt-home__how-step">
+              <div className="pt-home__how-step-num">01</div>
+              <div className="pt-home__how-step-title">Find what you&rsquo;re considering</div>
+              <div className="pt-home__how-step-body">
+                Search by name, browse by category, or follow a wellness path. Every compound has a full evidence profile built for real-world use.
+              </div>
+            </div>
+            <div className="pt-home__how-step">
+              <div className="pt-home__how-step-num">02</div>
+              <div className="pt-home__how-step-title">Understand the full picture</div>
+              <div className="pt-home__how-step-body">
+                What it does, why people use it, what to watch for, and what the community actually experiences — not just the abstract mechanism.
+              </div>
+            </div>
+            <div className="pt-home__how-step">
+              <div className="pt-home__how-step-num">03</div>
+              <div className="pt-home__how-step-title">Decide with confidence</div>
+              <div className="pt-home__how-step-body">
+                Use stacks, wellness paths, and contextual tools to make decisions that fit your goals, your situation, and your risk tolerance.
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {sponsors.length ? (
-          <div>
+      {/* ══════════════════════════════════════════
+          COMMUNITY
+      ══════════════════════════════════════════ */}
+      <section className="pt-home__section pt-home__section--tight">
+        <div className="pt-home__section-inner">
+          <div className="pt-home__community">
+            <div className="pt-home__community-body">
+              <h3 className="pt-home__community-heading">Built with community signal</h3>
+              <p className="pt-home__community-sub">
+                Every compound page surfaces real discussion. Free users can comment after creating an account.
+                Pro members unlock curated insight summaries — what the community consistently reports, separated from anecdote.
+              </p>
+            </div>
+            <Link href="/resources#community" className="pt-home__community-cta">
+              How the community works &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          SPONSORS
+      ══════════════════════════════════════════ */}
+      {sponsors.length > 0 && (
+        <section className="pt-home__sponsors-section">
+          <div className="pt-home__section-inner">
+            <p className="pt-home__sponsor-label">Partners</p>
             <SponsorBanner sponsors={sponsors} rotateMs={3200} />
-            <div style={{ marginTop: 8, fontSize: 12, color: "#666", lineHeight: 1.45 }}>
+            <p className="pt-home__sponsor-note">
               Sponsored placements support Pep-Talk. Sponsors do not control or edit educational content.
-            </div>
-          </div>
-        ) : null}
-
-        <section className="pt-card" style={{ padding: 18 }}>
-          <SectionTitle k="How to use Pep-Talk" />
-          <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-            <div className="pt-item" style={{ padding: 14 }}>
-              <div className="pt-item-title">1) Find what you’re considering</div>
-              <div className="pt-item-note">Search in the top bar, or browse peptides and blends.</div>
-            </div>
-            <div className="pt-item" style={{ padding: 14 }}>
-              <div className="pt-item-title">2) Understand outcomes + context</div>
-              <div className="pt-item-note">Learn what it does, why people use it, what to watch for, and how it shows up in the real world.</div>
-            </div>
-            <div className="pt-item" style={{ padding: 14 }}>
-              <div className="pt-item-title">3) Compare combinations</div>
-              <div className="pt-item-note">Use stacks to see how peptides are commonly grouped and discussed by goal.</div>
-            </div>
+            </p>
           </div>
         </section>
+      )}
 
-        <section className="pt-card" style={{ padding: 18 }}>
-          <SectionTitle k="Explore (Free)" />
-          <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-            <HomeLink href="/peptides" label="Peptides" subtext="Compound profiles with clear explanations and practical context." />
-            <HomeLink href="/blends" label="Commercial Blends" subtext="Branded combinations, what’s inside, and how they’re positioned." />
-            <HomeLink href="/resources" label="Resources" subtext="Definitions, guides, and platform context." />
-          </div>
-        </section>
+      {/* ══════════════════════════════════════════
+          DISCLAIMER
+      ══════════════════════════════════════════ */}
+      <div className="pt-home__section pt-home__section--tight">
+        <div className="pt-home__section-inner">
+          <DisclaimerSection text={DISCLAIMER} />
+        </div>
+      </div>
 
-        <section className="pt-card" style={{ padding: 18 }}>
-          <SectionTitle k="Pro (Monthly)" />
-          <div style={{ marginTop: 10, fontSize: 13, color: "#666", lineHeight: 1.55 }}>
-            Pro is for people who want deeper guided discovery, comparison tools, and creation workflows.
-          </div>
-
-          <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-            <HomeLink href={proHref("/categories")} label="Wellness Paths" pro subtext="Topic-driven discovery that connects peptides, blends, and goals." />
-            <HomeLink href={proHref("/stack-builder")} label="Stack Builder" pro subtext="Explore combinations and build your own stacks." />
-            <HomeLink href={proHref("/stacks")} label="Explore Stacks" pro subtext="Browse Pep-Talk curated stacks and UGC stacks." />
-            <HomeLink href={proHref("/my-peps")} label="My Peps" pro subtext="Favorite peptides, blends, and stacks for quick recall." />
-          </div>
-
-          <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-            <div className="pt-item" style={{ padding: 14 }}>
-              <div className="pt-item-title">Community Insights (Pro)</div>
-              <div className="pt-item-note">A gated layer that summarizes what the community discusses most consistently.</div>
-            </div>
-            <div className="pt-item" style={{ padding: 14 }}>
-              <div className="pt-item-title">UGC Stacks + Blends</div>
-              <div className="pt-item-note">Pro users can build and submit UGC blends/stacks for review and publication.</div>
-            </div>
-          </div>
-
-          <div style={{ marginTop: 14 }}>
-            <Link
-              href="/upgrade"
-              style={{
-                display: "inline-flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 44,
-                width: "100%",
-                borderRadius: 14,
-                border: "1px solid rgba(0,0,0,0.12)",
-                background: "#111",
-                color: "#fff",
-                fontWeight: 950,
-                textDecoration: "none",
-              }}
-            >
-              See Pro
-            </Link>
-            <div style={{ marginTop: 10, fontSize: 12, color: "#666", lineHeight: 1.45 }}>
-              No free trial. Pro is built for ongoing discovery and iteration — not one-time extraction.
-            </div>
-          </div>
-        </section>
-
-        <section className="pt-card" style={{ padding: 18 }}>
-          <SectionTitle k="The Community" />
-          <div style={{ marginTop: 10, fontSize: 13, color: "#666", lineHeight: 1.55 }}>
-            Pep-Talk combines structured education with real-world discussion. Free users can comment after creating an account. Pro members unlock community
-            insight summaries and submission workflows.
-          </div>
-          <div style={{ marginTop: 12, display: "grid", gap: 10 }}>
-            <Link
-              href="/resources#community"
-              style={{
-                display: "inline-flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: 44,
-                borderRadius: 14,
-                border: "1px solid rgba(0,0,0,0.12)",
-                background: "#fff",
-                color: "#111",
-                fontWeight: 950,
-                textDecoration: "none",
-              }}
-            >
-              How the Community Works →
-            </Link>
-          </div>
-        </section>
-
-        <DisclaimerSection text={disclaimer} />
-      </main>
     </div>
   );
 }
