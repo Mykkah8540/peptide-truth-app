@@ -1,207 +1,74 @@
-/**
- * FiveAmino1MQOverviewPanel — decision-oriented overview for 5-Amino-1MQ.
- * Key frame: NNMT inhibitor that raises cellular NAD+ and SAM by blocking
- * the enzyme that degrades nicotinamide. Compelling preclinical fat loss data.
- * Essentially zero human clinical trials. Community use outpaces science by a
- * wide margin. Not a peptide — a small molecule, but community-categorized here.
- */
-
-const STAT_CARDS = [
-  {
-    value: "NNMT inhibitor",
-    label: "nicotinamide N-methyltransferase inhibitor — blocks NAD+ consumption, shifts adipocyte metabolism",
-    sub: "5-Amino-1-methylquinolinium (5-Amino-1MQ) is a cell-permeable small molecule that inhibits NNMT — the enzyme that methylates nicotinamide to 1-methylnicotinamide. NNMT is highly expressed in adipose tissue and liver. By blocking NNMT, 5-Amino-1MQ reduces NAD+ consumption (making more NAD+ available for cellular metabolism), reduces SAM depletion (S-adenosylmethionine, the methyl donor), and shifts the metabolic phenotype of adipocytes.",
-    note: "NNMT's role in obesity is pharmacologically interesting: NNMT activity is elevated in obese adipose tissue; it consumes NAD+ and SAM; high NNMT creates a 'metabolically inefficient' fat storage phenotype. Inhibiting NNMT in mouse adipose tissue reverses some of this — fat cells become more metabolically active. The mechanism is real. The human translation is the gap.",
-  },
-  {
-    value: "NAD+ / SAM",
-    label: "the metabolic shift — raises both NAD+ and SAM by blocking the enzyme that consumes both",
-    sub: "NNMT uses SAM (S-adenosylmethionine) to methylate nicotinamide — consuming both SAM and driving NAD+ precursor flux. Inhibiting NNMT simultaneously raises intracellular NAD+ (by sparing nicotinamide for NAD+ synthesis) and raises SAM (by not consuming it). NAD+ supports mitochondrial energy and sirtuin activity; SAM is the primary methyl donor for epigenetic regulation. Both metabolic pools are elevated by NNMT inhibition.",
-    note: "This is mechanistically distinct from NAD+ precursor supplementation (NMN, NR, niacin). Those approaches add NAD+ substrate from the outside; 5-Amino-1MQ reduces the drain on the system. The effect on the same downstream pathways (sirtuins, AMPK, mitochondrial function) is theoretically similar but through a different mechanism — and the human evidence gap is the same: larger for 5-Amino-1MQ than for NMN/NR.",
-  },
-  {
-    value: "Preclinical",
-    label: "evidence stage — compelling mouse data; no published human clinical trials",
-    sub: "The primary evidence for 5-Amino-1MQ's fat loss effects is a mouse study showing that NNMT inhibition prevented diet-induced obesity and reduced fat mass without caloric restriction (Kannt et al. and Espada et al. animal studies). This is a real finding in a real peer-reviewed context. There are no published human RCTs. The compound has not entered formal clinical trials. Community use is entirely extrapolated from animal data.",
-    note: "Mouse fat loss studies have a poor track record of human translation. Many compounds that produced dramatic fat loss in mice failed in human trials. 5-Amino-1MQ is at the bottom of the evidence ladder for human use. The mechanism is interesting and the preclinical data is real — but 'interesting preclinical data' is not 'evidence of human efficacy.' These are different claims.",
-  },
-  {
-    value: "Research chemical",
-    label: "regulatory status — not FDA approved, no pharmaceutical grade, no clinical development pathway",
-    sub: "5-Amino-1MQ has no FDA approval. It is not a peptide (it's a small molecule quinolinium salt). It is available through research chemical suppliers and some peptide vendors. No pharmaceutical-grade product exists. The purity, dose accuracy, and stability of research-grade product are not regulated or validated.",
-    note: "The research chemical supply chain for 5-Amino-1MQ is less mature than for established peptides like BPC-157 or semaglutide — supplier quality is even more variable. The community has been using this compound without the quality control infrastructure that exists for longer-established research peptides.",
-  },
-];
-
-const FIT_YES = [
-  "You have metabolic goals, have addressed diet and exercise fundamentals, and are interested in a mechanistically distinct (non-GLP-1) approach based on preclinical data you've read and calibrated accurately",
-  "You understand the evidence ceiling is animal studies and community anecdote — there are no human clinical trials; you are not treating this as equivalent to evidence-based medicine",
-  "You have no serious liver or kidney conditions that could be affected by altered NAD+ and methylation metabolism",
-  "You have verified source quality with a third-party CoA — the research chemical supply chain for this compound has notable purity variability",
-];
-
-const FIT_NO = [
-  "You expect GLP-1-level evidence — 5-Amino-1MQ has essentially no human clinical evidence; the preclinical data is interesting but not equivalent to the SURMOUNT or SCALE trial evidence base",
-  "You expect dramatic fat loss without caloric deficit — the mouse data showed fat loss with ad libitum feeding, but mouse metabolic biology is substantially different from human; no human study has confirmed caloric-independent fat loss",
-  "You are on medications that alter NAD+ metabolism or methylation (high-dose NAD+ precursors, methionine-restricted diets, MTHFR-related supplements) — the SAM/NAD+ interaction adds complexity",
-  "You have active liver disease — NNMT is highly expressed in liver; the metabolic effects on a diseased liver are not characterized",
-  "You are pregnant — no safety data; NAD+ and methylation pathway perturbations during pregnancy are unknown in humans",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Early metabolic effects — if any acute signal exists, it's likely energy",
-    body: "Some community users report increased energy or mild thermogenic sensation in the early weeks of use, consistent with the NAD+/sirtuin activation hypothesis. Others report nothing noticeable. The fat loss signal in mice was measured over weeks — the human equivalent timeline (if the mechanism translates) is unknown. There is no validated short-term biomarker for NNMT inhibition in humans.",
-  },
-  {
-    phase: "Weeks to months",
-    heading: "The evidence window — fat loss timeline is unknown",
-    body: "In mouse studies, meaningful fat mass reduction was observed over weeks of treatment with caloric access maintained. Whether this timescale translates to humans is not established. Community users report body composition changes over months of use — but without control groups, blinding, or standardized outcome measurement, these reports cannot be separated from diet/exercise changes, expectation bias, or natural variation.",
-  },
-  {
-    phase: "Long-term",
-    heading: "The honest unknown — no long-term human data",
-    body: "Long-term NNMT inhibition in humans has not been studied. NNMT plays roles in multiple metabolic pathways beyond NAD+ and SAM — epigenetic regulation (methylation), homocysteine metabolism, and tissue-specific metabolic programming. The long-term consequences of sustained NNMT inhibition in humans are genuinely unknown. The community convention of cycling the compound reflects appropriate uncertainty about continuous long-term use.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "5-Amino-1MQ",
-    badge: "NNMT inhibitor / Research chemical",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "NNMT inhibition → NAD+ and SAM elevation → adipocyte metabolic shift" },
-      { label: "Evidence", value: "Mouse studies — no human RCTs; community anecdote only" },
-      { label: "Fat loss", value: "~preclinical only; human fat loss not clinically established" },
-      { label: "Status", value: "Research chemical — no FDA approval, no pharmaceutical grade" },
-      { label: "Metabolic class", value: "NAD+ pathway modifier (not GLP-1, not stimulant)" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Berberine",
-    badge: "AMPK activator / OTC",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "AMPK activation, mild GLP-1R sensitization, gut microbiome modulation" },
-      { label: "Evidence", value: "Multiple small human RCTs — more human evidence than 5-Amino-1MQ, less than semaglutide" },
-      { label: "Fat loss", value: "Modest (~2-3% body weight in trials); primarily used for glucose regulation" },
-      { label: "Status", value: "OTC supplement — widely available, more supply chain maturity" },
-      { label: "Metabolic class", value: "AMPK activator (overlapping with metformin mechanism)" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Semaglutide",
-    badge: "GLP-1 agonist / FDA-approved",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GLP-1R agonism — appetite suppression, gastric slowing, satiety signaling" },
-      { label: "Evidence", value: "Multiple Phase 3 RCTs — strongest evidence base in weight management" },
-      { label: "Fat loss", value: "~15% body weight (STEP 1, n=1,961 at 68 weeks)" },
-      { label: "Status", value: "FDA-approved (Wegovy for weight, Ozempic for T2D)" },
-      { label: "Metabolic class", value: "Incretin hormone — completely different mechanism from NNMT inhibition" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function FiveAmino1MQOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          An NNMT inhibitor with compelling mouse fat loss data and essentially no human clinical trials — mechanistically interesting, evidence-thin.
-        </div>
-        <div className="reta-overview__headline-sub">
-          5-Amino-1MQ inhibits NNMT (nicotinamide N-methyltransferase), the enzyme that consumes NAD+ precursor and SAM in adipose tissue. By blocking this enzyme, it raises both cellular NAD+ and SAM — shifting adipocytes toward a more metabolically active phenotype. The preclinical fat loss data in mice is real. There are no published human clinical trials. The compound is a research chemical without pharmaceutical-grade production or regulatory status. Community use is occurring entirely ahead of clinical validation.
-        </div>
+      <p className="reta-overview__opener">
+        5-Amino-1MQ is an oral research compound that inhibits an enzyme called NNMT, which is overactive in obese fat tissue and consumes cellular energy currency. By blocking this enzyme, the compound raises two metabolic molecules simultaneously and may shift fat cells toward burning more energy. The mouse data showing fat loss without caloric restriction is real. There are no published human clinical trials. Community use is running well ahead of the science.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Weight Loss Person &mdash; Looking for something that works on metabolism</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve read about this compound that supposedly makes fat cells burn more energy even without dieting. The mouse studies look compelling. Is this real or is it just another overhyped supplement?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The premise is genuinely different from appetite suppression</strong><br />Most weight loss tools work by reducing how much you eat &mdash; GLP-1 drugs, stimulants, fiber, behavioral approaches. 5-Amino-1MQ is targeting something different: the metabolic programming of fat cells themselves. The mouse data suggested fat loss with free food access, which is the kind of result that makes people sit up. If it translates to humans, it would represent a mechanistically distinct intervention.</li>
+          <li><strong>It&rsquo;s oral, which removes injection as a barrier</strong><br />Unlike most research compounds in the weight/metabolic space that require subcutaneous injection, 5-Amino-1MQ is taken orally. For people who are interested in exploring research compounds but are uncomfortable with injections, this is a meaningful practical consideration.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Mouse fat loss studies have a very poor track record of translating to humans. Mouse metabolism is profoundly different from human metabolism in ways that matter enormously for a compound targeting metabolic programming. There are no published human clinical trials with 5-Amino-1MQ &mdash; not small ones, not preliminary ones, zero. Community reports of body composition changes over months of use cannot be separated from concurrent diet, exercise changes, and expectation effects without controlled conditions. The research chemical supply chain for this compound is less mature than for more established peptides, which means product quality is more variable. Net: mechanistically interesting premise, no human evidence, and product quality uncertainty &mdash; calibrate expectations accordingly.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete Cutting &mdash; Preserving muscle while reducing body fat</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m in a cutting phase and I&rsquo;m looking at tools that might shift my body composition without tanking performance. The NAD+ angle is interesting to me &mdash; does this actually do anything useful for athletes?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The NAD+ elevation angle has genuine athlete appeal</strong><br />NAD+ is essential for cellular energy production and is consumed rapidly during high-intensity exercise. Compounds that raise NAD+ are discussed in performance contexts because of their potential to support mitochondrial function and reduce cellular fatigue. 5-Amino-1MQ raises NAD+ by blocking the enzyme that depletes it &mdash; a different approach from NAD+ precursor supplementation.</li>
+          <li><strong>The fat cell metabolic programming angle could theoretically benefit body composition</strong><br />If fat cells in adipose tissue become metabolically more active &mdash; burning more energy rather than storing it &mdash; that would theoretically support a caloric deficit goal during a cut. The mechanism doesn&rsquo;t suppress appetite or force compliance with a diet; it would be working at a tissue level independently of behavior.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There is no human data quantifying any of these effects &mdash; not the NAD+ elevation, not the fat cell metabolic shift, not the body composition outcome. Stacking a compound with no human evidence alongside training and nutrition makes attribution of any result to 5-Amino-1MQ essentially impossible. The methylation pathway effects &mdash; SAM is involved in epigenetic regulation &mdash; are not characterized in the context of exercise physiology at all. Athletes in competition should note that this compound&rsquo;s WADA status is unclear given its research-chemical classification. Net: the theoretical angles are interesting for an athlete, but the evidence gap means you&rsquo;d be running a personal experiment with an unknown outcome.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Metabolic Optimization Biohacker &mdash; NNMT biology, NAD+ pathways, epigenetic angles</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand the NNMT biology in depth &mdash; specifically how it interacts with the NAD+ precursor pool, the SAM methyl donor system, and what the downstream epigenetic effects of NNMT inhibition might actually be.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>NNMT sits at a genuinely interesting metabolic crossroads</strong><br />NNMT methylates nicotinamide using SAM as the methyl donor &mdash; consuming both SAM and diverting nicotinamide away from NAD+ synthesis. Inhibiting it simultaneously raises NAD+ (by sparing nicotinamide for the salvage pathway) and raises SAM (by not consuming the methyl donor). These are two separate metabolic pools with major downstream effects: NAD+ feeds sirtuins and PARP; SAM feeds methyltransferases that regulate gene expression. The convergence on both systems from a single enzyme inhibition is mechanistically unusual.</li>
+          <li><strong>NNMT is elevated in obese adipose tissue &mdash; it may be a driver, not just a correlate</strong><br />NNMT activity is consistently elevated in visceral adipose tissue from obese individuals and in mice on high-fat diets. The mouse data showing that NNMT inhibition prevents diet-induced obesity and reverses established obesity suggests this is not just a correlate of the obese state but potentially a mechanistic driver. The adipose-specific metabolic phenotype change &mdash; fat cells becoming more thermogenically active &mdash; is consistent with the NNMT expression pattern in that tissue.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">NNMT is not adipose-tissue-specific &mdash; it is also highly expressed in liver, and its roles in hepatic methylation metabolism are not fully characterized. Long-term NNMT inhibition could affect homocysteine metabolism (SAM/SAH balance affects the trans-sulfuration pathway), hepatic one-carbon metabolism, and tissue-specific epigenetic programming in ways that are not characterized for any chronic dosing duration. The community protocols for 5-Amino-1MQ are essentially invented &mdash; there are no human dose-finding studies, no human pharmacokinetic studies, and no human safety studies. Comparing this to NMN or NR supplementation: those at least have small human trials; 5-Amino-1MQ has none. Net: the mechanism is genuinely interesting as a research area, but the human translational gap is enormous and the systemic consequences of long-term NNMT inhibition in humans are genuinely unknown.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What 5-Amino-1MQ is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a proven fat loss compound in humans &mdash; the mouse data is real, human data does not exist</li>
+              <li>Not equivalent in evidence to semaglutide, berberine, or even NMN for metabolic goals</li>
+              <li>Not a peptide &mdash; it is a small molecule quinolinium salt that happens to be sold alongside peptides in the research compound community</li>
+              <li>Not appropriate for anyone with active liver disease &mdash; NNMT is highly expressed in liver and the metabolic consequences of inhibition in a diseased liver are unknown</li>
+              <li>Not proven safe over any meaningful time period &mdash; no long-term human safety data exists at all</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Mechanistically distinct from every other weight loss compound &mdash; it targets fat cell metabolic programming, not appetite or caloric restriction</li>
+              <li>Inhibiting one enzyme simultaneously raises two separate metabolic pools (NAD+ and SAM) with major downstream effects</li>
+              <li>NNMT elevation in obese adipose tissue is a consistent finding that suggests it may be a genuine driver of the obese metabolic phenotype, not just a correlate</li>
+              <li>Oral administration removes the injection barrier present with most research compounds in this space</li>
+              <li>An active area of academic metabolic research even if community use has outpaced the science</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">5-Amino-1MQ vs Berberine vs Semaglutide</div>
-      <div className="reta-overview__compare-note">
-        Three metabolic interventions from different mechanism families. Semaglutide has the strongest evidence and largest effect size. Berberine has more human evidence than 5-Amino-1MQ. 5-Amino-1MQ has the most mechanistically distinct (NAD+/methylation) approach but the weakest evidence base.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

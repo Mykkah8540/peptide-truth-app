@@ -1,134 +1,76 @@
 export default function MelanoranIiOverviewPanel() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div className="reta-overview">
 
-      {/* Stat cards */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {[
-          { label: "Primary Effect", value: "Non-Selective MC Agonist", sub: "Pigmentation + libido + appetite — cannot be separated", accent: "#2c5282" },
-          { label: "Key Risk Signal", value: "Melanoma Association", sub: "Case reports (association, not proven causation)", accent: "#9e3800" },
-          { label: "Regulatory Status", value: "NOT Approved", sub: "Research chemical; unregulated market; no major jurisdiction approval", accent: "#9e3800" },
-        ].map((c) => (
-          <div key={c.label} style={{
-            flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
-            border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14,
-            padding: "14px 16px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#64748b", marginBottom: 4 }}>{c.label}</div>
-            <div style={{ fontSize: 15, fontWeight: 800, color: c.accent, lineHeight: 1.2 }}>{c.value}</div>
-            <div style={{ fontSize: 12, color: "#64748b", marginTop: 3 }}>{c.sub}</div>
+      <p className="reta-overview__opener">
+        Melanotan II is a synthetic compound that produces a tan without sun exposure and also triggers
+        sexual arousal &mdash; often involuntarily, together, with no way to separate the effects.
+        It&rsquo;s widely used in the community, completely unregulated, and carries a genuine melanoma
+        association that shouldn&rsquo;t be waved away.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; tanning and maybe libido</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I just want to look tanned and feel more in the mood &mdash; is this thing actually worth it?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Tanning without sun exposure</strong><br />MT-II stimulates your body&rsquo;s own pigment-producing cells to darken your skin, the same mechanism as sun exposure but triggered chemically instead. For fair-skinned people who burn easily or want a base tan year-round, that&rsquo;s genuinely appealing and nothing else on the market does it the same way.</li>
+          <li><strong>Libido boost people actually notice</strong><br />MT-II reliably increases sexual desire and can cause spontaneous erections in men. This isn&rsquo;t subtle &mdash; most people feel it clearly, sometimes within hours of dosing. For anyone dealing with low libido or just wanting more in that department, the effect is real and that&rsquo;s why it circulates.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The problem is you cannot pick which effect you get. Tanning, libido boost, appetite suppression, and significant nausea (around 70&ndash;80% of first-time users) all happen together because they&rsquo;re all driven by the same mechanism. The melanoma signal &mdash; case reports linking MT-II to melanoma, especially in people with existing moles &mdash; is not proven causation, but it&rsquo;s not nothing either. And everything you buy is unregulated gray-market product of unknown purity. If libido is your primary goal and you have prescription access, bremelanotide (PT-141) is the FDA-approved version of this exact mechanism with a meaningfully better safety profile. <strong>Net: real effects, real trade-offs, genuinely unregulated.</strong></p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; aesthetics and sun-free tanning</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to look lean and tanned for a competition or photo shoot without spending hours in the sun and without fake-tan products.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Competition-ready tan without sun damage</strong><br />For bodybuilders and physique competitors, a real melanin-based tan reads completely differently than spray tan &mdash; it&rsquo;s uniform, doesn&rsquo;t streak, and emphasizes muscle definition under stage lights. MT-II can produce a deep tan in weeks that would take months of sun exposure to replicate.</li>
+          <li><strong>Appetite suppression as a cut-phase tool</strong><br />MT-II noticeably reduces appetite in most users. During a caloric deficit phase leading up to competition, some athletes use this as an intentional benefit rather than a side effect &mdash; though it&rsquo;s difficult to dose-manage separately from the other effects.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The spontaneous erection effect is a real practical problem for athletes timing doses around training or events. Nausea is common and can interfere with training quality. If you have any moles, atypical pigmentation, or family history of melanoma, this compound is a hard stop regardless of aesthetics goals &mdash; activating melanin production in that context is not a reasonable trade-off. The gray-market sourcing means purity is genuinely variable; you don&rsquo;t always know what you&rsquo;re getting. <strong>Net: the aesthetic use case is real and uniquely served by MT-II, but the risk calculus is specific to your skin history.</strong></p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; melanocortin system breadth</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m interested in what the melanocortin system actually does beyond tanning &mdash; and whether MT-II vs bremelanotide is the right tool for any of this.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Non-selective melanocortin engagement for studying system breadth</strong><br />MT-II activates melanocortin receptors across multiple subtypes simultaneously &mdash; the ones that drive skin pigmentation, sexual function, appetite suppression, and cardiovascular effects all at once. For someone interested in understanding the full scope of what the melanocortin system does in vivo, MT-II produces a characteristically broad response that bremelanotide was specifically engineered to narrow.</li>
+          <li><strong>A genuine predecessor compound with pharmacological history</strong><br />MT-II is the research compound that led to bremelanotide (PT-141/Vyleesi). Understanding its pharmacology provides real context for the selectivity improvements made in the approved drug and why those engineering choices matter. The MT-II to bremelanotide development path is one of the cleaner examples of reducing off-target effects through structural modification.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">If bremelanotide is accessible to you, it is a more refined tool for any libido-focused investigation &mdash; developed explicitly to reduce the nausea, cardiovascular signal, and non-selective activation that make MT-II messy to work with. For melanocortin system exploration in the context of actual human experience, MT-II&rsquo;s non-selectivity is a feature conceptually but a liability practically. The melanoma association case reports deserve serious weight in anyone who takes pigmentation-adjacent pharmacology seriously. <strong>Net: interesting from a systems biology perspective; bremelanotide is the cleaner tool for most intentions.</strong></p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Melanotan II is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A safe or approved drug &mdash; it is an unregulated research chemical with no regulatory oversight anywhere</li>
+              <li>A selective compound &mdash; you cannot take it for tanning alone or libido alone; the effects are bundled</li>
+              <li>The same as bremelanotide &mdash; PT-141 was specifically engineered to reduce MT-II&rsquo;s non-selective and cardiovascular downsides</li>
+              <li>Risk-free for anyone with moles, atypical pigmentation, or melanoma history</li>
+              <li>Something you can reliably source &mdash; gray-market purity is genuinely variable</li>
+            </ul>
           </div>
-        ))}
-      </div>
-
-      {/* Overview */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Melanotan II (MT-II) is a synthetic compound that produces tanning without sun exposure and increases sexual desire — at the same time, involuntarily. These aren&apos;t separate effects you can select; the same mechanism drives all of them. It also suppresses appetite. The core issue: it activates multiple body systems at once, some desirable and some not.
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          MT-II is unregulated and not approved for human use in any major jurisdiction. It&apos;s sold as a research chemical and widely used for tanning and libido purposes, often with significant uncertainty about what you&apos;re actually getting. It was the research predecessor to bremelanotide (PT-141/Vyleesi) — a drug developed specifically to refine the libido effect while reducing nausea, cardiovascular risk, and unwanted tanning. If your interest is libido improvement specifically and bremelanotide is accessible, that&apos;s the more targeted and better-characterized option.
-        </p>
-      </div>
-
-      {/* MT-II vs Bremelanotide distinction */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(158,56,0,0.06) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(158,56,0,0.15)", borderRadius: 14, padding: "16px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 13, fontWeight: 800, color: "#9e3800", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>MT-II vs Bremelanotide (PT-141) — critical distinction</h3>
-        <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#334155", margin: 0 }}>
-          Bremelanotide (Vyleesi) is the FDA-approved successor developed from MT-II research. It was specifically engineered for improved selectivity and tolerability — reduced nausea (≈40% vs MT-II's higher rate), lower cardiovascular signal, and no lasting hyperpigmentation. MT-II is the older, non-selective, unregulated predecessor with a meaningfully different safety profile. If you're thinking of using MT-II for libido purposes, bremelanotide is the FDA-approved version of that mechanism. The tanning effect of MT-II has no equivalent approved product.
-        </p>
-      </div>
-
-      {/* Is it a fit? */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "△", color: "#7c5200", bg: "#fffbf0", label: "Tanning/pigmentation interest with no prescription access", note: "No approved alternative exists for this effect — but melanoma signal, nausea, and sourcing quality are real concerns" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Personal history of melanoma, atypical moles, or strong family history of melanoma", note: "Melanocortin activation in someone with pigmentation risk history — the case report association signal is serious enough to be a hard stop" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Sexual function / HSDD interest where bremelanotide is accessible", note: "Bremelanotide (PT-141) is FDA-approved for this exact purpose with better tolerability and regulatory oversight" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Cardiovascular disease or uncontrolled hypertension", note: "Blood pressure elevation is a real effect — not managed context like bremelanotide's FDA prescribing" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Pregnancy, breastfeeding, adolescents", note: "Melanocortin system plays roles in development and puberty; no safety data" },
-          ].map((row) => (
-            <div key={row.label} style={{
-              display: "flex", alignItems: "flex-start", gap: 10,
-              background: row.bg, borderRadius: 10, padding: "10px 14px",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: row.color, flexShrink: 0, marginTop: 1 }}>{row.icon}</span>
-              <div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1e293b" }}>{row.label}</div>
-                <div style={{ fontSize: 12, color: "#64748b", marginTop: 2 }}>{row.note}</div>
-              </div>
-            </div>
-          ))}
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The only compound that produces melanin-based tanning without UV exposure &mdash; no approved alternative does this</li>
+              <li>Libido and sexual arousal effects are real, reliable, and clearly felt by most users</li>
+              <li>Appetite suppression is a genuine secondary effect some users seek intentionally</li>
+              <li>Its pharmacological history directly led to an FDA-approved drug (bremelanotide) &mdash; the development story is instructive</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      {/* Comparison table */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>How it compares</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-            <thead>
-              <tr style={{ borderBottom: "2px solid rgba(15,26,46,0.10)" }}>
-                {["", "Melanotan II", "Bremelanotide", "Self-tanning products"].map((h) => (
-                  <th key={h} style={{ padding: "8px 10px", textAlign: h ? "center" : "left", fontWeight: 700, color: "#0f1a2e", whiteSpace: "nowrap" }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { label: "Regulatory status", vals: ["Unregulated research chem", "FDA-approved (HSDD)", "OTC cosmetic"] },
-                { label: "Melanocortin selectivity", vals: ["Non-selective (MC1-4R)", "Selective (MC3R/MC4R)", "N/A"] },
-                { label: "Tanning effect", vals: ["Yes — significant", "Yes — side effect", "Yes — surface only"] },
-                { label: "Nausea rate", vals: ["~70-80%", "~40% (trials)", "None"] },
-                { label: "Melanoma signal", vals: ["Case reports (association)", "Not reported", "None"] },
-                { label: "Sourcing quality", vals: ["Gray market — variable", "Pharmacy — regulated", "OTC — standardized"] },
-              ].map((row, i) => (
-                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(15,26,46,0.03)" : "transparent" }}>
-                  <td style={{ padding: "8px 10px", fontWeight: 600, color: "#334155", whiteSpace: "nowrap" }}>{row.label}</td>
-                  {row.vals.map((v, j) => (
-                    <td key={j} style={{ padding: "8px 10px", textAlign: "center", color: "#475569" }}>{v}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* What people discuss */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(44,82,130,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(44,82,130,0.15)", borderRadius: 14, padding: "18px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What people discuss</h3>
-        <ul style={{ margin: 0, padding: "0 0 0 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            "Cosmetic tanning without sun exposure — the primary use case and why it circulates despite no approval",
-            "Libido and sexual function effects (often the stated secondary or primary motivation)",
-            "Appetite suppression — commonly reported as a side effect that some users seek",
-            "Nausea management protocols — antiemetics before dosing is a standard community practice",
-            "The melanoma risk discussion — this is actively debated in communities and should not be dismissed",
-          ].map((t) => (
-            <li key={t} style={{ fontSize: 13.5, color: "#334155", lineHeight: 1.5 }}>{t}</li>
-          ))}
-        </ul>
       </div>
 
     </div>

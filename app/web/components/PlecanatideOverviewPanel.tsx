@@ -1,134 +1,73 @@
 export default function PlecanatideOverviewPanel() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div className="reta-overview">
 
-      {/* Stat cards */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {[
-          { label: "Brand Name", value: "Trulance", sub: "FDA-approved oral tablet", accent: "#2c5282" },
-          { label: "FDA Status", value: "Approved", sub: "CIC and IBS-C (2017/2018)", accent: "#155e38" },
-          { label: "Mechanism", value: "GC-C Agonist", sub: "Uroguanylin analogue", accent: "#2c5282" },
-        ].map((c) => (
-          <div key={c.label} style={{
-            flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
-            border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14,
-            padding: "14px 16px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#64748b", marginBottom: 4 }}>{c.label}</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: c.accent, lineHeight: 1.2 }}>{c.value}</div>
-            <div style={{ fontSize: 12, color: "#64748b", marginTop: 3 }}>{c.sub}</div>
+      <p className="reta-overview__opener">
+        Plecanatide (Trulance) is a prescription pill for people with chronic constipation or IBS with constipation &mdash; it works entirely inside your gut, mimicking a hormone your intestinal cells already produce to regulate fluid secretion. No systemic absorption, no systemic effects. It has solid Phase 3 trial backing for its approved uses and is an alternative to the better-known linaclotide (Linzess), with a modestly different tolerability profile that some people find easier.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Person with IBS-C or Chronic Constipation &mdash; looking for something that actually works</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve tried everything for constipation and IBS &mdash; what makes this different from other options, and will it give me the same diarrhea problem as Linzess?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It has real FDA-approved evidence for exactly this problem</strong><br />Multiple Phase 3 randomized controlled trials demonstrated that plecanatide improves bowel frequency, stool consistency, and IBS-C symptoms. This is not a supplement or community compound &mdash; it went through the full pharmaceutical development process specifically for your condition.</li>
+          <li><strong>The diarrhea might be less severe than with linaclotide</strong><br />Plecanatide activates more strongly in the acidic proximal small intestine &mdash; closer to physiologic behavior &mdash; compared to linaclotide which activates throughout the intestine. Some people who found linaclotide&rsquo;s diarrhea side effect intolerable have done better on plecanatide, though clinical experience is mixed.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Diarrhea is still the most common side effect &mdash; the pH-dependent mechanism doesn&rsquo;t eliminate it, it may just shift it. This is a brand-name drug with no generic, so cost and insurance coverage can be significant barriers. If linaclotide worked but was tolerable, there&rsquo;s no strong reason to switch. If linaclotide was intolerable, plecanatide is a reasonable next step. Net: solid evidence, real alternative for the right patient, talk to your doctor about whether switching makes sense for you.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Gut Health Curious Person &mdash; microbiome, motility, digestive optimization</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m interested in gut health optimization &mdash; is plecanatide relevant to anything beyond treating diagnosed constipation?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It mimics an endogenous intestinal hormone</strong><br />Uroguanylin &mdash; what plecanatide is modeled after &mdash; is a hormone your intestinal cells actually produce. The concept of restoring or supporting a physiological fluid-regulation signal is relevant to people interested in gut physiology, not just those with diagnosed disease.</li>
+          <li><strong>Motility affects everything downstream in gut health</strong><br />Transit time, fermentation patterns, and microbiome composition are all connected to gut motility. Someone focused on gut health optimization might be curious whether improving motility in this specific way has downstream effects.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Plecanatide works locally in the gut with negligible systemic absorption &mdash; there is no mechanism for systemic optimization effects, and it has no studied benefit in people without constipation or IBS-C. Using a prescription GI drug without a diagnosed indication is not a gut health optimization strategy; it&rsquo;s introducing unnecessary risk of diarrhea with no benefit. The pediatric black box warning (no use under age 6) reflects that GC-C agonists can cause severe diarrhea and dehydration in young children. Net: strictly a treatment for documented constipation conditions, not a general gut health tool.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The GI and Microbiome Biohacker &mdash; GC-C receptor biology, intestinal fluid regulation</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;What&rsquo;s the actual difference between uroguanylin and guanylin receptor kinetics, and why does pH-dependent activation matter for GC-C agonists?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The pH-dependent mechanism is genuinely distinct pharmacology</strong><br />Uroguanylin (what plecanatide mimics) activates the GC-C receptor preferentially in the acidic duodenum, whereas guanylin (what linaclotide mimics) activates throughout the intestine without that pH gating. This is designed to create a more physiologic intestinal fluid response concentrated where it naturally begins. The design rationale is mechanistically elegant.</li>
+          <li><strong>GC-C receptor biology has emerging implications beyond constipation</strong><br />GC-C signaling influences intestinal cell proliferation, inflammation, and barrier function &mdash; areas directly relevant to longevity and gut health research. Uroguanylin has been proposed as a weight-regulating signal with central appetite effects in some animal models, adding a layer of interest beyond local gut function.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The interesting pharmacology doesn&rsquo;t translate to off-label use value &mdash; plecanatide has negligible systemic absorption by design, so the central appetite effects seen with uroguanylin in rodent studies are not something this oral tablet is doing. The comparison to linaclotide is the most practically relevant question: in head-to-head real-world use, the tolerability advantage of plecanatide is real for some patients but not universal. For a biohacker interested in GC-C biology, the research literature on uroguanylin and GC-C in intestinal homeostasis is worth reading; the drug itself as a personal tool is constrained to its approved GI indications. Net: intellectually interesting receptor pharmacology, clinically constrained to constipation treatment.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Plecanatide is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A systemic compound &mdash; it works locally in the gut with negligible absorption; no systemic effects</li>
+              <li>A gut health optimization tool for people without constipation &mdash; no benefit and real diarrhea risk</li>
+              <li>Safe for children under 6 &mdash; black box warning; same restriction as linaclotide</li>
+              <li>A significant improvement over linaclotide for most patients &mdash; modest tolerability difference, not a categorical upgrade</li>
+              <li>A weight loss or appetite-regulating drug &mdash; the systemic uroguanylin biology doesn&rsquo;t apply to this locally-acting tablet</li>
+            </ul>
           </div>
-        ))}
-      </div>
-
-      {/* Overview */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Plecanatide (Trulance) is a synthetic 16-amino-acid peptide analogue of uroguanylin \u2014 a hormone your intestinal cells naturally produce to regulate fluid and electrolyte secretion. It targets the guanylate cyclase-C (GC-C) receptor, the same receptor as linaclotide (Linzess), but its structure is distinct. It is FDA-approved for chronic idiopathic constipation (CIC) and irritable bowel syndrome with constipation (IBS-C).
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          A defining feature of plecanatide is its pH-dependent activation. It is most active in the acidic microenvironment of the duodenum \u2014 essentially mimicking the behavior of natural uroguanylin, which activates preferentially where the gut is most acidic right after stomach emptying. This is proposed to produce a somewhat smoother tolerability profile compared to linaclotide, though both can cause diarrhea. Systemic absorption is negligible: plecanatide works locally in the gut.
-        </p>
-      </div>
-
-      {/* Why it\u2019s distinct */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(44,82,130,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(44,82,130,0.15)", borderRadius: 14, padding: "16px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 13, fontWeight: 800, color: "#2c5282", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>What makes it unique</h3>
-        <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#334155", margin: 0 }}>
-          Plecanatide is the only GC-C agonist designed to exploit pH-dependent receptor activation \u2014 directly modeling the behavior of endogenous uroguanylin. This is different from linaclotide, which activates GC-C throughout the intestine without the same pH gating. The practical implication is a theoretically more physiologic secretory response concentrated in the proximal small intestine, with a modestly different side effect footprint. Both are local-acting (negligible absorption) with overlapping contraindications, including a black box warning against use in pediatric patients under age 6.
-        </p>
-      </div>
-
-      {/* Is it a fit? */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "\u2713", color: "#155e38", bg: "#f0fdf4", label: "Chronic idiopathic constipation (CIC)", note: "FDA-approved for this indication with multiple Phase 3 RCT support" },
-            { icon: "\u2713", color: "#155e38", bg: "#f0fdf4", label: "IBS with constipation (IBS-C)", note: "FDA-approved; alternative or successor if linaclotide caused intolerable diarrhea" },
-            { icon: "\u25b3", color: "#7c5200", bg: "#fffbf0", label: "Tried linaclotide but had excessive diarrhea", note: "pH-dependent activation is proposed to be modestly better tolerated \u2014 clinical experience is mixed" },
-            { icon: "\u2717", color: "#9e3800", bg: "#fff7f5", label: "Children under age 6", note: "Black box contraindication \u2014 absolute; same restriction as linaclotide class" },
-            { icon: "\u2717", color: "#9e3800", bg: "#fff7f5", label: "Systemic or enhancement goals", note: "No systemic absorption; no mechanism for systemic effects" },
-          ].map((row) => (
-            <div key={row.label} style={{
-              display: "flex", alignItems: "flex-start", gap: 10,
-              background: row.bg, borderRadius: 10, padding: "10px 14px",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: row.color, flexShrink: 0, marginTop: 1 }}>{row.icon}</span>
-              <div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1e293b" }}>{row.label}</div>
-                <div style={{ fontSize: 12, color: "#64748b", marginTop: 2 }}>{row.note}</div>
-              </div>
-            </div>
-          ))}
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The only GC-C agonist designed around pH-dependent activation &mdash; mechanistically distinct from linaclotide</li>
+              <li>Solid Phase 3 RCT evidence for IBS-C and chronic idiopathic constipation</li>
+              <li>Uroguanylin-based design means it mimics an endogenous intestinal physiological signal</li>
+              <li>A real alternative for people who found linaclotide&rsquo;s diarrhea intolerable</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      {/* Comparison table */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>How it compares (GC-C agonist class)</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-            <thead>
-              <tr style={{ borderBottom: "2px solid rgba(15,26,46,0.10)" }}>
-                {["", "Plecanatide", "Linaclotide", "Lubiprostone"].map((h) => (
-                  <th key={h} style={{ padding: "8px 10px", textAlign: h ? "center" : "left", fontWeight: 700, color: "#0f1a2e", whiteSpace: "nowrap" }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { label: "Receptor", vals: ["GC-C", "GC-C", "ClC-2 chloride channel"] },
-                { label: "Analogue of", vals: ["Uroguanylin", "Guanylin", "Prostanoid (not a peptide)"] },
-                { label: "pH activation", vals: ["Yes \u2014 duodenal-preferring", "No", "No"] },
-                { label: "FDA indications", vals: ["CIC, IBS-C", "CIC, IBS-C, OIC", "CIC, IBS-C"] },
-                { label: "Systemic absorption", vals: ["Negligible", "Negligible", "Minimal"] },
-                { label: "Peds black box", vals: ["Yes (<6)", "Yes (<6)", "No"] },
-              ].map((row, i) => (
-                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(15,26,46,0.03)" : "transparent" }}>
-                  <td style={{ padding: "8px 10px", fontWeight: 600, color: "#334155", whiteSpace: "nowrap" }}>{row.label}</td>
-                  {row.vals.map((v, j) => (
-                    <td key={j} style={{ padding: "8px 10px", textAlign: "center", color: "#475569" }}>{v}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* What people discuss */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(26,92,58,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(26,92,58,0.15)", borderRadius: 14, padding: "18px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What people discuss</h3>
-        <ul style={{ margin: 0, padding: "0 0 0 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            "Plecanatide vs. linaclotide comparison \u2014 tolerability differences and whether to switch",
-            "Diarrhea management: dose timing, dietary adjustments, whether to take with food",
-            "Long-term use questions: does it lose efficacy over time?",
-            "Cost and insurance coverage barriers (brand-name drug with no generic)",
-            "Use in IBS-C when first-line options failed or caused unacceptable side effects",
-          ].map((t) => (
-            <li key={t} style={{ fontSize: 13.5, color: "#334155", lineHeight: 1.5 }}>{t}</li>
-          ))}
-        </ul>
       </div>
 
     </div>

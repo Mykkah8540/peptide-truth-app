@@ -4361,3 +4361,163 @@ html.reta-page body {
     align-self: flex-start;
   }
 }
+
+/* ═══════════════════════════════════════════════════════
+   OVERVIEW_PROFILE_V1 — user-profile based Overview panel layout
+   Replaces stat-card / fit-matrix / comparison-table structure.
+   3 audience profiles layered from plain → technical.
+   ═══════════════════════════════════════════════════════ */
+
+/* Opener paragraph */
+.reta-overview__opener {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #1e2c3f;
+  margin: 0 0 20px;
+  font-weight: 450;
+}
+
+/* Profile card */
+.reta-overview__profile {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 26, 46, 0.09);
+  border-radius: 14px;
+  padding: 20px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Profile number label */
+.reta-overview__profile-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--reta-navy);
+  opacity: 0.45;
+}
+
+/* Profile heading h3 */
+.reta-overview__profile-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* "What they think" quote */
+.reta-overview__profile-think {
+  font-size: 14px;
+  font-style: italic;
+  color: #2c3e52;
+  border-left: 3px solid rgba(15, 26, 46, 0.15);
+  padding: 6px 0 6px 14px;
+  margin: 2px 0 0;
+  line-height: 1.5;
+}
+
+/* Section sub-headings inside profile */
+.reta-overview__profile-why-heading,
+.reta-overview__profile-check-heading {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--reta-navy);
+  opacity: 0.6;
+  margin: 4px 0 0;
+}
+
+/* Reasons numbered list */
+.reta-overview__profile-why {
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reta-overview__profile-why li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1e2c3f;
+}
+.reta-overview__profile-why li strong {
+  display: block;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin-bottom: 1px;
+}
+
+/* Reality check paragraph */
+.reta-overview__profile-check {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #2c3e52;
+  background: rgba(15, 26, 46, 0.035);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin: 0;
+}
+
+/* Bottom line block */
+.reta-overview__bottom {
+  background: rgba(15, 26, 46, 0.04);
+  border: 1px solid rgba(15, 26, 46, 0.08);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.reta-overview__bottom-heading {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--reta-navy);
+  margin: 0 0 14px;
+}
+
+.reta-overview__bottom-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.reta-overview__bottom-col-heading {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin: 0 0 8px;
+  letter-spacing: 0.03em;
+}
+
+.reta-overview__bottom-list {
+  margin: 0;
+  padding: 0 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.reta-overview__bottom-list li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #2c3e52;
+}
+
+/* Mobile */
+@media (max-width: 999px) {
+  .reta-overview__opener {
+    font-size: 14.5px;
+  }
+  .reta-overview__bottom-cols {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .reta-overview__profile {
+    padding: 16px 16px 14px;
+  }
+  .reta-overview__bottom {
+    padding: 16px 16px;
+  }
+}

@@ -1,205 +1,75 @@
-/**
- * HexarelinOverviewPanel — decision-oriented overview for Hexarelin.
- * Key frame: the most potent GHRP by GH release amplitude, but two defining limitations —
- * tachyphylaxis (GH response attenuates faster than any other GHRP) and CD36 cardiac receptor
- * binding (unique among GHRPs, clinically ambiguous in enhancement context).
- * Cortisol + prolactin profile same as GHRP-2/GHRP-6. Community replaced it with ipamorelin.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Highest-potency",
-    label: "acute GH release",
-    sub: "Hexarelin produces the largest acute GH pulse of any GHRP — stronger than ipamorelin, GHRP-2, or GHRP-6 at comparable doses; the ceiling is real",
-    note: "High potency doesn't translate to better outcomes. Larger GH pulses don't linearly improve body composition — and the tachyphylaxis limitation means the potency advantage erodes faster than with other GHRPs.",
-  },
-  {
-    value: "Tachyphylaxis",
-    label: "rapid desensitization",
-    sub: "hexarelin's GH response attenuates faster than other GHRPs — within weeks of continuous use; cycling is not optional, it's mechanistically required",
-    note: "This isn't a theoretical concern. The ghrelin receptor downregulates with hexarelin faster than ipamorelin or GHRP-2, making the 'potency advantage' temporary. Users who don't cycle lose most of the effect.",
-  },
-  {
-    value: "CD36 binding",
-    label: "cardiac receptor activity",
-    sub: "hexarelin binds the CD36 scavenger receptor independently of GH release — the only GHRP with this activity; cardiac implications are unclear in enhancement contexts",
-    note: "CD36 binding has been studied in heart failure models where it showed cardioprotective effects. Whether this matters in healthy adults, or creates risk in people with cardiac conditions, is uncharacterized. It's a differentiating unknown.",
-  },
-];
-
-const FIT_YES = [
-  "You have a specific short-term goal where maximum GH pulse amplitude matters and you've planned a cycle with mandatory off periods",
-  "You have no history of cardiovascular disease, cardiac arrhythmias, or cardiac conditions — CD36 activity makes cardiac history a meaningful screening point",
-  "You have no diabetes, prediabetes, or insulin resistance — hexarelin elevates cortisol alongside GH, creating the same compounded glucose-raising mechanism as GHRP-2",
-  "You have no history of eating disorders or binge eating — hexarelin's ghrelin receptor activation produces appetite stimulation, though less extreme than GHRP-6",
-  "You have no active or recent cancer diagnosis — IGF-1 mitogenic concern applies identically",
-  "You understand and accept the tachyphylaxis constraint — the potency advantage is temporary without structured cycling",
-];
-
-const FIT_NO = [
-  "You have any cardiovascular history (cardiac disease, arrhythmias, uncontrolled hypertension) — CD36 receptor binding creates a unique cardiac consideration not present with other GHRPs",
-  "You want sustained, stable GH elevation — hexarelin's tachyphylaxis makes it unsuitable for continuous protocols; ipamorelin or CJC-1295 maintain a more stable response",
-  "You want the GH pulse without cortisol or prolactin burden — ipamorelin provides similar GH release without the non-selective hormonal burden hexarelin shares with GHRP-2",
-  "You have diabetes, prediabetes, or insulin resistance — GH + cortisol creates the same compounded glucose-raising mechanism as GHRP-2",
-  "You have an active cancer diagnosis — IGF-1 is mitogenic; oncology clearance required",
-  "You're pregnant, breastfeeding, or an adolescent — hard stop",
-  "You want a well-characterized compound with established community protocols — hexarelin has less modern use data than ipamorelin",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–3",
-    heading: "Peak GH response — before tachyphylaxis sets in",
-    body: "Hexarelin's GH response is at its highest in the early weeks — before receptor downregulation begins attenuating the pulse. Water retention and the standard early GH-axis effects (edema, appetite stimulation, cortisol-related mood and sleep changes) are present. If the goal is acute GH pulse amplitude, this window is when it's most pronounced. The response won't remain at this level with continued use.",
-  },
-  {
-    phase: "Weeks 4–8",
-    heading: "Tachyphylaxis becomes the primary management challenge",
-    body: "By weeks 4–8, most users experience measurable attenuation of the GH response. This is not dose-dependent in the usual sense — increasing dose doesn't reverse receptor downregulation meaningfully. The clinical implication: continuous-use hexarelin protocols lose their primary pharmacological effect. Cycling off for 4–6 weeks is the established mechanism to restore receptor sensitivity. Unlike ipamorelin or CJC-1295, there's no viable 'sustained use' protocol for hexarelin.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Cycling is the only viable structure",
-    body: "Long-term hexarelin use is functionally a series of short cycles — use for 4–8 weeks, off for 4–6 weeks, repeat. Continuous use delivers diminishing returns faster than any other GHRP. For most enhancement goals, ipamorelin with CJC-1295 provides similar GH benefits with a sustainable protocol. If hexarelin has a role, it's for specific short-cycle peak GH amplitude goals — not ongoing protocols.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Hexarelin",
-    badge: "Research-grade",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor (GHSR1a) + CD36 (unique among GHRPs)" },
-      { label: "GH potency", value: "Highest acute GH pulse of any GHRP class" },
-      { label: "Tachyphylaxis", value: "Fastest desensitization — cycles required; continuous use loses effect" },
-      { label: "Cortisol / prolactin", value: "Elevated — non-selective GHRP profile, same as GHRP-2" },
-      { label: "CD36 cardiac binding", value: "Unique to hexarelin — cardiac implications unstudied in enhancement context" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "GHRP-2",
-    badge: "Research-grade",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor only — no CD36 activity" },
-      { label: "GH potency", value: "High — similar cortisol/prolactin profile as hexarelin" },
-      { label: "Tachyphylaxis", value: "Present but slower than hexarelin — more viable for extended cycles" },
-      { label: "Cortisol / prolactin", value: "Elevated — non-selective GHRP profile" },
-      { label: "Key distinction", value: "No CD36 binding; more characterized modern use data than hexarelin" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Ipamorelin",
-    badge: "Community standard",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor only — no CD36 activity" },
-      { label: "GH potency", value: "Moderate — lower peak than hexarelin but sustained without tachyphylaxis" },
-      { label: "Tachyphylaxis", value: "Minimal — stable GH response supports sustained protocols" },
-      { label: "Cortisol / prolactin", value: "Low — selective GHRP; designed to avoid hexarelin/GHRP-2 limitations" },
-      { label: "Why it replaced hexarelin", value: "Sustainable protocol, no cortisol burden, better community data" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function HexarelinOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The most potent injectable GH stimulator in its class — but your body adapts fast, and it has unusual cardiac receptor activity.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Hexarelin stimulates GH release more powerfully than any other compound in its class. The catch: your body adapts within weeks, and the GH response drops off significantly as receptors lose sensitivity — faster than any other injectable in this category. It also has an unusual interaction with cardiac tissue that no other GH-stimulating compound shares, and what that means for long-term use isn&apos;t well understood. For sustainable protocols, ipamorelin is the more practical choice.
-        </div>
+      <p className="reta-overview__opener">
+        Hexarelin stimulates GH release more powerfully than any other injectable compound in its class. The problem is your body adapts to it faster than any other GHRP &mdash; the response drops off significantly within weeks, and you have to stop entirely to get it back. It also has an unusual interaction with cardiac tissue that no other compound in this category shares, and what that means in practice is not well understood.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; GH-curious, researching injectables</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I saw Hexarelin described as the most potent GH-releasing peptide. If it&rsquo;s the strongest, shouldn&rsquo;t it be the best choice?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It does produce the largest GH spike in its class</strong><br />Hexarelin genuinely outperforms ipamorelin, GHRP-2, and GHRP-6 in terms of acute GH pulse amplitude. That part of the claim is accurate &mdash; it is the most potent by that measure.</li>
+          <li><strong>A stronger GH signal sounds like it should produce better results</strong><br />The intuition that more GH means more benefit is understandable. If the goal is recovery, body composition, or anti-aging effects from GH, a bigger signal seems like it would work better.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The body adapts to hexarelin faster than any other GHRP &mdash; within 3&ndash;4 weeks of continuous use, the GH response can drop significantly as receptors become less sensitive. The potency advantage is temporary and then gone until you take weeks off. Meanwhile, hexarelin also raises cortisol alongside GH (same as GHRP-2), and has an unusual interaction with cardiac tissue that other GHRPs don&rsquo;t. Ipamorelin has a lower peak GH pulse but a stable response you can sustain. For someone just exploring GH compounds, hexarelin is not the place to start. Net: the &ldquo;most potent&rdquo; label is real but misleading as a recommendation; for sustainable use, ipamorelin wins clearly.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; cardiac recovery interest, short-cycle peak performance</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I read that hexarelin has cardioprotective effects from research. Is there a legitimate angle on using it for heart health, or is that just researcher-to-community hype?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The cardiac receptor research is real &mdash; hexarelin binds a cardiac receptor no other GHRP touches</strong><br />Hexarelin binds to CD36, a scavenger receptor expressed on heart cells. In heart failure models, this activity showed protective effects on cardiac function. It is the only GHRP with this activity, and the research is peer-reviewed, not just forum speculation.</li>
+          <li><strong>For a structured short cycle, the peak GH pulse could matter</strong><br />An athlete who understands the tachyphylaxis issue and plans a strict 4-week cycle with mandatory off time could legitimately use the potency advantage during that window, rather than trying to run it continuously.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The cardiac research was done in diseased hearts, not healthy ones &mdash; and in rodents. Whether the CD36 binding in hexarelin is protective, neutral, or potentially problematic in healthy humans with normal cardiac function is genuinely unknown. &ldquo;Cardioprotective in heart failure models&rdquo; does not translate cleanly to &ldquo;good for your heart during heavy training.&rdquo; If you have any existing cardiac history, this specific uncertainty should push you firmly toward ipamorelin instead. Net: the cardioprotective angle is scientifically interesting but practically uncharacterized; cardiac history is a specific screening point with hexarelin that doesn&rsquo;t exist with other GHRPs.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; cardioprotective mechanism, GH pulse optimization</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Hexarelin is the only GHRP with CD36 activity independent of the GH release. What&rsquo;s the mechanistic picture, and is there a protocol design where hexarelin makes sense over ipamorelin?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The dual mechanism &mdash; ghrelin receptor plus CD36 &mdash; is unique in the GHRP family</strong><br />CD36 binding by hexarelin occurs independently of GH release and has been shown to reduce cardiac fibrosis and improve heart function in animal heart failure models. Whether this represents a separate pharmacological opportunity or just an unknown risk is genuinely open. For a biohacker tracking cardiac biomarkers, it at least provides something potentially measurable.</li>
+          <li><strong>Tachyphylaxis as a protocol design constraint, not a disqualifier</strong><br />For someone who has already extracted maximum value from sustained ipamorelin cycles and wants to explore peak-amplitude short-cycle protocols, hexarelin&rsquo;s pharmacology fits a specific niche: 3&ndash;4 week maximum-GH-pulse windows followed by mandatory 4&ndash;6 week washout. The tachyphylaxis is predictable and manageable if it&rsquo;s built into the protocol design from the start.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The cortisol and prolactin co-elevation with hexarelin is the same non-selective problem as GHRP-2 &mdash; it undermines recovery and body composition goals in a way that ongoing ipamorelin use avoids. The CD36 cardiac activity adds a second axis of uncertainty that is not present with any other GHRP. Taken together: hexarelin sits in a narrow niche where someone specifically wants the peak GH pulse amplitude on a short cycle, accepts the cortisol tradeoff, and has no cardiac risk factors that make the CD36 variable concerning. That is a real niche, but it is narrow. For most biohacker-level protocols, ipamorelin plus CJC-1295 provides better sustained GH output with a cleaner and better-characterized profile. Net: technically interesting, narrowly applicable, not a default GHRP choice at any experience level.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Hexarelin is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a sustainable choice for ongoing protocols &mdash; tachyphylaxis makes continuous use lose effect</li>
+              <li>Not a clean GH stimulator &mdash; cortisol and prolactin elevation same as GHRP-2</li>
+              <li>Not appropriate for anyone with cardiac history &mdash; the CD36 activity is an uncharacterized variable</li>
+              <li>Not &ldquo;the most potent&rdquo; in a way that translates to better outcomes &mdash; the advantage erodes within weeks</li>
+              <li>Not the current community standard &mdash; ipamorelin replaced it for good reasons</li>
+              <li>Not suitable for anyone with diabetes or insulin resistance</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Highest acute GH pulse of any GHRP &mdash; the peak amplitude claim is accurate</li>
+              <li>The only GHRP with CD36 cardiac receptor activity &mdash; a pharmacologically unique characteristic</li>
+              <li>Cardioprotective effects in heart failure animal models are peer-reviewed and real</li>
+              <li>Useful for structured short-cycle protocols where the tachyphylaxis is planned around</li>
+              <li>Understanding hexarelin&rsquo;s limitations explains exactly why ipamorelin was designed to replace it</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Hexarelin vs GHRP-2 vs Ipamorelin</div>
-      <div className="reta-overview__compare-note">
-        All three bind the ghrelin receptor. Hexarelin has the highest peak GH potency but the fastest receptor desensitization. GHRP-2 has a similar non-selective profile but more viable extended cycles. Ipamorelin was developed to provide similar GH release with a sustainable protocol and without cortisol/prolactin burden. Hexarelin&apos;s CD36 binding is unique — no other GHRP shares it.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

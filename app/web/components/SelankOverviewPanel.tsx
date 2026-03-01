@@ -1,203 +1,74 @@
-/**
- * SelankOverviewPanel — decision-oriented overview for Selank.
- * Key frame: Russian-developed anxiolytic peptide. GABAergic + enkephalinase inhibition.
- * "Anxi-smart" profile — reduces anxiety without sedation; often reported as clarity-promoting.
- * Evidence: Russian clinical literature + mechanistic work. Not FDA-approved.
- * Nasal spray is primary route. Low side effect profile in community experience.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Anxiolytic",
-    label: "without sedation — the defining clinical profile",
-    sub: "selank's proposed primary effect is anxiety reduction without the sedation or cognitive impairment of benzodiazepines — it modulates GABAergic and opioid peptide pathways without strongly depressing CNS output",
-    note: "The 'anxi-smart' framing in community use captures something real about the mechanism — GABAergic modulation at this receptor subset without benzodiazepine-level sedation is pharmacologically plausible. Whether the magnitude of clinical effect matches what community reports describe is the honest evidence question.",
-  },
-  {
-    value: "Russian origin",
-    label: "clinical evidence — heterogeneous quality",
-    sub: "selank was developed at Russia's Institute of Molecular Genetics in the 1990s; clinical evidence includes Russian-published studies and limited Western independent replication; quality and methodology vary across the literature",
-    note: "This is the most important context for understanding the evidence. Russian clinical literature is real science — but it hasn't consistently been replicated in large, independent, Western RCTs. The mechanism is plausible and pharmacologically grounded; the clinical effect size in human studies is less precisely characterized than FDA-approved comparators.",
-  },
-  {
-    value: "Intranasal",
-    label: "primary route — fast onset, low systemic exposure",
-    sub: "nasal spray is the standard route for selank — direct CNS access via nasal mucosa; onset within minutes; lower systemic exposure than injection for a comparable CNS effect",
-    note: "The intranasal route is meaningful pharmacologically — it allows direct mucosal absorption near CNS tissue and produces faster onset than oral (which faces peptide degradation). Injectable selank is also used but is less common in community protocols.",
-  },
-];
-
-const FIT_YES = [
-  "You're seeking anxiety reduction without the sedation or cognitive blunting of benzodiazepines — selank's proposed profile is anxiolytic without strong sedation",
-  "You want a short-acting, on-demand anxiolytic — intranasal onset is fast; it's not a daily-pill structure",
-  "Your anxiety context is situational or performance-related (rather than severe clinical anxiety disorder requiring daily medication)",
-  "You're not on benzodiazepines, opioids, or other GABAergic/opioid-active medications — the interaction risk is the primary pharmacological concern",
-  "You're not pregnant, breastfeeding, or an adolescent — hard stops",
-  "You understand the evidence is from Russian clinical literature without FDA-level independent replication",
-];
-
-const FIT_NO = [
-  "You have severe clinical anxiety disorder requiring daily scheduled medication — selank's on-demand, non-FDA evidence profile is not a replacement for physician-managed anxiety pharmacotherapy",
-  "You're on benzodiazepines or opioid medications — additive GABAergic and opioid pathway modulation creates unpredictable CNS synergy",
-  "You want a compound with FDA RCT-level evidence for anxiety — flibanserin, buspirone, and SSRIs have better-characterized evidence for anxiety disorders",
-  "You have a CNS condition or are on psychiatric medications — the neuropsychiatric interaction profile is insufficiently characterized",
-  "You're pregnant, breastfeeding, or an adolescent — hard stop; neurodevelopmental effects not studied",
-];
-
-const TIMELINE = [
-  {
-    phase: "Minutes after intranasal administration",
-    heading: "Fast onset — the anxiolytic window begins quickly",
-    body: "Intranasal peptides reach CNS tissue rapidly via nasal mucosal absorption. Selank's onset is reported as fast — within minutes in community experience, consistent with the pharmacokinetic route. The anxiolytic effect window is relatively short (hours), making it more of an on-demand tool than a sustained-baseline compound. The lack of sedation is the key reported quality — effects are described as calm focus rather than drowsiness.",
-  },
-  {
-    phase: "Hours of active window",
-    heading: "Calm, not sedated — the reported effect quality",
-    body: "Community reports consistently describe selank's effect as anxiolytic without cognitive blunting — reduced anxiety with maintained mental clarity, in contrast to benzodiazepines which impair cognition. Whether this characterization holds up at higher doses or in individuals more sensitive to GABAergic effects is less clear. Russian clinical data suggests therapeutic effects in anxiety contexts with a favorable tolerability profile vs benzodiazepines.",
-  },
-  {
-    phase: "Long-term",
-    heading: "No tolerance buildup — proposed advantage over benzodiazepines",
-    body: "One claimed advantage of selank vs benzodiazepines is the absence of tolerance development and physical dependence. Benzodiazepine tolerance (requiring dose escalation to maintain effect) and physical dependence (withdrawal syndrome) are major clinical concerns. Selank's mechanism (GABA modulation via a different pathway; enkephalinase inhibition rather than direct GABA-A agonism) is proposed to avoid these. This is plausible mechanistically and supported by Russian data, but long-term use in Western populations isn't well-characterized.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Selank",
-    badge: "Investigational (Russian)",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GABAergic modulation + enkephalinase inhibition (raises endogenous enkephalins)" },
-      { label: "Route", value: "Intranasal (primary) or injectable — not oral" },
-      { label: "Effect profile", value: "Anxiolytic without sedation — 'anxi-smart'; cognitive clarity maintained" },
-      { label: "Evidence", value: "Russian clinical literature — plausible mechanism; limited Western RCT replication" },
-      { label: "Tolerance / dependence", value: "Not reported in available literature — proposed advantage over benzos" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Benzodiazepines (diazepam, lorazepam, clonazepam)",
-    badge: "FDA-approved (controlled)",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GABA-A receptor positive allosteric modulator — strong sedation + anxiolysis" },
-      { label: "Route", value: "Oral primarily; injectable for acute use" },
-      { label: "Effect profile", value: "Strong anxiolytic + sedation; cognitive impairment is a documented effect" },
-      { label: "Evidence", value: "FDA-approved RCT data for anxiety disorders; extensive safety record" },
-      { label: "Tolerance / dependence", value: "High risk — tolerance and physical dependence are major clinical concerns" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Semax",
-    badge: "Investigational (Russian)",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "ACTH fragment — BDNF upregulation, dopaminergic/serotonergic activation" },
-      { label: "Route", value: "Intranasal primarily" },
-      { label: "Effect profile", value: "Cognitive enhancement, neuroprotection — more stimulatory than anxiolytic" },
-      { label: "Evidence", value: "Russian clinical data for stroke recovery and cognition; same heterogeneous quality" },
-      { label: "vs Selank", value: "Selank is calming/anxiolytic; Semax is stimulatory/cognitive — often used together for balance" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function SelankOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A Russian nasal spray for anxiety — calming without sedation or brain fog. Evidence is real but from one research tradition.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Selank is a nasal spray developed in Russia to reduce anxiety without causing sedation — calm without the brain fog. That&apos;s the key distinction from benzodiazepines (Valium, Xanax), which work by broadly suppressing the nervous system and tend to impair thinking. Selank works through a different, more targeted mechanism. Community reports consistently describe reduced anxiety with clear-headed focus maintained. The evidence comes from Russian clinical research — which is real science — but it hasn&apos;t been widely replicated in Western clinical trials, so the exact strength of effect is less established than FDA-approved options.
-        </div>
+      <p className="reta-overview__opener">
+        Selank is a nasal spray developed in Russia to reduce anxiety without causing sedation or brain fog &mdash; the defining difference from benzodiazepines like Valium or Xanax. Clinical evidence comes from Russian research and is real, but it hasn&rsquo;t been independently replicated in large Western trials, so the exact strength of effect is less certain than FDA-approved options.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; Anxious without wanting to be sedated</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m stressed and anxious but I don&rsquo;t want to feel like a zombie &mdash; is there something that actually calms me down without wrecking my focus?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Calming without the fog</strong><br />People consistently describe Selank as reducing anxiety while keeping their thinking clear &mdash; they feel calmer, not slower. That&rsquo;s exactly the opposite of what most people experience with traditional anxiety medications, which tend to make you drowsy and impair thinking.</li>
+          <li><strong>Fast onset via nasal spray</strong><br />You spray it in your nose and feel something within minutes. It&rsquo;s an on-demand tool rather than a daily pill you have to take for weeks before noticing anything. For situational anxiety &mdash; a stressful work day, a difficult conversation &mdash; the fast onset matters.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The anxiolytic effect is real and plausible based on how it works, but the evidence comes primarily from Russian clinical studies that haven&rsquo;t been replicated with the rigor of FDA-approved anxiety treatments. If you have significant clinical anxiety that needs daily management, Selank is not a substitute for physician-guided care. For situational or performance-related anxiety in an otherwise healthy person, it&rsquo;s one of the more interesting options with a good safety track record in community experience. Net: worth considering for mild situational anxiety; not a replacement for real anxiety treatment.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Needing calm focus under pressure</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;My performance tanks when I&rsquo;m too amped up before competition &mdash; can I take the edge off without slowing down my reaction time?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Anxiolytic without sedation or motor impairment</strong><br />Pre-competition or high-stakes performance anxiety impairs output &mdash; too much cortisol and adrenaline narrows focus and creates muscle tension. Selank&rsquo;s profile (anxiety reduction, no sedation) fits this window well. It doesn&rsquo;t blunt alertness the way beta-blockers can, and it doesn&rsquo;t slow reaction time the way benzodiazepines do.</li>
+          <li><strong>On-demand use pattern</strong><br />The short action window (hours) and fast intranasal onset fits athletic use cases: take it a short window before you need it, it does its job, and it&rsquo;s cleared. There&rsquo;s no accumulation or daily-dose dependency for an on-demand approach.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There&rsquo;s no sports-context RCT for Selank. The anxiety-reduction effect is the relevant one for performance, and community experience broadly supports it. Worth noting: Selank is not on WADA&rsquo;s banned list as of early 2026, but it&rsquo;s categorized as a research peptide and testing programs vary. Check your sport&rsquo;s specific rules. Net: a plausible tool for managing performance anxiety without the side effects that make other anxiolytics problematic in sport.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; Anxiolytic + cognitive clarity stack</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand the mechanism &mdash; how does it actually modulate GABA and enkephalins differently from benzos, and how does stacking it with Semax change the picture?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Distinct mechanism from benzodiazepines</strong><br />Selank modulates the GABAergic system without being a direct GABA-A agonist like benzodiazepines. It also raises endogenous enkephalins (by inhibiting the enzyme that breaks them down). This combination produces anxiety reduction through a more targeted pathway, avoiding the broad CNS suppression that drives benzodiazepine tolerance and dependence. No meaningful tolerance development has been reported &mdash; mechanistically consistent with how it works.</li>
+          <li><strong>Selank + Semax as a balanced stack</strong><br />Semax (its Russian companion peptide) is stimulatory and cognitive-activating but can increase anxiety in susceptible people. Selank as a co-administration buffers that anxiogenic edge while Semax drives cognitive activation. The combination is the most discussed Russian nootropic stack for a reason: the two compounds complement each other across the activation-sedation axis.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The mechanistic picture is genuinely interesting and pharmacologically coherent. What&rsquo;s missing is Western replication &mdash; the Russian clinical literature is real science but hasn&rsquo;t been independently validated at FDA-trial standards. Long-term use in healthy humans is not characterized. The stack logic with Semax is community-derived, not trial-validated. Net: a pharmacologically interesting compound with enough mechanistic grounding to take seriously, but expect that you&rsquo;re working at the frontier of what&rsquo;s actually proven.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Selank is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A replacement for clinical anxiety treatment in people with anxiety disorders</li>
+              <li>An FDA-approved compound &mdash; evidence is from Russian research</li>
+              <li>A sedative &mdash; that&rsquo;s the defining distinction from benzodiazepines</li>
+              <li>A daily maintenance medication for chronic anxiety</li>
+              <li>A compound with well-characterized long-term use data in Western populations</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Genuine anxiolytic effect without the sedation or cognitive impairment of benzodiazepines</li>
+              <li>Fast onset via nasal spray &mdash; works in the window you need it</li>
+              <li>No reported tolerance development &mdash; mechanistically distinct from benzo dependence</li>
+              <li>Good community safety record at standard doses</li>
+              <li>Complementary with Semax for a balanced stimulation + calm stack</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Selank vs Benzodiazepines vs Semax</div>
-      <div className="reta-overview__compare-note">
-        Selank is often compared to benzodiazepines (the standard anxiolytic class) and to Semax (its common Russian companion peptide). The key contrasts: selank avoids benzo sedation and dependence at the proposed cost of less evidence certainty. Semax has a more stimulatory profile and is sometimes combined with selank for an anxiolytic + cognitive enhancement stack.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

@@ -1,197 +1,73 @@
-/**
- * PegMgfOverviewPanel — decision-oriented overview for PEG-MGF.
- * Key frame: PEGylated IGF-1 splice variant peptide with preclinical muscle biology.
- * No human clinical trial data. Unverified research chemical in community use.
- * IGF-1 pathway activation carries real oncogenesis and metabolic concerns.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Preclinical only",
-    label: "muscle satellite cell biology is real \u2014 human evidence is absent",
-    sub: "PEG-MGF is a PEGylated synthetic peptide derived from the E domain of IGF-1Ec \u2014 the mechano growth factor (MGF) splice variant of IGF-1 induced by mechanical load. The non-PEGylated peptide (MGF) is a 24-amino-acid C-terminal peptide. PEGylation is intended to extend half-life. Animal model research shows MGF can activate muscle satellite cells and promote repair. None of this is characterized in humans.",
-    note: "The distinction between IGF-1 and MGF biology matters: MGF is proposed to act via a mechanism distinct from IGF-1R activation \u2014 activating satellite cells (muscle stem cells) specifically following mechanical damage. Whether this is meaningfully different from IGF-1 signaling at the receptor level, and whether it works the same way in humans as in rodents, is not established.",
-  },
-  {
-    value: "PEGylation",
-    label: "half-life extension strategy \u2014 with its own uncharacterized concerns",
-    sub: "PEGylation (attachment of polyethylene glycol chains) is a standard pharmaceutical strategy to extend peptide half-life by reducing renal clearance and enzymatic degradation. For MGF, it substantially extends the short half-life of the unmodified peptide. However, PEG accumulation with repeated dosing is a theoretical concern that has been raised for PEGylated biologics; for PEG-MGF specifically, this has not been characterized.",
-    note: "PEGylated biologics (PEG-interferon, PEG-filgrastim) have well-established safety profiles because they went through proper clinical development. PEG-MGF has not. The PEGylation concern for PEG-MGF is theoretical \u2014 but it is a real concern that is not resolved by preclinical data.",
-  },
-  {
-    value: "Research chemical",
-    label: "community sources are unverified \u2014 product identity is a real risk",
-    sub: "PEG-MGF purchased from gray-market research peptide suppliers has no regulatory oversight, no verified synthesis process, and no third-party identity verification that is standardized. The compound sold as PEG-MGF may or may not be correctly sequenced, correctly PEGylated, correctly concentrated, or free from contamination. These are not theoretical concerns \u2014 they affect every batch from every supplier.",
-    note: "Unlike octreotide or semaglutide (which are pharmaceutical-grade, FDA-approved, and manufactured under GMP), research peptides exist in a regulatory void where product quality is highly variable. A certificate of analysis from a third-party lab is the minimum standard, and even that has limitations depending on the lab\u2019s methodology.",
-  },
-];
-
-const FIT_YES = [
-  "You are conducting preclinical research on IGF-1 splice variant biology, satellite cell activation, or muscle repair signaling \u2014 MGF/PEG-MGF is a legitimate research tool in animal models",
-  "You understand the evidence is entirely preclinical and have made a fully informed decision about the unknowns \u2014 particularly IGF-1 pathway and oncogenesis concerns",
-];
-
-const FIT_NO = [
-  "You want a muscle recovery compound with evidence of benefit in humans \u2014 PEG-MGF has no human clinical trial data at any level",
-  "You are in an anabolic stack and looking for an IGF-1-axis add-on \u2014 the safety characterization for PEG-MGF in combination with anabolic steroids is completely absent",
-  "You have any personal or family history of cancer \u2014 IGF-1 pathway dysregulation and growth factor signaling is mechanistically linked to oncogenesis; an uncharacterized IGF-1-axis compound adds unquantifiable risk",
-  "You want certainty about what you are injecting \u2014 gray-market PEG-MGF has no verified product identity guarantee",
-  "You are pregnant, breastfeeding, or an adolescent \u2014 hard stop; growth factor signaling in developmental contexts is specifically concerning",
-  "You want to use this long-term \u2014 PEG accumulation with repeated dosing is uncharacterized; no long-term safety data at any time horizon",
-];
-
-const TIMELINE = [
-  {
-    phase: "Theoretical mechanism \u2014 what preclinical models suggest",
-    heading: "Satellite cell activation and muscle repair signaling",
-    body: "In rodent models of muscle injury, MGF administration (typically via injection or gene delivery near the injured site) increases satellite cell proliferation and differentiation. Satellite cells are the muscle stem cell population that regenerates damaged muscle fibers. The proposed mechanism is that MGF acts as a local repair signal, distinct from the growth-promoting effects of IGF-1 at the systemic level. PEGylation of MGF is intended to allow systemic injection with slower clearance, creating a sustained signal rather than requiring local administration.",
-  },
-  {
-    phase: "Community use window \u2014 post-workout injection protocol",
-    heading: "What community protocols describe \u2014 without human evidence to validate",
-    body: "Community protocols typically describe PEG-MGF injection 30\u201360 minutes post-workout, on rest days, or in a defined post-exercise recovery window. Doses range widely in community reports. The rationale is to activate satellite cells during the repair window following mechanical stress. Whether subcutaneous or intramuscular PEG-MGF injection actually reaches muscle tissue at concentrations that activate satellite cells \u2014 and whether the satellite cell response in a healthy, trained human athlete is meaningfully different from what endogenous IGF-1 and MGF already produce in response to training \u2014 is completely untested.",
-  },
-  {
-    phase: "Long-term \u2014 entirely uncharacterized",
-    heading: "No long-term safety data exists at any time horizon",
-    body: "Chronic administration of an uncharacterized IGF-1-axis peptide carries theoretical oncogenesis concern. The IGF-1 signaling pathway is a well-established driver of tumor growth and progression across multiple cancer types. Whether PEG-MGF\u2019s proposed distinct mechanism (satellite cell activation rather than systemic IGF-1R agonism) meaningfully separates it from oncogenesis concerns is not tested. PEG accumulation with chronic dosing is also uncharacterized.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "PEG-MGF",
-    badge: "Research chemical only",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "IGF-1Ec E-domain peptide \u2014 proposed satellite cell activation; distinct MGF receptor not confirmed" },
-      { label: "Human evidence", value: "None \u2014 entirely preclinical (animal models)" },
-      { label: "Formulation", value: "Gray-market research chemical; no pharmaceutical-grade formulation" },
-      { label: "IGF-1 axis risk", value: "Real \u2014 IGF-1 pathway activation has oncogenesis and insulin resistance implications" },
-      { label: "PEGylation safety", value: "Uncharacterized for this compound specifically" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "IGF-1 LR3 (insulin-like growth factor-1 long arg3)",
-    badge: "Research chemical",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "IGF-1R agonist \u2014 full-length IGF-1 analogue with reduced IGF-BP binding (longer half-life)" },
-      { label: "Human evidence", value: "Minimal \u2014 primarily preclinical; limited legitimate human trials" },
-      { label: "Community use", value: "More established community use history than PEG-MGF" },
-      { label: "vs PEG-MGF", value: "Both are IGF-1-axis compounds; IGF-1 LR3 is better-characterized in community use but still not human-trialed for enhancement" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Training-induced MGF (endogenous)",
-    badge: "Physiological",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Source", value: "Endogenous \u2014 produced in muscle in response to mechanical load/damage" },
-      { label: "Evidence", value: "Strong \u2014 exercise-induced muscle repair is well-characterized" },
-      { label: "Safety", value: "Physiological \u2014 the endogenous system is what training already leverages" },
-      { label: "vs exogenous PEG-MGF", value: "Heavy mechanical loading (progressive overload) maximizes endogenous MGF expression without any of the uncharacterized risks of exogenous administration" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function PegMgfOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          Interesting muscle biology, no human evidence, and real IGF-1 pathway concerns. Training already maximizes the endogenous signal.
-        </div>
-        <div className="reta-overview__headline-sub">
-          PEG-MGF is a PEGylated peptide derived from the mechano growth factor splice variant of IGF-1 \u2014 a naturally occurring local muscle repair signal produced in response to mechanical stress. In animal models, MGF activates muscle satellite cells (stem cells that regenerate damaged muscle fibers). The PEGylation is intended to extend its half-life for systemic injection. Community use centers on post-workout injection for muscle recovery. What doesn\u2019t exist: any human clinical data, any characterized safety profile, any certainty about what the gray-market compound actually is. The additional concern is the IGF-1 pathway: growth factor signaling dysregulation has well-established links to tumor growth and insulin resistance. Progressive mechanical loading already maximizes the endogenous MGF signal without the uncharacterized risks.
-        </div>
+      <p className="reta-overview__opener">
+        PEG-MGF is a synthetic version of a naturally occurring muscle repair signal your body already produces in response to hard training &mdash; with a chemical modification intended to make it last longer in circulation. The biology is real and interesting. The problem: there is zero human clinical trial data, you can&rsquo;t verify what you&rsquo;re actually injecting from gray-market sources, and the growth factor pathway it activates has documented links to tumor growth. Progressive overload already maximizes your natural version of this signal without any of those risks.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Injury Recovery Person &mdash; slow to heal, looking for an edge</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I tore something and it&rsquo;s taking forever to heal &mdash; is there a peptide that actually helps muscle regenerate faster?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The mechanism sounds exactly right for injury</strong><br />MGF is produced locally in damaged muscle and activates satellite cells &mdash; the stem cells that actually rebuild muscle fibers after injury. For someone with a frustrating slow-healing muscle tear, a compound targeting this specific repair mechanism sounds ideal.</li>
+          <li><strong>The community talks about it for injury protocols</strong><br />PEG-MGF appears in the same communities that discuss BPC-157 and TB-500 for injury, often recommended as a muscle-specific addition to those more commonly used compounds. The anecdotes are plentiful even if the evidence isn&rsquo;t.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">All the evidence is from rodent studies &mdash; there is no human data at any level. Whether injecting a gray-market compound into or near a healing muscle injury actually reaches the satellite cells you care about, at concentrations that do anything, is completely unknown. The product you&rsquo;re buying has no verified identity guarantee. And for someone dealing with an injury, adding an uncharacterized growth factor compound introduces cancer-risk concerns that are particularly bad timing. Net: biologically plausible story, no human evidence, meaningful uncharacterized risks &mdash; not the right call for injury recovery.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; muscle repair, post-workout recovery, satellite cell activation</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Could this actually increase muscle satellite cell activation beyond what training already does, and is the PEGylation doing anything useful?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The satellite cell story is compelling for advanced athletes</strong><br />Satellite cell activation is the rate-limiting step in muscle fiber repair and growth after damage. If you could reliably amplify that signal above what training already produces, the recovery advantage would be real. Heavy training maximizes endogenous MGF, but the idea of pushing further is attractive to someone already optimized on the training side.</li>
+          <li><strong>PEGylation extends half-life for systemic delivery</strong><br />The natural MGF peptide is short-lived and acts locally near the site of muscle damage. The PEGylation modification allows systemic injection with slower clearance &mdash; theoretically distributing the signal to all trained muscles rather than requiring local injection into each.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The most important comparison is against your own training response: progressive overload already maximizes endogenous MGF expression in exercised muscle. Whether exogenous PEG-MGF adds anything meaningful on top of that, in a well-trained athlete whose satellite cells are already responding normally, is not tested. Whether subcutaneous injection actually reaches muscle tissue at relevant concentrations is unknown. The IGF-1 pathway concern is real: growth factor axis dysregulation has established oncogenesis links, and an uncharacterized compound in that axis adds genuinely unquantifiable risk. Net: theoretically interesting, practically uncharacterized, real risk profile that outweighs speculative benefit.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">&#x2713;</span> Fits your situation if&hellip;
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; IGF-1 splice variant biology, satellite cell signaling</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;What&rsquo;s the actual evidence that MGF acts through a distinct pathway from IGF-1R? Is the E-domain peptide doing something different, or is this just IGF-1 biology with extra steps?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The proposed mechanism is genuinely distinct from IGF-1</strong><br />MGF is derived from the E domain of the IGF-1Ec splice variant &mdash; a region not present in mature IGF-1. Early research proposed that the E domain peptide acts through a receptor distinct from IGF-1R, specifically activating satellite cells following mechanical damage rather than driving systemic growth. Whether this distinction is real at the receptor level, and whether it matters pharmacologically, is unresolved but scientifically interesting.</li>
+          <li><strong>PEGylation is a legitimate pharmaceutical strategy</strong><br />PEGylation of peptides to extend half-life is a well-established approach used in approved biologics. The application to MGF for systemic injection is a rational extension of that strategy. The pharmacological engineering question of whether PEGylated MGF distributes to muscle and maintains activity is worth understanding even if the answer isn&rsquo;t established.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The &ldquo;distinct MGF receptor&rdquo; hypothesis remains unconfirmed at the molecular level. Gray-market PEG-MGF has no synthesis verification &mdash; D-amino acid composition, PEGylation quality, and concentration are all unknown without rigorous third-party testing. PEG accumulation with repeated dosing is a theoretical concern that is also uncharacterized for this compound specifically. The cancer concern is not paranoia: IGF-1 pathway activation is mechanistically linked to tumor growth across multiple cancer types, and any compound in this axis without human safety data carries that concern. Net: fascinating biology, genuinely unresolved science, risk profile that makes this one to watch from the sidelines rather than experiment with personally.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What PEG-MGF is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A compound with any human clinical evidence &mdash; all data is from animal models</li>
+              <li>A verified product when purchased from gray-market suppliers &mdash; identity, purity, and concentration are unknown</li>
+              <li>A safe addition to an anabolic stack &mdash; combination safety is completely uncharacterized</li>
+              <li>A free pass on cancer risk &mdash; IGF-1 pathway activation has established oncogenesis links</li>
+              <li>Something that adds to what heavy progressive overload already does endogenously &mdash; training already maximizes the natural signal</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Satellite cell activation is a real and important muscle repair mechanism &mdash; the biological target is legitimate</li>
+              <li>The proposed distinct MGF E-domain mechanism vs. IGF-1R is a genuinely unresolved and interesting scientific question</li>
+              <li>PEGylation for systemic delivery of a naturally local signal is a rational pharmacological engineering idea</li>
+              <li>Active rodent research provides mechanistic detail even if human translation is absent</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">&#x2717;</span> Look elsewhere if&hellip;
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">PEG-MGF vs IGF-1 LR3 vs endogenous training response</div>
-      <div className="reta-overview__compare-note">
-        PEG-MGF is often discussed alongside IGF-1 LR3 in the same community contexts (anabolic peptide stacks for muscle growth and recovery). Both are IGF-1 axis compounds without human trial evidence. The most important comparison is against the endogenous MGF response to heavy training \u2014 which is what PEG-MGF is attempting to amplify, and which progressive overload already maximizes without the risk profile of an uncharacterized exogenous peptide.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

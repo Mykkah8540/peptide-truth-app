@@ -1,206 +1,73 @@
-/**
- * Bpc157ArginateOverviewPanel — decision-oriented overview for BPC-157 Arginate.
- * Key frame: same active peptide as BPC-157 (GEPPPGKPADDAGLV);
- * arginate is the counterion for improved water solubility and stability.
- * No separate clinical evidence — all BPC-157 evidence applies. The choice
- * between standard BPC-157 and arginate form is a formulation/sourcing question.
- */
-
-const STAT_CARDS = [
-  {
-    value: "BPC-157 (identical)",
-    label: "active peptide — same GEPPPGKPADDAGLV sequence; arginate is the counterion, not the active moiety",
-    sub: "BPC-157 arginate is BPC-157 (Body Protection Compound-157, the pentadecapeptide GEPPPGKPADDAGLV) complexed with arginine to form a water-soluble salt. The arginate salt form is a pharmaceutical chemistry technique: pairing a peptide with a counterion (in this case, arginine) to improve its aqueous solubility, stability, and handling properties. The active moiety — the 15-amino-acid BPC-157 sequence — is identical. Arginate salt formation does not modify the peptide structure, change its receptor interactions, or alter its pharmacodynamic profile. In solution, the arginate salt dissociates into BPC-157 and arginine.",
-    note: "The distinction between BPC-157 and BPC-157 arginate is entirely a formulation chemistry distinction, not a pharmacological one. The evidence base — all from BPC-157 studies in animal models — applies to both forms equally. There is no rationale for expecting different efficacy or different safety from the arginate form. Whether suppliers choose arginate vs standard BPC-157 is typically driven by solubility during manufacturing and shipping stability considerations, not by superiority claims.",
-  },
-  {
-    value: "Solubility",
-    label: "arginate advantage — improved aqueous solubility; relevant for reconstitution and injection site tolerability",
-    sub: "BPC-157 has limited water solubility in its free acid or acetate salt form, which can make reconstitution challenging and contribute to injection site irritation if the peptide is not fully dissolved. Arginate salt formation improves aqueous solubility by taking advantage of arginine's positive charge at physiological pH — the arginine counterion helps maintain the peptide in solution. This is the primary practical advantage of the arginate form. Whether the improved solubility translates to meaningfully better bioavailability or tolerability in community injection use is not established in comparative studies.",
-    note: "The solubility advantage is real from pharmaceutical chemistry principles. Whether it matters clinically for community subcutaneous injection use is a different question. Most users of standard BPC-157 acetate successfully reconstitute it in bacteriostatic water without severe injection site problems. The arginate form may provide marginal reconstitution ease — particularly for higher-dose injection preparations — but this is not a clinically validated superiority claim.",
-  },
-  {
-    value: "No separate evidence",
-    label: "evidence base — all BPC-157 evidence applies; no arginate-specific human or animal studies",
-    sub: "There are no published human or animal studies that specifically studied BPC-157 arginate as distinct from standard BPC-157. All animal model evidence for BPC-157's effects on wound healing, tendon repair, gut protection, and neurological effects is from studies using BPC-157 in its standard (acetate) form. The assumption that arginate form has equivalent pharmacology is scientifically reasonable (same active peptide), but it is an assumption — not a tested claim. Any efficacy claims for BPC-157 arginate are derived entirely from BPC-157's evidence base, not from arginate-specific data.",
-    note: "This is an important caveat for anyone evaluating arginate form claims. Suppliers sometimes market arginate as 'more bioavailable' or 'more effective' — but there is no comparative pharmacokinetic or pharmacodynamic data supporting superiority over standard BPC-157. The evidence transfer from BPC-157 to arginate is reasonable in principle but has not been empirically validated.",
-  },
-  {
-    value: "Research chemical",
-    label: "regulatory status — same as standard BPC-157; no FDA approval; gray-market supply",
-    sub: "BPC-157 arginate has the same regulatory status as standard BPC-157: no FDA approval for any indication, available through gray-market peptide suppliers, classified as a research chemical in most jurisdictions. The arginate form does not change the regulatory picture. Supply quality concerns (purity, endotoxin testing, accurate dosing) apply equally to the arginate form. The slightly improved solubility may marginally benefit supplier handling and formulation, but it does not imply any regulatory or quality guarantee.",
-    note: "Gray-market BPC-157 supply quality varies substantially between suppliers. The arginate form's improved solubility may make it slightly easier for suppliers to produce clean preparations — but CoA (Certificate of Analysis) review and third-party mass spec verification remain the only ways to assess product quality for either form.",
-  },
-];
-
-const FIT_YES = [
-  "You have already used standard BPC-157 and experienced injection site irritation or reconstitution difficulties — the arginate form's improved solubility may address that specific formulation issue",
-  "Your supplier stocks arginate form as their standard BPC-157 product and you want to understand whether it is pharmacologically equivalent to what BPC-157 studies used — it is, same active peptide",
-  "You are researching BPC-157's mechanisms and want to understand what the salt form distinction means for formulation and bioavailability — a legitimate scientific question",
-  "You are evaluating peptide sourcing options and want to understand whether arginate vs acetate form should influence your supplier decision — solubility is a reasonable consideration if you have had reconstitution problems",
-];
-
-const FIT_NO = [
-  "You believe arginate form is a different, superior compound with separate evidence — it is not; the evidence base is identical to standard BPC-157 and the choice of form is a formulation preference",
-  "You are choosing arginate over standard BPC-157 based on supplier claims of superior bioavailability or effectiveness — no comparative pharmacokinetic data supports this claim",
-  "You are new to BPC-157 specifically seeking the arginate form — start with understanding the BPC-157 evidence base (all animal models, no human RCTs) before making a form distinction that is not supported by comparative data",
-  "You have cancer history — BPC-157's angiogenesis and growth factor promotion mechanisms are a hard stop regardless of which salt form you use; the arginate designation does not change this",
-];
-
-const TIMELINE = [
-  {
-    phase: "Acute (hours to days)",
-    heading: "Same onset expectations as standard BPC-157 — formulation does not change kinetics",
-    body: "BPC-157 arginate, once reconstituted and injected, dissociates in solution and in vivo into BPC-157 and arginine. The pharmacokinetic profile of the active BPC-157 peptide should be essentially identical to standard BPC-157. In animal models, BPC-157 effects on wound healing and gut protection appear acutely (within hours for cytoprotective effects) and over days for tissue repair effects. The arginate form does not introduce a slow-release mechanism — it is not a depot formulation.",
-  },
-  {
-    phase: "Days to weeks",
-    heading: "Tissue repair and healing context — same timeline as standard BPC-157",
-    body: "In the animal models where BPC-157 shows the most compelling data (tendon, ligament, and muscle repair), effects develop over days to weeks of dosing in the injured tissue context. These timelines apply to arginate form equally. The typical community protocol of 4-8 weeks of subcutaneous or oral dosing for repair applications is based on the BPC-157 animal model literature — not on any controlled human trial. The arginate form follows the same evidence-derived framework.",
-  },
-  {
-    phase: "Long-term",
-    heading: "No long-term data for either BPC-157 form",
-    body: "Long-term safety and efficacy of BPC-157 in either standard or arginate form is not established in human subjects. The animal model studies are largely acute or subacute. Community long-term use data is anecdotal. The arginate form does not add any long-term monitoring considerations beyond those applicable to standard BPC-157 — but neither form has characterized human long-term data.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "BPC-157 Arginate",
-    badge: "BPC-157 salt form / Formulation variant",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Active peptide", value: "GEPPPGKPADDAGLV — identical to standard BPC-157; arginate is the counterion" },
-      { label: "Evidence base", value: "Same as BPC-157 — all animal model evidence applies; no arginate-specific human or animal studies" },
-      { label: "Solubility advantage", value: "Improved aqueous solubility via arginine counterion — may ease reconstitution; no documented superiority in vivo" },
-      { label: "Regulatory status", value: "Identical to standard BPC-157 — no FDA approval; gray-market research chemical" },
-      { label: "Choice rationale", value: "Formulation preference only — prefer arginate if reconstitution has been difficult; no pharmacological basis for superiority" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "BPC-157 (standard / acetate)",
-    badge: "Standard BPC-157 / Most studied form",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.08)",
-    rows: [
-      { label: "Active peptide", value: "GEPPPGKPADDAGLV — the pentadecapeptide; same sequence as arginate form" },
-      { label: "Evidence base", value: "30+ years of animal model data; the studies referenced in BPC-157 research all used standard form; more supplier options available" },
-      { label: "Solubility", value: "Marginally lower aqueous solubility than arginate form; most users successfully reconstitute in bacteriostatic water without significant difficulty" },
-      { label: "Regulatory status", value: "Same — no FDA approval; gray-market research chemical; the form all peer-reviewed animal studies used" },
-      { label: "Choice rationale", value: "Standard form if supplier is reputable; arginate if reconstitution has been problematic or supplier offers better purity guarantees in arginate form" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "BPC-157 oral formulations",
-    badge: "Oral route / Different delivery context",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Active peptide", value: "Same GEPPPGKPADDAGLV — oral capsule or tablet formulations targeting GI-specific effects" },
-      { label: "Evidence base", value: "Animal model GI protection evidence is partially derived from oral and IP routes; oral BPC-157 has animal model support for GI tract healing specifically" },
-      { label: "Bioavailability", value: "Oral peptide bioavailability is generally low for systemic effects; oral route may achieve local GI concentrations sufficient for GI-specific effects" },
-      { label: "Use context", value: "Oral BPC-157 is specifically relevant for GI repair applications (IBD, gut lining); subcutaneous (either form) is used for systemic and musculoskeletal applications" },
-      { label: "Choice rationale", value: "Oral for GI-specific goals; subcutaneous (standard or arginate) for musculoskeletal or systemic applications — these are route decisions, not form decisions" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function Bpc157ArginateOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The same peptide as BPC-157 in a different salt form — arginate solves solubility without changing the molecule or the evidence.
-        </div>
-        <div className="reta-overview__headline-sub">
-          BPC-157 arginate is BPC-157 complexed with arginine to form a more water-soluble salt. The active peptide (pentadecapeptide GEPPPGKPADDAGLV) is identical. Arginate formulations are used in pharmaceutical chemistry to improve solubility and stability of peptides — this is an established formulation technique, not a different compound. The evidence base for BPC-157 applies; there is no separate clinical literature for BPC-157 arginate specifically. The choice between standard BPC-157 and arginate form is primarily a formulation and sourcing question.
-        </div>
+      <p className="reta-overview__opener">
+        BPC-157 Arginate is the same compound as BPC-157 &mdash; the exact same 15-amino-acid peptide &mdash; formulated as an arginate salt instead of an acetate salt to make it dissolve in water more easily. The arginate label is a chemistry packaging choice, not a different drug. Everything the community says about BPC-157 applies here: strong animal data on healing and gut protection, very thin human evidence, and sourcing quality as the dominant real-world risk.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; curious about the arginate vs. standard difference</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;My supplier sells this as BPC-157 Arginate &mdash; is that the same thing as BPC-157 or is it something different?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It sounds more advanced</strong><br />The arginate label can make the product feel like an upgraded formulation, and some suppliers market it that way. People who&rsquo;ve heard BPC-157 is good for injury or gut recovery naturally want the &ldquo;best version.&rdquo;</li>
+          <li><strong>Easier to dissolve</strong><br />Arginate salt genuinely dissolves in water more readily than standard BPC-157 acetate. If someone has struggled with reconstituting a vial, the arginate form is practically easier to work with &mdash; the powder mixes more cleanly.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The arginate label is chemistry, not pharmacology. Once you inject it, your body sees the same BPC-157 peptide regardless of which salt form it was packaged as. There are no human or animal studies comparing arginate to standard BPC-157 head-to-head &mdash; no one has shown arginate works better, heals faster, or is safer. The choice between the two is purely a formulation and sourcing preference. If your supplier stocks arginate and their certificate of analysis checks out, fine. Net: same compound, slightly easier to dissolve, no evidence of superiority.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; stacking for injury recovery</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m already running BPC-157 for a tendon issue. Should I switch to the arginate form, or is my current protocol fine?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Solubility for higher-dose protocols</strong><br />Some athletes run larger volumes or higher concentrations for acute injury phases. Arginate&rsquo;s better aqueous solubility means cleaner reconstitution at higher concentrations &mdash; which can matter if you&rsquo;re making a 5 mg/mL preparation vs. the more common 2 mg/mL range.</li>
+          <li><strong>Stacking purity</strong><br />Athletes who are particular about injection site tolerability and clear solutions tend to favor the arginate form when it&rsquo;s available from a trusted supplier. No cloudy vials, no particulate issues from undissolved peptide.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">If your current standard BPC-157 protocol is working, there is no pharmacological reason to switch to arginate. The tissue repair biology is identical &mdash; the same 15-amino-acid sequence, the same mechanisms studied in animal models. The solubility advantage is real but only practically matters if you&rsquo;ve had reconstitution problems. Switching suppliers for the arginate label introduces sourcing uncertainty, which is the actual risk variable that matters in this space. Net: stick with what works and verifies clean; switch only if reconstitution has been a genuine problem.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; optimizing formulation and sourcing</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Does the arginate counterion change bioavailability, pharmacokinetics, or receptor interactions in any way that would affect how I dose this?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Pharmaceutical chemistry rationale</strong><br />Salt form selection is a real pharmaceutical optimization tool. Arginine as a counterion at physiological pH can improve solubility and potentially injection-site tolerability for peptide preparations. For someone thinking about formulation science, the arginate choice is mechanistically coherent even if not empirically superior.</li>
+          <li><strong>Supplier quality signal</strong><br />Some biohackers use the arginate form as a rough proxy for supplier sophistication &mdash; reasoning that suppliers who offer the more chemically demanding arginate salt might have better manufacturing practices. This is an imperfect heuristic but not an irrational one in the absence of other quality signals.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">No comparative pharmacokinetic data exists for BPC-157 arginate vs. acetate in any species. The assumption of equivalent pharmacodynamics is scientifically sound &mdash; the active peptide sequence is identical, and in-solution dissociation restores free BPC-157 regardless of counterion. But &ldquo;sound assumption&rdquo; and &ldquo;validated equivalence&rdquo; are different standards. The arginate label carries no regulatory or manufacturing quality guarantee. Third-party mass spec CoA is the only real quality signal regardless of which salt form is in the vial. Net: interesting formulation chemistry, but treat it as a reconstitution convenience factor, not a pharmacological upgrade.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What BPC-157 Arginate is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A different or superior compound to standard BPC-157 &mdash; the active peptide sequence is identical</li>
+              <li>Proven more bioavailable or effective by any comparative study</li>
+              <li>A reason to choose one supplier over another purely on the arginate label</li>
+              <li>A separate evidence category &mdash; all BPC-157 evidence applies equally to both forms</li>
+              <li>A safety upgrade &mdash; the arginate counterion changes nothing about the risk profile</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Genuine improvement in aqueous solubility &mdash; real pharmaceutical chemistry advantage for reconstitution</li>
+              <li>May reduce injection site irritation at higher concentrations due to better dissolution</li>
+              <li>Rational formulation choice for suppliers producing higher-concentration preparations</li>
+              <li>Fully interchangeable with standard BPC-157 at the pharmacological level once in solution</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">BPC-157 Arginate vs Standard BPC-157 vs Oral BPC-157</div>
-      <div className="reta-overview__compare-note">
-        Three presentations of the same active peptide. Arginate and standard forms are pharmacologically identical — the arginate distinction is a formulation chemistry choice with a modest solubility advantage. Oral BPC-157 is a different route decision that targets GI-specific effects. Across all three, the evidence base is the same 30+ years of animal model data, and no form has human RCT evidence.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

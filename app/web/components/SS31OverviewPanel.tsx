@@ -1,206 +1,73 @@
-/**
- * SS31OverviewPanel — decision-oriented overview for SS-31 (Elamipretide).
- * Key frame: mitochondria-targeted cardioprotective peptide with the most
- * compelling real human Phase 2 data of any mitochondrial peptide in this
- * space. The cardioprotection and renal function evidence is meaningful.
- * Community use extrapolates from disease-context trials.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Cardiolipin / inner mitochondrial membrane",
-    label: "mechanism — binds cardiolipin on the inner mitochondrial membrane to restore bioenergetics",
-    sub: "SS-31 (elamipretide; D-Arg-Dmt-Lys-Phe-NH₂) is a Szeto-Schiller peptide that selectively concentrates in the inner mitochondrial membrane, where it binds cardiolipin — the signature phospholipid of the inner membrane. Cardiolipin is essential for the electron transport chain complexes (I, III, IV) and for mitochondrial membrane potential. In aged or damaged mitochondria, cardiolipin becomes oxidized and peroxidized, disrupting ETC function. SS-31 prevents and reverses this cardiolipin peroxidation, restoring electron transport efficiency.",
-    note: "The cardiolipin mechanism is unusually specific and well-characterized for a peptide this size. Unlike general antioxidants (vitamin E, vitamin C), SS-31 concentrates specifically in the mitochondria where oxidative damage occurs, rather than distributing throughout the cell or body. This targeted antioxidant mechanism is the scientific basis for the cardiometabolic interest.",
-  },
-  {
-    value: "Phase 2 human data",
-    label: "evidence tier — cardiomyopathy (HARP trial) and renal protection trials; meaningful clinical signals",
-    sub: "SS-31/elamipretide has the strongest human clinical data of any mitochondria-targeted peptide in this space. The HARP trial (Heart failure with pReserved ejection fraction, Aldosterone Receptor blockade, Protective effects of elamipretide) showed improved cardiac bioenergetics (PCr/ATP ratio) measured by MRI spectroscopy in HFpEF patients. Renal protection studies (ischemia-reperfusion, Barth syndrome) have also shown signals. Phase 2 data across multiple cardiovascular and renal indications has been accumulated by Stealth BioTherapeutics.",
-    note: "Phase 2 data is meaningful but not approval-level. The HARP trial used 4-week IV infusion in hospitalized HFpEF patients — a very different context from community subcutaneous injection for performance or longevity. The evidence supports the mechanism and direction of effect in disease states; extrapolation to healthy subjects via subcutaneous injection for optimization is a significant leap.",
-  },
-  {
-    value: "Cardiac + renal + skeletal muscle",
-    label: "target tissues — highest mitochondrial density tissues are primary targets",
-    sub: "SS-31 primarily benefits tissues with high mitochondrial content and energy demands: heart muscle (cardiomyocytes), kidney proximal tubule cells, and skeletal muscle. In disease models and early human trials, improvement in cardiac energy efficiency, renal function preservation, and skeletal muscle mitochondrial function have been demonstrated. The longevity/aging community interest is based on the premise that age-related mitochondrial dysfunction in these same tissues is an important aging mechanism.",
-    note: "The skeletal muscle angle is the community performance use case — mitochondrial function is rate-limiting for endurance performance, and SS-31 in muscle aging models improves mitochondrial function. Whether this translates to performance improvement in healthy trained athletes (where mitochondrial function may not be the limiting factor) is not established.",
-  },
-  {
-    value: "Investigational",
-    label: "regulatory status — Phase 2/3 trials; no FDA approval; elamipretide development ongoing",
-    sub: "Stealth BioTherapeutics developed elamipretide for multiple indications. The Barth syndrome (tafazzin mutation causing cardiolipin remodeling defect) trial showed clinical benefit, with orphan drug designation. Phase 3 trials in Barth syndrome and other indications have been pursued. Community access is through gray-market suppliers under the SS-31 or elamipretide name. Synthesis is feasible (4 amino acids) but the D-form amino acids (D-Arg, D-Phe) and N-methylation (Dmt) require specialized synthesis.",
-    note: "The D-amino acid content of SS-31 is pharmacologically important — D-amino acids resist proteolytic degradation, extending half-life. Community products sold as 'SS-31' should contain D-Arg and D-Phe, not the L-form equivalents. A product using standard L-amino acids would have entirely different pharmacokinetics and reduced activity. Quality verification is particularly important for this compound.",
-  },
-];
-
-const FIT_YES = [
-  "You have diagnosed heart failure with preserved ejection fraction (HFpEF) or are in a clinical trial context — this is the most evidence-supported application and should involve cardiologist oversight",
-  "You are investigating mitochondrial support for aging biology from a longevity framework with a physician familiar with the elamipretide literature",
-  "You have documented mitochondrial dysfunction (e.g., Barth syndrome, genetic mitochondrial disease) — SS-31 is in active clinical development for these conditions",
-  "You are an endurance athlete specifically interested in mitochondrial function optimization and understand this is early-investigational without athlete-specific RCTs",
-];
-
-const FIT_NO = [
-  "You have active heart disease without specialist involvement — the HARP trial was in a supervised clinical setting; community self-management of cardiac conditions is not appropriate",
-  "You are looking for muscle growth or body composition effects — SS-31's effects are on mitochondrial function, not hypertrophy signaling; the wrong mechanism for this goal",
-  "You expect dramatic, quickly perceptible effects — mitochondrial function improvement is a subtle, cumulative process; the clinical trial endpoints (cardiac MRI spectroscopy, VO2 testing) are not subjectively perceptible",
-  "You cannot verify D-amino acid content of your product — without D-Arg and D-Phe, the compound degrades rapidly and does not achieve mitochondrial targeting",
-];
-
-const TIMELINE = [
-  {
-    phase: "Hours",
-    heading: "Mitochondrial accumulation — subcutaneous SS-31 reaches mitochondria within hours",
-    body: "The pharmacokinetics of subcutaneous SS-31 in humans are not extensively published, but animal studies and limited human data suggest rapid distribution to mitochondria-rich tissues. Peak tissue concentrations occur within hours of injection. The D-amino acid composition resists proteolytic degradation and extends circulating half-life compared to L-amino acid peptides of the same size.",
-  },
-  {
-    phase: "Weeks to months",
-    heading: "Mitochondrial function improvement — the HARP trial showed 28-day signal",
-    body: "The HARP trial used 28-day continuous IV elamipretide and demonstrated improved PCr/ATP ratio (cardiac energy efficiency) at 4 weeks. Whether 28-day subcutaneous injection in community use produces equivalent tissue exposure is unknown. Mitochondrial function improvement is a cumulative process — not a single-dose acute effect.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Aging mitochondrial maintenance — theoretical; no human aging longevity data",
-    body: "The aging biology case for SS-31 rests on age-related cardiolipin peroxidation contributing to mitochondrial function decline. In aged mice, SS-31 restores mitochondrial function and improves multiple aging-related parameters. Whether this translates to human healthspan or longevity benefit from long-term subcutaneous injection is entirely uncharacterized.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "SS-31 (Elamipretide)",
-    badge: "Cardiolipin-targeting peptide / Phase 2/3",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Inner mitochondrial membrane cardiolipin binding → prevents peroxidation → restores ETC efficiency" },
-      { label: "Evidence", value: "HARP trial (HFpEF, Phase 2); Barth syndrome (Phase 3); renal ischemia; most advanced clinical mitochondrial peptide" },
-      { label: "Primary target", value: "Heart, kidney, skeletal muscle — high-mitochondrial-density tissues" },
-      { label: "Synthesis quality", value: "D-amino acids required (D-Arg, D-Phe) — standard L-amino acid product would be inactive" },
-      { label: "Status", value: "No FDA approval; Phase 2/3 data; investigational; gray-market community access" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Humanin",
-    badge: "Mitokine peptide / Investigational",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Mitochondria-encoded; CNTFR/JAK2/STAT3 → neuroprotection, insulin sensitization" },
-      { label: "Evidence", value: "Cell/rodent strong; human observational (centenarian); no RCTs" },
-      { label: "Primary target", value: "Neurons, metabolic tissues; neuroprotection + metabolic focus vs. SS-31's cardiac/bioenergetic focus" },
-      { label: "Synthesis quality", value: "21 AA; L-amino acids; standard synthesis acceptable" },
-      { label: "Status", value: "No FDA approval; no clinical development pipeline; gray-market" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "CoQ10 / MitoQ",
-    badge: "Mitochondrial antioxidant / Supplement",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "CoQ10: ETC complex II cofactor + antioxidant. MitoQ: mitochondria-targeted ubiquinone analog" },
-      { label: "Evidence", value: "CoQ10: multiple human RCTs in heart failure, statin myopathy; MitoQ: human data emerging" },
-      { label: "Primary target", value: "Same mitochondrial ETC — different approach (cofactor supplementation vs. membrane protection)" },
-      { label: "Synthesis quality", value: "N/A — small molecule supplements; standard oral bioavailability concerns" },
-      { label: "Status", value: "OTC supplements; established safety data; more human evidence than most mitochondrial peptides" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function SS31OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The most clinically advanced mitochondria-targeted peptide — Phase 2 cardiac and renal data, a specific cardiolipin mechanism, and a synthesis quality requirement that most community products fail.
-        </div>
-        <div className="reta-overview__headline-sub">
-          SS-31 (elamipretide) binds cardiolipin on the inner mitochondrial membrane to prevent peroxidation and restore electron transport chain efficiency. The HARP trial showed improved cardiac energy efficiency in HFpEF patients at 4 weeks — the most compelling human mitochondrial peptide trial published. Community use extrapolates to healthy aging and performance. The synthesis caveat: SS-31 requires D-amino acids (D-Arg, D-Phe) for stability and mitochondrial targeting; a product made with standard L-amino acids would have fundamentally different pharmacokinetics.
-        </div>
+      <p className="reta-overview__opener">
+        SS-31 (elamipretide) is the most clinically advanced mitochondria-targeted peptide in existence &mdash; it has actual human Phase 2 trial data showing improved cardiac energy efficiency in heart failure patients. It works by protecting a specific fat molecule inside mitochondria that keeps the cellular power generators running efficiently. Community use extrapolates from those disease trials toward healthy aging and performance. There&rsquo;s one critical quality issue: SS-31 requires a specific D-amino acid structure to work; most gray-market products can&rsquo;t prove they have it.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Energy and Fatigue Person &mdash; mitochondria curiosity, chronic fatigue, aging</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep hearing that mitochondria are the key to aging and energy &mdash; is SS-31 actually the thing that works, or is this another supplement marketing story?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It has real human clinical evidence &mdash; unlike almost every other &ldquo;mitochondria compound&rdquo;</strong><br />The HARP trial showed measurable improvement in how efficiently heart muscle uses energy, measured with cardiac MRI spectroscopy &mdash; not subjective questionnaires. For a compound in this space, human evidence at any level is rare. SS-31 has it.</li>
+          <li><strong>The mechanism targets something real about how mitochondria age</strong><br />As mitochondria age, a critical fat molecule inside them (cardiolipin) gets damaged by oxidation, which disrupts the energy-making machinery. SS-31 specifically protects cardiolipin. This is a targeted fix for a documented aging mechanism, not a vague &ldquo;supports mitochondria&rdquo; claim.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The HARP trial was done in people with heart failure using continuous IV infusion in a hospital setting &mdash; very different from someone injecting subcutaneously at home for general energy. Whether that translates to benefit in a healthy person with no mitochondrial disease is unknown. Mitochondrial function improvement is subtle and cumulative; this is not going to make you feel different the next day. The quality issue is real: if the gray-market product you buy uses standard amino acids instead of the D-form variants that SS-31 requires, it degrades quickly and doesn&rsquo;t work. Net: the most compelling mitochondrial peptide available, but the clinical context and product quality constraints are serious.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Endurance Athlete &mdash; mitochondrial performance, VO2 max, recovery</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;If SS-31 improves mitochondrial efficiency in heart failure patients, could it improve mitochondrial output in trained athletes?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Mitochondrial function is rate-limiting for endurance performance</strong><br />VO2 max is ultimately limited by how efficiently mitochondria in heart and muscle can use oxygen. Any compound that improves mitochondrial energy efficiency is theoretically relevant to endurance capacity. The HARP trial measured exactly this kind of efficiency improvement, just in a diseased heart rather than a healthy one.</li>
+          <li><strong>High-intensity training produces mitochondrial oxidative stress</strong><br />Heavy training generates the same kind of reactive oxygen species that damage cardiolipin in aging mitochondria. The idea that SS-31 could protect mitochondria during training-induced oxidative stress has a logical basis, even without athlete-specific data.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">In people whose mitochondria are functioning normally, you&rsquo;re not fixing a defect &mdash; you&rsquo;re trying to optimize a system that evolution has already optimized for performance under load. Whether SS-31 provides meaningful additional benefit in a healthy trained athlete whose mitochondrial function is already well-supported by training adaptations is not tested. If you can&rsquo;t verify D-amino acid content in your product, you may be injecting something that degrades in minutes rather than reaching your mitochondria. This is the wrong compound for muscle growth or body composition goals. Net: mechanistically plausible for endurance context, no athlete-specific evidence, product quality makes or breaks the whole question.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Longevity Mitochondrial Biohacker &mdash; cardiolipin biology, aging mechanisms, ETC function</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;What does the cardiolipin peroxidation mechanism actually tell us about mitochondrial aging, and how does the HARP trial PCr/ATP result translate to the longevity context?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Cardiolipin biology is central to the mitochondrial aging story</strong><br />Cardiolipin is the signature phospholipid of the inner mitochondrial membrane and is essential for electron transport chain complex assembly and efficiency. Age-related cardiolipin peroxidation is documented in cardiac and skeletal muscle tissue. SS-31&rsquo;s mechanism &mdash; selectively concentrating in the inner membrane to prevent cardiolipin oxidation &mdash; directly addresses one of the most characterized molecular mechanisms of mitochondrial aging.</li>
+          <li><strong>The HARP trial PCr/ATP result is genuinely meaningful data</strong><br />Phosphocreatine to ATP ratio measured by cardiac MRI spectroscopy is a direct measure of cardiac energy reserve &mdash; not a surrogate. Showing that a 28-day infusion course improved this ratio in HFpEF patients is mechanistic proof that SS-31 actually changes mitochondrial bioenergetics in human tissue. That kind of mechanistic human validation is rare in this space.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The leap from HFpEF Phase 2 data to healthy aging benefit is large &mdash; in heart failure, mitochondrial dysfunction is a major driver of disease, so there&rsquo;s a defect to fix. In healthy aging, mitochondrial dysfunction is more gradual and the benefit from supplementing a repair mechanism is less established. The D-amino acid requirement is particularly important for anyone serious about this compound: SS-31 contains D-arginine and a dimethylated tyrosine (Dmt) that resist proteolysis; a product made with standard L-arginine would have dramatically shorter half-life and likely wouldn&rsquo;t reach mitochondria at useful concentrations. Verify synthesis quality before drawing conclusions about efficacy. Net: the most scientifically credible mitochondrial peptide available, with meaningful human data and a specific verifiable quality requirement.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What SS-31 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A muscle growth or body composition compound &mdash; wrong mechanism entirely; it targets mitochondrial function, not hypertrophy</li>
+              <li>Something you&rsquo;ll feel working the next day &mdash; mitochondrial efficiency improvement is subtle and cumulative</li>
+              <li>Worth using if you can&rsquo;t verify D-amino acid content &mdash; a product with L-amino acids degrades quickly and doesn&rsquo;t work</li>
+              <li>Proven for healthy aging or longevity &mdash; the human evidence is in disease states, not in healthy individuals</li>
+              <li>Equivalent to CoQ10 or other mitochondrial supplements &mdash; the mechanism and specificity are categorically different</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The most clinically advanced mitochondria-targeted peptide &mdash; Phase 2 human data from the HARP trial showing real bioenergetic improvement</li>
+              <li>Cardiolipin mechanism directly addresses one of the most documented molecular mechanisms of mitochondrial aging</li>
+              <li>Inner mitochondrial membrane targeting is unusually specific &mdash; not a general antioxidant but a targeted repair signal</li>
+              <li>Active clinical development for Barth syndrome (a genetic cardiolipin disease) validates the mechanism in human disease</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">SS-31 vs Humanin vs CoQ10/MitoQ</div>
-      <div className="reta-overview__compare-note">
-        Three mitochondrial support approaches with different mechanisms and evidence tiers. SS-31 is the most clinically advanced mitochondrial peptide with Phase 2 human data. Humanin is a mitokine with rodent + observational human data but no RCTs. CoQ10/MitoQ are OTC supplements with more human evidence than most peptides for mitochondrial support. All address mitochondrial function through different mechanisms.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

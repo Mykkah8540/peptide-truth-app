@@ -1,207 +1,74 @@
-/**
- * HCGOverviewPanel — decision-oriented overview for hCG.
- * Key frame: LH mimetic at Leydig cells; fertility and TRT-adjunct use are
- * established clinical applications with real evidence. The key distinction:
- * hCG acts at gonadal level (bypassing pituitary), while gonadorelin acts
- * at pituitary level. FSH is not stimulated by hCG — a meaningful difference
- * for spermatogenesis.
- */
-
-const STAT_CARDS = [
-  {
-    value: "LH receptor (LHCGR)",
-    label: "mechanism — hCG binds LH receptor on Leydig cells (males) and granulosa/theca cells (females)",
-    sub: "Human chorionic gonadotropin (hCG) is a glycoprotein hormone that binds and activates the LH/CG receptor (LHCGR) — the same receptor that LH activates. In males, this directly stimulates Leydig cell testosterone production and maintains testicular volume. In females, it triggers the LH surge required for ovulation and supports the corpus luteum. hCG is produced by the placenta during pregnancy (the basis of pregnancy tests) and is available as an injectable medication (Pregnyl, Novarel) with established clinical uses.",
-    note: "The LH mimetic action is pharmacologically well-characterized — hCG has a substantially longer half-life than endogenous LH (half-life ~24-36 hours for hCG vs. ~20 minutes for LH), making it more practical for clinical use. This long half-life is a meaningful advantage over gonadorelin's short-duration pituitary stimulation.",
-  },
-  {
-    value: "FSH not stimulated",
-    label: "key limitation — hCG stimulates Leydig cells but does NOT replace FSH; spermatogenesis requires both LH and FSH",
-    sub: "hCG stimulates Leydig cell testosterone production — this is robust. What hCG does not do: stimulate FSH secretion. Complete spermatogenesis requires both LH (for testosterone from Leydig cells) and FSH (for Sertoli cell support of spermatogenesis). For testicular volume preservation during TRT in males who do not need fertility, hCG's LH action is sufficient. For males needing fertility restoration, hCG alone may not be sufficient — FSH supplementation (with FSH injections or gonadorelin to stimulate endogenous FSH) may also be needed.",
-    note: "This FSH limitation is why some fertility specialists prefer gonadorelin over hCG for fertility preservation during TRT — gonadorelin stimulates both LH and FSH from the pituitary, while hCG only provides LH-like stimulation at the gonadal level. For testicular volume preservation without fertility goals, hCG is typically adequate.",
-  },
-  {
-    value: "Multiple clinical uses",
-    label: "established applications — TRT adjunct, male hypogonadism, fertility treatment, cryptorchidism",
-    sub: "hCG has multiple established clinical uses with real evidence: (1) TRT adjunct for testicular volume preservation and maintenance of intratesticular testosterone, (2) hypogonadotropic hypogonadism treatment (where LH is deficient), (3) ovulation induction in anovulatory women, (4) final oocyte maturation trigger in IVF, (5) cryptorchidism treatment in prepubertal males. The evidence base spans decades of clinical use in reproductive medicine.",
-    note: "The TRT adjunct application is the most common community use. Exogenous testosterone suppresses LH (via feedback), causing Leydig cell atrophy and reduced intratesticular testosterone. hCG provides the LH-like signal that bypasses this suppression, maintaining testicular volume and intratesticular testosterone. The typical protocol is hCG 500-1500 IU every 3-4 days alongside TRT.",
-  },
-  {
-    value: "FDA-approved",
-    label: "regulatory status — approved for specific indications; available as Pregnyl, Novarel; compounding also available",
-    sub: "hCG is FDA-approved for: hypogonadotropic hypogonadism in males, prepubertal cryptorchidism, induction of ovulation in anovulatory infertile females, and as part of ART protocols. Pharmaceutical preparations (Pregnyl, Novarel, Ovidrel) are injectable. Compounded hCG is also used. Community access to hCG outside approved indications (TRT adjunct without a formal hypogonadism diagnosis) is off-label use. 'hCG diet' products — oral hCG for weight loss — have no evidence and the FDA has issued warnings against them.",
-    note: "The distinction between legitimate pharmaceutical hCG (Pregnyl, Novarel) and 'hCG diet' products is important. The former is a legitimate pharmaceutical with established pharmacology; the latter is unsupported by evidence and has been the subject of FDA warnings. Any oral hCG product has no bioavailability for the intact glycoprotein — the evidence-based applications are all injectable.",
-  },
-];
-
-const FIT_YES = [
-  "You are on TRT and want to maintain testicular volume and intratesticular testosterone — hCG as TRT adjunct is the most common and well-supported use case",
-  "You have hypogonadotropic hypogonadism (low LH, low testosterone with intact testes) — hCG is an established treatment with clinical evidence",
-  "You are a male planning fertility preservation during or after TRT — hCG maintains spermatogenic potential; may need FSH supplementation for complete fertility restoration",
-  "You are in an IVF protocol where hCG is used as a trigger for final oocyte maturation — this is an established clinical application under physician supervision",
-];
-
-const FIT_NO = [
-  "You want to stimulate FSH as well as LH — hCG does not stimulate FSH; gonadorelin (GnRH) or FSH injection are needed for FSH stimulation",
-  "You have hormone-sensitive cancer — prostate cancer, testicular cancer, certain female hormone-sensitive cancers; testosterone stimulation is contraindicated",
-  "You have a history of precocious puberty — hCG stimulates sex steroids and is contraindicated",
-  "You are considering oral hCG products for weight loss (hCG diet) — no evidence; FDA has issued warnings; injectable hCG does not produce weight loss outside extreme caloric restriction protocols",
-];
-
-const TIMELINE = [
-  {
-    phase: "Hours to days",
-    heading: "Testosterone rise — Leydig cell stimulation produces measurable response within 24-72 hours",
-    body: "Following hCG injection, Leydig cells respond within 24-72 hours with increased testosterone synthesis. Peak testosterone typically occurs 24-48 hours post-injection. The longer half-life of hCG (vs. LH) means the Leydig cell stimulation persists for 2-3 days, making every-3-4-day dosing practical for maintaining stimulus.",
-  },
-  {
-    phase: "Weeks",
-    heading: "Testicular volume preservation — Leydig cell mass maintained with ongoing stimulation",
-    body: "Testicular atrophy from TRT-induced LH suppression develops over weeks to months. hCG supplementation prevents this by maintaining Leydig cell stimulation throughout TRT. Existing atrophy may partially reverse with hCG treatment, but recovery is incomplete if atrophy is severe and long-standing. Starting hCG early in TRT (preventing atrophy) is more effective than starting after significant atrophy has developed.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Ongoing TRT support — dosing flexibility based on testosterone and fertility goals",
-    body: "Long-term hCG use alongside TRT is clinically established. Monitoring includes testosterone levels (to confirm Leydig cell response), estradiol (aromatization of hCG-stimulated testosterone is common and can require aromatase inhibitor management), and semen parameters if fertility is a goal. Protocols vary — some use low-dose daily hCG, others use higher doses every 3-4 days.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "hCG",
-    badge: "LH mimetic / FDA-approved",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Direct LHCGR activation on Leydig cells — bypasses pituitary; long half-life (~24-36h)" },
-      { label: "FSH stimulation", value: "None — does not stimulate FSH; Sertoli cell support requires separate FSH stimulation" },
-      { label: "Evidence", value: "FDA-approved; decades of reproductive medicine data; TRT adjunct use well-characterized" },
-      { label: "Estrogen risk", value: "Significant — hCG-stimulated testosterone aromatizes; estradiol monitoring required" },
-      { label: "Status", value: "FDA-approved (Pregnyl, Novarel); Rx required; compounding also available" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Gonadorelin (GnRH)",
-    badge: "GnRH analog / Compounding Rx",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Pituitary GnRH receptor → LH + FSH release — acts upstream; pulsatile requirement" },
-      { label: "FSH stimulation", value: "Yes — gonadorelin stimulates both LH and FSH; advantage for spermatogenesis" },
-      { label: "Evidence", value: "GnRH mechanism textbook; pump protocols established; twice-daily injection extrapolated" },
-      { label: "Estrogen risk", value: "Lower — gonadorelin-stimulated testosterone from physiological axis; aromatization is normal" },
-      { label: "Status", value: "Compounding pharmacy Rx; not FDA-approved for TRT adjunct indication" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Enclomiphene / Clomiphene",
-    badge: "SERM / Oral alternative",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Blocks estrogen negative feedback → raises endogenous LH + FSH → testicular stimulation" },
-      { label: "FSH stimulation", value: "Yes — raises both LH and FSH by removing estrogen feedback" },
-      { label: "Evidence", value: "Phase 3 data for enclomiphene in hypogonadism; more human RCT data than gonadorelin for testosterone" },
-      { label: "Estrogen risk", value: "Variable — clomiphene raises estrogen through increased testosterone aromatization; enclomiphene less estrogenic" },
-      { label: "Status", value: "Clomiphene: off-label; Enclomiphene: approved in some countries, off-label US; oral dosing" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function HCGOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The original TRT adjunct — direct Leydig cell stimulation with FDA-approved status and decades of reproductive medicine data. The FSH limitation matters if fertility is the goal.
-        </div>
-        <div className="reta-overview__headline-sub">
-          hCG acts directly on Leydig cells as an LH mimetic, bypassing the pituitary — making it effective even when TRT has suppressed LH secretion. The evidence base for testicular preservation during TRT, hypogonadotropic hypogonadism, and fertility treatment is established and pharmaceutical-grade. The key limitation: hCG does not stimulate FSH, which means it maintains Leydig cell testosterone production but not the Sertoli cell support required for complete spermatogenesis. For testicular volume, hCG is sufficient. For fertility restoration, FSH supplementation or an alternative is often also needed.
-        </div>
+      <p className="reta-overview__opener">
+        hCG is a hormone naturally produced during pregnancy that mimics LH &mdash; the signal that tells the testes to make testosterone. It has decades of clinical evidence in fertility medicine and is the most common TRT adjunct for keeping testicular function intact while on testosterone. Its one meaningful limitation: it doesn&rsquo;t drive FSH, which matters specifically for sperm production.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Person on TRT or Considering It &mdash; testicular preservation, fertility</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to go on TRT but I&rsquo;m not ready to give up on the possibility of having kids someday. What does hCG actually do and is it reliable?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It bypasses the part that TRT shuts down</strong><br />Testosterone therapy suppresses the body&rsquo;s own LH signal, which causes the testes to shrink and stop producing testosterone internally. hCG delivers the LH-like signal directly to the testes, bypassing the pituitary suppression entirely. The testes get stimulated even though the pituitary isn&rsquo;t sending the signal.</li>
+          <li><strong>The evidence is real and decades deep</strong><br />hCG has been used in fertility medicine and reproductive endocrinology for a long time. It&rsquo;s not an experimental compound for these purposes &mdash; the pharmacology is well-characterized and physicians who specialize in this area have extensive clinical experience with it.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">hCG maintains testicular volume and the internal testosterone production inside the testes, but it does not drive FSH &mdash; and FSH is what sustains sperm development. For most TRT users who just want to prevent atrophy and preserve future options, hCG is sufficient. For someone who actively needs sperm production right now, hCG alone usually isn&rsquo;t enough; FSH supplementation or gonadorelin (which drives both) may be needed. Also: the testosterone hCG-stimulated testes produce aromatizes to estrogen, so estradiol monitoring is standard. Net: well-established, effective for testicular preservation; fertility restoration specifically requires understanding the FSH piece.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Bodybuilder &mdash; PCT after a cycle, or on-cycle testicular support</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m planning post-cycle therapy after a steroid cycle. Where does hCG fit in &mdash; during the cycle, after, or both?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It keeps Leydig cells from going dormant during a suppressive cycle</strong><br />A long anabolic cycle without any LH stimulation allows Leydig cells to atrophy. Using hCG during the cycle maintains Leydig cell mass, making PCT and axis recovery faster because you&rsquo;re not starting from a state of severe atrophy.</li>
+          <li><strong>Used correctly, it shortens the time to natural testosterone recovery</strong><br />When Leydig cells remain active through a cycle (thanks to hCG), they can respond more quickly once the suppressive compounds clear. Trying to restart severely atrophied testes takes longer and is less reliable.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">hCG is typically stopped before PCT begins, not run concurrently with SERMs like clomiphene &mdash; because hCG suppresses the body&rsquo;s LH production and the whole point of PCT is to restart it. The common mistake is running hCG through PCT, which delays recovery rather than accelerating it. There is also a meaningful estrogen concern: hCG-stimulated testosterone aromatizes readily, and without an aromatase inhibitor, elevated estradiol during PCT can create its own hormonal disruption. Net: effective as a PCT preparation tool and on-cycle support, but timing and estradiol management are where the protocol details actually matter.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; HPG axis, fertility preservation, TRT long-term planning</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;hCG is an LH mimetic that bypasses the pituitary. What does that mean long-term for the HPG axis, and how does it compare to gonadorelin as a TRT adjunct mechanistically?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The pituitary bypass is both the strength and the limitation</strong><br />By acting directly on Leydig cells, hCG works even when the pituitary is fully suppressed &mdash; which is exactly the TRT context. But it means the pituitary itself gets no stimulation and continues to atrophy on the LH side. For long-term axis health, that distinction matters when thinking about what happens after TRT.</li>
+          <li><strong>Half-life advantage over gonadorelin for practical dosing</strong><br />hCG&rsquo;s ~24&ndash;36 hour half-life means meaningful dosing every 3&ndash;4 days, rather than gonadorelin&rsquo;s twice-daily requirement. From a protocol-design perspective, less frequent dosing reduces burden and error without sacrificing efficacy for testicular preservation goals.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The choice between hCG and gonadorelin comes down to goals: testicular volume and intratesticular testosterone only (hCG is sufficient), vs. both that and FSH-dependent spermatogenesis (gonadorelin adds FSH drive). For very long-term TRT &mdash; decades &mdash; the pituitary atrophy question becomes more relevant; periodically pausing hCG to allow natural pituitary-LH to re-emerge is a consideration some physicians build into protocols. Monitoring estradiol is non-negotiable with hCG &mdash; the aromatization from hCG-stimulated testosterone is real and consistent. Net: the most practically convenient and evidence-backed TRT adjunct, with gonadorelin worth considering specifically when spermatogenesis matters.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What hCG is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a substitute for FSH &mdash; it doesn&rsquo;t drive sperm development on its own</li>
+              <li>Not a weight loss compound &mdash; oral &ldquo;hCG diet&rdquo; products have no evidence and FDA has warned against them</li>
+              <li>Not appropriate for hormone-sensitive cancers &mdash; it drives testosterone production</li>
+              <li>Not equivalent to gonadorelin &mdash; different mechanism, different axis site, different dosing frequency</li>
+              <li>Not run simultaneously with SERMs in PCT &mdash; timing matters and concurrent use delays recovery</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>FDA-approved pharmaceutical with decades of reproductive medicine data &mdash; real evidence, not just theory</li>
+              <li>Bypasses pituitary suppression entirely &mdash; works even on fully suppressed TRT users</li>
+              <li>Long half-life means every 3&ndash;4 day dosing is practical</li>
+              <li>Maintains intratesticular testosterone and Leydig cell mass during suppressive therapy</li>
+              <li>The most established TRT adjunct available before compounded hCG restrictions changed clinic protocols</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">hCG vs Gonadorelin vs Enclomiphene</div>
-      <div className="reta-overview__compare-note">
-        Three approaches to maintaining testicular function alongside TRT. hCG acts directly on Leydig cells (LH-like) — no FSH. Gonadorelin stimulates pituitary LH + FSH — better for fertility but pulsatile constraint. Enclomiphene raises both LH and FSH by removing estrogen feedback — oral, but doesn&apos;t work well alongside active TRT. Choose based on fertility goals and TRT context.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

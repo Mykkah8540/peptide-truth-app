@@ -1,134 +1,76 @@
 export default function Aod9604OverviewPanel() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div className="reta-overview">
 
-      {/* Stat cards */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {[
-          { label: "Structure", value: "hGH Fragment 176–191", sub: "Lipolytic domain only", accent: "#2c5282" },
-          { label: "Key Design", value: "GH-Sparing", sub: "No IGF-1 or growth axis stimulation (intended)", accent: "#1a5c3a" },
-          { label: "Human Trials", value: "Phase II Completed", sub: "FDA approval not obtained", accent: "#7c5200" },
-        ].map((c) => (
-          <div key={c.label} style={{
-            flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
-            border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14,
-            padding: "14px 16px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#64748b", marginBottom: 4 }}>{c.label}</div>
-            <div style={{ fontSize: 15, fontWeight: 800, color: c.accent, lineHeight: 1.2 }}>{c.value}</div>
-            <div style={{ fontSize: 12, color: "#64748b", marginTop: 3 }}>{c.sub}</div>
+      <p className="reta-overview__opener">
+        AOD 9604 is a research peptide derived from the part of human growth hormone responsible for fat metabolism — specifically engineered to deliver a fat-burning signal without triggering the growth and muscle-building effects of full growth hormone. It completed human clinical trials for obesity and showed an acceptable safety profile, but didn&rsquo;t produce meaningful weight loss at the doses tested, which is why it never became an approved drug. The community now uses it as a research compound for fat loss, often stacked with other peptides.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person — Looking for a fat-loss peptide that won&rsquo;t mess with hormones</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve heard about peptides for fat loss but I&rsquo;m worried about messing with growth hormone. Someone said AOD 9604 is safer because it&rsquo;s just a fragment. Is that true, and does it actually work?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It&rsquo;s specifically engineered to avoid hormonal side effects</strong><br />Full growth hormone raises IGF-1, affects blood sugar, causes water retention, and can stimulate growth in tissues you don&rsquo;t want stimulated. AOD 9604 is just the tail end of growth hormone — the section that triggers fat metabolism — with the rest removed. The design goal was to get the fat-burning signal without the hormonal cascade. In the human trials, that goal was largely achieved: IGF-1 didn&rsquo;t go up, and the general safety profile looked reasonable.</li>
+          <li><strong>It actually ran human clinical trials</strong><br />Unlike most research peptides that are purely animal-data compounds, AOD 9604 completed Phase II obesity trials in humans. That means there is real human safety data — not perfect, not comprehensive, but more than zero. For someone cautious about research compounds, that trial history provides a reference point that most alternative fat-loss peptides lack entirely.</li>
+          <li><strong>Often stacked with other peptides as a lower-risk component</strong><br />In the community, AOD 9604 frequently appears in stacks with CJC-1295 and ipamorelin for body composition goals. The appeal is that it adds a fat-metabolism signal to a stack without adding the IGF-1-elevating properties that full growth hormone secretagogues carry. That logic is pharmacologically coherent even if the evidence for the stack as a whole is limited.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The clinical trials didn&rsquo;t show meaningful weight loss. The Phase II results were encouraging enough on safety to move forward, but the fat-loss outcome wasn&rsquo;t there at the tested doses, which is why the drug never advanced to Phase III or approval. Community doses often differ from trial doses, which introduces its own uncertainty. The compound is sourced as a research chemical — no pharmaceutical manufacturing, no verified purity, no sterile preparation guarantee. People who use it for fat loss and report results are operating in an environment where the placebo effect, concurrent diet changes, and other compounds make it hard to attribute outcomes to AOD 9604 specifically. Net: the GH-sparing design is genuinely appealing and the safety profile is more characterized than most research peptides, but meaningful fat loss from AOD 9604 alone was not demonstrated clinically, so expectation management matters.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete — Looking for targeted fat loss support during a cut without compromising training</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I use CJC-1295 and ipamorelin for recovery and body composition. I want to add something specifically for fat mobilization without raising IGF-1 further. Does AOD 9604 actually add meaningful fat-loss signaling to a stack like that?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The lipolytic mechanism is specific and additive to the stack</strong><br />Growth hormone stimulates fat breakdown through a pathway that involves increasing fatty acid release from fat cells. AOD 9604 is designed to activate this specific lipolytic signal. If it works as intended, it adds fat-mobilization signaling without duplicating the IGF-1 and growth effects that CJC-1295 and ipamorelin already provide — a potentially complementary addition rather than redundant one.</li>
+          <li><strong>No glucose interference means it doesn&rsquo;t compromise training performance</strong><br />Full growth hormone elevates blood sugar, which creates complications during hard training and calorie restriction. AOD 9604&rsquo;s design around the lipolytic domain — without the growth domain — means glucose effects should be minimized, though metabolic monitoring is still reasonable given the fat metabolism mechanism. An athlete cutting calories does not want compounding glycemic instability.</li>
+          <li><strong>Stubborn regional fat narrative resonates in the community</strong><br />Growth hormone is often discussed in the context of mobilizing the stubborn adipose tissue that resists caloric restriction — particularly lower abdominal and lower back fat. AOD 9604 carries the same narrative by association, as the fat-metabolism signal it targets is the same one underlying that discussion.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The evidence base for AOD 9604 improving athletic body composition is extremely thin. The human trials were conducted in obese individuals for weight loss, not in athletes optimizing body composition. Whether the compound adds meaningful fat mobilization on top of a GH-secretagogue stack, in someone already training and eating at a deficit, has not been studied. The &ldquo;stubborn fat targeting&rdquo; narrative around growth hormone is itself disputed — there is no convincing evidence that any systemic compound preferentially mobilizes regional fat deposits. Net: the mechanism is real, the pharmacological logic of adding it to a stack is internally consistent, but the evidence that it actually changes body composition outcomes in athletes is not there, and the expected effect size is likely modest at best.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker — Interested in the metabolic mechanism and what the Phase II failure tells us about the lipolytic pathway</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;AOD 9604 made it through Phase II on safety but didn&rsquo;t demonstrate efficacy. What does that failure tell us about the lipolytic pathway it targets — is the issue dose, receptor dynamics, or something about how the fragment differs from the parent hormone in its downstream signaling?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It&rsquo;s a clean test of a specific pharmacological hypothesis</strong><br />The scientific design of AOD 9604 — isolating the lipolytic domain of growth hormone — is a rigorous test of whether that specific domain is responsible for growth hormone&rsquo;s fat-burning effects. The compound was purpose-built to answer a mechanistic question as much as to be a drug. That makes the clinical results (both the safety success and the efficacy failure) informative about the biology of the pathway.</li>
+          <li><strong>The GH-sparing design is a proof of concept for fragment pharmacology</strong><br />The demonstration that you can create a growth hormone fragment that activates fat metabolism without elevating IGF-1 validates the concept of peptide fragment engineering for pathway selectivity. Even if AOD 9604 itself didn&rsquo;t become a drug, the approach it represents — taking the biologically active subdomain of a larger hormone — is architecturally interesting and has broader implications.</li>
+          <li><strong>The Phase II dose selection question is unresolved</strong><br />Clinical Phase II trials test a narrow range of doses determined by safety data, not by optimization. It&rsquo;s possible that efficacious doses exist above what was tested — or that the fragment simply doesn&rsquo;t reach fat tissue at concentrations that drive meaningful lipolysis from subcutaneous injection. That uncertainty is genuinely unresolved and is part of why community experimentation with higher doses continues even after clinical failure.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Clinical failure to show efficacy in well-designed trials is real information. The most parsimonious explanation for why AOD 9604 didn&rsquo;t produce clinically meaningful weight loss is that the fragment, at achievable doses from subcutaneous injection, doesn&rsquo;t drive sufficient lipolysis in humans to produce the effect size needed. Full growth hormone&rsquo;s fat-burning effects may depend on additional signaling beyond just this fragment — the receptor interactions of the intact hormone may not be fully replicated by the fragment alone. Community dose escalation beyond trial parameters is an extrapolation into territory where no safety data exists. Net: a scientifically interesting compound that validated its safety hypothesis but failed its efficacy hypothesis — the reasons why remain somewhat speculative, and that uncertainty is worth sitting with rather than explaining away.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What AOD 9604 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not an approved drug — Phase II safety was acceptable but efficacy was not demonstrated</li>
+              <li>Not proven to produce meaningful fat loss — the clinical trials showed this clearly</li>
+              <li>Not a replacement for caloric deficit and training as the primary fat-loss tools</li>
+              <li>Not available in pharmaceutical grade — research chemical supply only</li>
+              <li>Not equivalent to full growth hormone — it targets only the lipolytic fragment</li>
+            </ul>
           </div>
-        ))}
-      </div>
-
-      {/* Overview */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          AOD-9604 is a research peptide developed specifically for fat loss — it was engineered from a fragment of human growth hormone that controls fat metabolism, while leaving out the parts that cause growth effects or raise IGF-1. The pitch is that you get the fat-burning signal without the hormonal side effects of full GH.
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          Here&apos;s what the human trial data actually showed: AOD-9604 completed Phase II clinical trials for obesity, and the short-term safety profile looked acceptable. But meaningful weight loss wasn&apos;t demonstrated at the doses tested, which is why it never became an approved drug. It&apos;s now widely used as a research peptide for fat-loss goals, with the trial data providing a real but limited reference point for expectations.
-        </p>
-      </div>
-
-      {/* The GH-sparing distinction */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(26,92,58,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(26,92,58,0.15)", borderRadius: 14, padding: "16px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 13, fontWeight: 800, color: "#1a5c3a", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Why the "GH-sparing" claim matters</h3>
-        <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#334155", margin: 0 }}>
-          Full hGH and GH secretagogues (CJC-1295, ipamorelin, MK-677) elevate IGF-1, affect glucose metabolism, and have growth-signaling effects that create endocrine monitoring requirements. AOD-9604 is designed to skip all of this — activating fat metabolism pathways without touching the GH receptor or elevating IGF-1. In the Phase II trials, this was largely confirmed. It changes the risk profile significantly vs GH-axis compounds, though metabolic effects on glucose still warrant attention in diabetics.
-        </p>
-      </div>
-
-      {/* Is it a fit? */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Fat-loss interest without GH-axis concerns (in healthy metabolic baseline)", note: "The GH-sparing design is the core appeal vs CJC-1295 + ipamorelin stacks" },
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Conservative expectations with human safety reference data", note: "Phase II data provides a real (if limited) human safety anchor" },
-            { icon: "△", color: "#7c5200", bg: "#fffbf0", label: "Weight-loss as a primary goal", note: "Clinically meaningful weight loss was not demonstrated in Phase II — expect modest effects at best" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Diabetes or unstable blood sugar control", note: "Metabolic mechanism means glucose effects still possible despite GH-sparing design" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Pregnancy, breastfeeding, adolescents", note: "No safety data; growth/metabolic axis involvement is a developmental concern" },
-          ].map((row) => (
-            <div key={row.label} style={{
-              display: "flex", alignItems: "flex-start", gap: 10,
-              background: row.bg, borderRadius: 10, padding: "10px 14px",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: row.color, flexShrink: 0, marginTop: 1 }}>{row.icon}</span>
-              <div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1e293b" }}>{row.label}</div>
-                <div style={{ fontSize: 12, color: "#64748b", marginTop: 2 }}>{row.note}</div>
-              </div>
-            </div>
-          ))}
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The GH-sparing design works — IGF-1 is not elevated, growth effects are absent, which meaningfully changes the risk profile vs. GH-axis compounds</li>
+              <li>Real human clinical trial data — more safety characterization than the vast majority of community peptides</li>
+              <li>Proof of concept for fragment-based peptide engineering to achieve pathway selectivity</li>
+              <li>The Phase II efficacy failure is itself scientifically informative about the lipolytic pathway</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      {/* Comparison table */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>How it compares (fat-loss context)</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-            <thead>
-              <tr style={{ borderBottom: "2px solid rgba(15,26,46,0.10)" }}>
-                {["", "AOD-9604", "Full hGH", "CJC-1295 + Ipa"].map((h) => (
-                  <th key={h} style={{ padding: "8px 10px", textAlign: h ? "center" : "left", fontWeight: 700, color: "#0f1a2e", whiteSpace: "nowrap" }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { label: "Mechanism", vals: ["hGH fragment (lipolysis only)", "Full GH receptor activation", "GH secretagogue stack"] },
-                { label: "IGF-1 elevation", vals: ["No (design goal)", "Yes", "Yes"] },
-                { label: "Anabolic effects", vals: ["Minimal", "Significant", "Moderate"] },
-                { label: "Glucose effects", vals: ["Possible (metabolic)", "Yes — significant", "Yes — significant"] },
-                { label: "Human trial data", vals: ["Phase II (obesity)", "Extensive", "Limited (CJC-1295 only)"] },
-                { label: "Fat-loss outcome", vals: ["Modest / Not FDA-approved", "Real but GH risks", "Variable / extrapolated"] },
-              ].map((row, i) => (
-                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(15,26,46,0.03)" : "transparent" }}>
-                  <td style={{ padding: "8px 10px", fontWeight: 600, color: "#334155", whiteSpace: "nowrap" }}>{row.label}</td>
-                  {row.vals.map((v, j) => (
-                    <td key={j} style={{ padding: "8px 10px", textAlign: "center", color: "#475569" }}>{v}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* What people discuss */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(44,82,130,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(44,82,130,0.15)", borderRadius: 14, padding: "18px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What people discuss</h3>
-        <ul style={{ margin: 0, padding: "0 0 0 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            "Fat loss without GH-axis concerns (the primary appeal vs CJC/ipa stacks)",
-            "Stubborn fat targeting narratives (abdominal fat, visceral fat discussions)",
-            "Stacking with CJC-1295 + ipamorelin for body composition goals (common combination)",
-            "Curiosity about a peptide that actually ran human trials — more grounded than fully research-grade compounds",
-            "The failure to obtain FDA approval is acknowledged in most community discussions",
-          ].map((t) => (
-            <li key={t} style={{ fontSize: 13.5, color: "#334155", lineHeight: 1.5 }}>{t}</li>
-          ))}
-        </ul>
       </div>
 
     </div>

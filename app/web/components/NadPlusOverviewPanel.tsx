@@ -1,204 +1,76 @@
-/**
- * NadPlusOverviewPanel — decision-oriented overview for the NAD+ PDP.
- * Answers: What is this? Why do people care? Is it right for me? What should I expect?
- */
-
-const STAT_CARDS = [
-  {
-    value: "~50%",
-    label: "NAD+ decline by age 60",
-    sub: "vs. levels in your 20s",
-    note: "Tissue studies — not all tissues equal",
-  },
-  {
-    value: "OTC",
-    label: "globally available",
-    sub: "no prescription needed",
-    note: "IV infusion requires clinical setting",
-  },
-  {
-    value: "30+",
-    label: "human studies",
-    sub: "mostly small, short-duration",
-    note: "No large RCTs yet — mechanism outpaces proof",
-  },
-];
-
-const FIT_YES = [
-  "You're interested in longevity biology and want to address age-related cellular energy decline",
-  "You're experiencing fatigue or cognitive fog and are open to an OTC option with a plausible mechanism",
-  "You understand the evidence is mechanistically strong but clinically thin — and you're okay with that",
-  "You're exploring IV infusion for a more direct route and can tolerate an uncomfortable initial experience",
-  "You're building a longevity stack and want a foundational molecule rather than an acute effect",
-];
-
-const FIT_NO = [
-  "You expect dramatic, fast results — NAD+ works subtly and cumulatively, if it works at all for you",
-  "You're currently on PARP inhibitor chemotherapy (olaparib, niraparib, rucaparib) — this is a direct clinical conflict",
-  "You have an active cancer diagnosis — NAD+'s role in tumor metabolism is under active investigation",
-  "You want validated clinical endpoints — large RCTs confirming longevity or cognitive outcomes don't exist yet",
-  "You're already taking NMN or NR at therapeutic doses — stacking all three is redundant, not additive",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Orientation — route matters",
-    body: "IV infusion: expect significant flushing and pressure sensations, especially early. Slow the drip rate — this makes it manageable. Oral: no acute effects are typical. This isn't a drug that announces itself. The mechanism is cellular and cumulative.",
-  },
-  {
-    phase: "Months 1–3",
-    heading: "Subjective window",
-    body: "If NAD+ is doing something you can feel, energy and cognitive clarity tend to be the first signals — though highly variable. Most users describe effects as 'subtle' or 'hard to attribute.' This is where expectations need to stay calibrated: absence of dramatic effect isn't evidence of failure.",
-  },
-  {
-    phase: "Long-term",
-    heading: "The real rationale",
-    body: "The strongest argument for NAD+ supplementation isn't what you'll feel next month — it's maintaining cellular repair capacity, sirtuin signaling, and mitochondrial efficiency over years. That's a hard outcome to measure in a personal experiment, which is part of why the clinical evidence is still thin.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "NAD+ (direct)",
-    badge: "OTC",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "How taken", value: "IV infusion or high-dose oral" },
-      { label: "Bioavailability (oral)", value: "Uncertain — gut degrades much of it", note: "IV bypasses this" },
-      { label: "Evidence quality", value: "Mechanism: strong. Outcomes: thin." },
-      { label: "Cost", value: "IV: expensive ($100–300/session). Oral: moderate." },
-      { label: "Access", value: "IV requires clinic. Oral: widely available." },
-    ],
-    highlight: true,
-  },
-  {
-    name: "NMN",
-    badge: "OTC",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "How taken", value: "Oral capsule or sublingual" },
-      { label: "Bioavailability (oral)", value: "Better than NAD+ — converts to NAD+ intracellularly" },
-      { label: "Evidence quality", value: "Somewhat better human data than direct NAD+" },
-      { label: "Cost", value: "Moderate — widely available" },
-      { label: "Access", value: "OTC supplement" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "NR (Nicotinamide Riboside)",
-    badge: "OTC",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "How taken", value: "Oral capsule" },
-      { label: "Bioavailability (oral)", value: "Confirmed to raise blood NAD+ in humans" },
-      { label: "Evidence quality", value: "Most human bioavailability data of the three" },
-      { label: "Cost", value: "Moderate — branded products (Tru Niagen)" },
-      { label: "Access", value: "OTC supplement" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function NadPlusOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          NAD+ declines with age. The science is real. The human outcome data is still catching up.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Strong mechanistic rationale. Thin clinical trial data. OTC access. The gap between those things is what you&apos;re navigating.
-        </div>
+      <p className="reta-overview__opener">
+        NAD+ is a molecule every cell in your body uses to convert food into energy and run its DNA
+        repair machinery &mdash; and levels drop significantly as you age. The science behind the decline
+        is real and well-established. The clinical evidence that supplementing NAD+ actually improves
+        your health outcomes is still catching up to the hype. That gap is what you&rsquo;re navigating.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; energy and feeling better</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m tired all the time and I keep seeing NAD+ for energy &mdash; is this actually worth trying or is it just expensive nonsense?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The mechanism connecting NAD+ to energy is real</strong><br />NAD+ sits at the center of cellular energy production &mdash; it&rsquo;s the molecule that shuttles electrons through the process your cells use to make ATP from food. When NAD+ levels decline, cellular energy production becomes less efficient. This isn&rsquo;t a supplement marketing claim; it&rsquo;s established biochemistry. Whether that mechanism translates to you feeling more energetic from supplementation is a different, harder question.</li>
+          <li><strong>OTC access and no prescription needed</strong><br />NAD+ precursors like NMN and NR (which convert to NAD+ inside cells) are available over the counter as supplements. IV NAD+ infusions are available at wellness clinics. Unlike most longevity-adjacent compounds, you don&rsquo;t need a doctor to access the primary forms &mdash; which means you can try them without a lot of friction.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Most people who take oral NAD+ precursors describe the effects as subtle &mdash; &ldquo;a bit more energy&rdquo; or &ldquo;I think I&rsquo;m sleeping better,&rdquo; not a dramatic shift. IV infusions produce more noticeable acute sensations (flushing, warmth, sometimes nausea) but whether that translates to lasting benefit beyond the session is genuinely unclear. If you&rsquo;re on PARP-inhibitor chemotherapy, this is a direct drug conflict &mdash; NAD+ is involved in the same pathway those drugs target. For everyone else, the risk profile is low and the mechanism is reasonable; the uncertainty is just whether it does what you hope. <strong>Net: the biology is real; the personal outcome is uncertain and usually subtle.</strong></p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; performance, recovery, and cellular repair</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I push hard in training and recovery is my limiting factor &mdash; can NAD+ actually help with cellular repair after exercise?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>DNA repair and cellular recovery are NAD+-dependent processes</strong><br />Exercise creates real cellular stress &mdash; oxidative damage, micro-tears, and the kind of cellular disruption that requires active repair to adapt and strengthen. NAD+ is required by the enzymes (sirtuins and PARPs) that perform much of this repair work. The hypothesis that optimizing NAD+ levels supports better recovery is mechanistically grounded in how those repair pathways actually function.</li>
+          <li><strong>Mitochondrial function and endurance efficiency</strong><br />NAD+ is central to how mitochondria produce energy during aerobic exercise. Higher NAD+ availability could theoretically improve mitochondrial efficiency during sustained efforts. Some small studies have shown improvements in muscle function and endurance markers, though the effect sizes are modest and the study populations often older adults rather than trained athletes.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The athlete-specific evidence is thin. Most human studies on NAD+ precursors have been done in sedentary or older populations, not in trained athletes already optimizing nutrition and recovery. The incremental benefit of NAD+ optimization on top of a well-designed training and nutrition program is genuinely unknown. Cost-benefit matters here: IV NAD+ sessions are expensive, and oral NMN/NR at effective doses is a recurring supplement cost. Before layering this in, the foundational recovery variables (sleep, protein intake, periodization) matter more and are better evidenced. <strong>Net: mechanistically plausible as a recovery support; evidence specific to trained athletes is thin; cost matters.</strong></p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; longevity, sirtuins, and the NAD+ stack</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m building a longevity protocol &mdash; should I be taking direct NAD+, NMN, or NR? And how does this interact with sirtuins and everything else I&rsquo;m stacking?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The sirtuin connection makes NAD+ a longevity pathway hub</strong><br />Sirtuins &mdash; the enzymes most directly linked to caloric restriction and longevity research in model organisms &mdash; require NAD+ to function. Without adequate NAD+, sirtuins slow down regardless of activation. This makes NAD+ a rate-limiting input for one of the most-studied longevity pathways, which is why researchers like David Sinclair have positioned it as foundational. The mechanism linking NAD+ to sirtuin activity to aging biology is well-documented at the cellular level.</li>
+          <li><strong>The NMN vs NR vs direct NAD+ question has a nuanced answer</strong><br />These three forms are not interchangeable in practice. Oral NAD+ is largely degraded before reaching cells. NR has the most confirmed human bioavailability data &mdash; it demonstrably raises blood NAD+ in human trials. NMN has similar or slightly better cell penetration in some studies and growing human trial evidence. Direct IV NAD+ bypasses the bioavailability problem entirely. Understanding the differences matters for making rational choices about form, dose, and cost.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The core problem with longevity NAD+ research is that the outcomes that matter &mdash; actually living longer, reduced age-related disease, maintained cognitive function &mdash; take decades to measure and haven&rsquo;t been measured in large human trials. The mechanism is compelling. The cellular and biomarker evidence is growing. But the clinical endpoint evidence doesn&rsquo;t yet exist at the scale that would constitute proof. Stacking NMN, NR, and direct IV NAD+ simultaneously is redundant &mdash; they&rsquo;re competing for the same metabolic pathway. Pick a form based on bioavailability and cost, not the assumption that more pathways equals more benefit. <strong>Net: the best-evidenced longevity molecule below the clinical proof threshold; rational to include in a serious stack with appropriate expectations.</strong></p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What NAD+ is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A compound with proven longevity outcomes in humans &mdash; the mechanism is established, the clinical endpoint evidence is not</li>
+              <li>Something that produces dramatic, fast-acting results you&rsquo;ll clearly feel &mdash; effects when they happen are typically subtle and cumulative</li>
+              <li>Safe to combine with PARP-inhibitor chemotherapy &mdash; this is a direct pharmacological conflict requiring oncology review</li>
+              <li>Something where stacking all three forms (NAD+, NMN, NR) simultaneously adds benefit &mdash; it&rsquo;s redundant, not additive</li>
+              <li>Uniquely powerful compared to lifestyle interventions that also raise NAD+ &mdash; exercise is one of the most effective ways to elevate NAD+ endogenously</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Real, well-documented age-related decline in NAD+ levels &mdash; not a manufactured problem</li>
+              <li>Central role in DNA repair machinery, mitochondrial function, and sirtuin activity &mdash; genuine longevity biology convergence</li>
+              <li>OTC access with no prescription required, giving low-friction entry</li>
+              <li>Growing human bioavailability and biomarker trial data for NMN and NR, unlike most longevity compounds</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">NAD+ vs its precursors</div>
-      <div className="reta-overview__compare-note">
-        NMN and NR don&apos;t replace NAD+ directly — they convert to it inside cells. These three are often compared because people want to know which to take. The answer is genuinely unsettled.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">
-                  {row.value}
-                  {"note" in row && row.note && (
-                    <span className="reta-overview__compare-row-note"> — {row.note}</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

@@ -1,208 +1,74 @@
-/**
- * EpitalonOverviewPanel — decision-oriented overview for Epitalon.
- * Key frame: a synthetic tetrapeptide from Soviet-era longevity research.
- * Real but limited human data (Khavinson's trials); telomerase activation
- * is a genuine dual-edge mechanism — the same pathway that promotes longevity
- * also promotes cancer cell immortality. Evidence is Russian, small, and not
- * independently replicated at scale. The cancer concern requires honest framing.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Tetrapeptide",
-    label: "Ala-Glu-Asp-Gly — synthetic analog of pineal gland-derived epithalamin",
-    sub: "Epitalon is a synthetic version of epithalamin, a polypeptide extract from bovine pineal glands studied in Soviet longevity research starting in the 1980s. The tetrapeptide sequence (Ala-Glu-Asp-Gly) is the active fragment; the synthetic version is what the community uses",
-    note: "The pineal gland connection is pharmacologically real — the pineal gland regulates melatonin secretion and circadian biology. The proposed mechanism is that epitalon restores age-related decline in pineal function, which is why sleep and melatonin effects are the most commonly reported acute experience.",
-  },
-  {
-    value: "Telomerase",
-    label: "proposed primary mechanism — hTERT activation and telomere extension",
-    sub: "Epitalon is proposed to activate telomerase reverse transcriptase (hTERT), the enzyme that extends telomere length. Shortened telomeres are associated with cellular aging; telomerase activation theoretically slows this process. In vitro evidence for epitalon-induced telomerase activity exists",
-    note: "The telomerase angle is genuinely interesting and genuinely double-edged. The same hTERT activation that could protect against cellular aging is the same pathway that makes cancer cells immortal — telomerase is highly expressed in most cancer cells precisely because it prevents cellular death. Anyone considering epitalon needs to sit with this tension honestly rather than dismissing it.",
-  },
-  {
-    value: "Russian trials",
-    label: "the evidence base — Khavinson's St. Petersburg Institute data, decades of work",
-    sub: "The primary human evidence comes from Khavinson and colleagues at the St. Petersburg Institute of Bioregulation and Gerontology — small RCTs in elderly cohorts showing reduced all-cause mortality and age-related disease markers. This evidence is real but has significant methodological limitations and limited independent Western replication",
-    note: "Dismissing the Russian trials entirely is not intellectually honest — they represent decades of consistent findings in the same direction. Taking them at face value without Western replication is also not honest. The calibrated position: real signal, real limitations, real unknowns. The evidence is not zero, and it is not solid.",
-  },
-  {
-    value: "Research-grade",
-    label: "regulatory status — no FDA approval, no pharmaceutical-grade standard",
-    sub: "Epitalon is not FDA-approved for any indication. It is available as a research chemical from peptide suppliers with widely variable quality. The pharmaceutical-grade products from Russian clinical trials are not the same as gray-market research peptides — quality, purity, and sterility are not regulated",
-    note: "Source quality is the primary practical safety variable for a compound in this regulatory space. The safety data from Russian trials assumed pharmaceutical-grade product. What most community users actually inject is research-grade material from unregulated suppliers — a meaningful distinction that the community underweights.",
-  },
-];
-
-const FIT_YES = [
-  "You have longevity or age-related goals and understand the evidence base is primarily small Russian trials with limited independent replication — the evidence ceiling is honest and you're working within it",
-  "You have no personal or family history of cancer — the telomerase activation mechanism is a real theoretical cancer concern; cancer history makes this compound inappropriate",
-  "You have verified source quality with a third-party certificate of analysis — no pharmaceutical-grade product exists, so CoA verification is the minimum quality gate",
-  "You're interested in the sleep and circadian effects — the melatonin-pathway effects are the most consistently reported acute experience and some people use epitalon specifically for sleep quality goals",
-];
-
-const FIT_NO = [
-  "You have any personal or family history of cancer — the telomerase activation mechanism promotes cancer cell immortality; this is not a theoretical concern to rationalize around in the presence of cancer history",
-  "You expect dramatic anti-aging results quickly — the proposed longevity mechanisms are cumulative and years-scale, not weeks-scale; short-term subjective improvement is primarily sleep-related",
-  "You are not willing to verify source quality — no pharmaceutical-grade epitalon is commercially available; gray-market research peptides carry real purity and sterility uncertainty",
-  "You are pregnant, breastfeeding, or an adolescent — no safety data exists in these populations; the developmental biology implications of telomerase activation in these contexts are unknown",
-  "You are expecting the cancer concern to be resolved by 'low dose' reasoning — the telomerase mechanism doesn't have a clearly established safe dose threshold for cancer promotion risk",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–2",
-    heading: "Sleep and circadian effects — the most commonly reported acute experience",
-    body: "The most consistently reported early effect is improved sleep quality — vivid dreams, deeper sleep, more refreshed waking. This is consistent with the pineal/melatonin mechanism. If epitalon is producing any acute effect in weeks 1-2, it is most likely through this pathway. Don't interpret sleep effects as evidence of anti-aging action — they're a different mechanism.",
-  },
-  {
-    phase: "Weeks to months",
-    heading: "The evidence window — no validated short-term biomarker for longevity effect",
-    body: "The longevity claims in Russian trials were evaluated over years, not weeks. There is no validated short-term biomarker that tells you epitalon is 'working' for longevity purposes. Telomere length testing is commercially available but has significant measurement variability and does not predict individual outcomes reliably. Operating in this space means accepting an extended and uncertain evaluation window.",
-  },
-  {
-    phase: "Long-term",
-    heading: "The honest uncertainty — years-scale claims, insufficient data",
-    body: "Khavinson's trials showed reduced all-cause mortality in elderly cohorts over 6-15 years — that's a meaningful claim with a meaningful evidence base. It's also in a specific population (elderly Russian patients), in a specific era, with specific methodological limitations. Whether these findings translate to healthy adults using research-grade epitalon in 2025 is genuinely unknown. The community convention of cycling (short courses with breaks) reflects appropriate caution about a compound with an incompletely characterized long-term profile.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Epitalon",
-    badge: "Tetrapeptide / Pineal-derived",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Telomerase activation (hTERT) + pineal melatonin pathway modulation" },
-      { label: "Evidence", value: "Small Russian trials — real findings, limited independent replication" },
-      { label: "Acute effects", value: "Sleep quality improvement is most commonly reported; longevity effects are years-scale" },
-      { label: "Cancer concern", value: "Genuine — telomerase activation promotes cancer cell immortality; cancer history is a hard stop" },
-      { label: "Status", value: "Research-grade only; no FDA approval, no pharmaceutical standard" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "NAD+",
-    badge: "Coenzyme / OTC",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Sirtuin activation, mitochondrial energy, DNA repair — AMPK/sirtuin longevity pathways" },
-      { label: "Evidence", value: "Better-characterized in humans than epitalon; more independent replication" },
-      { label: "Acute effects", value: "Energy, cognitive clarity — more consistently reported than epitalon's acute effects" },
-      { label: "Cancer concern", value: "PARP inhibitor interaction (NAD+ is substrate for PARP); PARP inhibitor patients should not use" },
-      { label: "Status", value: "OTC supplement; IV also available clinically" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Humanin",
-    badge: "Mitochondrial peptide",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Mitochondrial-derived peptide; cytoprotective, insulin sensitizing, AMPK activation" },
-      { label: "Evidence", value: "Earlier-stage evidence than epitalon — animal models and biomarker studies" },
-      { label: "Acute effects", value: "No well-characterized acute human experience; preclinical focus" },
-      { label: "Cancer concern", value: "Mixed — humanin has anti-apoptotic effects (could protect cancer cells)" },
-      { label: "Status", value: "Research-grade only" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function EpitalonOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A Soviet-era longevity peptide with real but limited human data — and a telomerase mechanism that cuts both ways.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Epitalon is a synthetic tetrapeptide derived from pineal gland research. The longevity community uses it for telomere extension and anti-aging goals. The evidence from Khavinson&apos;s trials is real — small RCTs in elderly cohorts showing reduced mortality — but it hasn&apos;t been independently replicated at scale and the quality of available research-grade products is unregulated. The telomerase mechanism is the defining tension: the same pathway that could slow cellular aging also promotes cancer cell immortality. Anyone evaluating this compound needs to hold that tension honestly.
-        </div>
+      <p className="reta-overview__opener">
+        Epitalon (also spelled Epithalon) is a synthetic four-amino-acid peptide derived from Soviet-era pineal gland research. The longevity community uses it for telomere extension and anti-aging goals, and the evidence from decades of Russian trials is real &mdash; small RCTs in elderly cohorts showing reduced mortality. But the telomerase mechanism cuts both ways: the same pathway that could slow cellular aging also enables cancer cell immortality. Anyone evaluating this compound needs to hold that tension honestly rather than dismissing it.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Longevity-Curious Person &mdash; Interested in living better for longer</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep seeing Epitalon in longevity circles with references to telomeres and anti-aging. Is this actually doing something or is it another supplement industry story?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Telomere shortening is a real hallmark of cellular aging</strong><br />Every time a cell divides, its protective chromosome caps (telomeres) get a bit shorter. When they get short enough, cells stop dividing normally. Telomerase is the enzyme that can lengthen them, and it becomes less active as we age. Epitalon is proposed to reactivate that enzyme. This isn&rsquo;t made-up biology &mdash; it&rsquo;s a real and actively researched area.</li>
+          <li><strong>The Russian trial data is not zero</strong><br />Decades of research from Khavinson&rsquo;s group in St. Petersburg showed reduced all-cause mortality and lower rates of age-related diseases in elderly cohorts who received the compound. The findings are consistent in direction across multiple studies. This isn&rsquo;t a completely unvalidated idea &mdash; it&rsquo;s a real signal with real limitations.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The Russian trials are small, have methodological limitations, and have not been independently replicated at scale by Western research groups. The telomerase mechanism is the defining concern: cancer cells exploit the same pathway to become immortal. If you have any personal or family history of cancer, this compound is not appropriate. The research peptide products available are not pharmaceutical-grade &mdash; what&rsquo;s actually in the vial is unverified without a third-party certificate of analysis. The most commonly reported early experience is improved sleep quality, which reflects the pineal gland connection, not necessarily anti-aging action. Net: real signal, real limitations, real unknowns &mdash; approach with informed caution, not with certainty.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Anti-aging and recovery alongside training</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m in my 40s, still training hard, and I&rsquo;m thinking about longevity as part of my recovery stack. Epitalon keeps coming up in that context &mdash; what&rsquo;s actually useful to know?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The sleep quality effects align well with recovery goals</strong><br />The most consistently reported near-term effect &mdash; deeper, more vivid sleep &mdash; is consistent with what athletes are actively trying to optimize. If epitalon genuinely improves sleep architecture through the pineal/melatonin pathway, that has real recovery value independent of whether the longevity claims pan out.</li>
+          <li><strong>Athletes aging into their 40s think about cellular resilience differently</strong><br />Recovery between sessions gets harder, inflammation takes longer to resolve, and tissue repair slows. The idea of a compound that operates at the cellular maintenance level &mdash; rather than just masking symptoms &mdash; resonates with athletes who are thinking about sustainable performance over decades, not just the next competition.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There is no validated short-term biomarker that tells you epitalon is working for longevity purposes. Telomere length testing is commercially available but has significant measurement variability and doesn&rsquo;t reliably predict individual outcomes. The Russian trial populations were elderly patients &mdash; not healthy athletes in their 40s &mdash; and whether findings translate to this very different population is genuinely unknown. The cancer concern applies equally to athletes: any history of hormone-sensitive cancer makes this a hard stop regardless of fitness level. Net: the sleep effects may be the honest near-term value; the longevity claims are years-scale and not validated for your specific use case.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; Telomere science, pineal biology, longevity mechanisms</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand the actual telomerase activation mechanism &mdash; specifically how a four-amino-acid peptide could influence hTERT expression &mdash; and where the science genuinely runs out versus where the community is extrapolating.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The hTERT activation hypothesis is scientifically interesting and not fully disproven</strong><br />In vitro data shows epitalon can activate telomerase and extend telomeres in human fibroblasts. The proposed mechanism involves epigenetic regulation of hTERT expression &mdash; the tetrapeptide may interact with chromatin or transcription factor complexes that normally suppress hTERT in somatic cells. Whether this translates from cell culture to whole-organism pharmacology via subcutaneous injection is the unresolved question, and it&rsquo;s a real one, not a settled one.</li>
+          <li><strong>The pineal gland mechanism provides a separate, better-characterized pathway</strong><br />Epitalon appears to restore age-related decline in pineal melatonin synthesis. The pineal connection has more direct mechanistic support: the pineal gland&rsquo;s circadian regulatory role declines with age, and restoring melatonin amplitude has documented effects on circadian biology, sleep architecture, and potentially immune function. This is a more pharmacokinetically plausible mechanism for a short peptide than direct hTERT regulation.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The cancer tension is not resolvable by dose reasoning. Telomerase is not expressed at high levels in most healthy somatic cells precisely because unrestricted telomere extension enables indefinite cell division &mdash; which is cancer. Every tissue in your body that might have occult pre-malignant cells would theoretically be affected by systemic telomerase activation. The community convention of short cycling courses reflects appropriate uncertainty, not a solved problem. Dismissing the Russian trial evidence is intellectually dishonest; taking it as proof of efficacy in research-grade peptides is equally dishonest. The product quality gap between what Khavinson used and what research peptide suppliers provide is real and meaningful. Net: the mechanistic story is genuinely interesting, the safety unknowns are genuine, and the community discourse around this compound underweights both the cancer concern and the product quality problem.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Epitalon is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a proven longevity compound &mdash; the Russian trial data is real but limited; independent large-scale replication does not exist</li>
+              <li>Not appropriate for anyone with personal or family cancer history &mdash; the telomerase activation mechanism is a genuine concern, not a theoretical one to rationalize around</li>
+              <li>Not pharmaceutical-grade &mdash; no regulated production standard exists; product quality is entirely supplier-dependent</li>
+              <li>Not a short-term fix &mdash; the longevity effects in trials were measured over years, not weeks</li>
+              <li>Not proven safe for long-term continuous use &mdash; community cycling conventions reflect uncertainty, not solved biology</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Decades of consistent-direction findings from Khavinson&rsquo;s group &mdash; not zero evidence, real evidence with real limitations</li>
+              <li>Telomerase activation and telomere biology is a genuine frontier of aging research, not marketing language</li>
+              <li>The pineal gland connection provides a plausible mechanism for the near-term sleep quality effects many users report</li>
+              <li>A four-amino-acid peptide with potential epigenetic effects is pharmacologically unusual and genuinely interesting to study</li>
+              <li>The cancer tension makes it one of the most intellectually honest tests of a biohacker&rsquo;s risk-benefit reasoning</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Epitalon vs NAD+ vs Humanin</div>
-      <div className="reta-overview__compare-note">
-        All three are discussed in the longevity space. NAD+ has more independent Western replication and better-characterized human evidence than epitalon. Humanin is earlier-stage still. The mechanisms are different — epitalon works primarily via telomerase/pineal pathways; NAD+ via sirtuin/mitochondrial pathways; humanin via mitochondrial cytoprotection.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

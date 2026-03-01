@@ -1,204 +1,73 @@
-/**
- * TesamorelinOverviewPanel — decision-oriented overview for Tesamorelin.
- * Key frame: the only FDA-approved GHRH analog currently on the US market (Egrifta).
- * Approved for HIV-associated lipodystrophy. RCT evidence for visceral fat in that
- * specific population. Off-label enhancement use extrapolates from HIV-lipodystrophy data.
- * GHRH mechanism same as CJC-1295 and sermorelin. Arthralgia/myalgia are distinctive.
- */
-
-const STAT_CARDS = [
-  {
-    value: "GHRH receptor",
-    label: "agonist — same mechanism as CJC-1295, sermorelin",
-    sub: "stimulates pulsatile GH release; visceral fat reduction is the primary documented specific outcome in controlled trials",
-    note: "Same safety gates as all GHRH analogs: metabolic baseline, cancer history, thyroid function. Distinctive vs CJC-1295: Phase III RCT visceral fat data and a more prominent arthralgia/myalgia profile per prescribing information.",
-  },
-  {
-    value: "RCT-supported",
-    label: "visceral fat reduction — strongest outcome data in its class",
-    sub: "Phase III controlled trial evidence for visceral fat; the most rigorous specific-outcome data of any GHRH analog",
-    note: "The RCT evidence is real and the most rigorous in this compound class. The trial population was HIV patients with lipodystrophy — visceral fat mechanism extrapolates to healthy adults plausibly but is not proven in controlled conditions outside that population.",
-  },
-  {
-    value: "Prescription only",
-    label: "Egrifta — FDA-approved, compounding available",
-    sub: "tesamorelin (Egrifta) is FDA-approved; legitimate access requires a prescription; compounding pharmacy is the common off-label route",
-    note: "The FDA approval makes legal prescribing access available — not that off-label enhancement use has equivalent evidence. Enhancement use extrapolates the mechanism from the approved clinical context.",
-  },
-];
-
-const FIT_YES = [
-  "Your primary goal is visceral fat reduction — tesamorelin has the best controlled trial evidence for this outcome of any GHRH analog",
-  "You have no diabetes or significant insulin resistance — glucose dysregulation is flagged in the prescribing information",
-  "You have no active or recent cancer diagnosis — IGF-1 mitogenic concern applies identically to all GHRH analogs",
-  "You have access to a physician for prescription or are informed about the off-label evidence gap in gray-market use",
-  "You can monitor for arthralgia and myalgia — more prominent in tesamorelin clinical trial data than other GHRH analogs",
-  "You've read the GH-axis safety gates that apply to this compound class (Evidence and Safety tabs)",
-];
-
-const FIT_NO = [
-  "You want the most established community GHRH protocol — CJC-1295 with ipamorelin has more community use data for general GH augmentation",
-  "You want a gray-market research compound — tesamorelin is a prescription drug; legitimate access requires a physician",
-  "You have uncontrolled diabetes or significant insulin resistance — glucose dysregulation is flagged in the prescribing information",
-  "You have an active cancer diagnosis — IGF-1 is mitogenic; oncology clearance required",
-  "You have significant arthritis or joint disease — arthralgia is a documented and meaningful side effect",
-  "You're pregnant, breastfeeding, or an adolescent — hard stop",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–12",
-    heading: "Visceral fat reduction is the primary measurable outcome — assessed at 3 months in trials",
-    body: "In the HIV-lipodystrophy RCTs, visceral fat reduction was measured at 26 weeks with significant changes observable by 12 weeks. Arthralgia, myalgia, and fluid retention are the most common early side effects per prescribing information. GH/IGF-1 elevation begins immediately. Water retention is the standard early GH response. If arthralgia or joint pain develops significantly, dose reduction or discontinuation was used in the trials.",
-  },
-  {
-    phase: "Months 3–6",
-    heading: "Peak visceral fat effect in the trial data",
-    body: "The Phase III trials showed statistically significant visceral fat reduction at 26 weeks vs placebo. In healthy adults, whether the same trajectory applies is extrapolated — not proven. The GH/IGF-1 anabolic effects follow the same timeline as other GHRH analogs. Unlike hexarelin, tesamorelin doesn't have a significant tachyphylaxis problem — the GHRH receptor is more resistant to desensitization than the ghrelin receptor.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Same uncertainty as all GH-axis compounds, plus post-discontinuation note",
-    body: "Long-term continuous use in healthy adults is unstudied — same as CJC-1295 and sermorelin. One documented pattern from the HIV trials: visceral fat returned after discontinuation, suggesting ongoing use is needed to maintain the effect. Whether cycling protocols can preserve gains or whether continuous use is required for tesamorelin's fat effects is not characterized in off-label contexts.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Tesamorelin",
-    badge: "FDA-approved (Egrifta)",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Receptor", value: "GHRH receptor — same as CJC-1295 and sermorelin" },
-      { label: "Regulatory status", value: "FDA-approved for HIV-associated lipodystrophy (Egrifta)" },
-      { label: "Evidence", value: "RCT data for visceral fat in HIV-lipodystrophy — strongest specific-outcome evidence of any GHRH analog" },
-      { label: "Distinctive side effects", value: "Arthralgia and myalgia — more prominent in tesamorelin trial data vs CJC-1295" },
-      { label: "Access", value: "Prescription required; available via compounding pharmacy off-label" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "CJC-1295",
-    badge: "Gray-market",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "GHRH receptor — same mechanism as tesamorelin" },
-      { label: "Regulatory status", value: "No approved indication; research-grade compound" },
-      { label: "Evidence", value: "Human GH/IGF-1 elevation confirmed (2006); enhancement outcomes not trialed" },
-      { label: "Distinctive features", value: "DAC variant for sustained release; no arthralgia prominence in community data" },
-      { label: "Community status", value: "Primary community GHRH analog for GH augmentation protocols" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Sermorelin",
-    badge: "Prescription (compounding)",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "GHRH receptor — same mechanism" },
-      { label: "Regulatory status", value: "FDA-approved for pediatric GHD (discontinued), available via compounding" },
-      { label: "Evidence", value: "Human GH release confirmed; GHD patient data; enhancement outcome data absent" },
-      { label: "Distinctive features", value: "Shorter half-life than CJC-1295; prescription pathway via anti-aging clinics" },
-      { label: "Community status", value: "Prescription-context GHRH analog; often paired with ipamorelin" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function TesamorelinOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A prescription GH compound with controlled trial evidence for reducing deep abdominal fat — the strongest fat-focused data in this class.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Tesamorelin works the same way as CJC-1295 and sermorelin — it prompts your body to produce more growth hormone. What sets it apart: it&apos;s backed by controlled clinical trials specifically for reducing visceral fat — the deep abdominal fat around your organs that&apos;s hardest to target with diet and exercise alone. That&apos;s the strongest fat-specific evidence of any compound in this class. It requires a prescription; off-label use extrapolates this data to healthy adults. The mechanism is well-established; whether the results translate outside the trial population is the honest question.
-        </div>
+      <p className="reta-overview__opener">
+        Tesamorelin (Egrifta) is the only FDA-approved growth hormone-releasing compound currently on the US market. It works the same way as CJC-1295 and sermorelin — prompting your pituitary to release more growth hormone — but it has something those compounds lack: controlled clinical trial evidence for reducing deep abdominal fat. That&rsquo;s the honest case for it. The honest caveat is that the trials were in HIV patients with lipodystrophy, not healthy adults chasing body recomposition.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; Struggling with Belly Fat</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I have this stubborn belly fat that doesn&rsquo;t respond to diet and exercise. Someone told me tesamorelin specifically targets visceral fat. Is that real?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The visceral fat claim has actual trial data behind it</strong><br />Unlike most peptides where fat loss is speculated from animal studies, tesamorelin has Phase III randomized controlled trial evidence for reducing visceral fat — the deep fat around your organs. That makes the claim more credible than anything in the gray-market GHRH space.</li>
+          <li><strong>It&rsquo;s FDA-approved, which means a prescription pathway exists</strong><br />If a physician determines it&rsquo;s appropriate, you can get this through a legitimate pharmacy, with proper dosing and monitoring — not from an unregulated peptide supplier. That&rsquo;s a meaningful difference in access and safety context.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The trials were in HIV patients who developed lipodystrophy — a specific fat redistribution syndrome caused by certain antiretroviral drugs. Visceral fat responded significantly in that population. Whether healthy adults without that condition get the same results is extrapolated from the mechanism, not proven in controlled conditions. It also requires a prescription from a physician willing to prescribe off-label, can elevate blood sugar in people with insulin resistance, and costs significantly more than other GHRH compounds. Net: the fat data is real, but the population it was proven in isn&rsquo;t most people asking about it.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Body Recomposition Without Exogenous Growth Hormone</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to lean out without touching actual growth hormone or anything that will tank my natural production. Is tesamorelin a smarter option?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It preserves pulsatile growth hormone release</strong><br />Exogenous growth hormone suppresses your body&rsquo;s own production and blunts the normal pulsatile rhythm. GHRH analogs like tesamorelin work upstream — prompting the pituitary to release growth hormone in a more natural pattern. For athletes concerned about long-term axis health, that distinction matters.</li>
+          <li><strong>The visceral fat evidence applies to body composition goals</strong><br />Even if the trial population was specific, the mechanism — growth hormone driving lipolysis in visceral fat stores — is plausible across populations. For someone who runs a caloric deficit with good protein intake, the additive visceral fat effect of elevated growth hormone is a reasonable expectation.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Tesamorelin has a more prominent arthralgia and myalgia (joint and muscle pain) profile in its clinical trial data than CJC-1295 does in community use — that&rsquo;s documented in the prescribing information and worth knowing before adding this to a training stack. Joint pain that interferes with training is a real cost. It also elevates blood sugar, which matters more if your training diet is carbohydrate-heavy. Net: mechanistically sound for recomp goals, but the joint pain signal is the meaningful trade-off versus its GHRH cousins.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; GH Axis Optimization with Actual Data</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Most GHRH peptides have no human RCT data. Tesamorelin actually does. How much of that translates to what I care about — metabolic health, body composition, and growth hormone optimization?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The only GHRH analog with controlled human outcome data</strong><br />CJC-1295 has one published trial confirming it elevates growth hormone and IGF-1. Tesamorelin has Phase III data specifically measuring a clinically meaningful outcome (visceral fat mass). For someone who needs more than &ldquo;it raises IGF-1&rdquo; to justify a compound, tesamorelin is the most evidence-supported GHRH option available.</li>
+          <li><strong>Prescription access means compounding pharmacy quality control</strong><br />Gray-market GHRH peptides have no quality standards. Tesamorelin, accessed through a physician, comes through regulated pharmaceutical channels with consistent dosing and purity verification. For someone who values that, it&rsquo;s a meaningful practical difference.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The lipodystrophy trial population had a specific metabolic abnormality driving their visceral fat accumulation — one that may respond differently to growth hormone axis manipulation than normal metabolic variation. The human evidence is the best in its class, but &ldquo;best in class&rdquo; for GHRH analogs still means limited. The arthralgia signal documented in the prescribing information is real and not fully explained by the GH/fluid retention effect alone. And like all GHRH analogs, cancer history is a hard stop — the IGF-1 elevation from any GHRH compound is mitogenic in contexts with existing neoplastic processes. Net: the most data-supported GHRH choice, but the evidence base for off-label optimization use is still extrapolated, not direct.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Tesamorelin is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A proven fat loss tool in healthy adults — the visceral fat evidence is from HIV lipodystrophy patients</li>
+              <li>An over-the-counter or easy-access compound — it requires a prescription; off-label access is through gray-market suppliers with no quality oversight</li>
+              <li>Equivalent to growth hormone — it stimulates your own production, which stays within physiological bounds</li>
+              <li>Without a joint pain risk — arthralgia and myalgia are documented more prominently in tesamorelin than in CJC-1295 community data</li>
+              <li>Safe for anyone with active or recent cancer — IGF-1 elevation is mitogenic; this applies to all GHRH compounds</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The only FDA-approved GHRH analog — the most clinically credentialed compound in its class</li>
+              <li>Phase III controlled trial evidence for visceral fat reduction — the strongest specific outcome data of any GHRH compound</li>
+              <li>Preserves natural pulsatile growth hormone release rather than suppressing it like exogenous GH</li>
+              <li>A legitimate prescription pathway exists — physician oversight and pharmacy quality control are available</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Tesamorelin vs CJC-1295 vs Sermorelin</div>
-      <div className="reta-overview__compare-note">
-        All three act on the GHRH receptor to stimulate GH release. Tesamorelin has FDA approval and RCT data for its specific indication — no GHRH analog has this for general enhancement. CJC-1295 is the community standard for gray-market GH augmentation with the most modern community use data. Sermorelin occupies a prescription-context middle ground with a shorter half-life.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

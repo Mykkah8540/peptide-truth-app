@@ -1,209 +1,74 @@
-/**
- * TirzepatideOverviewPanel — decision-oriented overview for Tirzepatide (Mounjaro / Zepbound).
- * Key frame: the first dual GLP-1/GIP agonist — meaningfully more weight loss than semaglutide.
- * ~20-22% body weight reduction in SURMOUNT-1 (15mg, 72 weeks).
- * The "twincretin" mechanism produces a more complete metabolic effect than GLP-1 alone.
- */
-
-const STAT_CARDS = [
-  {
-    value: "GLP-1 + GIP",
-    label: "dual receptor agonist — the twincretin mechanism",
-    sub: "tirzepatide agonizes both the GLP-1 receptor (appetite, insulin, satiety) and the GIP receptor (direct adipose effect, insulin sensitization, less nausea than GLP-1 alone). The dual mechanism is why it produces more weight loss than semaglutide — two synchronized appetite and metabolic pathways, not one",
-    note: "The GIP receptor adds a direct adipose tissue effect and appears to attenuate the nausea associated with GLP-1 agonism — tirzepatide users generally report less nausea than comparable semaglutide doses. The lower nausea rate is mechanistically explainable, not just anecdotal.",
-  },
-  {
-    value: "~22%",
-    label: "body weight reduction — SURMOUNT-1 (15mg, 72 weeks)",
-    sub: "in SURMOUNT-1 (n=2,539, 72 weeks), 15mg tirzepatide achieved ~22.5% mean body weight reduction vs ~2.5% placebo — meaningfully greater than the ~15% benchmark from semaglutide's STEP 1 trial",
-    note: "One-third of participants in SURMOUNT-1 achieved ≥25% weight loss at the 15mg dose — crossing into territory previously associated only with bariatric surgery. That ceiling is relevant context when deciding between semaglutide and tirzepatide for ambitious weight loss goals.",
-  },
-  {
-    value: "Weekly",
-    label: "subcutaneous injection — titration from 2.5mg to 15mg",
-    sub: "tirzepatide starts at 2.5mg and titrates upward every 4 weeks toward the maintenance dose (5mg, 10mg, or 15mg). The auto-injector pen design is similar to semaglutide. Route is once-weekly subcutaneous injection only — no oral formulation is currently approved",
-    note: "The titration schedule is how GI side effects are managed — do not accelerate it. Most people find nausea and GI tolerance more manageable with tirzepatide than with semaglutide at equivalent clinical effect.",
-  },
-  {
-    value: "FDA ✓",
-    label: "approved for T2D (Mounjaro) and obesity (Zepbound)",
-    sub: "Mounjaro was approved for type 2 diabetes in 2022; Zepbound for chronic weight management in 2023. Tirzepatide is newer than semaglutide by several years — the evidence base is strong but the post-market long-term real-world experience is less extensive than semaglutide",
-    note: "FDA approval means formal prescribing information including stated contraindications (thyroid C-cell tumor history, MEN2, pancreatitis history) and a required titration schedule — the same regulatory framework as semaglutide.",
-  },
-];
-
-const FIT_YES = [
-  "Your goal is meaningful weight loss and you want a step up from semaglutide — tirzepatide's ~22% vs semaglutide's ~15% is a meaningful clinical difference for people who want to maximize outcome",
-  "You tried semaglutide and found the nausea difficult — the GIP component of tirzepatide appears to attenuate GLP-1-mediated nausea; tirzepatide users consistently report lower nausea rates than semaglutide at equivalent effect",
-  "You have type 2 diabetes and are looking for a single drug that addresses both glycemic control and weight — tirzepatide demonstrates superior HbA1c reduction vs semaglutide in the SURPASS-2 head-to-head trial",
-  "You have the metabolic profile where a ceiling of ~22% is meaningful — people with significant obesity-related metabolic dysfunction tend to see the largest absolute weight changes",
-  "You can access Zepbound with insurance or Mounjaro for T2D — the FDA approval pathway and active commercial availability matters for access and cost",
-  "You have no personal or family history of medullary thyroid carcinoma or MEN2 syndrome — same hard stop as semaglutide; the thyroid C-cell signal in animal studies applies to the entire class",
-];
-
-const FIT_NO = [
-  "You have personal or family history of medullary thyroid carcinoma or MEN2 syndrome — same prescribing information contraindication as semaglutide; applies to the entire GLP-1 class",
-  "You have a history of pancreatitis — GLP-1 drugs are associated with pancreatitis risk; personal history is a prescribing information contraindication for tirzepatide",
-  "You want the deepest evidence base before committing to a compound — semaglutide has significantly more published trial data and post-market real-world experience than tirzepatide; tirzepatide is newer",
-  "You are pregnant or planning pregnancy — must be discontinued before conception; animal reproductive toxicology data warrants caution",
-  "You are on insulin or sulfonylureas without glucose monitoring in place — hypoglycemia risk when GLP-1 drugs are combined with insulin or sulfonylureas; glucose monitoring is required",
-  "You have severe GI disease (severe gastroparesis, severe IBD, prior GI surgery) — the GI motility effects of tirzepatide require specific physician guidance in these populations",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–20",
-    heading: "Titration phase — nausea is usually milder than semaglutide, but the protocol still matters",
-    body: "Tirzepatide's titration starts at 2.5mg weekly and escalates to 5mg, then 10mg, then 15mg at 4-week intervals. Most people find nausea significantly less intense than with semaglutide — the GIP receptor co-agonism appears to reduce the severity of GLP-1-associated nausea. That said: nausea is still common in the first month and at escalation points. The protocol is non-negotiable — rushing the titration replicates the same tolerability problems semaglutide users encounter when they escalate too fast.",
-  },
-  {
-    phase: "Months 3–9",
-    heading: "The meaningful weight loss window — more consistent than semaglutide",
-    body: "The ~22% average in SURMOUNT-1 was achieved over 72 weeks, but the most dramatic loss typically occurs in months 3-9 at or approaching maintenance dose. One-third of participants achieved ≥25% weight loss, crossing into bariatric surgery outcome territory. Protein intake is actively critical — at the degree of appetite suppression tirzepatide produces, some patients eat so little that lean mass loss becomes a real clinical concern without deliberate protein anchoring. Resistance training is non-optional for people pursuing fat loss rather than scale weight.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Sustained outcomes — and the same cessation rebound question as semaglutide",
-    body: "SURMOUNT-4 data (re-randomization to placebo after 36 weeks on tirzepatide) showed ~14% weight regain vs placebo within 52 weeks off drug — essentially the same cessation rebound pattern as semaglutide. This is a class effect, not a tirzepatide-specific problem. The cardiovascular outcome trials for tirzepatide (SURPASS-CVOT) are ongoing — the SELECT trial evidence for semaglutide doesn't automatically extend to tirzepatide yet. Long-term tirzepatide use is likely necessary for maintained weight loss in most people who respond well.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Tirzepatide",
-    badge: "GLP-1 + GIP / Current Leader",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GLP-1R + GIPR dual agonist — twincretin, synergistic metabolic effect" },
-      { label: "Weight loss", value: "~22% body weight — SURMOUNT-1 (15mg, n=2,539, 72 weeks)" },
-      { label: "Nausea profile", value: "Lower than semaglutide — GIP component attenuates GLP-1 nausea" },
-      { label: "T2D glycemic control", value: "Superior to semaglutide in SURPASS-2 head-to-head" },
-      { label: "Key limitation", value: "Newer than semaglutide — less post-market real-world data; CV outcome trial pending" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Semaglutide",
-    badge: "GLP-1 RA / Benchmark",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GLP-1 receptor agonist — the single-receptor standard" },
-      { label: "Weight loss", value: "~15% body weight — STEP 1 (2.4mg, n=1,961, 68 weeks)" },
-      { label: "Nausea profile", value: "More common than tirzepatide — ~40-44% in Wegovy trials" },
-      { label: "Evidence base", value: "Deepest of any approved weight drug — 7+ years of post-market data" },
-      { label: "Key advantage", value: "SELECT CV outcome trial data; longer post-market safety record" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Retatrutide",
-    badge: "GLP-1 + GIP + Glucagon",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Triple agonism: GLP-1R + GIPR + GCGR — adds glucagon-driven energy expenditure" },
-      { label: "Weight loss", value: "~24% body weight — Phase 2 only (n=338, 48 weeks)" },
-      { label: "Nausea profile", value: "Phase 2 tolerability data — comparable to tirzepatide" },
-      { label: "Approval status", value: "Phase 3 trials ongoing — not yet FDA-approved" },
-      { label: "Key limitation", value: "No approved formulation; Phase 3 and long-term safety data pending" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function TirzepatideOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          More weight loss than semaglutide, with better nausea tolerance — the current best-in-class for most people.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Tirzepatide (Mounjaro for T2D, Zepbound for weight) hits two receptors instead of one — GLP-1 and GIP — and that dual activation produces ~22% body weight reduction vs semaglutide&apos;s ~15%. One-third of SURMOUNT-1 participants lost ≥25%, crossing into bariatric surgery territory. What most people don&apos;t expect: tirzepatide typically causes less nausea than semaglutide at equivalent clinical effect. The GIP receptor co-agonism appears to attenuate the nausea associated with GLP-1 receptor activation. The meaningful trade-off compared to semaglutide: it&apos;s newer, so the long-term real-world data is thinner — and the cardiovascular outcome trial results are still pending.
-        </div>
+      <p className="reta-overview__opener">
+        Tirzepatide (Mounjaro for diabetes, Zepbound for weight loss) is the most effective weight loss drug currently available. In the SURMOUNT-1 trial, people taking the highest dose lost an average of 22% of their body weight — one-third of participants lost over 25%, crossing into territory previously only seen with bariatric surgery. It works by hitting two pathways simultaneously instead of one, and most people find it causes less nausea than semaglutide at comparable clinical effect.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; Serious About Weight Loss</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve tried everything. My doctor mentioned tirzepatide or semaglutide. How do I know which one is actually better for me and whether the weight loss sticks?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The weight loss numbers are genuinely impressive</strong><br />An average of 22% body weight reduction in 72 weeks is not marketing language — it&rsquo;s what the controlled trial data showed. For someone who has spent years unable to lose significant weight through diet and exercise, that number represents a real change in what&rsquo;s medically achievable. A third of participants in SURMOUNT-1 lost over 25%, which is bariatric surgery territory.</li>
+          <li><strong>Most people tolerate it better than semaglutide</strong><br />The drug hits two appetite-related pathways instead of one, and the second pathway appears to reduce the nausea that makes semaglutide difficult for many people. That tolerability difference is mechanistically explainable — not just anecdotal from community forums — and it matters for people who tried semaglutide and had to stop.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The weight comes back when you stop. SURMOUNT-4 data showed about 14% weight regain within a year of discontinuing tirzepatide — essentially the same cessation rebound as semaglutide. This is a medication most people who respond well will need to take long-term, not a course you complete and walk away from. It&rsquo;s also newer than semaglutide, meaning the post-market real-world safety record is shorter. And the same contraindications apply — personal or family history of thyroid C-cell tumors or a syndrome called MEN2 is a hard stop. Net: the most effective approved weight loss drug available, but it works as long as you take it.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Body Recomposition Without Losing Muscle</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to drop body fat without sacrificing the muscle I&rsquo;ve built. Can tirzepatide help with recomposition, and what do I need to do to protect lean mass while I&rsquo;m on it?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The degree of fat loss is unmatched by any other pharmacological tool</strong><br />For an athlete who has reached the limits of what diet and training manipulation can do for body composition, tirzepatide&rsquo;s 20%+ body weight effect represents a fundamentally different level of fat loss than anything else available. Even getting from 15% body fat to 10% — which is brutally difficult through training alone — is within reach on this drug if used carefully.</li>
+          <li><strong>Second-pathway activation reduces caloric intake without maximizing nausea</strong><br />Tirzepatide works partly by making food less rewarding and partly by slowing gastric emptying. Athletes who&rsquo;ve tried semaglutide and found it too limiting for training nutrition often report tirzepatide more manageable — the GIP component appears to attenuate the nausea that makes eating enough protein difficult on semaglutide.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The appetite suppression is so powerful that many people on tirzepatide eat so little that lean mass loss becomes a serious concern. This is not hypothetical — the SURMOUNT trials did not require resistance training, and some participants likely lost significant muscle alongside fat. For athletes, deliberate protein anchoring (prioritizing protein intake even when appetite is suppressed) and resistance training are non-optional, not suggestions. The titration schedule from 2.5mg up to 15mg takes 20 weeks — rushing it produces nausea that derails training. Net: the most powerful body recomposition tool available pharmacologically, but the muscle protection work is entirely on you.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; Metabolic Longevity and the Dual Agonism Advantage</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Metabolic health is the core of longevity. Tirzepatide hits two receptors simultaneously. What does the dual mechanism actually add beyond semaglutide, and what do the cardiovascular outcome data gaps mean?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The second receptor adds a direct adipose tissue effect</strong><br />Semaglutide works primarily through appetite and satiety signaling. Tirzepatide adds a second pathway that acts directly on fat tissue — affecting how fat cells store and release energy. That direct adipose effect helps explain why tirzepatide produces more fat loss at lower nausea cost: two synchronized mechanisms, not just a stronger version of one.</li>
+          <li><strong>The metabolic improvements go beyond body weight</strong><br />In the SURPASS-2 trial, tirzepatide produced superior blood sugar control compared to semaglutide. The insulin sensitivity improvements, visceral fat reduction, and lipid profile changes that accompany significant weight loss on tirzepatide represent a comprehensive metabolic reset — not just a number on the scale.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Tirzepatide is meaningfully newer than semaglutide — the post-market safety record is shorter, and the cardiovascular outcome trial (SURPASS-CVOT) is still ongoing. Semaglutide has the SELECT trial showing cardiovascular benefit in people with obesity; tirzepatide does not yet have equivalent data. For someone optimizing metabolic longevity, that evidence gap matters — semaglutide&rsquo;s cardiovascular benefits are proven and tirzepatide&rsquo;s are inferred from metabolic improvements. The drug also works only while taken — sustained metabolic benefit requires sustained treatment. Net: the most powerful metabolic tool currently approved, with a developing long-term evidence base that hasn&rsquo;t yet caught up to semaglutide&rsquo;s.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Tirzepatide is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A permanent fix — weight returns when the drug stops, which is why most people who respond well take it long-term</li>
+              <li>Safe without muscle protection strategies — severe appetite suppression without resistance training causes lean mass loss</li>
+              <li>Proven for cardiovascular benefit yet — the outcome trial is ongoing; semaglutide has SELECT data, tirzepatide doesn&rsquo;t yet</li>
+              <li>Appropriate with a history of thyroid C-cell tumors or MEN2 syndrome — class-level contraindication shared with semaglutide</li>
+              <li>A replacement for lifestyle change — people who resist training and high protein intake lose more muscle and see worse long-term outcomes</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The most effective approved weight loss drug — 22% average body weight reduction, one-third of users lost 25%+</li>
+              <li>Better nausea tolerance than semaglutide at comparable clinical effect — mechanistically explainable, not just anecdotal</li>
+              <li>FDA-approved for both T2D (Mounjaro) and obesity (Zepbound) — legitimate prescription access exists</li>
+              <li>Superior blood sugar control to semaglutide in head-to-head trial data (SURPASS-2)</li>
+              <li>The dual mechanism targets appetite and fat tissue through separate synchronized pathways</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Tirzepatide vs Semaglutide vs Retatrutide</div>
-      <div className="reta-overview__compare-note">
-        The GLP-1 class has a clear potency hierarchy: semaglutide (GLP-1 only, ~15%) → tirzepatide (GLP-1 + GIP, ~22%) → retatrutide (GLP-1 + GIP + glucagon, ~24%). Each step adds a receptor and more weight loss, but also less long-term evidence. Tirzepatide is the current sweet spot: substantially more effective than semaglutide, FDA-approved, and with enough post-market experience to feel established.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

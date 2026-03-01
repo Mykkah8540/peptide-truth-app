@@ -1,202 +1,75 @@
-/**
- * Cjc1295OverviewPanel — decision-oriented overview for CJC-1295.
- * Key frame: this is a GH-axis compound with actual human interventional data.
- * It changes endocrine physiology systemically — glucose, water balance, sleep, IGF-1.
- * The DAC vs no-DAC distinction is critical for understanding half-life and risk pattern.
- */
-
-const STAT_CARDS = [
-  {
-    value: "GHRH",
-    label: "analog class",
-    sub: "growth hormone releasing hormone analog — amplifies endogenous GH pulses",
-    note: "Does not add exogenous GH — works by extending the hypothalamic signal that triggers pituitary GH release",
-  },
-  {
-    value: "2006",
-    label: "human interventional study",
-    sub: "PMID 16352683 — GH and IGF-1 elevations confirmed in healthy adults",
-    note: "One of few peptides with published human endocrine evidence; enhancement outcomes and long-term safety remain unestablished",
-  },
-  {
-    value: "DAC / no DAC",
-    label: "two critically different variants",
-    sub: "CJC-1295 with DAC: half-life of days; without DAC: hours — very different pharmacokinetics",
-    note: "The variant determines dosing frequency, accumulation risk, and side effect pattern — confirm which you have before starting",
-  },
-];
-
-const FIT_YES = [
-  "You have recovery, sleep quality, or body composition goals and understand they operate through endocrine physiology — not acute pharmacology",
-  "You have no diabetes, prediabetes, insulin resistance, or fasting glucose concerns — GH is counter-regulatory to insulin",
-  "You have no active or recent cancer diagnosis — GH/IGF-1 is a mitogenic signaling axis",
-  "You know which variant you have (DAC or no DAC) and what that means for dosing frequency",
-  "You're sourcing from a verified supplier with third-party CoA, and not relying on community protocol alone for safety information",
-];
-
-const FIT_NO = [
-  "You have diabetes, prediabetes, or insulin resistance — GH elevation can worsen glucose control; this is the most common metabolic risk",
-  "You have an active cancer diagnosis, are in active treatment, or have a high-risk cancer history — GH/IGF-1 is directly mitogenic; oncology clearance is required",
-  "You're pregnant, breastfeeding, or an adolescent — endocrine setpoint disruption during development is a hard stop",
-  "You don't know whether your product is DAC or no-DAC — the dosing error risk from confusing the two is real",
-  "You expect fast, dramatic body composition changes — this mechanism is cumulative and gradual, not acute",
-  "You're stacking multiple GH-axis compounds simultaneously without understanding the additive endocrine load",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Orientation — water retention and sleep changes come first",
-    body: "The first responses to GH-axis stimulation are often water retention (mild edema, especially in hands and feet) and changes in sleep quality or depth. These are expected early effects, not red flags unless significant. Body composition changes operate through IGF-1, which takes weeks to accumulate. Don't judge efficacy at week 2.",
-  },
-  {
-    phase: "Months 1–3",
-    heading: "The honest evaluation window",
-    body: "IGF-1 elevation is the downstream mediator of most body composition effects. It takes sustained GH elevation to meaningfully shift IGF-1. Recovery quality, sleep depth, and progressive training performance are the primary subjective signals during this window. Attribution remains difficult — CJC-1295 is almost always used alongside training programs, nutrition changes, and often other peptides.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Unstudied territory — cycling is the community convention",
-    body: "Long-term, continuous GH-axis stimulation in healthy adults is not characterized in clinical trials. The community convention of cycling (on/off periods of 8–12 weeks) isn't based on documented safety data — it reflects reasonable caution about continuous endocrine intervention. If you're running it continuously for 6+ months, you're outside the reference experience base.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "CJC-1295 (no DAC)",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Half-life", value: "~30 minutes (biologically active); extended effect via albumin binding" },
-      { label: "Dosing frequency", value: "Daily or multiple times per week — shorter window" },
-      { label: "GH release pattern", value: "Pulsatile — preserves natural GH pulse rhythm" },
-      { label: "Common stack", value: "Ipamorelin — synergistic at different receptor levels" },
-      { label: "Primary concern", value: "Glucose, edema, cancer history, adolescent endocrine risk" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "CJC-1295 with DAC",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Half-life", value: "~6–8 days — dramatically extended via drug affinity complex" },
-      { label: "Dosing frequency", value: "Once or twice per week — but accumulates" },
-      { label: "GH release pattern", value: "More continuous bleed — blunts natural pulsatility over time" },
-      { label: "Accumulation risk", value: "Higher — mistakes take longer to resolve" },
-      { label: "Identity risk", value: "Often mislabeled or confused with no-DAC in unregulated market" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Ipamorelin",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GHRP / ghrelin mimetic — different receptor from CJC-1295" },
-      { label: "Stack rationale", value: "Synergistic: CJC amplifies GHRH signal; ipa amplifies ghrelin-driven release" },
-      { label: "Effect on cortisol", value: "Relatively selective — less cortisol/prolactin elevation than older GHRPs" },
-      { label: "Combined GH effect", value: "Greater than either alone — additive, not just additive load" },
-      { label: "Cancer concern", value: "Shared — GH/IGF-1 axis concern applies to the stack" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function Cjc1295OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A growth hormone booster with real human evidence — and real consequences for your hormonal system.
-        </div>
-        <div className="reta-overview__headline-sub">
-          CJC-1295 prompts your body to release more growth hormone — that&apos;s the goal, and it works. But this isn&apos;t a supplement that gently nudges natural function. It actually shifts how your hormonal system operates, which is why the safety picture here is more consequential than most research-grade peptides. Two versions exist — with and without DAC — that behave very differently. Know which one you&apos;re using, and know your metabolic baseline before you start.
-        </div>
+      <p className="reta-overview__opener">
+        CJC-1295 no-DAC prompts your body to release more growth hormone by extending the natural signal from your brain to your pituitary gland. It&rsquo;s one of the most common community GH compounds, almost always stacked with Ipamorelin, and unlike synthetic GH it works with your own pulsatile release pattern rather than replacing it. The trade-off is that it genuinely alters your endocrine system &mdash; this isn&rsquo;t a gentle nudge, and your metabolic baseline matters before you start.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; Wants better recovery and body composition</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep hearing about this peptide stack for sleep, recovery, and looking better. Is it actually worth it or just bro-science?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It works through your own hormones, not synthetic replacements</strong><br />Instead of injecting growth hormone directly, CJC-1295 no-DAC amplifies your brain&rsquo;s natural GH release signal. The idea is you get elevated GH without the blunter, riskier pharmacology of straight synthetic GH. For many people that feels like a more honest approach to the goal.</li>
+          <li><strong>The sleep and recovery effects are reported consistently</strong><br />The most commonly reported early experience is deeper, more vivid sleep &mdash; not drowsiness, but a sense of more restorative nights. Recovery between workouts improving over weeks is the second most common report. These are the clearest near-term signals people point to.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">This is a real compound with real human endocrine data from 2006, but it shifts how your hormonal system operates, and the risks are non-trivial &mdash; glucose sensitivity, water retention, and a hard stop if you have any cancer history. It&rsquo;s almost always used alongside other compounds, training programs, and diet changes, so attributing results specifically to CJC-1295 is genuinely difficult. Body composition changes are cumulative over months, not weeks. Net: if your metabolic baseline is clean and you understand what you&rsquo;re doing, there&rsquo;s real signal here &mdash; but it&rsquo;s not a shortcut and it requires knowing which variant you have.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Recovery-focused, body-composition conscious</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to recover faster between hard training blocks and maybe improve my body composition. The CJC/Ipa stack is all over my training community &mdash; what should I actually know?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The CJC/Ipamorelin stack hits the GH axis from two different angles</strong><br />CJC-1295 no-DAC extends the hypothalamic GHRH signal; Ipamorelin mimics a separate ghrelin-like signal. Together they produce more GH release than either alone, while Ipamorelin is considered relatively clean with less impact on cortisol and prolactin than older GHRP compounds. Athletes value this specificity.</li>
+          <li><strong>Pulsatile pattern is preserved with the no-DAC version</strong><br />The shorter half-life of the no-DAC form means you get GH pulses rather than sustained elevation &mdash; which more closely mimics natural physiology. For athletes concerned about long-term endocrine suppression, this is considered a meaningful advantage over the DAC version that blunts natural pulsatility.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The GH axis changes glucose handling &mdash; this is the most practically important concern for any athlete using this compound seriously. If your training nutrition involves high carbohydrate loading or you have any insulin sensitivity concerns, baseline glucose testing before starting is not optional. Know your version: the no-DAC and DAC variants behave so differently (hours vs. days half-life) that confusing dosing protocols is a real risk in the unregulated market. Attribution of performance improvements to CJC-1295 specifically is difficult when you&rsquo;re also training hard and eating well. Net: real tool in a sophisticated training context, requires a clean metabolic baseline and correct variant identification.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; GH axis optimization, stack design</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand the CJC/Ipa stack mechanistically &mdash; specifically the pulse dynamics, the IGF-1 elevation timeline, and whether the no-DAC half-life math actually matters for the endocrine pattern.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The GHRH + GHRP combination is mechanistically additive at different receptor levels</strong><br />CJC-1295 acts on the GHRH receptor to amplify the hypothalamic signal; Ipamorelin acts on the ghrelin receptor to trigger pituitary GH release. The combined effect exceeds either alone because they hit different parts of the same cascade. This is one of the clearest stack rationales in the community peptide world &mdash; the synergy is pharmacologically grounded.</li>
+          <li><strong>IGF-1 as the downstream mediator with a measurable lag</strong><br />The body composition effects of CJC-1295 are primarily mediated by IGF-1 elevation, not GH itself. IGF-1 takes weeks of sustained GH elevation to meaningfully shift &mdash; which means anyone evaluating this compound at two or four weeks is not looking at the right timeframe for body composition. Testing IGF-1 at weeks 6&ndash;8 gives actual signal.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Long-term continuous GH-axis stimulation in healthy adults is not characterized in clinical trials. The community convention of cycling on/off periods reflects reasonable caution, not documented safety data. The cancer concern &mdash; GH and IGF-1 are mitogenic &mdash; is real and applies to any sustained GH-axis intervention. Anyone stacking multiple GH-axis compounds simultaneously (CJC + Ipa + MK-677, for instance) is adding endocrine load that has not been studied in combination. Source verification with a CoA is the minimum quality gate; the no-DAC vs DAC identity confusion in the research peptide market is a documented problem. Net: elegant stack with real mechanistic rationale, but the honest practitioner acknowledges the gaps &mdash; especially the long-term data void.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What CJC-1295 no-DAC is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a substitute for sleep hygiene, training consistency, or caloric discipline &mdash; it works through the same systems you build by doing those things</li>
+              <li>Not a fast-acting compound &mdash; body composition effects are weeks-to-months timescale, not days</li>
+              <li>Not safe to dose without knowing whether you have the DAC or no-DAC version &mdash; half-life difference of hours vs. days changes everything</li>
+              <li>Not appropriate for anyone with diabetes, prediabetes, or insulin resistance without careful baseline monitoring</li>
+              <li>Not safe with an active or recent cancer history &mdash; GH and IGF-1 are mitogenic signals</li>
+              <li>Not equivalent to pharmaceutical-grade product &mdash; research peptide identity and purity are unregulated</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>One of few community GH compounds with published human interventional data confirming GH and IGF-1 elevation</li>
+              <li>Works with your own pulsatile GH pattern rather than replacing it (especially true of the short-acting no-DAC form)</li>
+              <li>The CJC/Ipamorelin stack has a mechanistically grounded rationale &mdash; two receptor systems, additive not redundant</li>
+              <li>Sleep quality improvement is among the most consistently reported early experiences across communities</li>
+              <li>The no-DAC vs. DAC distinction is a real pharmacological difference that separates informed users from uninformed ones</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">CJC-1295 no-DAC vs DAC vs Ipamorelin</div>
-      <div className="reta-overview__compare-note">
-        The DAC vs no-DAC distinction is not a minor formulation detail — it changes half-life from hours to days, altering dosing frequency, accumulation risk, and GH pulse pattern. The ipamorelin stack is the most common community protocol because the two peptides hit the GH axis from different receptor angles.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

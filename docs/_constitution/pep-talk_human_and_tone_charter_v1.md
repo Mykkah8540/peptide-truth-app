@@ -378,6 +378,36 @@ Order:
 
 ---
 
+---
+
+## SECTION 11: Overview Panel Structure Standard (non-negotiable)
+
+Every OverviewPanel.tsx must follow the user-profile structure defined in:
+
+`docs/_governance/pdp_v3_overview_standard.md`
+
+This section exists because every batch of Overview panels built before 2026-02-28 used a stat-card + fit-matrix + comparison-table structure that answered questions no real user asks. It was written for researchers. This is a community product.
+
+### The law in brief:
+
+1. **Opener first** — 1-3 sentences, plain English, outcome-first. What does this do? What's the honest framing of community excitement? No receptor acronyms. No FDA status.
+
+2. **Three user profiles** — Average Person, Athlete, Biohacker (adapted per compound type). Each profile contains: what they think (in their own words), why they're excited (numbered, plain), and a reality check (honest net verdict).
+
+3. **Bottom line** — Two columns: What it is NOT vs. What makes it interesting.
+
+4. **No data arrays** — No STAT_CARDS, FIT_YES, FIT_NO, TIMELINE, COMPARISON. Pure JSX. Human narrative.
+
+### What this replaces:
+
+The old format put receptor names (GPR54/KISS1R) as stat card values. It opened fit matrices with disease diagnoses. It used mechanism-first openers. All of that violates Sections 2, 3, and 10 of this charter and must be rebuilt.
+
+### Reference implementation:
+
+The Kisspeptin Overview panel rewrite (2026-02-28) is the canonical reference for what this looks like in practice.
+
+---
+
 Pep-Talk must remain:
 
 Calm

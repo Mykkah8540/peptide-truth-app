@@ -1,207 +1,73 @@
-/**
- * CagrilintideOverviewPanel — decision-oriented overview for Cagrilintide.
- * Key frame: long-acting amylin analog being studied primarily in combination
- * with semaglutide (CagriSema). Monotherapy ~10% weight loss; combination
- * ~25% in Phase 2. The combination story is bigger than cagrilintide alone.
- * Amylin mechanism is distinct from GLP-1 — complementary, not redundant.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Amylin analog",
-    label: "AM833 — long-acting modified amylin, binds amylin receptors (CALCR + RAMP1/3)",
-    sub: "Cagrilintide is a synthetic long-acting analog of amylin (also called islet amyloid polypeptide, IAPP), a hormone co-secreted with insulin from pancreatic beta cells. It was engineered for once-weekly subcutaneous dosing — native amylin has a half-life of minutes. The amylin receptor complex (calcitonin receptor + RAMP) is pharmacologically distinct from the GLP-1 receptor.",
-    note: "Amylin's satiety mechanism is different from GLP-1's. GLP-1 primarily slows gastric emptying and suppresses appetite via central pathways; amylin reduces glucagon secretion, slows gastric emptying, and signals satiety via the area postrema (brainstem). These are complementary mechanisms — which is exactly why the CagriSema combination is pharmacologically interesting.",
-  },
-  {
-    value: "CagriSema",
-    label: "the clinically significant story — cagrilintide + semaglutide 2.4 mg combination",
-    sub: "The Phase 2 SCALE STEP trial of CagriSema (cagrilintide 2.4 mg + semaglutide 2.4 mg, weekly) showed ~25% body weight reduction at 32 weeks — meaningfully exceeding either monotherapy. This is the data point driving attention to cagrilintide. Cagrilintide monotherapy shows approximately 10% weight loss, similar to liraglutide. The combination is where the compound's clinical value lies.",
-    note: "The CagriSema combination is proceeding to Phase 3 (REDEFINE trials). This is the compound's primary development pathway, not monotherapy. Evaluating cagrilintide in isolation misses the clinical context — it is being developed as a complement to GLP-1 therapy, not as a standalone weight loss agent in the class.",
-  },
-  {
-    value: "Phase 2/3",
-    label: "development stage — SCALE STEP Phase 2 complete, REDEFINE Phase 3 ongoing",
-    sub: "The CagriSema combination is in Phase 3 (REDEFINE program). Cagrilintide monotherapy has Phase 2 data for weight management. No FDA approval exists for cagrilintide in any indication. The compound is not available outside of clinical trials — community access is through gray-market research peptide suppliers, not clinical-grade product.",
-    note: "The Phase 3 trial data will determine whether CagriSema achieves approval and at what scale. Phase 2 results are encouraging but cannot be treated as equivalent to Phase 3 completion — the history of obesity drug development includes promising Phase 2 compounds that did not replicate in larger trials.",
-  },
-  {
-    value: "Investigational",
-    label: "regulatory status — not approved for any indication, clinical trial access only",
-    sub: "Cagrilintide has no FDA approval. It is being developed by Novo Nordisk. The compound is available in gray-market research peptide channels, but there is no pharmaceutical-grade product available outside clinical trials — quality, purity, and sterility are unregulated for research-grade material.",
-    note: "The regulatory gap matters practically: the doses used in community protocols are not validated against Phase 2 safety data; the product is not the same formulation used in trials; and the CagriSema combination cannot be safely replicated by sourcing both compounds separately from research suppliers without the pharmacokinetic matching that the clinical formulation achieves.",
-  },
-];
-
-const FIT_YES = [
-  "You are interested in the amylin mechanism as a complement to GLP-1 therapy — the combination rationale is mechanistically sound, and you understand the evidence base is Phase 2, not approval-level",
-  "You have metabolic goals and existing GLP-1 experience, and want to understand the mechanism and evidence landscape before the Phase 3 data lands",
-  "You have no history of thyroid C-cell tumors or MEN2 — cagrilintide carries the same calcitonin receptor-related contraindication class as native amylin analogs",
-  "You have verified source quality with a third-party certificate of analysis — no pharmaceutical-grade product exists outside clinical trials",
-];
-
-const FIT_NO = [
-  "You expect clinical trial-equivalent safety monitoring from self-administration — the REDEFINE trials include metabolic monitoring, dose titration protocols, and adverse event tracking that are not replicable through self-administration",
-  "You have a history of thyroid C-cell carcinoma or MEN2 — amylin receptor agonism carries related calcitonin receptor concerns to the GLP-1/GIP class",
-  "You are already on semaglutide and expect to replicate CagriSema by adding a research-grade cagrilintide — the trial formulation is co-developed; gray-market combination carries uncharacterized pharmacokinetic overlap",
-  "You are pregnant or breastfeeding — no safety data in pregnancy; the metabolic effects are incompatible with the nutritional demands of pregnancy",
-  "You expect rapid results within weeks — the Phase 2 weight loss data was measured at 32 weeks; meaningful outcomes are months-scale",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "GI tolerability — nausea and gastric slowing",
-    body: "The amylin receptor mechanism slows gastric emptying, similar to GLP-1s but via a different pathway. The GI side effect profile during initiation (nausea, reduced appetite, possible vomiting) mirrors the GLP-1 class initiation experience. Most Phase 2 participants tolerated the compound, but the titration schedule matters — starting at full dose without titration amplifies GI effects.",
-  },
-  {
-    phase: "Weeks to months",
-    heading: "Appetite suppression and weight trajectory",
-    body: "The satiety effect (both through gastric slowing and area postrema signaling) becomes the dominant experience. Appetite suppression is the mechanism, not metabolic rate acceleration. Weight loss in Phase 2 followed a trajectory similar to GLP-1 agents — gradual, diet-dependent, and requiring sustained use to maintain. The combination data at 32 weeks showed ~25% — that is not a 32-week promise, it is an observed 32-week outcome under clinical conditions.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Combination Phase 3 outcomes — pending",
-    body: "The REDEFINE Phase 3 program will determine the actual clinical profile: superiority vs. semaglutide alone, durability of weight loss, cardiovascular outcomes, and long-term safety signal. The Phase 2 data is encouraging but insufficient to confirm the Phase 3 outcome. Community use is occurring ahead of this data — a decision being made before the relevant evidence exists.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Cagrilintide",
-    badge: "Amylin analog / Investigational",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Amylin receptor (CALCR + RAMP1/3) — satiety, glucagon suppression, gastric slowing" },
-      { label: "Evidence", value: "Phase 2 (monotherapy ~10%, CagriSema ~25% at 32 weeks)" },
-      { label: "Dosing", value: "Once-weekly subcutaneous, 0.3–2.4 mg (Phase 2 top dose)" },
-      { label: "Approval", value: "None — Phase 3 ongoing (REDEFINE)" },
-      { label: "GI tolerability", value: "Similar to GLP-1 initiation — dose-dependent nausea and gastric slowing" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Pramlintide",
-    badge: "Amylin analog / FDA-approved",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Amylin receptor agonist — same class as cagrilintide, shorter half-life" },
-      { label: "Evidence", value: "FDA-approved for T1D and T2D as insulin adjunct; weight effects ~2-4 kg" },
-      { label: "Dosing", value: "2–3× daily (short half-life) subcutaneous injection with meals" },
-      { label: "Approval", value: "FDA-approved (Symlin) — insulin-dependent diabetes adjunct" },
-      { label: "GI tolerability", value: "Significant nausea; this is the primary tolerability barrier" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Tirzepatide",
-    badge: "GLP-1/GIP dual / FDA-approved",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GLP-1R + GIPR dual agonist — different receptor family from amylin" },
-      { label: "Evidence", value: "SURMOUNT-1: ~22% weight loss at 72 weeks — strongest approved weight data" },
-      { label: "Dosing", value: "Once-weekly subcutaneous, 2.5–15 mg" },
-      { label: "Approval", value: "FDA-approved (Zepbound for weight, Mounjaro for T2D)" },
-      { label: "GI tolerability", value: "GI effects similar to class — nausea highest at initiation/escalation" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function CagrilintideOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          An amylin analog whose clinical story is really about the combination — CagriSema showed ~25% weight loss in Phase 2, outperforming either drug alone.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Cagrilintide is a long-acting amylin receptor agonist being developed by Novo Nordisk. As a monotherapy it produces approximately 10% weight loss — similar to liraglutide. Its clinical significance comes from the combination with semaglutide (CagriSema), where Phase 2 data showed ~25% weight reduction at 32 weeks. The amylin mechanism (satiety via area postrema, glucagon suppression, gastric slowing) is pharmacologically distinct from GLP-1 — which is exactly why the combination outperforms monotherapy. Phase 3 data is pending. The compound is not FDA-approved and not available in pharmaceutical-grade form outside clinical trials.
-        </div>
+      <p className="reta-overview__opener">
+        Cagrilintide is an investigational weekly injection being developed by Novo Nordisk as a complement to semaglutide, not as a standalone weight loss drug. Alone it produces roughly 10% weight loss &mdash; similar to older GLP-1 medications. Combined with semaglutide in a formulation called CagriSema, Phase 2 data showed around 25% body weight reduction, which is competitive with the best currently approved options. It works through a completely different mechanism than GLP-1 drugs, which is exactly why the combination is pharmacologically interesting. It is not FDA-approved and not available outside clinical trials in pharmaceutical grade.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; watching the weight loss drug pipeline and wondering what&rsquo;s next</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep hearing about new weight loss drugs. Cagrilintide keeps coming up alongside semaglutide. What is it and when might it be available?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The combination data is genuinely impressive</strong><br />Semaglutide alone produces roughly 15% weight loss. Tirzepatide produces around 22%. CagriSema Phase 2 data showed approximately 25% &mdash; which would place it at or above the best currently approved option. If that holds in Phase 3, it represents meaningful progress for people who haven&rsquo;t achieved their goals on current drugs.</li>
+          <li><strong>It&rsquo;s still a once-weekly injection</strong><br />For people familiar with GLP-1 injections, the format is the same &mdash; a once-weekly subcutaneous shot. Adding cagrilintide to semaglutide in the CagriSema combination doesn&rsquo;t change the administration burden. It&rsquo;s still one weekly pen, not an additional injection regimen on top of what you&rsquo;re already doing.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Phase 2 results are encouraging but Phase 3 is where drugs succeed or fail. The history of obesity pharmacology includes drugs that looked excellent in Phase 2 and didn&rsquo;t replicate, or revealed safety signals only visible in larger, longer trials. CagriSema Phase 3 (the REDEFINE trials) is ongoing. The drug does not exist in approved form and cannot be safely replicated by sourcing both compounds separately from gray-market suppliers &mdash; the titration schedules and combined formulation in the trial are specifically designed to manage tolerability. Net: worth watching, but Phase 3 data doesn&rsquo;t exist yet and &ldquo;Phase 2 promising&rdquo; is not the same as &ldquo;approved and available.&rdquo;</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; interested in next-generation GLP-1 era compounds for body recomposition</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve used semaglutide for a cut cycle. Is cagrilintide something that adds meaningfully to fat loss, or is the 25% result mostly because you&rsquo;re just getting more GLP-1 effect?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The mechanism is genuinely additive, not redundant</strong><br />Semaglutide works through the GLP-1 receptor. Cagrilintide works through a completely different receptor system &mdash; the amylin receptor &mdash; which signals satiety through the brainstem&rsquo;s area postrema, suppresses glucagon independently of GLP-1, and slows gastric emptying through a distinct pathway. Combining them doesn&rsquo;t just pile on more GLP-1 effect; it hits appetite and glucose regulation through two different biological handles simultaneously.</li>
+          <li><strong>Amylin effects on glucagon suppression are relevant for body composition</strong><br />Glucagon promotes fat oxidation but also opposes insulin action and raises blood glucose. Suppressing glucagon while managing insulin dynamics through the amylin mechanism has body composition implications that go beyond simply eating less. For athletes thinking about the metabolic environment during a cut, the glucagon suppression angle is meaningful beyond just appetite reduction.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The 25% weight loss in Phase 2 was measured under clinical trial conditions with structured titration, controlled dosing, and medical monitoring &mdash; not community self-administration alongside training. Muscle loss with aggressive caloric restriction is a real concern with any GLP-1 era drug, and there is no Phase 2 data on body composition (fat vs. muscle) specifically for CagriSema yet. Gray-market cagrilintide combines an unvalidated source with a compound whose dose-response in athletic populations has never been studied. The GI side effects during titration (nausea, reduced appetite) are significant enough that training performance is typically degraded early in the course. Net: mechanistically interesting and worth following, but using gray-market material before Phase 3 data exists is running well ahead of the evidence.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; mapping the amylin receptor system and evaluating CagriSema in the broader metabolic intervention landscape</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand the amylin receptor pharmacology &mdash; the calcitonin receptor plus RAMP complex &mdash; and figure out where cagrilintide sits in the stack alongside existing GLP-1 therapy. What does the receptor crosstalk look like?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The receptor biology creates genuinely distinct satiety signaling</strong><br />The amylin receptor is a heterodimer of the calcitonin receptor paired with RAMP1 or RAMP3 proteins. This is a different receptor family entirely from the GLP-1 receptor. Area postrema signaling through this receptor produces satiety signals that are mechanistically independent of the GLP-1 pathway &mdash; meaning the combination targets both the central satiety circuits differently and the peripheral glucagon/gastric emptying mechanisms through non-overlapping pathways. This is genuinely complementary pharmacology, not just dose stacking.</li>
+          <li><strong>Pramlintide&rsquo;s 2-4 kg weight effect tells you something important about the monotherapy ceiling</strong><br />The only approved amylin analog &mdash; pramlintide, which requires multiple daily injections &mdash; produces modest weight loss (2-4 kg) in diabetic populations. Cagrilintide&rsquo;s 10% monotherapy result is substantially higher, suggesting the long-acting weekly format meaningfully improves on pramlintide&rsquo;s amylin area coverage. The gap between pramlintide and cagrilintide monotherapy is itself mechanistically interesting from a pharmacokinetic standpoint.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The same calcitonin receptor that cagrilintide activates for satiety is also present in thyroid C-cells &mdash; the same concern that exists for GLP-1/GIP agonists. The thyroid C-cell tumor concern in the class applies to amylin receptor agonists through the calcitonin receptor. This is not a theoretical risk unique to one drug &mdash; it&rsquo;s a class-level concern with the receptor family. Gray-market CagriSema simulation by combining two separate research peptides bypasses the titration pharmacology the clinical trials used to manage tolerability &mdash; the REDEFINE protocol specifically sequences dose escalation of both compounds together, and the tolerability data reflects that managed titration. Self-combining at full doses without that framework isn&rsquo;t the same experiment. Net: excellent mechanistic rationale, Phase 3 data still pending, and the gray-market combination approach gets you a different pharmacological experiment than what the trials are actually running.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Cagrilintide is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>FDA-approved for any indication &mdash; it is investigational, Phase 3 still ongoing</li>
+              <li>Available in pharmaceutical-grade form outside clinical trials</li>
+              <li>A standalone weight loss compound with strong efficacy &mdash; the 25% result is specifically from the semaglutide combination</li>
+              <li>Equivalent to GLP-1 drugs mechanistically &mdash; the amylin receptor system is a distinct pharmacological target</li>
+              <li>Safely replicable by combining gray-market cagrilintide and semaglutide &mdash; the trial titration protocol is part of why the combination is tolerable</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The CagriSema Phase 2 result (~25% weight loss) is at the top of what any approved drug currently achieves</li>
+              <li>Genuinely complementary mechanism to GLP-1 &mdash; not just more of the same receptor signal</li>
+              <li>Weekly dosing with long-acting amylin coverage addresses pramlintide&rsquo;s main practical limitation</li>
+              <li>If Phase 3 confirms Phase 2, it would represent a meaningful advance over existing approved options</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Cagrilintide vs Pramlintide vs Tirzepatide</div>
-      <div className="reta-overview__compare-note">
-        Pramlintide is the only other approved amylin analog — short-acting, multiple daily injections, modest weight effect. Tirzepatide is the current approved dual-agonist benchmark. Cagrilintide as monotherapy sits between liraglutide and semaglutide in efficacy; its clinical case rests entirely on the CagriSema combination.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

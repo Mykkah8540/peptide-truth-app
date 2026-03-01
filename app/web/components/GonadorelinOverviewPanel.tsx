@@ -1,207 +1,73 @@
-/**
- * GonadorelinOverviewPanel — decision-oriented overview for Gonadorelin.
- * Key frame: GnRH itself — one step downstream of kisspeptin.
- * Compounding pharmacy access makes this the most practically available
- * axis restoration tool in TRT clinic protocols. Pulsatile requirement
- * is the same as kisspeptin but the clinical evidence is better established.
- */
-
-const STAT_CARDS = [
-  {
-    value: "GnRH",
-    label: "gonadotropin-releasing hormone — the hypothalamic signal that drives LH and FSH from the pituitary",
-    sub: "Gonadorelin is synthetic GnRH (gonadotropin-releasing hormone), a decapeptide naturally produced by hypothalamic neurons. It binds GnRH receptors on pituitary gonadotroph cells, triggering release of LH (luteinizing hormone) and FSH (follicle-stimulating hormone). LH drives testosterone production in Leydig cells; FSH drives spermatogenesis and folliculogenesis. Gonadorelin is the active principle; leuprolide, triptorelin, and nafarelin are long-acting GnRH analogs with modified sequences.",
-    note: "Gonadorelin is native GnRH — short half-life (~2-8 minutes), which is a feature, not a bug. The short half-life makes pulsatile dosing practical and avoids the receptor desensitization that long-acting GnRH analogs exploit to suppress the axis. This is why gonadorelin is used for axis support in TRT protocols while long-acting GnRH agonists are used for medical castration — same target, opposite effects from dosing pattern.",
-  },
-  {
-    value: "TRT adjunct",
-    label: "primary community use — maintaining testicular function and fertility during testosterone therapy",
-    sub: "The dominant community and compounding pharmacy use of gonadorelin is as an adjunct to testosterone replacement therapy (TRT). Exogenous testosterone suppresses the HPG axis — the pituitary stops sending LH signals, Leydig cells atrophy, intratesticular testosterone falls, and testicular volume decreases. Gonadorelin provides periodic LH-like stimulation to maintain Leydig cell function, intratesticular testosterone, and spermatogenesis during TRT.",
-    note: "hCG has historically been the standard TRT adjunct for this purpose (it directly mimics LH at the Leydig cell level). The FDA's discontinuation of compounded hCG (2020) drove many TRT clinics toward gonadorelin as the alternative. Gonadorelin is not equivalent to hCG — it works one step upstream (pituitary stimulation vs. direct Leydig cell stimulation). The effectiveness for fertility and testicular function preservation during TRT is clinically established for hCG; the gonadorelin evidence for this specific application is more limited.",
-  },
-  {
-    value: "Pulsatile",
-    label: "dosing requirement — the same axis physics as kisspeptin; pulsatile stimulates, continuous suppresses",
-    sub: "Gonadorelin has a plasma half-life of approximately 2-8 minutes. Pulsatile administration (every 60-120 minutes, or via pump) mimics endogenous GnRH pulsatility and maintains pituitary responsiveness. Continuous administration (or long-acting analogs like leuprolide) causes GnRH receptor downregulation and loss of LH/FSH secretion — medically exploited for castration in prostate cancer and endometriosis treatment. Community dosing (twice daily subcutaneous injection) does not perfectly replicate physiological pulsatility but attempts to approximate it.",
-    note: "The clinical gold standard for gonadorelin-mediated axis stimulation is pulsatile pump delivery (the GnRH pump) — used in hypogonadotropic hypogonadism treatment. Subcutaneous injection 2-3 times daily is a practical approximation. Whether twice-daily injection provides adequate pulsatile stimulation or causes partial receptor desensitization is not definitively established for the community dosing pattern.",
-  },
-  {
-    value: "Compounded Rx",
-    label: "regulatory status — FDA-approved pharmaceutical; widely available through compounding pharmacies",
-    sub: "Gonadorelin has FDA approval as a diagnostic agent (Factrel) and for treating hypothalamic amenorrhea (Lutrepulse, pump delivery). Compounding pharmacies prepare gonadorelin for TRT adjunct use — this is the route most community users access it. The compounded formulation is not FDA-evaluated for TRT adjunct indications. Gonadorelin 100 mcg twice daily is the most common community/clinic protocol.",
-    note: "The compounding pharmacy access makes gonadorelin meaningfully different from most other compounds on this site — it is accessible through legitimate medical channels (physician prescription + compounding pharmacy), not just gray-market research peptide suppliers. This is a significant practical distinction for quality and regulatory status.",
-  },
-];
-
-const FIT_YES = [
-  "You are on TRT and want to maintain testicular size, function, and fertility potential during therapy — gonadorelin provides periodic axis stimulation that partially preserves Leydig cell activity",
-  "You are post-TRT attempting axis recovery — gonadorelin provides direct GnRH stimulus to restart pituitary LH/FSH secretion; most effective when the pituitary is responsive (not severely atrophied from long suppression)",
-  "You have access through a compounding pharmacy and physician prescription — this is the preferable access route vs. research peptide suppliers",
-  "You understand the pulsatile requirement — twice-daily injection is the practical approximation; more frequent dosing or pump delivery more closely replicates physiological pulsatility",
-];
-
-const FIT_NO = [
-  "You are on long-acting GnRH agonist therapy (leuprolide, triptorelin) — gonadorelin targets the same receptor that is being continuously desensitized; adding gonadorelin has no meaningful effect in this context",
-  "You have sex hormone-sensitive conditions (prostate cancer, ER-positive breast cancer, endometriosis) — gonadorelin drives sex steroid production; these conditions are exacerbated by sex steroids",
-  "You have primary hypogonadism (testicular failure, Klinefelter syndrome) — gonadorelin cannot help if the downstream responders (Leydig cells, pituitary) are not functional; works for hypothalamic/pituitary failure, not testicular failure",
-  "You expect gonadorelin to replace hCG equivalently — the mechanisms are different (pituitary stimulation vs. direct Leydig cell stimulation); gonadorelin is more physiological but requires an intact pituitary-testicular connection",
-  "You are using continuous or high-frequency dosing under the assumption that more is better — more frequent gonadorelin dosing risks GnRH receptor downregulation and paradoxical axis suppression",
-];
-
-const TIMELINE = [
-  {
-    phase: "Minutes to hours",
-    heading: "Acute LH and FSH pulse — measurable within 30-60 minutes",
-    body: "Gonadorelin injection produces a measurable LH pulse within 30-60 minutes — this is the basis of the GnRH stimulation test used diagnostically to assess pituitary function. In males on TRT, this LH pulse reaches the testes and stimulates Leydig cells. The acuity of response depends on pituitary responsiveness, which can be blunted by long-term TRT-induced suppression.",
-  },
-  {
-    phase: "Weeks to months",
-    heading: "Testicular function preservation — the main outcome for TRT users",
-    body: "With twice-daily gonadorelin during TRT, the goal is maintaining testicular size, intratesticular testosterone, and Leydig cell viability. The evidence for hCG in this role is well-established; the evidence for gonadorelin in the same role is more limited but mechanistically sound. Most users report maintained testicular volume compared to TRT without any adjunct. Spermatogenesis preservation requires FSH stimulation — gonadorelin provides this; hCG does not (hCG directly stimulates LH receptors, not FSH).",
-  },
-  {
-    phase: "After TRT cessation",
-    heading: "Axis recovery — timeline depends on depth and duration of suppression",
-    body: "Post-TRT axis recovery with gonadorelin support depends on how suppressed the pituitary-testicular axis is and how long it was suppressed. The hypothalamus recovers first (endogenous GnRH returns), followed by pituitary responsiveness, followed by Leydig cell testosterone production. Recovery can take weeks to months; long-duration TRT users may take 6-12 months for full recovery. Gonadorelin during this period provides external GnRH stimulus while endogenous function restores.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Gonadorelin",
-    badge: "GnRH / Compounded Rx",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GnRH receptor → LH + FSH release from pituitary → testosterone + FSH effects" },
-      { label: "Access", value: "Compounding pharmacy (Rx) — legitimate medical channel" },
-      { label: "Pulsatile req.", value: "Required — half-life 2-8 min; twice-daily injection is approximation" },
-      { label: "vs. hCG", value: "More physiological (via pituitary); hCG acts directly on Leydig cells; both are TRT adjuncts" },
-      { label: "Fertility", value: "Supports both LH (testosterone) and FSH (spermatogenesis) pathways" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "hCG",
-    badge: "LH analog / Rx (compounding limited)",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "LH receptor agonist at Leydig cells — bypasses pituitary, directly stimulates testes" },
-      { label: "Access", value: "Prescription; compounded hCG availability reduced post-2020 FDA guidance" },
-      { label: "Pulsatile req.", value: "Longer half-life (~36 hours) — less frequent dosing needed" },
-      { label: "vs. gonadorelin", value: "Direct Leydig cell stimulation; does not drive FSH (no pituitary engagement)" },
-      { label: "Fertility", value: "Maintains testosterone/testicular function; FSH supplementation separate if needed" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Kisspeptin",
-    badge: "Hypothalamic / Investigational",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "GPR54 → GnRH pulse → LH/FSH (one step upstream of gonadorelin)" },
-      { label: "Access", value: "Research peptide — no compounding pharmacy access; gray market only" },
-      { label: "Pulsatile req.", value: "Same constraint — continuous dosing desensitizes GPR54" },
-      { label: "vs. gonadorelin", value: "More upstream; theoretically more physiological; less clinical evidence in TRT context" },
-      { label: "Fertility", value: "Drives GnRH → LH + FSH cascade; same downstream as gonadorelin" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function GonadorelinOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          Synthetic GnRH — the most practically accessible axis restoration tool in TRT medicine, available through compounding pharmacies.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Gonadorelin is synthetic gonadotropin-releasing hormone (GnRH) — the decapeptide that triggers LH and FSH release from the pituitary. Its primary community and clinical use is as a TRT adjunct: maintaining testicular function and fertility potential while on exogenous testosterone. The FDA&apos;s 2020 guidance restricting compounded hCG pushed many TRT clinics toward gonadorelin as the replacement. The pulsatile requirement is the same physics as kisspeptin — the short half-life is a feature that makes physiological pulsatility possible; continuous administration produces the same axis suppression that long-acting GnRH agonists exploit for medical castration.
-        </div>
+      <p className="reta-overview__opener">
+        Gonadorelin is a synthetic version of the hormone your hypothalamus uses to tell the pituitary to produce LH and FSH &mdash; the signals that drive testosterone production and sperm development. It&rsquo;s used primarily as a TRT adjunct to keep the testes functioning while on testosterone therapy, and it&rsquo;s available through compounding pharmacies with a prescription.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Person on TRT &mdash; worried about testicular atrophy and fertility</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I started testosterone and my doctor mentioned gonadorelin to prevent testicular shrinkage. What does it actually do and does it work?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It keeps the signaling pathway to the testes alive</strong><br />When you take testosterone, your body senses the hormone and stops sending the signal to make more &mdash; which means the testes stop getting stimulated and shrink over time. Gonadorelin provides that stimulation externally, keeping testicular tissue active.</li>
+          <li><strong>It&rsquo;s accessible through a legitimate medical channel</strong><br />Unlike many compounds on this site, gonadorelin can be obtained through a compounding pharmacy with a physician&rsquo;s prescription. That means real pharmaceutical-grade manufacturing standards, not gray-market research peptides.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Gonadorelin used to be compared directly to hCG for this purpose, but they work differently &mdash; hCG acts directly on the testes (bypassing the pituitary), while gonadorelin works one step upstream through the pituitary. That means gonadorelin requires the pituitary to still be responsive, which it generally is, but the evidence for gonadorelin specifically in TRT testicular preservation is thinner than the decades of hCG data. It&rsquo;s mechanistically sound; it&rsquo;s just newer in this specific role. Net: a legitimate and accessible TRT adjunct that makes biological sense, with the caveat that you&rsquo;re working from extrapolated rather than extensive direct evidence.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; managing hormone health while optimizing performance</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m using testosterone for performance. Is gonadorelin actually worth adding to the protocol, or is it just something TRT clinics push to charge more?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Maintains both testosterone and sperm production pathways</strong><br />hCG only mimics LH at the Leydig cell level &mdash; it doesn&rsquo;t drive FSH, which is what sustains sperm production. Gonadorelin drives the pituitary to produce both LH and FSH, which means it supports more of the natural testicular function than hCG alone.</li>
+          <li><strong>Legitimate path to preserving future options</strong><br />If fertility is a consideration now or later, maintaining testicular function throughout TRT is far easier than trying to restart after years of suppression. Gonadorelin used consistently gives the axis a periodic activation signal that keeps things from going dormant.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Gonadorelin has a very short half-life &mdash; minutes &mdash; so the twice-daily injection protocol used in most TRT clinics is an approximation of the body&rsquo;s natural pulsatile signaling, not a perfect replication. Whether twice-daily dosing is frequent enough to avoid partial receptor desensitization isn&rsquo;t definitively answered. Some athletes find the injection burden annoying with only modest payoff relative to hCG, which works with less frequent dosing due to its longer half-life. Net: the FSH advantage over hCG is real and meaningful for fertility; whether it translates to meaningfully better testicular function preservation for someone who doesn&rsquo;t care about sperm production is less clear.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; HPG axis optimization, axis physics</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Gonadorelin is native GnRH &mdash; short half-life, pulsatile requirement, same axis physics as kisspeptin. What&rsquo;s the optimal approach for using it in a TRT protocol without desensitizing the receptor?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The pulsatile physics are mechanistically elegant</strong><br />The same receptor that, when stimulated continuously, produces axis suppression (the mechanism exploited by prostate cancer drugs) produces axis activation when stimulated in pulses. Gonadorelin&rsquo;s short half-life is a feature that makes physiological pulsatility achievable in a way that long-acting GnRH analogs cannot replicate.</li>
+          <li><strong>Most physiological TRT adjunct available through legitimate channels</strong><br />Of the three main TRT adjunct options &mdash; hCG (direct Leydig cell stimulation), gonadorelin (pituitary LH+FSH drive), and SERMs like enclomiphene (estrogen feedback blockade) &mdash; gonadorelin most closely approximates the natural hypothalamic-pituitary signaling pattern. For someone who cares about axis physiology rather than just testicular volume metrics, that distinction matters.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The clinical gold standard for gonadorelin-based axis restoration is pump delivery &mdash; used in hypogonadotropic hypogonadism where continuous pulsatile dosing every 60&ndash;120 minutes is required. Twice-daily subcutaneous injections are a practical compromise, not an equivalent. Whether partial receptor desensitization occurs with twice-daily dosing is not conclusively established. Anyone building a precise axis-optimization protocol should be aware that they are extrapolating from pump-delivery data to injection data, and the equivalence is assumed, not proven. Net: the most physiologically coherent TRT adjunct available; the twice-daily injection limitation is real but practically manageable for most protocols.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Gonadorelin is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a direct replacement for hCG &mdash; different mechanism, different site of action</li>
+              <li>Not effective for primary hypogonadism where the testes themselves are the problem</li>
+              <li>Not appropriate during long-acting GnRH agonist therapy &mdash; the receptor is already being suppressed</li>
+              <li>Not a &ldquo;more is better&rdquo; compound &mdash; too-frequent dosing risks paradoxical axis suppression</li>
+              <li>Not FDA-approved for the TRT adjunct indication specifically &mdash; it&rsquo;s accessed off-label through compounding</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The most physiologically natural TRT adjunct &mdash; works through the same hypothalamic-pituitary pathway the body uses</li>
+              <li>The only common TRT adjunct that drives FSH as well as LH &mdash; relevant for spermatogenesis preservation</li>
+              <li>Accessible through legitimate compounding pharmacies with a prescription</li>
+              <li>The pulsatile-vs-continuous pharmacology is one of the clearest examples in medicine of how dosing pattern determines whether a drug activates or suppresses a system</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Gonadorelin vs hCG vs Kisspeptin</div>
-      <div className="reta-overview__compare-note">
-        Three axis restoration tools at different levels. Gonadorelin acts at the pituitary (GnRH receptor); hCG acts directly at the Leydig cell (LH receptor); kisspeptin acts one step upstream (hypothalamus). Gonadorelin is the most practically accessible through compounding pharmacies.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

@@ -1,200 +1,76 @@
-/**
- * OctreotideOverviewPanel — decision-oriented overview for Octreotide (Sandostatin).
- * Key frame: FDA-approved synthetic somatostatin analogue with strong evidence base.
- * Approved for acromegaly, carcinoid syndrome, VIPomas. Off-label: variceal bleeding.
- * Community interest framing (GH suppression for longevity) is counterproductive context.
- */
-
-const STAT_CARDS = [
-  {
-    value: "FDA-approved",
-    label: "acromegaly, carcinoid syndrome, VIPomas \u2014 this is real medicine",
-    sub: "Octreotide (Sandostatin) is an 8-amino-acid cyclic peptide that is the original synthetic somatostatin analogue. It binds SSTR2, SSTR3, and SSTR5 receptors to suppress GH/IGF-1, serotonin, and other secreted hormones. FDA-approved for three distinct indications with strong RCT evidence. Sandostatin LAR (monthly depot) is the primary long-acting formulation.",
-    note: "This is the most important framing distinction: octreotide is genuine medicine, not a community research peptide. If you have acromegaly, carcinoid syndrome, or a VIPoma, octreotide is a core treatment option \u2014 not an enhancement compound. If you are considering it for longevity or GH modulation outside these indications, the framing is fundamentally different.",
-  },
-  {
-    value: "SSTR2/3/5",
-    label: "receptor selectivity \u2014 more potent and longer-acting than somatostatin",
-    sub: "Endogenous somatostatin (SRIF-14) inhibits GH, TSH, insulin, glucagon, and multiple GI hormones but has a very short half-life (1\u20133 minutes). Octreotide\u2019s cyclic structure dramatically extends half-life (1.5\u20132 hours for immediate-release SC injection) and increases SSTR2 affinity relative to endogenous somatostatin. This is the pharmacological achievement that made octreotide clinically useful.",
-    note: "The receptor selectivity profile matters: SSTR2 is the primary receptor for GH suppression and anti-tumor effects. SSTR3 and SSTR5 contribute to GI hormone and gastric acid suppression. Understanding which receptor drives which effect is relevant for interpreting why octreotide works in its approved indications.",
-  },
-  {
-    value: "Sandostatin LAR",
-    label: "monthly depot \u2014 the standard long-term formulation",
-    sub: "Sandostatin LAR (long-acting release) is an injectable microsphere depot formulation delivering octreotide over 28 days. It\u2019s the standard formulation for chronic management of acromegaly and carcinoid syndrome. Immediate-release octreotide SC is used for acute management (variceal bleeding, acute carcinoid crisis) and dose titration.",
-    note: "The community interest context involves immediate-release octreotide, not the LAR formulation. The LAR formulation is a physician-managed, clinic-administered depot injection \u2014 not a community self-administration context.",
-  },
-];
-
-const FIT_YES = [
-  "You have acromegaly and are under physician management \u2014 octreotide is a first-line or adjuvant treatment with strong RCT evidence for GH/IGF-1 normalization",
-  "You have carcinoid syndrome (diarrhea, flushing) from a neuroendocrine tumor \u2014 octreotide is the standard symptom control option with FDA approval",
-  "You have a VIPoma with secretory diarrhea \u2014 octreotide is FDA-approved for this indication",
-  "You have esophageal variceal bleeding and are in a hospital setting \u2014 octreotide IV reduces portal pressure and bleeding; off-label use with RCT support",
-  "Your GEP-NET is being managed with physician oversight \u2014 octreotide has demonstrated anti-tumor activity (PROMID trial)",
-];
-
-const FIT_NO = [
-  "You want to suppress endogenous GH for longevity or anti-aging framing \u2014 suppressing GH/IGF-1 chronically in a GH-normal person has no established benefit and potential harms (metabolic effects, glucose dysregulation)",
-  "You are using GH secretagogues (CJC-1295, ipamorelin, GHRP-2) and want to add octreotide \u2014 this is direct pharmacological opposition; octreotide blocks GH release at the pituitary SSTR2 while secretagogues stimulate it",
-  "You want to reduce IGF-1 for longevity without a clinical indication \u2014 the evidence for IGF-1 reduction improving longevity in humans is not established",
-  "You are self-administering without physician oversight for an unapproved indication \u2014 octreotide requires monitoring for glucose, gallstones, and cardiac effects",
-  "You are pregnant, breastfeeding, or an adolescent without a clinical indication \u2014 hard stop",
-];
-
-const TIMELINE = [
-  {
-    phase: "Immediate-release SC \u2014 onset within 30 minutes",
-    heading: "Fast-acting GH/hormone suppression for acute management",
-    body: "SC octreotide produces measurable GH and IGF-1 suppression within 30 minutes. In variceal bleeding, IV octreotide reduces portal pressure within minutes. The immediate-release formulation is used for acute episodes, titration, and situations requiring rapid effect. In carcinoid crisis (acute flushing, hypotension, bronchospasm from tumor serotonin release), IV octreotide is the emergency management.",
-  },
-  {
-    phase: "Months on LAR \u2014 biochemical control",
-    heading: "GH and IGF-1 normalization in acromegaly",
-    body: "In acromegaly, 6 months of Sandostatin LAR achieves GH normalization (GH < 2.5 \u00b5g/L) in approximately 50\u201360% of patients and IGF-1 normalization in 50\u201370%. The response rate depends on tumor SSTR2 expression density. Higher SSTR2 expression (verified by octreotide scintigraphy or Ga-68 DOTATATE PET) predicts better response. Symptom control (headache, sweating, ring size) often precedes biochemical normalization.",
-  },
-  {
-    phase: "Long-term \u2014 monitoring requirements",
-    heading: "Gallstones, glucose, and cardiac monitoring are ongoing requirements",
-    body: "Long-term octreotide use requires monitoring for cholesterol gallstones (SSTR2-mediated gallbladder stasis; 15\u201320% rate), glucose effects (bidirectional: can impair insulin secretion, can also reduce glucagon), and bradycardia (class effect). Annual gallbladder ultrasound is standard in chronic management. For acromegaly patients, GH and IGF-1 monitoring drives dose adjustment. These are physician-managed endpoints \u2014 not self-monitoring parameters.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Octreotide (Sandostatin)",
-    badge: "FDA-approved",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Class", value: "First-generation SSA \u2014 8-AA cyclic peptide; SSTR2/3/5 agonist" },
-      { label: "Approved indications", value: "Acromegaly, carcinoid syndrome, VIPomas (FDA-approved)" },
-      { label: "Formulation", value: "Immediate-release SC injection; Sandostatin LAR monthly depot" },
-      { label: "GH suppression efficacy", value: "~50\u201360% GH normalization in acromegaly at 6 months" },
-      { label: "Key monitoring", value: "Gallstones, glucose effects, bradycardia" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Lanreotide (Somatuline)",
-    badge: "FDA-approved",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Class", value: "Second-generation SSA \u2014 different 8-AA cyclic peptide; SSTR2/5 selectivity" },
-      { label: "Approved indications", value: "Acromegaly, GEP-NETs, carcinoid syndrome (FDA-approved)" },
-      { label: "Formulation", value: "Somatuline Depot \u2014 deep SC injection every 28 days" },
-      { label: "vs Octreotide", value: "Same class, similar efficacy profile; different formulation convenience; lanreotide Depot is patient self-injectable vs clinic-injected LAR" },
-      { label: "Key monitoring", value: "Same class effect: gallstones, glucose, bradycardia" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Pasireotide (Signifor)",
-    badge: "FDA-approved",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Class", value: "Third-generation SSA \u2014 broader SSTR profile (SSTR1/2/3/5)" },
-      { label: "Approved indications", value: "Acromegaly (after failure of other SSAs); Cushing\u2019s disease" },
-      { label: "vs Octreotide", value: "Higher GH/IGF-1 suppression in octreotide-resistant acromegaly; significantly higher hyperglycemia rate (pasireotide strongly inhibits insulin secretion)" },
-      { label: "Key monitoring", value: "Hyperglycemia is a major concern \u2014 more severe than with octreotide/lanreotide" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function OctreotideOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The original somatostatin analogue \u2014 FDA-approved medicine for real endocrine conditions. Community GH-suppression framing gets the pharmacology backwards.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Octreotide (Sandostatin) is FDA-approved for acromegaly, carcinoid syndrome, and VIPomas \u2014 real endocrine and neuroendocrine conditions where GH/IGF-1 suppression or GI hormone control is the therapeutic goal. It works by binding somatostatin receptors (SSTR2, SSTR3, SSTR5) to suppress GH release, slow GI motility, and reduce secretory hormone output. The monthly depot formulation (Sandostatin LAR) is the cornerstone of long-term management. Community interest in octreotide for longevity or IGF-1 suppression ignores that GH secretagogue use and octreotide are pharmacological opposites: you cannot usefully pursue GH optimization and GH suppression simultaneously.
-        </div>
+      <p className="reta-overview__opener">
+        Octreotide (Sandostatin) is a real medicine with strong clinical evidence &mdash; FDA-approved
+        for acromegaly, carcinoid syndrome, and VIPomas. If you have one of those conditions, this is
+        a core treatment option your doctor should have discussed. If you don&rsquo;t, the community
+        framing around octreotide for growth hormone suppression or longevity gets the pharmacology
+        exactly backwards from what people who actually use GH-stimulating peptides would want.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; patient with an octreotide prescription</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;My doctor just told me I need Sandostatin &mdash; what is this drug actually doing and what should I expect?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why this is the right compound for them</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It mimics a natural hormone your body uses to turn down growth signals</strong><br />Your body makes a hormone called somatostatin that tells the pituitary gland to slow down growth hormone production and tells the gut to reduce certain secretions. Octreotide is a synthetic version engineered to last much longer than the natural hormone &mdash; hours instead of minutes. In acromegaly, where GH is chronically too high, octreotide brings it back down. In carcinoid syndrome, it suppresses the excess serotonin that causes flushing and diarrhea. It&rsquo;s addressing a measurable hormone excess with a targeted pharmacological tool.</li>
+          <li><strong>Monthly injection vs daily injections &mdash; the LAR formulation</strong><br />The standard long-term form (Sandostatin LAR) is a depot injection your doctor or clinic gives you once a month. The drug is embedded in microspheres that slowly release over 28 days. This replaces the older three-times-daily subcutaneous injection approach. Once stable on the LAR, most patients have significantly lower treatment burden than the initial titration period.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">About half to two-thirds of acromegaly patients get meaningful GH and IGF-1 normalization on octreotide &mdash; not everyone responds equally, and it depends on tumor characteristics. Gallstones are a real long-term concern (15&ndash;20% develop them over years of use) because octreotide slows gallbladder emptying. Your doctor should be monitoring gallbladder function. Blood sugar changes are also possible in both directions &mdash; octreotide affects insulin secretion. These are physician-managed monitoring requirements, not things to self-track without guidance. <strong>Net: effective, well-characterized medicine; requires ongoing monitoring for known side effects.</strong></p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Curious Reader &mdash; cardiovascular or GI context</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I saw octreotide mentioned in something about variceal bleeding or carcinoid tumors &mdash; why does a hormone suppress bleeding from the gut?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The variceal bleeding application is a beautiful example of mechanism-driven drug use</strong><br />In liver disease, portal hypertension causes varices &mdash; fragile enlarged veins in the esophagus that can rupture and bleed severely. Octreotide reduces portal blood pressure by constricting splanchnic (gut) blood vessels through somatostatin receptor activation. It&rsquo;s not treating the liver; it&rsquo;s reducing blood pressure in the specific vascular bed that&rsquo;s causing the bleeding. This off-label use, supported by multiple trials, is standard emergency management alongside endoscopic treatment.</li>
+          <li><strong>Carcinoid syndrome shows how a hormone-blocking drug can control tumor symptoms</strong><br />Neuroendocrine tumors often secrete serotonin and other vasoactive molecules, causing flushing, diarrhea, and sometimes heart disease. Octreotide doesn&rsquo;t shrink the tumor, but it dramatically reduces hormone secretion &mdash; which means patients can live more comfortably even with a tumor present. This is the palliative pharmacology concept in action.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Both the variceal bleeding and carcinoid syndrome applications are hospital or specialist-managed clinical uses &mdash; not things with any self-administration angle. Understanding the mechanism is genuinely interesting pharmacological education. If you have a neuroendocrine tumor or cirrhosis and want to understand what the treatment options are doing, this page is appropriate context. If you encountered octreotide in a community peptide context, it&rsquo;s worth knowing it&rsquo;s a GH-suppressing drug, not a GH-enhancing one. <strong>Net: illuminating mechanism story; clinical drug with no community use angle.</strong></p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">&#x2713;</span> Fits your situation if&hellip;
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; GH/IGF-1 axis and somatostatin pharmacology</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve been using GH secretagogues and I want to understand where octreotide fits in the axis &mdash; is there any legitimate reason to use it alongside or in opposition to a GH-stimulating protocol?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Understanding the somatostatin side of the axis completes the GH regulation picture</strong><br />GH is regulated by two opposing hypothalamic signals: GHRH (growth hormone releasing hormone) stimulates GH release and somatostatin suppresses it. Most community GH compounds &mdash; CJC-1295, ipamorelin, MK-677 &mdash; work on the stimulating side. Octreotide works on the suppressing side. Understanding this axis completely means understanding both arms, which gives real context for why GH secretagogue timing strategies (like avoiding somatostatin troughs) are discussed in the literature and community protocols.</li>
+          <li><strong>The somatostatin receptor subtypes and selectivity story is pharmacologically instructive</strong><br />Somatostatin acts on five receptor subtypes (SSTR1&ndash;5) with different tissue distributions. Octreotide preferentially binds SSTR2 and SSTR5, which is why it suppresses GH (pituitary SSTR2) and gut hormones (GI SSTR2/5) but less so the pancreatic insulin effects of SSTR1/3. Pasireotide, the third-generation somatostatin analogue, hits more subtypes and consequently causes worse hyperglycemia. This receptor subtype selectivity story is a clean example of how GPCR subtype pharmacology translates to clinical effect profiles.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There is no legitimate use case for octreotide in someone pursuing GH optimization or GH secretagogue protocols. Octreotide blocks GH release at the pituitary &mdash; it directly opposes CJC-1295, ipamorelin, and MK-677. Using both simultaneously is pharmacological cancellation, not synergy. The community framing of octreotide for IGF-1 reduction for longevity purposes misses that GH and IGF-1 suppression in GH-normal adults has no established benefit and potential harms including metabolic and bone effects. The longevity-IGF-1 hypothesis is far more nuanced than &ldquo;lower IGF-1 is always better.&rdquo; <strong>Net: essential context for understanding the GH axis; directly counterproductive to GH secretagogue use; requires clinical indication and physician management.</strong></p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Octreotide is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A compound compatible with GH secretagogue use &mdash; it blocks GH release and directly opposes CJC-1295, ipamorelin, and MK-677</li>
+              <li>A longevity optimization tool for healthy people &mdash; suppressing GH/IGF-1 without clinical indication has no established benefit</li>
+              <li>Safe for self-administration without physician monitoring for gallstones, glucose, and cardiac effects</li>
+              <li>Something with a plausible community use case &mdash; it requires either monthly clinic-administered depot or physician-managed SC injection protocols</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>FDA-approved with strong clinical trial evidence for three distinct indications</li>
+              <li>The pharmacological engineering story &mdash; how octreotide improved on natural somatostatin through structural modification for longer half-life</li>
+              <li>The variceal bleeding application is a elegant example of targeting a specific vascular bed through systemic hormone receptor pharmacology</li>
+              <li>The receptor subtype selectivity differences between octreotide, lanreotide, and pasireotide are a model case in clinical pharmacology</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">&#x2717;</span> Look elsewhere if&hellip;
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Octreotide vs Lanreotide vs Pasireotide</div>
-      <div className="reta-overview__compare-note">
-        The somatostatin analogue (SSA) class has three generations with different receptor profiles and formulations. Octreotide was first; lanreotide is the main competitor with a different formulation convenience advantage; pasireotide is the broader-receptor option for octreotide-resistant acromegaly at the cost of higher hyperglycemia risk. For the acromegaly indication, the choice between octreotide and lanreotide is often driven by formulation preferences and monitoring context.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

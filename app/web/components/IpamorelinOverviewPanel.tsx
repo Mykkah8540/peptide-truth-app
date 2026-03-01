@@ -1,203 +1,73 @@
-/**
- * IpamorelinOverviewPanel — decision-oriented overview for Ipamorelin.
- * Key frame: GHRP-class (ghrelin receptor agonist) — different arm of GH regulation from CJC-1295.
- * "Selective" vs older GHRPs is real but shouldn't be read as low systemic impact.
- * Appetite stimulation is a distinctive and commonly reported effect.
- * GH-axis considerations (glucose, cancer, adolescent) apply identically to CJC-1295.
- */
-
-const STAT_CARDS = [
-  {
-    value: "GHRP",
-    label: "ghrelin receptor agonist",
-    sub: "stimulates GH release via the ghrelin receptor — the pituitary arm complementary to CJC-1295's hypothalamic GHRH signal",
-    note: "Does not add exogenous GH — amplifies endogenous GH pulse release by mimicking ghrelin signaling",
-  },
-  {
-    value: "Selective",
-    label: "relative GHRP profile",
-    sub: "lower cortisol and prolactin elevation compared to older GHRPs (GHRP-2, GHRP-6) — the basis for the 'milder' label",
-    note: "Selective relative to other GHRPs — not selective relative to no GH-axis intervention. GH/IGF-1 axis effects still apply.",
-  },
-  {
-    value: "CJC+Ipa",
-    label: "the canonical stack",
-    sub: "ipamorelin + CJC-1295 is the most common community GH-axis protocol — synergistic because they hit different receptors",
-    note: "The stack amplifies GH release more than either alone; all GH-axis considerations apply to the combined endocrine load",
-  },
-];
-
-const FIT_YES = [
-  "You have recovery, sleep quality, or body composition goals and understand they operate through cumulative GH/IGF-1 physiology — not acute effects",
-  "You have no diabetes, prediabetes, or insulin resistance — ghrelin receptor agonism affects appetite and can alter glucose regulation",
-  "You don't have untreated or unstable sleep apnea — GH elevation and fluid retention can worsen sleep-disordered breathing",
-  "You have no active or recent cancer diagnosis — the GH/IGF-1 mitogenic concern applies to ipamorelin exactly as it does to CJC-1295",
-  "You understand 'selective' means lower cortisol/prolactin vs older GHRPs — not a lower-risk compound than GH-axis peptides generally",
-];
-
-const FIT_NO = [
-  "You have diabetes, prediabetes, or insulin resistance — GH secretagogues can worsen glucose control in susceptible users",
-  "You have untreated or poorly controlled sleep apnea — GH elevation and fluid shifts can meaningfully worsen OSA",
-  "You have an active cancer diagnosis or are in active treatment — IGF-1 is mitogenic; oncology clearance required before starting",
-  "You're pregnant, breastfeeding, or an adolescent — endocrine axis perturbation during development is a hard stop",
-  "You expect the 'selective' label to mean this is safe to run continuously long-term — no long-term safety data exists for any GH secretagogue in healthy adults",
-  "You're adding ipamorelin on top of CJC-1295 without accounting for additive GH-axis load — the stack requires the same safety gates as each compound alone",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Appetite shift and water retention — the first signals",
-    body: "Ghrelin receptor agonism reliably increases appetite — this is not a side effect to push through, it's a mechanistic consequence. Water retention and mild puffiness (especially in the face and hands) are common in the first few weeks. These are early GH responses. GH/IGF-1 effects on body composition take weeks to accumulate — don't judge efficacy at week 2.",
-  },
-  {
-    phase: "Months 1–3",
-    heading: "The honest evaluation window",
-    body: "Recovery quality, sleep depth, and progressive training response are the primary signals during this window. Attribution is the persistent challenge — ipamorelin is almost always used alongside CJC-1295, nutrition protocols, and structured training. If something is improving, isolating what's driving it requires that you've kept other variables consistent.",
-  },
-  {
-    phase: "Long-term",
-    heading: "No safety map exists for sustained use",
-    body: "Long-term, continuous GH secretagogue use in healthy adults is not characterized in clinical trials — for ipamorelin or any GHRP. The community convention of cycling (8–12 weeks on, break off) reflects reasonable caution, not documented safety data. If you're running it continuously for months without a break, you're outside the reference experience base.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Ipamorelin",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor (GHSR) — pituitary GH release arm" },
-      { label: "Cortisol / prolactin", value: "Low relative to other GHRPs — the 'selective' distinction" },
-      { label: "Appetite effect", value: "Yes — ghrelin receptor agonism increases hunger" },
-      { label: "Stack with CJC-1295", value: "Synergistic — different receptor mechanisms, additive GH effect" },
-      { label: "Primary concern", value: "Glucose, cancer history, sleep apnea, adolescent endocrine risk" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "CJC-1295 (no DAC)",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "GHRH receptor (hypothalamic signal arm) — different from ipamorelin" },
-      { label: "Cortisol / prolactin", value: "Neutral — no significant effect" },
-      { label: "Appetite effect", value: "Minimal direct appetite effect (no ghrelin pathway)" },
-      { label: "Stack with ipa", value: "Complementary — the canonical combination" },
-      { label: "Primary concern", value: "Glucose, cancer history, DAC vs no-DAC confusion, adolescent risk" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "GHRP-2 / GHRP-6",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor — same family as ipamorelin" },
-      { label: "Cortisol / prolactin", value: "Elevated — meaningfully more than ipamorelin" },
-      { label: "Appetite effect", value: "Strong — especially GHRP-6" },
-      { label: "GH release", value: "Strong — often more potent acutely than ipamorelin" },
-      { label: "Why people choose ipa instead", value: "Cleaner side effect profile; less cortisol/prolactin" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function IpamorelinOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The cleanest injectable GH booster in its class — and why it&apos;s so often paired with CJC-1295.
-        </div>
-        <div className="reta-overview__headline-sub">
-          You&apos;ve probably seen ipamorelin and CJC-1295 recommended together — there&apos;s a real reason for that. They stimulate GH release through different pathways, so pairing them produces more effect than either alone. &ldquo;Selective&rdquo; means ipamorelin doesn&apos;t spike cortisol or appetite the way older compounds in this class do. But the same cautions that apply to any GH-boosting compound still apply here.
-        </div>
+      <p className="reta-overview__opener">
+        Ipamorelin is the most popular injectable compound for nudging your body to make more growth hormone — and it&rsquo;s earned that reputation by being cleaner than the older alternatives in its class. It won&rsquo;t raise your GH to pharmaceutical levels, but it also won&rsquo;t spike your cortisol the way its predecessors did. The community excitement is real and grounded; the timelines people expect are usually not.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; Sleep, Recovery, and &ldquo;I Want to Feel Better&rdquo;</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep reading that ipamorelin improves sleep and helps you recover faster. Is it actually going to make a difference, or is this just gym bro hype?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It tells your body to release more of its own growth hormone</strong><br />Your body makes growth hormone in pulses, mostly at night. Ipamorelin mimics a signal called ghrelin that prompts the pituitary to release a bigger pulse. More GH during sleep means more of the overnight restoration process your body is already trying to do &mdash; deeper recovery, better tissue repair, potentially better sleep quality.</li>
+          <li><strong>It&rsquo;s the &ldquo;clean&rdquo; version of an entire drug class</strong><br />The older compounds that do the same thing (GHRP-2, GHRP-6) also spike cortisol and amplify hunger significantly. Ipamorelin does this much less. That&rsquo;s the entire reason it became the community standard &mdash; cleaner side effect profile, same GH effect. If you&rsquo;re going to use a compound like this, ipamorelin is the sensible choice within that class.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Ipamorelin is almost always stacked with CJC-1295, which hits a different part of the same pathway. Alone, the effect is milder. Either way, you won&rsquo;t feel much in the first two weeks &mdash; this is a cumulative, months-long investment, not a quick fix. Expect some appetite increase and mild water retention early on. People with diabetes, prediabetes, or active cancer should not use it &mdash; GH elevation affects blood sugar and is mitogenic. Net: real mechanism, real results over time, slower and subtler than the community usually describes.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Body Recomposition and Recovery Speed</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m already training hard and eating right. Will ipamorelin actually move the needle on body composition, or do I need to be running actual GH to see a difference?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The CJC+Ipamorelin stack has a real body composition signal</strong><br />Over 8&ndash;12 weeks, the combination of higher overnight GH pulses and elevated IGF-1 supports fat oxidation and can help preserve lean mass in a deficit. It won&rsquo;t produce the dramatic recomposition of exogenous GH, but for a natural or near-natural athlete, it&rsquo;s one of the cleaner tools available to nudge the GH axis without crossing into exogenous hormone use.</li>
+          <li><strong>Recovery speed is the most consistently reported benefit</strong><br />Connective tissue recovery, reduced soreness between hard sessions, and better sleep depth are what athletes consistently report first. The GH-IGF-1 axis is directly involved in collagen synthesis and muscle protein repair. If you&rsquo;re training hard enough that recovery is the limiting factor, optimizing overnight GH output has a mechanistic reason to matter.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">You won&rsquo;t get pharmaceutical-GH results from a secretagogue &mdash; ipamorelin works within your natural ceiling, not past it. Attribution is also genuinely hard: if you&rsquo;re running this alongside structured training and dialing in nutrition simultaneously, separating the ipamorelin signal from everything else takes real discipline. Sleep apnea is a concern &mdash; GH elevation worsens it. Insulin sensitivity needs monitoring if you run it long-term. Net: legitimate performance tool with real but modest effects; plan for 3&ndash;4 months minimum to evaluate it honestly.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; GH Axis Optimization and Stack Design</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand exactly why ipamorelin and CJC-1295 are synergistic at the receptor level, and whether there&rsquo;s a smarter way to pulse them than the standard protocol.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Two distinct receptor mechanisms, genuinely additive effect</strong><br />CJC-1295 acts on the GHRH receptor in the hypothalamus &mdash; it extends the natural GHRH signal that triggers the pituitary to release GH. Ipamorelin acts on the ghrelin receptor in the pituitary &mdash; a completely different input that says &ldquo;release GH now.&rdquo; Combining them is like pressing the gas with two independent systems simultaneously. The synergy is mechanistically real, not marketing.</li>
+          <li><strong>Ipamorelin&rsquo;s selectivity profile is pharmacologically meaningful</strong><br />Older ghrelin receptor agonists (GHRP-2, GHRP-6) co-activate cortisol and prolactin pathways at meaningful levels. Ipamorelin does this at far lower levels &mdash; the structural reason being greater selectivity for GHSR (the ghrelin receptor) with less off-target ACTH/cortisol activation. For a biohacker trying to minimize HPA axis disruption while still getting GH axis stimulation, ipamorelin is genuinely the best tool in this class.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The &ldquo;optimal pulsing&rdquo; question is mostly unanswered in controlled human data &mdash; pre-bed dosing to align with natural GH pulsatility is the evidence-informed guess, not a validated clinical protocol. Long-term continuous use in healthy adults is completely uncharacterized; the 8&ndash;12 week cycle convention is community convention, not a studied safety parameter. The combined GH-axis load of the CJC+Ipa stack needs the same safety gates as each compound alone &mdash; glucose monitoring, no active cancer, no sleep apnea. Net: the stack design logic is sound; the long-term data map simply does not exist yet.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Ipamorelin is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not exogenous growth hormone &mdash; it amplifies your own pulses within your physiological ceiling</li>
+              <li>Not a quick-acting compound &mdash; meaningful body composition change takes 3&ndash;4 months minimum</li>
+              <li>Not risk-free because it&rsquo;s &ldquo;natural&rdquo; &mdash; it perturbs the GH axis, which has real downstream effects on blood sugar and tissue growth</li>
+              <li>Not interchangeable with CJC-1295 &mdash; different receptor, different mechanism, genuinely complementary rather than redundant</li>
+              <li>Not a replacement for sleep hygiene, training load management, or nutrition &mdash; it amplifies a process you still have to create the conditions for</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Cleanest cortisol and prolactin profile in the GHRP class &mdash; a real and meaningful distinction</li>
+              <li>Mechanistically synergistic with CJC-1295 in a way that&rsquo;s grounded in receptor biology, not marketing</li>
+              <li>Recovery, sleep depth, and connective tissue support are the most consistently reported and plausibly mechanistic benefits</li>
+              <li>One of the more studied research peptides in its class with enough animal and early human data to understand the basic pharmacology</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Ipamorelin vs CJC-1295 vs older GHRPs</div>
-      <div className="reta-overview__compare-note">
-        Ipamorelin&apos;s &ldquo;selectivity&rdquo; is real and relative — it produces less cortisol and prolactin elevation than GHRP-2 or GHRP-6. That&apos;s why it became the community standard GHRP. It doesn&apos;t mean the GH-axis considerations disappear — they&apos;re the same as CJC-1295.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

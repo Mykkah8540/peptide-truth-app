@@ -1,209 +1,74 @@
-/**
- * Igf1OverviewPanel — decision-oriented overview for IGF-1 (Insulin-like Growth Factor 1).
- * Key frame: this is not a wellness peptide. It's a powerful growth factor that can cause
- * hypoglycemia, promote cancer growth, and cause irreversible organ/tissue changes.
- * Prescription use: severe primary IGF-1 deficiency in children (Increlex/Mecasermin).
- * Enhancement use is high-risk, poorly studied, and has serious safety considerations.
- */
-
-const STAT_CARDS = [
-  {
-    value: "IGF-1R",
-    label: "receptor — powerful anabolic and mitogenic growth signaling",
-    sub: "IGF-1 binds the IGF-1 receptor (IGF-1R), which is structurally similar to the insulin receptor. Activation drives protein synthesis, cell growth, anti-apoptosis (cell survival), and glucose uptake — strong anabolic effects throughout the body, not targeted to muscle",
-    note: "The IGF-1R is expressed broadly — muscle, bone, liver, brain, heart, kidneys. 'Anabolic' means growth everywhere. This is the mechanism behind both the potential benefit and the primary concerns: cancer cell growth, organ hypertrophy, and tissue overgrowth are all IGF-1R-mediated effects.",
-  },
-  {
-    value: "Hypoglycemia",
-    label: "the most acute safety concern — insulin-receptor cross-reactivity",
-    sub: "IGF-1 has structural similarity to insulin and binds insulin receptors at high concentrations — producing hypoglycemia (low blood sugar). Severe hypoglycemia from IGF-1 is a documented acute risk that can cause loss of consciousness, seizure, and cardiac arrhythmia",
-    note: "This is not a theoretical concern. Hypoglycemia from injectable IGF-1 has caused hospitalizations and deaths in non-medical enhancement use. Unlike insulin, IGF-1's hypoglycemic effects have a longer duration due to its longer half-life. Glucose monitoring and eating before injection are basic risk mitigation, not optional practices.",
-  },
-  {
-    value: "Mitogenic",
-    label: "growth signal — promotes proliferation of all cells, including cancer cells",
-    sub: "IGF-1 is a mitogen — it promotes cell division and proliferation across cell types. Elevated IGF-1 levels are associated with increased risk of several cancers (breast, prostate, colorectal, lung) in epidemiological studies. This is the reason cancer history is a hard stop for any GH/IGF-1 raising compound",
-    note: "The cancer association is epidemiological (elevated natural IGF-1 correlates with cancer risk) and preclinical (IGF-1 promotes cancer cell proliferation in vitro). The causal chain for exogenous injectable IGF-1 and cancer initiation vs promotion in healthy adults is not precisely established — but the mechanism is real and the precautionary principle applies.",
-  },
-  {
-    value: "Rx only",
-    label: "prescription: severe primary IGF-1 deficiency in children",
-    sub: "Increlex (mecasermin) is FDA-approved for severe primary IGF-1 deficiency and primary IGF-1 deficiency with GH insensitivity in pediatric patients. Off-label enhancement use is outside any approved framework, and compounded or research-grade IGF-1 lacks pharmaceutical quality control",
-    note: "The FDA indication is pediatric and specific — it doesn't extrapolate to healthy adult enhancement use. The clinical evidence base for IGF-1 in healthy adults or as a performance enhancer is extremely limited. Most enhancement-community use operates well outside any evidence-supported framework.",
-  },
-];
-
-const FIT_YES = [
-  "You have documented severe primary IGF-1 deficiency (Laron syndrome or confirmed GH insensitivity) with endocrinology supervision — Increlex/mecasermin is the appropriate clinical context for this compound",
-  "You understand this is not a wellness or optimization peptide — the risk/benefit ratio for healthy adults pursuing enhancement is unfavorable compared to GH secretagogues (ipamorelin, CJC-1295) that work indirectly through natural feedback",
-  "You have full oncology clearance and no cancer history, no family history of IGF-1-sensitive cancers (breast, prostate, colorectal), and no elevated PSA or other concerning markers",
-  "You have established glucose monitoring in place before first injection and understand hypoglycemia is an acute risk requiring immediate response capability",
-  "You have physician oversight with regular labs — IGF-1 levels, glucose, HbA1c, and tumor markers are appropriate monitoring given the mechanism",
-];
-
-const FIT_NO = [
-  "You have any personal history of cancer — IGF-1 is a direct mitogenic signal; this is the hardest of hard stops regardless of remission status",
-  "You have a strong family history of IGF-1-sensitive cancers (breast, prostate, colorectal) without oncology consultation — the mitogenic risk applies to cancer promotion, not just initiation",
-  "You have diabetes or insulin resistance — the insulin-receptor cross-reactivity from IGF-1 creates unpredictable hypoglycemia risk that is especially dangerous on a background of glucose dysregulation",
-  "You are looking for a safer or more efficient alternative to GH secretagogues — GH secretagogues (ipamorelin + CJC-1295, sermorelin, MK-677) work through the natural GH/IGF-1 axis with feedback regulation intact; exogenous IGF-1 bypasses this regulation entirely",
-  "You are pregnant, breastfeeding, or an adolescent — growth axis manipulation during development is a hard stop; IGF-1 is particularly dangerous in this context",
-  "You are sourcing from gray-market research chemical suppliers — IGF-1 purity, concentration, and sterility are critical given the hypoglycemia risk; impure or incorrectly dosed product is a direct life safety issue",
-];
-
-const TIMELINE = [
-  {
-    phase: "Before first dose",
-    heading: "Baseline glucose, IGF-1 levels, and oncology clearance — do these first",
-    body: "Before any IGF-1 administration: fasting glucose and HbA1c to characterize your baseline glucose regulation; baseline IGF-1 level (your natural level, not on exogenous IGF-1); cancer screening appropriate for your age and family history; physician oversight. These aren't optional steps — they're the minimum safety baseline for a compound with acute hypoglycemia risk and cancer-related safety concerns. Skipping them is how people get hurt.",
-  },
-  {
-    phase: "Weeks 1–4",
-    heading: "Hypoglycemia is the immediate risk — the early period requires highest vigilance",
-    body: "Injectable IGF-1 begins producing detectable anabolic and glucose-lowering effects within days. The hypoglycemia risk is highest during initial dosing before the user understands their individual response. Eating a carbohydrate-containing meal 20-30 minutes before injection is standard practice — not a suggestion. Some users carry glucose tablets or glucose gel. Symptoms of hypoglycemia (shakiness, sweating, confusion, rapid heart rate, impaired coordination) can progress to loss of consciousness faster than with dietary hypoglycemia because of IGF-1's longer active duration.",
-  },
-  {
-    phase: "Weeks 4–12",
-    heading: "Anabolic effects accumulate — but so do longer-term organ growth concerns",
-    body: "The enhancement community uses IGF-1 primarily for muscle and recovery goals. Any observed changes over this period occur alongside systemic IGF-1R activation — in cardiac tissue, kidneys, jaw and facial bones, and other organs. Hands and feet tingling or swelling (carpal tunnel from fluid retention and nerve compression) are commonly reported. Jaw growth is a concern with prolonged use (acromegalic features from sustained GH/IGF-1 elevation). These effects are not reversible after significant exposure — this is the timeline where long-term consequence evaluation matters.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "IGF-1 (exogenous)",
-    badge: "Direct growth factor — high risk",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Direct IGF-1R agonism — bypasses GH/IGF-1 axis feedback regulation entirely" },
-      { label: "Hypoglycemia risk", value: "High — insulin receptor cross-reactivity; acute hypoglycemia is documented" },
-      { label: "Mitogenic risk", value: "Direct — IGF-1R activation promotes cancer cell proliferation" },
-      { label: "Evidence for enhancement", value: "Extremely limited — clinical data is pediatric IGF-1 deficiency only" },
-      { label: "Regulatory status", value: "Prescription only (Increlex); research-grade has no quality controls" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Ipamorelin + CJC-1295",
-    badge: "GH secretagogue stack",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Stimulates natural GH release → body raises IGF-1 via liver feedback" },
-      { label: "Hypoglycemia risk", value: "Low — indirect IGF-1 raise; GH is counter-regulatory to insulin" },
-      { label: "Mitogenic concern", value: "Present but modulated by feedback regulation — IGF-1 raise is tempered by natural axis" },
-      { label: "Evidence for enhancement", value: "Limited human data; mechanism well-characterized; significant community use history" },
-      { label: "Regulatory status", value: "Research-grade; some access via compounding pharmacy (sermorelin)" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Growth Hormone (HGH)",
-    badge: "Exogenous GH",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Exogenous GH → liver produces IGF-1; some direct GH receptor effects" },
-      { label: "Hypoglycemia risk", value: "Low to moderate — GH is actually counter-regulatory to insulin" },
-      { label: "Mitogenic concern", value: "Similar to GH secretagogues — IGF-1 mediated; partially regulated by feedback" },
-      { label: "Evidence for enhancement", value: "More studied than IGF-1 for enhancement; bodybuilding use history is long" },
-      { label: "Regulatory status", value: "Prescription only (FDA: growth disorders); significant gray market" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function Igf1OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A powerful growth factor prescribed for rare pediatric deficiencies — not a wellness compound.
-        </div>
-        <div className="reta-overview__headline-sub">
-          IGF-1 is a naturally occurring growth factor your liver produces in response to growth hormone. Injecting it exogenously bypasses every feedback loop your body uses to regulate how much growth signaling is appropriate. The enhancement community uses it for muscle and recovery goals. The problem: IGF-1 signals growth everywhere — muscle, bone, organ tissue, and cancer cells don&apos;t distinguish. Hypoglycemia (from insulin receptor cross-reactivity) is the immediate life-safety risk. Mitogenic cancer concern is the long-term risk. GH secretagogues (ipamorelin + CJC-1295) achieve similar anabolic goals by working through the natural axis with feedback regulation intact — a substantially different risk profile. If you&apos;re considering IGF-1, first understand why that comparison matters.
-        </div>
+      <p className="reta-overview__opener">
+        IGF-1 is the growth factor your liver naturally produces in response to growth hormone. It drives muscle growth, tissue repair, and metabolism throughout the body. Injecting it exogenously bypasses every feedback loop your body uses to regulate how much growth signaling is safe &mdash; and that bypass creates real risks, including acute blood sugar crashes and a cancer growth signal, alongside the anabolic benefit.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Recovery-Curious Person &mdash; muscle repair, injury healing</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep hearing IGF-1 mentioned for muscle repair and injury recovery. If my body already makes it, what does actually injecting it extra do?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>IGF-1 is genuinely central to muscle repair &mdash; it activates stem cells in muscle</strong><br />After muscle damage, satellite cells (muscle stem cells) are activated by IGF-1 to proliferate and repair the tissue. This is real biology, not just theoretical. The repair mechanism is well-established and is part of why the compound has legitimate clinical use in certain rare growth deficiencies.</li>
+          <li><strong>Growth hormone raises IGF-1, and GH compounds are part of the legitimate recovery conversation</strong><br />Much of the GH peptide discussion &mdash; ipamorelin, CJC-1295 &mdash; is really a discussion about raising IGF-1 through the body&rsquo;s own production system. Understanding IGF-1&rsquo;s role explains why people use those compounds for recovery in the first place.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Injecting IGF-1 is very different from raising it through GH peptides. GH-axis peptides let your body&rsquo;s own feedback loops control how much IGF-1 you make &mdash; which includes shutting down production when it gets high enough. Injecting IGF-1 directly bypasses those controls entirely. It also lowers blood sugar (IGF-1 acts like a weak version of insulin), and severe low blood sugar has caused hospitalizations and deaths in enhancement use. For most people interested in recovery, GH-axis peptides get you to the same IGF-1 benefit with substantially less risk. Net: the biology is relevant; the direct injection route is not the right tool for most recovery goals.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; understanding GH effects, performance edge</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;My coach mentioned that GH works mostly through IGF-1. Does injecting IGF-1 directly just skip the middleman and work better, or is there a reason everyone uses GH compounds instead?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Directly targeting the active growth signal sounds more efficient</strong><br />If GH&rsquo;s anabolic effects mostly come from the IGF-1 it triggers the liver to produce, injecting IGF-1 directly seems like it cuts out a step. The logic is understandable even if the conclusion is wrong.</li>
+          <li><strong>Community history suggests real performance and composition effects</strong><br />IGF-1 has been used in competitive bodybuilding for decades, and user reports of significant muscle gains and accelerated recovery are consistent enough to reflect real pharmacological effects rather than placebo.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The &ldquo;skip the middleman&rdquo; logic breaks down because the middleman isn&rsquo;t just an inconvenient extra step &mdash; it&rsquo;s the feedback regulation that keeps IGF-1 at safe levels. GH-axis peptides work within that regulation. Direct IGF-1 injection doesn&rsquo;t. The practical consequence is a blood sugar drop risk that is immediate and serious &mdash; not a manageable side effect but a documented emergency risk that has sent people to hospitals. Beyond hypoglycemia, IGF-1 signals growth in every tissue including cancer cells. For an athlete without cancer it&rsquo;s a risk you can&rsquo;t see; for someone with an undetected tumor it can be accelerating. Net: GH-axis peptides achieve the IGF-1 benefit without bypassing the regulatory system; that&rsquo;s not a safety-first excuse but a genuine mechanistic reason to prefer them.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; IGF-1 axis, aging paradox, cancer risk quantification</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;High IGF-1 correlates with cancer risk in epidemiology but also correlates with muscle mass and possibly longevity. How do you think about the IGF-1 axis from a longevity optimization perspective?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The IGF-1 aging paradox is a real and interesting systems-level question</strong><br />Chronically elevated IGF-1 correlates with cancer risk. But low IGF-1 correlates with muscle loss, cognitive decline, and frailty. The sweet spot &mdash; keeping IGF-1 in a physiologically optimal range that preserves muscle and metabolism without excessive cancer-promoting activity &mdash; is a genuine axis of aging biology optimization. Understanding IGF-1 is prerequisite to understanding that optimization question.</li>
+          <li><strong>The GH/IGF-1 axis is one of the better-mapped aging-relevant systems in biology</strong><br />The growth hormone axis has been studied extensively in the context of aging, and the literature is richer than for most other systems targeted in longevity protocols. The signal transduction pathways downstream of IGF-1R (mTOR, FOXO, Akt) are among the most studied in aging biology.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The longevity paradox of IGF-1 is real, and the resolution most longevity researchers favor is &ldquo;maintain adequate IGF-1 for tissue health but avoid supraphysiological levels.&rdquo; Direct IGF-1 injection &mdash; especially at doses that produce bodybuilding results &mdash; is supraphysiological signaling without the binding protein regulation that normally caps free IGF-1 exposure. The mitogenic cancer risk is not theoretical: the IGF-1 receptor is overexpressed in breast, prostate, colorectal, and lung cancers, and IGF-1R signaling is an active oncological drug target. GH-axis peptides that produce IGF-1 within the physiological range through natural liver production have a substantially different risk profile for the longevity-oriented user. Net: understanding IGF-1 is essential; using exogenous IGF-1 injection for longevity optimization is hard to square with the cancer risk evidence.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What IGF-1 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a wellness or optimization compound &mdash; this is a powerful growth factor with serious risks</li>
+              <li>Not appropriate for anyone with cancer history &mdash; the mitogenic signal is direct and real</li>
+              <li>Not a safer version of GH-axis peptides &mdash; it bypasses the regulatory feedback they work within</li>
+              <li>Not suitable for gray-market sourcing where purity and concentration cannot be verified</li>
+              <li>Not a replacement for physician oversight &mdash; baseline glucose, cancer screening, and IGF-1 levels are required minimum before use</li>
+              <li>Not appropriate during pregnancy, breastfeeding, or adolescence</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The primary mediator of growth hormone&rsquo;s anabolic effects &mdash; understanding it explains how the entire GH axis works</li>
+              <li>FDA-approved pharmaceutical form (Increlex) exists for genuine pediatric deficiency, confirming the mechanism is real</li>
+              <li>The IGF-1 aging paradox &mdash; simultaneously linked to cancer risk and muscle preservation &mdash; is one of the most interesting systems questions in longevity biology</li>
+              <li>The downstream signaling pathways (mTOR, FOXO, Akt) are among the best-mapped in aging science</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">IGF-1 vs GH Secretagogues vs Exogenous HGH</div>
-      <div className="reta-overview__compare-note">
-        The key comparison: exogenous IGF-1 bypasses the GH/IGF-1 axis feedback regulation entirely, while GH secretagogues (ipamorelin, CJC-1295, sermorelin) work through the natural axis with feedback intact. That difference matters for hypoglycemia risk, mitogenic risk, and the ability of the body to self-regulate. Exogenous GH sits between them — less risky than direct IGF-1 injection, but still bypasses some natural regulation.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

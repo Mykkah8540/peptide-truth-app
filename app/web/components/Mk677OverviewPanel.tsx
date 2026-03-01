@@ -1,203 +1,77 @@
-/**
- * Mk677OverviewPanel — decision-oriented overview for MK-677 (Ibutamoren).
- * Key frame: oral, long-acting ghrelin receptor agonist — not a peptide, not injectable.
- * Sustained ~24hr GH elevation (not pulsatile) amplifies appetite, glucose, edema, and
- * carpal tunnel risk vs injectable GHRPs. The oral convenience is real; the tradeoffs are real.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Oral",
-    label: "small molecule — not a peptide",
-    sub: "MK-677 is taken as a capsule or tablet — no reconstitution, no syringes. It's a synthetic small molecule that mimics ghrelin, not a peptide compound",
-    note: "The oral route makes it accessible but also means sustained systemic exposure. The same GH-axis safety gates apply — oral delivery doesn't reduce the endocrine load.",
-  },
-  {
-    value: "~24 hr",
-    label: "half-life — sustained, not pulsatile",
-    sub: "the long half-life means daily dosing produces sustained GH elevation throughout the day — fundamentally different from the pulsatile pattern of injectable GHRPs like ipamorelin",
-    note: "Sustained GH elevation amplifies the glucose counter-regulation effect. The 'natural GH pulse' rationale used for bedtime injectable dosing doesn't apply the same way here.",
-  },
-  {
-    value: "Ghrelin R",
-    label: "receptor — appetite and GH, both persistent",
-    sub: "acts on the ghrelin receptor (GHSR1a) — the same receptor as ipamorelin, but sustained. Appetite stimulation lasts throughout the day, not just post-injection",
-    note: "The persistent ghrelin receptor activation means hunger, cravings, and caloric intake pressure are present through the day — a significant practical challenge for body composition goals.",
-  },
-];
-
-const FIT_YES = [
-  "You have lean mass or appetite goals that align with persistent appetite stimulation — MK-677's ghrelin mechanism is an asset if you want to eat more and need help doing it",
-  "You want GH-axis stimulation in an oral form and are aware the tradeoffs (appetite, glucose, fluid) are amplified vs injectable GHRPs",
-  "You have no diabetes, prediabetes, or insulin resistance — sustained GH elevation from MK-677 produces more persistent insulin counter-regulation than pulsatile injectable GHRPs",
-  "You have no heart failure, significant edema, or conditions that make fluid retention a clinical concern",
-  "You have no active or recent cancer diagnosis — the GH/IGF-1 mitogenic concern applies to MK-677 exactly as it does to any GH secretagogue",
-  "You understand 'oral GH secretagogue' does not mean 'lower risk than injectable' — the endocrine load is the same; the delivery route is different",
-];
-
-const FIT_NO = [
-  "You have diabetes, prediabetes, or significant insulin resistance — sustained (not pulsatile) GH elevation from MK-677 produces more persistent glucose counter-regulation than injectable GHRPs",
-  "You have heart failure, significant edema, or fluid-retention-prone conditions — sustained GH elevation and fluid retention from a 24hr compound is a real clinical concern",
-  "Your primary goal is fat loss or body recomposition — persistent appetite stimulation from chronic ghrelin receptor activation actively works against caloric restriction goals",
-  "You have an active cancer diagnosis or are in active treatment — IGF-1 is mitogenic; oncology clearance required before starting any GH secretagogue",
-  "You're pregnant, breastfeeding, or an adolescent — endocrine axis perturbation during development is a hard stop",
-  "You're expecting the convenience of oral dosing to mean fewer GH-axis considerations — it doesn't. Same flags, more sustained exposure.",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Appetite surge and water retention — louder than injectable GHRPs",
-    body: "Appetite stimulation from MK-677 is persistent throughout the day — not just post-injection as with ipamorelin. Many users report significant increases in hunger and cravings within the first few days. Water retention and puffiness (face, hands, feet) are common and can be more pronounced than with shorter-acting GHRPs. Vivid dreams are frequently reported, consistent with GH's effects on sleep architecture. These early effects are not signs of efficacy to chase — they're the ghrelin receptor working as expected.",
-  },
-  {
-    phase: "Months 1–3",
-    heading: "The honest evaluation window — with compounding tradeoffs",
-    body: "The GH/IGF-1 body composition effects accumulate over months, not weeks. Sustainable lean mass improvement requires managing the appetite stimulation — users who don't account for caloric pressure often see fat gain alongside any lean mass changes. Glucose monitoring is especially important here: sustained (vs pulsatile) GH elevation means the insulin counter-regulatory effect is ongoing, not time-limited to the hours after injection. If you have any metabolic history, labs matter more here than with injectable GHRPs.",
-  },
-  {
-    phase: "Long-term",
-    heading: "No safety map for extended use — and the concerns compound",
-    body: "MK-677 has been studied in longer clinical trials than most GH-axis compounds (including in elderly and GHD populations), but healthy adult enhancement use is unstudied. Sustained ghrelin receptor activation over months raises questions about receptor desensitization and metabolic adaptation that aren't answered in the clinical literature. The community convention of cycling applies — continuous long-term use is outside the reference experience base. Carpal tunnel symptoms, if they develop, often require dose reduction or discontinuation.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "MK-677",
-    badge: "Oral / Small molecule",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Route", value: "Oral capsule — no reconstitution, no injections" },
-      { label: "Half-life", value: "~24 hr — sustained GH elevation, not pulsatile" },
-      { label: "Receptor", value: "Ghrelin receptor (GHSR1a) — same as ipamorelin but sustained" },
-      { label: "Appetite effect", value: "Persistent throughout the day — more pronounced than injectable GHRPs" },
-      { label: "Distinctive concerns", value: "Glucose (sustained elevation), carpal tunnel/neuropathy, heart failure/edema risk" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Ipamorelin",
-    badge: "Injectable GHRP",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Route", value: "Subcutaneous injection — reconstitution required" },
-      { label: "Half-life", value: "~2 hr — pulsatile GH release aligned with injection timing" },
-      { label: "Receptor", value: "Ghrelin receptor (GHSR1a) — same as MK-677, short-acting" },
-      { label: "Appetite effect", value: "Pulsatile — most pronounced around injection time; bedtime injection manageable" },
-      { label: "Distinctive concerns", value: "Sleep apnea (GH + fluid dynamics), pulsatile appetite manageable with timing" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "CJC-1295 (no DAC)",
-    badge: "Injectable GHRH",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Route", value: "Subcutaneous injection — reconstitution required" },
-      { label: "Half-life", value: "~30 min — pulsatile, typically used with ipamorelin" },
-      { label: "Receptor", value: "GHRH receptor — different arm from MK-677 / ipamorelin" },
-      { label: "Appetite effect", value: "Minimal — no ghrelin pathway; appetite stimulation absent" },
-      { label: "Why stack with MK-677?", value: "Complementary receptors produce additive GH — same rationale as CJC+ipa" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function Mk677OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The only oral GH booster — no needles, but the tradeoffs are amplified compared to injectables.
-        </div>
-        <div className="reta-overview__headline-sub">
-          MK-677 is the oral alternative to injectable GH-stimulating compounds — no needles, just a daily capsule. The tradeoff: it stays active for about 24 hours, which means continuous elevated GH rather than the brief natural pulses that injectable protocols produce. That sustained exposure is why the appetite effect is intense, blood sugar changes are more pronounced, and fluid retention is common. Taking it orally doesn&apos;t soften the safety picture — the same cautions apply.
-        </div>
+      <p className="reta-overview__opener">
+        MK-677 is the only oral compound that meaningfully raises growth hormone levels &mdash; no
+        injections, just a daily capsule. That&rsquo;s the real appeal. The catch is it stays active
+        for about 24 hours, which means persistent elevated GH rather than brief natural pulses, and
+        that amplifies every side effect: hunger all day, water retention, blood sugar pressure. Oral
+        delivery doesn&rsquo;t soften the endocrine load &mdash; it extends it.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; oral GH boost without needles</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve heard GH helps with muscle and fat &mdash; can I actually get that from a pill instead of injecting?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>No needles, no reconstitution</strong><br />Every other compound in the GH-stimulating category requires mixing a powder with water and injecting yourself. MK-677 is a capsule or tablet you swallow. For anyone who wants GH-axis effects but is genuinely needle-averse, this is the only option that actually works.</li>
+          <li><strong>Sleep quality and vivid dreams</strong><br />GH is released primarily during deep sleep, and MK-677 notably improves sleep depth and REM richness for most users. Vivid dreams are almost universal. People who sleep poorly often notice this effect before anything else and value it independently of any body composition effects.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The hunger is not subtle &mdash; it&rsquo;s persistent through the entire day, not just around a dose window the way injectable GH-stimulating compounds are. If you&rsquo;re eating at maintenance or in a deficit, MK-677 works directly against that by making food feel urgently necessary. Water retention and puffiness in the face and hands are common, especially early. These aren&rsquo;t signs something is wrong &mdash; they&rsquo;re the expected pharmacology. If you have any blood sugar issues or prediabetes, this isn&rsquo;t the right choice: sustained GH elevation continuously counters insulin, which injectable protocols with their short windows handle better. <strong>Net: the oral convenience is real; the tradeoffs are amplified, not softened.</strong></p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; body recomposition without injecting</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want more muscle and less fat and I&rsquo;d rather not inject daily &mdash; can MK-677 get me there?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Real GH and IGF-1 elevation that accumulates over months</strong><br />MK-677 raises both GH and IGF-1 measurably and sustainably. The lean mass and fat loss effects from GH-axis stimulation are real &mdash; they just require months of consistent use, not weeks. For an athlete who wants to see body composition shift without the logistical burden of daily injections, that&rsquo;s a genuine option.</li>
+          <li><strong>Recovery and connective tissue support</strong><br />Elevated GH/IGF-1 supports tendon, ligament, and joint recovery in ways that are hard to attribute to training alone. Athletes dealing with chronic joint irritation or connective tissue stress often notice improved recovery capacity over months of use &mdash; which is consistent with GH&rsquo;s known roles in tissue repair.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Body recomposition while fighting off persistent hunger is genuinely hard. Users who don&rsquo;t account for MK-677&rsquo;s appetite pressure often see fat gain alongside any lean mass improvement &mdash; the net result isn&rsquo;t what they expected. The comparison to injectable GH-stimulating protocols is important: a bedtime injection of ipamorelin produces a pulse of GH that fades by morning, keeping appetite manageable. MK-677&rsquo;s 24-hour activity means the appetite and glucose effects are continuous. Glucose monitoring is especially relevant for athletes because sustained GH elevation &mdash; unlike a brief pulse &mdash; maintains the insulin counter-regulatory effect around the clock. <strong>Net: excellent recovery tool; body recomposition requires active caloric management that the drug actively fights.</strong></p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; GH axis optimization</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand how MK-677&rsquo;s sustained ghrelin receptor activation compares to pulsatile injectable protocols and what that means for IGF-1 optimization and long-term axis dynamics.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The only oral GH secretagogue that actually works &mdash; a unique pharmacological position</strong><br />MK-677 is not a peptide; it&rsquo;s a small molecule that mimics ghrelin at the ghrelin receptor. This structural difference is why it survives digestion and can be taken orally while all peptide GH-stimulating compounds require injection. For a biohacker mapping the GH axis toolset, MK-677 occupies a genuinely distinct pharmacological category &mdash; same receptor as ipamorelin, fundamentally different kinetics.</li>
+          <li><strong>Longer human clinical trial database than most community compounds</strong><br />MK-677 has been studied in longer clinical trials than virtually any other GH-stimulating community compound &mdash; including in elderly populations and growth hormone deficiency contexts. The evidence base for its GH and IGF-1 effects is more substantiated than most. For someone evaluating GH secretagogues on evidence quality, MK-677 has comparative depth.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The sustained ghrelin receptor activation is pharmacologically meaningful: receptor desensitization dynamics over months of continuous use are not well characterized for community dosing patterns. The community convention of cycling MK-677 (typically 3&ndash;6 months on, time off) is reasonable but not derived from clinical data on healthy adults. The glucose counter-regulatory effect from continuous GH elevation is the most important safety consideration to monitor: IGF-1 labs and fasting glucose before and during use are minimum surveillance. Anyone considering stacking MK-677 with CJC-1295 or other GHRH analogs for additive GH release needs to think carefully about the compounding glucose effect. <strong>Net: the most evidence-grounded oral GH tool; requires metabolic monitoring that injectable protocols with pulsatile windows handle more naturally.</strong></p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What MK-677 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A lower-risk version of injectable GH secretagogues &mdash; oral delivery means 24-hour exposure, not reduced endocrine load</li>
+              <li>A fat loss compound &mdash; the persistent ghrelin receptor activation drives hunger that actively works against caloric restriction</li>
+              <li>A peptide &mdash; it&rsquo;s a small molecule that mimics ghrelin, which is why it survives digestion</li>
+              <li>Safe for anyone with diabetes, prediabetes, or significant insulin resistance without careful glucose monitoring</li>
+              <li>Something with a validated long-term healthy adult use profile &mdash; the clinical trials studied specific populations, not enhancement use</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Genuinely the only oral option for GH-axis stimulation &mdash; a unique pharmacological position nothing else occupies</li>
+              <li>Sleep quality and REM improvement are real and often felt before any body composition changes</li>
+              <li>More clinical trial data than almost any other community GH compound</li>
+              <li>Recovery and connective tissue effects accumulate meaningfully over months of consistent use</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">MK-677 vs Ipamorelin vs CJC-1295</div>
-      <div className="reta-overview__compare-note">
-        MK-677 and ipamorelin share the ghrelin receptor — the key difference is half-life and route. Sustained oral exposure amplifies every ghrelin receptor effect vs a short-acting injectable. CJC-1295 hits a different receptor entirely and can be stacked with MK-677 for additive GH release.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

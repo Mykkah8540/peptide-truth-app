@@ -1,133 +1,73 @@
 export default function OxytocinOverviewPanel() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div className="reta-overview">
 
-      {/* Stat cards */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {[
-          { label: "Primary Mechanism", value: "Oxytocin receptor", sub: "Social bonding, pair bonding, maternal behavior", accent: "#0f1a2e" },
-          { label: "Wellness Route", value: "Intranasal (off-label)", sub: "Social bonding / anxiety / mood interest", accent: "#7c5200" },
-          { label: "Pregnancy Flag", value: "HARD STOP", sub: "Can cause uterine hyperstimulation — absolute contraindication", accent: "#9e3800" },
-        ].map((c) => (
-          <div key={c.label} style={{
-            flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
-            border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14,
-            padding: "14px 16px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#64748b", marginBottom: 4 }}>{c.label}</div>
-            <div style={{ fontSize: 15, fontWeight: 800, color: c.accent, lineHeight: 1.2 }}>{c.value}</div>
-            <div style={{ fontSize: 12, color: "#64748b", marginTop: 3 }}>{c.sub}</div>
+      <p className="reta-overview__opener">
+        Oxytocin is the hormone your body releases during hugs, sex, childbirth, and deep social connection &mdash; the &ldquo;love hormone&rdquo; label is an oversimplification, but the core idea isn&rsquo;t wrong. People use nasal spray forms off-label hoping to feel more trusting, more socially at ease, more bonded. The honest catch: the early research was exciting, but larger follow-up studies have been inconsistent, and if you&rsquo;re pregnant this is an absolute hard stop.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Social Connection Seeker &mdash; anxiety, relationships, loneliness</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I heard oxytocin is the love hormone &mdash; can I just spray some and feel more connected to people?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It sounds like bottled connection</strong><br />The early research showed intranasal oxytocin increasing trust, improving emotion recognition, and making social interactions feel warmer. For someone who finds connection hard, that&rsquo;s a compelling promise.</li>
+          <li><strong>It&rsquo;s your own body&rsquo;s molecule</strong><br />Unlike most compounds discussed in peptide communities, oxytocin is something you already produce. The idea of just topping up a natural signal feels less intimidating than taking a foreign substance.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The excitement got ahead of the science. Large pre-registered replication studies, including a well-powered 2021 multi-site trial, found no significant social cognition effects from intranasal oxytocin in healthy adults. The early small studies had real methodology problems. Some populations &mdash; particularly people with social anxiety or autism spectrum conditions &mdash; may respond differently, and that research is ongoing. But the general &ldquo;feel more connected&rdquo; promise for healthy people does not currently have solid backing. Net: interesting biology, disappointing replication record in healthy adults so far.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Recovery-Focused Athlete &mdash; team cohesion, stress reduction</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;Could this help with post-event stress, team bonding, or the social side of recovery?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Stress buffering and cortisol modulation</strong><br />Oxytocin has real effects on the stress response axis &mdash; it buffers cortisol reactivity and promotes a calming social engagement mode. For high-stress training environments, that&rsquo;s theoretically interesting.</li>
+          <li><strong>Team cohesion and trust signaling</strong><br />Some research suggests oxytocin increases in-group prosocial behavior. Athletes and coaches have discussed intranasal use as a way to build trust within team environments. The community has a harm-reduction discussion around post-MDMA recovery protocols involving oxytocin specifically because MDMA depletes serotonin and disrupts social signaling.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There&rsquo;s no sport-specific evidence, and the social cognition effects in healthy adults are inconsistent. Compounding pharmacy nasal sprays are available by prescription in some markets but quality and concentration vary. If you&rsquo;re using it for stress reduction, the best-supported behavioral equivalent is simply what oxytocin responds to naturally: physical touch, quality social connection, and time with people you trust. Net: interesting theory, essentially no athlete-specific evidence, and behavioral alternatives are free.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Neuroendocrine Biohacker &mdash; social behavior, trust circuits, pair bonding</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;What does intranasal oxytocin actually do to the hypothalamus, and does it even get there? What&rsquo;s the real signal-to-noise on the replication crisis here?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The CNS penetration question is genuinely interesting</strong><br />The intranasal route bypasses the blood-brain barrier through olfactory pathways &mdash; but whether enough oxytocin reaches hypothalamic and amygdala circuits to produce behavioral effects is contested. Some PET and fMRI studies do show amygdala activity changes; others don&rsquo;t. The pharmacology is genuinely unresolved.</li>
+          <li><strong>Context-dependence of the effect is underappreciated</strong><br />Oxytocin effects appear highly context-dependent &mdash; it amplifies whatever social signal is present rather than producing a uniform bonding effect. It can increase in-group trust while simultaneously increasing out-group suspicion. The nuance here is more interesting than the &ldquo;love hormone&rdquo; framing suggests.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The replication crisis is real and documented. The 2021 multi-site trial with over 200 participants found no significant effects on social cognition after intranasal oxytocin in healthy adults &mdash; a significant blow to the earlier positive literature. Dose-response is poorly characterized. The hard safety constraint: seizure disorders (oxytocin has antidiuretic-like effects that can cause low sodium, a seizure trigger), cardiovascular disease, and pregnancy are all meaningful contraindications. Net: scientifically fascinating, technically accessible, evidence base is weaker than the community narrative suggests.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Oxytocin is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A reliable social anxiety treatment &mdash; not supported by large-scale evidence in healthy adults</li>
+              <li>Safe in pregnancy &mdash; this is an absolute contraindication; it stimulates uterine contractions</li>
+              <li>A simple &ldquo;feel good&rdquo; spray with no risks &mdash; hyponatremia and seizure risk are real in vulnerable individuals</li>
+              <li>A proven relationship or bonding enhancer &mdash; the replication literature has been largely disappointing</li>
+              <li>A substitute for the natural triggers that release it &mdash; touch, connection, and safety are the most reliable stimuli</li>
+            </ul>
           </div>
-        ))}
-      </div>
-
-      {/* Overview */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Oxytocin is your body&apos;s own bonding and trust signal — it&apos;s released during physical touch, intimacy, social connection, and childbirth. The &ldquo;love hormone&rdquo; label oversimplifies it, but the core idea isn&apos;t wrong: oxytocin is deeply involved in how humans connect with each other. The intranasal form — a nasal spray — is what people use off-label for social bonding, anxiety reduction, and relationship enhancement.
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          Here&apos;s the honest picture: the early research on intranasal oxytocin was exciting, but large-scale studies haven&apos;t consistently replicated those results in healthy adults. The &ldquo;love hormone&rdquo; narrative got ahead of the evidence. If you&apos;re pregnant or thinking about becoming pregnant, this is an absolute hard stop — the same mechanism that makes oxytocin useful for inducing labor is why it&apos;s dangerous in that context without clinical supervision.
-        </p>
-      </div>
-
-      {/* Evidence vs narrative gap */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(124,82,0,0.06) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(124,82,0,0.18)", borderRadius: 14, padding: "16px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 13, fontWeight: 800, color: "#7c5200", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>The "love hormone" evidence gap</h3>
-        <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#334155", margin: 0 }}>
-          Early small intranasal oxytocin studies showed impressive social cognition effects — increased trust, improved emotion recognition, enhanced bonding. These results were widely popularized. However, large-scale pre-registered replication studies have produced inconsistent results, and a major 2021 multi-site trial found no significant effects of intranasal oxytocin on social cognition in healthy adults. The "love hormone" narrative significantly overstates the current evidence for off-label intranasal use in healthy individuals.
-        </p>
-      </div>
-
-      {/* Is it a fit? */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "△", color: "#7c5200", bg: "#fffbf0", label: "Social anxiety or bonding interest with realistic expectations", note: "Some real evidence in specific populations (e.g., autism spectrum research); healthy adult effects are inconsistent across studies" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Pregnancy or trying to conceive", note: "Exogenous oxytocin can stimulate uterine contractions — this is how Pitocin is used to induce labor. This is an absolute contraindication for wellness use." },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Recent postpartum period with any complications", note: "The same uterine-stimulating mechanism that makes it useful postpartum clinically is also a risk in unmonitored contexts" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Seizure disorders (epilepsy)", note: "Oxytocin has antidiuretic-like effects and can cause hyponatremia (low sodium) — a known seizure trigger" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Significant cardiovascular disease", note: "IV oxytocin can cause transient hypotension and cardiovascular strain; intranasal has lower systemic absorption but cardiovascular history warrants caution" },
-          ].map((row) => (
-            <div key={row.label} style={{
-              display: "flex", alignItems: "flex-start", gap: 10,
-              background: row.bg, borderRadius: 10, padding: "10px 14px",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: row.color, flexShrink: 0, marginTop: 1 }}>{row.icon}</span>
-              <div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1e293b" }}>{row.label}</div>
-                <div style={{ fontSize: 12, color: "#64748b", marginTop: 2 }}>{row.note}</div>
-              </div>
-            </div>
-          ))}
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>It is your own body&rsquo;s social bonding molecule &mdash; the biology is deeply real even if nasal delivery is uncertain</li>
+              <li>Context-dependence: it amplifies social signals rather than creating them &mdash; a genuinely nuanced mechanism</li>
+              <li>Active research in autism spectrum conditions where effects may be more consistent than in healthy adults</li>
+              <li>The CNS penetration debate via olfactory pathways is unresolved and scientifically interesting</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      {/* Comparison table */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>How it compares (CNS / bonding context)</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-            <thead>
-              <tr style={{ borderBottom: "2px solid rgba(15,26,46,0.10)" }}>
-                {["", "Oxytocin (intranasal)", "Selank", "Semax"].map((h) => (
-                  <th key={h} style={{ padding: "8px 10px", textAlign: h ? "center" : "left", fontWeight: 700, color: "#0f1a2e", whiteSpace: "nowrap" }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { label: "FDA status", vals: ["Approved (IV, Rx only)", "Research peptide", "Research peptide"] },
-                { label: "Primary mechanism", vals: ["Oxytocin receptor agonist", "GABAergic / enkephalinase", "BDNF / dopaminergic"] },
-                { label: "Social effects evidence", vals: ["Inconsistent in healthy adults", "Anxiolytic — indirect", "Stimulatory — CNS-wide"] },
-                { label: "Pregnancy risk", vals: ["Absolute contraindication", "Unknown", "Unknown"] },
-                { label: "Seizure risk", vals: ["Yes (hyponatremia)", "Low", "Low"] },
-              ].map((row, i) => (
-                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(15,26,46,0.03)" : "transparent" }}>
-                  <td style={{ padding: "8px 10px", fontWeight: 600, color: "#334155", whiteSpace: "nowrap" }}>{row.label}</td>
-                  {row.vals.map((v, j) => (
-                    <td key={j} style={{ padding: "8px 10px", textAlign: "center", color: "#475569" }}>{v}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* What people discuss */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(44,82,130,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(44,82,130,0.15)", borderRadius: 14, padding: "18px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What people discuss</h3>
-        <ul style={{ margin: 0, padding: "0 0 0 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            "Intranasal oxytocin for social bonding and relationship enhancement — the primary off-label interest",
-            "Social anxiety management and stress reduction",
-            "Post-MDMA recovery protocols (oxytocin + social context is discussed in harm reduction contexts)",
-            "The replication crisis around oxytocin social cognition research — communities are generally aware",
-            "Compounding pharmacy access — oxytocin nasal sprays are available via prescription in some markets",
-          ].map((t) => (
-            <li key={t} style={{ fontSize: 13.5, color: "#334155", lineHeight: 1.5 }}>{t}</li>
-          ))}
-        </ul>
       </div>
 
     </div>

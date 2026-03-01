@@ -1,134 +1,74 @@
 export default function GhkCuOverviewPanel() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div className="reta-overview">
 
-      {/* Stat cards */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {[
-          { label: "Primary Route", value: "Topical", sub: "Injectable = higher risk, less clarity", accent: "#2c5282" },
-          { label: "Risk Score", value: "2 / 10", sub: "Lowest systemic risk in this class", accent: "#1a5c3a" },
-          { label: "Evidence Base", value: "Small Human Studies", sub: "Formulation-dependent results", accent: "#7c5200" },
-        ].map((c) => (
-          <div key={c.label} style={{
-            flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
-            border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14,
-            padding: "14px 16px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#64748b", marginBottom: 4 }}>{c.label}</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: c.accent, lineHeight: 1.2 }}>{c.value}</div>
-            <div style={{ fontSize: 12, color: "#64748b", marginTop: 3 }}>{c.sub}</div>
+      <p className="reta-overview__opener">
+        GHK-Cu (copper peptide) is a naturally occurring compound in your body that declines with age, with genuine evidence for wound healing, collagen production, and skin regeneration in topical use. It has been a skincare ingredient since the 1990s and has a more established evidence base than most peptides in the wellness community. Injectable use exists in biohacker circles for systemic effects, but the evidence for that route is much thinner and the risk profile is meaningfully different from topical application.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Skincare and Wellness Person &mdash; Interested in skin aging and tissue repair</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep seeing GHK-Cu in skincare. Is it actually doing something meaningful or is it just another ingredient trend? And I&rsquo;ve heard some people inject it &mdash; is that worth considering?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It&rsquo;s one of the better-studied cosmetic peptides with real mechanism</strong><br />GHK-Cu promotes collagen and glycosaminoglycan synthesis, activates wound-healing proteins, and has antioxidant effects through its copper coordination chemistry. Small controlled trials in humans show improvements in skin texture, firmness, and wrinkle appearance. This isn&rsquo;t a compound with only cell-culture data &mdash; there are real, if small, human studies with measured outcomes.</li>
+          <li><strong>It declines naturally with age, which makes the logic of supplementing it feel intuitive</strong><br />GHK-Cu levels in plasma drop from about 200 ng/mL at age 20 to about 80 ng/mL at age 60. The age-related decline in a molecule that supports tissue maintenance and regeneration creates an obvious intuitive case for replacing it. Whether topical application meaningfully restores systemic levels or acts primarily locally through skin penetration is a separate question &mdash; but the age-decline biology is real.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Topical GHK-Cu has a genuinely reassuring safety profile &mdash; systemic absorption through intact skin is limited, and decades of cosmetic use haven&rsquo;t produced safety signals. The clinical effect size in human trials is modest: real but not dramatic. Not all products labeled &ldquo;GHK-Cu&rdquo; deliver the same penetration or stability; formulation quality matters significantly for whether the active compound reaches the dermal layers where it has its effects. Injectable use is a different story: higher systemic exposure, less characterization, and a stronger need for product quality verification. If you have copper metabolism issues (Wilson&rsquo;s disease or similar) this compound is directly contraindicated. Net: one of the more credible topical peptides for skin aging goals &mdash; injectable use is a separate, less well-supported decision.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Aesthetics- and Fitness-Focused Person &mdash; Skin quality alongside training and performance</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I train hard and I care about both performance and aesthetics &mdash; including skin quality as I age. I&rsquo;ve also heard GHK-Cu discussed for wound healing and maybe tendon support. Where does the evidence actually land for someone like me?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Wound healing and tissue repair are relevant to athletes, not just skincare</strong><br />GHK-Cu promotes the production of collagen and other extracellular matrix components. In the skincare context this translates to wrinkle reduction; in a sports medicine context the same mechanism has theoretical relevance for connective tissue repair. The preclinical wound healing data is actually quite strong &mdash; controlled animal studies show accelerated wound closure and tissue remodeling. Human controlled data for sports injuries specifically is much more limited, but the mechanism is coherent.</li>
+          <li><strong>Hair thinning is a concern athletes on certain compounds face</strong><br />GHK-Cu is discussed in hair loss communities as a potential hair growth stimulant, sometimes stacked with topical minoxidil. Some evidence suggests GHK-Cu may stimulate hair follicle growth factors. For athletes using hormonal compounds that can accelerate hair thinning, this is a relevant adjacent use case.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The tendon and connective tissue repair claims are largely extrapolated from the wound healing and skin data &mdash; there isn&rsquo;t sports-specific controlled human evidence for GHK-Cu in injury recovery. The hair loss evidence is limited and the effect sizes in available studies are modest. For athletes considering injectable GHK-Cu specifically, the systemic exposure is meaningfully higher than topical and the evidence base for that route is much thinner. Stacking GHK-Cu topically with retinoids is a common community practice; cycling them rather than applying simultaneously is commonly suggested to avoid irritation from combination. Net: the topical wound healing and skin effects are the most credible applications &mdash; tendon and hair benefits are plausible but extrapolated, and injectable use adds risk without proportionally adding evidence.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Longevity Biohacker &mdash; Systemic anti-aging mechanisms, copper biology, injectable use</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m interested in GHK-Cu&rsquo;s systemic effects beyond skin &mdash; specifically the gene expression changes Pickart documented, the antioxidant and anti-inflammatory pathways, and whether injectable use makes sense as a systemic intervention.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Pickart&rsquo;s gene expression data suggests GHK-Cu has systemic biological reach beyond skin</strong><br />Loren Pickart&rsquo;s research showed that GHK-Cu modulates the expression of hundreds of genes involved in tissue remodeling, inflammation, antioxidant response, and even gene regulatory pathways overlapping with longevity-associated networks. The peptide appears to work partly as a signaling molecule that coordinates wound-healing and tissue-maintenance programs &mdash; not just as a topical matrix component. Whether this broad gene expression signature produces clinically meaningful systemic effects in healthy adults is the open question.</li>
+          <li><strong>The copper coordination chemistry provides an unusual mechanism</strong><br />GHK-Cu is not just a peptide &mdash; it is a peptide-copper complex where the copper atom is integral to the biological activity. The tripeptide (glycine-histidine-lysine) has exceptionally high copper affinity, forming a stable complex that can interact with copper-dependent enzymes and may regulate copper availability to tissues with high metabolic demand. This copper-mediated mechanism is distinct from every other peptide in the longevity space.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The systemic injectable use case for GHK-Cu is being explored in biohacker communities well ahead of the evidence. Most of the mechanistic gene expression work by Pickart was in vitro or in early preclinical models &mdash; not in humans receiving injections. The systemic half-life of injected GHK-Cu and its tissue distribution in humans are not characterized. Copper homeostasis is tightly regulated; whether exogenous copper-peptide complexes perturb copper metabolism in a meaningful way with repeated injection is unknown. Product quality verification is essential: GHK-Cu is a stable, well-characterized compound but injectable formulations require sterility standards that not all research suppliers meet. For topical use, the risk profile is well-established and low. For injectable use, you are working in a much less evidence-supported space. Net: genuinely interesting systemic mechanisms suggested by Pickart&rsquo;s work, but the systemic injectable claims are extrapolated from in vitro data &mdash; the topical evidence base is the solid ground here.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What GHK-Cu is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not equivalent in evidence between topical and injectable routes &mdash; these are meaningfully different use cases with different risk and evidence profiles</li>
+              <li>Not a high-effect compound in topical human trials &mdash; the results are real but modest; manage expectations accordingly</li>
+              <li>Not appropriate for anyone with copper metabolism disorders (Wilson&rsquo;s disease) &mdash; a copper-chelating peptide in that context is a direct contraindication</li>
+              <li>Not fully characterized for systemic injectable use &mdash; pharmacokinetics, tissue distribution, and safety for injectable GHK-Cu are not established in humans</li>
+              <li>Not formulation-independent &mdash; &ldquo;GHK-Cu&rdquo; on a product label says nothing about penetration, stability, or bioavailability</li>
+            </ul>
           </div>
-        ))}
-      </div>
-
-      {/* Overview */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          GHK-Cu is a naturally occurring compound in your body that declines as you age. In skincare and wound healing, it&apos;s one of the better-studied peptides — there&apos;s real evidence for its role in tissue repair and collagen production. Most people encounter it as a skincare ingredient, where it&apos;s been in use since the 1990s. The wellness community also discusses injectable forms for systemic recovery effects, though the evidence base for that use is thinner.
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          The important nuance: results depend heavily on formulation. Not all GHK-Cu products deliver the same absorption, and &ldquo;GHK-Cu&rdquo; on a label doesn&apos;t tell you how much actually reaches deeper tissue. Injectable use carries a different risk profile than topical. For topical use, the safety record is reassuring; injectable use is less well-characterized.
-        </p>
-      </div>
-
-      {/* Important distinction: topical vs injectable */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(124,82,0,0.06) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(124,82,0,0.18)", borderRadius: 14, padding: "16px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 13, fontWeight: 800, color: "#7c5200", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Route distinction — this matters</h3>
-        <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#334155", margin: 0 }}>
-          <strong>Topical GHK-Cu</strong> (serums, creams) has a genuinely low risk profile. Systemic absorption through intact skin is limited; the cosmetic evidence, while modest, is real. <strong>Injectable GHK-Cu</strong> exists in research peptide circles — it carries meaningfully higher systemic risk with less supporting real-world data than the topical form. The panels on this page apply primarily to topical use unless otherwise noted.
-        </p>
-      </div>
-
-      {/* Is it a fit? */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Skin appearance and texture interest (topical)", note: "Best-evidenced use case; modest but real signal in small RCTs" },
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Aging skin, wound healing, barrier support discussions", note: "Mechanistic plausibility is strong; clinical magnitude is mild-to-moderate" },
-            { icon: "✓", color: "#1a5c3a", bg: "#f0fdf4", label: "Hair/scalp support (topical formulations)", note: "Discussed in cosmetic communities; evidence is limited but low-risk to explore" },
-            { icon: "△", color: "#7c5200", bg: "#fffbf0", label: "Injectable GHK-Cu for systemic effects", note: "Higher risk, much weaker evidence base vs topical; manage expectations significantly" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Copper sensitivity or Wilson's disease", note: "Copper-binding peptide in someone with copper metabolism disorder is a direct contraindication" },
-            { icon: "✗", color: "#9e3800", bg: "#fff7f5", label: "Severe active dermatitis or broken skin barrier", note: "Applying actives to compromised skin increases systemic absorption unpredictably" },
-          ].map((row) => (
-            <div key={row.label} style={{
-              display: "flex", alignItems: "flex-start", gap: 10,
-              background: row.bg, borderRadius: 10, padding: "10px 14px",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: row.color, flexShrink: 0, marginTop: 1 }}>{row.icon}</span>
-              <div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1e293b" }}>{row.label}</div>
-                <div style={{ fontSize: 12, color: "#64748b", marginTop: 2 }}>{row.note}</div>
-              </div>
-            </div>
-          ))}
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>One of the few cosmetic peptides with genuine controlled human trial data showing measurable skin improvements</li>
+              <li>Naturally declines with age &mdash; the physiological rationale for supplementation is grounded in actual age-related biology</li>
+              <li>Unique copper-coordination mechanism: the copper atom is integral to the activity, not just an adjunct</li>
+              <li>Gene expression work suggests broader biological reach than a simple extracellular matrix stimulator &mdash; an intersection with tissue maintenance programs relevant to longevity biology</li>
+              <li>Decades of cosmetic safety record for topical use &mdash; reassuring baseline for the most accessible form of the compound</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      {/* Comparison table */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>How it compares (skin actives)</h3>
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
-            <thead>
-              <tr style={{ borderBottom: "2px solid rgba(15,26,46,0.10)" }}>
-                {["", "GHK-Cu", "Retinoids", "Peptide serums"].map((h) => (
-                  <th key={h} style={{ padding: "8px 10px", textAlign: h ? "center" : "left", fontWeight: 700, color: "#0f1a2e", whiteSpace: "nowrap" }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { label: "Mechanism", vals: ["Copper-mediated remodeling", "Retinoic acid / gene expression", "Various receptor targets"] },
-                { label: "Human evidence", vals: ["Small RCTs (modest)", "Robust (decades of data)", "Variable by formulation"] },
-                { label: "Irritation potential", vals: ["Low", "Moderate-High", "Low-Moderate"] },
-                { label: "Photosensitivity", vals: ["None known", "Yes (retinoids)", "None known"] },
-                { label: "Systemic risk", vals: ["Very low (topical)", "Low (topical)", "Very low"] },
-              ].map((row, i) => (
-                <tr key={row.label} style={{ background: i % 2 === 0 ? "rgba(15,26,46,0.03)" : "transparent" }}>
-                  <td style={{ padding: "8px 10px", fontWeight: 600, color: "#334155", whiteSpace: "nowrap" }}>{row.label}</td>
-                  {row.vals.map((v, j) => (
-                    <td key={j} style={{ padding: "8px 10px", textAlign: "center", color: "#475569" }}>{v}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* What people discuss */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(44,82,130,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(44,82,130,0.15)", borderRadius: 14, padding: "18px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What people discuss</h3>
-        <ul style={{ margin: 0, padding: "0 0 0 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            "Skin texture, firmness, and aging appearance support (the core topical use case)",
-            "Hair thinning and scalp health (often stacked with topical minoxidil in hair loss protocols)",
-            "Wound healing acceleration (anecdotal; the preclinical data is strong even if human data is thin)",
-            "Stacking with retinoids — some community members cycle or layer these; irritation is the key variable",
-            "Injectable GHK-Cu discussions (higher risk, fewer data points, emerging from biohacker communities)",
-          ].map((t) => (
-            <li key={t} style={{ fontSize: 13.5, color: "#334155", lineHeight: 1.5 }}>{t}</li>
-          ))}
-        </ul>
       </div>
 
     </div>

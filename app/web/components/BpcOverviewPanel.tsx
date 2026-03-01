@@ -1,201 +1,75 @@
-/**
- * BpcOverviewPanel — decision-oriented overview for BPC-157.
- * Answers: What is this? Why do people care? Is it right for my situation? What should I expect?
- * Key frame: strong preclinical signal, thin human evidence, sourcing risk is the dominant variable.
- */
-
-const STAT_CARDS = [
-  {
-    value: "15",
-    label: "amino acids",
-    sub: "pentadecapeptide — partial sequence from gastric protein BPC",
-    note: "Fully synthetic — stable salt form (BPC-157 acetate) used in research",
-  },
-  {
-    value: "30+ yrs",
-    label: "of preclinical research",
-    sub: "hundreds of animal models across multiple tissue types",
-    note: "Human clinical trial data: sparse. One Phase I study registered.",
-  },
-  {
-    value: "0",
-    label: "regulatory approvals",
-    sub: "unapproved for human use globally",
-    note: "FDA flagged compounding safety risks. Research-grade only — no pharmaceutical standard.",
-  },
-];
-
-const FIT_YES = [
-  "You're focused on injury recovery (tendon, ligament, soft tissue) and conventional approaches have plateaued",
-  "You have persistent GI issues (reflux, gut irritation) and are open to supplementing alongside medical care",
-  "You understand the evidence base is mostly preclinical and accept that clinical certainty doesn't exist yet",
-  "You're sourcing from a supplier that provides independent third-party certificate of analysis (CoA) — not random vendors",
-  "You've set a clear hypothesis: a specific outcome, over a defined timeframe, that you'll actually evaluate",
-];
-
-const FIT_NO = [
-  "You expect pharmaceutical-grade efficacy with clinical certainty — the human evidence doesn't support that position",
-  "You're sourcing from unverified vendors — contamination and mislabeling are the primary real-world risk",
-  "You're pregnant, breastfeeding, or an adolescent — developmental risk is explicitly flagged due to high uncertainty",
-  "You're on prescription immunomodulators (biologics, methotrexate) for autoimmune disease — interaction unknowns are real",
-  "You're stacking multiple unverified compounds simultaneously — compounding uncertainty without compounding benefit",
-  "You expect it to structurally repair acute serious injuries — the mechanism is about tissue environment, not surgical correction",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Orientation — route choice matters here",
-    body: "Oral route (for GI targeting) tends to produce faster subjective feedback, if any — effects often described within weeks. Injectable route for structural goals (tendon, soft tissue) is slower — this is about tissue biology, not acute pharmacology. The first weeks are about tolerability assessment and sourcing validation, not outcome measurement.",
-  },
-  {
-    phase: "Months 1–3",
-    heading: "The honest evaluation window",
-    body: "If BPC-157 is doing something for your specific goal, this is when you'd start to notice it. Soft tissue comfort and recovery trajectory are the primary signals for injury use. GI symptom patterns are the signal for gut use. The challenge: BPC-157 is almost always used alongside rest, rehab, and other interventions — attribution is genuinely difficult.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Genuinely unknown territory",
-    body: "No human data exists on sustained BPC-157 use. This isn't a hedged statement — it's a literal absence of data. People who use it long-term are running a personal experiment without a reference map. Most community protocols involve cycling (on/off periods) rather than continuous use, primarily for this reason.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "BPC-157 (injectable)",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Primary use case", value: "Systemic healing — tendon, soft tissue, joint" },
-      { label: "Route", value: "Subcutaneous injection" },
-      { label: "Onset", value: "Gradual — weeks to months" },
-      { label: "GI targeting", value: "Indirect — systemic distribution" },
-      { label: "Evidence for this use", value: "Animal models (strong); humans (sparse)" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "BPC-157 (oral)",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Primary use case", value: "GI-targeted healing — reflux, gut irritation" },
-      { label: "Route", value: "Oral capsule or liquid" },
-      { label: "Onset", value: "Faster subjective GI feedback than injectable" },
-      { label: "GI targeting", value: "Direct — survives gastric passage (theoretical)" },
-      { label: "Evidence for this use", value: "Animal GI models (strong); systemic bioavailability disputed" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "TB-500 / Thymosin β4",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Primary use case", value: "Healing, inflammation modulation, tissue repair" },
-      { label: "Route", value: "Subcutaneous injection" },
-      { label: "Onset", value: "Similar — gradual, weeks" },
-      { label: "Mechanism", value: "Actin regulation + anti-inflammatory (distinct from BPC)" },
-      { label: "Stack relationship", value: "Commonly used alongside BPC-157 — complementary, not redundant" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function BpcOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          One of the most discussed recovery peptides — and one of the least proven in humans.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Strong animal data. Sparse human trials. Real-world risk lives in the sourcing and supply chain, not the compound itself.
-        </div>
+      <p className="reta-overview__opener">
+        BPC-157 is a short synthetic peptide derived from a protein found in stomach fluid, and it&rsquo;s the most talked-about recovery compound in the peptide community by a wide margin. Hundreds of animal studies show it accelerates healing of tendons, ligaments, gut lining, and even nerves &mdash; results that are genuinely impressive in rodent models. Human clinical evidence is nearly nonexistent. The gap between the animal data and the human evidence is real, and the sourcing chain is where most of the actual risk lives.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; hurt, frustrated, and looking for something that actually works</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve had this tendon thing for six months, PT hasn&rsquo;t fixed it, and I keep seeing people online say BPC-157 healed them in weeks. Is this real?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The healing stories are everywhere</strong><br />Reddit, YouTube, and peptide forums are full of people reporting dramatic recovery from injuries that had plateaued &mdash; torn tendons, gut issues, joint pain, rotator cuffs. The anecdotes are vivid and specific. When you&rsquo;re stuck, that matters.</li>
+          <li><strong>The animal research actually is impressive</strong><br />This isn&rsquo;t just bro science. There are hundreds of published animal studies from multiple research groups showing BPC-157 accelerates healing of tendons, muscles, gut lining, and bone. That&rsquo;s a real scientific signal, even if it&rsquo;s not yet proven in humans.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">No controlled human trial has proven BPC-157 works for injury recovery. The animal studies are promising &mdash; they don&rsquo;t lie about what happens in rats &mdash; but they also do not guarantee the same thing happens in you. People recover from injuries all the time, and if you&rsquo;re using BPC-157 while also resting, rehabbing, and eating well, attribution is genuinely hard. The bigger issue is what you&rsquo;re actually buying: gray-market peptide suppliers vary enormously in quality, and mislabeled or contaminated product is a documented problem. Net: the science is real enough to understand the excitement, but you&rsquo;re running a personal experiment without a reference map.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; stacking for faster recovery between training blocks</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to run BPC-157 subcutaneous for a partially torn ligament and maybe stack it with TB-500. What protocol makes sense and what should I actually watch for?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Tendon and ligament data is the strongest in the literature</strong><br />Animal studies specifically on Achilles tendon transection, ACL repair, rotator cuff, and muscle tears consistently show accelerated healing with BPC-157. These are the exact injury types athletes deal with. The specificity of the animal evidence to athletic injury types is part of what makes the community enthusiasm understandable.</li>
+          <li><strong>The BPC-157 + TB-500 stack has a mechanistic rationale</strong><br />BPC-157 is thought to improve tissue environment and growth factor signaling; TB-500 is thought to regulate actin and reduce inflammation through a different pathway. They don&rsquo;t overlap mechanistically &mdash; which is why the stack is popular. It&rsquo;s not just doubling up; it&rsquo;s combining complementary approaches.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The route choice matters for what you&rsquo;re targeting: subcutaneous injection distributes systemically, while injection near the injured site may concentrate locally (evidence for this is mostly theoretical, not validated). The 4-8 week protocols common in the community are derived from animal study timelines, not human trials. BPC-157 is not a structural repair agent &mdash; it creates a better healing environment, not a surgical fix. Stacking with another unverified compound doubles the sourcing risk surface. Net: mechanistically coherent, preclinically supported, but human evidence is sparse and sourcing is your actual risk variable.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; tissue repair, gut optimization, neuro protection</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand the actual mechanisms &mdash; growth factor upregulation, angiogenesis, the gut-brain axis signaling &mdash; and figure out whether oral or injectable makes more sense for my specific goals.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The mechanism depth is genuinely interesting</strong><br />BPC-157 appears to upregulate growth hormone receptor expression, promote angiogenesis through VEGF pathways, modulate nitric oxide synthesis, and interact with dopaminergic and serotonergic systems. It&rsquo;s a 15-amino-acid peptide with a disproportionately broad apparent mechanism footprint &mdash; which is either a sign of pleiotropic biology or an artifact of varied animal model designs, and the uncertainty itself is scientifically interesting.</li>
+          <li><strong>The gut-brain axis angle adds longevity framing</strong><br />Oral BPC-157 specifically targets the gut lining and may survive gastric passage in sufficient concentrations for local GI effects. For biohackers interested in gut permeability, microbiome support, and the GI-brain axis, oral BPC-157 is a distinct application from the injectable repair use case &mdash; and the animal evidence for oral GI protection is actually among the stronger data.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The mechanism studies are mostly rodent, mostly from a small number of research groups, and the breadth of claimed effects should create some skepticism about whether all of them are real or some are noise. The oral bioavailability question &mdash; whether enough BPC-157 survives gastric digestion to produce systemic effects &mdash; is genuinely unresolved. For cancer history: the angiogenesis and growth factor promotion mechanisms are a real flag, not a theoretical one. No long-term human safety data exists for any use case. The absence of a pharmaceutical sponsor means this research gap may never close through conventional trials. Net: mechanistically rich, animal evidence solid, human evidence absent, and that gap is unlikely to close soon without your own n=1 data and rigorous sourcing.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What BPC-157 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Proven to work in controlled human trials &mdash; no published human RCT for any indication</li>
+              <li>A structural repair agent &mdash; it modulates healing environment, not a surgical substitute</li>
+              <li>Risk-free because it&rsquo;s a peptide &mdash; sourcing contamination is the dominant real-world risk</li>
+              <li>Equivalent from every supplier &mdash; product quality varies enormously without third-party verification</li>
+              <li>Safe for people with active cancer or cancer history due to angiogenesis promotion mechanisms</li>
+              <li>Something with established long-term human safety data at any dose</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>30+ years of animal research from multiple independent groups &mdash; not just one lab&rsquo;s result</li>
+              <li>Broad tissue specificity in animals: tendon, gut, muscle, bone, nerve &mdash; not a narrow effect</li>
+              <li>Mechanistically distinct from other recovery compounds &mdash; not just anti-inflammatory</li>
+              <li>Oral route has animal evidence for GI-specific effects that other peptides lack</li>
+              <li>The gap between animal data and human evidence is a genuine scientific question, not settled</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">BPC-157 vs its common comparators</div>
-      <div className="reta-overview__compare-note">
-        Route choice within BPC-157 matters as much as the compound itself. The oral vs injectable distinction is about what you&apos;re targeting, not about dosing.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

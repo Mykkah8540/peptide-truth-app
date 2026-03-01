@@ -1,203 +1,74 @@
-/**
- * Ghrp6OverviewPanel — decision-oriented overview for GHRP-6.
- * Key frame: the most appetite-stimulating GHRP — "hunger bomb" in community parlance.
- * Cortisol + prolactin elevation same as GHRP-2. Extreme appetite is the defining distinguisher
- * vs GHRP-2. Eating disorder history is an explicit caution. Community has moved to ipamorelin.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Extreme",
-    label: "appetite stimulation",
-    sub: "GHRP-6 is known for the most intense hunger stimulation of any GHRP — the 'hunger bomb' descriptor in community use accurately reflects the ghrelin receptor effect at this compound's potency",
-    note: "The appetite effect is not manageable by timing the injection (as with ipamorelin). It's intense, early, and a real practical challenge for anyone not intentionally pursuing aggressive caloric surplus.",
-  },
-  {
-    value: "Non-selective",
-    label: "cortisol + prolactin elevation",
-    sub: "like GHRP-2, GHRP-6 elevates cortisol and prolactin alongside GH — the non-selective GHRP profile that ipamorelin was designed to replace",
-    note: "Cortisol is catabolic. Running GHRP-6 for recovery or muscle goals means contending with a documented catabolic counter-pressure that ipamorelin avoids.",
-  },
-  {
-    value: "Potent",
-    label: "acute GH release",
-    sub: "strong acute GH pulse — GHRP-6 produces robust GH release; the limitation is selectivity (cortisol/prolactin) and the extreme appetite that makes caloric control difficult",
-    note: "High GH release with extreme appetite stimulation is not a favorable tradeoff for most enhancement goals. Body composition outcomes depend on net caloric management, not just GH elevation.",
-  },
-];
-
-const FIT_YES = [
-  "You have aggressive lean mass or bulking goals and need help driving caloric intake — GHRP-6's extreme appetite stimulation is an asset in this specific context",
-  "You understand the cortisol and prolactin tradeoffs and have a specific reason to use GHRP-6 rather than ipamorelin",
-  "You have no diabetes, prediabetes, or insulin resistance — GH + cortisol create compounded glucose-raising effects",
-  "You have no history of eating disorders or binge eating — extreme appetite stimulation from GHRP-6 is a real risk for anyone with disordered eating patterns",
-  "You have no active or recent cancer diagnosis — IGF-1 mitogenic concern applies identically to GHRP-6",
-];
-
-const FIT_NO = [
-  "You have eating disorder history or a history of binge eating — GHRP-6's extreme hunger stimulation is a real trigger risk; this is explicitly listed as a caution and is non-negotiable",
-  "Your goal is fat loss or caloric restriction — extreme appetite stimulation actively fights caloric control; this combination makes GHRP-6 counterproductive for weight management goals",
-  "You want the GH pulse without the appetite or cortisol burden — ipamorelin provides similar GH release with manageable appetite and no cortisol elevation",
-  "You have diabetes, prediabetes, or insulin resistance — GH + cortisol creates a compounded glucose-raising mechanism more significant than with ipamorelin alone",
-  "You have obesity — extreme appetite stimulation in the context of obesity management goals creates direct conflict with the intervention's purpose",
-  "You have an active cancer diagnosis — IGF-1 is mitogenic; oncology clearance required",
-  "You're pregnant, breastfeeding, or an adolescent — hard stop",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Appetite surge is the dominant early signal — not subtle",
-    body: "GHRP-6's appetite stimulation is intense and begins within days. Users describe overwhelming hunger shortly after injection — this is the ghrelin receptor working at full potency. Water retention, standard early GH response, and cortisol effects (mood, sleep) may all be present simultaneously. If you're not prepared for the appetite signal, it is disruptive. Managing caloric intake is the primary practical challenge from day one.",
-  },
-  {
-    phase: "Months 1–3",
-    heading: "Net body composition depends entirely on caloric management",
-    body: "GHRP-6's body composition outcomes — positive or negative — are largely determined by whether caloric intake is managed relative to the appetite stimulation. GH/IGF-1 promotes anabolism; cortisol promotes catabolism; extreme hunger drives caloric surplus. The net outcome in body composition is highly individual and depends on the user's ability to manage intake against a very strong hunger signal. Attribution is difficult even with consistent protocols.",
-  },
-  {
-    phase: "Long-term",
-    heading: "Unstudied and with additional variables",
-    body: "Same as all GH-axis compounds: long-term, continuous use in healthy adults is not characterized. GHRP-6 adds the dimension of sustained extreme appetite stimulation and chronic cortisol/prolactin elevation — neither of which is characterized for long-term use in healthy adults. The community cycling convention applies. If your appetite management has been a consistent challenge during the cycle, that's a signal the compound may not fit your goals.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "GHRP-6",
-    badge: "Research-grade",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor (GHSR1a) — same as GHRP-2 and ipamorelin" },
-      { label: "Appetite", value: "Extreme — the 'hunger bomb' GHRP; more intense than GHRP-2 or ipamorelin" },
-      { label: "Cortisol / prolactin", value: "Elevated — similar to GHRP-2; meaningfully more than ipamorelin" },
-      { label: "Eating disorder risk", value: "Explicitly flagged — extreme appetite stimulation is a trigger risk" },
-      { label: "Who still uses it", value: "Aggressive bulking protocols; some research contexts; largely replaced by ipamorelin" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "GHRP-2",
-    badge: "Research-grade",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor — same as GHRP-6" },
-      { label: "Appetite", value: "Moderate — ghrelin effect present; less extreme than GHRP-6" },
-      { label: "Cortisol / prolactin", value: "Elevated — similar to GHRP-6" },
-      { label: "Key distinction from GHRP-6", value: "Less extreme appetite; GHRP-2 is slightly more manageable but less studied" },
-      { label: "Why it was replaced", value: "Same cortisol/prolactin selectivity problem as GHRP-6; ipamorelin solved this" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Ipamorelin",
-    badge: "Community standard",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Receptor", value: "Ghrelin receptor — same as GHRP-6" },
-      { label: "Appetite", value: "Moderate — manageable with timing (especially bedtime injection)" },
-      { label: "Cortisol / prolactin", value: "Low — the 'selective' GHRP; designed to avoid GHRP-2/GHRP-6 limitations" },
-      { label: "Why it replaced GHRP-6", value: "Same GH mechanism without the appetite, cortisol, and prolactin burden" },
-      { label: "Community status", value: "Current standard GHRP for enhancement protocols" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function Ghrp6OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The GH compound that causes extreme hunger — useful for aggressive bulking, a problem for everything else.
-        </div>
-        <div className="reta-overview__headline-sub">
-          GHRP-6 is an injectable GH-stimulating compound with a defining characteristic: intense hunger. Not &ldquo;I could use a snack&rdquo; — users describe strong cravings within 30 minutes of injecting. For people trying to eat aggressively in a bulking phase, that hunger effect can be genuinely useful. For everyone else, it&apos;s the main reason ipamorelin — which produces similar GH effects without the appetite storm — became the standard.
-        </div>
+      <p className="reta-overview__opener">
+        GHRP-6 is an injectable compound that stimulates growth hormone release and, as a defining feature, triggers intense hunger. The appetite effect is not subtle &mdash; users describe overpowering cravings within 30 minutes of injecting. For aggressive bulking, that hunger can be useful. For most other goals, it is the main reason the community moved to ipamorelin instead.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; wants to gain muscle and size</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m trying to put on serious size. I heard GHRP-6 makes you really hungry &mdash; could that actually help me eat enough to grow?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>It genuinely drives GH release</strong><br />GHRP-6 produces real GH pulses. For someone pursuing muscle mass, GH is part of the anabolic environment they&rsquo;re trying to build &mdash; and GHRP-6 delivers that.</li>
+          <li><strong>The hunger effect could solve a real problem for hard gainers</strong><br />Some people genuinely struggle to eat enough calories to grow. GHRP-6&rsquo;s intense appetite stimulation, if it fits your goal, could make hitting a large caloric surplus feel less like a chore.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The hunger is not controllable by timing your injection the way ipamorelin&rsquo;s milder appetite effect can be managed. It&rsquo;s intense and hits fast &mdash; and if you have any history of disordered eating or binge eating, this is a real risk, not a theoretical one. GHRP-6 also raises cortisol alongside GH, which partially cancels the anabolic benefit. If you don&rsquo;t have a specific reason why the hunger effect is useful to you, ipamorelin provides the GH benefit without the appetite storm. Net: narrow use case, meaningful risks, not a beginner compound.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; dedicated bulking phase, aggressive caloric targets</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m in a deliberate bulk and need to eat a lot. Does GHRP-6&rsquo;s appetite stimulation actually work as a tool for that, or is it just a side effect people complain about?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The &ldquo;hunger bomb&rdquo; effect is real and forceful</strong><br />GHRP-6 produces the most intense appetite stimulation of any compound in its class. Athletes in a deliberate caloric surplus who struggle with appetite find this genuinely useful &mdash; it&rsquo;s not a mild nudge.</li>
+          <li><strong>Combined with GH release, it hits two bulking levers at once</strong><br />GHRP-6 drives both GH output and hunger simultaneously. For an athlete trying to maximize anabolic conditions during a mass-gain phase, that combination has a logic to it even if the cortisol tradeoff is real.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The cortisol elevation is catabolic and runs against your goals regardless of the caloric surplus. Eating more does not cancel out elevated cortisol &mdash; it just means you&rsquo;re eating more while contending with a stress-hormone signal that degrades muscle and disrupts sleep. Body composition outcomes on GHRP-6 depend almost entirely on whether you can manage caloric intake precisely despite an overwhelming hunger signal. If you overshoot calories significantly, you may gain more fat than intended. Net: useful for appetite-driven bulking if you can manage intake, but the cortisol tradeoff means results are less clean than the hype suggests.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; ghrelin axis, appetite physiology</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;GHRP-6 is a ghrelin agonist. I&rsquo;m interested in what ghrelin does beyond appetite &mdash; the GH signal, the gut-brain communication. What&rsquo;s the actual mechanistic picture?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Ghrelin is a fascinating axis with effects beyond hunger</strong><br />Ghrelin is not just an appetite hormone &mdash; it plays roles in GH regulation, gut motility, energy homeostasis, and even stress response. GHRP-6 engages this system forcefully, and studying the response gives insight into how the gut-brain-pituitary axis functions together.</li>
+          <li><strong>Useful reference compound for understanding the GHRP family</strong><br />GHRP-6 is the earliest-studied GHRP with the strongest ghrelin-axis effect. Understanding what it does mechanistically &mdash; and why ipamorelin was developed to selectively remove the appetite and cortisol components &mdash; illuminates how selective receptor pharmacology works in practice.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Ghrelin receptor agonism at GHRP-6&rsquo;s potency is blunt &mdash; the non-selective cortisol and prolactin co-elevation is a real systems cost, not just a side effect to ignore. From a pure pharmacological-education standpoint, GHRP-6 illustrates what non-selective looks like before the field developed selective alternatives. For anyone who wants to actually intervene in the ghrelin axis for optimization purposes, ipamorelin is the better tool. Net: excellent historical reference and mechanistic case study, narrow practical utility for most optimization protocols.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What GHRP-6 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not a clean GH booster &mdash; cortisol and prolactin elevation come with it</li>
+              <li>Not appropriate for anyone with eating disorder history or binge eating tendencies</li>
+              <li>Not the current community standard &mdash; ipamorelin replaced it for most goals</li>
+              <li>Not suitable for fat loss or caloric restriction goals &mdash; the hunger works directly against those</li>
+              <li>Not suitable for anyone with diabetes or insulin resistance</li>
+              <li>Not &ldquo;stronger therefore better&rdquo; &mdash; the intensity of the hunger effect is a liability, not an asset, for most people</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The most intense appetite stimulation of any compound in its class &mdash; genuinely useful for deliberate aggressive bulking</li>
+              <li>Drives real GH release alongside the hunger effect</li>
+              <li>Well-documented pharmacology as an early ghrelin receptor agonist</li>
+              <li>Illustrates what non-selective ghrelin agonism looks like &mdash; foundational for understanding the GHRP family</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">GHRP-6 vs GHRP-2 vs Ipamorelin</div>
-      <div className="reta-overview__compare-note">
-        All three hit the ghrelin receptor. GHRP-6 has the most extreme appetite effect of the three. GHRP-2 has similar cortisol/prolactin profile with less appetite. Ipamorelin was developed specifically to provide similar GH release with manageable appetite and minimal cortisol/prolactin elevation.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

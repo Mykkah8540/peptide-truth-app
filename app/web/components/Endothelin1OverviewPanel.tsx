@@ -1,207 +1,74 @@
-/**
- * Endothelin1OverviewPanel — decision-oriented overview for Endothelin-1 (ET-1).
- * Key frame: ET-1 is the most potent endogenous vasoconstrictor known.
- * It is not used therapeutically as an agonist — exogenous administration would
- * cause severe, prolonged vasoconstriction. The clinical relevance is via
- * endothelin receptor antagonists (ERAs) that BLOCK ET-1's effects in PAH.
- */
-
-const STAT_CARDS = [
-  {
-    value: "21-AA",
-    label: "vasoconstrictor peptide \u2014 the most potent endogenous one known",
-    sub: "Endothelin-1 is a 21-amino-acid peptide produced by vascular endothelial cells. It binds ETA receptors on vascular smooth muscle, causing prolonged, powerful vasoconstriction \u2014 roughly 10 times more potent than angiotensin-II on a molar basis. It also binds ETB receptors on endothelium, which paradoxically causes vasodilation via nitric oxide and prostacyclin release, and clears circulating ET-1 from the bloodstream.",
-    note: "The dual ETA/ETB receptor system is why ET-1 physiology is complex: ETA drives sustained constriction; ETB on endothelium provides a counterbalancing dilatory and clearance function. ETB on vascular smooth muscle also causes constriction, making the net effect depend on receptor distribution in a given tissue bed. The result is tissue-specific vasoregulation \u2014 not a simple \u201ctighten everything\u201d signal.",
-  },
-  {
-    value: "ERAs",
-    label: "endothelin receptor antagonists \u2014 FDA-approved for pulmonary arterial hypertension",
-    sub: "The clinical relevance of ET-1 pharmacology is endothelin receptor antagonists (ERAs): bosentan (Tracleer), ambrisentan (Letairis), and macitentan (Opsumit). These drugs BLOCK ET-1\u2019s effects at ETA (and in the case of bosentan and macitentan, ETB as well). They are FDA-approved for pulmonary arterial hypertension (PAH), where pathologically elevated ET-1 drives progressive pulmonary vascular constriction and remodeling.",
-    note: "ERAs are not ET-1 itself \u2014 they are ET-1 antagonists. This distinction is critical: the therapeutic intervention is blocking ET-1, not administering it. Exogenous ET-1 as an agonist would cause the opposite of the desired effect in PAH \u2014 and in any healthy person would cause acute severe hypertension, ischemia, and potential end-organ damage.",
-  },
-  {
-    value: "PAH",
-    label: "pulmonary arterial hypertension \u2014 the primary disease context for ET-1 pharmacology",
-    sub: "In PAH, ET-1 levels are elevated 2\u20135-fold in plasma and are even higher in pulmonary arterial tissue. This pathological ET-1 excess drives the pulmonary vascular remodeling (smooth muscle hypertrophy, fibrosis, and progressive narrowing of pulmonary arterioles) that defines PAH. ERAs reverse or slow this process by blocking ET-1\u2019s effects at the receptor level. ET-1 measurement is used as a prognostic biomarker in PAH and heart failure.",
-    note: "PAH is a serious, progressive condition with a median survival of 2\u20133 years without treatment in historical series. ERAs have substantially changed outcomes \u2014 macitentan in particular (SERAPHIN trial) showed significant reductions in morbidity and mortality. The ET-1 pathway is one of three major therapeutic targets in PAH (the others being the prostacyclin and NO/cGMP pathways).",
-  },
-  {
-    value: "No Rx use",
-    label: "ET-1 agonist \u2014 no therapeutic or community use; would cause extreme vasoconstriction",
-    sub: "Exogenous endothelin-1 has no therapeutic use as an agonist in any approved indication. It is used as a research tool in laboratory settings (studying vasoconstriction, vascular biology, and receptor pharmacology). In the community peptide context, there is no legitimate use case: injecting ET-1 would cause severe, prolonged vasoconstriction that could produce hypertensive crisis, myocardial ischemia, cerebrovascular events, and renal ischemia.",
-    note: "ET-1 is not a \u201ccommunity peptide\u201d \u2014 it appears here for pharmacological education on one of the most important vasoactive peptides in human physiology and as context for understanding ERA medications that patients with PAH, heart failure, or CKD may be taking. Anyone on an ERA (bosentan, ambrisentan, macitentan) needs to understand the interaction profile, particularly hepatotoxicity monitoring and the severe teratogenicity of this drug class.",
-  },
-];
-
-const FIT_YES = [
-  "You have been diagnosed with pulmonary arterial hypertension (PAH) and your cardiologist or pulmonologist has prescribed an ERA (bosentan, ambrisentan, or macitentan) \u2014 this is the legitimate clinical context for engaging with ET-1 pharmacology",
-  "You are researching ET-1 physiology as part of understanding cardiovascular disease, vascular biology, or renal pathophysiology \u2014 ET-1 is a major mediator of vascular tone regulation worth understanding",
-  "You are a patient on ERA therapy who wants to understand the mechanism of your medication and what interactions and monitoring requirements apply",
-  "You are researching PAH treatment options and want to understand the pharmacological rationale behind the three major PAH drug classes",
-];
-
-const FIT_NO = [
-  "You are considering using ET-1 for any injectable or enhancement purpose \u2014 exogenous ET-1 as an agonist would cause severe vasoconstriction; there is no therapeutic benefit and significant acute harm potential",
-  "You are pregnant or planning pregnancy and are on ERA therapy \u2014 ERAs are pregnancy category X with documented teratogenicity; this requires immediate discussion with your prescriber about alternative PAH management or pregnancy prevention",
-  "You are on an ERA and taking cyclosporine \u2014 this is a contraindicated combination with bosentan specifically due to major CYP3A4 and OATP1B1 interactions causing dramatically elevated cyclosporine and bosentan levels",
-  "You are on hormonal contraceptives while taking bosentan \u2014 bosentan induces CYP3A4/2C9 and reduces hormonal contraceptive efficacy, compounding the teratogenicity risk of ERAs",
-  "You have liver disease or elevated transaminases and are being considered for ERA therapy \u2014 hepatotoxicity (black box warning for bosentan) is a significant concern; liver function monitoring is mandatory and active liver disease may be a contraindication",
-];
-
-const TIMELINE = [
-  {
-    phase: "Before ERA therapy",
-    heading: "Baseline liver function tests and pregnancy testing are mandatory before starting any ERA",
-    body: "ERAs require baseline liver function tests (ALT, AST) before initiation. Bosentan carries a black box warning for hepatotoxicity and requires monthly liver function monitoring. Pregnancy testing is mandatory \u2014 all ERAs are teratogenic (pregnancy category X). Reliable contraception (two methods, given that bosentan reduces hormonal contraceptive efficacy) is required. The REMS program (Tracleer REMS, Letairis REMS) enforces these requirements with risk mitigation strategies including mandatory counseling and documentation. These are not optional precautions \u2014 they are regulatory requirements.",
-  },
-  {
-    phase: "During ERA therapy",
-    heading: "Monthly liver function monitoring, contraception counseling, and drug interaction surveillance",
-    body: "Bosentan requires monthly ALT/AST monitoring due to hepatotoxicity risk; the label specifies dose reduction or discontinuation if transaminases rise above 3\u00d7 ULN. Ambrisentan and macitentan have lower hepatotoxicity rates but liver monitoring is still standard. Drug interactions are clinically significant: bosentan is a strong inducer of CYP3A4 and CYP2C9, which reduces the efficacy of many co-administered drugs including hormonal contraceptives, cyclosporine (contraindicated), and some antifungals. PAH combination therapy with sildenafil, tadalafil, or riociguat is standard of care and requires careful titration.",
-  },
-  {
-    phase: "Long-term",
-    heading: "PAH is a progressive disease; ERA therapy is long-term and combination therapy escalation is common",
-    body: "PAH management is a long-term, often lifelong commitment. ERA therapy alone may be sufficient in early or milder disease, but guideline-recommended PAH care frequently involves combination therapy across the three pathways: ERA + PDE5 inhibitor (sildenafil, tadalafil) \u00b1 prostacyclin analogue (treprostinil, iloprost, selexipag). The AMBITION trial demonstrated superiority of upfront combination therapy (ambrisentan + tadalafil) over monotherapy in treatment-naive patients. Regular right-heart catheterization to assess pulmonary hemodynamics guides therapy escalation decisions.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Bosentan (Tracleer)",
-    badge: "Dual ETA/ETB antagonist \u2014 first ERA approved",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Receptor selectivity", value: "Non-selective: blocks both ETA and ETB \u2014 ETB blockade reduces endothelial clearance of ET-1" },
-      { label: "Hepatotoxicity", value: "Black box warning \u2014 monthly LFT monitoring required; dose-dependent transaminase elevations in ~10% of patients" },
-      { label: "Drug interactions", value: "Strong CYP3A4/2C9 inducer; cyclosporine contraindicated; reduces hormonal contraceptive efficacy" },
-      { label: "REMS", value: "Tracleer REMS program \u2014 mandatory prescriber certification and monthly pregnancy tests" },
-      { label: "Trial", value: "BREATHE-1 trial \u2014 6MWD improvement and time to clinical worsening in PAH" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Ambrisentan (Letairis)",
-    badge: "ETA-selective antagonist",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.09)",
-    rows: [
-      { label: "Receptor selectivity", value: "ETA-selective \u2014 preserves ETB-mediated vasodilation and ET-1 clearance" },
-      { label: "Hepatotoxicity", value: "Lower rate than bosentan; removed black box warning in 2011; liver monitoring still recommended" },
-      { label: "Drug interactions", value: "Fewer CYP interactions than bosentan; still contraindicated in pregnancy" },
-      { label: "REMS", value: "Letairis REMS program \u2014 mandatory enrollment for female patients of reproductive potential" },
-      { label: "Trial", value: "ARIES-1 and ARIES-2 trials; AMBITION trial (ambrisentan + tadalafil combination)" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Macitentan (Opsumit)",
-    badge: "Dual ETA/ETB \u2014 tissue-penetrating, event-driven trial",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.09)",
-    rows: [
-      { label: "Receptor selectivity", value: "Dual ETA/ETB; designed for sustained tissue penetration and receptor occupancy" },
-      { label: "Hepatotoxicity", value: "Lower hepatotoxicity rate than bosentan in SERAPHIN trial; liver monitoring standard" },
-      { label: "Drug interactions", value: "CYP3A4 substrate; strong CYP3A4 inducers (rifampin) reduce efficacy; less inducing of other drugs than bosentan" },
-      { label: "Trial", value: "SERAPHIN trial \u2014 event-driven endpoint (morbidity and mortality); 45% reduction in combined endpoint vs placebo" },
-      { label: "Distinction", value: "Only ERA with a robust long-term morbidity/mortality trial result in PAH" },
-    ],
-    highlight: true,
-  },
-];
-
 export default function Endothelin1OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          The most potent endogenous vasoconstrictor \u2014 relevant clinically through the drugs that block it, not through any use of it.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Endothelin-1 is a 21-amino-acid peptide produced by your endothelial cells. It is the most potent vasoconstrictor your body makes \u2014 roughly 10 times more potent than angiotensin-II. In pulmonary arterial hypertension (PAH), ET-1 is pathologically elevated and drives the progressive pulmonary vascular damage that defines the disease. The clinical pharmacology of ET-1 is entirely about blocking its effects: endothelin receptor antagonists (ERAs) \u2014 bosentan, ambrisentan, and macitentan \u2014 are FDA-approved PAH treatments. Exogenous ET-1 as an agonist has no therapeutic role and would cause severe vasoconstriction. This page covers ET-1 physiology and ERA pharmacology for patients on these medications and for those researching vascular peptide biology.
-        </div>
+      <p className="reta-overview__opener">
+        Endothelin-1 is the most potent blood vessel constrictor your body produces &mdash; roughly ten times more powerful than angiotensin-II. It is not used therapeutically as something you inject. Its clinical relevance is entirely through the drugs that block it: the endothelin receptor antagonists prescribed for pulmonary arterial hypertension. This is a reference page for understanding a major vasoactive peptide and the medications built around blocking its effects.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Patient or Caregiver &mdash; On an ERA for pulmonary arterial hypertension</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;My doctor prescribed bosentan for my PAH. I don&rsquo;t really understand what it does or why I have to get monthly blood tests and use two forms of birth control. Can someone explain this?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why this matters to them</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>In PAH, endothelin-1 is chronically elevated and causing damage</strong><br />Pulmonary arterial hypertension involves pathologically high levels of endothelin-1 in the lung&rsquo;s blood vessels. This excess ET-1 causes the blood vessels to constrict, thicken, and gradually narrow &mdash; a progressive process that makes the heart work harder against increasing resistance. The drugs prescribed (bosentan, ambrisentan, macitentan) work by blocking ET-1 from attaching to its receptors, which slows or partially reverses this process.</li>
+          <li><strong>The monthly blood tests and contraception requirements are not optional &mdash; they have specific reasons</strong><br />The endothelin receptor antagonists can damage the liver &mdash; bosentan has a formal black box warning for this, which is why monthly liver function tests are required. All three drugs cause severe birth defects, which is why two forms of contraception are required and pregnancy testing is mandatory. These aren&rsquo;t bureaucratic formalities; they are responses to documented harms that happened in trials.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">PAH is a serious progressive disease, and these medications are real treatments with real evidence &mdash; not just symptom managers. The SERAPHIN trial with macitentan showed meaningful reduction in death and disease progression. These are complex drugs with real drug interactions; bosentan in particular is a strong inducer of liver enzymes that reduces the efficacy of many other medications including hormonal contraceptives. If you&rsquo;re on an ERA, knowing your drug interactions and keeping up with monitoring visits is genuinely important to your safety. Net: these medications work and they matter &mdash; take the monitoring requirements seriously because they exist for real reasons.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Cardiovascular Biology Curious &mdash; Wants to understand how blood pressure is regulated</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I keep seeing endothelin mentioned in cardiology literature. What does it actually do in the vascular system, and why is it relevant to more than just PAH?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Endothelin-1 is a master regulator of vascular tone across multiple tissue beds</strong><br />ET-1 is produced by the endothelial cells lining your blood vessels and acts locally to constrict smooth muscle. But the biology is more nuanced than &ldquo;just a constrictor&rdquo; &mdash; ET-1 also binds to a second receptor type on the endothelial cells themselves, triggering nitric oxide and prostacyclin release that produces vasodilation. Whether a tissue bed dilates or constricts in response to ET-1 depends on which receptor type dominates there.</li>
+          <li><strong>ET-1 elevation is a biomarker and mediator in multiple cardiovascular and renal conditions</strong><br />Beyond PAH, elevated ET-1 is implicated in systemic hypertension, heart failure, chronic kidney disease, and atherosclerosis. Understanding ET-1 physiology is foundational to understanding why high blood pressure damages vessels over time, and why certain organ systems are particularly vulnerable to vascular remodeling.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The dual-receptor biology makes ET-1 pharmacology genuinely complex &mdash; blocking both receptor types versus blocking only the constrictor receptor produces different clinical outcomes, which is why bosentan (non-selective) and ambrisentan (ETA-selective) have somewhat different profiles. ET-1 research in conditions beyond PAH has been largely disappointing so far &mdash; multiple trials of ERA therapy in heart failure and hypertension have not produced the benefits that the biology suggested. Understanding ET-1 well means understanding why mechanism doesn&rsquo;t always translate to clinical benefit. Net: one of the most important vasoactive peptides in human physiology to understand, especially if you&rsquo;re serious about cardiovascular biology.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this relevant to your situation?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">&#x2713;</span> Relevant if&hellip;
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Systems Thinker &mdash; Receptor pharmacology, receptor selectivity, and why blocking a vasoconstrictor doesn&rsquo;t always work</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;m interested in the ETA vs ETB receptor selectivity debate and the clinical consequences &mdash; why did non-selective blockade (bosentan) work, what does preserving ETB buy you, and why has ERA therapy failed in heart failure despite compelling ET-1 biology?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The ETA vs ETB selectivity question has real clinical consequences</strong><br />ETB receptors on endothelial cells mediate vasodilation and help clear circulating ET-1 from the bloodstream. When you block ETB (as non-selective antagonists like bosentan and macitentan do), you lose that clearance function and accumulate more ET-1 &mdash; which then has nowhere to act except ETA receptors. The theoretical argument for ETA-selective blockade (preserving ETB&rsquo;s clearance and dilatory functions) seemed compelling, but in clinical practice ambrisentan and bosentan have not shown dramatically different efficacy in PAH. The selectivity story is real biology that has not cleanly translated to differential clinical outcomes.</li>
+          <li><strong>Heart failure ERA trials are an important lesson in mechanism-to-outcome translation failure</strong><br />ET-1 is elevated in heart failure and correlates with poor prognosis. Multiple ERA trials in heart failure (EARTH, ENABLE, ENCOR) were stopped early due to worsening outcomes in the treatment groups. This is a clean example of a biologically coherent hypothesis producing clinical harm &mdash; likely because ET-1 in heart failure context is doing something useful, and blocking it removes a compensatory mechanism rather than a pathological one.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Endothelin-1 has no role as an exogenously administered compound &mdash; injecting ET-1 would cause severe, potentially lethal vasoconstriction with no therapeutic benefit. The entire pharmacological value of this peptide&rsquo;s biology is realized through its antagonists. The heart failure failures are a reminder that elevated biomarkers of pathophysiology are not always targets &mdash; they can be compensatory adaptations. The teratogenicity of ERAs (all are pregnancy category X) is a hard stop that the REMS programs enforce for good reason. Net: ET-1 physiology is foundational vascular biology; its clinical pharmacology is a nuanced story of selectivity, context-dependence, and translation failures that reward careful study.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Endothelin-1 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Not injectable by anyone outside a research laboratory setting &mdash; exogenous ET-1 would cause severe vasoconstriction and acute cardiovascular crisis</li>
+              <li>Not a community peptide with any wellness or enhancement application</li>
+              <li>Not a &ldquo;natural&rdquo; vasoconstrictor to explore &mdash; it is the most potent one known and has no safe off-label use case</li>
+              <li>Not blockable safely without physician oversight &mdash; the ERA drug class has serious monitoring requirements and drug interactions</li>
+              <li>Not appropriate in pregnancy under any circumstances &mdash; all ERAs are teratogenic with documented severe birth defects</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>The most potent endogenous vasoconstrictor in human physiology &mdash; 10x more potent than angiotensin-II</li>
+              <li>Dual-receptor biology with opposing effects depending on which receptor type and which tissue: vasodilation through ETB on endothelium, vasoconstriction through ETA on smooth muscle</li>
+              <li>The ERA drug class built around blocking it has meaningfully changed outcomes in pulmonary arterial hypertension</li>
+              <li>The heart failure ERA failure is a canonical case study in why elevated disease biomarkers don&rsquo;t automatically make good drug targets</li>
+              <li>Understanding ET-1 is foundational to understanding vascular biology in hypertension, renal disease, and cardiopulmonary physiology</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">&#x2717;</span> Not the right frame if&hellip;
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">ERA therapy \u2014 what to know at each stage</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">ERA comparison: bosentan vs ambrisentan vs macitentan</div>
-      <div className="reta-overview__compare-note">
-        All three ERAs share the same mechanism (ET-1 receptor blockade) and the same core safety concern (teratogenicity \u2014 pregnancy category X). The key differences are receptor selectivity (ETA vs dual ETA/ETB), hepatotoxicity profile (bosentan&apos;s black box vs lower rates with ambrisentan and macitentan), and drug interaction burden (bosentan is a significant CYP inducer; macitentan has fewer inducing interactions). Choice in clinical practice depends on disease severity, co-medications, tolerability, and the available trial evidence.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

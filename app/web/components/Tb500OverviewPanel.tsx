@@ -1,202 +1,74 @@
-/**
- * Tb500OverviewPanel — decision-oriented overview for TB-500.
- * Key frame: TB-500 is a market name for a Tβ4-related fragment.
- * Evidence is largely inferred from full thymosin beta-4 biology — not direct TB-500 human data.
- * Cancer history caution is elevated. Sourcing confusion is the defining real-world variable.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Tβ4 frag.",
-    label: "mechanistic origin",
-    sub: "marketed as a thymosin beta-4 fragment (typically the actin-binding domain)",
-    note: "Tβ4 and TB-500 are not identical — most evidence comes from full Tβ4 biology, not TB-500 as sold",
-  },
-  {
-    value: "30+ yrs",
-    label: "of Tβ4 preclinical research",
-    sub: "extensive animal data on thymosin beta-4 biology across multiple tissue types",
-    note: "Human trial data for TB-500 specifically: essentially absent — evidence is inferred, not direct",
-  },
-  {
-    value: "0",
-    label: "regulatory approvals globally",
-    sub: "unapproved peptide in all major jurisdictions",
-    note: "No pharmaceutical standard, no approved formulation or dose — research-grade only",
-  },
-];
-
-const FIT_YES = [
-  "You're focused on soft tissue, tendon, or recovery goals and have plateaued with conventional approaches",
-  "You understand the evidence is inferred from Tβ4 biology — not direct TB-500 human outcome trials",
-  "You're using it as a complement to BPC-157, with complementary (not redundant) mechanisms in mind",
-  "You're sourcing from suppliers that provide independent third-party certificates of analysis (CoA)",
-  "You've set a clear, specific hypothesis with a defined evaluation window before starting",
-];
-
-const FIT_NO = [
-  "You have an active cancer diagnosis or are in active cancer treatment — tissue-growth signaling creates meaningful oncology interaction uncertainty; stop and consult first",
-  "You're on anticoagulants, antiplatelets, or have a diagnosed bleeding disorder — mechanism may create additive bleeding risk",
-  "You're pregnant, breastfeeding, or an adolescent — developmental risk is flagged; no safety threshold exists",
-  "You expect pharmaceutical-grade certainty — direct human evidence for TB-500 as sold is essentially nonexistent",
-  "You're sourcing from unverified vendors — product identity confusion (Tβ4 vs. fragments vs. counterfeits) makes quality the dominant variable",
-  "You're stacking multiple unverified compounds simultaneously without a system for tracking each separately",
-];
-
-const TIMELINE = [
-  {
-    phase: "Weeks 1–4",
-    heading: "Orientation — tolerability and sourcing validation",
-    body: "TB-500's mechanism (if active) is gradual, not acute. The first month is about confirming tolerability and that your source is what it claims to be. No legitimate outcome signal should be expected in week 1. Injectable protocols report subjective improvements over weeks — not days. Oral route is less clearly defined for TB-500 than for BPC-157.",
-  },
-  {
-    phase: "Months 1–2",
-    heading: "The honest evaluation window",
-    body: "Soft tissue comfort, recovery trajectory, and joint mobility are the primary signals for TB-500 use. The attribution challenge is significant — TB-500 is almost always used alongside rehab, rest, BPC-157, or other interventions. If something is improving, knowing what's causing it requires that you've isolated your variables as much as possible.",
-  },
-  {
-    phase: "Long-term",
-    heading: "No safety map exists",
-    body: "Long-term human data for TB-500 doesn't exist. This is a literal absence of information — not a calculated low-risk estimate. Community protocols typically cycle (4–8 weeks on, then off) by convention rather than by any documented safety rationale. If you're running it continuously, you're outside the reference experience base entirely.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "TB-500",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanistic origin", value: "Tβ4 fragment — actin regulation, anti-inflammatory, angiogenesis" },
-      { label: "Primary use case", value: "Soft tissue, tendon, and joint recovery" },
-      { label: "Route", value: "Subcutaneous injection (primary)" },
-      { label: "Evidence base", value: "Inferred from Tβ4 biology — no direct TB-500 human RCT" },
-      { label: "Unique caution", value: "Cancer history / active treatment — tissue-growth signaling concern" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "BPC-157",
-    badge: "Research-grade",
-    badgeColor: "#7c5200",
-    badgeBg: "rgba(124,82,0,0.10)",
-    rows: [
-      { label: "Mechanistic origin", value: "Gastric protein-derived pentadecapeptide" },
-      { label: "Primary use case", value: "Tendon, soft tissue, GI healing" },
-      { label: "Route", value: "Injectable (systemic) or oral (GI-targeted)" },
-      { label: "Evidence base", value: "30+ yrs animal data; one registered Phase I; no published human RCT" },
-      { label: "Unique caution", value: "Sourcing quality and NSAID feedback loop" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "BPC-157 + TB-500 stack",
-    badge: "Community protocol",
-    badgeColor: "#2c3e52",
-    badgeBg: "rgba(44,62,82,0.08)",
-    rows: [
-      { label: "Rationale", value: "Complementary — BPC targets healing environment; TB-500 targets actin/inflammation" },
-      { label: "Stack logic", value: "Not redundant — different mechanism pathways for the same recovery goal" },
-      { label: "Common use", value: "Injury recovery, tendinopathy, return-to-training protocols" },
-      { label: "Evidence", value: "No stack-specific human trial exists — stacking is community convention" },
-      { label: "Quality risk", value: "Each unverified compound in the stack multiplies sourcing risk" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function Tb500OverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A recovery peptide with a borrowed evidence base and a product identity problem.
-        </div>
-        <div className="reta-overview__headline-sub">
-          TB-500 is sold as a healing and recovery peptide, but here&apos;s the honest picture: most of what&apos;s known about how it works was discovered studying a related compound, not TB-500 directly. That borrowed evidence base shapes what this page can tell you — and what you should realistically expect. What&apos;s actually in the vial matters too.
-        </div>
+      <p className="reta-overview__opener">
+        TB-500 is the most popular injury recovery peptide in the community after BPC-157 &mdash; used by athletes with nagging tendon injuries, joint pain, and chronic inflammation that hasn&rsquo;t responded to rest and conventional treatment. Its evidence base is borrowed from research on a related compound, direct human trials don&rsquo;t exist, and the &ldquo;what&rsquo;s actually in the vial&rdquo; question is a real sourcing challenge.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; An injury that won&rsquo;t heal</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve had a nagging tendon issue for months that physical therapy hasn&rsquo;t fixed &mdash; people on forums say TB-500 helped them. Is there something real here?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Community reports consistently describe accelerated recovery from soft tissue injuries</strong><br />Across athletic forums, TB-500 has one of the strongest community consensus profiles in the peptide space: people with chronic tendinopathies, partial tears, and joint inflammation report meaningful improvement in timelines that conventional treatment hadn&rsquo;t achieved. This isn&rsquo;t random noise &mdash; the pattern is consistent enough to take seriously even without clinical trial data.</li>
+          <li><strong>A plausible biological mechanism for what it&rsquo;s claimed to do</strong><br />TB-500 is derived from a protein that regulates actin &mdash; a structural protein critical to cell movement and tissue repair. The related compound it&rsquo;s based on has been studied for decades in wound healing, cardiac repair, and anti-inflammatory contexts in animal models. The mechanism isn&rsquo;t invented; it&rsquo;s just not proven in human clinical trials specifically for TB-500 as sold.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">You are injecting a research peptide from an unregulated supplier with no human clinical trial data. The evidence is inferred from 30+ years of animal studies on a related compound &mdash; useful context, but not a direct safety or efficacy guarantee. People with cancer history or active cancer treatment should not use TB-500 without oncology clearance, because the tissue growth signals it promotes are also the kind that cancer cells exploit. Net: a reasonable experiment for healthy adults with chronic soft tissue injuries who understand the evidence limitations; an absolute stop if you have cancer history.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Chronic injury or high training load</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I train hard and I&rsquo;m always managing some level of tendon soreness or minor joint damage &mdash; does TB-500 actually help, and does stacking it with BPC-157 make sense?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The most community-supported option for tendon and soft tissue recovery</strong><br />Among performance athletes &mdash; strength sports, combat sports, endurance athletes &mdash; TB-500 is the peptide discussed most specifically for tendon injuries, partial tears, and chronic joint inflammation. The community consensus is the most specific and consistent of any recovery peptide: it&rsquo;s not general wellness claims, it&rsquo;s specific injury contexts with reported outcomes that track the mechanism.</li>
+          <li><strong>Complementary stack logic with BPC-157</strong><br />BPC-157 and TB-500 are almost always discussed together in athletic recovery contexts, and for good reason: they work on different parts of the repair process. BPC-157 targets the healing environment (blood vessel growth, growth factor signaling, GI protection). TB-500 targets actin regulation and the inflammatory component of tissue damage. They&rsquo;re not redundant &mdash; they hit different mechanisms that both matter for tissue repair.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Attribution is the genuine challenge for athletes: TB-500 is almost always used alongside rehabilitation work, training load reduction, and often other compounds. Isolating what TB-500 specifically contributed is nearly impossible in practice. Set a clear, specific hypothesis with a defined evaluation window before starting &mdash; soft tissue comfort, range of motion in a specific joint, pain-free load at a specific exercise. Without a specific target and timeline, you won&rsquo;t know what worked. Net: one of the better-supported options for chronic tendon and soft tissue issues; stack with BPC-157 is coherent; verify your source has a third-party certificate of analysis.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; Tissue repair biology and actin regulation</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I want to understand what TB-500 actually is mechanistically &mdash; is the actin-sequestering fragment the active component, and how does that differ from full thymosin beta-4? And what does the cancer interaction risk actually mean at the mechanistic level?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re excited</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The actin-binding fragment hypothesis is mechanistically coherent</strong><br />Full thymosin beta-4 (Tβ4) is a 43-amino acid protein that regulates actin polymerization &mdash; critical for cell motility and tissue repair. TB-500 as sold is typically the fragment Tβ4(17-23), the actin-sequestering region that&rsquo;s proposed to be the biologically active part. The reasoning is that this fragment delivers the core actin-regulatory function at a smaller molecular weight. Whether this fragment replicates the full protein&rsquo;s effects or only a subset of them is genuinely unresolved &mdash; but the mechanistic hypothesis is grounded in real Tβ4 biology, not invented.</li>
+          <li><strong>Anti-inflammatory and angiogenic signals alongside actin regulation</strong><br />Full Tβ4&rsquo;s biological profile includes more than actin regulation: it promotes angiogenesis (new blood vessel formation, relevant to healing tissue), reduces inflammatory signaling (relevant to chronic tendinopathy where inflammation is both protective and limiting), and has been studied in cardiac repair contexts. Whether the TB-500 fragment shares these broader effects or only the actin-sequestering function is a real open question.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The cancer caution is not theoretical: angiogenic signaling (new blood vessel formation to feed healing tissue) is also how tumors establish their blood supply. Full Tβ4 has shown pro-angiogenic effects that are beneficial for tissue repair but potentially problematic in a context where tumor cells are present. The angiogenesis risk in the fragment form is less characterized, but the caution stands until better data exists. Additionally, what you receive as &ldquo;TB-500&rdquo; from research vendors varies: some products are full Tβ4, some are the fragment, some are mislabeled entirely. Third-party testing is not optional if you want to know what you&rsquo;re actually injecting. Net: a well-grounded research hypothesis with real mechanism; verify sourcing rigorously and do not use with cancer history.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What TB-500 is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Validated in human clinical trials &mdash; evidence is inferred from animal thymosin beta-4 research</li>
+              <li>Safe with cancer history or active treatment &mdash; hard stop; angiogenic and tissue-growth signals require oncology clearance</li>
+              <li>Guaranteed to be what it says on the label &mdash; product identity varies significantly between vendors</li>
+              <li>A substitute for rehabilitation &mdash; it&rsquo;s a potential accelerant, not a replacement for appropriate treatment</li>
+              <li>Something with characterized long-term safety data &mdash; no safety map exists for continuous human use</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Strongest community consensus of any recovery peptide for tendon and soft tissue injuries</li>
+              <li>Mechanistically coherent: actin regulation, anti-inflammatory signals, and angiogenic support for tissue repair</li>
+              <li>30+ years of thymosin beta-4 preclinical research provides genuine biological context</li>
+              <li>Complementary (not redundant) with BPC-157 for stacked recovery protocols</li>
+              <li>Specific community use cases (chronic tendinopathy, partial tears) with the most consistent reports of any research peptide</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">TB-500 vs BPC-157 vs the stack</div>
-      <div className="reta-overview__compare-note">
-        TB-500 and BPC-157 are complementary, not interchangeable. The stack is common in the community precisely because they hit different mechanisms for the same recovery goal.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

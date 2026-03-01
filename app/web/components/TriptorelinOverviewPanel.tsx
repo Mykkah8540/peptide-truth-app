@@ -1,210 +1,73 @@
-/**
- * TriptorelinOverviewPanel — decision-oriented overview for Triptorelin.
- * Key frame: continuous GnRH agonism produces receptor desensitization and
- * sex hormone suppression — the pharmacological OPPOSITE of gonadorelin.
- * This is a chemical castration agent with months-long depot formulations.
- */
-
-const STAT_CARDS = [
-  {
-    value: "Continuous GnRH agonism → axis suppression",
-    label: "mechanism — paradoxical suppression of the reproductive axis via receptor desensitization",
-    sub: "Triptorelin is a synthetic GnRH agonist with a D-Trp6 substitution that extends its half-life relative to native GnRH. The critical pharmacological insight is that continuous GnRH receptor stimulation produces the opposite effect from pulsatile stimulation. Native GnRH is released in pulses every 60-90 minutes — this pulsatile pattern is required for maintained LH/FSH secretion. Continuous agonist stimulation causes GnRH receptor downregulation and desensitization, collapsing LH/FSH secretion and consequently collapsing testosterone (men) or estrogen (women) to castrate levels within 2-4 weeks.",
-    note: "The paradox — that a GnRH agonist suppresses the axis rather than stimulating it — is frequently misunderstood in community contexts. This is not a subtle distinction. Triptorelin and gonadorelin (pulsatile GnRH) work at the same receptor in diametrically opposite ways because of administration timing. Anyone confusing triptorelin with a testosterone-stimulating compound has the pharmacology inverted.",
-  },
-  {
-    value: "Depot formulations (1–6 months)",
-    label: "formulation specifics — long-acting depot injections; effects persist weeks after the last dose",
-    sub: "Triptorelin is available as depot microsphere formulations releasing drug over 1 month, 3 months, or 6 months after a single injection. This is clinically designed for patient convenience in prostate cancer and precocious puberty — but it creates a serious implication for community use: a single dose commits the individual to weeks to months of testosterone/estrogen suppression. Unlike oral medications or short-acting peptides, there is no 'stop taking it and wait a day' option. The hormonal suppression persists until the depot is exhausted.",
-    note: "The depot duration is one of the most important practical safety considerations for any community use of triptorelin. Anyone considering off-label triptorelin use must understand that they are committing to 4-24 weeks of chemical castration with a single injection. Reversibility exists — axis recovery occurs after depot exhaustion — but the timeline is measured in months, not days.",
-  },
-  {
-    value: "FDA-approved (Trelstar)",
-    label: "regulatory status — approved for prostate cancer (all stages), precocious puberty; EU/UK approved for endometriosis, uterine fibroids",
-    sub: "Triptorelin (brand: Trelstar in the US) is FDA-approved for: palliative treatment of advanced prostate cancer; and central precocious puberty. In Europe and other markets, it is also approved for endometriosis and uterine fibroids. Gender-affirming hormone therapy protocols use GnRH agonists including triptorelin under physician oversight as puberty blockers and for feminizing/masculinizing hormone management. All of these are serious medical indications managed by specialists (oncologists, pediatric endocrinologists, gynecologists, or gender medicine specialists).",
-    note: "The FDA approval for prostate cancer reflects the pharmacological reality — this is a chemical castration agent for oncological purposes. Community access outside of these clinical indications is off-label and requires understanding that the intended therapeutic effect is hormone suppression, with all associated consequences.",
-  },
-  {
-    value: "Testosterone flare (initiation risk)",
-    label: "initiation pharmacology — initial agonist surge before desensitization; clinically managed with anti-androgens in prostate cancer",
-    sub: "The first 1-2 weeks of triptorelin therapy produce a paradoxical testosterone surge before receptor downregulation takes effect. This is the 'flare' phenomenon: the agonist initially stimulates LH/FSH release before receptor desensitization collapses the axis. In prostate cancer patients, this testosterone flare can cause bone pain flare, urinary symptoms, and spinal cord compression risk. Standard prostate cancer protocols use anti-androgen cover (bicalutamide, cyproterone) for the first 2-4 weeks of GnRH agonist therapy to block the testosterone flare effect.",
-    note: "The testosterone flare is managed in oncological clinical settings specifically because the risk is recognized and significant. Community use without anti-androgen flare coverage replicates a known clinical risk without the management protocol that makes it acceptable in clinical practice.",
-  },
-];
-
-const FIT_YES = [
-  "Prescribed for prostate cancer (any stage) — triptorelin is FDA-approved for this indication; the axis suppression that constitutes 'chemical castration' is the intended therapeutic mechanism",
-  "Prescribed for central precocious puberty — GnRH agonist suppression of premature puberty is a well-established pediatric endocrine indication under specialist management",
-  "Gender-affirming hormone therapy protocol under physician oversight — GnRH agonists are used as puberty blockers and for hormone management in gender-affirming care when prescribed and monitored by a physician",
-  "Endometriosis or uterine fibroids under gynecological management — estrogen suppression reduces endometrial lesions; approved in multiple markets with bone density monitoring",
-];
-
-const FIT_NO = [
-  "Anyone expecting triptorelin to work like gonadorelin (pulsatile GnRH stimulation that supports testosterone production) — they work at the same receptor in pharmacologically opposite ways; continuous stimulation suppresses where pulsatile stimulation maintains",
-  "Anyone using triptorelin as post-cycle therapy (PCT) off-label — PCT requires axis stimulation (SERMs like clomiphene, or gonadorelin) to restart testosterone production; triptorelin would suppress the axis further, producing the exact opposite of PCT goals",
-  "Anyone who has not carefully considered the depot duration — a single injection commits to weeks or months of hormonal suppression with no quick reversal; this is not a short-acting compound",
-  "Unmonitored testosterone suppression for any purpose — the downstream effects of testosterone suppression (bone density, cardiovascular risk, mood, muscle mass) require physician monitoring, especially with depot formulations lasting months",
-];
-
-const TIMELINE = [
-  {
-    phase: "Week 1–2 (initiation flare)",
-    heading: "Paradoxical testosterone surge before axis suppression",
-    body: "The first 1-2 weeks of triptorelin produce increased LH/FSH and testosterone/estrogen before receptor desensitization takes hold. In prostate cancer, this 'flare' is managed with anti-androgen co-administration. In other contexts, the flare produces a temporary hormonal surge with associated effects before suppression begins. Community users should be aware that symptoms or effects in the first 1-2 weeks may not represent the drug's long-term effect.",
-  },
-  {
-    phase: "Week 2–4 (transition to suppression)",
-    heading: "Receptor downregulation and axis suppression — testosterone/estrogen approach castrate levels",
-    body: "As GnRH receptors downregulate and desensitize, LH/FSH secretion collapses and sex hormone production follows. Testosterone in men reaches castrate levels (typically below 50 ng/dL) within 2-4 weeks. Estrogen in women approaches castrate levels similarly. This is the intended therapeutic effect for the approved indications — and the pharmacological reality that makes off-label use for any purpose other than intended axis suppression conceptually misguided.",
-  },
-  {
-    phase: "Months (depot duration)",
-    heading: "Sustained chemical castration — bone density loss begins within months",
-    body: "During sustained axis suppression, sex hormone deficiency drives multiple systemic effects: bone density loss begins within months (clinically significant with > 3-6 months of suppression); muscle mass atrophy; cardiovascular risk changes (androgen deprivation increases cardiovascular event rates in men with prostate cancer); mood and cognitive effects; hot flashes; sexual dysfunction. In clinical prostate cancer settings, these effects are accepted trade-offs for oncological benefit. In community settings without medical oversight, these effects are unmonitored sequelae.",
-  },
-  {
-    phase: "After depot exhaustion (recovery)",
-    heading: "Axis recovery — timeline measured in months, not weeks",
-    body: "After the depot is exhausted, the GnRH receptor gradually resensitizes and the hypothalamic-pituitary-gonadal axis recovers. Full testosterone recovery can take 3-12 months after a single 1-month depot, longer after 3- or 6-month formulations. Recovery is not guaranteed in all cases, particularly with repeated dosing or underlying HPG axis dysfunction. This prolonged recovery timeline is distinct from short-acting compounds where recovery occurs over days.",
-  },
-];
-
-const COMPARISON = [
-  {
-    name: "Triptorelin",
-    badge: "GnRH agonist / Chemical castration / Depot",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Continuous GnRH agonism → receptor desensitization → LH/FSH collapse → testosterone/estrogen suppression" },
-      { label: "Effect on axis", value: "SUPPRESSION — chemical castration; the intended effect for prostate cancer and precocious puberty" },
-      { label: "Duration", value: "1-month, 3-month, or 6-month depot formulations — cannot be stopped once injected" },
-      { label: "FDA status", value: "Approved (Trelstar) — prostate cancer, precocious puberty; EU approved for endo/fibroids" },
-      { label: "Community PCT use", value: "Pharmacologically irrational — PCT requires axis stimulation; triptorelin suppresses the axis" },
-    ],
-    highlight: true,
-  },
-  {
-    name: "Gonadorelin (GnRH)",
-    badge: "Pulsatile GnRH / Axis stimulation / Short-acting",
-    badgeColor: "#155e38",
-    badgeBg: "rgba(21,100,58,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Pulsatile GnRH receptor stimulation → maintained LH/FSH secretion → testosterone production" },
-      { label: "Effect on axis", value: "STIMULATION — maintains axis function; used in hypogonadism and for axis preservation on TRT" },
-      { label: "Duration", value: "Short-acting (minutes); requires pulsatile dosing to maintain axis stimulation" },
-      { label: "FDA status", value: "Approved for specific diagnostic/therapeutic indications; community use for testosterone preservation" },
-      { label: "Community PCT use", value: "Pharmacologically rational — axis stimulation supports testosterone recovery post-suppression" },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Leuprolide (Lupron)",
-    badge: "GnRH agonist / Same class as triptorelin / Depot",
-    badgeColor: "#9e3800",
-    badgeBg: "rgba(158,56,0,0.10)",
-    rows: [
-      { label: "Mechanism", value: "Continuous GnRH agonism → same suppression mechanism as triptorelin" },
-      { label: "Effect on axis", value: "SUPPRESSION — identical pharmacological class and effect to triptorelin" },
-      { label: "Duration", value: "1-month, 3-month, 6-month depot formulations; also available as daily injection" },
-      { label: "FDA status", value: "Approved — prostate cancer, endometriosis, precocious puberty, uterine fibroids (broader than triptorelin)" },
-      { label: "Community use", value: "Same pharmacological profile as triptorelin — not appropriate as axis stimulant or PCT agent" },
-    ],
-    highlight: false,
-  },
-];
-
 export default function TriptorelinOverviewPanel() {
   return (
     <div className="reta-overview">
 
-      {/* ── Headline ── */}
-      <div className="reta-overview__headline">
-        <div className="reta-overview__headline-text">
-          A GnRH agonist used for chemical castration — continuous receptor stimulation suppresses the axis; this is the pharmacological opposite of gonadorelin.
-        </div>
-        <div className="reta-overview__headline-sub">
-          Triptorelin (Trelstar) is a synthetic GnRH agonist with FDA approval for prostate cancer and precocious puberty. Its defining pharmacological feature is that continuous GnRH receptor stimulation suppresses the hypothalamic-pituitary-gonadal axis rather than stimulating it — receptor desensitization collapses LH/FSH and drives testosterone/estrogen to castrate levels within 2-4 weeks. Depot formulations lasting 1 to 6 months mean a single injection commits to weeks or months of hormonal suppression. Community interest sometimes involves confusion between triptorelin and gonadorelin — they work at the same receptor but produce opposite effects on the axis. PCT or testosterone-stimulating use of triptorelin is pharmacologically inverted and will worsen post-suppression axis recovery, not improve it.
-        </div>
+      <p className="reta-overview__opener">
+        Triptorelin (Trelstar) is FDA-approved for prostate cancer and central precocious puberty. Its defining feature: continuous receptor stimulation causes testosterone and estrogen to collapse to near-zero levels within a few weeks. This is chemical castration by design — the intended therapeutic outcome for the indications it&rsquo;s approved for. Depot formulations lasting one to six months mean a single injection commits to weeks or months of hormonal suppression that cannot be reversed on demand.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Average Person &mdash; Clinical Context (Cancer, Endometriosis)</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;My doctor prescribed triptorelin for my prostate cancer. I understand it lowers testosterone, but I want to understand what that actually means for my body and for how long.&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re considering it</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Testosterone suppression is the mechanism that controls hormone-sensitive cancers</strong><br />Many prostate cancers grow faster in the presence of testosterone. Eliminating testosterone through chemical means — which triptorelin does reliably within 2-4 weeks — deprives the cancer of its growth signal. For the right patient and cancer stage, this is well-established, effective oncological strategy backed by decades of clinical data.</li>
+          <li><strong>Depot formulations mean consistent treatment without daily medication</strong><br />A single injection delivers controlled drug release over one, three, or six months. In a cancer treatment context where adherence matters and frequent medical visits are often already part of care, a depot that eliminates daily dosing is a genuine clinical convenience.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Testosterone suppression has systemic consequences that begin within weeks: bone density loss (significant after three to six months of suppression), muscle mass atrophy, cardiovascular risk changes, hot flashes, mood effects, and sexual dysfunction. In clinical oncology, these trade-offs are accepted because the alternative — uncontrolled cancer growth — is worse. Prostate cancer management routinely includes bone density monitoring, vitamin D and calcium supplementation, and consideration of bone-protecting drugs alongside triptorelin. Patients should discuss each of these proactively with their oncologist, not wait to be told. Net: for the approved indications, triptorelin is effective and appropriate — but the side effect profile requires active management, not passive monitoring.</p>
       </div>
 
-      {/* ── Stat cards ── */}
-      <div className="reta-overview__stats">
-        {STAT_CARDS.map((s) => (
-          <div key={s.value} className="reta-overview__stat">
-            <div className="reta-overview__stat-value">{s.value}</div>
-            <div className="reta-overview__stat-label">{s.label}</div>
-            <div className="reta-overview__stat-sub">{s.sub}</div>
-            <div className="reta-overview__stat-note">{s.note}</div>
-          </div>
-        ))}
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Athlete &mdash; Hormone Management and TRT Context</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I&rsquo;ve seen triptorelin mentioned in TRT and post-cycle therapy forums. Some people say it can restart natural testosterone production. Is that accurate?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re curious</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The confusion with gonadorelin is understandable but dangerous</strong><br />Gonadorelin is a short-acting pulsatile signal that tells the pituitary to produce LH and FSH, which then signal the testes — it supports or restores testosterone production. Triptorelin looks superficially similar (both work at the same receptor) but does the opposite through continuous stimulation: it desensitizes the receptor and shuts down the entire chain. Understanding why they&rsquo;re opposite matters enormously here.</li>
+          <li><strong>The interest in hormonal axis management after anabolic steroid use is legitimate</strong><br />People coming off anabolic steroid cycles have suppressed natural testosterone production and need the hypothalamic-pituitary-gonadal axis to recover. That&rsquo;s a real clinical problem, and the choice of compounds to support recovery (SERMs, gonadorelin, HCG) is a genuinely important decision. Triptorelin is not one of those compounds.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">Using triptorelin as post-cycle therapy is a pharmacological error — not a fringe risk, an actual inversion of what the drug does. PCT requires axis stimulation to restart testosterone production. Triptorelin suppresses the axis further, extending the suppression period and deepening the hormonal crash. The only TRT-adjacent use that makes any sense for triptorelin is in gender-affirming hormone therapy under physician oversight, where suppression is the goal. Anyone who has seen triptorelin described as a PCT agent in forums is reading misinformation. Net: do not use this compound in any hormone optimization context without a physician who understands both the oncological pharmacology and the HPG axis consequences.</p>
       </div>
 
-      {/* ── Fit matrix ── */}
-      <div className="reta-overview__section-label">Is this the right call for you?</div>
-      <div className="reta-overview__fit">
-        <div className="reta-overview__fit-col reta-overview__fit-col--yes">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✓</span> Fits your situation if…
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Biohacker &mdash; HPG Axis Pharmacology and Hormonal Control</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;The pulsatile vs. continuous GnRH receptor distinction is one of the more elegant examples of how timing determines pharmacological direction. What does triptorelin actually reveal about HPG axis control?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>Continuous vs. pulsatile stimulation as a mechanism is pharmacologically profound</strong><br />The same receptor — hit continuously — produces the opposite response from what pulsatile stimulation produces. This is one of the clearest examples in pharmacology of how administration timing, not just molecular target, determines pharmacological direction. Triptorelin is a useful case study in understanding why receptor desensitization matters for drug design.</li>
+          <li><strong>Chemical castration as an oncological strategy has decades of rigorous clinical evidence</strong><br />The prostate cancer indication is supported by large randomized trials and decades of post-market data. For someone interested in how hormonal axes are manipulated pharmacologically at the clinical level, triptorelin&rsquo;s evidence base is the most rigorous in the GnRH agonist class.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There is no biohacking application for triptorelin that doesn&rsquo;t involve physician-managed hormonal suppression for a medical purpose. The depot duration — one to six months of inescapable hormonal suppression from a single injection — makes any experimental self-administration categorically inadvisable. The axis recovery after depot exhaustion takes months, not days, and recovery is not guaranteed with repeated dosing or underlying HPG dysfunction. The entire pharmacological interest of this compound for the optimization community is theoretical and mechanistic — useful for understanding how the axis works, not as an intervention. Net: fascinating pharmacology, dangerous as a self-administered compound, appropriate only in physician-managed clinical contexts.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Triptorelin is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>A testosterone-stimulating compound — it suppresses the entire hormonal axis; continuous receptor stimulation causes the opposite of pulsatile stimulation</li>
+              <li>Appropriate for post-cycle therapy — using it for PCT worsens suppression; SERMs and gonadorelin are the axis-stimulating options</li>
+              <li>Reversible on demand — depot formulations last one to six months; there is no &ldquo;stop and wait a day&rdquo; option</li>
+              <li>Similar to gonadorelin — same receptor, diametrically opposite pharmacological effect due to continuous vs. pulsatile dosing</li>
+              <li>Safe for unmonitored self-administration — bone density, cardiovascular, and recovery risks require physician monitoring</li>
+            </ul>
           </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_YES.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>One of the clearest pharmacological examples of timing determining direction — same receptor, opposite effect based on continuous vs. pulsatile administration</li>
+              <li>Decades of rigorous oncological clinical data in prostate cancer — a well-characterized compound in its approved indications</li>
+              <li>FDA-approved (Trelstar) for prostate cancer and precocious puberty; EU-approved for endometriosis and uterine fibroids</li>
+              <li>Used in gender-affirming hormone therapy as puberty blockers under physician oversight</li>
+            </ul>
+          </div>
         </div>
-        <div className="reta-overview__fit-col reta-overview__fit-col--no">
-          <div className="reta-overview__fit-heading">
-            <span className="reta-overview__fit-icon">✗</span> Look elsewhere if…
-          </div>
-          <ul className="reta-overview__fit-list">
-            {FIT_NO.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* ── Timeline ── */}
-      <div className="reta-overview__section-label">What to actually expect</div>
-      <div className="reta-overview__timeline">
-        {TIMELINE.map((t, i) => (
-          <div key={i} className="reta-overview__timeline-item">
-            <div className="reta-overview__timeline-phase">{t.phase}</div>
-            <div className="reta-overview__timeline-heading">{t.heading}</div>
-            <div className="reta-overview__timeline-body">{t.body}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* ── Comparison ── */}
-      <div className="reta-overview__section-label">Triptorelin vs Gonadorelin vs Leuprolide</div>
-      <div className="reta-overview__compare-note">
-        The agonist vs. pulsatile stimulator distinction is the most important pharmacological clarification in community GnRH peptide discussions. Triptorelin and leuprolide are both GnRH agonists that suppress the axis via continuous stimulation. Gonadorelin mimics pulsatile GnRH release and maintains or stimulates the axis. These are opposite effects at the same receptor — the distinction determines whether the compound supports or suppresses testosterone production.
-      </div>
-      <div className="reta-overview__compare">
-        {COMPARISON.map((col) => (
-          <div
-            key={col.name}
-            className={`reta-overview__compare-col${col.highlight ? " reta-overview__compare-col--active" : ""}`}
-          >
-            <div className="reta-overview__compare-name">
-              {col.name}
-              <span
-                className="reta-overview__compare-badge"
-                style={{ color: col.badgeColor, background: col.badgeBg }}
-              >
-                {col.badge}
-              </span>
-            </div>
-            {col.rows.map((row) => (
-              <div key={row.label} className="reta-overview__compare-row">
-                <div className="reta-overview__compare-row-label">{row.label}</div>
-                <div className="reta-overview__compare-row-value">{row.value}</div>
-              </div>
-            ))}
-          </div>
-        ))}
       </div>
 
     </div>

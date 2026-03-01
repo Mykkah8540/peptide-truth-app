@@ -1,97 +1,73 @@
 export default function ProlactinReleasingPeptideOverviewPanel() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+    <div className="reta-overview">
 
-      {/* Stat cards */}
-      <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-        {[
-          { label: "Size", value: "PrRP20 / PrRP31", sub: "20 or 31 amino acid forms", accent: "#2c5282" },
-          { label: "FDA Status", value: "Not Approved", sub: "Research compound only", accent: "#9e3800" },
-          { label: "Primary Receptor", value: "GPR10", sub: "Energy balance, appetite suppression", accent: "#2c5282" },
-        ].map((c) => (
-          <div key={c.label} style={{
-            flex: "1 1 160px", background: "rgba(255,255,255,0.80)",
-            border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14,
-            padding: "14px 16px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#64748b", marginBottom: 4 }}>{c.label}</div>
-            <div style={{ fontSize: 18, fontWeight: 800, color: c.accent, lineHeight: 1.2 }}>{c.value}</div>
-            <div style={{ fontSize: 12, color: "#64748b", marginTop: 3 }}>{c.sub}</div>
+      <p className="reta-overview__opener">
+        Prolactin-releasing peptide is a neuropeptide that, despite its name, is mostly about appetite and energy balance rather than prolactin. It was named based on its initial discovery context and the name stuck even as researchers realized its main job is signaling satiety in the hypothalamus and brainstem. Pharmaceutical companies are developing GLP-1/PrRP dual agonist combinations specifically because the appetite-suppression pathways are complementary. Standalone community use of PrRP is essentially nonexistent and would be far ahead of the evidence.
+      </p>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 1</div>
+        <h3 className="reta-overview__profile-heading">The Appetite Biology Curious Person &mdash; weight management, hunger signals</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;I heard there&rsquo;s a peptide called prolactin-releasing peptide that might be the next appetite suppressant &mdash; what does it actually do?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The name makes it sound relevant to hormones people care about</strong><br />&ldquo;Prolactin-releasing peptide&rdquo; sounds like it might affect reproductive hormones or mood &mdash; which grabs attention. In practice, what it actually does (appetite suppression via hypothalamic signaling) is arguably more interesting and directly relevant to weight management goals.</li>
+          <li><strong>The pharmaceutical pipeline interest is real</strong><br />Major pharmaceutical companies are developing GLP-1/PrRP combination drugs because these pathways are additive for appetite suppression. When Novo Nordisk or similar companies invest in a target, that&rsquo;s a signal that the underlying biology is being taken seriously by people with serious resources to evaluate it.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">There is no approved therapeutic form, no established community use, and no safety profile for standalone PrRP use. The pharmaceutical interest is in GLP-1/PrRP dual agonist conjugates that are specifically engineered molecules &mdash; not the same as native PrRP, and not something you can replicate by combining a GLP-1 agonist with a gray-market PrRP peptide. Gray-market sourcing for PrRP is limited and unverified. Net: genuinely interesting biology in pharmaceutical development, essentially nothing actionable for personal use right now.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 2</div>
+        <h3 className="reta-overview__profile-heading">The Researcher or Science-Curious Reader &mdash; neuropeptide biology, appetite circuits</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;How does PrRP fit into the hypothalamic appetite regulation network alongside leptin, GLP-1, and the other satiety signals?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>The appetite regulation network is genuinely complex and worth understanding</strong><br />PrRP connects to the same brainstem and hypothalamic circuits that GLP-1, leptin, and amylin signal through. Understanding where PrRP fits &mdash; which neurons it activates, how it interacts with other satiety signals &mdash; is useful for anyone trying to understand why combination therapies outperform monotherapies in weight management.</li>
+          <li><strong>The naming confusion is a real scientific history lesson</strong><br />PrRP was discovered and named based on rat pituitary tissue data suggesting it released prolactin. Later, knockout mouse studies and human data clarified that the dominant physiological role is energy homeostasis, not prolactin regulation. This kind of naming-discovery-revision arc happens frequently in neuropeptide biology and is instructive.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">This is a reference compound for people interested in the science &mdash; there is no clinical use, no safety profile, and almost no community use to evaluate. If you&rsquo;re a researcher or student, the PubMed literature on PrRP and energy homeostasis is the resource, not this page. If you&rsquo;re curious but not a researcher, knowing that this is in the pharmaceutical pipeline and understanding the basic biology is about as far as the actionable information goes. Net: intellectually rich research neuropeptide, nothing to use or evaluate from a personal health perspective.</p>
+      </div>
+
+      <div className="reta-overview__profile">
+        <div className="reta-overview__profile-label">Profile 3</div>
+        <h3 className="reta-overview__profile-heading">The Neuroendocrine Biohacker &mdash; satiety circuits, GLP-1 combinations, receptor biology</h3>
+        <blockquote className="reta-overview__profile-think">&ldquo;What&rsquo;s the GPR10 receptor biology, how does PrRP interact with NPFF2, and is the GLP-1/PrRP combination synergistic at the receptor level or just additive at the behavioral level?&rdquo;</blockquote>
+        <p className="reta-overview__profile-why-heading">Why they&rsquo;re interested</p>
+        <ol className="reta-overview__profile-why">
+          <li><strong>GPR10 is an underexplored satiety receptor with interesting properties</strong><br />PrRP acts primarily through GPR10 (prolactin-releasing peptide receptor), an orphan receptor that wasn&rsquo;t well-characterized until PrRP was identified as its ligand. GPR10 knockout mice develop obesity &mdash; establishing that endogenous PrRP/GPR10 signaling is part of the body&rsquo;s weight regulation system. The NPFF2 receptor activity adds another layer of complexity connecting PrRP to pain modulation and stress response circuits.</li>
+          <li><strong>The combination logic with GLP-1 is mechanistically grounded</strong><br />GLP-1 and PrRP act on overlapping but distinct neural populations in the nucleus tractus solitarius and arcuate nucleus. The synergy in GLP-1/PrRP dual agonist conjugates in animal models appears to reflect complementary activation of these circuits rather than simple dose-addition. Understanding why combination approaches outperform either alone requires understanding what each pathway is actually doing.</li>
+        </ol>
+        <p className="reta-overview__profile-check-heading">Reality check</p>
+        <p className="reta-overview__profile-check">The practical constraints for standalone PrRP use are severe: very limited and unverified sourcing, no established safe dose, no human pharmacokinetic data, and potential for prolactin-modulating effects that interact with dopaminergic medications. People on antipsychotics or dopamine agonists have particular interaction risk given the original prolactin-regulating discovery context. The GLP-1/PrRP pharmaceutical conjugates in development are purpose-engineered molecules &mdash; you cannot replicate their pharmacology by combining native PrRP with a GLP-1 agonist. Net: scientifically rich target, essentially no basis for safe personal experimentation, watch the pharmaceutical pipeline.</p>
+      </div>
+
+      <div className="reta-overview__bottom">
+        <p className="reta-overview__bottom-heading">The honest bottom line</p>
+        <div className="reta-overview__bottom-cols">
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What Prolactin-Releasing Peptide is NOT</p>
+            <ul className="reta-overview__bottom-list">
+              <li>Primarily a prolactin hormone &mdash; the name is a historical artifact; its main role is appetite and energy balance</li>
+              <li>A compound with a community use track record to evaluate &mdash; this is essentially nonexistent</li>
+              <li>Something you can combine with a GLP-1 agonist to replicate GLP-1/PrRP dual agonist drug effects</li>
+              <li>Safe for people on antipsychotics or dopamine-active medications without understanding the interaction risk</li>
+              <li>An approved or near-approved therapeutic &mdash; the pipeline interest is real but clinical development is early</li>
+            </ul>
           </div>
-        ))}
-      </div>
-
-      {/* Overview */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What it is</h3>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: 0 }}>
-          Prolactin-releasing peptide (PrRP) is a neuropeptide that exists in two naturally occurring forms: PrRP20 (20 amino acids) and PrRP31 (31 amino acids). Despite its name, PrRP\u2019s most characterized physiological role is not prolactin secretion \u2014 it is energy balance and appetite suppression. It acts primarily through GPR10 receptors in the hypothalamus and brainstem, with emerging data on NPFF2 receptor activity. Its role in prolactin regulation in humans appears to be secondary to other pathways.
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.65, color: "#334155", margin: "10px 0 0" }}>
-          The translational interest in PrRP is its potential as an obesity treatment, particularly in the context of GLP-1/PrRP dual agonist conjugates being developed by pharmaceutical companies. Standalone PrRP analogue research exists in preclinical and very early clinical stages. There is no FDA-approved therapeutic use. Anyone using PrRP independently is working with a compound that has no established clinical safety profile.
-        </p>
-      </div>
-
-      {/* What makes it unique */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(44,82,130,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(44,82,130,0.15)", borderRadius: 14, padding: "16px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 13, fontWeight: 800, color: "#2c5282", margin: "0 0 8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>The name is misleading</h3>
-        <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "#334155", margin: 0 }}>
-          PrRP was named based on its initial identification as a prolactin-releasing factor in rodent pituitary studies. Subsequent research has established that its primary physiological role is in energy homeostasis, food intake suppression, and stress responses \u2014 not prolactin regulation. The naming is a historical artifact. In humans, prolactin secretion is predominantly controlled by dopamine and TRH, not PrRP. This distinction matters for understanding both the compound\u2019s likely effects and its interaction profile.
-        </p>
-      </div>
-
-      {/* Is it a fit? */}
-      <div style={{
-        background: "rgba(255,255,255,0.80)", border: "1px solid rgba(0,0,0,0.07)",
-        borderRadius: 14, padding: "18px 20px", boxShadow: "0 2px 8px rgba(15,26,46,0.07)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 12px" }}>Is it a fit?</h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "\u25b3", color: "#7c5200", bg: "#fffbf0", label: "Early-adopter research interest in novel obesity mechanisms", note: "GLP-1/PrRP conjugates are a real pharmaceutical pipeline \u2014 but standalone community PrRP use is ahead of the evidence by a very wide margin" },
-            { icon: "\u2717", color: "#9e3800", bg: "#fff7f5", label: "Expecting an established safety profile", note: "No human clinical safety data for standalone PrRP exists. Source quality and contamination risk dominate real-world risk" },
-            { icon: "\u2717", color: "#9e3800", bg: "#fff7f5", label: "People on dopamine-active medications (antipsychotics, dopamine agonists)", note: "Potential prolactin-modulating effects interact with drugs that already affect the dopamine-prolactin axis" },
-            { icon: "\u2717", color: "#9e3800", bg: "#fff7f5", label: "People on GLP-1 agonists", note: "GLP-1/PrRP conjugates are in development precisely because these pathways interact \u2014 combining standalone agents is unstudied and potentially duplicative" },
-          ].map((row) => (
-            <div key={row.label} style={{
-              display: "flex", alignItems: "flex-start", gap: 10,
-              background: row.bg, borderRadius: 10, padding: "10px 14px",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 800, color: row.color, flexShrink: 0, marginTop: 1 }}>{row.icon}</span>
-              <div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: "#1e293b" }}>{row.label}</div>
-                <div style={{ fontSize: 12, color: "#64748b", marginTop: 2 }}>{row.note}</div>
-              </div>
-            </div>
-          ))}
+          <div className="reta-overview__bottom-col">
+            <p className="reta-overview__bottom-col-heading">What makes it interesting</p>
+            <ul className="reta-overview__bottom-list">
+              <li>GPR10 knockout mice develop obesity &mdash; establishing that endogenous PrRP signaling genuinely regulates body weight</li>
+              <li>Active pharmaceutical pipeline: GLP-1/PrRP dual agonists are in development specifically because the pathways are complementary</li>
+              <li>The naming mismatch is instructive: discovered as a prolactin releaser, characterized as an energy balance peptide</li>
+              <li>Connects GLP-1, leptin, and brainstem satiety circuits in a way that illuminates why combination weight loss approaches work</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      {/* What people discuss */}
-      <div style={{
-        background: "linear-gradient(135deg,rgba(26,92,58,0.07) 0%,rgba(15,26,46,0.04) 100%)",
-        border: "1px solid rgba(26,92,58,0.15)", borderRadius: 14, padding: "18px 20px",
-        boxShadow: "0 2px 8px rgba(15,26,46,0.06)",
-      }}>
-        <h3 style={{ fontSize: 14, fontWeight: 700, color: "#0f1a2e", margin: "0 0 10px" }}>What people discuss</h3>
-        <ul style={{ margin: 0, padding: "0 0 0 18px", display: "flex", flexDirection: "column", gap: 6 }}>
-          {[
-            "Appetite suppression and weight loss \u2014 the GPR10 energy balance mechanism is the main hook",
-            "The GLP-1/PrRP dual agonist pipeline \u2014 watching pharmaceutical development with interest",
-            "Confusion about the prolactin angle \u2014 the name frequently misleads people about what it does",
-            "Sourcing quality concerns \u2014 very limited vendor supply and verification options",
-            "Speculation about synergy with GLP-1 agonists (semaglutide) \u2014 an unstudied combination",
-          ].map((t) => (
-            <li key={t} style={{ fontSize: 13.5, color: "#334155", lineHeight: 1.5 }}>{t}</li>
-          ))}
-        </ul>
       </div>
 
     </div>
