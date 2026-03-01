@@ -2,7 +2,6 @@ import { getSponsors } from "@/lib/sponsors";
 import { requirePaid } from "@/lib/gate";
 import { listPeptides } from "@/lib/content";
 import Link from "next/link";
-import DisclaimerSection from "@/components/DisclaimerSection";
 import SponsorBanner from "@/components/SponsorBanner";
 
 export const dynamic = "force-dynamic";
@@ -29,9 +28,6 @@ const CATEGORIES = [
   { key: "sleep_circadian",              label: "Sleep",                      color: "#7c3aed" },
   { key: "antimicrobial_innate",          label: "Antimicrobial",              color: "#84cc16" },
 ] as const;
-
-const DISCLAIMER =
-  "Pep-Talk is an educational resource. It is not medical advice, diagnosis, or treatment. Always use your judgment and consult a qualified clinician for personal medical decisions.";
 
 export default async function Home() {
   const [sponsors, paid] = await Promise.all([getSponsors(), isPaid()]);
@@ -230,15 +226,6 @@ export default async function Home() {
           </div>
         </section>
       )}
-
-      {/* ══════════════════════════════════════════
-          DISCLAIMER
-      ══════════════════════════════════════════ */}
-      <div className="pt-home__section pt-home__section--tight">
-        <div className="pt-home__section-inner">
-          <DisclaimerSection text={DISCLAIMER} />
-        </div>
-      </div>
 
     </div>
   );
