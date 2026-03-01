@@ -10,6 +10,7 @@ export type EntityListItem = {
   name: string;
   route?: string;
   aliases?: string[];
+  taxonomy_keys?: string[];
 };
 
 export type TopicListItem = {
@@ -108,10 +109,13 @@ export function listEntities(kind: EntityKind): EntityListItem[] {
     .map((e) => {
       const slug = safeString(e?.slug);
       const route = safeString(e?.route);
-      const canonical = safeString(e?.canonical_name) || safeString(e?.name);
+      const canonical = safeString(e?.canonical_name) || safeString(e?.name) || safeString(e?.display_name);
       const short = safeString(e?.short_name);
       const name = short || canonical || titleFromSlug(slug);
-      return { kind, slug, name, route: route || (kind === "peptide" ? `/peptide/${slug}` : `/blend/${slug}`), aliases: getAliasesForSlug(slug) };
+      const taxonomy_keys = Array.isArray(e?.taxonomy_keys)
+        ? (e.taxonomy_keys as unknown[]).map((k) => safeString(k)).filter(Boolean)
+        : [];
+      return { kind, slug, name, route: route || (kind === "peptide" ? `/peptide/${slug}` : `/blend/${slug}`), aliases: getAliasesForSlug(slug), taxonomy_keys };
     })
     .filter((x) => !!x.slug);
 

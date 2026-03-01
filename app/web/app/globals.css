@@ -4999,3 +4999,159 @@ html.reta-page body {
 @media (max-width: 767px) {
   .pt-nav__inner { padding: 8px 12px; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PEPTIDES_V1 — /peptides list page
+   Glass filter chips, card grid, category badges
+   ═══════════════════════════════════════════════════════════ */
+
+.pt-peptides {
+  background: linear-gradient(170deg, #eef1f7 0%, #e5eaf3 100%);
+  min-height: calc(100vh - 120px);
+}
+
+.pt-peptides__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+/* ── Header ── */
+.pt-peptides__header {
+  margin-bottom: 22px;
+}
+
+.pt-peptides__title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--reta-navy, #0f1a2e);
+  letter-spacing: -0.025em;
+  margin: 0 0 4px;
+  line-height: 1.1;
+}
+
+.pt-peptides__subtitle {
+  font-size: 13.5px;
+  color: rgba(15, 26, 46, 0.48);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ── Filter bar ── */
+.pt-peptides__filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(15, 26, 46, 0.06), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+
+.pt-peptides__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(15, 26, 46, 0.62);
+  transition: background 0.14s, color 0.14s;
+  white-space: nowrap;
+  line-height: 1;
+}
+.pt-peptides__chip:hover {
+  background: rgba(15, 26, 46, 0.06);
+  color: var(--reta-navy, #0f1a2e);
+}
+.pt-peptides__chip--active {
+  background: var(--reta-navy, #0f1a2e);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(15, 26, 46, 0.28);
+}
+.pt-peptides__chip--active:hover {
+  background: var(--reta-navy, #0f1a2e);
+  color: #ffffff;
+}
+
+/* ── Card grid ── */
+.pt-peptides__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 860px) {
+  .pt-peptides__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .pt-peptides__grid { grid-template-columns: 1fr; }
+  .pt-peptides__inner { padding: 24px 16px 60px; }
+  .pt-peptides__title { font-size: 30px; }
+}
+
+/* ── Cards ── */
+.pt-peptides__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(15, 26, 46, 0.08);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: background 0.15s, box-shadow 0.15s, border-color 0.15s, transform 0.12s;
+  box-shadow: 0 1px 3px rgba(15, 26, 46, 0.05);
+}
+.pt-peptides__card:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(15, 26, 46, 0.14);
+  box-shadow: 0 4px 18px rgba(15, 26, 46, 0.10);
+  transform: translateY(-1px);
+}
+
+.pt-peptides__card-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--reta-navy, #0f1a2e);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.pt-peptides__card-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: rgba(15, 26, 46, 0.44);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+.pt-peptides__card-badge::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(15, 26, 46, 0.22);
+  flex-shrink: 0;
+}
+
+/* ── Empty state ── */
+.pt-peptides__empty {
+  text-align: center;
+  padding: 56px 24px;
+  color: rgba(15, 26, 46, 0.40);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
