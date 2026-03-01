@@ -107,59 +107,61 @@ export default function NavBar(props: { peptides: EntityListItem[]; blends: Enti
   const items = NAV_ITEMS;
 
   return (
-    <header className="pt-nav">
-      <div className="pt-nav__inner">
-        <div className="pt-nav__row">
+    <>
+      <header className="pt-nav">
+        <div className="pt-nav__inner">
+          <div className="pt-nav__row">
 
-          {/* Left: back + logo */}
-          <div className="pt-nav__left">
-            <button type="button" aria-label="Back" onClick={goBack} className="pt-nav__back">
-              <BackIcon />
-            </button>
-            <Link href="/" className="pt-nav__logo">
-              Pep-Talk
-            </Link>
-          </div>
-
-          {/* Center: desktop nav */}
-          <div className="pt-nav__center">
-            <nav className="desktop-nav pt-nav__links">
-              {items.slice(1).map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
-                  className="pt-nav__link"
-                >
-                  {item.label}
-                  {showProBadges && item.pro ? <ProPill /> : null}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Right: admin, account, hamburger */}
-          <div className="pt-nav__right">
-            {showAdmin ? (
-              <Link href="/admin" className="pt-nav__admin-btn">
-                Admin
+            {/* Left: back + logo */}
+            <div className="pt-nav__left">
+              <button type="button" aria-label="Back" onClick={goBack} className="pt-nav__back">
+                <BackIcon />
+              </button>
+              <Link href="/" className="pt-nav__logo">
+                Pep-Talk
               </Link>
-            ) : null}
-            <AccountChip />
-            <button
-              className="mobile-menu-btn pt-nav__hamburger"
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
-            >
-              <HamburgerIcon />
-            </button>
+            </div>
+
+            {/* Center: desktop nav */}
+            <div className="pt-nav__center">
+              <nav className="desktop-nav pt-nav__links">
+                {items.slice(1).map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.pro && showProBadges ? `/upgrade?next=${encodeURIComponent(item.href)}` : item.href}
+                    className="pt-nav__link"
+                  >
+                    {item.label}
+                    {showProBadges && item.pro ? <ProPill /> : null}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Right: admin, account, hamburger */}
+            <div className="pt-nav__right">
+              {showAdmin ? (
+                <Link href="/admin" className="pt-nav__admin-btn">
+                  Admin
+                </Link>
+              ) : null}
+              <AccountChip />
+              <button
+                className="mobile-menu-btn pt-nav__hamburger"
+                aria-label="Open menu"
+                onClick={() => setOpen(true)}
+              >
+                <HamburgerIcon />
+              </button>
+            </div>
+
           </div>
 
+          <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
         </div>
-
-        <HomeSearch peptides={props.peptides} blends={props.blends} topics={props.topics} />
-      </div>
+      </header>
 
       <MobileMenu open={open} onClose={() => setOpen(false)} items={items} showProBadges={showProBadges} />
-    </header>
+    </>
   );
 }
