@@ -4654,6 +4654,7 @@ html.reta-page body {
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+  grid-column: 3;
 }
 
 .pt-nav__admin-btn {
