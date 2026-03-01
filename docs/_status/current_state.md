@@ -1,5 +1,5 @@
 # Current State
-Date: 2026-02-27
+Date: 2026-03-01
 Branch: main
 
 Always verify before trusting this file:
@@ -24,7 +24,7 @@ UGC → Supabase: **verified in production**
 ## Constitutional Governance (Authoritative Hierarchy)
 
 1. **Constitutional** (override all): `docs/_constitution/pep-talk_human_and_tone_charter_v1.md`, `pep-talk_master_blueprint_v1.md`
-2. **Governance** (authoritative specs): `docs/_governance/pdp_v3_standard.md` ← NEW ANCHOR, `pdp_scaling_playbook.md`, `vial_image_spec.md`
+2. **Governance** (authoritative specs): `docs/_governance/pdp_v3_standard.md`, `pdp_scaling_playbook.md`, `vial_image_spec.md`
 3. **Status** (this file + next_task.md + parking_lot.md)
 4. **Code** — implements specs, not the other way around
 
@@ -38,53 +38,74 @@ Blends: **8**
 
 ---
 
-## What Is Complete (as of 2026-02-27)
+## What Is Complete (as of 2026-03-01)
 
-### Retatrutide PDP v3 — Benchmark ✅
-The Retatrutide page at `/peptide/retatrutide` is the gold standard PDP. Fully built and live.
+### All 92 Peptide PDPs — v3 Panel System ✅
 
-**Hero:**
-- `reta-hero-v2`: 3-column grid (vial / title+jumps / glass card)
-- Mobile: single-column stack, small inline vial in title row
-- Frosted glass posture card (Status chip, Context chip, Evidence grade, Disclaimer)
-- "For your situation" pill → `#considerations`
+Every peptide in the database has v3 panels. The v3 system replaced the old scrolling 2-col layout for all compounds.
+
+**Architecture:**
+
+- `V3_SLUGS` in `page.tsx` — all 92 slugs gated into v3 render path
+- `PANEL_MAP` — per-slug component map (Overview, Evidence, Safety, Interactions)
+- `V3_HERO_CONTENT` — per-slug hero `considerSub` text + 3 `startHere` bullets
+- `getSupportPack()` in `supportLayer.ts` — per-slug SupportPack for PDPContextualConsiderations
+
+**Per-compound components (4 per compound × 92 = 368 panel files):**
+
+- `{Compound}OverviewPanel.tsx` — plain server component, overview content
+- `{Compound}EvidencePanel.tsx` — plain server component, evidence signals
+- `{Compound}SafetyPanel.tsx` — plain server component, safety flags (no `dot` in TIER_STYLE)
+- `{Compound}InteractionsPanel.tsx` — `"use client"`, live search filter (has `dot` in TIER_STYLE)
+
+**Last batch committed:** 912a10d (palmitoyl-pentapeptide-4, palmitoyl-tripeptide-1, vip, ziconotide)
+
+### Retatrutide PDP — Benchmark Design ✅
+
+The Retatrutide page at `/peptide/retatrutide` is the gold-standard PDP with full custom design.
+
+**Hero:** `reta-hero-v2` — 3-col grid (vial / title+jumps / glass card), mobile single-col stack
 
 **Body — Tab System:**
-- `PDPTabs.tsx` — sticky tab bar with hash routing, hashchange listener, scroll-anchor community tab
-- Start Here strip (3 orientation bullets, always visible above tabs)
-- Sticky tab unit: bar + swipe hint travel together (mobile swipe hint is a tab tongue below bar)
+
+- `PDPTabs.tsx` — sticky tab bar, hash routing, hashchange listener
+- Start Here strip (3 orientation bullets above tabs)
 - 5 tabs: Overview / Evidence / Safety / Interactions / For You
-- Community below tabs (scroll anchor, outside tab panels)
+- Community below tabs (scroll anchor, outside panels)
 
-**Panel Components (all complete):**
-- `RetaOverviewPanel.tsx` — stat cards (~24%), fit matrix ✓/✗, timeline, comparison table
-- `RetaEvidencePanel.tsx` — 6 signal tiles, Phase 2 trial stats (NEJM 2023), mechanism breakdown, gaps, observed block
-- `RetaSafetyPanel.tsx` — side effect grid, 5-card mitigation playbook, 6 red lines, proportion closer
-- `RetaInteractionsPanel.tsx` — 37 entries, live search + 5 category chips, tier badges (flag/watch/low)
-- `PDPContextualConsiderations.tsx` — 43 packs, ghost typeahead, Enter-to-commit search
+**Premium panels:**
 
-**Other site-wide improvements (this milestone):**
-- `CollapsibleSection.tsx` — CSS grid animation, always in DOM for SEO
-- `BackToTop.tsx` — floating button, site-wide via layout.tsx
-- Jump links on all PDPs (reta: `reta-hero-v2__jump`; non-reta: `pt-hero-jump`)
-- Mid-page community CTA on non-reta PDPs
-- Shadow system upgraded globally
-- `content/peptides/retatrutide.json` — plain-English interaction_summary and drug_classes
+- `RetaOverviewPanel.tsx` — stat cards, fit matrix, timeline, head-to-head comparison
+- `RetaEvidencePanel.tsx` — 6 signal tiles, NEJM 2023 trial stats, mechanisms, gaps
+- `RetaSafetyPanel.tsx` — side effect grid, 5-card mitigation playbook, 6 red lines
+- `RetaInteractionsPanel.tsx` — 37 entries, live search + 5 category chips
+- `PDPContextualConsiderations.tsx` — 43 SupportPacks, ghost typeahead, Enter-to-search
+
+### Site-Wide Infrastructure ✅
+
+- `CollapsibleSection.tsx` — CSS grid animation, always in DOM (SEO-safe)
+- `BackToTop.tsx` — floating button site-wide via layout.tsx
+- Jump links on all PDPs
+- Shadow/glass system upgraded globally
+- Global PDP Fix Directives codified in charter + governance docs
 
 ### Documentation ✅
-- `docs/_governance/pdp_v3_standard.md` — new site-wide PDP standard
-- `docs/_governance/pdp_scaling_playbook.md` — Phase A + Phase B scaling guide
+
+- `docs/_governance/pdp_v3_standard.md` — site-wide PDP standard + Global Fix Directives
+- `docs/_governance/pdp_scaling_playbook.md` — Phase A + Phase B scaling guide + compliance checklist
+- `docs/_constitution/pep-talk_human_and_tone_charter_v1.md` — Section 10 panel rules added
 - `docs/_governance/vial_image_spec.md` — ChatGPT vial generation specs
-- Archived to `docs/_vault/`: `pdp_hero_build_governance_chat42.md`, `pdp_hero_v2_spec.md`, `pdp_layout_v1.md`, `design_spec_v2_pdp_editorial_architecture.md`
 
 ---
 
 ## What Is NOT Complete (Honest)
 
-- **Only Retatrutide has v3 design.** 91 other peptides still use the non-v3 (`pt-card` / `pt-hero`) path.
-- **Panel components are hardcoded** for Retatrutide. No generic data-driven panels exist yet (Phase B).
-- **No vial images** for non-Retatrutide peptides (all fall back to `_generic.svg`).
-- **Non-reta PDPs** are working but not upgraded — they render correctly via the `else` branch in `page.tsx`.
+- **Peptide-to-peptide stacking interactions** — if Retatrutide interacts with BPC-157, that appears on the Retatrutide page but not the BPC-157 page (and vice versa). Cross-compound interaction parity has not been audited. This is the next planned pass.
+- **Phase B — Generic panels** — all 368 panel files are hardcoded per-compound. The deferred refactor to data-driven `<OverviewPanel peptide={data} />` components has not been done.
+- **Start Here bullets are hardcoded** in `page.tsx` `V3_HERO_CONTENT`. Not yet JSON-driven.
+- **Vial images** — most compounds fall back to `_generic.svg`. Only retatrutide has a custom vial.
+- **Blends** — 8 blends have no v3 panels and placeholder content throughout.
+- **JSON content completeness** — many peptides still have pending placeholder text in their `.json` files for fields like `classification.category`, `structure.sequence_oneletter`. These are legacy content fields that predate the v3 panel system; the panels don't depend on them, but they surface in the conformance report.
 
 ---
 
@@ -95,13 +116,13 @@ The Retatrutide page at `/peptide/retatrutide` is the gold standard PDP. Fully b
 - Validators must pass before commit
 - Build must be green before push
 - One scoped change-set per commit
-- Non-v3 PDPs untouched until deliberately planned per playbook
 
 ---
 
 ## Observational Transparency Policy
 
 Pep-Talk may include (framed as descriptive, not instructive):
+
 - Clinical dose ranges studied
 - Study titration schedules
 - Duration patterns studied
@@ -109,6 +130,7 @@ Pep-Talk may include (framed as descriptive, not instructive):
 - Common stacking patterns
 
 Must NOT include:
+
 - Directive language ("you should", "start at", "take X")
 - Personalized instruction or protocol steps
 
@@ -120,7 +142,6 @@ DB: Supabase Postgres → `public.ugc_posts`
 Statuses: `pending | approved | rejected | archived | trash`
 Flow verified: `submit → moderate → list → seen`
 Admin gating: Supabase session roles (admin | moderator)
-No schema expansion in this session.
 
 ---
 
@@ -128,4 +149,3 @@ No schema expansion in this session.
 
 Home page sponsor placement: active
 Click tracking endpoint: verified in production
-No sponsor changes in this session.

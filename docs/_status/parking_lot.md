@@ -20,11 +20,17 @@ The following were previously parked and are now **DONE** — removed from this 
 
 ### Phase B — Generic Data-Driven Panels
 
-After 3–5 peptides have Phase A panel clones, abstract into generic `<OverviewPanel peptide={data} />` etc. Eliminates per-peptide component files. See `pdp_scaling_playbook.md` for the migration path. Not started.
+All 92 compounds now have Phase A hardcoded panel components (368 files). The condition
+for Phase B (3–5+ compounds on v3) is met. This refactor abstracts them into generic
+`<OverviewPanel peptide={data} />` etc., eliminating per-compound files.
+See `pdp_scaling_playbook.md` for the migration path. Not started — defer until after
+the interactions audit and any high-priority feature work.
 
 ### Start Here Bullets — JSON-Driven
 
-Currently hardcoded in `page.tsx` per-peptide. Future: add `start_here: string[]` (3 items) to peptide JSON so they're data-driven. Low priority until 5+ peptides are on v3.
+Currently hardcoded in `page.tsx` `V3_HERO_CONTENT` per-slug. Future: add
+`start_here: string[]` (3 items) to peptide JSON so they're data-driven and editable
+without a deploy. Condition (5+ peptides on v3) is now met — promote when ready.
 
 ### Molecule Accent Visuals
 
