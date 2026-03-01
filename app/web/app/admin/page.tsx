@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminHome() {
   const tiles = [
+    { href: "/admin/billing", title: "Billing", sub: "Subscribers, revenue, entitlements" },
     { href: "/admin/ugc", title: "UGC Moderation", sub: "Review, approve, reject, archive, triage" },
     { href: "/admin/flags", title: "Flags", sub: "Site control switches (safe + audited)" },
     { href: "/admin/ops", title: "Ops", sub: "Health, jobs, system status" },

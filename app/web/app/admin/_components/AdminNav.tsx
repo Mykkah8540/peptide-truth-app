@@ -4,6 +4,7 @@ type Item = { href: string; label: string; sub?: string };
 
 const ITEMS: Item[] = [
   { href: "/admin", label: "Dashboard" },
+  { href: "/admin/billing", label: "Billing", sub: "Subscribers & revenue" },
   { href: "/admin/ugc", label: "Moderation", sub: "UGC queue" },
   { href: "/admin/flags", label: "Flags", sub: "Site controls" },
   { href: "/admin/ops", label: "Ops", sub: "Jobs & health" },
