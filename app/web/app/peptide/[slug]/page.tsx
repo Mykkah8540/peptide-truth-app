@@ -254,8 +254,24 @@ import AfamelanotideOverviewPanel from "@/components/AfamelanotideOverviewPanel"
 import AfamelanotideEvidencePanel from "@/components/AfamelanotideEvidencePanel";
 import AfamelanotideSafetyPanel from "@/components/AfamelanotideSafetyPanel";
 import AfamelanotideInteractionsPanel from "@/components/AfamelanotideInteractionsPanel";
+import AmylinOverviewPanel from "@/components/AmylinOverviewPanel";
+import AmylinEvidencePanel from "@/components/AmylinEvidencePanel";
+import AmylinSafetyPanel from "@/components/AmylinSafetyPanel";
+import AmylinInteractionsPanel from "@/components/AmylinInteractionsPanel";
+import AngiotensinIiOverviewPanel from "@/components/AngiotensinIiOverviewPanel";
+import AngiotensinIiEvidencePanel from "@/components/AngiotensinIiEvidencePanel";
+import AngiotensinIiSafetyPanel from "@/components/AngiotensinIiSafetyPanel";
+import AngiotensinIiInteractionsPanel from "@/components/AngiotensinIiInteractionsPanel";
+import Ara290OverviewPanel from "@/components/Ara290OverviewPanel";
+import Ara290EvidencePanel from "@/components/Ara290EvidencePanel";
+import Ara290SafetyPanel from "@/components/Ara290SafetyPanel";
+import Ara290InteractionsPanel from "@/components/Ara290InteractionsPanel";
+import BivalirudinOverviewPanel from "@/components/BivalirudinOverviewPanel";
+import BivalirudinEvidencePanel from "@/components/BivalirudinEvidencePanel";
+import BivalirudinSafetyPanel from "@/components/BivalirudinSafetyPanel";
+import BivalirudinInteractionsPanel from "@/components/BivalirudinInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -624,6 +640,30 @@ const PANEL_MAP: Record<string, {
     Evidence: AfamelanotideEvidencePanel,
     Safety: AfamelanotideSafetyPanel,
     Interactions: AfamelanotideInteractionsPanel,
+  },
+  amylin: {
+    Overview: AmylinOverviewPanel,
+    Evidence: AmylinEvidencePanel,
+    Safety: AmylinSafetyPanel,
+    Interactions: AmylinInteractionsPanel,
+  },
+  "angiotensin-ii": {
+    Overview: AngiotensinIiOverviewPanel,
+    Evidence: AngiotensinIiEvidencePanel,
+    Safety: AngiotensinIiSafetyPanel,
+    Interactions: AngiotensinIiInteractionsPanel,
+  },
+  "ara-290": {
+    Overview: Ara290OverviewPanel,
+    Evidence: Ara290EvidencePanel,
+    Safety: Ara290SafetyPanel,
+    Interactions: Ara290InteractionsPanel,
+  },
+  bivalirudin: {
+    Overview: BivalirudinOverviewPanel,
+    Evidence: BivalirudinEvidencePanel,
+    Safety: BivalirudinSafetyPanel,
+    Interactions: BivalirudinInteractionsPanel,
   },
 };
 
@@ -1110,6 +1150,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Afamelanotide (Scenesse) is an FDA-approved MC1R agonist administered as a subcutaneous implant for erythropoietic protoporphyria (EPP) \u2014 a rare, severely disabling photodermatosis. It is not approved for general tanning.",
       "What matters most: this is a REMS-program drug requiring specialist prescribing and mandatory dermatology melanoma surveillance every 6 months. It is not a peptide for community or aesthetic use.",
       "How to use this page: Evidence covers the EPP RCT data. Safety covers the melanoma surveillance requirement and the skin darkening effects.",
+    ],
+  },
+  amylin: {
+    considerSub: "IAPP, pramlintide (Symlin), amyloid fibrillation, T1DM, cagrilintide pipeline\u2026",
+    startHere: [
+      "Amylin (IAPP) is a 37-AA peptide co-secreted with insulin from pancreatic beta cells. It suppresses glucagon, slows gastric emptying, and reduces food intake. Pramlintide (Symlin) is the FDA-approved amylin analogue \u2014 proline substitutions prevent the fibrillation that raw amylin undergoes.",
+      "What matters most: injecting unformulated human amylin risks amyloid deposition. Pramlintide is the appropriate pharmaceutical option. It requires prandial insulin dose reduction (50%) to prevent hypoglycemia.",
+      "How to use this page: Safety covers the fibrillation hazard of raw amylin and the hypoglycemia risk with pramlintide. Evidence covers pramlintide RCTs and cagrilintide pipeline data.",
+    ],
+  },
+  "angiotensin-ii": {
+    considerSub: "Giapreza, RAAS, distributive shock vasopressor, ATHOS-3, thrombosis risk\u2026",
+    startHere: [
+      "Angiotensin-II (Giapreza) is an FDA-approved vasopressor for septic and distributive shock \u2014 the endogenous RAAS octapeptide used as a catecholamine-sparing agent in ICU patients refractory to norepinephrine. ATHOS-3 RCT basis.",
+      "What matters most: this is an ICU-only IV drug with a black box thrombosis warning. Not a community peptide \u2014 included here as pharmacological education on RAAS physiology.",
+      "How to use this page: Evidence covers ATHOS-3 and the MAP response data. Safety covers the thrombosis black box and hemodynamic monitoring requirements.",
+    ],
+  },
+  "ara-290": {
+    considerSub: "EPO-derived peptide, innate repair receptor, small fiber neuropathy, sarcoidosis, research\u2026",
+    startHere: [
+      "ARA-290 is a synthetic peptide derived from the tissue-protective domain of EPO, targeting the innate repair receptor (IRR) without activating the hematopoietic EPO receptor. Small trials in sarcoidosis-associated small fiber neuropathy showed modest benefit.",
+      "What matters most: not FDA-approved; small trial evidence only; research compound with limited human safety data. Promising mechanism, insufficient evidence for standard clinical use.",
+      "How to use this page: Evidence calibrates the sarcoidosis SFN trial data. Safety covers the limited human safety database and the research compound quality issue.",
+    ],
+  },
+  bivalirudin: {
+    considerSub: "Angiomax, direct thrombin inhibitor, PCI anticoagulation, HIT, bivalent mechanism\u2026",
+    startHere: [
+      "Bivalirudin (Angiomax) is a synthetic 20-AA direct thrombin inhibitor \u2014 FDA-approved for anticoagulation during PCI and for patients with HIT. It bivalently binds thrombin active site and exosite-1, with a short half-life via thrombin-mediated cleavage.",
+      "What matters most: major bleeding is the primary risk; no reversal agent exists. Hospital-only IV medication \u2014 not relevant as a community peptide.",
+      "How to use this page: Evidence covers the REPLACE-2, ACUITY, and HORIZONS-AMI trial data. Safety covers bleeding risk and renal dose adjustment.",
     ],
   },
 };

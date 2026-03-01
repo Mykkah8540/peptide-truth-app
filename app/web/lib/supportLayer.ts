@@ -629,6 +629,82 @@ const SUPPORT_DSIP: SupportPack = {
   ],
 };
 
+function isAmylinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "amylin";
+}
+
+function isAngiotensinIiFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "angiotensin-ii";
+}
+
+function isAra290Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "ara-290";
+}
+
+function isBivalirudinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "bivalirudin";
+}
+
+const SUPPORT_AMYLIN: SupportPack = {
+  id: "amylin",
+  title: "Amylin fibrillates — pramlintide (Symlin) is the pharmaceutical option, not raw amylin",
+  subtitle: "Endogenous beta-cell peptide; IAPP amyloid risk; pramlintide is FDA-approved; cagrilintide in development",
+  bullets: [
+    "Amylin (IAPP) naturally forms amyloid fibrils — injecting unformulated human amylin would risk injection-site amyloid deposition; pramlintide has proline substitutions preventing fibrillation",
+    "Pramlintide (Symlin) is the FDA-approved amylin analogue — reduces postprandial glucagon, slows gastric emptying, and produces ~1-1.5 kg weight loss as an adjunct to insulin",
+    "Prandial insulin dose reduction (typically 50%) is required when starting pramlintide — severe hypoglycemia occurs with full insulin doses",
+    "Nausea is common in the first 4-8 weeks; starting at low doses (15 mcg T1DM, 60 mcg T2DM) and titrating reduces tolerability issues",
+    "Cagrilintide (long-acting amylin analogue) combined with semaglutide is in Phase 3 (REDEFINE) — showing >15% weight reduction; not yet approved",
+    "Community amylin injection has no evidence base and introduces fibrillation risk without benefit over the approved pharmaceutical alternative",
+  ],
+};
+
+const SUPPORT_ANGIOTENSIN_II: SupportPack = {
+  id: "angiotensin-ii",
+  title: "Angiotensin-II (Giapreza) is an ICU vasopressor — not a community peptide",
+  subtitle: "FDA-approved vasopressor for distributive shock; black box thrombosis warning; hospital-only administration",
+  bullets: [
+    "Giapreza (angiotensin-II injection) is FDA-approved for increasing blood pressure in adults with septic or other distributive shock — catecholamine-sparing vasopressor",
+    "ATHOS-3 RCT demonstrated superior MAP response vs. placebo in patients refractory to norepinephrine",
+    "Black box warning: thrombotic risk (DVT, arterial thrombosis) — VTE prophylaxis with heparin is mandatory during treatment",
+    "Administered only in ICU settings with continuous hemodynamic monitoring; precise dose titration requires trained clinical staff",
+    "No community, enhancement, or peptide therapy use case — angiotensin-II is a hospital IV medication for life-threatening hypotension",
+    "RAAS physiology context: understanding how angiotensin-II functions illuminates why ACE inhibitors and ARBs work in heart failure and hypertension",
+  ],
+};
+
+const SUPPORT_ARA_290: SupportPack = {
+  id: "ara-290",
+  title: "ARA-290 targets the tissue-protective EPO receptor — small trials in neuropathy, no FDA approval",
+  subtitle: "EPO-derived peptide for innate repair receptor; sarcoidosis SFN research; research compound only",
+  bullets: [
+    "ARA-290 targets the innate repair receptor (EPO receptor + beta-common receptor heterodimer) without activating the hematopoietic EPO receptor — no erythropoietic effect by design",
+    "Small randomized trial in sarcoidosis-associated small fiber neuropathy (Brines et al. 2014) showed improved neuropathic symptoms and intraepidermal nerve fiber density",
+    "Not FDA-approved; no large-scale clinical trials completed; limited human safety database",
+    "Potential hypoglycemia — some studies noted glucose-lowering effects; monitor if using insulin or antidiabetic drugs",
+    "Community-sourced ARA-290 has no pharmaceutical-grade quality control — purity and sterility are unverified",
+    "Research compound status: promising mechanism with limited clinical evidence — appropriate for clinical trial participation, not self-administration",
+  ],
+};
+
+const SUPPORT_BIVALIRUDIN: SupportPack = {
+  id: "bivalirudin",
+  title: "Bivalirudin is a direct thrombin inhibitor for cardiac catheterization — hospital-only IV anticoagulant",
+  subtitle: "Angiomax; bivalent thrombin inhibition; PCI and HIT anticoagulation; no reversal agent",
+  bullets: [
+    "Bivalirudin (Angiomax) is FDA-approved for anticoagulation during PCI (percutaneous coronary intervention) and in patients with or at risk for heparin-induced thrombocytopenia (HIT)",
+    "Bivalent mechanism — binds both thrombin active site and exosite-1 simultaneously; short half-life (~25 min) via thrombin-mediated cleavage + renal clearance",
+    "Major bleeding is the primary safety concern — no specific reversal agent exists; manage by discontinuation and supportive care",
+    "Renal dose adjustment required — active metabolite cleared renally; aPTT or ACT monitoring in CKD patients",
+    "Combination with antiplatelet drugs (aspirin, P2Y12 inhibitors) is standard in PCI — increases bleeding risk, which is the designed trade-off for ischemic protection",
+    "Hospital IV medication — not relevant as a community peptide; educational value is in demonstrating precision synthetic peptide anticoagulation",
+  ],
+};
+
 function isAbaloparatideFamily(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "abaloparatide";
@@ -1250,6 +1326,10 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isDesmopressinFamily(entity)) return SUPPORT_DESMOPRESSIN;
   if (isCalcitoninFamily(entity)) return SUPPORT_CALCITONIN;
   if (isGlucagonFamily(entity)) return SUPPORT_GLUCAGON;
+  if (isAmylinFamily(entity)) return SUPPORT_AMYLIN;
+  if (isAngiotensinIiFamily(entity)) return SUPPORT_ANGIOTENSIN_II;
+  if (isAra290Family(entity)) return SUPPORT_ARA_290;
+  if (isBivalirudinFamily(entity)) return SUPPORT_BIVALIRUDIN;
   if (isAbaloparatideFamily(entity)) return SUPPORT_ABALOPARATIDE;
   if (isAcetylHexapeptide8Family(entity)) return SUPPORT_ACETYL_HEXAPEPTIDE_8;
   if (isAdipotideFamily(entity)) return SUPPORT_ADIPOTIDE;
