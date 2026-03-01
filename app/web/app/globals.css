@@ -3944,3 +3944,421 @@ html.reta-page body {
     text-align: left;
   }
 }
+
+/* ═══════════════════════════════════════════════════════
+   BATCH_PANELS_V1 — CSS for generic v3 batch panel components
+   Covers two patterns emitted by the batch build agents:
+   "entry-based" (bradykinin style) and "item-based" (ziconotide style)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Overview panels ─────────────────────────────────── */
+.reta-overview__heading {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+/* __lede and __lead are synonyms used across batches */
+.reta-overview__lede,
+.reta-overview__lead {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #1c2a3a;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+.reta-overview__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.reta-overview__body p,
+.reta-overview > p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #2c3e52;
+  margin: 0;
+}
+
+/* ── Evidence panels — shared list/entry skeleton ────── */
+.reta-evidence__heading {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin: 0 0 14px;
+}
+.reta-evidence__context {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #4a5568;
+  background: rgba(15, 26, 46, 0.04);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+.reta-evidence__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reta-evidence__entry {
+  border-radius: 10px;
+  padding: 14px 16px 12px;
+}
+.reta-evidence__entry-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+/* entry-based style (bradykinin pattern) */
+.reta-evidence__entry-claim {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--reta-navy);
+  line-height: 1.45;
+  flex: 1 1 0;
+}
+.reta-evidence__entry-tier {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.reta-evidence__entry-body {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #2c3e52;
+  margin: 0 0 6px;
+}
+.reta-evidence__entry-sources {
+  font-size: 11.5px;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+/* label + grade style (ziconotide pattern) */
+.reta-evidence__label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--reta-navy);
+  line-height: 1.45;
+  flex: 1 1 0;
+}
+.reta-evidence__grade {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.reta-evidence__grade--strong {
+  background: rgba(21, 100, 58, 0.1);
+  color: #155e38;
+}
+.reta-evidence__grade--moderate {
+  background: rgba(124, 82, 0, 0.09);
+  color: #7c5200;
+}
+.reta-evidence__grade--none {
+  background: rgba(158, 56, 0, 0.09);
+  color: #9e3800;
+}
+
+/* ── Safety panels — shared list/entry skeleton ──────── */
+.reta-safety__heading {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin: 0 0 14px;
+}
+.reta-safety__context {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #4a5568;
+  background: rgba(15, 26, 46, 0.04);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+.reta-safety__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* entry-based pattern (bradykinin) */
+.reta-safety__entry {
+  border-radius: 10px;
+  padding: 14px 16px 12px;
+}
+.reta-safety__entry-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.reta-safety__entry-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--reta-navy);
+  line-height: 1.45;
+  flex: 1 1 0;
+}
+.reta-safety__entry-tier {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.reta-safety__entry-body {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #2c3e52;
+  margin: 0 0 6px;
+}
+.reta-safety__entry-context {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4a5568;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+/* item-based pattern (ziconotide) */
+.reta-safety__item {
+  border-radius: 10px;
+  padding: 14px 16px 12px;
+}
+.reta-safety__item-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.reta-safety__item-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.reta-safety__item-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--reta-navy);
+  line-height: 1.4;
+}
+.reta-safety__item-body {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #2c3e52;
+  margin: 0;
+}
+
+/* ── Interactions panels — shared skeleton ───────────── */
+.reta-interactions__heading {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  margin: 0 0 14px;
+}
+.reta-interactions__context {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #4a5568;
+  background: rgba(15, 26, 46, 0.04);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+.reta-interactions__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.reta-interactions__search {
+  width: 100%;
+  padding: 9px 13px;
+  border: 1px solid rgba(15, 26, 46, 0.15);
+  border-radius: 9px;
+  font-size: 13.5px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--reta-navy);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.reta-interactions__search:focus {
+  border-color: var(--reta-navy);
+}
+.reta-interactions__cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.reta-interactions__cat {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 26, 46, 0.15);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s;
+}
+.reta-interactions__cat:hover {
+  background: rgba(15, 26, 46, 0.06);
+}
+.reta-interactions__cat--active {
+  background: var(--reta-navy);
+  color: #fff;
+  border-color: var(--reta-navy);
+}
+.reta-interactions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reta-interactions__empty {
+  font-size: 13.5px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 24px 0;
+}
+/* entry-based pattern (bradykinin) */
+.reta-interactions__entry {
+  border-radius: 10px;
+  padding: 14px 16px 12px;
+}
+.reta-interactions__entry-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.reta-interactions__entry-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--reta-navy);
+  line-height: 1.35;
+}
+.reta-interactions__entry-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.reta-interactions__entry-cat {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  background: rgba(15, 26, 46, 0.05);
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.reta-interactions__entry-tier {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+.reta-interactions__entry-summary {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #2c3e52;
+  margin: 0 0 8px;
+}
+.reta-interactions__entry-mit {
+  margin: 0;
+  padding: 0 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.reta-interactions__entry-mit li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #374151;
+}
+/* item-based pattern (ziconotide/batch 16-17) */
+.reta-interactions__item {
+  border-radius: 10px;
+  padding: 14px 16px 12px;
+}
+.reta-interactions__item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.reta-interactions__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.reta-interactions__item-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.reta-interactions__item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--reta-navy);
+  line-height: 1.35;
+}
+.reta-interactions__item-body {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #2c3e52;
+  margin: 0;
+}
+
+@media (max-width: 599px) {
+  .reta-evidence__entry-top,
+  .reta-safety__entry-top,
+  .reta-safety__item-top,
+  .reta-interactions__entry-top,
+  .reta-interactions__item-top {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .reta-interactions__entry-tier,
+  .reta-evidence__entry-tier,
+  .reta-evidence__grade {
+    align-self: flex-start;
+  }
+}
