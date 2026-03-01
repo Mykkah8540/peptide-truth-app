@@ -803,6 +803,23 @@ export default async function WellnessPathsPage() {
                   </ul>
                 </div>
 
+                {/* Stack Builder CTA */}
+                <div className="pt-well__stack-cta">
+                  <div className="pt-well__stack-cta-body">
+                    <div className="pt-well__stack-cta-heading">
+                      Want to go deeper?
+                    </div>
+                    <p className="pt-well__stack-cta-text">
+                      This path is a starting point. The Stack Builder lets you design a
+                      full multi-peptide protocol around this goal — combining compounds
+                      for compounding effect, with timing and sequencing built in.
+                    </p>
+                  </div>
+                  <Link href="/stack-builder" className="pt-well__stack-cta-btn">
+                    Build a stack for this goal &rarr;
+                  </Link>
+                </div>
+
               </div>
             </details>
           ))}

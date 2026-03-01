@@ -6792,3 +6792,52 @@ html.reta-page body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── WELLNESS_V1 addendum: stack builder CTA ── */
+.pt-well__stack-cta {
+  margin-top: 22px;
+  background: linear-gradient(135deg, rgba(15,26,46,0.05) 0%, rgba(15,26,46,0.02) 100%);
+  border: 1px solid rgba(15,26,46,0.10);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pt-well__stack-cta-body {
+  flex: 1;
+  min-width: 200px;
+}
+.pt-well__stack-cta-heading {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f1a2e;
+  margin-bottom: 4px;
+}
+.pt-well__stack-cta-text {
+  font-size: 12.5px;
+  line-height: 1.58;
+  color: rgba(15,26,46,0.58);
+  margin: 0;
+}
+.pt-well__stack-cta-btn {
+  display: inline-block;
+  padding: 9px 18px;
+  background: #0f1a2e;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+}
+.pt-well__stack-cta-btn:hover {
+  opacity: 0.82;
+}
+@media (max-width: 600px) {
+  .pt-well__stack-cta { flex-direction: column; gap: 12px; }
+  .pt-well__stack-cta-btn { width: 100%; text-align: center; }
+}
