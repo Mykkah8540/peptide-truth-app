@@ -6430,3 +6430,304 @@ html.reta-page body {
   .pt-res__spectrum-tier { flex-direction: column; gap: 6px; }
   .pt-res__spectrum-tier .pt-res__text--sm { min-width: unset; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   WELLNESS_V1 — /categories Wellness Paths page
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Page shell ── */
+.pt-well {
+  min-height: 100vh;
+  background: var(--reta-body-bg, #dce4ee);
+}
+
+/* ── Hero ── */
+.pt-well__hero {
+  background: linear-gradient(145deg, #0f1a2e 0%, #1a2d52 60%, #0f1a2e 100%);
+  padding: 52px 28px 48px;
+}
+.pt-well__hero-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.pt-well__hero-back {
+  margin-bottom: 24px;
+  opacity: 0.72;
+}
+.pt-well__hero-back a,
+.pt-well__hero-back button {
+  color: rgba(255,255,255,0.80) !important;
+}
+.pt-well__hero-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 10px;
+}
+.pt-well__hero-title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.1;
+}
+.pt-well__hero-sub {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 16px;
+  max-width: 600px;
+}
+.pt-well__hero-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.42);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ── Body ── */
+.pt-well__body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 28px 72px;
+}
+
+/* ── Path cards ── */
+.pt-well__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pt-well__path {
+  background: rgba(255,255,255,0.84);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,0.60);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(15,26,46,0.07), inset 0 1px 0 rgba(255,255,255,0.90);
+  overflow: hidden;
+  transition: box-shadow 0.18s ease;
+}
+.pt-well__path[open] {
+  box-shadow: 0 4px 24px rgba(15,26,46,0.11), inset 0 1px 0 rgba(255,255,255,0.90);
+}
+
+/* Summary (collapsed header) */
+.pt-well__path-summary {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.pt-well__path-summary::-webkit-details-marker { display: none; }
+
+.pt-well__path-accent {
+  width: 5px;
+  align-self: stretch;
+  flex-shrink: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+.pt-well__path-hd {
+  flex: 1;
+  padding: 18px 14px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pt-well__path-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f1a2e;
+  line-height: 1.2;
+}
+.pt-well__path-subtitle {
+  font-size: 12px;
+  color: rgba(15,26,46,0.50);
+  letter-spacing: 0.01em;
+}
+
+.pt-well__path-chevron {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(15,26,46,0.35);
+  padding-right: 18px;
+  transition: transform 0.22s ease;
+  display: inline-block;
+  line-height: 1;
+}
+.pt-well__path[open] .pt-well__path-chevron {
+  transform: rotate(90deg);
+}
+
+/* Path body */
+.pt-well__path-body {
+  padding: 0 24px 24px 24px;
+  border-top: 1px solid rgba(15,26,46,0.06);
+}
+
+/* Framing paragraph */
+.pt-well__framing {
+  font-size: 14px;
+  line-height: 1.72;
+  color: #2c3e52;
+  margin: 18px 0 22px;
+}
+
+/* Compounds */
+.pt-well__compounds-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(15,26,46,0.42);
+  margin-bottom: 10px;
+}
+.pt-well__compounds {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.pt-well__compound {
+  background: rgba(255,255,255,0.60);
+  border: 1px solid rgba(15,26,46,0.06);
+  border-radius: 10px;
+  padding: 13px 15px;
+}
+.pt-well__compound-hd {
+  margin-bottom: 5px;
+}
+.pt-well__compound-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+}
+.pt-well__compound-name:hover {
+  text-decoration: underline;
+}
+.pt-well__compound-role {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #2c3e52;
+  margin: 0 0 6px;
+}
+.pt-well__compound-tradeoff {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: rgba(44,62,82,0.70);
+  margin: 0;
+}
+.pt-well__tradeoff-label {
+  font-weight: 700;
+  color: rgba(15,26,46,0.55);
+}
+
+/* Synergy */
+.pt-well__synergy {
+  background: linear-gradient(135deg, rgba(15,26,46,0.04) 0%, rgba(15,26,46,0.02) 100%);
+  border: 1px solid rgba(15,26,46,0.07);
+  border-radius: 10px;
+  padding: 13px 15px;
+  margin-bottom: 16px;
+}
+.pt-well__synergy-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(15,26,46,0.42);
+  margin-bottom: 6px;
+}
+.pt-well__synergy-text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #2c3e52;
+  margin: 0;
+}
+
+/* Watch for */
+.pt-well__watch {
+  margin-top: 4px;
+}
+.pt-well__watch-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #b45309;
+  margin-bottom: 8px;
+}
+.pt-well__watch-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pt-well__watch-item {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: rgba(44,62,82,0.80);
+  padding-left: 14px;
+  position: relative;
+}
+.pt-well__watch-item::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+  font-size: 10px;
+  top: 1px;
+  color: #b45309;
+  opacity: 0.7;
+}
+
+/* ── Footer ── */
+.pt-well__footer {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(15,26,46,0.10);
+}
+.pt-well__footer-text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(15,26,46,0.55);
+  margin: 0 0 16px;
+  max-width: 620px;
+}
+.pt-well__footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.pt-well__footer-link {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f1a2e;
+  text-decoration: none;
+}
+.pt-well__footer-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .pt-well__hero {
+    padding: 36px 18px 36px;
+  }
+  .pt-well__body {
+    padding: 22px 16px 52px;
+  }
+  .pt-well__path-title { font-size: 14px; }
+  .pt-well__path-body { padding: 0 16px 20px 16px; }
+}
