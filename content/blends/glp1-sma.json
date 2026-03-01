@@ -3,7 +3,7 @@
   "blend": {
     "slug": "glp1-sma",
     "display_name": "GLP-1 SMA",
-    "status": "parked",
+    "status": "active",
     "taxonomy_keys": [
       "metabolic_weight_blend"
     ],
@@ -16,17 +16,14 @@
     "sections": {
       "overview": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": [
-            "E1"
-          ],
-          "title": "What this blend is"
+          "title": "What this product is",
+          "text": "GLP-1 SMA is a supplier commercial name for semaglutide \u2014 the original GLP-1 receptor agonist in this class (Wegovy / Ozempic). It has the largest real-world dataset of any compound in the incretin category, with STEP trial data showing ~15% body weight reduction. The 'amylin' component listed by some suppliers is not a resolved component on this platform."
         }
       ],
       "claims": [],
       "safety": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "text": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -36,29 +33,29 @@
           "text": "Use cases are framed as intent + context, not as a recommendation."
         },
         {
-          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+          "text": "People usually consider blends when they\u2019re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
         },
         {
-          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit \u2014 even if the other component seems appealing."
         }
       ],
       "interaction_summary": [
         {
           "title": "Interaction summary",
-          "text": "Interaction flags are category prompts — not dosing instructions."
+          "text": "Interaction flags are category prompts \u2014 not dosing instructions."
         },
         {
           "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
         },
         {
-          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "If you\u2019re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "GLP-1 SMA — reference index",
+        "title": "GLP-1 SMA \u2014 reference index",
         "source_type": "website",
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=GLP-1+SMA",
         "evidence_grade": "mechanistic_only",
@@ -80,6 +77,14 @@
       "serious_red_flags": [],
       "who_should_be_cautious": [],
       "schema_version": "blend_practical_block_v1"
+    },
+    "intent_label": "GLP-1 receptor agonist",
+    "rationale": "GLP-1 SMA is a supplier commercial name for semaglutide \u2014 the original GLP-1 receptor agonist in this class (Wegovy / Ozempic). It has the largest real-world dataset of any compound in the incretin category, with STEP trial data showing ~15% body weight reduction. The 'amylin' component listed by some suppliers is not a resolved component on this platform.",
+    "synergy_note": null,
+    "is_single_compound": true,
+    "who_its_for": "Weight loss and metabolic health. See the individual compound profile for full details.",
+    "component_roles": {
+      "semaglutide": "GLP-1 receptor agonist \u2014 appetite suppression, gastric emptying, and blood sugar regulation via GLP-1 pathway"
     }
   }
 }

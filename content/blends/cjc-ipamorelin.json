@@ -3,7 +3,7 @@
   "blend": {
     "slug": "cjc-ipamorelin",
     "display_name": "CJC-1295 / Ipamorelin",
-    "status": "parked",
+    "status": "active",
     "taxonomy_keys": [
       "gh_axis_blend"
     ],
@@ -15,17 +15,14 @@
     "sections": {
       "overview": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": [
-            "E1"
-          ],
-          "title": "What this blend is"
+          "title": "What this blend is",
+          "text": "The most established GH secretagogue pair. CJC-1295 is a GHRH analog that extends the GH pulse window; Ipamorelin is a clean GHRP that triggers the GH pulse without meaningful elevation of cortisol or prolactin. Used together, they produce GH release that more closely mirrors natural pulsatile GH than either compound achieves alone \u2014 which is why this pair is the standard entry point for GH-axis optimization."
         }
       ],
       "claims": [],
       "safety": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "text": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -35,29 +32,29 @@
           "text": "Use cases are framed as intent + context, not as a recommendation."
         },
         {
-          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+          "text": "People usually consider blends when they\u2019re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
         },
         {
-          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit \u2014 even if the other component seems appealing."
         }
       ],
       "interaction_summary": [
         {
           "title": "Interaction summary",
-          "text": "Interaction flags are category prompts — not dosing instructions."
+          "text": "Interaction flags are category prompts \u2014 not dosing instructions."
         },
         {
           "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
         },
         {
-          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "If you\u2019re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "CJC-1295 / Ipamorelin — reference index",
+        "title": "CJC-1295 / Ipamorelin \u2014 reference index",
         "source_type": "website",
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=CJC-1295+/+Ipamorelin",
         "evidence_grade": "mechanistic_only",
@@ -79,6 +76,14 @@
       "serious_red_flags": [],
       "who_should_be_cautious": [],
       "schema_version": "blend_practical_block_v1"
+    },
+    "intent_label": "GH axis foundation",
+    "rationale": "The most established GH secretagogue pair. CJC-1295 is a GHRH analog that extends the GH pulse window; Ipamorelin is a clean GHRP that triggers the GH pulse without meaningful elevation of cortisol or prolactin. Used together, they produce GH release that more closely mirrors natural pulsatile GH than either compound achieves alone \u2014 which is why this pair is the standard entry point for GH-axis optimization.",
+    "synergy_note": "CJC-1295 and Ipamorelin act on different receptors in the same GH release pathway \u2014 GHRH receptors and ghrelin receptors respectively. Activating both simultaneously produces a synergistic GH response larger than either alone. Think of it as a two-key ignition: one extends the release window, the other triggers the pulse.",
+    "who_its_for": "Body composition, recovery acceleration, sleep quality, anti-aging via natural GH elevation. The entry-level GH stack, typically dosed before sleep to amplify the natural overnight GH pulse.",
+    "component_roles": {
+      "cjc-1295": "GHRH analog \u2014 extends GH pulse duration and amplitude without cortisol or prolactin elevation",
+      "ipamorelin": "Selective GHRP \u2014 triggers a clean GH pulse through ghrelin receptors, minimal side-effect profile"
     }
   }
 }

@@ -6884,3 +6884,214 @@ html.reta-page body {
   padding: 12px 14px;
   opacity: 0.90;
 }
+
+/* ═══════════════════════════════════════════════════════
+   BLEND_V1 — blend detail + list page
+   ═══════════════════════════════════════════════════════ */
+
+/* ── List page ── */
+.pt-blend-list__note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(15,26,46,0.04);
+  border: 1px solid rgba(15,26,46,0.08);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(15,26,46,0.70);
+}
+.pt-blend-list__note-label {
+  font-weight: 800;
+  color: #0f1a2e;
+}
+.pt-blend-list__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pt-blend-list__item {
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid rgba(15,26,46,0.08);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.70);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+.pt-blend-list__item:hover {
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 2px 8px rgba(15,26,46,0.08);
+}
+.pt-blend-list__item-hd {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.pt-blend-list__item-name {
+  font-size: 14.5px;
+  font-weight: 900;
+  color: #0f1a2e;
+}
+.pt-blend-list__item-count {
+  font-size: 11.5px;
+  color: rgba(15,26,46,0.45);
+}
+.pt-blend-list__item-tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(15,26,46,0.52);
+  margin-bottom: 6px;
+}
+.pt-blend-list__item-arrow {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: rgba(15,26,46,0.40);
+}
+
+/* ── Detail page ── */
+.pt-blend__intent-tag {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 10px;
+  background: rgba(15,26,46,0.07);
+  border-radius: 99px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: rgba(15,26,46,0.65);
+  letter-spacing: 0.01em;
+}
+.pt-blend__section-heading {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f1a2e;
+  letter-spacing: 0.01em;
+  margin: 0 0 10px;
+  text-transform: none;
+}
+
+/* Rationale card */
+.pt-blend__rationale-card {}
+.pt-blend__rationale-text {
+  font-size: 14px;
+  line-height: 1.72;
+  color: #2c3e52;
+  margin: 0 0 12px;
+}
+.pt-blend__who {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(44,62,82,0.72);
+  border-top: 1px solid rgba(15,26,46,0.06);
+  padding-top: 10px;
+  margin-top: 4px;
+}
+.pt-blend__who-label {
+  font-weight: 800;
+  color: #0f1a2e;
+}
+
+/* Components */
+.pt-blend__components {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pt-blend__component {
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(15,26,46,0.07);
+  border-radius: 10px;
+}
+.pt-blend__component-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.pt-blend__component-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f1a2e;
+  text-decoration: none;
+}
+.pt-blend__component-name:hover {
+  text-decoration: underline;
+}
+.pt-blend__component-view {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(15,26,46,0.40);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.pt-blend__component-view:hover {
+  color: rgba(15,26,46,0.70);
+}
+.pt-blend__component-role {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(44,62,82,0.80);
+  margin: 0;
+}
+
+/* Synergy card */
+.pt-blend__synergy-card {}
+.pt-blend__synergy-text {
+  font-size: 14px;
+  line-height: 1.72;
+  color: #2c3e52;
+  margin: 0;
+}
+
+/* Optimized / not optimal CTA */
+.pt-blend__limit-card {
+  background: linear-gradient(135deg, rgba(15,26,46,0.05) 0%, rgba(15,26,46,0.02) 100%) !important;
+  border-color: rgba(15,26,46,0.10) !important;
+}
+.pt-blend__limit-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pt-blend__limit-body {
+  flex: 1;
+  min-width: 200px;
+}
+.pt-blend__limit-heading {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f1a2e;
+  margin-bottom: 5px;
+}
+.pt-blend__limit-text {
+  font-size: 13px;
+  line-height: 1.62;
+  color: rgba(15,26,46,0.60);
+  margin: 0;
+}
+.pt-blend__limit-cta {
+  display: inline-block;
+  padding: 9px 18px;
+  background: #0f1a2e;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+}
+.pt-blend__limit-cta:hover {
+  opacity: 0.82;
+}
+
+@media (max-width: 560px) {
+  .pt-blend__limit-inner { flex-direction: column; gap: 12px; }
+  .pt-blend__limit-cta { width: 100%; text-align: center; }
+}

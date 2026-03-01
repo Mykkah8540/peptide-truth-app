@@ -3,7 +3,7 @@
   "blend": {
     "slug": "klow",
     "display_name": "KLOW",
-    "status": "parked",
+    "status": "active",
     "taxonomy_keys": [
       "regenerative_blend"
     ],
@@ -17,17 +17,14 @@
     "sections": {
       "overview": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": [
-            "E1"
-          ],
-          "title": "What this blend is"
+          "title": "What this blend is",
+          "text": "KLOW is GLOW with KPV added. KPV is a tripeptide fragment of alpha-MSH with potent anti-inflammatory action \u2014 particularly studied for gut inflammation and systemic cytokine reduction. Where GLOW focuses on structural repair, KLOW extends that with a dedicated anti-inflammatory layer. It's the choice when inflammation is as much of the problem as the tissue damage itself."
         }
       ],
       "claims": [],
       "safety": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "text": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -37,29 +34,29 @@
           "text": "Use cases are framed as intent + context, not as a recommendation."
         },
         {
-          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+          "text": "People usually consider blends when they\u2019re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
         },
         {
-          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit \u2014 even if the other component seems appealing."
         }
       ],
       "interaction_summary": [
         {
           "title": "Interaction summary",
-          "text": "Interaction flags are category prompts — not dosing instructions."
+          "text": "Interaction flags are category prompts \u2014 not dosing instructions."
         },
         {
           "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
         },
         {
-          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "If you\u2019re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "KLOW — reference index",
+        "title": "KLOW \u2014 reference index",
         "source_type": "website",
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=KLOW",
         "evidence_grade": "mechanistic_only",
@@ -81,6 +78,16 @@
       "serious_red_flags": [],
       "who_should_be_cautious": [],
       "schema_version": "blend_practical_block_v1"
+    },
+    "intent_label": "Regenerative + anti-inflammatory stack",
+    "rationale": "KLOW is GLOW with KPV added. KPV is a tripeptide fragment of alpha-MSH with potent anti-inflammatory action \u2014 particularly studied for gut inflammation and systemic cytokine reduction. Where GLOW focuses on structural repair, KLOW extends that with a dedicated anti-inflammatory layer. It's the choice when inflammation is as much of the problem as the tissue damage itself.",
+    "synergy_note": "The GLOW components handle structural repair \u2014 BPC-157 for angiogenesis, TB-500 for cellular remodeling, GHK-Cu for collagen synthesis. KPV modulates the inflammatory environment those repairs are happening in. Less inflammation during active healing typically means faster and better-quality repair \u2014 the two effects are mutually reinforcing.",
+    "who_its_for": "IBD, gut inflammation, post-surgical recovery with significant inflammatory component, athletes dealing with both tissue damage and systemic inflammation.",
+    "component_roles": {
+      "bpc-157": "Angiogenesis driver \u2014 promotes blood supply to the injury site, protects and heals GI tissue",
+      "tb-500": "Systemic remodeler \u2014 drives cellular migration and extracellular matrix rebuilding",
+      "ghk-cu": "Collagen signal \u2014 stimulates collagen and elastin synthesis, anti-inflammatory support",
+      "kpv": "Anti-inflammatory \u2014 reduces cytokine-driven inflammation, particularly in gut tissue and systemically"
     }
   }
 }

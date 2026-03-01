@@ -3,7 +3,7 @@
   "blend": {
     "slug": "bpc-157-tb-500",
     "display_name": "BPC-157 / TB-500",
-    "status": "parked",
+    "status": "active",
     "taxonomy_keys": [
       "regenerative_blend"
     ],
@@ -15,17 +15,14 @@
     "sections": {
       "overview": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": [
-            "E1"
-          ],
-          "title": "What this blend is"
+          "title": "What this blend is",
+          "text": "The most widely used repair pairing in the peptide space. BPC-157 and TB-500 are frequently co-prescribed because they address tissue repair at complementary steps \u2014 one locally angiogenic, one systemically remodeling. This combination covers both the acute vascular response and the longer-term structural rebuilding in a single protocol."
         }
       ],
       "claims": [],
       "safety": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "text": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -35,29 +32,29 @@
           "text": "Use cases are framed as intent + context, not as a recommendation."
         },
         {
-          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+          "text": "People usually consider blends when they\u2019re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
         },
         {
-          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit \u2014 even if the other component seems appealing."
         }
       ],
       "interaction_summary": [
         {
           "title": "Interaction summary",
-          "text": "Interaction flags are category prompts — not dosing instructions."
+          "text": "Interaction flags are category prompts \u2014 not dosing instructions."
         },
         {
           "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
         },
         {
-          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "If you\u2019re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "BPC-157 / TB-500 — reference index",
+        "title": "BPC-157 / TB-500 \u2014 reference index",
         "source_type": "website",
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=BPC-157+/+TB-500",
         "evidence_grade": "mechanistic_only",
@@ -79,6 +76,14 @@
       "serious_red_flags": [],
       "who_should_be_cautious": [],
       "schema_version": "blend_practical_block_v1"
+    },
+    "intent_label": "Core repair pair",
+    "rationale": "The most widely used repair pairing in the peptide space. BPC-157 and TB-500 are frequently co-prescribed because they address tissue repair at complementary steps \u2014 one locally angiogenic, one systemically remodeling. This combination covers both the acute vascular response and the longer-term structural rebuilding in a single protocol.",
+    "synergy_note": "BPC-157 drives blood vessel formation and localized repair \u2014 it's most effective close to the injection site. TB-500 distributes systemically and handles the broader tissue migration and remodeling phase. Together they cover both the initiation and consolidation stages of healing.",
+    "who_its_for": "The baseline repair stack. General soft tissue injury recovery, athletes, post-surgical healing, anyone who wants the core BPC-157 mechanism plus systemic tissue repair coverage.",
+    "component_roles": {
+      "bpc-157": "Localized angiogenesis and repair \u2014 most effective near the injection site, strong GI protective effect",
+      "tb-500": "Systemic remodeling \u2014 distributes throughout the body and drives tissue matrix repair across multiple sites"
     }
   }
 }

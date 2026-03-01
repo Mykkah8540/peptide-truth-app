@@ -1179,7 +1179,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/bpc-157-tb-500.json"
+      "source_path": "content/blends/bpc-157-tb-500.json",
+      "intent_label": "Core repair pair"
     },
     {
       "kind": "blend",
@@ -1194,7 +1195,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/cagri-sema.json"
+      "source_path": "content/blends/cagri-sema.json",
+      "intent_label": "Dual-pathway appetite suppression"
     },
     {
       "kind": "blend",
@@ -1209,7 +1211,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/cjc-ipamorelin.json"
+      "source_path": "content/blends/cjc-ipamorelin.json",
+      "intent_label": "GH axis foundation"
     },
     {
       "kind": "blend",
@@ -1225,7 +1228,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/glow.json"
+      "source_path": "content/blends/glow.json",
+      "intent_label": "Regenerative triple-stack"
     },
     {
       "kind": "blend",
@@ -1241,7 +1245,8 @@
         "amylin"
       ],
       "evidence_count": 0,
-      "source_path": "content/blends/glp1-sma.json"
+      "source_path": "content/blends/glp1-sma.json",
+      "intent_label": "GLP-1 receptor agonist"
     },
     {
       "kind": "blend",
@@ -1255,7 +1260,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/glp2-trz.json"
+      "source_path": "content/blends/glp2-trz.json",
+      "intent_label": "Dual incretin \u2014 GLP-1/GIP"
     },
     {
       "kind": "blend",
@@ -1269,7 +1275,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/glp3-reta.json"
+      "source_path": "content/blends/glp3-reta.json",
+      "intent_label": "Triple incretin \u2014 GLP-1/GIP/Glucagon"
     },
     {
       "kind": "blend",
@@ -1286,7 +1293,8 @@
       ],
       "components_unresolved": [],
       "evidence_count": 0,
-      "source_path": "content/blends/klow.json"
+      "source_path": "content/blends/klow.json",
+      "intent_label": "Regenerative + anti-inflammatory stack"
     }
   ],
   "topics": [

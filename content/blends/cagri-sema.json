@@ -3,7 +3,7 @@
   "blend": {
     "slug": "cagri-sema",
     "display_name": "Cagrilintide / Semaglutide",
-    "status": "parked",
+    "status": "active",
     "taxonomy_keys": [
       "metabolic_weight_blend"
     ],
@@ -15,17 +15,14 @@
     "sections": {
       "overview": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": [
-            "E1"
-          ],
-          "title": "What this blend is"
+          "title": "What this blend is",
+          "text": "CagriSema pairs a GLP-1 agonist (semaglutide) with a long-acting amylin analog (cagrilintide) to address appetite through two independent neurological pathways. Where semaglutide acts on GLP-1 receptors in the hypothalamus and brain stem, cagrilintide activates amylin receptors in a different brain region. Phase 3 REDEFINE trials have demonstrated superior weight loss compared to semaglutide alone \u2014 this is the clinical rationale for the combination."
         }
       ],
       "claims": [],
       "safety": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "text": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -35,29 +32,29 @@
           "text": "Use cases are framed as intent + context, not as a recommendation."
         },
         {
-          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+          "text": "People usually consider blends when they\u2019re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
         },
         {
-          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit \u2014 even if the other component seems appealing."
         }
       ],
       "interaction_summary": [
         {
           "title": "Interaction summary",
-          "text": "Interaction flags are category prompts — not dosing instructions."
+          "text": "Interaction flags are category prompts \u2014 not dosing instructions."
         },
         {
           "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
         },
         {
-          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "If you\u2019re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "Cagrilintide / Semaglutide — reference index",
+        "title": "Cagrilintide / Semaglutide \u2014 reference index",
         "source_type": "website",
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=Cagrilintide+/+Semaglutide",
         "evidence_grade": "mechanistic_only",
@@ -79,6 +76,14 @@
       "serious_red_flags": [],
       "who_should_be_cautious": [],
       "schema_version": "blend_practical_block_v1"
+    },
+    "intent_label": "Dual-pathway appetite suppression",
+    "rationale": "CagriSema pairs a GLP-1 agonist (semaglutide) with a long-acting amylin analog (cagrilintide) to address appetite through two independent neurological pathways. Where semaglutide acts on GLP-1 receptors in the hypothalamus and brain stem, cagrilintide activates amylin receptors in a different brain region. Phase 3 REDEFINE trials have demonstrated superior weight loss compared to semaglutide alone \u2014 this is the clinical rationale for the combination.",
+    "synergy_note": "GLP-1 and amylin receptor signaling produce satiety through distinct circuits that don't overlap. Combining them generates greater appetite suppression than either alone without requiring higher GLP-1 doses \u2014 which is significant because most of semaglutide's GI side effects are dose-dependent. The combination gets more out of a moderate GLP-1 dose.",
+    "who_its_for": "Weight loss, particularly where single-agent GLP-1 therapy has reached a plateau or where GI tolerance limits further dose escalation.",
+    "component_roles": {
+      "cagrilintide": "Long-acting amylin analog \u2014 satiety signaling via brain stem and hypothalamic amylin receptors; independent of GLP-1 pathway",
+      "semaglutide": "GLP-1 receptor agonist \u2014 appetite suppression, gastric emptying, blood sugar regulation via GLP-1 pathway"
     }
   }
 }

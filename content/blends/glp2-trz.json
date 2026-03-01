@@ -3,7 +3,7 @@
   "blend": {
     "slug": "glp2-trz",
     "display_name": "GLP-2 TRZ",
-    "status": "parked",
+    "status": "active",
     "taxonomy_keys": [
       "metabolic_weight_blend"
     ],
@@ -14,17 +14,14 @@
     "sections": {
       "overview": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
-          "evidence_refs": [
-            "E1"
-          ],
-          "title": "What this blend is"
+          "title": "What this product is",
+          "text": "GLP-2 TRZ is a supplier commercial name for tirzepatide \u2014 a dual GLP-1/GIP agonist. The 'GLP-2' naming refers to its dual-receptor mechanism. Approved as Mounjaro (diabetes) and Zepbound (obesity), it's the most clinically validated option in this class with SURMOUNT trial data showing 20\u201322% body weight reduction."
         }
       ],
       "claims": [],
       "safety": [
         {
-          "text": "Pep-Talk curation pending: we’re reviewing the evidence and will expand this section soon.",
+          "text": "Pep-Talk curation pending: we\u2019re reviewing the evidence and will expand this section soon.",
           "evidence_refs": []
         }
       ],
@@ -34,29 +31,29 @@
           "text": "Use cases are framed as intent + context, not as a recommendation."
         },
         {
-          "text": "People usually consider blends when they’re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
+          "text": "People usually consider blends when they\u2019re trying to simplify decision-making, stack fewer vials, or chase a combined effect profile. The downside is more moving parts and more uncertainty."
         },
         {
-          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit — even if the other component seems appealing."
+          "text": "If one component would be a bad fit for you (meds, history, side effects), the blend is also a bad fit \u2014 even if the other component seems appealing."
         }
       ],
       "interaction_summary": [
         {
           "title": "Interaction summary",
-          "text": "Interaction flags are category prompts — not dosing instructions."
+          "text": "Interaction flags are category prompts \u2014 not dosing instructions."
         },
         {
           "text": "Blends inherit interaction risk from every component. If one component has a meaningful interaction class, treat the blend as having that interaction class."
         },
         {
-          "text": "If you’re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
+          "text": "If you\u2019re on prescription meds (especially cardio, anticoagulant/antiplatelet, serotonergic, immunomodulating), treat uncertainty as a reason to slow down and verify with a clinician."
         }
       ]
     },
     "evidence": [
       {
         "id": "E1",
-        "title": "GLP-2 TRZ — reference index",
+        "title": "GLP-2 TRZ \u2014 reference index",
         "source_type": "website",
         "source_id": "https://pubmed.ncbi.nlm.nih.gov/?term=GLP-2+TRZ",
         "evidence_grade": "mechanistic_only",
@@ -78,6 +75,14 @@
       "serious_red_flags": [],
       "who_should_be_cautious": [],
       "schema_version": "blend_practical_block_v1"
+    },
+    "intent_label": "Dual incretin \u2014 GLP-1/GIP",
+    "rationale": "GLP-2 TRZ is a supplier commercial name for tirzepatide \u2014 a dual GLP-1/GIP agonist. The 'GLP-2' naming refers to its dual-receptor mechanism. Approved as Mounjaro (diabetes) and Zepbound (obesity), it's the most clinically validated option in this class with SURMOUNT trial data showing 20\u201322% body weight reduction.",
+    "synergy_note": null,
+    "is_single_compound": true,
+    "who_its_for": "Weight loss and metabolic health. See the individual compound profile for full details.",
+    "component_roles": {
+      "tirzepatide": "Dual incretin agonist \u2014 activates both GLP-1 and GIP receptors for superior weight loss vs. single GLP-1 agents"
     }
   }
 }

@@ -1,256 +1,285 @@
+import Link from "next/link";
 import { getRiskForBlend } from "@/lib/riskIndex";
 import RiskBadge from "@/components/RiskBadge";
-import SafetyLinks from "@/components/SafetyLinks";
 import VialImage from "@/components/VialImage";
-import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import UgcNotesSection from "@/components/UgcNotesSection";
 import { loadBlendBySlug, loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
-import { synthesizeBlendFromComponents } from "@/lib/blendSynthesis";
 import { isPendingText } from "@/lib/isPendingText";
 
-function pickBlocks(authored: any, synthesized: any) {
- const list = Array.isArray(authored) ? authored.filter(Boolean) : [];
- if (!list.length) return synthesized ?? null;
+/* ─────────────────────────────────────────────────────────────
+   HELPERS
+───────────────────────────────────────────────────────────── */
 
- const hasReal = list.some((b: any) => {
-  const t = String(b?.text ?? b?.body ?? "").trim();
-  const title = String(b?.title ?? b?.heading ?? "").trim();
-  const joined = (title + "\n" + t).trim();
-  if (!joined) return false;
-  return !isPendingText(joined);
- });
-
- return hasReal ? list : (synthesized ?? null);
+function notPending(v: any): boolean {
+  const t = String(v ?? "").trim();
+  return !!t && !isPendingText(t);
 }
 
-function pickPractical(authored: any, synthesized: any) {
- const pr = (authored && typeof authored === "object") ? authored : null;
- const synth = (synthesized && typeof synthesized === "object") ? synthesized : null;
- if (!pr) return synth;
-
- const bottom = String(pr?.bottom_line ?? "").trim();
- const pendingBottom = !!bottom && isPendingText(bottom);
-
- const hasAnyList =
-  (Array.isArray(pr?.benefits) && pr.benefits.length) ||
-  (Array.isArray(pr?.common_downsides) && pr.common_downsides.length) ||
-  (Array.isArray(pr?.serious_red_flags) && pr.serious_red_flags.length) ||
-  (Array.isArray(pr?.who_should_be_cautious) && pr.who_should_be_cautious.length);
-
- if ((!bottom || pendingBottom) && !hasAnyList) return synth;
- return pr;
+function pickPractical(authored: any) {
+  if (!authored || typeof authored !== "object") return null;
+  const bottom = String(authored?.bottom_line ?? "").trim();
+  if (
+    isPendingText(bottom) &&
+    !(
+      (authored?.benefits ?? []).length ||
+      (authored?.common_downsides ?? []).length ||
+      (authored?.serious_red_flags ?? []).length ||
+      (authored?.who_should_be_cautious ?? []).length
+    )
+  )
+    return null;
+  return authored;
 }
-export default async function BlendPage({ params }: { params: Promise<{ slug: string }> }) {
- const { slug } = await params;
- const riskHit = getRiskForBlend(slug);
- const doc = await loadBlendBySlug(slug);
- const b = doc?.blend ?? {};
 
- const sections = b?.sections ?? {};
+async function resolveComponentNames(
+  components: string[],
+  loader: (s: string) => Promise<any | null>
+): Promise<Record<string, string>> {
+  const out: Record<string, string> = {};
+  for (const slug of components) {
+    const doc = await loader(slug);
+    const p = doc?.peptide ?? doc;
+    const name =
+      String(p?.display_name ?? p?.canonical_name ?? "").trim() ||
+      slug
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join("-");
+    out[slug] = name;
+  }
+  return out;
+}
 
-// If the blend has little/no authored content, synthesize a blend-level rationale
-// from component peptide practical blocks + topics. This is conservative and avoids
-// claiming “synergy” without evidence.
-const components = Array.isArray(b?.components) ? b.components : [];
-const synth = components.length
- ? await synthesizeBlendFromComponents({ blendSlug: slug, components, loadPeptideBySlug })
- : null;
+/* ─────────────────────────────────────────────────────────────
+   PAGE
+───────────────────────────────────────────────────────────── */
 
-// Prefer authored blocks if they contain real content; otherwise fall back to synthesized blocks.
-const overviewBlocks = pickBlocks(sections?.overview, synth?.overviewBlocks);
-const safetyBlocks = pickBlocks(sections?.safety, synth?.safetyBlocks);
-const claimsBlocks = pickBlocks(sections?.claims, synth?.claimsBlocks);
+export default async function BlendPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const riskHit = getRiskForBlend(slug);
+  const doc = await loadBlendBySlug(slug);
+  const b = doc?.blend ?? {};
 
-// Prefer authored practical if it contains real content; otherwise fall back to synthesized practical.
-const pr = pickPractical(b?.practical, synth?.practical);
+  const components: string[] = Array.isArray(b?.components) ? b.components : [];
+  const componentRoles: Record<string, string> = b?.component_roles ?? {};
+  const isSingleCompound = b?.is_single_compound === true;
+  const intentLabel: string = b?.intent_label ?? "";
+  const rationale: string = b?.rationale ?? "";
+  const synergyNote: string = b?.synergy_note ?? "";
+  const whoItsFor: string = b?.who_its_for ?? "";
 
-const isPracticalPlaceholder =
-  !!pr &&
-  isPendingText(pr?.bottom_line) &&
-  !(
-   (pr?.benefits ?? []).length ||
-   (pr?.common_downsides ?? []).length ||
-   (pr?.serious_red_flags ?? []).length ||
-   (pr?.who_should_be_cautious ?? []).length
+  const displayNames = await resolveComponentNames(components, loadPeptideBySlug);
+
+  const pr = pickPractical(b?.practical);
+  const evidence = Array.isArray(b?.evidence) ? b.evidence : [];
+
+  const mergedAliases = Array.from(
+    new Set([
+      ...(Array.isArray(b?.aliases) ? b.aliases : []),
+      ...getAliasesForSlug(slug),
+    ])
   );
 
- const mergedAliases = Array.from(
-  new Set([...(Array.isArray(b?.aliases) ? b.aliases : []), ...getAliasesForSlug(slug)])
- );
+  const displayName = b?.display_name ?? b?.canonical_name ?? `Blend: ${slug}`;
 
- const evidence = Array.isArray(b?.evidence) ? b.evidence : [];
+  return (
+    <main className="pt-page">
 
- const DEBUG = process.env.NEXT_PUBLIC_DEBUG_PDP === "1";
-
- return (
-  <main className="pt-page">
-   <div className="pt-hero">
-    <VialImage kind="blend" slug={slug} alt={`${b?.display_name ?? slug} vial`} />
-    <div>
-     <h1>{b?.display_name ?? b?.canonical_name ?? `Blend: ${slug}`}</h1>
-    </div>
-   </div>
-
-   {riskHit ? (
-    <div style={{ marginTop: 16 }}>
-     <RiskBadge score={riskHit.risk.risk_score} tier={riskHit.risk.risk_tier ?? null} />
-
-     {riskHit.risk.computed_from_components && Array.isArray(riskHit.risk.component_slugs) ? (
-      <div className="pt-card-subtext" style={{ marginTop: 10 }}>
-       Computed from components: {riskHit.risk.component_slugs.join(", ")}
+      {/* ── Hero ── */}
+      <div className="pt-hero">
+        <VialImage kind="blend" slug={slug} alt={`${displayName} vial`} />
+        <div>
+          <h1>{displayName}</h1>
+          {intentLabel && (
+            <div className="pt-blend__intent-tag">{intentLabel}</div>
+          )}
+          {mergedAliases.length > 0 && (
+            <div className="pt-card-subtext" style={{ marginTop: 6 }}>
+              Also known as: {mergedAliases.join(", ")}
+            </div>
+          )}
+        </div>
       </div>
-     ) : null}
 
-     {DEBUG ? (
-      <div style={{ marginTop: 10 }}>
-       <SafetyLinks safetyIds={riskHit.safety_links} />
-      </div>
-     ) : null}
-    </div>
-   ) : (
-    <p style={{ marginTop: 14 }}>No risk data found for this blend.</p>
-   )}
+      {/* Risk badge */}
+      {riskHit && (
+        <div style={{ marginTop: 12 }}>
+          <RiskBadge
+            score={riskHit.risk.risk_score}
+            tier={riskHit.risk.risk_tier ?? null}
+          />
+        </div>
+      )}
 
-   {/* ORDER (blend v1):
-     Overview
-     Practical summary (if present)
-     What's inside (components)
-     Claims (if present)
-     Safety / cautions
-     Identity
-     Evidence
-     Disclaimer
-   */}
+      {/* ── Why this blend exists ── */}
+      {notPending(rationale) && (
+        <section className="pt-card pt-blend__rationale-card">
+          <h2 className="pt-blend__section-heading">
+            {isSingleCompound ? "What this product is" : "Why this blend exists"}
+          </h2>
+          <p className="pt-blend__rationale-text">{rationale}</p>
+          {notPending(whoItsFor) && (
+            <div className="pt-blend__who">
+              <span className="pt-blend__who-label">Who reaches for it:</span>{" "}
+              <span className="pt-blend__who-text">{whoItsFor}</span>
+            </div>
+          )}
+        </section>
+      )}
 
-   <section className="pt-card">
-     <CollapsibleSection title="Overview" defaultCollapsedMobile>
-      <ContentBlocks
-       heading="Overview"
-       blocks={overviewBlocks}
-       showEmpty
-       emptyText="No overview has been added yet."
-       wrapCard={false}
-       hideHeading
-      />
-     </CollapsibleSection>
-    </section>
+      {/* ── What's inside ── */}
+      <section className="pt-card">
+        <h2 className="pt-blend__section-heading">What&rsquo;s inside</h2>
+        {components.length ? (
+          <div className="pt-blend__components">
+            {components.map((c) => {
+              const role = componentRoles[c];
+              const name = displayNames[c] ?? c;
+              return (
+                <div key={c} className="pt-blend__component">
+                  <div className="pt-blend__component-hd">
+                    <Link href={`/peptide/${c}`} className="pt-blend__component-name">
+                      {name}
+                    </Link>
+                    <Link
+                      href={`/peptide/${c}`}
+                      className="pt-blend__component-view"
+                    >
+                      View profile →
+                    </Link>
+                  </div>
+                  {role && <p className="pt-blend__component-role">{role}</p>}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="pt-card-subtext">No components listed.</p>
+        )}
+        {Array.isArray(b?.components_unresolved) &&
+          b.components_unresolved.length > 0 && (
+            <p
+              className="pt-card-subtext"
+              style={{ marginTop: 10, opacity: 0.55 }}
+            >
+              Not in our index yet: {b.components_unresolved.join(", ")}
+            </p>
+          )}
+      </section>
 
-   {pr ? (
-    <section className="pt-card">
-     <CollapsibleSection title="Practical summary" defaultCollapsedMobile>
-      <p className="pt-card-subtext">
-       {(() => {
-        const t = String(pr?.bottom_line ?? "").trim();
-        if (!t || isPracticalPlaceholder || isPendingText(t)) {
-         return "Not available yet.";
-        }
-        return t;
-       })()}
-      </p>
+      {/* ── The synergy ── */}
+      {!isSingleCompound && notPending(synergyNote) && (
+        <section className="pt-card pt-blend__synergy-card">
+          <h2 className="pt-blend__section-heading">The synergy</h2>
+          <p className="pt-blend__synergy-text">{synergyNote}</p>
+        </section>
+      )}
 
-      {!isPracticalPlaceholder && Array.isArray(pr?.benefits) && pr.benefits.length ? (
-       <div className="mt-4">
-        <h3 className="text-sm font-semibold text-neutral-900">Why people use it</h3>
-        <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-         {pr.benefits.map((x: string, i: number) => (
-          <li key={"b" + i}>{x}</li>
-         ))}
-        </ul>
-       </div>
-      ) : null}
+      {/* ── Optimized, not optimal ── */}
+      <section className="pt-card pt-blend__limit-card">
+        <div className="pt-blend__limit-inner">
+          <div className="pt-blend__limit-body">
+            <div className="pt-blend__limit-heading">
+              {isSingleCompound
+                ? "One compound, one fixed profile"
+                : "Optimized — but not optimal for everyone"}
+            </div>
+            <p className="pt-blend__limit-text">
+              {isSingleCompound
+                ? "This is a commercially branded single compound. The profile is fixed. If you want to combine this with other peptides at specific ratios, the Stack Builder is where to build that."
+                : "This blend ships at fixed ratios — convenient, but ratios aren't universal. Depending on your goal, you may need more of one compound, less of another, or a different combination entirely. Think of this as a well-designed starting point, not a personalized protocol."}
+            </p>
+          </div>
+          <Link href="/stack-builder" className="pt-blend__limit-cta">
+            Build a custom stack &rarr;
+          </Link>
+        </div>
+      </section>
 
-      {!isPracticalPlaceholder && Array.isArray(pr?.common_downsides) && pr.common_downsides.length ? (
-       <div className="mt-4">
-        <h3 className="text-sm font-semibold text-neutral-900">Common downsides</h3>
-        <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-         {pr.common_downsides.map((x: string, i: number) => (
-          <li key={"c" + i}>{x}</li>
-         ))}
-        </ul>
-       </div>
-      ) : null}
+      {/* ── Practical summary ── */}
+      {pr && (
+        <section className="pt-card">
+          <CollapsibleSection title="Practical summary" defaultCollapsedMobile>
+            {notPending(pr?.bottom_line) && (
+              <p className="pt-card-subtext">{pr.bottom_line}</p>
+            )}
+            {Array.isArray(pr?.benefits) && pr.benefits.length > 0 && (
+              <div className="mt-4">
+                <h3 className="text-sm font-semibold text-neutral-900">
+                  Why people use it
+                </h3>
+                <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                  {pr.benefits.map((x: string, i: number) => (
+                    <li key={"b" + i}>{x}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {Array.isArray(pr?.common_downsides) &&
+              pr.common_downsides.length > 0 && (
+                <div className="mt-4">
+                  <h3 className="text-sm font-semibold text-neutral-900">
+                    Common downsides
+                  </h3>
+                  <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                    {pr.common_downsides.map((x: string, i: number) => (
+                      <li key={"c" + i}>{x}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            {Array.isArray(pr?.serious_red_flags) &&
+              pr.serious_red_flags.length > 0 && (
+                <div className="mt-4">
+                  <h3 className="text-sm font-semibold text-neutral-900">
+                    Rare but important symptoms to watch for
+                  </h3>
+                  <p className="mt-1 text-xs text-neutral-500">
+                    These are uncommon, but if they occur, stop and seek medical
+                    care.
+                  </p>
+                  <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                    {pr.serious_red_flags.map((x: string, i: number) => (
+                      <li key={"s" + i}>{x}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            {Array.isArray(pr?.who_should_be_cautious) &&
+              pr.who_should_be_cautious.length > 0 && (
+                <div className="mt-4">
+                  <h3 className="text-sm font-semibold text-neutral-900">
+                    Who should be cautious
+                  </h3>
+                  <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
+                    {pr.who_should_be_cautious.map((x: string, i: number) => (
+                      <li key={"w" + i}>{x}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+          </CollapsibleSection>
+        </section>
+      )}
 
-      {!isPracticalPlaceholder && Array.isArray(pr?.serious_red_flags) && pr.serious_red_flags.length ? (
-       <div className="mt-4">
-        <h3 className="text-sm font-semibold text-neutral-900">Rare but important symptoms to watch for</h3>
-        <p className="mt-1 text-xs text-neutral-500">These are uncommon, but if they occur, stop and seek medical care.</p>
-        <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-         {pr.serious_red_flags.map((x: string, i: number) => (
-          <li key={"s" + i}>{x}</li>
-         ))}
-        </ul>
-       </div>
-      ) : null}
+      {/* ── Evidence ── */}
+      {evidence.length > 0 && (
+        <section className="pt-card">
+          <CollapsibleSection title="Evidence" defaultCollapsedMobile>
+            <EvidenceList evidence={evidence} wrapCard={false} />
+          </CollapsibleSection>
+        </section>
+      )}
 
-      {!isPracticalPlaceholder && Array.isArray(pr?.who_should_be_cautious) && pr.who_should_be_cautious.length ? (
-       <div className="mt-4">
-        <h3 className="text-sm font-semibold text-neutral-900">Who should be cautious</h3>
-        <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-         {pr.who_should_be_cautious.map((x: string, i: number) => (
-          <li key={"w" + i}>{x}</li>
-         ))}
-        </ul>
-       </div>
-      ) : null}
-     </CollapsibleSection>
-    </section>
-   ) : null}
+      {/* ── Community ── */}
+      <UgcNotesSection type="blend" slug={slug} />
 
-   <section className="pt-card">
-    <CollapsibleSection title="What’s inside" defaultCollapsedMobile={false}>
-     {Array.isArray(b?.components) && b.components.length ? (
-      <ul className="mt-2 list-disc pl-5 text-sm text-neutral-700">
-       {b.components.map((c: string) => (
-        <li key={c}>
-         <a className="underline" href={`/peptide/${c}`}>
-          {c}
-         </a>
-        </li>
-       ))}
-      </ul>
-     ) : (
-      <p className="pt-card-subtext">No components listed.</p>
-     )}
-
-     {Array.isArray(b?.components_unresolved) && b.components_unresolved.length ? (
-      <div className="mt-3">
-       <p className="pt-card-subtext">Unresolved components: {b.components_unresolved.join(", ")}</p>
-      </div>
-     ) : null}
-    </CollapsibleSection>
-   </section>
-
-   {Array.isArray(claimsBlocks) && claimsBlocks.length ? (
-    <section className="pt-card">
-     <CollapsibleSection title="Claims (needs evidence)" defaultCollapsedMobile>
-      <ContentBlocks heading="" blocks={claimsBlocks} showEmpty={false} wrapCard={false} />
-     </CollapsibleSection>
-    </section>
-   ) : null}
-
-   <section className="pt-card">
-    <CollapsibleSection title="Safety and cautions" defaultCollapsedMobile>
-     <ContentBlocks
-      heading=""
-      blocks={safetyBlocks}
-      showEmpty
-      emptyText="No safety notes have been added yet."
-      wrapCard={false}
-     />
-    </CollapsibleSection>
-   </section>
-
-   {evidence.length ? (
-    <section className="pt-card">
-     <CollapsibleSection title="Evidence" defaultCollapsedMobile>
-      <EvidenceList evidence={evidence} wrapCard={false} />
-     </CollapsibleSection>
-    </section>
-   ) : null}
-
-       <UgcNotesSection type="blend" slug={slug} />
-  </main>
- );
+    </main>
+  );
 }
