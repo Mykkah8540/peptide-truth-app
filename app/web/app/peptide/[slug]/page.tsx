@@ -286,8 +286,24 @@ import CgrpOverviewPanel from "@/components/CgrpOverviewPanel";
 import CgrpEvidencePanel from "@/components/CgrpEvidencePanel";
 import CgrpSafetyPanel from "@/components/CgrpSafetyPanel";
 import CgrpInteractionsPanel from "@/components/CgrpInteractionsPanel";
+import Endothelin1OverviewPanel from "@/components/Endothelin1OverviewPanel";
+import Endothelin1EvidencePanel from "@/components/Endothelin1EvidencePanel";
+import Endothelin1SafetyPanel from "@/components/Endothelin1SafetyPanel";
+import Endothelin1InteractionsPanel from "@/components/Endothelin1InteractionsPanel";
+import EptifibatideOverviewPanel from "@/components/EptifibatideOverviewPanel";
+import EptifibatideEvidencePanel from "@/components/EptifibatideEvidencePanel";
+import EptifibatideSafetyPanel from "@/components/EptifibatideSafetyPanel";
+import EptifibatideInteractionsPanel from "@/components/EptifibatideInteractionsPanel";
+import LanreotideOverviewPanel from "@/components/LanreotideOverviewPanel";
+import LanreotideEvidencePanel from "@/components/LanreotideEvidencePanel";
+import LanreotideSafetyPanel from "@/components/LanreotideSafetyPanel";
+import LanreotideInteractionsPanel from "@/components/LanreotideInteractionsPanel";
+import LinaclotideOverviewPanel from "@/components/LinaclotideOverviewPanel";
+import LinaclotideEvidencePanel from "@/components/LinaclotideEvidencePanel";
+import LinaclotideSafetyPanel from "@/components/LinaclotideSafetyPanel";
+import LinaclotideInteractionsPanel from "@/components/LinaclotideInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -704,6 +720,30 @@ const PANEL_MAP: Record<string, {
     Evidence: CgrpEvidencePanel,
     Safety: CgrpSafetyPanel,
     Interactions: CgrpInteractionsPanel,
+  },
+  "endothelin-1": {
+    Overview: Endothelin1OverviewPanel,
+    Evidence: Endothelin1EvidencePanel,
+    Safety: Endothelin1SafetyPanel,
+    Interactions: Endothelin1InteractionsPanel,
+  },
+  eptifibatide: {
+    Overview: EptifibatideOverviewPanel,
+    Evidence: EptifibatideEvidencePanel,
+    Safety: EptifibatideSafetyPanel,
+    Interactions: EptifibatideInteractionsPanel,
+  },
+  lanreotide: {
+    Overview: LanreotideOverviewPanel,
+    Evidence: LanreotideEvidencePanel,
+    Safety: LanreotideSafetyPanel,
+    Interactions: LanreotideInteractionsPanel,
+  },
+  linaclotide: {
+    Overview: LinaclotideOverviewPanel,
+    Evidence: LinaclotideEvidencePanel,
+    Safety: LinaclotideSafetyPanel,
+    Interactions: LinaclotideInteractionsPanel,
   },
 };
 
@@ -1254,6 +1294,38 @@ const V3_HERO_CONTENT: Record<string, {
       "CGRP (calcitonin gene-related peptide) is released from trigeminal nerve terminals during migraine attacks and is the key molecular driver of migraine pain. Four FDA-approved CGRP monoclonal antibodies prevent migraines; gepants treat acute attacks and also prevent.",
       "What matters most: CGRP-targeted drugs represent the most mechanism-validated advance in migraine treatment in decades. If you have 4+ migraine days/month, these options are worth discussing with a headache neurologist.",
       "How to use this page: Evidence covers the mAb and gepant trial data. Safety covers the cardiovascular monitoring considerations and common tolerability issues.",
+    ],
+  },
+  "endothelin-1": {
+    considerSub: "Pulmonary arterial hypertension, ERA drugs, bosentan, ambrisentan, macitentan\u2026",
+    startHere: [
+      "Endothelin-1 is one of the most potent vasoconstrictors known \u2014 endogenous peptide that constricts blood vessels and elevates blood pressure via ETA and ETB receptors.",
+      "What matters most: the clinical drugs for pulmonary arterial hypertension (PAH) work by blocking ET-1 receptors, not supplementing ET-1. The ERAs (bosentan, ambrisentan, macitentan) are the therapeutic story.",
+      "How to use this page: Evidence covers the ERA trial data for PAH. Safety covers ERA hepatotoxicity, teratogenicity, and drug interaction profiles.",
+    ],
+  },
+  eptifibatide: {
+    considerSub: "Acute coronary syndromes, PCI, antiplatelet therapy, GP IIb/IIIa, bleeding risk\u2026",
+    startHere: [
+      "Eptifibatide (Integrilin) is a hospital IV antiplatelet drug used during acute coronary syndromes and percutaneous coronary intervention \u2014 a cyclic heptapeptide that blocks the GP IIb/IIIa receptor.",
+      "What matters most: this is an ICU/cath lab compound administered by cardiologists with continuous monitoring. The pharmacology is interesting (RGD-mimetic peptide design); the use case is entirely clinical.",
+      "How to use this page: Evidence covers the ESPRIT and PURSUIT trial data. Safety covers bleeding risk, renal dosing, and thrombocytopenia monitoring.",
+    ],
+  },
+  lanreotide: {
+    considerSub: "Acromegaly, NETs, somatostatin analogues, octreotide, carcinoid syndrome\u2026",
+    startHere: [
+      "Lanreotide (Somatuline Depot) is a long-acting somatostatin analogue FDA-approved for acromegaly, pancreatic/intestinal NETs, and carcinoid syndrome \u2014 administered as a deep subcutaneous depot injection every 4-8 weeks.",
+      "What matters most: gallbladder surveillance and glucose monitoring are mandatory for anyone on somatostatin analogues long-term. The depot duration means effects persist for weeks after injection.",
+      "How to use this page: Evidence covers the acromegaly and NET trial data. Safety covers gallstones, glucose dysregulation, and cardiac effects.",
+    ],
+  },
+  linaclotide: {
+    considerSub: "IBS-C, chronic idiopathic constipation, GC-C agonist, Linzess, pediatric warning\u2026",
+    startHere: [
+      "Linaclotide (Linzess) is a GC-C receptor agonist FDA-approved for chronic idiopathic constipation (CIC) and IBS with constipation (IBS-C) \u2014 locally-acting secretagogue with negligible systemic absorption.",
+      "What matters most: the black box warning for pediatric use (contraindicated under 6) is absolute. For adults, diarrhea is the primary management challenge.",
+      "How to use this page: Evidence covers the Phase 3 CIC and IBS-C trial data. Safety covers the pediatric contraindication, diarrhea management, and bowel obstruction screening.",
     ],
   },
 };

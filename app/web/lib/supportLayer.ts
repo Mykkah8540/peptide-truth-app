@@ -1362,6 +1362,94 @@ const SUPPORT_IGF1_LR3: SupportPack = {
   ],
 };
 
+function isEndothelin1Family(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "endothelin-1";
+}
+
+function isEptifibatideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "eptifibatide";
+}
+
+function isLanreotideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "lanreotide";
+}
+
+function isLinaclotideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "linaclotide";
+}
+
+const SUPPORT_ENDOTHELIN_1: SupportPack = {
+  id: "endothelin-1",
+  title: "ET-1 is a potent vasoconstrictor \u2014 the clinical drugs block its receptor, not supplement it",
+  subtitle: "Endogenous vasoconstrictive peptide; ERA drugs (bosentan, macitentan, ambrisentan) are the PAH therapy; no community injection rationale",
+  bullets: [
+    "ET-1 mechanism: one of the most potent vasoconstrictors known \u2014 activates ETA and ETB receptors on vascular smooth muscle; exogenous injection would cause acute vasoconstriction and blood pressure elevation",
+    "The clinical drugs go the opposite direction: endothelin receptor antagonists (ERAs) \u2014 bosentan (Tracleer), ambrisentan (Letairis), macitentan (Opsumit) \u2014 are FDA-approved for pulmonary arterial hypertension by blocking the ET pathway",
+    "ERA hepatotoxicity monitoring: bosentan requires monthly LFT monitoring (hepatotoxicity is documented); ambrisentan has lower hepatic risk; macitentan has the most favorable tolerability profile",
+    "ERA teratogenicity: all ERAs are Pregnancy Category X \u2014 absolutely contraindicated in pregnancy; REMS programs require monthly pregnancy testing and two forms of contraception for women of childbearing potential",
+    "ERA drug interactions: bosentan is a strong CYP3A4 and CYP2C9 inducer \u2014 reduces levels of many drugs including oral contraceptives, cyclosporine, and simvastatin; interaction review is mandatory before starting",
+    "No community or enhancement injection use case for ET-1 \u2014 understanding ET-1 pharmacology matters for interpreting PAH therapy, not for self-administration",
+  ],
+};
+
+const SUPPORT_EPTIFIBATIDE: SupportPack = {
+  id: "eptifibatide",
+  title: "Eptifibatide is a hospital IV GP IIb/IIIa inhibitor for ACS and PCI \u2014 not a community peptide",
+  subtitle: "Integrilin; cyclic heptapeptide; GP IIb/IIIa blockade; bleeding is the primary risk; no reversal agent",
+  bullets: [
+    "FDA-approved for acute coronary syndromes (ACS) and percutaneous coronary intervention (PCI) \u2014 administered as IV bolus + infusion in hospital cardiac catheterization settings only",
+    "Mechanism: eptifibatide blocks the GP IIb/IIIa receptor \u2014 the final common pathway of platelet aggregation \u2014 by mimicking the Arg-Gly-Asp (RGD) sequence that fibrinogen uses to cross-link platelets; this prevents thrombus propagation",
+    "Bleeding is the dominant risk: major bleeding occurs in 1-10% of patients in ACS/PCI trials; eptifibatide significantly increases bleeding versus heparin alone; no specific reversal agent exists \u2014 manage by stopping the infusion",
+    "Renal dosing is critical: eptifibatide is renally cleared; dose reduction is required at creatinine clearance 25-50 mL/min; contraindicated below 25 mL/min due to accumulation and hemorrhage risk",
+    "Thrombocytopenia monitoring: acute profound thrombocytopenia (platelet count <100K within hours of administration) can occur with all GP IIb/IIIa inhibitors; platelet monitoring is mandatory during infusion",
+    "Educational pharmacology context: eptifibatide demonstrates RGD-mimetic cyclic peptide design \u2014 the scientific interest for research education; the compound has no community self-administration use case",
+  ],
+};
+
+const SUPPORT_LANREOTIDE: SupportPack = {
+  id: "lanreotide",
+  title: "Lanreotide is a long-acting somatostatin analogue with month-scale depot duration \u2014 gallbladder and glucose monitoring are mandatory",
+  subtitle: "Somatuline Depot; acromegaly and NET indications; physician-managed only; gallstone surveillance required",
+  bullets: [
+    "FDA-approved for acromegaly, pancreatic/intestinal NETs, and carcinoid diarrhea/flushing \u2014 administered as a deep subcutaneous depot injection every 4-8 weeks under physician management; not a self-administered community compound",
+    "Gallbladder surveillance is mandatory: somatostatin analogues impair gallbladder motility; gallstones develop in 15-30% of patients with chronic use; baseline ultrasound before starting and periodic monitoring are clinical standard practice",
+    "Glucose monitoring: lanreotide suppresses both insulin and glucagon; hypoglycemia can occur acutely (insulin suppressed more than glucagon) and glucose intolerance can develop with chronic use (net GH reduction helps; somatostatin effect on glucagon varies); monitor fasting glucose at baseline and periodically",
+    "Cardiac effects: bradycardia and conduction changes can develop via SST2 receptor activity; baseline EKG is appropriate for patients with pre-existing cardiac conditions or those with bradycardia risk factors",
+    "Octreotide vs lanreotide comparison: Somatuline Depot (lanreotide) and Sandostatin LAR (octreotide) have similar efficacy for acromegaly and NETs; lanreotide is a prefilled deep-SQ syringe; octreotide LAR is a IM microsphere requiring clinic administration; similar tolerability profiles",
+    "Physician oversight is mandatory: these are specialist-prescribed drugs for confirmed acromegaly or NETs; off-label or performance use without physician oversight creates unmonitored gallstone, glucose, and cardiac risks over the depot duration",
+  ],
+  redFlags: [
+    "Severe right upper quadrant pain (possible gallstone or cholecystitis) \u2014 stop and seek evaluation; do not wait for scheduled appointment",
+    "Symptomatic hypoglycemia \u2014 normal glucagon counter-regulation may be impaired; fast-acting carbohydrates immediately; stop and consult physician",
+    "New or worsening bradycardia symptoms (lightheadedness, syncope, exercise intolerance) \u2014 stop and seek cardiac evaluation",
+    "Significant worsening of GI symptoms (diarrhea, steatorrhea) \u2014 exocrine pancreatic insufficiency is a known effect; enzyme supplementation may be needed",
+  ],
+};
+
+const SUPPORT_LINACLOTIDE: SupportPack = {
+  id: "linaclotide",
+  title: "Linaclotide has a black box warning for pediatric use \u2014 absolute contraindication for children under 6",
+  subtitle: "Linzess; GC-C agonist; CIC and IBS-C; diarrhea management is the primary tolerability challenge",
+  bullets: [
+    "FDA-approved for chronic idiopathic constipation (CIC) and IBS with constipation (IBS-C) \u2014 multiple Phase 3 RCTs support both indications; mechanism is well-characterized (GC-C \u2192 cGMP \u2192 chloride secretion \u2192 intestinal transit)",
+    "Black box warning: contraindicated in patients under 6 years of age due to risk of serious dehydrating diarrhea; avoid in patients 6-17 years (safety not established); this is absolute, not a relative caution",
+    "Diarrhea management: the most common adverse effect (16-20% in clinical trials); take on an empty stomach at least 30 minutes before the first meal of the day; if diarrhea is severe or bloody, discontinue and contact physician",
+    "Mechanical bowel obstruction screen: if mechanical obstruction is present or suspected, linaclotide is contraindicated; this should be ruled out clinically before starting in patients with severe constipation and abdominal pain",
+    "Drug interactions are limited: linaclotide has negligible systemic absorption; meaningful pharmacokinetic interactions with systemic drugs are not expected; it does not affect hepatic or renal drug metabolism",
+    "Linaclotide vs plecanatide comparison: both are GC-C agonists with similar efficacy; linaclotide (guanylin analogue) activates GC-C throughout the intestine; plecanatide (uroguanylin analogue) has pH-dependent duodenal preferential activation; some patients tolerate one better than the other if diarrhea is limiting",
+  ],
+  redFlags: [
+    "Child under 6 years \u2014 absolute contraindication; black box warning; do not administer",
+    "Severe or bloody diarrhea \u2014 stop immediately; dehydration risk; seek medical evaluation",
+    "Possible bowel obstruction symptoms (severe cramping, inability to pass stool or gas, abdominal distension) \u2014 stop and seek emergency evaluation",
+    "Significant worsening of abdominal pain without improvement in bowel habits \u2014 rule out alternative GI diagnoses",
+  ],
+};
+
 export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isIncretinFamily(entity)) return SUPPORT_INCRETIN;
   if (isNadFamily(entity)) return SUPPORT_NAD;
@@ -1418,5 +1506,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isSubstancePFamily(entity)) return SUPPORT_SUBSTANCE_P;
   if (isOrexinAFamily(entity)) return SUPPORT_OREXIN_A;
   if (isNeuropeptideYFamily(entity)) return SUPPORT_NEUROPEPTIDE_Y;
+  if (isEndothelin1Family(entity)) return SUPPORT_ENDOTHELIN_1;
+  if (isEptifibatideFamily(entity)) return SUPPORT_EPTIFIBATIDE;
+  if (isLanreotideFamily(entity)) return SUPPORT_LANREOTIDE;
+  if (isLinaclotideFamily(entity)) return SUPPORT_LINACLOTIDE;
   return null;
 }
