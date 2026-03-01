@@ -1362,6 +1362,105 @@ const SUPPORT_IGF1_LR3: SupportPack = {
   ],
 };
 
+function isMazdutideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "mazdutide";
+}
+
+function isMelanoranIFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "melanotan-i";
+}
+
+function isMotilinFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "motilin";
+}
+
+function isNesiritideFamily(entity: EntityLike): boolean {
+  const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
+  return s === "nesiritide";
+}
+
+const SUPPORT_MAZDUTIDE: SupportPack = {
+  id: "mazdutide",
+  title: "Mazdutide is a dual GLP-1R/GCGR agonist in Phase 3 in China \u2014 not FDA-approved; GLP-1 class safety rules apply",
+  subtitle: "OXM3; GLP-1/glucagon dual agonism; ~10-13% weight loss; NAFLD benefit signal; no global approval",
+  bullets: [
+    "GLP-1 class safety framework fully applies: thyroid C-cell warning (personal/family history of medullary thyroid carcinoma or MEN2 is a contraindication), pancreatitis screen, insulin/sulfonylurea dose reduction if combining",
+    "GI tolerability is the primary management challenge: nausea, vomiting, diarrhea are common \u2014 especially at initiation; start low, titrate slowly, manage with smaller meals and avoiding high-fat/high-sugar foods",
+    "Glucagon receptor component adds NAFLD/MASH benefit: the GCGR agonism drives hepatic fat reduction independent of weight loss; liver fat reduction is a key differentiator vs GLP-1-only drugs",
+    "Not FDA-approved: Phase 3 data is from Chinese trials; a global regulatory pathway has not been established; this is an investigational compound with no internationally approved prescribing information",
+    "Hypoglycemia risk is low with monotherapy (similar to GLP-1 drugs alone): the glucagon receptor component theoretically raises glucose, partially offsetting GLP-1-mediated lowering; real-world hypoglycemia risk with mazdutide alone is low but increases if combined with insulin or secretagogues",
+    "Source quality: no pharmaceutical-grade mazdutide is available for community access; research peptide suppliers do not have the QC infrastructure for this compound",
+  ],
+  redFlags: [
+    "Personal or family history of medullary thyroid carcinoma or MEN2 \u2014 class contraindication; do not start",
+    "Pancreatitis symptoms (severe upper abdominal pain radiating to back) \u2014 stop immediately and seek emergency evaluation",
+    "On insulin or secretagogues without dose adjustment at initiation \u2014 hypoglycemia risk increases significantly with combination use",
+    "Significant nausea/vomiting preventing fluid intake \u2014 stop and reassess; dehydration risk",
+  ],
+};
+
+const SUPPORT_MELANOTAN_I: SupportPack = {
+  id: "melanotan-i",
+  title: "MC1R agonism requires melanoma surveillance \u2014 every 6 months dermatology check is not optional",
+  subtitle: "Afamelanotide analogue; MC1R selectivity; EPP FDA-approved context; melanoma risk monitoring",
+  bullets: [
+    "Melanoma surveillance is mandatory: MC1R is a known melanoma risk-associated receptor; anyone using MC1R agonist peptides (melanotan-I, melanotan-II, afamelanotide) must have a baseline full-body skin examination by a dermatologist and follow-up every 6 months; new or changing nevi require immediate evaluation",
+    "Melanotan-I vs melanotan-II: MT-I is more MC1R-selective with less MC3R/MC4R activation \u2014 fewer sexual side effects and less nausea compared to MT-II; the MC1R melanoma surveillance concern is the same for both",
+    "Afamelanotide (Scenesse) is the pharmaceutical-grade MT-I: FDA-approved for erythropoietic protoporphyria (EPP) as a subcutaneous implant; administered by clinicians; community MT-I injection is outside this framework and lacks the quality control of the approved product",
+    "Nausea and flushing: common at initiation; typically dose-dependent and transient; starting at low doses reduces tolerability issues",
+    "Skin changes: increased pigmentation (including new and existing nevi) is expected; this also means changes in existing moles that require evaluation against baseline \u2014 photography of existing nevi before starting is a practical tool",
+    "No systemic enhancement use case: MT-I does not have meaningful effects outside MC1R-mediated pigmentation and photoprotection; community injection for libido or body composition has no mechanism-based rationale for MT-I specifically",
+  ],
+  redFlags: [
+    "Personal or family history of melanoma \u2014 MC1R agonism in the context of melanoma history requires oncology clearance before use",
+    "New or rapidly changing skin lesion during use \u2014 stop and seek immediate dermatology evaluation; do not wait for a scheduled appointment",
+    "No baseline skin examination before starting \u2014 without a baseline, changes cannot be tracked; get a dermatology exam before first injection",
+    "Using community-sourced MT-I injection without purity verification \u2014 no third-party CoA means no quality assurance",
+  ],
+};
+
+const SUPPORT_MOTILIN: SupportPack = {
+  id: "motilin",
+  title: "Motilin\u2019s clinical story is in its receptor agonists \u2014 not in exogenous motilin injection",
+  subtitle: "Endogenous GI motility peptide; 90-second half-life; erythromycin as MLNR agonist; no therapeutic formulation",
+  bullets: [
+    "Understand the pharmacology before use: native motilin has a very short plasma half-life (similar to other endogenous GI peptides); subcutaneous injection does not achieve sustained receptor activation; the compound works as an endogenous hormone in pulsatile cyclic bursts \u2014 not as an injectable therapeutic",
+    "Erythromycin is the clinically-used MLNR agonist: erythromycin at sub-antimicrobial doses (1-3 mg/kg IV, 250 mg oral) acts as a motilin receptor agonist and accelerates gastric emptying; it is the only widely-used MLNR agonist and requires physician management for gastroparesis indications",
+    "Synthetic MLNR agonists failed: camicinal (GSK962040) and other small-molecule MLNR agonists went through clinical trials for gastroparesis and failed to show durable efficacy \u2014 motilin receptor agonism alone does not reliably translate to clinical gastroparesis benefit",
+    "No community or enhancement use case: there is no evidence base for exogenous motilin injection producing any benefit; the endogenous physiology is well-understood, but that does not translate to therapeutic benefit from self-administration",
+    "If you have gastroparesis symptoms: this requires GI evaluation; erythromycin, metoclopramide, or domperidone are the pharmacological options \u2014 under physician guidance; not exogenous motilin",
+    "Ghrelin relationship: motilin and ghrelin receptors (GHSR) are related \u2014 ghrelin itself has some motilin-like prokinetic effects; ghrelin agonist research has been another approach to gastroparesis that has also had mixed results",
+  ],
+  redFlags: [
+    "Gastroparesis symptoms (bloating, early satiety, nausea, vomiting after meals) \u2014 this requires GI evaluation, not self-treatment with motilin",
+    "Using exogenous motilin expecting prokinetic GI effects \u2014 the pharmacokinetics do not support sustained receptor activation from injection; the mechanism does not translate to a therapeutic application",
+    "On erythromycin or another prokinetic \u2014 adding an uncharacterized exogenous motilin creates an unstudied interaction with a drug that already activates MLNR",
+  ],
+};
+
+const SUPPORT_NESIRITIDE: SupportPack = {
+  id: "nesiritide",
+  title: "Nesiritide is a hospital IV drug for acute heart failure \u2014 hypotension is the primary risk in monitored clinical settings",
+  subtitle: "Recombinant human BNP; Natrecor; ASCEND-HF demonstrated modest dyspnea benefit, no mortality benefit; IV hospital only",
+  bullets: [
+    "Hospital IV medication only: nesiritide is administered as a continuous IV infusion in hospital settings for acutely decompensated heart failure (ADHF); it requires hemodynamic monitoring, blood pressure management, and trained clinical staff \u2014 not a community peptide",
+    "Hypotension is the primary risk: nesiritide causes dose-dependent vasodilation and blood pressure reduction; symptomatic hypotension occurred in 7.1% of patients in ASCEND-HF; blood pressure monitoring is continuous during infusion",
+    "ASCEND-HF context: the 2011 NEJM trial showed modest improvement in dyspnea at 6 and 24 hours but no reduction in 30-day mortality or rehospitalization; nesiritide\u2019s clinical use has declined since this trial in favor of alternatives",
+    "Renal effects require monitoring: earlier concerns about nesiritide-induced renal injury led to a safety moratorium; ASCEND-HF found no significant worsening of renal function vs placebo, but urine output and creatinine require monitoring during infusion",
+    "Drug compatibility in IV: nesiritide is incompatible with several common drugs in the same IV line \u2014 heparin, furosemide, enalaprilat, hydralazine, and regular insulin; separate IV access or line flushing is required",
+    "BNP as biomarker vs therapy: serum BNP (or NT-proBNP) is used as a diagnostic and prognostic marker in heart failure; nesiritide provides exogenous BNP with vasodilatory and natriuretic effects \u2014 this is a clinical treatment, not a biomarker supplementation",
+  ],
+  redFlags: [
+    "Symptomatic hypotension (dizziness, lightheadedness, syncope) during infusion \u2014 reduce rate or stop; do not continue at current dose",
+    "Cardiogenic shock or systolic BP below 90 mmHg \u2014 absolute contraindication; nesiritide contraindicated in the absence of adequate cardiac output",
+    "Significant worsening of renal function (rising creatinine, reduced urine output) during infusion \u2014 stop and reassess; discuss with cardiologist",
+    "Any use outside hospital monitored setting \u2014 not appropriate; the compound requires continuous hemodynamic monitoring",
+  ],
+};
+
 function isEndothelin1Family(entity: EntityLike): boolean {
   const s = String(entity?.slug || entity?.peptide?.slug || "").toLowerCase();
   return s === "endothelin-1";
@@ -1510,5 +1609,9 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isEptifibatideFamily(entity)) return SUPPORT_EPTIFIBATIDE;
   if (isLanreotideFamily(entity)) return SUPPORT_LANREOTIDE;
   if (isLinaclotideFamily(entity)) return SUPPORT_LINACLOTIDE;
+  if (isMazdutideFamily(entity)) return SUPPORT_MAZDUTIDE;
+  if (isMelanoranIFamily(entity)) return SUPPORT_MELANOTAN_I;
+  if (isMotilinFamily(entity)) return SUPPORT_MOTILIN;
+  if (isNesiritideFamily(entity)) return SUPPORT_NESIRITIDE;
   return null;
 }

@@ -302,8 +302,24 @@ import LinaclotideOverviewPanel from "@/components/LinaclotideOverviewPanel";
 import LinaclotideEvidencePanel from "@/components/LinaclotideEvidencePanel";
 import LinaclotideSafetyPanel from "@/components/LinaclotideSafetyPanel";
 import LinaclotideInteractionsPanel from "@/components/LinaclotideInteractionsPanel";
+import MazdutideOverviewPanel from "@/components/MazdutideOverviewPanel";
+import MazdutideEvidencePanel from "@/components/MazdutideEvidencePanel";
+import MazdutideSafetyPanel from "@/components/MazdutideSafetyPanel";
+import MazdutideInteractionsPanel from "@/components/MazdutideInteractionsPanel";
+import MelanoranIOverviewPanel from "@/components/MelanoranIOverviewPanel";
+import MelanoranIEvidencePanel from "@/components/MelanoranIEvidencePanel";
+import MelanoranISafetyPanel from "@/components/MelanoranISafetyPanel";
+import MelanoranIInteractionsPanel from "@/components/MelanoranIInteractionsPanel";
+import MotilinOverviewPanel from "@/components/MotilinOverviewPanel";
+import MotilinEvidencePanel from "@/components/MotilinEvidencePanel";
+import MotilinSafetyPanel from "@/components/MotilinSafetyPanel";
+import MotilinInteractionsPanel from "@/components/MotilinInteractionsPanel";
+import NesiritideOverviewPanel from "@/components/NesiritideOverviewPanel";
+import NesiritideEvidencePanel from "@/components/NesiritideEvidencePanel";
+import NesiritideSafetyPanel from "@/components/NesiritideSafetyPanel";
+import NesiritideInteractionsPanel from "@/components/NesiritideInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -744,6 +760,30 @@ const PANEL_MAP: Record<string, {
     Evidence: LinaclotideEvidencePanel,
     Safety: LinaclotideSafetyPanel,
     Interactions: LinaclotideInteractionsPanel,
+  },
+  mazdutide: {
+    Overview: MazdutideOverviewPanel,
+    Evidence: MazdutideEvidencePanel,
+    Safety: MazdutideSafetyPanel,
+    Interactions: MazdutideInteractionsPanel,
+  },
+  "melanotan-i": {
+    Overview: MelanoranIOverviewPanel,
+    Evidence: MelanoranIEvidencePanel,
+    Safety: MelanoranISafetyPanel,
+    Interactions: MelanoranIInteractionsPanel,
+  },
+  motilin: {
+    Overview: MotilinOverviewPanel,
+    Evidence: MotilinEvidencePanel,
+    Safety: MotilinSafetyPanel,
+    Interactions: MotilinInteractionsPanel,
+  },
+  nesiritide: {
+    Overview: NesiritideOverviewPanel,
+    Evidence: NesiritideEvidencePanel,
+    Safety: NesiritideSafetyPanel,
+    Interactions: NesiritideInteractionsPanel,
   },
 };
 
@@ -1318,6 +1358,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Lanreotide (Somatuline Depot) is a long-acting somatostatin analogue FDA-approved for acromegaly, pancreatic/intestinal NETs, and carcinoid syndrome \u2014 administered as a deep subcutaneous depot injection every 4-8 weeks.",
       "What matters most: gallbladder surveillance and glucose monitoring are mandatory for anyone on somatostatin analogues long-term. The depot duration means effects persist for weeks after injection.",
       "How to use this page: Evidence covers the acromegaly and NET trial data. Safety covers gallstones, glucose dysregulation, and cardiac effects.",
+    ],
+  },
+  mazdutide: {
+    considerSub: "GLP-1/GCGR dual agonism, weight loss, NAFLD/MASH, metabolic syndrome\u2026",
+    startHere: [
+      "Mazdutide is a GLP-1 receptor/glucagon receptor dual agonist in Phase 3 trials in China \u2014 ~10-13% weight loss with an added NAFLD/MASH benefit from the glucagon receptor component.",
+      "What matters most: not FDA-approved; the China clinical data is promising but a global approval pathway has not been established.",
+      "How to use this page: Evidence covers the Chinese Phase 3 weight and liver fat data. Safety covers GI effects and the thyroid C-cell class warning shared with all GLP-1 drugs.",
+    ],
+  },
+  "melanotan-i": {
+    considerSub: "Erythropoietic protoporphyria, MC1R, melanoma surveillance, tanning\u2026",
+    startHere: [
+      "Melanotan-I is a synthetic \u03b1-MSH analogue that selectively targets MC1R \u2014 the same peptide basis as afamelanotide (Scenesse), which is FDA-approved for the rare photodermatosis erythropoietic protoporphyria (EPP).",
+      "What matters most: MC1R is a known melanoma risk-associated receptor. Melanoma surveillance (dermatology checks every 6 months) is mandatory for anyone using MC1R agonist peptides.",
+      "How to use this page: Evidence distinguishes between the strong EPP/afamelanotide data and the cosmetic tanning use case which lacks comparable evidence.",
+    ],
+  },
+  motilin: {
+    considerSub: "GI motility, migrating motor complex, gastroparesis, prokinetics\u2026",
+    startHere: [
+      "Motilin is an endogenous 22-amino acid peptide that triggers the migrating motor complex (MMC) \u2014 the gut\u2019s interdigestive \u201chousekeeping\u201d contractions. Its clinical story is in its receptor agonists (erythromycin as MLNR agonist), not in exogenous motilin injection.",
+      "What matters most: there is no approved formulation of exogenous motilin and no evidence base for its use as an injectable compound. The pharmacological interest is entirely endogenous.",
+      "How to use this page: Evidence explains why erythromycin\u2019s prokinetic use is built on MLNR agonism and why synthetic MLNR agonists (camicinal) failed in clinical trials.",
+    ],
+  },
+  nesiritide: {
+    considerSub: "Acute decompensated heart failure, BNP, NPR-A, ASCEND-HF, IV hospital use\u2026",
+    startHere: [
+      "Nesiritide is recombinant human BNP (brain natriuretic peptide) \u2014 FDA-approved for acutely decompensated heart failure as an IV hospital infusion. The ASCEND-HF trial (2011) showed modest dyspnea improvement but no mortality benefit, and it has largely been replaced in clinical practice.",
+      "What matters most: this is an ICU/hospital drug administered by cardiologists \u2014 not a community compound. Its clinical trajectory shows how even a mechanism-validated peptide drug can disappoint in outcomes trials.",
+      "How to use this page: Evidence covers the VMAC and ASCEND-HF trial data. Safety covers hypotension (the limiting adverse effect) and renal monitoring considerations.",
     ],
   },
   linaclotide: {
