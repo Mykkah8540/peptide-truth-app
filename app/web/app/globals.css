@@ -5647,7 +5647,7 @@ html.reta-page body {
 
 /* ── Hero ── */
 .pt-res__hero {
-  background: linear-gradient(145deg, #0f1a2e 0%, #1a2d52 60%, #0f1a2e 100%);
+  background: linear-gradient(170deg, #eef1f7 0%, #e5eaf3 100%);
   padding: 52px 28px 48px;
 }
 .pt-res__inner {
@@ -5658,14 +5658,12 @@ html.reta-page body {
   margin-bottom: 24px;
   opacity: 0.72;
 }
-.pt-res__hero-back a,
-.pt-res__hero-back button { color: rgba(255,255,255,0.80) !important; }
 .pt-res__eyebrow {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.52);
+  color: rgba(15,26,46,0.45);
   margin: 0 0 10px;
 }
 .pt-res__title {
@@ -5673,14 +5671,14 @@ html.reta-page body {
   font-size: clamp(34px, 5vw, 52px);
   font-weight: 900;
   letter-spacing: -0.025em;
-  color: #ffffff;
+  color: var(--reta-navy, #0f1a2e);
   margin: 0 0 14px;
   line-height: 1.08;
 }
 .pt-res__subtitle {
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.70);
+  color: rgba(15,26,46,0.60);
   margin: 0 0 28px;
   font-weight: 500;
   max-width: 640px;
@@ -5699,17 +5697,17 @@ html.reta-page body {
   gap: 5px;
   padding: 6px 13px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.20);
+  background: rgba(15,26,46,0.06);
+  border: 1px solid rgba(15,26,46,0.12);
   font-size: 12.5px;
   font-weight: 700;
-  color: rgba(255,255,255,0.78);
+  color: rgba(15,26,46,0.72);
   text-decoration: none;
   transition: background 0.14s, transform 0.14s;
   white-space: nowrap;
 }
 .pt-res__jump:hover {
-  background: rgba(255,255,255,0.20);
+  background: rgba(15,26,46,0.10);
   transform: translateY(-1px);
 }
 
@@ -6446,7 +6444,7 @@ html.reta-page body {
 
 /* ── Hero ── */
 .pt-well__hero {
-  background: linear-gradient(145deg, #0f1a2e 0%, #1a2d52 60%, #0f1a2e 100%);
+  background: linear-gradient(170deg, #eef1f7 0%, #e5eaf3 100%);
   padding: 52px 28px 48px;
 }
 .pt-well__hero-inner {
@@ -6457,36 +6455,32 @@ html.reta-page body {
   margin-bottom: 24px;
   opacity: 0.72;
 }
-.pt-well__hero-back a,
-.pt-well__hero-back button {
-  color: rgba(255,255,255,0.80) !important;
-}
 .pt-well__hero-eyebrow {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
+  color: rgba(15,26,46,0.45);
   margin: 0 0 10px;
 }
 .pt-well__hero-title {
   font-family: var(--font-playfair, Georgia, serif);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 900;
-  color: #ffffff;
+  color: var(--reta-navy, #0f1a2e);
   margin: 0 0 14px;
   line-height: 1.1;
 }
 .pt-well__hero-sub {
   font-size: 16px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.75);
+  color: rgba(15,26,46,0.60);
   margin: 0 0 16px;
   max-width: 600px;
 }
 .pt-well__hero-note {
   font-size: 12px;
-  color: rgba(255,255,255,0.42);
+  color: rgba(15,26,46,0.40);
   margin: 0;
   letter-spacing: 0.02em;
 }
@@ -6904,7 +6898,7 @@ html.reta-page body {
 
 /* Hero */
 .pt-blends__hero {
-  background: linear-gradient(145deg, #0f1a2e 0%, #1a2d52 60%, #0f1a2e 100%);
+  background: linear-gradient(170deg, #eef1f7 0%, #e5eaf3 100%);
   padding: 52px 28px 48px;
 }
 .pt-blends__hero-inner {
@@ -6915,13 +6909,11 @@ html.reta-page body {
   margin-bottom: 24px;
   opacity: 0.70;
 }
-.pt-blends__hero-back a,
-.pt-blends__hero-back button { color: rgba(255,255,255,0.80) !important; }
 .pt-blends__hero-title {
   font-family: var(--font-playfair, Georgia, serif);
   font-size: clamp(1.9rem, 4vw, 2.6rem);
   font-weight: 900;
-  color: #ffffff;
+  color: var(--reta-navy, #0f1a2e);
   margin: 0 0 12px;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -6929,22 +6921,22 @@ html.reta-page body {
 .pt-blends__hero-sub {
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.70);
+  color: rgba(15,26,46,0.60);
   margin: 0 0 18px;
   max-width: 580px;
 }
 .pt-blends__hero-note {
   display: inline-block;
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(15,26,46,0.04);
+  border: 1px solid rgba(15,26,46,0.10);
   border-radius: 10px;
   padding: 10px 14px;
   font-size: 12.5px;
   line-height: 1.58;
-  color: rgba(255,255,255,0.68);
+  color: rgba(15,26,46,0.60);
 }
-.pt-blends__hero-note-label { font-weight: 800; color: rgba(255,255,255,0.92); }
-.pt-blends__hero-note-link  { font-weight: 800; color: rgba(255,255,255,0.88); text-decoration: underline; }
+.pt-blends__hero-note-label { font-weight: 800; color: rgba(15,26,46,0.85); }
+.pt-blends__hero-note-link  { font-weight: 800; color: rgba(15,26,46,0.75); text-decoration: underline; }
 
 /* Body */
 .pt-blends__body {
@@ -7326,7 +7318,7 @@ html.reta-page body {
 
 /* ── Header ── */
 .sb2__header {
-  background: linear-gradient(145deg, #0f1a2e 0%, #1a2d52 60%, #0f1a2e 100%);
+  background: linear-gradient(170deg, #eef1f7 0%, #e5eaf3 100%);
   padding: 48px 28px 36px;
 }
 .sb2__header-inner {
@@ -7337,13 +7329,11 @@ html.reta-page body {
   margin-bottom: 22px;
   opacity: 0.72;
 }
-.sb2__header-back a,
-.sb2__header-back button { color: rgba(255,255,255,0.80) !important; }
 .sb2__title {
   font-family: var(--font-playfair, Georgia, serif);
   font-size: clamp(1.9rem, 4vw, 2.6rem);
   font-weight: 900;
-  color: #ffffff;
+  color: var(--reta-navy, #0f1a2e);
   margin: 0 0 10px;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -7351,7 +7341,7 @@ html.reta-page body {
 .sb2__subtitle {
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.68);
+  color: rgba(15,26,46,0.60);
   margin: 0;
   max-width: 600px;
 }
@@ -7361,8 +7351,8 @@ html.reta-page body {
   display: none;
   margin-top: 20px;
   gap: 4px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(15,26,46,0.06);
+  border: 1px solid rgba(15,26,46,0.12);
   border-radius: 12px;
   padding: 4px;
   width: fit-content;
@@ -7374,13 +7364,13 @@ html.reta-page body {
   background: transparent;
   font-size: 13.5px;
   font-weight: 700;
-  color: rgba(255,255,255,0.70);
+  color: rgba(15,26,46,0.55);
   cursor: pointer;
   transition: background 0.14s, color 0.14s;
 }
 .sb2__mobile-tab--active {
-  background: #ffffff;
-  color: var(--reta-navy, #0f1a2e);
+  background: var(--reta-navy, #0f1a2e);
+  color: #ffffff;
 }
 
 /* ── Two-column body ── */
@@ -7895,7 +7885,7 @@ html.reta-page body {
 
 /* Hero */
 .pt-stacks__hero {
-  background: linear-gradient(145deg, #0f1a2e 0%, #1a2d52 60%, #0f1a2e 100%);
+  background: linear-gradient(170deg, #eef1f7 0%, #e5eaf3 100%);
   padding: 52px 28px 48px;
 }
 .pt-stacks__hero-inner {
@@ -7906,21 +7896,19 @@ html.reta-page body {
   margin-bottom: 24px;
   opacity: 0.70;
 }
-.pt-stacks__hero-back a,
-.pt-stacks__hero-back button { color: rgba(255,255,255,0.80) !important; }
 .pt-stacks__hero-eyebrow {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.52);
+  color: rgba(15,26,46,0.45);
   margin: 0 0 10px;
 }
 .pt-stacks__hero-title {
   font-family: var(--font-playfair, Georgia, serif);
   font-size: clamp(1.9rem, 4vw, 2.6rem);
   font-weight: 900;
-  color: #ffffff;
+  color: var(--reta-navy, #0f1a2e);
   margin: 0 0 12px;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -7928,7 +7916,7 @@ html.reta-page body {
 .pt-stacks__hero-sub {
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.70);
+  color: rgba(15,26,46,0.60);
   margin: 0 0 22px;
   max-width: 580px;
 }
@@ -7938,15 +7926,15 @@ html.reta-page body {
   align-items: center;
   padding: 10px 20px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.28);
+  background: rgba(15,26,46,0.08);
+  border: 1px solid rgba(15,26,46,0.15);
   font-size: 13.5px;
   font-weight: 800;
-  color: rgba(255,255,255,0.90);
+  color: var(--reta-navy, #0f1a2e);
   text-decoration: none;
   transition: background 0.14s;
 }
-.pt-stacks__hero-cta:hover { background: rgba(255,255,255,0.22); }
+.pt-stacks__hero-cta:hover { background: rgba(15,26,46,0.14); }
 
 /* Body */
 .pt-stacks__body {
