@@ -1808,5 +1808,93 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isProlactinReleasingPeptideFamily(entity)) return SUPPORT_PROLACTIN_RELEASING_PEPTIDE;
   if (isSecretinFamily(entity)) return SUPPORT_SECRETIN;
   if (isShlp2Family(entity)) return SUPPORT_SHLP2;
+  if (isSnap8Family(entity)) return SUPPORT_SNAP8;
+  if (isSurvodutideFamily(entity)) return SUPPORT_SURVODUTIDE;
+  if (isTeriparatideFamily(entity)) return SUPPORT_TERIPARATIDE;
+  if (isThymulinFamily(entity)) return SUPPORT_THYMULIN;
   return null;
 }
+
+function isSnap8Family(entity: EntityLike): boolean {
+  return entity.slug === "snap-8";
+}
+
+function isSurvodutideFamily(entity: EntityLike): boolean {
+  return entity.slug === "survodutide";
+}
+
+function isTeriparatideFamily(entity: EntityLike): boolean {
+  return entity.slug === "teriparatide";
+}
+
+function isThymulinFamily(entity: EntityLike): boolean {
+  return entity.slug === "thymulin";
+}
+
+const SUPPORT_SNAP8: SupportPack = {
+  id: "snap-8",
+  title: "Snap-8 (Acetyl Octapeptide-3)",
+  subtitle: "Cosmetic signal peptide \u2014 topical only",
+  bullets: [
+    "Topical cosmetic ingredient only \u2014 no legitimate injectable use case or dosing data.",
+    "The SNARE inhibition mechanism is cell culture evidence; transdermal delivery to NMJ has not been demonstrated in vivo.",
+    "Industry-funded studies dominate the literature \u2014 independent RCT data for clinical wrinkle outcomes are very limited.",
+    "Extremely well tolerated topically; contact sensitization is rare but reported.",
+  ],
+  redFlags: [
+    "Injectable use: no data, no rational pharmacological basis \u2014 do not inject.",
+    "If using near eyes or on compromised barrier skin, monitor for sensitization.",
+  ],
+};
+
+const SUPPORT_SURVODUTIDE: SupportPack = {
+  id: "survodutide",
+  title: "Survodutide (BI 456906)",
+  subtitle: "Dual GLP-1R/GCGR agonist \u2014 investigational",
+  bullets: [
+    "Investigational compound \u2014 not FDA-approved as of early 2026. Phase 3 trials ongoing.",
+    "Dual GLP-1/glucagon receptor agonism may offer superior liver fat reduction vs. pure GLP-1 agents.",
+    "Carries the same GLP-1 class warnings: thyroid C-cell tumors, pancreatitis, GI tolerability.",
+    "Glucagon component introduces a unique hyperglycemia risk not seen with semaglutide or tirzepatide.",
+  ],
+  redFlags: [
+    "Do not combine with other GLP-1 receptor agonists.",
+    "Personal or family history of medullary thyroid carcinoma or MEN2: contraindicated (class warning).",
+    "Insulin and sulfonylurea users: monitor glucose \u2014 hypoglycemia risk with secretagogues.",
+  ],
+};
+
+const SUPPORT_TERIPARATIDE: SupportPack = {
+  id: "teriparatide",
+  title: "Teriparatide (Forteo)",
+  subtitle: "FDA-approved anabolic bone agent \u2014 PTH(1\u201334)",
+  bullets: [
+    "FDA-approved for severe osteoporosis. Requires a prescribing physician and proper bone density evaluation.",
+    "Cumulative use is limited to 2 years lifetime due to the osteosarcoma black box warning.",
+    "Antiresorptive therapy (bisphosphonate or denosumab) must follow to preserve BMD gains.",
+    "Pulsatile administration is critical \u2014 the anabolic effect depends on intermittent PTH exposure.",
+  ],
+  redFlags: [
+    "Osteosarcoma black box: 2-year lifetime cumulative dose limit. Do not exceed.",
+    "Hypercalcemia: monitor calcium, especially with active vitamin D analogues or thiazides.",
+    "Paget\u2019s disease of bone: contraindicated.",
+    "Orthostatic hypotension can occur post-injection \u2014 administer sitting or lying down initially.",
+  ],
+};
+
+const SUPPORT_THYMULIN: SupportPack = {
+  id: "thymulin",
+  title: "Thymulin",
+  subtitle: "Thymic nonapeptide \u2014 zinc-dependent, no human trials",
+  bullets: [
+    "No human clinical trials of injectable thymulin exist. All evidence is preclinical.",
+    "Zinc repletion may restore endogenous thymulin activity \u2014 often more actionable than exogenous injection.",
+    "Unknown long-term safety profile. \u201cNo known toxicity\u201d in preclinical models does not equal established human safety.",
+    "Animal model data show immune modulation and antinociceptive effects; human translation is unestablished.",
+  ],
+  redFlags: [
+    "Immunocompromised patients (HIV, transplant, active cancer): unknown and potentially significant immune risk.",
+    "Active autoimmune disease: unknown interaction with immune modulation \u2014 discuss with physician.",
+    "Do not combine with immunosuppressants or biologic immunomodulators without medical oversight.",
+  ],
+};

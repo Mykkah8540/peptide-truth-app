@@ -350,8 +350,24 @@ import Shlp2OverviewPanel from "@/components/Shlp2OverviewPanel";
 import Shlp2EvidencePanel from "@/components/Shlp2EvidencePanel";
 import Shlp2SafetyPanel from "@/components/Shlp2SafetyPanel";
 import Shlp2InteractionsPanel from "@/components/Shlp2InteractionsPanel";
+import Snap8OverviewPanel from "@/components/Snap8OverviewPanel";
+import Snap8EvidencePanel from "@/components/Snap8EvidencePanel";
+import Snap8SafetyPanel from "@/components/Snap8SafetyPanel";
+import Snap8InteractionsPanel from "@/components/Snap8InteractionsPanel";
+import SurvodutideOverviewPanel from "@/components/SurvodutideOverviewPanel";
+import SurvodutideEvidencePanel from "@/components/SurvodutideEvidencePanel";
+import SurvodutideSafetyPanel from "@/components/SurvodutideSafetyPanel";
+import SurvodutideInteractionsPanel from "@/components/SurvodutideInteractionsPanel";
+import TeriparatideOverviewPanel from "@/components/TeriparatideOverviewPanel";
+import TeriparatideEvidencePanel from "@/components/TeriparatideEvidencePanel";
+import TeriparatideSafetyPanel from "@/components/TeriparatideSafetyPanel";
+import TeriparatideInteractionsPanel from "@/components/TeriparatideInteractionsPanel";
+import ThymulinOverviewPanel from "@/components/ThymulinOverviewPanel";
+import ThymulinEvidencePanel from "@/components/ThymulinEvidencePanel";
+import ThymulinSafetyPanel from "@/components/ThymulinSafetyPanel";
+import ThymulinInteractionsPanel from "@/components/ThymulinInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide", "neuropeptide-s", "octreotide", "peg-mgf", "pentagastrin", "plecanatide", "prolactin-releasing-peptide", "secretin", "shlp-2"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide", "neuropeptide-s", "octreotide", "peg-mgf", "pentagastrin", "plecanatide", "prolactin-releasing-peptide", "secretin", "shlp-2", "snap-8", "survodutide", "teriparatide", "thymulin"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -864,6 +880,30 @@ const PANEL_MAP: Record<string, {
     Evidence: Shlp2EvidencePanel,
     Safety: Shlp2SafetyPanel,
     Interactions: Shlp2InteractionsPanel,
+  },
+  "snap-8": {
+    Overview: Snap8OverviewPanel,
+    Evidence: Snap8EvidencePanel,
+    Safety: Snap8SafetyPanel,
+    Interactions: Snap8InteractionsPanel,
+  },
+  "survodutide": {
+    Overview: SurvodutideOverviewPanel,
+    Evidence: SurvodutideEvidencePanel,
+    Safety: SurvodutideSafetyPanel,
+    Interactions: SurvodutideInteractionsPanel,
+  },
+  "teriparatide": {
+    Overview: TeriparatideOverviewPanel,
+    Evidence: TeriparatideEvidencePanel,
+    Safety: TeriparatideSafetyPanel,
+    Interactions: TeriparatideInteractionsPanel,
+  },
+  "thymulin": {
+    Overview: ThymulinOverviewPanel,
+    Evidence: ThymulinEvidencePanel,
+    Safety: ThymulinSafetyPanel,
+    Interactions: ThymulinInteractionsPanel,
   },
 };
 
@@ -1542,6 +1582,38 @@ const V3_HERO_CONTENT: Record<string, {
       "SHLP-2 (Small Humanin-like Peptide 2) is a 12-amino-acid mitochondrial-derived peptide encoded in the 16S rRNA gene of the mitochondrial genome \u2014 the same locus as humanin. Discovered in 2016, it is in the early preclinical phase.",
       "What matters most: no human clinical trials exist. All evidence is cell-based and animal models. Like MOTS-c and humanin, the interest is the novel mitochondrial biology \u2014 the human benefit from injection is unestablished.",
       "How to use this page: Evidence explains the mitochondrial biology and the gap to clinical use. Safety covers the absence of human safety data and the theoretical insulin-sensitization interaction concern.",
+    ],
+  },
+  "snap-8": {
+    considerSub: "Cosmetic signal peptide, SNARE mechanism claim, topical only, no injectable data\u2026",
+    startHere: [
+      "Snap-8 (acetyl octapeptide-3) is a cosmetic signal peptide marketed as a topical botulinum toxin alternative. It is an extension of the acetyl hexapeptide-3 (Argireline) sequence.",
+      "What matters most: the SNARE complex inhibition mechanism is plausible in cell culture, but transdermal delivery of an 8-amino-acid peptide to neuromuscular junctions in vivo is not supported by evidence. Injectable use has no data and no rational basis.",
+      "How to use this page: Evidence separates the in vitro mechanism from the clinical delivery question. Safety covers topical risk (minimal) vs. injectable use (hard stop).",
+    ],
+  },
+  "survodutide": {
+    considerSub: "Dual GLP-1R/GCGR agonist, MASH/liver fat, phase 3, investigational\u2026",
+    startHere: [
+      "Survodutide (BI 456906) is a dual GLP-1 receptor and glucagon receptor agonist in late-stage development for obesity and metabolic-associated steatohepatitis (MASH). It is investigational \u2014 not yet FDA-approved.",
+      "What matters most: the GCGR component differentiates survodutide from pure GLP-1 agents, potentially offering superior liver fat reduction. The weight loss signal is confirmed in phase 2; phase 3 data are pending.",
+      "How to use this page: Evidence covers both the weight and liver outcomes. Safety includes a glucagon-mediated hyperglycemia risk unique to dual agonists not seen with semaglutide or tirzepatide.",
+    ],
+  },
+  "teriparatide": {
+    considerSub: "PTH(1\u201334), anabolic bone agent, osteosarcoma black box, 2-year cumulative limit\u2026",
+    startHere: [
+      "Teriparatide (Forteo) is FDA-approved recombinant PTH(1\u201334) for severe osteoporosis. It is the only anabolic (bone-building) agent in common clinical use \u2014 most osteoporosis drugs are antiresorptive.",
+      "What matters most: pulsatile PTH(1\u201334) builds bone; the osteosarcoma black box limits cumulative use to 2 years lifetime. Antiresorptive therapy must follow to preserve the gains.",
+      "How to use this page: Evidence covers the strong fracture reduction data. Safety addresses the osteosarcoma context, hypercalcemia monitoring, and the mandatory sequencing requirement.",
+    ],
+  },
+  "thymulin": {
+    considerSub: "Thymic nonapeptide, zinc-dependent, immune modulation, no human trials\u2026",
+    startHere: [
+      "Thymulin is a zinc-dependent nonapeptide produced by thymic epithelial cells. It plays a role in T-cell maturation and immune regulation. Endogenous levels decline with age and thymic involution.",
+      "What matters most: zinc repletion may restore endogenous thymulin activity without exogenous injection \u2014 this is the most actionable insight from the research. No human clinical trials of injectable thymulin exist.",
+      "How to use this page: Evidence separates what is known about the endogenous peptide from the unestablished case for exogenous injection. Safety covers immunocompromised and autoimmune hard stops.",
     ],
   },
 };
