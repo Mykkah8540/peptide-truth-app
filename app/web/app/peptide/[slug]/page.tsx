@@ -366,8 +366,24 @@ import ThymulinOverviewPanel from "@/components/ThymulinOverviewPanel";
 import ThymulinEvidencePanel from "@/components/ThymulinEvidencePanel";
 import ThymulinSafetyPanel from "@/components/ThymulinSafetyPanel";
 import ThymulinInteractionsPanel from "@/components/ThymulinInteractionsPanel";
+import PalmitoylPentapeptide4OverviewPanel from "@/components/PalmitoylPentapeptide4OverviewPanel";
+import PalmitoylPentapeptide4EvidencePanel from "@/components/PalmitoylPentapeptide4EvidencePanel";
+import PalmitoylPentapeptide4SafetyPanel from "@/components/PalmitoylPentapeptide4SafetyPanel";
+import PalmitoylPentapeptide4InteractionsPanel from "@/components/PalmitoylPentapeptide4InteractionsPanel";
+import PalmitoylTripeptide1OverviewPanel from "@/components/PalmitoylTripeptide1OverviewPanel";
+import PalmitoylTripeptide1EvidencePanel from "@/components/PalmitoylTripeptide1EvidencePanel";
+import PalmitoylTripeptide1SafetyPanel from "@/components/PalmitoylTripeptide1SafetyPanel";
+import PalmitoylTripeptide1InteractionsPanel from "@/components/PalmitoylTripeptide1InteractionsPanel";
+import VipOverviewPanel from "@/components/VipOverviewPanel";
+import VipEvidencePanel from "@/components/VipEvidencePanel";
+import VipSafetyPanel from "@/components/VipSafetyPanel";
+import VipInteractionsPanel from "@/components/VipInteractionsPanel";
+import ZiconotideOverviewPanel from "@/components/ZiconotideOverviewPanel";
+import ZiconotideEvidencePanel from "@/components/ZiconotideEvidencePanel";
+import ZiconotideSafetyPanel from "@/components/ZiconotideSafetyPanel";
+import ZiconotideInteractionsPanel from "@/components/ZiconotideInteractionsPanel";
 
-const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide", "neuropeptide-s", "octreotide", "peg-mgf", "pentagastrin", "plecanatide", "prolactin-releasing-peptide", "secretin", "shlp-2", "snap-8", "survodutide", "teriparatide", "thymulin"]);
+const V3_SLUGS = new Set(["retatrutide", "nad-plus", "bpc-157", "tb-500", "cjc-1295", "ipamorelin", "sermorelin", "mk-677", "ghrp-2", "ghrp-6", "hexarelin", "tesamorelin", "bremelanotide", "selank", "semax", "thymosin-alpha-1", "ghk-cu", "aod-9604", "melanotan-ii", "mots-c", "oxytocin", "semaglutide", "tirzepatide", "igf-1", "liraglutide", "epitalon", "glutathione", "ll-37", "cagrilintide", "thymosin-beta-4", "5-amino-1mq", "kisspeptin", "gonadorelin", "follistatin-344", "humanin", "dsip", "pramlintide", "hcg", "ss-31", "igf-1-lr3", "somatostatin", "bpc-157-arginate", "thymosin-beta-4-full", "cjc-1295-dac", "vasopressin", "triptorelin", "kpv", "atrial-natriuretic-peptide", "leuprolide", "desmopressin", "calcitonin", "glucagon", "exenatide", "substance-p", "orexin-a", "neuropeptide-y", "abaloparatide", "acetyl-hexapeptide-8", "adipotide", "afamelanotide", "amylin", "angiotensin-ii", "ara-290", "bivalirudin", "bradykinin", "brain-natriuretic-peptide", "carbetocin", "cgrp", "endothelin-1", "eptifibatide", "lanreotide", "linaclotide", "mazdutide", "melanotan-i", "motilin", "nesiritide", "neuropeptide-s", "octreotide", "peg-mgf", "pentagastrin", "plecanatide", "prolactin-releasing-peptide", "secretin", "shlp-2", "snap-8", "survodutide", "teriparatide", "thymulin", "palmitoyl-pentapeptide-4", "palmitoyl-tripeptide-1", "vip", "ziconotide"]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type PanelComponent = () => any;
@@ -904,6 +920,30 @@ const PANEL_MAP: Record<string, {
     Evidence: ThymulinEvidencePanel,
     Safety: ThymulinSafetyPanel,
     Interactions: ThymulinInteractionsPanel,
+  },
+  "palmitoyl-pentapeptide-4": {
+    Overview: PalmitoylPentapeptide4OverviewPanel,
+    Evidence: PalmitoylPentapeptide4EvidencePanel,
+    Safety: PalmitoylPentapeptide4SafetyPanel,
+    Interactions: PalmitoylPentapeptide4InteractionsPanel,
+  },
+  "palmitoyl-tripeptide-1": {
+    Overview: PalmitoylTripeptide1OverviewPanel,
+    Evidence: PalmitoylTripeptide1EvidencePanel,
+    Safety: PalmitoylTripeptide1SafetyPanel,
+    Interactions: PalmitoylTripeptide1InteractionsPanel,
+  },
+  "vip": {
+    Overview: VipOverviewPanel,
+    Evidence: VipEvidencePanel,
+    Safety: VipSafetyPanel,
+    Interactions: VipInteractionsPanel,
+  },
+  "ziconotide": {
+    Overview: ZiconotideOverviewPanel,
+    Evidence: ZiconotideEvidencePanel,
+    Safety: ZiconotideSafetyPanel,
+    Interactions: ZiconotideInteractionsPanel,
   },
 };
 
@@ -1614,6 +1654,38 @@ const V3_HERO_CONTENT: Record<string, {
       "Thymulin is a zinc-dependent nonapeptide produced by thymic epithelial cells. It plays a role in T-cell maturation and immune regulation. Endogenous levels decline with age and thymic involution.",
       "What matters most: zinc repletion may restore endogenous thymulin activity without exogenous injection \u2014 this is the most actionable insight from the research. No human clinical trials of injectable thymulin exist.",
       "How to use this page: Evidence separates what is known about the endogenous peptide from the unestablished case for exogenous injection. Safety covers immunocompromised and autoimmune hard stops.",
+    ],
+  },
+  "palmitoyl-pentapeptide-4": {
+    considerSub: "Cosmetic signal peptide, Matrixyl, collagen synthesis, topical only, no injectable data\u2026",
+    startHere: [
+      "Palmitoyl pentapeptide-4 (Matrixyl) is a cosmetic signal peptide designed to stimulate collagen I synthesis. It is a topical ingredient only \u2014 no injectable formulation or use case exists.",
+      "What matters most: collagen synthesis in fibroblast cell cultures is well demonstrated. Whether topical delivery gets enough intact peptide to fibroblasts in living skin is not established by independent RCT evidence.",
+      "How to use this page: Evidence separates the in vitro mechanism from the clinical delivery question. Safety for standard topical use is minimal; the injectable stop signal is categorical.",
+    ],
+  },
+  "palmitoyl-tripeptide-1": {
+    considerSub: "Matrixyl 3000 component, GHK-derived, collagen I/III signal, topical only\u2026",
+    startHere: [
+      "Palmitoyl tripeptide-1 is the GHK-based component of the Matrixyl 3000 combination (paired with palmitoyl pentapeptide-4). It targets collagen I and III synthesis via a distinct receptor profile.",
+      "What matters most: this compound is almost exclusively studied in combination \u2014 isolating its standalone contribution from its pentapeptide-4 partner is not well established in the literature.",
+      "How to use this page: Evidence reflects the combination-study reality. Safety is essentially identical to palmitoyl pentapeptide-4 for topical use.",
+    ],
+  },
+  "vip": {
+    considerSub: "Endogenous neuropeptide, vasodilatory, <2 min half-life, not a community peptide\u2026",
+    startHere: [
+      "VIP (vasoactive intestinal peptide) is a 28-amino acid endogenous neuropeptide with profound vasodilatory and immunomodulatory effects. Its plasma half-life is under 2 minutes due to rapid peptidase cleavage.",
+      "What matters most: the sub-2-minute half-life makes community injection pharmacologically questionable. VIP is a research compound \u2014 there is no established self-administration protocol.",
+      "How to use this page: Evidence covers the strong established physiology and the complete absence of community use data. Safety leads with vasodilation and hypotension as primary risks.",
+    ],
+  },
+  "ziconotide": {
+    considerSub: "FDA-approved intrathecal analgesic, cone snail toxin, IDDS pump required, not injectable outside spinal\u2026",
+    startHere: [
+      "Ziconotide (Prialt) is FDA-approved for intrathecal (spinal) analgesia only. It is derived from cone snail toxin and blocks N-type voltage-gated calcium channels. It requires an implanted intrathecal drug delivery system.",
+      "What matters most: intrathecal route is non-negotiable. Systemic administration would cause catastrophic neurological effects. This is not a community peptide \u2014 self-administration is an unambiguous no.",
+      "How to use this page: Evidence confirms the strong intrathecal analgesia data and the serious cognitive side effect profile. Safety is dominated by route-of-administration warnings.",
     ],
   },
 };

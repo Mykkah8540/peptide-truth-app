@@ -1812,8 +1812,94 @@ export function getSupportPack(entity: EntityLike): SupportPack | null {
   if (isSurvodutideFamily(entity)) return SUPPORT_SURVODUTIDE;
   if (isTeriparatideFamily(entity)) return SUPPORT_TERIPARATIDE;
   if (isThymulinFamily(entity)) return SUPPORT_THYMULIN;
+  if (isPalmitoylPentapeptide4Family(entity)) return SUPPORT_PALMITOYL_PENTAPEPTIDE_4;
+  if (isPalmitoylTripeptide1Family(entity)) return SUPPORT_PALMITOYL_TRIPEPTIDE_1;
+  if (isVipFamily(entity)) return SUPPORT_VIP;
+  if (isZiconotideFamily(entity)) return SUPPORT_ZICONOTIDE;
   return null;
 }
+
+function isPalmitoylPentapeptide4Family(entity: EntityLike): boolean {
+  return entity.slug === "palmitoyl-pentapeptide-4";
+}
+
+function isPalmitoylTripeptide1Family(entity: EntityLike): boolean {
+  return entity.slug === "palmitoyl-tripeptide-1";
+}
+
+function isVipFamily(entity: EntityLike): boolean {
+  return entity.slug === "vip";
+}
+
+function isZiconotideFamily(entity: EntityLike): boolean {
+  return entity.slug === "ziconotide";
+}
+
+const SUPPORT_PALMITOYL_PENTAPEPTIDE_4: SupportPack = {
+  id: "palmitoyl-pentapeptide-4",
+  title: "Palmitoyl Pentapeptide-4 (Matrixyl)",
+  subtitle: "Cosmetic signal peptide \u2014 topical use only",
+  bullets: [
+    "Topical cosmetic ingredient only. No injectable use case, no dosing data, no pharmacokinetic profile for any route other than topical.",
+    "The collagen synthesis mechanism is well characterized in fibroblast cell culture. In vivo dermal bioavailability from topical application is not established by independent RCT evidence.",
+    "Most clinical data are from industry-funded studies. Independent head-to-head evidence is limited.",
+    "Extremely well tolerated topically \u2014 one of the safest cosmetic actives in routine use.",
+  ],
+  redFlags: [
+    "Do not inject. There is no data for any injectable use and no rational basis for it.",
+    "Rare contact sensitization: patch-test if you have reactive skin or known peptide hypersensitivity.",
+  ],
+};
+
+const SUPPORT_PALMITOYL_TRIPEPTIDE_1: SupportPack = {
+  id: "palmitoyl-tripeptide-1",
+  title: "Palmitoyl Tripeptide-1",
+  subtitle: "Matrixyl 3000 component \u2014 topical cosmetic use only",
+  bullets: [
+    "One of two actives in Matrixyl 3000 (with palmitoyl pentapeptide-4). GHK-derived sequence, targets collagen I and III.",
+    "Almost exclusively studied in combination \u2014 standalone efficacy data independent of its pentapeptide-4 partner are very limited.",
+    "Topical cosmetic ingredient only. No injectable formulation or data exists.",
+    "Safety profile essentially identical to palmitoyl pentapeptide-4: extremely low toxicity for topical use.",
+  ],
+  redFlags: [
+    "Do not inject. No data exists for any non-topical route.",
+    "Patch-test if reactive skin history: contact sensitization is rare but possible.",
+  ],
+};
+
+const SUPPORT_VIP: SupportPack = {
+  id: "vip",
+  title: "VIP (Vasoactive Intestinal Peptide)",
+  subtitle: "Endogenous neuropeptide \u2014 research compound, not a community peptide",
+  bullets: [
+    "Plasma half-life under 2 minutes due to rapid peptidase cleavage \u2014 this severely limits the pharmacological rationale for self-injection protocols.",
+    "Profound vasodilatory effect: meaningful hypotension risk from injection.",
+    "No established dosing protocol, no safety profile for self-administration. This is a research compound.",
+    "Aviptadil (a VIP synthetic analog) has been studied in critical care (ARDS); this context does not translate to community use.",
+  ],
+  redFlags: [
+    "Injection risk: significant hypotension and tachycardia. Do not inject without medical oversight.",
+    "Do not combine with antihypertensives, nitrates, or PDE5 inhibitors \u2014 profound additive vasodilation risk.",
+    "No established human dosing exists for community use.",
+  ],
+};
+
+const SUPPORT_ZICONOTIDE: SupportPack = {
+  id: "ziconotide",
+  title: "Ziconotide (Prialt)",
+  subtitle: "FDA-approved intrathecal analgesic \u2014 specialist use only, not a community peptide",
+  bullets: [
+    "Intrathecal (spinal) delivery only. Systemic injection would affect voltage-gated calcium channels throughout the nervous system \u2014 not studied, extremely dangerous.",
+    "Requires an implanted intrathecal drug delivery system managed by a pain specialist or neurosurgeon.",
+    "Serious neurological and psychiatric side effects are well documented even at therapeutic intrathecal doses.",
+    "This is an FDA-approved pharmaceutical in a specialized clinical context \u2014 it is not a community peptide.",
+  ],
+  redFlags: [
+    "Non-intrathecal route: any other route of administration is absolutely contraindicated. Do not inject subcutaneously, intramuscularly, or intravenously.",
+    "Self-administration of ziconotide is not possible or safe \u2014 requires implanted IDDS and specialist management.",
+    "Black box warning for severe psychiatric and neurological adverse effects including cognitive impairment.",
+  ],
+};
 
 function isSnap8Family(entity: EntityLike): boolean {
   return entity.slug === "snap-8";
