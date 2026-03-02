@@ -1,30 +1,43 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type Item = { href: string; label: string; sub?: string };
 
 const ITEMS: Item[] = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/billing", label: "Billing", sub: "Subscribers & revenue" },
-  { href: "/admin/ugc", label: "Moderation", sub: "UGC queue" },
-  { href: "/admin/flags", label: "Flags", sub: "Site controls" },
-  { href: "/admin/ops", label: "Ops", sub: "Jobs & health" },
-  { href: "/admin/audit", label: "Audit", sub: "Admin events" },
-  { href: "/admin/roles", label: "Roles", sub: "Access control" },
+  { href: "/admin",          label: "Dashboard" },
+  { href: "/admin/billing",  label: "Billing",    sub: "Subscribers & revenue" },
+  { href: "/admin/ugc",      label: "Moderation", sub: "UGC queue" },
+  { href: "/admin/flags",    label: "Flags",      sub: "Site controls" },
+  { href: "/admin/ops",      label: "Ops",        sub: "Jobs & health" },
+  { href: "/admin/audit",    label: "Audit",      sub: "Admin events" },
+  { href: "/admin/roles",    label: "Roles",      sub: "Access control" },
 ];
 
 export default function AdminNav() {
+  const pathname = usePathname();
+
   return (
-    <nav className="space-y-1">
-      {ITEMS.map((it) => (
-        <Link
-          key={it.href}
-          href={it.href}
-          className="block rounded-lg border px-3 py-2 hover:bg-muted"
-        >
-          <div className="text-sm font-medium">{it.label}</div>
-          {it.sub ? <div className="text-xs text-muted-foreground">{it.sub}</div> : null}
-        </Link>
-      ))}
+    <nav className="pt-admin__nav">
+      {ITEMS.map((it) => {
+        const active =
+          it.href === "/admin"
+            ? pathname === "/admin"
+            : pathname.startsWith(it.href);
+        return (
+          <Link
+            key={it.href}
+            href={it.href}
+            className={`pt-admin__nav-item${active ? " pt-admin__nav-item--active" : ""}`}
+          >
+            <div className="pt-admin__nav-item-label">{it.label}</div>
+            {it.sub ? (
+              <div className="pt-admin__nav-item-sub">{it.sub}</div>
+            ) : null}
+          </Link>
+        );
+      })}
     </nav>
   );
 }

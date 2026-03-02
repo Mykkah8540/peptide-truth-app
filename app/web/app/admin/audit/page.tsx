@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { headers } from "next/headers";
+
 type AuditRow = {
   id: string;
   created_at: string;
@@ -25,11 +26,9 @@ async function fetchAudit(cursor?: string | null) {
   const h = await headers();
   const host = h.get("host") || "localhost:3000";
   const proto = h.get("x-forwarded-proto") || "http";
-
   const url = new URL(`/api/admin/audit`, `${proto}://${host}`);
   url.searchParams.set("limit", "50");
   if (cursor) url.searchParams.set("cursor", cursor);
-
   const res = await fetch(url.toString(), { cache: "no-store" });
   const data = (await res.json()) as AuditResp;
   return { res, data };
@@ -46,25 +45,20 @@ export default async function AdminAudit({
   searchParams?: { cursor?: string };
 }) {
   const cursor = searchParams?.cursor ? String(searchParams.cursor) : null;
-
   const { res, data } = await fetchAudit(cursor);
 
   if (!res.ok || !data.ok) {
     return (
-      <div className="space-y-4">
-        <div className="rounded-xl border p-4">
-          <div className="text-lg font-semibold">Audit</div>
-          <div className="text-sm text-muted-foreground">
-            Admin event log viewer (read-only).
-          </div>
+      <>
+        <div className="pt-admin__page-header">
+          <div className="pt-admin__page-title">Audit</div>
+          <div className="pt-admin__page-sub">Admin event log viewer (read-only).</div>
         </div>
-        <div className="rounded-xl border p-4 text-sm">
-          <div className="font-medium">Failed to load audit events</div>
-          <div className="text-muted-foreground">
-            {data?.error || `HTTP ${res.status}`}
-          </div>
+        <div className="pt-admin__error-card">
+          <strong>Failed to load audit events</strong>
+          <div style={{ marginTop: 4, opacity: 0.7 }}>{data?.error || `HTTP ${res.status}`}</div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -72,53 +66,46 @@ export default async function AdminAudit({
   const nextCursor = data.nextCursor || null;
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-xl border p-4">
-        <div className="text-lg font-semibold">Audit</div>
-        <div className="text-sm text-muted-foreground">
-          Admin event log viewer (read-only).
-        </div>
+    <>
+      <div className="pt-admin__page-header">
+        <div className="pt-admin__page-title">Audit</div>
+        <div className="pt-admin__page-sub">Admin event log viewer (read-only).</div>
       </div>
 
       {rows.length === 0 ? (
-        <div className="rounded-xl border p-4 text-sm text-muted-foreground">
-          No audit events yet.
+        <div className="pt-admin__card">
+          <div className="pt-admin__empty">No audit events yet.</div>
         </div>
       ) : (
-        <div className="rounded-xl border">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead className="border-b bg-muted/30">
+        <div className="pt-admin__table-wrap">
+          <div style={{ overflowX: "auto" }}>
+            <table className="pt-admin__table">
+              <thead>
                 <tr>
-                  <th className="px-3 py-2 text-left font-medium">Time</th>
-                  <th className="px-3 py-2 text-left font-medium">Action</th>
-                  <th className="px-3 py-2 text-left font-medium">Entity</th>
-                  <th className="px-3 py-2 text-left font-medium">Actor</th>
-                  <th className="px-3 py-2 text-left font-medium">Request</th>
+                  <th>Time</th>
+                  <th>Action</th>
+                  <th>Entity</th>
+                  <th>Actor</th>
+                  <th>Request</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((r) => (
-                  <tr key={r.id} className="border-b last:border-0">
-                    <td className="px-3 py-2 whitespace-nowrap">{fmt(r.created_at)}</td>
-                    <td className="px-3 py-2">{r.action}</td>
-                    <td className="px-3 py-2">
+                  <tr key={r.id}>
+                    <td style={{ whiteSpace: "nowrap" }}>{fmt(r.created_at)}</td>
+                    <td style={{ fontWeight: 700 }}>{r.action}</td>
+                    <td>
                       {r.entity_type ? (
-                        <span className="text-muted-foreground">
-                          {r.entity_type}
-                          {r.entity_id ? `:${r.entity_id}` : ""}
+                        <span className="pt-admin__mono">
+                          {r.entity_type}{r.entity_id ? `:${r.entity_id}` : ""}
                         </span>
                       ) : (
-                        <span className="text-muted-foreground">—</span>
+                        <span style={{ opacity: 0.4 }}>—</span>
                       )}
                     </td>
-                    <td className="px-3 py-2">
-                      {r.actor_email || r.actor_user_id || "—"}
-                    </td>
-                    <td className="px-3 py-2">
-                      <span className="text-muted-foreground">
-                        {r.request_id || "—"}
-                      </span>
+                    <td>{r.actor_email || r.actor_user_id || "—"}</td>
+                    <td>
+                      <span className="pt-admin__mono">{r.request_id || "—"}</span>
                     </td>
                   </tr>
                 ))}
@@ -128,21 +115,19 @@ export default async function AdminAudit({
         </div>
       )}
 
-      <div className="flex items-center justify-between">
-        <div className="text-xs text-muted-foreground">
-          Showing {rows.length} event(s)
-        </div>
+      <div className="pt-admin__pagination">
+        <div className="pt-admin__note">Showing {rows.length} event(s)</div>
         {nextCursor ? (
           <a
-            className="rounded-lg border px-3 py-1.5 text-sm hover:bg-muted"
+            className="pt-admin__pagination-link"
             href={`/admin/audit?cursor=${encodeURIComponent(nextCursor)}`}
           >
             Next →
           </a>
         ) : (
-          <span className="text-xs text-muted-foreground">End</span>
+          <span className="pt-admin__note">End</span>
         )}
       </div>
-    </div>
+    </>
   );
 }

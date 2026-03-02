@@ -59,7 +59,7 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => ({} as any));
   const force = !!body?.force_pro_on;
 
-  const supa = await supabaseServer();
+  const supa = supabaseAdmin() as any;
   const { error } = await supa
     .from("admin_flags")
     .upsert({ key: "force_pro_on", value: force }, { onConflict: "key" });

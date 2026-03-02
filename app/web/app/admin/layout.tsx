@@ -12,36 +12,43 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   if (!user) redirect("/login?next=/admin");
 
-  // Allow admins + moderators into /admin area (long-term: moderators can be limited by page)
   const ok = await hasAnyRole(supa, user.id, ["admin", "moderator"]);
   if (!ok) {
     const roles = await getUserRoles(supa, user.id);
     return (
-      <div className="mx-auto max-w-3xl px-4 py-10">
-        <div className="rounded-xl border p-5">
-          <div className="text-sm text-muted-foreground">Pep Talk Admin</div>
-          <div className="mt-1 text-2xl font-semibold">Access denied</div>
-          <div className="mt-2 text-sm text-muted-foreground">
-            Your account is signed in, but it does not currently have an <span className="font-medium">admin</span> or <span className="font-medium">moderator</span> role.
-          </div>
-
-          <div className="mt-6 space-y-2 text-sm">
-            <div><span className="text-muted-foreground">User ID:</span> <span className="font-mono">{user.id}</span></div>
-            <div><span className="text-muted-foreground">Roles visible to server:</span> <span className="font-mono">{roles.length ? roles.join(", ") : "(none)"}</span></div>
-          </div>
-
-          <div className="mt-6 rounded-lg bg-muted p-4 text-sm">
-            <div className="font-medium">Fix in Supabase (SQL Editor)</div>
-            <div className="mt-2 font-mono whitespace-pre-wrap">
-insert into public.user_roles (user_id, role)
-values ('{user.id}', 'admin')
-on conflict (user_id, role) do nothing;
+      <div className="pt-admin">
+        <div className="pt-admin__header">
+          <div className="pt-admin__header-inner">
+            <div>
+              <div className="pt-admin__eyebrow">Pep Talk Admin</div>
+              <div className="pt-admin__title">Access Denied</div>
+            </div>
+            <div className="pt-admin__header-actions">
+              <a className="pt-admin__header-link" href="/">Back to site</a>
+              <a className="pt-admin__header-link" href="/logout">Log out</a>
             </div>
           </div>
-
-          <div className="mt-6 flex gap-3">
-            <a className="rounded-lg border px-3 py-2 text-sm hover:bg-muted" href="/">Back to site</a>
-            <a className="rounded-lg border px-3 py-2 text-sm hover:bg-muted" href="/logout">Log out</a>
+        </div>
+        <div style={{ maxWidth: 640, margin: "40px auto", padding: "0 24px" }}>
+          <div className="pt-admin__page-header">
+            <div className="pt-admin__page-title">Access denied</div>
+            <div className="pt-admin__page-sub">
+              Your account is signed in but does not currently have an <strong>admin</strong> or <strong>moderator</strong> role.
+            </div>
+            <div style={{ marginTop: 16, display: "grid", gap: 8 }}>
+              <div className="pt-admin__note">User ID: <span className="pt-admin__mono">{user.id}</span></div>
+              <div className="pt-admin__note">Roles: <span className="pt-admin__mono">{roles.length ? roles.join(", ") : "(none)"}</span></div>
+            </div>
+            <div className="pt-admin__hint" style={{ marginTop: 16 }}>
+              <strong>Fix in Supabase SQL Editor:</strong>
+              <pre style={{ marginTop: 8, fontFamily: "monospace", fontSize: 12, whiteSpace: "pre-wrap" }}>
+{`insert into public.user_roles (user_id, role)\nvalues ('${user.id}', 'admin')\non conflict (user_id, role) do nothing;`}
+              </pre>
+            </div>
+            <div style={{ marginTop: 20, display: "flex", gap: 10 }}>
+              <a className="pt-admin__btn pt-admin__btn--ghost" href="/">Back to site</a>
+              <a className="pt-admin__btn pt-admin__btn--ghost" href="/logout">Log out</a>
+            </div>
           </div>
         </div>
       </div>
@@ -49,27 +56,29 @@ on conflict (user_id, role) do nothing;
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <div className="text-sm text-muted-foreground">Pep Talk Admin</div>
-          <div className="text-xl font-semibold">Control Panel</div>
-        </div>
-        <div className="flex items-center gap-3">
-          <a className="text-sm underline" href="/">Back to site</a>
-          <a className="text-sm underline" href="/logout">Log out</a>
+    <div className="pt-admin">
+      <div className="pt-admin__header">
+        <div className="pt-admin__header-inner">
+          <div>
+            <div className="pt-admin__eyebrow">Pep Talk Admin</div>
+            <div className="pt-admin__title">Control Panel</div>
+          </div>
+          <div className="pt-admin__header-actions">
+            <a className="pt-admin__header-link" href="/">Back to site</a>
+            <a className="pt-admin__header-link" href="/logout">Log out</a>
+          </div>
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-[240px_1fr]">
-        <aside className="md:sticky md:top-6 h-fit">
-          <div className="rounded-xl border p-3">
-            <div className="mb-2 text-xs font-medium text-muted-foreground">NAV</div>
+      <div className="pt-admin__body">
+        <aside className="pt-admin__sidebar">
+          <div className="pt-admin__nav-card">
+            <div className="pt-admin__nav-section-label">Nav</div>
             <AdminNav />
           </div>
         </aside>
 
-        <main className="min-w-0">
+        <main className="pt-admin__main">
           {children}
         </main>
       </div>

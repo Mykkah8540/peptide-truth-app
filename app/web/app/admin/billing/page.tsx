@@ -28,13 +28,11 @@ function fmt(iso: string | null) {
 export default async function AdminBillingPage() {
   const supa = supabaseService();
 
-  // Fetch all billing entitlements
   const { data: rows, error } = await supa
     .from("billing_entitlements")
     .select("*")
     .order("updated_at", { ascending: false });
 
-  // Fetch user emails via auth admin API
   let emailMap: Record<string, string> = {};
   try {
     const { data: usersData } = await supa.auth.admin.listUsers({ perPage: 1000 });
@@ -42,7 +40,7 @@ export default async function AdminBillingPage() {
       emailMap[u.id] = u.email ?? u.id;
     }
   } catch {
-    // non-fatal — just show user_ids if emails unavailable
+    // non-fatal
   }
 
   const entitlements: BillingRow[] = rows ?? [];
@@ -50,100 +48,79 @@ export default async function AdminBillingPage() {
   const totalCount = entitlements.length;
 
   return (
-    <div className="space-y-4">
-
-      {/* Header */}
-      <div className="rounded-xl border p-4">
-        <div className="text-lg font-semibold">Billing</div>
-        <div className="text-sm text-muted-foreground">
+    <>
+      <div className="pt-admin__page-header">
+        <div className="pt-admin__page-title">Billing</div>
+        <div className="pt-admin__page-sub">
           Subscriber list synced from RevenueCat webhooks. Price and products are managed in{" "}
-          <a
-            href="https://app.revenuecat.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
+          <a href="https://app.revenuecat.com" target="_blank" rel="noopener noreferrer">
             RevenueCat dashboard
-          </a>
-          .
+          </a>.
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="grid gap-3 sm:grid-cols-3">
-        <div className="rounded-xl border p-4">
-          <div className="text-2xl font-bold">{activeCount}</div>
-          <div className="text-sm text-muted-foreground">Active subscribers</div>
+      <div className="pt-admin__stat-grid">
+        <div className="pt-admin__stat">
+          <div className="pt-admin__stat-num">{activeCount}</div>
+          <div className="pt-admin__stat-label">Active subscribers</div>
         </div>
-        <div className="rounded-xl border p-4">
-          <div className="text-2xl font-bold">{totalCount}</div>
-          <div className="text-sm text-muted-foreground">Total ever subscribed</div>
+        <div className="pt-admin__stat">
+          <div className="pt-admin__stat-num">{totalCount}</div>
+          <div className="pt-admin__stat-label">Total ever subscribed</div>
         </div>
-        <div className="rounded-xl border p-4">
-          <div className="text-2xl font-bold">
-            ${(activeCount * 4.99).toFixed(2)}
-          </div>
-          <div className="text-sm text-muted-foreground">Est. MRR @ $4.99</div>
+        <div className="pt-admin__stat">
+          <div className="pt-admin__stat-num">${(activeCount * 4.99).toFixed(2)}</div>
+          <div className="pt-admin__stat-label">Est. MRR @ $4.99</div>
         </div>
       </div>
 
       {error && (
-        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+        <div className="pt-admin__error-card">
           Error loading billing data: {error.message}
         </div>
       )}
 
-      {/* Subscriber table */}
       {entitlements.length === 0 ? (
-        <div className="rounded-xl border p-6 text-center text-sm text-muted-foreground">
-          No subscribers yet. Once someone purchases, their entitlement will appear here after the RevenueCat webhook fires.
+        <div className="pt-admin__card">
+          <div className="pt-admin__empty">
+            No subscribers yet. Once someone purchases, their entitlement will appear here after the RevenueCat webhook fires.
+          </div>
         </div>
       ) : (
-        <div className="rounded-xl border overflow-hidden">
-          <table className="w-full text-sm">
+        <div className="pt-admin__table-wrap">
+          <table className="pt-admin__table">
             <thead>
-              <tr className="border-b bg-muted/40">
-                <th className="px-4 py-3 text-left font-medium">User</th>
-                <th className="px-4 py-3 text-left font-medium">Status</th>
-                <th className="px-4 py-3 text-left font-medium">Expires</th>
-                <th className="px-4 py-3 text-left font-medium">Last updated</th>
-                <th className="px-4 py-3 text-left font-medium">RC user ID</th>
+              <tr>
+                <th>User</th>
+                <th>Status</th>
+                <th>Expires</th>
+                <th>Last updated</th>
+                <th>RC user ID</th>
               </tr>
             </thead>
-            <tbody className="divide-y">
+            <tbody>
               {entitlements.map((r) => (
-                <tr key={r.user_id} className="hover:bg-muted/20">
-                  <td className="px-4 py-3">
-                    <div className="font-medium">
-                      {emailMap[r.user_id] ?? r.user_id}
-                    </div>
-                    <div className="text-xs text-muted-foreground font-mono">
-                      {r.user_id}
-                    </div>
+                <tr key={r.user_id}>
+                  <td>
+                    <div style={{ fontWeight: 700 }}>{emailMap[r.user_id] ?? r.user_id}</div>
+                    <div className="pt-admin__mono">{r.user_id}</div>
                   </td>
-                  <td className="px-4 py-3">
-                    <span
-                      className={
-                        r.pro_active
-                          ? "inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800"
-                          : "inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-semibold text-zinc-600"
-                      }
-                    >
+                  <td>
+                    <span className={`pt-admin__badge ${r.pro_active ? "pt-admin__badge--active" : "pt-admin__badge--inactive"}`}>
                       {r.pro_active ? "Active" : "Inactive"}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">
+                  <td style={{ color: "rgba(0,0,0,0.5)" }}>
                     {r.pro_expires_at ? fmt(r.pro_expires_at) : r.pro_active ? "Lifetime" : "—"}
                   </td>
-                  <td className="px-4 py-3 text-muted-foreground">
-                    {fmt(r.updated_at)}
-                  </td>
-                  <td className="px-4 py-3 font-mono text-xs text-muted-foreground">
+                  <td style={{ color: "rgba(0,0,0,0.5)" }}>{fmt(r.updated_at)}</td>
+                  <td>
                     <a
                       href={`https://app.revenuecat.com/customers/app/${encodeURIComponent(r.rc_app_user_id)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline"
+                      className="pt-admin__mono"
+                      style={{ textDecoration: "underline" }}
                       title="View in RevenueCat"
                     >
                       {r.rc_app_user_id.slice(0, 16)}…
@@ -156,21 +133,16 @@ export default async function AdminBillingPage() {
         </div>
       )}
 
-      {/* RC link */}
-      <div className="rounded-xl border p-4 text-sm text-muted-foreground">
-        <span className="font-medium text-foreground">To change the price:</span>{" "}
-        Go to{" "}
-        <a
-          href="https://app.revenuecat.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          app.revenuecat.com
-        </a>{" "}
-        → Products → update the Stripe product price → update your Offering package. The app picks up the new price automatically on next page load.
+      <div className="pt-admin__card">
+        <div className="pt-admin__note">
+          <strong style={{ color: "#0f1a2e" }}>To change the price:</strong>{" "}
+          Go to{" "}
+          <a href="https://app.revenuecat.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", fontWeight: 700, color: "rgba(0,0,0,0.6)" }}>
+            app.revenuecat.com
+          </a>{" "}
+          → Products → update the Stripe product price → update your Offering package. The app picks up the new price automatically on next page load.
+        </div>
       </div>
-
-    </div>
+    </>
   );
 }

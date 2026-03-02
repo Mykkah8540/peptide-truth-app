@@ -476,18 +476,15 @@ export default function UgcAdminPage() {
  }, [canOperate, selectedId, selected, posts, queue]);
 
  return (
-  <div className="min-h-screen bg-zinc-50 font-sans dark:bg-black">
-   <main className="mx-auto w-full max-w-6xl px-4 py-10">
-    <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-     <div>
-      <h1 style={{ fontSize: 28, fontWeight: 900 }}>UGC Moderation</h1>
-      <p style={{ marginTop: 6, opacity: 0.75 }}>
-       Inbox-style review for community notes. Shortcuts: j/k (nav), a (approve), d (deny), r (archive), t (trash)
-      </p>
-     </div>
+  <div>
+    <div className="pt-admin__page-header" style={{ marginBottom: 14 }}>
+      <div className="pt-admin__page-title">UGC Moderation</div>
+      <div className="pt-admin__page-sub">
+        Inbox-style review for community notes. Shortcuts: j/k (nav), a (approve), d (deny), r (archive), t (trash)
+      </div>
     </div>
 
-    <section className="pt-card" style={{ marginTop: 16 }}>
+    <section className="pt-admin__card" style={{ padding: "14px 18px" }}>
      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
       <div style={{ fontSize: 13, fontWeight: 800, opacity: 0.8 }}>Admin session</div>
       <div style={{ fontSize: 13, fontWeight: 900 }}>
@@ -708,7 +705,6 @@ export default function UgcAdminPage() {
       </div>
      </div>
     </section>
-   </main>
   </div>
  );
 }
