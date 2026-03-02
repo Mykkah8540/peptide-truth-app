@@ -1,6 +1,7 @@
 import Link from "next/link";
 import BackHomeLink from "@/components/BackHomeLink";
 import { listBlends } from "@/lib/content";
+import BlendGrid from "@/components/BlendGrid";
 
 export const dynamic = "force-dynamic";
 
@@ -49,55 +50,7 @@ export default async function BlendsPage() {
 
       {/* ── Grid ── */}
       <div className="pt-blends__body">
-        <div className="pt-blends__grid">
-          {all.map((b) => {
-            const href        = b.route || `/blend/${b.slug}`;
-            const color       = blendColor(b.taxonomy_keys ?? []);
-            const components  = Array.isArray((b as any).components)
-              ? (b as any).components as string[]
-              : [];
-            const intentLabel = (b as any).intent_label as string ?? "";
-
-            return (
-              <Link key={b.slug} href={href} className="pt-blends__card">
-                <span
-                  className="pt-blends__card-accent"
-                  style={{ background: color }}
-                />
-                <div className="pt-blends__card-body">
-                  <div className="pt-blends__card-hd">
-                    <span className="pt-blends__card-name">{b.name}</span>
-                    {components.length > 0 && (
-                      <span className="pt-blends__card-count">
-                        {components.length}{" "}
-                        {components.length === 1 ? "compound" : "compounds"}
-                      </span>
-                    )}
-                  </div>
-                  {intentLabel && (
-                    <div className="pt-blends__card-tag">{intentLabel}</div>
-                  )}
-                  {components.length > 0 && (
-                    <div className="pt-blends__card-compounds">
-                      {components.map((c, i) => (
-                        <span key={c}>
-                          {c
-                            .split("-")
-                            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-                            .join("-")}
-                          {i < components.length - 1 && (
-                            <span className="pt-blends__card-sep"> · </span>
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <div className="pt-blends__card-arrow">Explore blend →</div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <BlendGrid items={all} />
       </div>
 
     </main>

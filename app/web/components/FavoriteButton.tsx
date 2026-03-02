@@ -1,70 +1,58 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import type { FavoriteKind } from "@/lib/favorites";
-import { isFavorited, toggleFavorite, loadFavorites } from "@/lib/favorites";
+import { useRouter } from "next/navigation";
+import { useFavorites, type FavKind } from "@/lib/favoritesContext";
 
-export default function FavoriteButton({
- kind,
- slug,
- label,
-}: {
- kind: FavoriteKind;
- slug: string;
- label?: string;
-}) {
- const s = String(slug || "").trim();
- const [on, setOn] = useState(false);
+interface Props {
+  kind: FavKind;
+  slug: string;
+  label?: string;
+  /** Compact mode: icon only, no text label */
+  compact?: boolean;
+}
 
- useEffect(() => {
-  if (!s) return;
-  setOn(isFavorited(kind, s));
- }, [kind, s]);
+export default function FavoriteButton({ kind, slug, label, compact }: Props) {
+  const { isSaved, toggle, isAuthed, isPro } = useFavorites();
+  const router = useRouter();
+  const s = String(slug || "").trim();
+  const saved = s ? isSaved(kind, s) : false;
+  const gated = isAuthed && !isPro;
 
- const text = useMemo(() => {
-  if (!s) return "☆ Save";
-  return on ? "★ Saved" : "☆ Save";
- }, [on, s]);
-
- return (
-  <button
-   type="button"
-   onClick={() => {
+  async function handleClick(e: React.MouseEvent) {
+    e.preventDefault();
+    e.stopPropagation();
     if (!s) return;
-    const next = toggleFavorite(kind, s);
-    const nowOn = kind === "peptide" ? next.peptides.includes(s) : next.blends.includes(s);
-    setOn(nowOn);
-   }}
-   aria-label={label ? `Save ${label}` : "Save"}
-   style={{
-    border: "1px solid rgba(0,0,0,0.10)",
-    background: on ? "rgba(0,0,0,0.04)" : "#fff",
-    borderRadius: 12,
-    padding: "8px 10px",
-    fontWeight: 900,
-    cursor: "pointer",
-    fontSize: 14,
-    lineHeight: 1,
-   }}
-  >
-   {text}
-  </button>
- );
+
+    if (!isAuthed) {
+      router.push(`/login?next=${encodeURIComponent(typeof window !== "undefined" ? window.location.pathname : "/")}`);
+      return;
+    }
+    if (!isPro) {
+      router.push("/upgrade");
+      return;
+    }
+
+    await toggle(kind, s);
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      aria-label={label ? `${saved ? "Remove" : "Save"} ${label}` : saved ? "Remove from My Peps" : "Save to My Peps"}
+      className={[
+        "pt-favbtn",
+        saved ? "pt-favbtn--on" : "",
+        compact ? "pt-favbtn--compact" : "",
+        gated ? "pt-favbtn--gated" : "",
+      ].filter(Boolean).join(" ")}
+    >
+      <span className="pt-favbtn__icon">{saved ? "♥" : "♡"}</span>
+      {!compact && <span className="pt-favbtn__label">{saved ? "Saved" : "Save"}</span>}
+      {gated && !compact && <span className="pt-favbtn__pro-badge">Pro</span>}
+    </button>
+  );
 }
 
-/**
- * Small helper for client pages that want the full doc.
- * Keeping it here avoids other files importing window directly.
- */
-export function useFavoritesDoc() {
- const [doc, setDoc] = useState(() => loadFavorites());
-
- useEffect(() => {
-  // simple "refresh on focus" pattern (no heavy event bus)
-  const onFocus = () => setDoc(loadFavorites());
-  window.addEventListener("focus", onFocus);
-  return () => window.removeEventListener("focus", onFocus);
- }, []);
-
- return { doc, refresh: () => setDoc(loadFavorites()) };
-}
+// Re-export for components that previously imported from here
+export { useFavorites } from "@/lib/favoritesContext";

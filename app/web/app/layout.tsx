@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import AppOverlays from "@/components/AppOverlays";
 import BackToTop from "@/components/BackToTop";
 import SiteFooter from "@/components/SiteFooter";
+import { FavoritesProvider } from "@/lib/favoritesContext";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -27,11 +28,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
  return (
   <html lang="en">
    <body className={`${playfair.variable} antialiased`}>
-    <NavBar peptides={peptides} blends={blends} topics={topics} />
-    <AppOverlays />
-    {children}
-    <SiteFooter />
-    <BackToTop />
+    <FavoritesProvider>
+     <NavBar peptides={peptides} blends={blends} topics={topics} />
+     <AppOverlays />
+     {children}
+     <SiteFooter />
+     <BackToTop />
+    </FavoritesProvider>
    </body>
   </html>
  );

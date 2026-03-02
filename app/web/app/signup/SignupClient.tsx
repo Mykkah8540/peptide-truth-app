@@ -4,6 +4,13 @@ import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabaseBrowser } from "@/lib/supabase/browser";
 
+type Plan = "free" | "pro";
+
+const PLAN_FEATURES: Record<Plan, string[]> = {
+  free: ["All 92+ peptide profiles", "Evidence summaries", "Safety & interaction data"],
+  pro:  ["Everything in Free", "Stack Builder", "Commercial Blends", "Wellness Paths", "My Peps (saved lists)"],
+};
+
 export default function SignupClient() {
   const router = useRouter();
   const sp = useSearchParams();
@@ -16,11 +23,17 @@ export default function SignupClient() {
     return n;
   }, [sp]);
 
+  const [plan, setPlan] = useState<Plan>("free");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  // Where to send the user after they confirm email and log in
+  const postConfirmPath = plan === "pro"
+    ? `/upgrade?next=${encodeURIComponent(nextPath)}`
+    : nextPath;
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -46,7 +59,8 @@ export default function SignupClient() {
       }
 
       if (data.session) {
-        router.replace(nextPath);
+        // Auto-confirmed (e.g. local dev with email confirm disabled)
+        router.replace(postConfirmPath);
         router.refresh();
         return;
       }
@@ -65,9 +79,15 @@ export default function SignupClient() {
           <h1 className="pt-auth__title">Check your email</h1>
           <p className="pt-auth__sub">
             We sent a confirmation link to <strong>{email}</strong>.
-            Click it to activate your account, then sign in.
+            Click it to activate your account
+            {plan === "pro" ? ", then complete your Pro subscription." : ", then sign in."}
           </p>
-          <a href={`/login?next=${encodeURIComponent(nextPath)}`} className="pt-auth__submit">
+          {plan === "pro" && (
+            <div className="pt-auth__pro-note">
+              After confirming, you&rsquo;ll be taken directly to checkout — $4.99/mo, cancel anytime.
+            </div>
+          )}
+          <a href={`/login?next=${encodeURIComponent(postConfirmPath)}`} className="pt-auth__submit">
             Go to sign in
           </a>
         </div>
@@ -82,8 +102,30 @@ export default function SignupClient() {
         <div className="pt-auth__brand">Peptide Truth</div>
         <h1 className="pt-auth__title">Create your account</h1>
         <p className="pt-auth__sub">
-          Free to join. Pro unlocks stacks, blends, and deeper tools.
+          Choose a plan, then enter your details.
         </p>
+
+        {/* Plan selector */}
+        <div className="pt-auth__plans">
+          {(["free", "pro"] as Plan[]).map((p) => (
+            <button
+              key={p}
+              type="button"
+              onClick={() => setPlan(p)}
+              className={`pt-auth__plan${plan === p ? " pt-auth__plan--selected" : ""}${p === "pro" ? " pt-auth__plan--pro" : ""}`}
+            >
+              <div className="pt-auth__plan-header">
+                <span className="pt-auth__plan-name">{p === "free" ? "Free" : "Pro"}</span>
+                {p === "pro" && <span className="pt-auth__plan-price">$4.99/mo</span>}
+              </div>
+              <ul className="pt-auth__plan-features">
+                {PLAN_FEATURES[p].map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </button>
+          ))}
+        </div>
 
         <form onSubmit={onSubmit} className="pt-auth__form">
           <label className="pt-auth__label">
@@ -121,7 +163,11 @@ export default function SignupClient() {
             disabled={busy}
             className="pt-auth__submit"
           >
-            {busy ? "Creating account…" : "Create account"}
+            {busy
+              ? "Creating account…"
+              : plan === "pro"
+              ? "Create account & upgrade →"
+              : "Create free account"}
           </button>
         </form>
 

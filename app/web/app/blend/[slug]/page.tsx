@@ -6,6 +6,7 @@ import EvidenceList from "@/components/EvidenceList";
 import CollapsibleSection from "@/components/CollapsibleSection";
 import UgcNotesSection from "@/components/UgcNotesSection";
 import BackHomeLink from "@/components/BackHomeLink";
+import FavoriteButton from "@/components/FavoriteButton";
 import { loadBlendBySlug, loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 import { isPendingText } from "@/lib/isPendingText";
 
@@ -142,6 +143,7 @@ export default async function BlendPage({
                     />
                   </span>
                 )}
+                <FavoriteButton kind="blend" slug={slug} label={displayName} />
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import AliasSequenceMini from "@/components/AliasSequenceMini";
 import { loadPeptideBySlug, getAliasesForSlug } from "@/lib/content";
 import { getSupportPack } from "@/lib/supportLayer";
 import SupportLayerSection from "@/components/SupportLayerSection";
+import FavoriteButton from "@/components/FavoriteButton";
 
 import ContentBlocks from "@/components/ContentBlocks";
 import EvidenceList from "@/components/EvidenceList";
@@ -1845,6 +1846,7 @@ export default async function PeptidePage({ params }: { params: Promise<{ slug: 
                     See real-world experiences
                   </span>
                 </a>
+                <FavoriteButton kind="peptide" slug={slug} label={peptideName} />
               </div>
               <nav className="pt-hero-jumps">
                 <a className="pt-hero-jump" href="#evidence">Evidence</a>

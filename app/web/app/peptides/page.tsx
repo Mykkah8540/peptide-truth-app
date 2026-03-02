@@ -1,6 +1,7 @@
 import { listPeptides } from "@/lib/content";
 import Link from "next/link";
 import BackHomeLink from "@/components/BackHomeLink";
+import PeptideGrid from "@/components/PeptideGrid";
 
 export const dynamic = "force-dynamic";
 
@@ -65,24 +66,7 @@ export default async function PeptidesPage({
           ))}
         </div>
 
-        <div className="pt-peptides__grid">
-          {shown.map((p) => {
-            const primaryKey = p.taxonomy_keys?.[0];
-            const badge = primaryKey ? CATEGORY_LABELS[primaryKey] : null;
-            return (
-              <Link
-                key={p.slug}
-                href={p.route || `/peptide/${p.slug}`}
-                className="pt-peptides__card"
-              >
-                <span className="pt-peptides__card-name">{p.name}</span>
-                {badge ? (
-                  <span className="pt-peptides__card-badge">{badge}</span>
-                ) : null}
-              </Link>
-            );
-          })}
-        </div>
+        <PeptideGrid items={shown} />
 
         {shown.length === 0 && (
           <p className="pt-peptides__empty">No compounds in this category yet.</p>

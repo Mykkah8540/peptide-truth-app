@@ -8407,6 +8407,450 @@ html.reta-page body {
   text-decoration: underline;
 }
 
+/* Plan selector */
+.pt-auth__plans {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.pt-auth__plan {
+  flex: 1;
+  text-align: left;
+  background: rgba(255,255,255,0.60);
+  border: 1.5px solid rgba(15,26,46,0.12);
+  border-radius: 13px;
+  padding: 14px 14px 12px;
+  cursor: pointer;
+  transition: border-color 0.14s, background 0.14s, box-shadow 0.14s;
+}
+.pt-auth__plan:hover {
+  border-color: rgba(15,26,46,0.28);
+  background: rgba(255,255,255,0.80);
+}
+.pt-auth__plan--selected {
+  border-color: rgba(15,26,46,0.50);
+  background: rgba(15,26,46,0.04);
+  box-shadow: 0 0 0 3px rgba(15,26,46,0.06);
+}
+.pt-auth__plan--pro.pt-auth__plan--selected {
+  border-color: var(--reta-navy, #0f1a2e);
+  background: rgba(15,26,46,0.07);
+}
+.pt-auth__plan-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.pt-auth__plan-name {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--reta-navy, #0f1a2e);
+  letter-spacing: -0.01em;
+}
+.pt-auth__plan-price {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(15,26,46,0.55);
+}
+.pt-auth__plan-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 3px;
+}
+.pt-auth__plan-features li {
+  font-size: 11.5px;
+  color: rgba(15,26,46,0.55);
+  line-height: 1.4;
+  padding-left: 12px;
+  position: relative;
+}
+.pt-auth__plan-features li::before {
+  content: "·";
+  position: absolute;
+  left: 3px;
+  color: rgba(15,26,46,0.35);
+}
+.pt-auth__pro-note {
+  font-size: 13px;
+  color: rgba(15,26,46,0.55);
+  background: rgba(15,26,46,0.04);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
 @media (max-width: 480px) {
   .pt-auth__card { padding: 30px 22px; }
+  .pt-auth__plans { flex-direction: column; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAVORITES_V1 — Save/favorite button + card overlay
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Favorite button (standalone / hero usage) ── */
+.pt-favbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(15,26,46,0.13);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.13s, background 0.13s, color 0.13s;
+  color: rgba(15,26,46,0.65);
+  white-space: nowrap;
+  line-height: 1;
+  vertical-align: middle;
+}
+.pt-favbtn:hover {
+  border-color: rgba(15,26,46,0.30);
+  background: #fff;
+  color: rgba(15,26,46,0.85);
+}
+.pt-favbtn--on {
+  background: rgba(192,57,43,0.07);
+  border-color: rgba(192,57,43,0.28);
+  color: #b83232;
+}
+.pt-favbtn--on:hover {
+  background: rgba(192,57,43,0.12);
+  border-color: rgba(192,57,43,0.40);
+}
+.pt-favbtn--compact {
+  padding: 5px 7px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.pt-favbtn__icon {
+  font-size: 14px;
+  line-height: 1;
+}
+.pt-favbtn__label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+/* Gated state — authed but not Pro */
+.pt-favbtn--gated {
+  opacity: 0.60;
+}
+.pt-favbtn--gated:hover {
+  opacity: 0.85;
+  border-color: rgba(15,26,46,0.22);
+}
+/* "Pro" amber badge inside button */
+.pt-favbtn__pro-badge {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(217,119,6,0.12);
+  color: #92400e;
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin-left: 1px;
+  line-height: 1.4;
+}
+
+/* ── Card wrapper with save overlay (peptide + blend grids) ── */
+.pt-favcard {
+  position: relative;
+}
+/* The save overlay button inside a card */
+.pt-favcard__btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.90);
+  border: 1px solid rgba(15,26,46,0.11);
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  color: rgba(15,26,46,0.45);
+  line-height: 1;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.pt-favcard__btn:hover {
+  background: #fff;
+  border-color: rgba(15,26,46,0.22);
+  color: rgba(15,26,46,0.80);
+}
+.pt-favcard__btn--on {
+  background: rgba(192,57,43,0.07);
+  border-color: rgba(192,57,43,0.30);
+  color: #b83232;
+}
+.pt-favcard__btn--on:hover {
+  background: rgba(192,57,43,0.12);
+}
+.pt-favcard__btn--gated {
+  opacity: 0.55;
+}
+.pt-favcard__btn--gated:hover {
+  opacity: 0.80;
+}
+
+/* Ensure pt-peptides__card fills its wrapper */
+.pt-favcard .pt-peptides__card,
+.pt-favcard .pt-blends__card {
+  display: block;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ACCOUNT_V1 — /account page
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Page shell */
+.pt-account-page {
+  min-height: 100vh;
+  background-color: var(--reta-body-bg, #dce4ee);
+  background-image:
+    radial-gradient(ellipse 900px 600px at 15% 5%, rgba(175,205,240,0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 85% 95%, rgba(190,215,250,0.35) 0%, transparent 60%);
+  padding: 32px 18px 64px;
+}
+.pt-account-page__inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.pt-account-page__back {
+  margin-bottom: 20px;
+}
+.pt-account-page__title {
+  font-family: var(--font-playfair, Georgia, serif);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 900;
+  color: var(--reta-navy, #0f1a2e);
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Content wrapper */
+.pt-account {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* Shared card shell */
+.pt-account__hero,
+.pt-account__card {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(24px) saturate(1.3);
+  -webkit-backdrop-filter: blur(24px) saturate(1.3);
+  border: 1px solid rgba(255,255,255,0.68);
+  border-radius: 18px;
+  padding: 22px 24px;
+  box-shadow: 0 2px 20px rgba(15,26,46,0.07), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+
+/* Hero */
+.pt-account__hero-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.pt-account__avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: var(--reta-navy, #0f1a2e);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.pt-account__ident {
+  flex: 1;
+  display: grid;
+  gap: 3px;
+  min-width: 160px;
+}
+.pt-account__name {
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--reta-navy, #0f1a2e);
+  letter-spacing: -0.01em;
+}
+.pt-account__email {
+  font-size: 13px;
+  color: rgba(15,26,46,0.52);
+  font-weight: 700;
+}
+.pt-account__since {
+  font-size: 12px;
+  color: rgba(15,26,46,0.36);
+  font-weight: 700;
+}
+
+/* Badges */
+.pt-account__badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.pt-account__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+  cursor: default;
+}
+.pt-account__badge--pro {
+  background: rgba(217,119,6,0.10);
+  border-color: rgba(217,119,6,0.28);
+  color: #92400e;
+}
+.pt-account__badge--free {
+  background: rgba(15,26,46,0.05);
+  border-color: rgba(15,26,46,0.14);
+  color: rgba(15,26,46,0.50);
+}
+.pt-account__badge--admin {
+  background: var(--reta-navy, #0f1a2e);
+  border-color: var(--reta-navy, #0f1a2e);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.13s;
+}
+.pt-account__badge--admin:hover { opacity: 0.82; }
+.pt-account__badge--override {
+  background: rgba(239,68,68,0.08);
+  border-color: rgba(239,68,68,0.22);
+  color: #b91c1c;
+}
+
+/* Info grid */
+.pt-account__grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px) {
+  .pt-account__grid { grid-template-columns: 1fr 1fr; }
+}
+.pt-account__card-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15,26,46,0.36);
+  margin-bottom: 7px;
+}
+.pt-account__card-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--reta-navy, #0f1a2e);
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+.pt-account__card-detail {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(15,26,46,0.52);
+  line-height: 1.55;
+}
+
+/* Activity */
+.pt-account__activity-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 10px;
+}
+.pt-account__activity-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.pt-account__activity-path {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--reta-navy, #0f1a2e);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pt-account__activity-at {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(15,26,46,0.40);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Actions */
+.pt-account__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pt-account__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid rgba(15,26,46,0.14);
+  background: rgba(255,255,255,0.88);
+  color: var(--reta-navy, #0f1a2e);
+  transition: border-color 0.13s, background 0.13s;
+  box-sizing: border-box;
+}
+.pt-account__btn:hover {
+  border-color: rgba(15,26,46,0.28);
+  background: #fff;
+}
+.pt-account__btn--primary {
+  background: var(--reta-navy, #0f1a2e);
+  border-color: var(--reta-navy, #0f1a2e);
+  color: #fff;
+}
+.pt-account__btn--primary:hover {
+  opacity: 0.88;
+  background: var(--reta-navy, #0f1a2e);
+}
+.pt-account__note {
+  font-size: 12.5px;
+  color: rgba(15,26,46,0.40);
+  font-weight: 700;
+  line-height: 1.5;
 }

@@ -1,4 +1,5 @@
 export const dynamic = "force-dynamic";
+import AdminFlagsClient from "./AdminFlagsClient";
 
 export default async function AdminFlags() {
   return (
@@ -6,12 +7,10 @@ export default async function AdminFlags() {
       <div className="rounded-xl border p-4">
         <div className="text-lg font-semibold">Flags</div>
         <div className="text-sm text-muted-foreground">
-          Safe site controls (feature flags). Changes should be audited.
+          Site control switches. Changes are audited and take effect immediately for all users.
         </div>
       </div>
-      <div className="rounded-xl border p-4 text-sm text-muted-foreground">
-        Next: implement DB-backed flags + /api/admin/flags GET/POST with audit.
-      </div>
+      <AdminFlagsClient />
     </div>
   );
 }
