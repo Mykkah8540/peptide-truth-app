@@ -5,136 +5,136 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { supabaseBrowser } from "@/lib/supabase/browser";
 
 export default function SignupClient() {
- const router = useRouter();
- const sp = useSearchParams();
+  const router = useRouter();
+  const sp = useSearchParams();
 
- const nextPath = useMemo(() => {
-  const n = (sp.get("next") || "").trim();
-  if (!n) return "/";
-  if (!n.startsWith("/")) return "/";
-  if (n.startsWith("/login") || n.startsWith("/signup")) return "/";
-  return n;
- }, [sp]);
+  const nextPath = useMemo(() => {
+    const n = (sp.get("next") || "").trim();
+    if (!n) return "/";
+    if (!n.startsWith("/")) return "/";
+    if (n.startsWith("/login") || n.startsWith("/signup")) return "/";
+    return n;
+  }, [sp]);
 
- const [email, setEmail] = useState("");
- const [password, setPassword] = useState("");
- const [busy, setBusy] = useState(false);
- const [msg, setMsg] = useState<string | null>(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
- async function onSubmit(e: React.FormEvent) {
-  e.preventDefault();
-  setMsg(null);
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setMsg(null);
 
-  const em = email.trim();
-  if (!em || !password) {
-   setMsg("Email and password are required.");
-   return;
+    const em = email.trim();
+    if (!em || !password) {
+      setMsg("Email and password are required.");
+      return;
+    }
+    if (password.length < 8) {
+      setMsg("Password must be at least 8 characters.");
+      return;
+    }
+
+    setBusy(true);
+    try {
+      const supa = supabaseBrowser();
+      const { data, error } = await supa.auth.signUp({ email: em, password });
+      if (error) {
+        setMsg(error.message || "Sign-up failed.");
+        return;
+      }
+
+      if (data.session) {
+        router.replace(nextPath);
+        router.refresh();
+        return;
+      }
+
+      setSuccess(true);
+    } finally {
+      setBusy(false);
+    }
   }
 
-  setBusy(true);
-  try {
-   const supa = supabaseBrowser();
-   const { data, error } = await supa.auth.signUp({ email: em, password });
-   if (error) {
-    setMsg(error.message || "Sign-up failed.");
-    return;
-   }
-
-   // Supabase may require email confirmation depending on project settings.
-   // If a session exists, proceed. Otherwise instruct the user to confirm email.
-   if (data.session) {
-    router.replace(nextPath);
-    router.refresh();
-    return;
-   }
-
-   setMsg("Check your email to confirm your account, then come back and sign in.");
-  } finally {
-   setBusy(false);
+  if (success) {
+    return (
+      <main className="pt-auth">
+        <div className="pt-auth__card">
+          <div className="pt-auth__success-icon">✉️</div>
+          <h1 className="pt-auth__title">Check your email</h1>
+          <p className="pt-auth__sub">
+            We sent a confirmation link to <strong>{email}</strong>.
+            Click it to activate your account, then sign in.
+          </p>
+          <a href={`/login?next=${encodeURIComponent(nextPath)}`} className="pt-auth__submit">
+            Go to sign in
+          </a>
+        </div>
+      </main>
+    );
   }
- }
 
- return (
-  <main style={{ maxWidth: 920, margin: "0 auto", padding: "24px 16px" }}>
-   <div style={{ maxWidth: 520 }}>
-    <h1 style={{ fontSize: 28, fontWeight: 950, margin: 0 }}>Create account</h1>
-    <div style={{ color: "#666", marginTop: 8, lineHeight: 1.35 }}>
-     Create an account with email + password. You’ll be redirected back after sign up.
-    </div>
+  return (
+    <main className="pt-auth">
+      <div className="pt-auth__card">
 
-    <form onSubmit={onSubmit} style={{ marginTop: 18 }}>
-     <div style={{ display: "grid", gap: 10 }}>
-      <label style={{ display: "grid", gap: 6 }}>
-       <div style={{ fontWeight: 900 }}>Email</div>
-       <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        type="email"
-        autoComplete="email"
-        placeholder="you@domain.com"
-        style={{
-         width: "100%",
-         padding: "12px 12px",
-         borderRadius: 12,
-         border: "1px solid rgba(0,0,0,0.15)",
-         fontSize: 14,
-        }}
-       />
-      </label>
+        <div className="pt-auth__brand">Peptide Truth</div>
+        <h1 className="pt-auth__title">Create your account</h1>
+        <p className="pt-auth__sub">
+          Free to join. Pro unlocks stacks, blends, and deeper tools.
+        </p>
 
-      <label style={{ display: "grid", gap: 6 }}>
-       <div style={{ fontWeight: 900 }}>Password</div>
-       <input
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        type="password"
-        autoComplete="new-password"
-        placeholder="••••••••"
-        style={{
-         width: "100%",
-         padding: "12px 12px",
-         borderRadius: 12,
-         border: "1px solid rgba(0,0,0,0.15)",
-         fontSize: 14,
-        }}
-       />
-      </label>
+        <form onSubmit={onSubmit} className="pt-auth__form">
+          <label className="pt-auth__label">
+            <span>Email</span>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              autoComplete="email"
+              placeholder="you@domain.com"
+              className="pt-auth__input"
+              required
+            />
+          </label>
 
-      {msg ? <div style={{ color: msg.includes("Check your email") ? "#333" : "#b00020", fontWeight: 800 }}>{msg}</div> : null}
+          <label className="pt-auth__label">
+            <span>Password</span>
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              autoComplete="new-password"
+              placeholder="At least 8 characters"
+              className="pt-auth__input"
+              required
+            />
+          </label>
 
-      <button
-       type="submit"
-       disabled={busy}
-       style={{
-        height: 44,
-        borderRadius: 12,
-        border: "1px solid rgba(0,0,0,0.15)",
-        background: "black",
-        color: "white",
-        fontWeight: 950,
-        cursor: busy ? "not-allowed" : "pointer",
-       }}
-      >
-       {busy ? "Creating..." : "Create account"}
-      </button>
+          {msg && (
+            <div className="pt-auth__error">{msg}</div>
+          )}
 
-      <button
-       type="button"
-       onClick={() => router.push(`/login?next=${encodeURIComponent(nextPath)}`)}
-       style={{
-        height: 44,
-        borderRadius: 12,
-        border: "1px solid rgba(0,0,0,0.15)",
-        background: "white",
-        fontWeight: 900,
-        cursor: "pointer",
-       }}
-      >
-       Back to sign in
-      </button>
-     </div>
-    </form>
-   </div>
-  </main>
- );
+          <button
+            type="submit"
+            disabled={busy}
+            className="pt-auth__submit"
+          >
+            {busy ? "Creating account…" : "Create account"}
+          </button>
+        </form>
+
+        <div className="pt-auth__divider" />
+
+        <div className="pt-auth__switch">
+          Already have an account?{" "}
+          <a href={`/login?next=${encodeURIComponent(nextPath)}`} className="pt-auth__switch-link">
+            Sign in
+          </a>
+        </div>
+
+      </div>
+    </main>
+  );
 }
